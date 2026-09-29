@@ -2,16 +2,64 @@
   "conversationId": "conv-delivery-002",
   "startedAt": "2026-09-29T09:18:00Z",
   "channel": "messaging",
-  "agent": { "id": "agent-002", "name": "Jordan Lee" },
-  "customer": { "id": "customer-002", "name": "Sam Rivera" },
-  "metadata": { "queue": "Orders", "topic": "Delayed delivery", "status": "Pending" },
+  "agent": {
+    "id": "agent-002",
+    "name": "Jordan Lee"
+  },
+  "customer": {
+    "id": "customer-002",
+    "name": "Sam Rivera"
+  },
+  "metadata": {
+    "queue": "Orders",
+    "topic": "Delayed delivery",
+    "status": "Pending",
+    "direction": "inbound",
+    "tags": "",
+    "synthetic": "true"
+  },
   "messages": [
-    { "id": "msg-001", "timestamp": "2026-09-29T09:18:02Z", "speaker": "customer", "text": "My order was due yesterday and the tracking hasn't moved. I need it for an event tomorrow." },
-    { "id": "msg-002", "timestamp": "2026-09-29T09:18:15Z", "speaker": "agent", "text": "Hello Sam, I'm Jordan. Let me see where it is." },
-    { "id": "msg-003", "timestamp": "2026-09-29T09:18:46Z", "speaker": "agent", "text": "The carrier scan is still showing the regional depot. I can't promise it will arrive tomorrow." },
-    { "id": "msg-004", "timestamp": "2026-09-29T09:19:02Z", "speaker": "customer", "text": "That's disappointing. Is there anything else you can do?" },
-    { "id": "msg-005", "timestamp": "2026-09-29T09:19:28Z", "speaker": "agent", "text": "I can open a carrier trace now and email you an update when they respond. If it doesn't arrive, we can discuss a replacement or refund." },
-    { "id": "msg-006", "timestamp": "2026-09-29T09:19:50Z", "speaker": "customer", "text": "Okay, please send the update." },
-    { "id": "msg-007", "timestamp": "2026-09-29T09:20:05Z", "speaker": "agent", "text": "The trace is open under TR-5932. I'll email you when the carrier responds. Thanks for contacting us." }
+    {
+      "id": "msg-001",
+      "timestamp": "2026-09-29T09:18:02Z",
+      "speaker": "customer",
+      "text": "My order was due yesterday and the tracking hasn't moved. I need it for an event tomorrow."
+    },
+    {
+      "id": "msg-002",
+      "timestamp": "2026-09-29T09:18:15Z",
+      "speaker": "agent",
+      "text": "Hello Sam, I'm Jordan. Let me see where it is."
+    },
+    {
+      "id": "msg-003",
+      "timestamp": "2026-09-29T09:18:46Z",
+      "speaker": "agent",
+      "text": "The carrier scan is still showing the regional depot. I can't promise it will arrive tomorrow."
+    },
+    {
+      "id": "msg-004",
+      "timestamp": "2026-09-29T09:19:02Z",
+      "speaker": "customer",
+      "text": "That's disappointing. Is there anything else you can do?"
+    },
+    {
+      "id": "msg-005",
+      "timestamp": "2026-09-29T09:19:28Z",
+      "speaker": "agent",
+      "text": "I can open a carrier trace now and email you an update when they respond. If it doesn't arrive, we can discuss a replacement or refund."
+    },
+    {
+      "id": "msg-006",
+      "timestamp": "2026-09-29T09:19:50Z",
+      "speaker": "customer",
+      "text": "Okay, please send the update."
+    },
+    {
+      "id": "msg-007",
+      "timestamp": "2026-09-29T09:20:05Z",
+      "speaker": "agent",
+      "text": "The trace is open under TR-5932. I'll email you when the carrier responds. Thanks for contacting us."
+    }
   ]
 }
