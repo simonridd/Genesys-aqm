@@ -40,7 +40,7 @@ describe('Genesys normalization and source contract', () => {
     expect([one.conversations.length,two.conversations.length,one.hasMore,two.hasMore]).toEqual([10,9,true,false])
     const fetchMock = vi.fn(async () => new Response(JSON.stringify({ conversations:[detail], total:1,hasMore:false }),{status:200}))
     vi.stubGlobal('fetch',fetchMock)
-    const genesys = new GenesysCloudConversationSource('https://proxy.example',()=> 'access')
+    const genesys = new GenesysCloudConversationSource(()=>({region:'eu-west-1',clientId:'public-client',accessToken:'access',expiresAt:Date.now()+60_000}))
     const page = await genesys.list({from:'2026-09-28T00:00:00Z',to:'2026-09-29T00:00:00Z',page:1,pageSize:10})
     expect(page.conversations[0].metadata.source).toBe('genesys-cloud')
     expect(fetchMock.mock.calls).toHaveLength(1)
