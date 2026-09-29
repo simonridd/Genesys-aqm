@@ -32,8 +32,17 @@ export type PolicyField = 'channel' | 'queue' | 'agent' | 'direction' | 'topic' 
 export interface PolicyCondition { field: PolicyField; operator: 'equals' | 'includes'; value: string }
 /** All groups are ORed; all conditions within a group are ANDed. */
 export interface InteractionPolicy {
-  id: string; name: string; description: string; enabled: boolean
+  id: string; name: string; description: string; enabled: boolean; version?: number
   criteria: { anyOf: PolicyCondition[][] }; evaluationFormIds: string[]
+  sampling?: MonitoringSampling
+  schedule?: 'manual' | 'daily' | 'weekly'
+}
+export type MonitoringSampling = { strategy: 'all'; seed?: string } | { strategy: 'percentage'; percentage: number; seed?: string } | { strategy: 'fixed_count'; count: number; seed?: string }
+export interface MonitoringPeriod { periodStart: string; periodEnd: string }
+export interface CoverageCounts {
+  candidateCount: number; eligibleCount: number; sampledCount: number; evaluableCount: number
+  evaluatedConversationCount: number; evaluationCount: number; successfulEvaluationCount: number; failedEvaluationCount: number
+  transcriptUnavailableCount: number
 }
 export interface PolicyMatch { policyId: string; policyName: string; matchedGroup: PolicyCondition[] }
 export interface EvaluationRecord {
@@ -60,4 +69,7 @@ export interface PolicyRun {
   startedAt: string; completedAt?: string; candidateConversationCount: number; matchedConversationCount: number
   formsAssigned: string[]; evaluationsRequested: number; evaluationsSucceeded: number; evaluationsFailed: number
   status: 'running' | 'completed' | 'partial-failure' | 'failed'; failures: PolicyRunFailure[]
+  period?: MonitoringPeriod; sampling?: MonitoringSampling; deterministicSeed?: string
+  sampledConversationIds?: string[]; evaluableCount?: number; previouslyEvaluatedCount?: number
+  coverage?: CoverageCounts; agentCoverage?: Array<{ agentId: string; agentName: string; eligible: number; sampled: number; evaluated: number }>
 }

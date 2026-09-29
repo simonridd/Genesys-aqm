@@ -1,7 +1,23 @@
-import type { EvaluationRecord } from './types'
+import type { EvaluationRecord, PolicyRun } from './types'
 export type AnalyticsSourceFilter = 'real' | 'synthetic' | 'all'
 export function filterRecordsBySource(records: EvaluationRecord[], filter: AnalyticsSourceFilter): EvaluationRecord[] {
   return records.filter(record => filter === 'all' || (filter === 'real' ? record.conversationSource === 'genesys-cloud' : record.conversationSource !== 'genesys-cloud'))
+}
+export function filterRunsBySource(runs: PolicyRun[], filter: AnalyticsSourceFilter): PolicyRun[] {
+  return runs.filter(run => filter === 'all' || (filter === 'real' ? run.source === 'genesys-cloud' : run.source === 'synthetic'))
+}
+export function coverageRate(numerator: number, denominator: number): number | null { return denominator > 0 ? numerator / denominator : null }
+/** Totals are run observations: a conversation in two runs appears twice. */
+export function summarizeCoverage(runs: PolicyRun[]) {
+  const candidate = runs.reduce((n,r) => n + (r.coverage?.candidateCount ?? r.candidateConversationCount), 0)
+  const eligible = runs.reduce((n,r) => n + (r.coverage?.eligibleCount ?? r.matchedConversationCount), 0)
+  const sampled = runs.reduce((n,r) => n + (r.coverage?.sampledCount ?? r.matchedConversationCount), 0)
+  const evaluable = runs.reduce((n,r) => n + (r.coverage?.evaluableCount ?? 0), 0)
+  const evaluated = runs.reduce((n,r) => n + (r.coverage?.evaluatedConversationCount ?? 0), 0)
+  const successful = runs.reduce((n,r) => n + r.evaluationsSucceeded, 0)
+  const failed = runs.reduce((n,r) => n + r.evaluationsFailed, 0)
+  return { candidate, eligible, sampled, evaluable, evaluated, successful, failed,
+    samplingCoverage: coverageRate(sampled,eligible), evaluationCoverage: coverageRate(evaluated,eligible), sampleCompletion: coverageRate(evaluated,evaluable), transcriptAvailability: coverageRate(evaluable,sampled) }
 }
 export interface Breakdown { key: string; count: number; averageScore: number | null; passRate: number | null; criticalFailures: number }
 export function summarize(records: EvaluationRecord[]) {

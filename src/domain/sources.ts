@@ -27,7 +27,8 @@ export class SyntheticConversationSource implements ConversationSource {
   readonly capabilities = { pagination: true, filters: ['queue','agent','channel','direction'] as Array<'queue'|'agent'|'channel'|'direction'> }
   async status() { return { state: 'connected' as const, detail: '19 fictional conversations. No credentials required.' } }
   async list(query: ConversationQuery): Promise<ConversationPage> {
-    const all = sampleLibrary.map(s => s.conversation).filter(c => (!query.queue || c.metadata.queue === query.queue) && (!query.agent || c.agent.id === query.agent) && (!query.channel || c.channel === query.channel) && (!query.direction || c.metadata.direction === query.direction))
+    const from = Date.parse(query.from), to = Date.parse(query.to)
+    const all = sampleLibrary.map(s => s.conversation).filter(c => (!Number.isFinite(from) || Date.parse(c.startedAt) >= from) && (!Number.isFinite(to) || Date.parse(c.startedAt) < to) && (!query.queue || c.metadata.queue === query.queue) && (!query.agent || c.agent.id === query.agent) && (!query.channel || c.channel === query.channel) && (!query.direction || c.metadata.direction === query.direction))
     const start = (query.page - 1) * query.pageSize
     return { conversations: all.slice(start, start + query.pageSize), page: query.page, pageSize: query.pageSize, total: all.length, hasMore: start + query.pageSize < all.length }
   }
