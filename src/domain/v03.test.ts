@@ -13,7 +13,7 @@ const normalized = normalizeGenesys(detail, transcript)
 const result: EvaluationResult = { conversationId: normalized.conversationId, scorecardId: 'general_service', scorecardVersion: 1, evaluatedAt: '2026-09-29T00:00:00Z', provider: 'typesafe', model: 'fixture', questions: [], overallScore: .8, countedWeight: 1, rawResponse: {} }
 describe('Genesys normalization and source contract', () => {
   it('maps IDs, participant roles, metadata, timestamps and text', () => {
-    expect(normalized.channel).toBe('messaging')
+    expect(normalized.channel).toBe('voice')
     expect(normalized.agent.name).toBe('Test Agent')
     expect(normalized.customer.name).toBe('Test Customer')
     expect(normalized.metadata.queueId).toBe('55555555-5555-4555-8555-555555555555')
@@ -30,7 +30,7 @@ describe('Genesys normalization and source contract', () => {
     expect(c.metadata.transcriptStatus).toBe('Unavailable')
   })
   it('matches normalized Genesys metadata with the existing policy matcher', () => {
-    const policy = { ...seedPolicies[0], criteria: { anyOf: [[{field:'channel' as const,operator:'equals' as const,value:'messaging'},{field:'agent' as const,operator:'equals' as const,value:normalized.agent.id}]] } }
+    const policy = { ...seedPolicies[0], criteria: { anyOf: [[{field:'channel' as const,operator:'equals' as const,value:'voice'},{field:'agent' as const,operator:'equals' as const,value:normalized.agent.id}]] } }
     expect(matchPolicies(normalized,[policy])).toHaveLength(1)
   })
   it('paginates synthetic source and switches to Genesys source without changing the contract', async () => {
@@ -48,7 +48,7 @@ describe('Genesys normalization and source contract', () => {
   })
 })
 describe('policy runs', () => {
-  const policy = { ...seedPolicies[0], criteria: { anyOf: [[{field:'channel' as const,operator:'equals' as const,value:'messaging'}]] } }
+  const policy = { ...seedPolicies[0], criteria: { anyOf: [[{field:'channel' as const,operator:'equals' as const,value:'voice'}]] } }
   it('previews multi-form requests, duplicates and unavailable transcripts', () => {
     const preview = previewPolicyRun(policy,[normalized,normalizeGenesys(detail)],seedForms,[],'genesys-cloud')
     expect(preview.matched).toHaveLength(2)

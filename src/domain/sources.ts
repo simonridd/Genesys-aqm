@@ -1,7 +1,26 @@
+import { resolveMediaContract } from './genesysMedia'
 import { getSession, disconnect, REGIONS, type AuthSession } from './genesysAuth'
 import { sampleLibrary } from './conversations'
 import { normalizeGenesys, type GenesysDetail, type GenesysTranscript } from './genesys'
 import type { Conversation, ConversationPage, ConversationQuery, ConversationSource } from './types'
+
+const transcriptDownloadOrigins: Partial<Record<keyof typeof REGIONS, string>> = {
+  // Observed from a real Ireland-region transcript URL returned by Genesys API Explorer.
+  'eu-west-1': 'https://api-downloads.mypurecloud.ie',
+}
+function allowedTranscriptUrl(value: string, region: keyof typeof REGIONS): URL {
+  const url = new URL(value)
+  const aws = url.hostname === 's3.amazonaws.com' || url.hostname.endsWith('.amazonaws.com') || url.hostname.endsWith('.cloudfront.net')
+  const regional = url.origin === transcriptDownloadOrigins[region] && url.pathname.startsWith('/transcriptsCache/')
+  if (url.protocol !== 'https:' || (!aws && !regional) || url.username || url.password) throw new Error('Genesys returned an unrecognized transcript download host.')
+  return url
+}
+function parseVoiceTranscript(value: unknown): GenesysTranscript {
+  if (!value || typeof value !== 'object' || !Array.isArray((value as GenesysTranscript).transcripts)) throw new Error('Genesys returned an unexpected voice transcript format.')
+  const parsed = value as GenesysTranscript
+  if (!parsed.transcripts!.every(t => Array.isArray(t.phrases))) throw new Error('Genesys returned an unexpected voice transcript format.')
+  return parsed
+}
 
 export class SyntheticConversationSource implements ConversationSource {
   readonly id = 'synthetic'; readonly name = 'Synthetic'; readonly realData = false
@@ -46,23 +65,42 @@ export class GenesysCloudConversationSource implements ConversationSource {
   }
   async load(id: string): Promise<Conversation> {
     if (!/^[a-f0-9-]{20,64}$/i.test(id)) throw new Error('Invalid conversation ID.')
+    const region = this.currentSession()?.region
+    if (!region) throw new Error('Connect to Genesys Cloud in Settings. Your session may have expired.')
     const detail = await this.request(`/api/v2/analytics/conversations/${encodeURIComponent(id)}/details`) as GenesysDetail
     const queueIds = [...new Set((detail.participants ?? []).flatMap(p => p.sessions?.flatMap(s => s.segments?.map(g => g.queueId).filter((v): v is string => !!v) ?? []) ?? []))].slice(0, 25)
     detail.queueNames = {}
     await Promise.all(queueIds.map(async queueId => { if (!/^[a-f0-9-]{20,64}$/i.test(queueId)) return; try { const queue = await this.request(`/api/v2/routing/queues/${queueId}`) as { name?: string }; if (queue.name) detail.queueNames![queueId] = queue.name } catch { /* name is optional */ } }))
-    const session = detail.participants?.flatMap(p => p.sessions ?? []).find(s => s.sessionId && ['message','chat','email','voice'].includes((s.mediaType ?? '').toLowerCase()))
-    let transcript: GenesysTranscript | null = null
-    if (session?.sessionId) {
-      try {
-        const location = await this.request(`/api/v2/speechandtextanalytics/conversations/${encodeURIComponent(id)}/communications/${encodeURIComponent(session.sessionId)}/transcripturl`) as { url?: string }
-        if (location.url) {
-          const signed = new URL(location.url)
-          if (signed.protocol !== 'https:' || !(signed.hostname === 's3.amazonaws.com' || signed.hostname.endsWith('.amazonaws.com') || signed.hostname.endsWith('.cloudfront.net'))) throw new Error('Unexpected transcript host.')
-          const response = await fetch(signed.toString())
-          if (response.ok && Number(response.headers.get('Content-Length') ?? 0) < 5_000_000) { const bytes = await response.arrayBuffer(); if (bytes.byteLength < 5_000_000) transcript = JSON.parse(new TextDecoder().decode(bytes)) as GenesysTranscript }
+    const media = resolveMediaContract(detail)
+    const transcriptParts: GenesysTranscript[] = []
+    let transcriptIssue = ''
+    if (media.type === 'voice') {
+      if (!media.communicationIds.length) transcriptIssue = 'No customer voice communication ID was found.'
+      for (const communicationId of media.communicationIds) {
+        try {
+          const location = await this.request(`/api/v2/speechandtextanalytics/conversations/${encodeURIComponent(id)}/communications/${encodeURIComponent(communicationId)}/transcripturl`) as { url?: string }
+          if (!location.url) continue
+          const signed = allowedTranscriptUrl(location.url, region)
+          const response = await fetch(signed.toString(), { credentials: 'omit' })
+          if (!response.ok) throw new Error(`Transcript download returned HTTP ${response.status}.`)
+          if (Number(response.headers.get('Content-Length') ?? 0) >= 5_000_000) throw new Error('Transcript download is too large.')
+          const bytes = await response.arrayBuffer()
+          if (bytes.byteLength >= 5_000_000) throw new Error('Transcript download is too large.')
+          transcriptParts.push(parseVoiceTranscript(JSON.parse(new TextDecoder().decode(bytes)) as unknown))
+        } catch (error) {
+          const message = error instanceof Error ? error.message : ''
+          transcriptIssue = message.includes('HTTP 403') ? 'Transcript access was denied; check recording and Speech and Text Analytics permissions.'
+            : message.includes('HTTP 404') ? 'No transcript is available for this voice communication.'
+            : message.includes('unrecognized transcript') ? 'Genesys returned an unrecognized transcript download host.'
+            : message.includes('unexpected voice transcript') ? 'Genesys returned an unexpected voice transcript format.'
+            : message.includes('too large') ? 'Transcript download is too large.'
+            : 'The browser could not retrieve the voice transcript. Check the download request and CORS policy.'
         }
-      } catch { /* Missing transcript or signed URL CORS failure remains unavailable. */ }
+      }
     }
-    return normalizeGenesys(detail, transcript)
+    const transcript: GenesysTranscript | null = transcriptParts.length ? { transcripts: transcriptParts.flatMap(part => part.transcripts ?? []) } : null
+    const conversation = normalizeGenesys(detail, transcript)
+    if (media.type === 'voice' && !conversation.messages.length && transcriptIssue) { conversation.metadata.transcriptStatus = 'Error'; conversation.metadata.transcriptDetail = transcriptIssue }
+    return conversation
   }
 }

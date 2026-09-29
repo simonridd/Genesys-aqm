@@ -1,6 +1,6 @@
 # V0.3A: browser Genesys Cloud PKCE contract and proof
 
-Checked 29 September 2026. This is a browser prototype. No live Genesys organization login or customer transcript was available during implementation.
+Checked 29 September 2026. This is a browser prototype. Simon subsequently reported a successful Genesys connection and an Analytics sample of three conversations. None of those three had a transcript; AQM has not yet retrieved a real transcript.
 
 ## Official contract
 
@@ -32,7 +32,7 @@ Credential-free HTTP OPTIONS requests from `Origin: https://simonridd.github.io`
 | `GET /api/v2/routing/queues/{id}` (`authorization`) | HTTP 200; allowed origin and header | Provider-free technically plausible |
 | `GET /api/v2/speechandtextanalytics/conversations/{id}/communications/{id}/transcripturl` (`authorization`) | HTTP 200; allowed origin and header | Provider-free technically plausible |
 
-The official browser SDK is evidence of **documented supported browser API calls** in general. The OPTIONS results prove only preflight behavior at these specific endpoints without credentials. They do not prove a successful authenticated response. The transcript endpoint returns a **pre-signed S3 URL** according to the official SDK reference. No real signed URL was available, so the storage host's CORS policy and resulting transcript download remain **unproven**. The browser source only fetches HTTPS URLs on the preexisting AWS/CloudFront allowlist and treats a failed or unavailable transcript as unavailable; it never fabricates one. If that signed URL lacks browser CORS permission, the smallest safe server-side component is a narrow authenticated transcript fetch endpoint (with appropriate access control and bounded response), while other Genesys calls can remain browser-direct. Do not proxy or expose client secrets in the SPA.
+The official browser SDK is evidence of **documented supported browser API calls** in general. The OPTIONS results prove only preflight behavior at these specific endpoints without credentials. Simon's successful connection check and three-conversation Analytics sample establish user-reported browser auth and direct API operation, although we have not independently observed that session. The transcript endpoint is described by the official SDK as returning a pre-signed S3 URL. A subsequent real Ireland-region API Explorer response instead showed an `https://api-downloads.mypurecloud.ie/transcriptsCache/…` URL. Credential-free OPTIONS and GET probes to a dummy path returned CORS `Access-Control-Allow-Origin: *` (both returned HTTP 403 for the dummy path). A real AQM browser download of an eligible transcript remains to be verified. The browser source accepts the exact observed Ireland download origin and path, plus the existing AWS/CloudFront signed-host allowance and treats a failed or unavailable transcript as unavailable; it never fabricates one. If that signed URL lacks browser CORS permission, the smallest safe server-side component is a narrow authenticated transcript fetch endpoint (with appropriate access control and bounded response), while other Genesys calls can remain browser-direct. Do not proxy or expose client secrets in the SPA.
 
 The existing Worker Genesys routes remain for compatibility, but V0.3A frontend calls Genesys directly. The `/v1/systemone` Jev route and Jev key flow are unchanged. No Worker deployment is required for this tranche.
 
@@ -40,9 +40,9 @@ The existing Worker Genesys routes remain for compatibility, but V0.3A frontend 
 
 - **A. PKCE CONTRACT — achieved:** current official Genesys OAuth client docs and browser JavaScript SDK support Code Authorization + PKCE.
 - **B. PROVIDER-FREE — achieved:** deterministic PKCE/callback/source tests; production build; credential-free CORS preflights listed above.
-- **C. BROWSER AUTH — not achieved:** no real user completed consent and callback.
-- **D. DIRECT API — not achieved:** no browser-issued token used against a real Analytics query.
-- **E. TRANSCRIPT — not achieved:** no eligible signed transcript URL or browser download was available.
+- **C. BROWSER AUTH — user-reported achieved:** Simon connected successfully through the deployed app. We have not independently inspected the browser session.
+- **D. DIRECT API — user-reported achieved:** Verify Connection sampled three real conversations through Analytics; none had a transcript.
+- **E. TRANSCRIPT — not achieved in AQM:** a real API Explorer example returned a signed transcript URL and a downloaded transcript payload, but AQM has not retrieved and normalized one in the browser.
 - **F. END-TO-END AQM — not achieved:** requires a real transcript, policy run confirmation, and Jev evaluation.
 
 Synthetic mode remains available without Genesys authentication. The existing policy preview, 25-interaction cap, explicit paid confirmation, concurrency two, duplicate logic, partial-success persistence, and provenance are unchanged.

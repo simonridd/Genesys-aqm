@@ -1,3 +1,4 @@
+import { genesysCustomerServiceForm } from './genesysForm'
 import type { EvaluationForm, Scorecard, ScorecardItem } from './types'
 import { starterScorecard } from './scorecard'
 const yes = (id: string, title: string, instructions: string, weight = 1): ScorecardItem => ({ id, title, instructions, type: 'noul', options: [], weight, enabled: true })
@@ -38,6 +39,7 @@ export const seedForms: EvaluationForm[] = [
     scale('customer_agency', 'Customer agency', 'How well did the agent give the customer space to decide without pressure?'),
     yes('sales_next_steps', 'Next steps', 'Were purchase or follow-up steps made clear?')
   ], scoring: { yesThreshold: .7, passScore: .75, criticalQuestionIds: ['terms_clear'] } },
+  genesysCustomerServiceForm,
 ]
 export function toScorecard(form: EvaluationForm): Scorecard { return { id: form.id, version: form.version, title: form.name, threshold: form.scoring.yesThreshold, items: form.questions } }
 export function validateForm(form: EvaluationForm): string[] {

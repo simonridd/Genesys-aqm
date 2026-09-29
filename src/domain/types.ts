@@ -6,10 +6,10 @@ export interface Conversation {
   metadata: Record<string, string>; messages: Message[]
 }
 export type QuestionType = 'noul' | 'choice' | 'score'
-export interface Option { key: string; label: string; description: string; credit?: number }
+export interface Option { key: string; label: string; description: string; credit?: number; sourceValue?: number }
 export interface ScorecardItem {
   id: string; title: string; instructions: string; type: QuestionType
-  options: Option[]; weight: number; enabled: boolean
+  options: Option[]; weight: number; enabled: boolean; section?: string; sourceGroupWeight?: number
 }
 export interface Scorecard { id: string; version: number; title: string; threshold: number; items: ScorecardItem[] }
 export interface EvaluationRequest { conversation: Conversation; scorecard: Scorecard; evaluatedAt: string; version: 'v0' }
@@ -26,7 +26,7 @@ export interface EvaluationResult {
 export interface EvaluationForm {
   id: string; name: string; description: string; version: number; enabled: boolean
   questions: ScorecardItem[]
-  scoring: { yesThreshold: number; passScore: number; criticalQuestionIds: string[] }
+  scoring: { yesThreshold: number; passScore: number; criticalQuestionIds: string[] }; origin?: 'genesys-recreated'; sourceFormId?: string
 }
 export type PolicyField = 'channel' | 'queue' | 'agent' | 'direction' | 'topic' | 'tag'
 export interface PolicyCondition { field: PolicyField; operator: 'equals' | 'includes'; value: string }
