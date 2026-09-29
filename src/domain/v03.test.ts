@@ -78,5 +78,9 @@ describe('policy runs', () => {
     expect(parsePolicyRuns(JSON.stringify([run.run]))).toHaveLength(1)
     expect(filterRecordsBySource(run.records,'real')).toHaveLength(1)
     expect(filterRecordsBySource(run.records,'synthetic')).toHaveLength(0)
+    const mixed = [...run.records, {...run.records[0],id:'synthetic-record',conversationSource:'synthetic' as const}]
+    expect(filterRecordsBySource(mixed,'real')).toHaveLength(1)
+    expect(filterRecordsBySource(mixed,'synthetic')).toHaveLength(1)
+    expect(filterRecordsBySource(mixed,'all')).toHaveLength(2)
   })
 })

@@ -97,7 +97,7 @@ export function App() {
   {page==='settings' && <><SettingsPage apiKey={key} onSave={save} onClear={clear} accessKey={accessKey} onAccessKey={value=>{sessionStorage.setItem('genesys-aqm-access-key',value);setAccessKey(value)}} genesysSource={sourceId==='genesys-cloud'?source:new GenesysCloudConversationSource(genesysProxyBase,()=>accessKey)} onBack={()=>setPage('evaluate')}/><div className="page-content narrow"><div className="panel reset-panel"><h2>Reset demo data and history</h2><p>Restore seeded forms and policies and clear all browser-local evaluation records.</p><button className="danger-button" onClick={resetAll}>Reset demo data / history</button></div></div></>}
   </main></div>
 }
-function defaultRange() { const to = new Date(); const from = new Date(to.getTime()-24*3600_000); return { from: from.toISOString().slice(0,16), to: to.toISOString().slice(0,16) } }
+function defaultRange() { const to = new Date(); const from = new Date(to.getTime()-24*3600_000); const local = (value:Date) => new Date(value.getTime()-value.getTimezoneOffset()*60_000).toISOString().slice(0,16); return { from: local(from), to: local(to) } }
 function ConversationBrowser({source,onSelect,onSettings}:{source:ConversationSource;onSelect:(c:Conversation)=>void;onSettings:()=>void}) {
   const [range,setRange] = useState(defaultRange)
   const [queue,setQueue] = useState(''), [agent,setAgent] = useState(''), [channel,setChannel] = useState(''), [direction,setDirection] = useState('')
