@@ -1,0 +1,8 @@
+{
+  "conversationStartTime": 1790596800000,
+  "participants": [{ "participantPurpose": "external" }, { "participantPurpose": "internal" }],
+  "transcripts": [{ "phrases": [
+    { "phraseIndex": 0, "participantPurpose": "external", "startTimeMs": 0, "text": "I need help with my bill." },
+    { "phraseIndex": 1, "participantPurpose": "internal", "startTimeMs": 5000, "text": "I can check that for you." }
+  ] }]
+}

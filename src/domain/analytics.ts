@@ -1,4 +1,8 @@
 import type { EvaluationRecord } from './types'
+export type AnalyticsSourceFilter = 'real' | 'synthetic' | 'all'
+export function filterRecordsBySource(records: EvaluationRecord[], filter: AnalyticsSourceFilter): EvaluationRecord[] {
+  return records.filter(record => filter === 'all' || (filter === 'real' ? record.conversationSource === 'genesys-cloud' : record.conversationSource !== 'genesys-cloud'))
+}
 export interface Breakdown { key: string; count: number; averageScore: number | null; passRate: number | null; criticalFailures: number }
 export function summarize(records: EvaluationRecord[]) {
   const scored = records.filter(r => r.overallScore !== null)
