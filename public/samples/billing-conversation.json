@@ -1,0 +1,21 @@
+{
+  "conversationId": "conv-billing-001",
+  "startedAt": "2026-09-29T08:00:00Z",
+  "channel": "messaging",
+  "agent": { "id": "agent-001", "name": "Alex Morgan" },
+  "customer": { "id": "customer-001", "name": "Maya Patel" },
+  "metadata": { "queue": "Customer Service", "topic": "Billing", "status": "Closed" },
+  "messages": [
+    { "id": "msg-001", "timestamp": "2026-09-29T08:00:05Z", "speaker": "customer", "text": "Hi, I think I've been charged twice for my September plan. Could you take a look?" },
+    { "id": "msg-002", "timestamp": "2026-09-29T08:00:15Z", "speaker": "agent", "text": "Hi Maya, you're through to Alex. I'm sorry to hear about the duplicate charge. I'll help you check it." },
+    { "id": "msg-003", "timestamp": "2026-09-29T08:00:29Z", "speaker": "agent", "text": "Before we discuss your account, could you confirm the last four digits of the phone number on it?" },
+    { "id": "msg-004", "timestamp": "2026-09-29T08:00:42Z", "speaker": "customer", "text": "Sure, 4821." },
+    { "id": "msg-005", "timestamp": "2026-09-29T08:01:02Z", "speaker": "agent", "text": "Thank you, that's verified. I can see two payments of £29 on 27 September. One was a duplicate and has not yet been refunded." },
+    { "id": "msg-006", "timestamp": "2026-09-29T08:01:15Z", "speaker": "customer", "text": "That's a relief. I was worried I'd have to dispute it with my bank." },
+    { "id": "msg-007", "timestamp": "2026-09-29T08:01:31Z", "speaker": "agent", "text": "I understand the concern. I've submitted a refund for the extra £29 payment. It should return to the same card within five working days." },
+    { "id": "msg-008", "timestamp": "2026-09-29T08:01:48Z", "speaker": "customer", "text": "Great, will I receive a confirmation?" },
+    { "id": "msg-009", "timestamp": "2026-09-29T08:02:01Z", "speaker": "agent", "text": "Yes. A confirmation email will be sent today. If the refund hasn't appeared after five working days, reply to that email and quote reference REF-2048. Is there anything else I can help with?" },
+    { "id": "msg-010", "timestamp": "2026-09-29T08:02:17Z", "speaker": "customer", "text": "No, that's everything. Thanks for sorting it out." },
+    { "id": "msg-011", "timestamp": "2026-09-29T08:02:25Z", "speaker": "agent", "text": "You're welcome, Maya. Thanks for getting in touch, and have a good day." }
+  ]
+}
