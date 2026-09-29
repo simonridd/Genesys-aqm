@@ -43,10 +43,11 @@ export async function handleRequest(request: Request, upstreamFetch: UpstreamFet
 
   try {
     const upstream = await upstreamFetch(TYPESAFE_URL, {
-      method: 'POST', redirect: 'error',
+      method: 'POST', redirect: 'manual',
       headers: { Authorization: authorization, 'Content-Type': 'application/json' },
       body: bytes,
     })
+    if (upstream.status >= 300 && upstream.status < 400) return json(502, 'TypeSafe redirected the request unexpectedly.', cors)
     const resultHeaders = new Headers(cors)
     resultHeaders.set('Content-Type', upstream.headers.get('Content-Type') ?? 'application/json')
     return new Response(upstream.body, { status: upstream.status, headers: resultHeaders })
@@ -55,4 +56,6 @@ export async function handleRequest(request: Request, upstreamFetch: UpstreamFet
   }
 }
 
-export default { fetch: handleRequest }
+// Cloudflare passes (request, env, context) to this entrypoint. Keep the
+// injected fetch argument above for tests without treating env as a function.
+export default { fetch(request: Request, _env?: unknown, _context?: unknown) { return handleRequest(request) } }

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { handleRequest } from './index'
+import worker, { handleRequest } from './index'
 
 const endpoint = 'https://genesys-aqm-jev-proxy.example.workers.dev/v1/systemone'
 const origin = 'https://simonridd.github.io'
@@ -25,13 +25,26 @@ describe('Jev proxy', () => {
     const response = await handleRequest(request('POST', wire), upstream)
     expect(upstream).toHaveBeenCalledOnce()
     expect(upstream.mock.calls[0]?.[0]).toBe('https://api.typesafe.ai/v1/systemone')
-    expect(upstream.mock.calls[0]?.[1]).toMatchObject({ method: 'POST', headers: { Authorization: 'Bearer test-only-key', 'Content-Type': 'application/json' } })
+    expect(upstream.mock.calls[0]?.[1]).toMatchObject({ method: 'POST', redirect: 'manual', headers: { Authorization: 'Bearer test-only-key', 'Content-Type': 'application/json' } })
     expect(response.headers.get('Access-Control-Allow-Origin')).toBe(origin)
     expect(response.status).toBe(200)
+  })
+  it('does not follow an upstream redirect with the key', async () => {
+    const response = await handleRequest(request('POST', wire), async () => new Response(null, { status: 302, headers: { Location: 'https://elsewhere.example' } }))
+    expect(response.status).toBe(502)
   })
   it('blocks malformed and oversized input', async () => {
     expect((await handleRequest(request('POST', 'not json'))).status).toBe(400)
     expect((await handleRequest(request('POST', wire, { 'Content-Length': '1500001' }))).status).toBe(413)
+  })
+  it('uses the global fetch when Cloudflare supplies env and context', async () => {
+    const upstream = vi.fn(async () => new Response('{"error":"unauthorized"}', { status: 401 }))
+    vi.stubGlobal('fetch', upstream)
+    try {
+      const response = await worker.fetch(request('POST', wire), {}, {})
+      expect(response.status).toBe(401)
+      expect(upstream).toHaveBeenCalledOnce()
+    } finally { vi.unstubAllGlobals() }
   })
   it('passes through a TypeSafe 401 without disclosing the key', async () => {
     const response = await handleRequest(request('POST', wire), async () => new Response('{"error":"unauthorized"}', { status: 401 }))
