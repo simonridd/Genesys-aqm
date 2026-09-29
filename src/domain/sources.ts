@@ -54,6 +54,19 @@ export class GenesysCloudConversationSource implements ConversationSource {
       return { state: 'connected' as const, detail: `Authenticated as ${user.name ?? 'Genesys user'}${user.organization?.name ? ` · ${user.organization.name}` : ''}`, region: session.region, clientId: session.clientId }
     } catch (e) { return { state: 'error' as const, detail: e instanceof Error ? e.message : 'Connection error' } }
   }
+  /** Resolve queue names only when a monitoring policy uses queue-name eligibility. */
+  async withQueueNames(conversations: Conversation[]): Promise<Conversation[]> {
+    const ids = [...new Set(conversations.map(c => c.metadata.queueId).filter((id): id is string => !!id && /^[a-f0-9-]{20,64}$/i.test(id)))]
+    const names = new Map<string,string>()
+    for (let offset = 0; offset < ids.length; offset += 4) {
+      await Promise.all(ids.slice(offset, offset + 4).map(async id => {
+        const queue = await this.request(`/api/v2/routing/queues/${encodeURIComponent(id)}`) as { name?: string }
+        if (!queue.name) throw new Error(`Genesys did not return a name for queue ${id}.`)
+        names.set(id, queue.name)
+      }))
+    }
+    return conversations.map(c => ({ ...c, metadata: { ...c.metadata, queue: names.get(c.metadata.queueId) ?? c.metadata.queue } }))
+  }
   async list(query: ConversationQuery): Promise<ConversationPage> {
     const from = Date.parse(query.from), to = Date.parse(query.to)
     if (!Number.isFinite(from) || !Number.isFinite(to) || to <= from || to > Date.now() + 60_000 || to - from > 7 * 86400_000) throw new Error('Select a past range of at most seven days.')

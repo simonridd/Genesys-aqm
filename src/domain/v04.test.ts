@@ -2,6 +2,9 @@ import { describe, expect, it, vi } from 'vitest'
 import { sampleLibrary } from './conversations'
 import { seedForms } from './forms'
 import { seedPolicies } from './policies'
+import { GenesysCloudConversationSource } from './sources'
+import detail from '../fixtures/genesys-detail.json'
+import { normalizeGenesys } from './genesys'
 import { coverageRate, filterRunsBySource, summarizeCoverage } from './analytics'
 import { deterministicSeed, executePolicyRun, planPolicyRun, resolveMonitoringPeriod, selectSample } from './policyRuns'
 import type { EvaluationRecord, EvaluationResult, InteractionPolicy, MonitoringPeriod, PolicyRun } from './types'
@@ -73,5 +76,16 @@ describe('V0.4 deterministic monitoring',()=>{
     const demo=seedPolicies.find(p=>p.id==='sample_monitoring')!
     const p=plan(demo)
     expect([p.candidateCount,p.eligibleCount,p.sampledCount,p.formIds.length,p.expectedEvaluations]).toEqual([19,19,9,1,9])
+  })
+  it('resolves real queue names before eligibility without loading transcripts',async()=>{
+    const fetchMock=vi.fn(async()=>new Response(JSON.stringify({name:'Customer Service'}),{status:200}))
+    vi.stubGlobal('fetch',fetchMock)
+    try {
+      const source=new GenesysCloudConversationSource(()=>({region:'eu-west-1',clientId:'public-client',accessToken:'access',expiresAt:Date.now()+60_000}))
+      const [named]=await source.withQueueNames([normalizeGenesys(detail)])
+      expect(named.metadata.queue).toBe('Customer Service')
+      expect(named.messages).toEqual([])
+      expect(fetchMock).toHaveBeenCalledTimes(1)
+    } finally {vi.unstubAllGlobals()}
   })
 })

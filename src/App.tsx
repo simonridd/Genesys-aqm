@@ -147,11 +147,12 @@ function PolicyRunner({selectedPolicyId,policies,forms,source,sourceId,history,r
       if(!list.hasMore) break
       if(page===20) throw new Error('More than 500 candidates. Narrow the period or source filters to plan complete coverage.')
     }
-    const preliminary=planPolicyRun(policy,candidates,forms,history,sourceId,period)
+    const scopedCandidates=source instanceof GenesysCloudConversationSource && policy.criteria.anyOf.some(group=>group.some(condition=>condition.field==='queue')) ? await source.withQueueNames(candidates) : candidates
+    const preliminary=planPolicyRun(policy,scopedCandidates,forms,history,sourceId,period)
     if(preliminary.limitExceeded) throw new Error(`The sample exceeds ${MAX_POLICY_CONVERSATIONS} interactions. Narrow the period or reduce the sample.`)
     const selectedIds=new Set(preliminary.selected.map(c=>c.conversation.conversationId))
     const loaded:Conversation[]=[]
-    for(const c of candidates){if(selectedIds.has(c.conversationId)) {try { loaded.push(await source.load(c.conversationId)) } catch(e) { throw new Error(`Could not inspect sampled interaction ${c.conversationId}: ${e instanceof Error?e.message:'Unknown source error'}`) }} else loaded.push(c)}
+    for(const c of scopedCandidates){if(selectedIds.has(c.conversationId)) {try { loaded.push(await source.load(c.conversationId)) } catch(e) { throw new Error(`Could not inspect sampled interaction ${c.conversationId}: ${e instanceof Error?e.message:'Unknown source error'}`) }} else loaded.push(c)}
     const result=previewPolicyRun(policy,loaded,forms,history,sourceId,period)
     if(result.limitExceeded) throw new Error(`The sample exceeds ${MAX_POLICY_CONVERSATIONS} interactions. Narrow the period or reduce the sample.`)
     setPreview(result)
