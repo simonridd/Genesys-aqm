@@ -1,6 +1,6 @@
 import type { Conversation } from './types'
-import billing from '../../public/samples/billing-conversation.json'
-import delivery from '../../public/samples/delivery-conversation.json'
+import billing from '../samples/billing-conversation.json'
+import delivery from '../samples/delivery-conversation.json'
 export interface SampleEntry { conversation: Conversation; title: string; quality: string; summary: string }
 const agents = [{id:'agent-001',name:'Alex Morgan'},{id:'agent-002',name:'Priya Shah'},{id:'agent-003',name:'Jordan Lee'},{id:'agent-004',name:'Sam Rivera'},{id:'agent-005',name:'Casey Brown'},{id:'agent-006',name:'Taylor Quinn'}]
 interface Scenario { id:string; title:string; quality:string; summary:string; queue:string; topic:string; channel:string; agent:number; customer:string; direction?:string; tag?:string; lines:string[] }

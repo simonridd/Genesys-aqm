@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { sampleLibrary } from './conversations'
+import { validateConversation } from './validation'
 import { seedForms } from './forms'
 import { assignedFormIds, matchPolicies, seedPolicies } from './policies'
 import { parseHistory, recordEvaluation, serializeHistory } from './evaluations'
@@ -9,6 +10,10 @@ import type { EvaluationResult, InteractionPolicy } from './types'
 const billing = sampleLibrary[0].conversation
 const matching = matchPolicies(billing, seedPolicies)
 describe('policy routing', () => {
+  it('keeps all 19 samples in the Conversation contract and explicitly synthetic', () => {
+    expect(sampleLibrary).toHaveLength(19)
+    for (const sample of sampleLibrary) { expect(validateConversation(sample.conversation).errors).toEqual([]); expect(sample.conversation.metadata.synthetic).toBe('true') }
+  })
   it('ANDs conditions inside a group and ORs groups', () => {
     const policy: InteractionPolicy = {id:'test',name:'Test',description:'',enabled:true,criteria:{anyOf:[[{field:'queue',operator:'equals',value:'Wrong'},{field:'channel',operator:'equals',value:'messaging'}],[{field:'topic',operator:'equals',value:'Billing'}]]},evaluationFormIds:['general_service']}
     expect(matchPolicies(billing,[policy])).toHaveLength(1)
