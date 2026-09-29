@@ -6,12 +6,14 @@ This is an independent demonstration. It does not connect to Genesys Cloud. The 
 
 ## Run locally
 
+Use Node 22 or 24.
+
 ```sh
 npm ci
-npm run dev
+npm run proxy:dev  # separate terminal; serves http://localhost:8787
 ```
 
-Open the Vite URL, go to **Settings**, and enter a TypeSafe API key. Choose a sample or upload a JSON conversation, then select **Evaluate conversation**. Run `npm test` and `npm run build` to verify logic and production output.
+Set `VITE_JEV_PROXY_URL=http://localhost:8787/v1/systemone` in an ignored `.env.local` file, then run `npm run dev`. Open the Vite URL, go to **Settings**, and enter a TypeSafe API key. Choose a sample or upload a JSON conversation, then select **Evaluate conversation**. Run `npm test` and `npm run build` to verify logic and production output.
 
 ## Conversation JSON
 
@@ -19,14 +21,20 @@ Upload one JSON object with `conversationId`, `startedAt` (date/time), `channel`
 
 ## Evaluation architecture
 
-`src/domain` defines provider-neutral conversation, scorecard, request, and result types plus validation. `src/provider/jev.ts` alone maps enabled scorecard questions to Jev's `noul`, `choice`, and `score` HTTP contract and normalizes its typed answers. The UI calls an `EvaluationProvider` interface, so a later server-side proxy can replace the browser transport without changing the scorecard or results views. All enabled questions go in one request to `POST https://api.typesafe.ai/v1/systemone` with model `jev-latest`.
+`src/domain` defines provider-neutral conversation, scorecard, request, and result types plus validation. `src/provider/jev.ts` maps enabled scorecard questions to Jev's `noul`, `choice`, and `score` HTTP contract and normalizes its typed answers. The UI calls an `EvaluationProvider` interface. `proxy/src/index.ts` is a small Cloudflare Worker that accepts requests from the Pages origin, forwards only bounded Jev requests to the fixed TypeSafe endpoint, and returns the response with browser CORS headers. All enabled questions go in one Jev request.
 
 Noul is a calibrated yes probability; the scorecard's configurable threshold (default 0.65) converts it to a displayed Yes/No and binary credit. Choice uses option keys and descriptions; options with no credit are excluded from aggregation. Score sends ordered descriptive levels and uses Jev's returned level probabilities against the scorecard's credit values. The app computes a weighted mean over scorable questions with positive weights. No rationale text is requested or fabricated. Raw provider data is available in a developer disclosure.
 
-## Credentials and static hosting
+## Credentials and proxy
 
-The key is entered by the user, held in browser `sessionStorage`, masked after saving, and cleared on request or at session end. It is never committed or logged by the app. This is **prototype credential handling**: browser scripts and developer tools can access the key. Use a restricted demo key. Browser CORS policy may prevent calls to TypeSafe; the app reports that failure. V1 should put the key and Jev transport behind a small server-side proxy.
+The key is entered by the user, held in browser `sessionStorage`, masked after saving, and cleared on request or at session end. The browser sends it to the AQM proxy, which forwards it to TypeSafe without storing or logging it. The proxy has a fixed upstream URL and an origin allowlist, but an origin allowlist is **not authentication**. Browser scripts, developer tools, and the proxy operator can access the key. Use a restricted demo key and synthetic transcripts. No API key belongs in source, `.env.local`, Wrangler configuration, or the Pages build.
 
-The Vite base path is `/Genesys-aqm/`. Publishing is done locally with `npm run deploy:pages`: this runs the production build and pushes `dist` to a dedicated `gh-pages` branch. In repository **Settings → Pages**, choose **Deploy from a branch**, branch `gh-pages`, folder `/ (root)`. This does not need a GitHub Actions workflow. A feature branch push alone does not deploy the site. Verify the live URL after publishing.
+The TypeSafe API does not permit this Pages app's direct browser call under its current CORS policy; the proxy is required for live evaluation. The Worker stores no TypeSafe secret. If a later version needs a shared server key, it will also need authentication and rate limits so a public site cannot spend against that key.
 
-API integration follows the current [TypeSafe HTTP reference](https://docs.typesafe.ai/api), [Noul](https://docs.typesafe.ai/primitives/noul), [Choice](https://docs.typesafe.ai/primitives/choice), and [Score](https://docs.typesafe.ai/primitives/score) documentation.
+## Deploy without GitHub Actions
+
+The frontend remains on GitHub Pages with Vite base path `/Genesys-aqm/`. Pages should use **Deploy from a branch**, `gh-pages`, `/ (root)`. `npm run deploy:pages` builds locally and pushes `dist` to that branch.
+
+Deploy the proxy from a Cloudflare account with `npx wrangler login` and `npm run proxy:deploy`. Its `workers.dev` URL is public. Set `VITE_JEV_PROXY_URL` to the resulting HTTPS URL plus `/v1/systemone` in `.env.local` before running `npm run deploy:pages`. This URL is not a secret; it is compiled into the frontend. Verify the public Pages site and a live Jev request with a user-supplied demo key after deployment. GitHub Pages alone cannot run the proxy.
+
+API integration follows the [TypeSafe HTTP reference](https://docs.typesafe.ai/api). The Worker follows Cloudflare's [fetch handler](https://developers.cloudflare.com/workers/runtime-apis/handlers/fetch/) and [CORS proxy](https://developers.cloudflare.com/workers/examples/cors-header-proxy/) guidance.

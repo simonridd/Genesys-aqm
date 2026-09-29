@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "deploy:pages": "npm run build && gh-pages -d dist -b gh-pages"
+    "deploy:pages": "npm run build && gh-pages -d dist -b gh-pages",
+    "proxy:dev": "wrangler dev --config proxy/wrangler.jsonc",
+    "proxy:deploy": "wrangler deploy --config proxy/wrangler.jsonc"
   },
   "dependencies": {
     "react": "^19.1.1",
@@ -21,6 +23,7 @@
     "gh-pages": "^6.3.0",
     "typescript": "~5.9.2",
     "vite": "^8.3.1",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.2",
+    "wrangler": "^4.0.0"
   }
 }

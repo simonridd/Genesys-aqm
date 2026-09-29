@@ -53,14 +53,16 @@ export function fromJevResponse(request: EvaluationRequest, payload: unknown): E
   const overallScore = countedWeight > 0 ? questions.reduce((sum, q) => sum + (q.weightedContribution ?? 0), 0) / countedWeight : null
   return { conversationId: request.conversation.conversationId, scorecardId: request.scorecard.id, scorecardVersion: request.scorecard.version, evaluatedAt: request.evaluatedAt, provider: 'typesafe', model: response.model, questions, overallScore, countedWeight, rawResponse: payload }
 }
-export class JevBrowserProvider implements EvaluationProvider {
+export class JevProxyProvider implements EvaluationProvider {
+  constructor(private readonly endpoint: string) {}
   async evaluate(request: EvaluationRequest, apiKey: string): Promise<EvaluationResult> {
     if (!apiKey.trim()) throw new Error('Add a TypeSafe Jev API key in Settings first.')
+    if (!this.endpoint) throw new Error('The Jev proxy is not configured for this release. Evaluation is unavailable until the proxy is deployed.')
     let response: Response
     try {
-      response = await fetch('https://api.typesafe.ai/v1/systemone', { method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' }, body: JSON.stringify(toJevRequest(request)) })
+      response = await fetch(this.endpoint, { method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' }, body: JSON.stringify(toJevRequest(request)) })
     } catch {
-      throw new Error('The browser could not reach TypeSafe. This may be a CORS or network restriction. A small server-side proxy is needed if the API does not permit browser requests.')
+      throw new Error('The browser could not reach the Jev proxy. Check the proxy deployment and try again.')
     }
     if (!response.ok) {
       if (response.status === 401) throw new Error('TypeSafe rejected the API key. Check the key in Settings.')
