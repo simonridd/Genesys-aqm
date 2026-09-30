@@ -1,0 +1,19 @@
+import { breakdown, questionBreakdown, summarize, summarizeCoverage } from '../domain/analytics'
+import type { EvaluationRecord, PolicyRun } from '../domain/types'
+import type { CollectionName, Store } from './store'
+
+async function collect<T>(store:Store,collection:CollectionName,max:number):Promise<T[]>{
+  const items:T[]=[];let cursor:string|undefined
+  do {const page=await store.query<T>(collection,Math.min(100,max-items.length),cursor);items.push(...page.items);cursor=page.nextCursor;if(cursor&&items.length>=max)throw new Error(`Analytics limit of ${max} ${collection} reached. Indexed filtering or pre-aggregation is required before totals can be reported for this dataset.`)} while(cursor)
+  return items
+}
+export async function operationalAnalytics(store:Store,query:URLSearchParams){
+  const [allRecords,allRuns]=await Promise.all([collect<EvaluationRecord>(store,'evaluationRecords',2000),collect<PolicyRun>(store,'policyRuns',500)])
+  const records=allRecords.filter(item=>item.purpose!=='FORM_TEST'&&item.source==='jev'&&(!query.get('from')||item.evaluatedAt>=query.get('from')!)&&(!query.get('to')||item.evaluatedAt<=query.get('to')!)&&(!query.get('source')||item.conversationSource===query.get('source'))&&(!query.get('policy')||item.policyMatches.some(match=>match.policyId===query.get('policy')))&&(!query.get('form')||`${item.form.id}@${item.form.version}`===query.get('form'))&&(!query.get('agent')||item.agent.name===query.get('agent'))&&(!query.get('queue')||item.queue===query.get('queue'))&&(!query.get('channel')||item.channel===query.get('channel'))&&(!query.get('mode')||(item.executionMode??'manual')===query.get('mode')))
+  const runs=allRuns.filter(item=>(!query.get('from')||item.startedAt>=query.get('from')!)&&(!query.get('to')||item.startedAt<=query.get('to')!)&&(!query.get('source')||item.source===query.get('source'))&&(!query.get('policy')||item.policyId===query.get('policy')))
+  const byForm=breakdown(records,item=>`${item.form.id}@${item.form.version} · ${item.form.name} v${item.form.version}`)
+  const scoreDistribution=[0,1,2,3,4].map(index=>({band:`${index*20}–${index===4?100:(index+1)*20}%`,count:records.filter(item=>item.overallScore!==null&&Math.min(4,Math.floor(item.overallScore*5))===index).length}))
+  const queueObservations=[...new Set(runs.flatMap(run=>(run.queueCoverage??[]).map(item=>item.queue)))].map(queue=>{const items=runs.flatMap(run=>run.queueCoverage??[]).filter(item=>item.queue===queue);return {key:queue,eligible:items.reduce((total,item)=>total+item.eligible,0),sampled:items.reduce((total,item)=>total+item.sampled,0),evaluated:items.reduce((total,item)=>total+item.evaluated,0)}})
+  const agentObservations=[...new Set(runs.flatMap(run=>(run.agentCoverage??[]).map(item=>item.agentId)))].map(agentId=>{const items=runs.flatMap(run=>run.agentCoverage??[]).filter(item=>item.agentId===agentId);return {key:items[0].agentName,agentId,eligible:items.reduce((total,item)=>total+item.eligible,0),sampled:items.reduce((total,item)=>total+item.sampled,0),evaluated:items.reduce((total,item)=>total+item.evaluated,0)}})
+  return {scope:'complete',recordsScanned:allRecords.length,runsScanned:allRuns.length,metrics:{...summarize(records),reviewRequested:records.filter(item=>item.reviewState==='REVIEW_REQUESTED').length,reviewed:records.filter(item=>item.reviewState==='REVIEWED').length},byAgent:breakdown(records,item=>item.agent.name),byQueue:breakdown(records,item=>item.queue),byForm,byQuestion:questionBreakdown(records),byDay:breakdown(records,item=>item.evaluatedAt.slice(0,10)).sort((a,b)=>a.key.localeCompare(b.key)),scoreDistribution,coverage:summarizeCoverage(runs),coverageByQueue:queueObservations,coverageByAgent:agentObservations,queueCoverageRunCount:runs.filter(run=>!!run.queueCoverage).length}
+}

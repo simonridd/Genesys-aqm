@@ -8,3 +8,52 @@
 /* Keep the expanded navigation inside its own scroll area on narrow screens. */
 @media(max-width:650px){.sidebar nav{width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}.sidebar .nav-item{flex:none;width:auto;white-space:nowrap}.main-content{width:100%;overflow-x:clip}}
 .automation-run summary{display:block;overflow-wrap:anywhere}.automation-run>p{font-size:12px;overflow-wrap:anywhere}
+
+/* Operational collection views */
+.view-toggle{display:inline-flex;border:1px solid #d6e3df;border-radius:10px;overflow:hidden;background:#fff}
+.view-toggle button{border:0;background:transparent;padding:9px 15px;color:#415a56;cursor:pointer}
+.view-toggle button.active{background:#123d36;color:white}
+.operational-table-wrap{background:#fff;border:1px solid #dfe9e5;border-radius:14px;overflow:hidden;margin:16px 0}
+.table-toolbar{display:flex;align-items:end;justify-content:space-between;gap:16px;padding:14px 18px;border-bottom:1px solid #e8efec}
+.table-toolbar label{display:grid;gap:4px;font-size:12px;font-weight:700;color:#52625e}
+.table-toolbar input{min-width:230px;padding:9px 11px;border:1px solid #cbdcd5;border-radius:8px}
+.table-toolbar span{font-size:12px;color:#667774}
+.table-scroll{overflow-x:auto;max-width:100%}
+.operational-table{width:100%;border-collapse:collapse;min-width:860px;font-size:13px}
+.operational-table th{text-align:left;background:#f6faf8;color:#39544e;border-bottom:1px solid #dfe9e5;white-space:nowrap}
+.operational-table th button{display:block;width:100%;padding:13px 14px;text-align:left;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+.operational-table td{padding:13px 14px;border-bottom:1px solid #edf2ef;vertical-align:top;color:#253d38}
+.operational-table tr.selectable{cursor:pointer}
+.operational-table tr.selectable:hover{background:#f0f8f4}
+.table-empty{padding:25px;color:#5b706a}
+.operational-table-wrap .pager{padding:12px 16px;border-top:1px solid #e8efec}
+.form-detail{display:grid;gap:18px;margin-top:22px}
+.form-test{padding:24px}
+.test-candidates{max-height:210px;overflow:auto;display:grid;gap:6px;padding:12px;border:1px solid #dce8e1;border-radius:9px}
+.test-candidates label{display:flex;gap:8px;align-items:center}
+.test-history{display:flex;gap:8px;overflow-x:auto;padding:6px 0}
+.test-history button{min-width:190px;padding:10px;border:1px solid #d5e4dc;border-radius:8px;background:white;text-align:left;cursor:pointer}
+.test-history button.active{border-color:#087a69;background:#f0f8f4}
+.test-results{margin-top:20px;border-top:1px solid #dce8e1;padding-top:16px}
+.test-results details,.detail-question{padding:10px 0;border-bottom:1px solid #e2ebe5}
+.evaluation-detail{margin-top:20px;padding:24px}
+.evaluation-detail .metrics-grid>div{display:grid;gap:7px;padding:15px;border:1px solid #dfe9e5;border-radius:10px}
+.detail-question{display:grid;gap:5px}
+.detail-question span{color:#526762}
+@media(max-width:700px){.table-toolbar{align-items:stretch;flex-direction:column}.table-toolbar input{min-width:0;width:100%}.heading-actions{flex-wrap:wrap}.operational-table{min-width:760px}}
+.health-panel{padding:20px;margin:20px 0;background:#f8fbf9}
+.health-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.health-grid>div{padding:12px;border:1px solid #dce8e1;border-radius:8px;background:white;min-width:0}
+.health-grid small,.health-grid strong{display:block}
+.health-grid small{color:#688077;font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+.health-grid strong{font-size:12px;margin-top:5px;overflow-wrap:anywhere}
+.run-detail{padding:20px;overflow-wrap:anywhere}
+@media(max-width:900px){.health-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.sidebar nav>div{display:contents}.sidebar nav{white-space:nowrap}.health-grid{grid-template-columns:1fr 1fr}.analytics-tabs{overflow-x:auto;white-space:nowrap}.analytics-tabs button{flex:none}}
+.form-detail>.page-content.narrow{width:100%;max-width:none;padding:0}
+.analytics-scope-switch{display:flex;gap:6px;margin:18px 42px 0}
+.analytics-scope-switch button{border:1px solid #ccded7;background:white;border-radius:8px;padding:8px 14px;font-size:12px;color:#31594e;font-weight:700}
+.analytics-scope-switch button.active{background:#123d36;color:white}
+@media(max-width:650px){.analytics-scope-switch{margin:14px 15px 0}}
+.coverage-drill{display:block;width:100%;text-align:left;padding:10px;border:0;border-bottom:1px solid #e0eae4;background:white;color:#315a51;font-size:12px}
+.coverage-drill:hover{background:#f4faf6}

@@ -3,6 +3,7 @@ import { matchPolicies } from '../domain/policies'
 import { planPolicyRun, MAX_POLICY_CONVERSATIONS } from '../domain/policyRuns'
 import { toScorecard } from '../domain/forms'
 import { recordEvaluation } from '../domain/evaluations'
+import { formStatus } from '../domain/formLifecycle'
 import type { Conversation, EvaluationForm, InteractionPolicy, MonitoringPeriod, PolicyRun, PolicyRunFailure } from '../domain/types'
 import type { GenesysReader, JevEvaluator } from './providers'
 import type { Store } from './store'
@@ -34,6 +35,7 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   }
   const scoped=policy.criteria.anyOf.some(g=>g.some(c=>c.field==='queue'))?await deps.genesys.withQueueNames(candidates):candidates
   const forms=await deps.store.forms()
+  for(const id of policy.evaluationFormIds){const form=forms.find(value=>value.id===id);if(!form||formStatus(form)!=='PUBLISHED')throw new Error(`Policy form ${id} is not a published version.`)}
   const preliminary=planPolicyRun(policy,scoped,forms,[],'genesys-cloud',period)
   if(preliminary.limitExceeded)throw new Error(`A run is limited to ${MAX_POLICY_CONVERSATIONS} sampled conversations.`)
   const selected=new Map<string,Conversation>();const retrievalFailures:PolicyRunFailure[]=[]
@@ -43,7 +45,7 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   }
   const ready=scoped.map(c=>selected.get(c.conversationId)??c)
   // Only records from this policy-version/period context suppress new work.
-  const prior=(await deps.store.evaluations()).filter(r=>r.id===evaluationId(executionClaimId(policy,period),r.conversationId,r.form))
+  const prior=(await deps.store.evaluationsByIds(preliminary.selected.flatMap(item=>policy.evaluationFormIds.map(id=>forms.find(form=>form.id===id)).filter((form):form is EvaluationForm=>!!form).map(form=>evaluationId(executionClaimId(policy,period),item.conversation.conversationId,form))))).filter(r=>r.purpose!=='FORM_TEST')
   const plan=planPolicyRun(policy,ready,forms,prior,'genesys-cloud',period)
   return {plan,forms,retrievalFailures}
 }
@@ -56,7 +58,7 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
     const {plan,forms,retrievalFailures}=prepared??await planServerRun(deps,policy,period)
     const tasks=plan.selected.flatMap(item=>item.pendingFormIds.map(formId=>({conversation:item.conversation,form:forms.find(f=>f.id===formId)!})))
     const unavailableFailures=plan.selected.filter(item=>!item.transcriptAvailable&&!retrievalFailures.some(f=>f.conversationId===item.conversation.conversationId)).map(item=>({conversationId:item.conversation.conversationId,reason:'transcript_unavailable: No supported transcript content was returned.'}))
-    run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures,...unavailableFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage}
+    run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures,...unavailableFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage,queueCoverage:plan.queueCoverage}
     await deps.store.putRun(run)
     // A reserved slot is never retried automatically. An ambiguous post-Jev failure needs operator reconciliation.
     for(const task of tasks){
@@ -72,6 +74,8 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
       }catch(error){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,reason:`evaluation_uncertain: ${error instanceof Error?error.message:'Unknown Jev or persistence error'}`});run.evaluationsFailed++}
       await deps.store.putRun(run)
     }
+    const coveredIds=new Set([...plan.selected.filter(item=>item.alreadyEvaluatedFormIds.length).map(item=>item.conversation.conversationId),...tasks.filter(task=>run!.failures.every(failure=>failure.conversationId!==task.conversation.conversationId||failure.formId!==task.form.id)).map(task=>task.conversation.conversationId)])
+    run.queueCoverage=run.queueCoverage?.map(item=>({...item,evaluated:plan.selected.filter(selected=>(selected.conversation.metadata.queue??'Unspecified')===item.queue&&coveredIds.has(selected.conversation.conversationId)).length}))
     run.completedAt=deps.now().toISOString()
     run.status=run.failures.length?(run.evaluationsSucceeded?'partial-failure':'failed'):'completed'
     run.coverage={...plan.coverage,evaluationCount:plan.alreadyEvaluatedAssignmentCount+run.evaluationsSucceeded+run.evaluationsFailed,successfulEvaluationCount:plan.alreadyEvaluatedAssignmentCount+run.evaluationsSucceeded,failedEvaluationCount:run.evaluationsFailed,evaluatedConversationCount:new Set([...plan.selected.filter(c=>c.alreadyEvaluatedFormIds.length).map(c=>c.conversation.conversationId),...tasks.filter(t=>run!.failures.every(f=>f.conversationId!==t.conversation.conversationId||f.formId!==t.form.id)).map(t=>t.conversation.conversationId)]).size}

@@ -48,5 +48,6 @@ export function validateForm(form: EvaluationForm): string[] {
   if (!Number.isInteger(form.version) || form.version < 1) errors.push('Form version must be a positive integer.')
   if (form.scoring.passScore < 0 || form.scoring.passScore > 1) errors.push('Pass score must be between 0 and 1.')
   for (const id of form.scoring.criticalQuestionIds) if (!form.questions.some(q => q.id === id)) errors.push(`Critical question ${id} does not exist.`)
+  if (form.questions.some(question=>question.condition)) errors.push('Conditional questions are specified but cannot be published or evaluated until conditional execution is implemented.')
   return errors
 }

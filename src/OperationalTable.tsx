@@ -1,0 +1,19 @@
+import { useMemo, useState } from 'react'
+import type { ReactNode } from 'react'
+
+export interface Column<T> { key:string; label:string; value:(row:T)=>string|number; render?:(row:T)=>ReactNode; width?:string }
+export function ViewToggle({storageKey,view,onChange}:{storageKey:string;view:'table'|'cards';onChange:(view:'table'|'cards')=>void}){
+  return <div className="view-toggle" role="group" aria-label="View"><button className={view==='table'?'active':''} onClick={()=>{localStorage.setItem(storageKey,'table');onChange('table')}}>Table</button><button className={view==='cards'?'active':''} onClick={()=>{localStorage.setItem(storageKey,'cards');onChange('cards')}}>Cards</button></div>
+}
+export function useView(key:string):['table'|'cards',(value:'table'|'cards')=>void]{return useState<'table'|'cards'>(()=>localStorage.getItem(key)==='cards'?'cards':'table')}
+export function OperationalTable<T>({rows,columns,keyOf,onSelect,empty='No records match these filters.',loading=false,pageSize=20,stateKey}:{rows:T[];columns:Column<T>[];keyOf:(row:T)=>string;onSelect?:(row:T)=>void;empty?:string;loading?:boolean;pageSize?:number;stateKey?:string}){
+  const [sort,setSort]=useState(columns[0]?.key??''),[descending,setDescending]=useState(true),[search,setSearch]=useState(()=>stateKey?new URLSearchParams(location.search).get(`${stateKey}.q`)??'':''),[page,setPage]=useState(1)
+  const visible=useMemo(()=>{
+    const term=search.toLocaleLowerCase().trim()
+    const filtered=term?rows.filter(row=>columns.some(column=>String(column.value(row)).toLocaleLowerCase().includes(term))):rows
+    const column=columns.find(item=>item.key===sort)
+    return [...filtered].sort((a,b)=>{const av=column?.value(a)??'',bv=column?.value(b)??'';const order=typeof av==='number'&&typeof bv==='number'?av-bv:String(av).localeCompare(String(bv),undefined,{numeric:true});return descending?-order:order})
+  },[rows,columns,sort,descending,search])
+  const totalPages=Math.max(1,Math.ceil(visible.length/pageSize)),current=Math.min(page,totalPages)
+  return <div className="operational-table-wrap"><div className="table-toolbar"><label>Search<input aria-label="Search table" value={search} onChange={event=>{setSearch(event.target.value);setPage(1);if(stateKey){const url=new URL(location.href);event.target.value?url.searchParams.set(`${stateKey}.q`,event.target.value):url.searchParams.delete(`${stateKey}.q`);history.replaceState(null,'',url)}}} placeholder="Search visible fields"/></label><span>{visible.length} results</span></div><div className="table-scroll"><table className="operational-table"><thead><tr>{columns.map(column=><th key={column.key} style={{minWidth:column.width}}><button onClick={()=>{setDescending(sort===column.key?!descending:false);setSort(column.key);setPage(1)}} aria-sort={sort===column.key?(descending?'descending':'ascending'):undefined}>{column.label} {sort===column.key?(descending?'↓':'↑'):''}</button></th>)}</tr></thead><tbody>{visible.slice((current-1)*pageSize,current*pageSize).map(row=><tr key={keyOf(row)} onClick={()=>onSelect?.(row)} className={onSelect?'selectable':''}>{columns.map(column=><td key={column.key}>{column.render?.(row)??column.value(row)}</td>)}</tr>)}</tbody></table></div>{loading?<p role="status">Loading…</p>:!visible.length?<p className="table-empty">{empty}</p>:null}{totalPages>1&&<div className="pager"><button className="outline-button" disabled={current<=1} onClick={()=>setPage(current-1)}>← Previous</button><span>Page {current} of {totalPages}</span><button className="outline-button" disabled={current>=totalPages} onClick={()=>setPage(current+1)}>Next →</button></div>}</div>
+}
