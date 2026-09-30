@@ -47,7 +47,7 @@ export interface CoverageCounts {
 export interface PolicyMatch { policyId: string; policyName: string; matchedGroup: PolicyCondition[] }
 export interface EvaluationRecord {
   id: string; source: 'jev' | 'synthetic-demo'; conversationId: string
-  conversationSource?: 'synthetic' | 'genesys-cloud' | 'uploaded'; policyRunId?: string
+  conversationSource?: 'synthetic' | 'genesys-cloud' | 'uploaded'; policyRunId?: string; executionMode?: 'manual' | 'scheduled'
   agent: { id: string; name: string }; queue: string; channel: string; topic: string
   policyMatches: PolicyMatch[]; form: EvaluationForm; evaluatedAt: string
   overallScore: number | null; passed: boolean | null; criticalFailures: string[]
@@ -66,6 +66,7 @@ export interface ConversationSource {
 export interface PolicyRunFailure { conversationId: string; formId?: string; reason: string }
 export interface PolicyRun {
   id: string; policyId: string; policySnapshot: InteractionPolicy; source: ConversationSourceId
+  executionMode?: 'manual' | 'scheduled'; scheduleId?: string
   startedAt: string; completedAt?: string; candidateConversationCount: number; matchedConversationCount: number
   formsAssigned: string[]; evaluationsRequested: number; evaluationsSucceeded: number; evaluationsFailed: number
   status: 'running' | 'completed' | 'partial-failure' | 'failed'; failures: PolicyRunFailure[]

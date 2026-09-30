@@ -47,7 +47,7 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   const plan=planPolicyRun(policy,ready,forms,prior,'genesys-cloud',period)
   return {plan,forms,retrievalFailures}
 }
-export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,period:MonitoringPeriod,runId:string,provenance:'manual'|'scheduled',prepared?:Awaited<ReturnType<typeof planServerRun>>) {
+export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,period:MonitoringPeriod,runId:string,provenance:'manual'|'scheduled',prepared?:Awaited<ReturnType<typeof planServerRun>>,scheduleId?:string) {
   const now=deps.now().toISOString(),owner=crypto.randomUUID()
   const claimId=executionClaimId(policy,period)
   if(!await deps.store.claim(claimId,owner,now,new Date(Date.parse(now)+60*60_000).toISOString()))throw new Error('lease_conflict: run is active or complete.')
@@ -55,7 +55,8 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
   try {
     const {plan,forms,retrievalFailures}=prepared??await planServerRun(deps,policy,period)
     const tasks=plan.selected.flatMap(item=>item.pendingFormIds.map(formId=>({conversation:item.conversation,form:forms.find(f=>f.id===formId)!})))
-    run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage}
+    const unavailableFailures=plan.selected.filter(item=>!item.transcriptAvailable&&!retrievalFailures.some(f=>f.conversationId===item.conversation.conversationId)).map(item=>({conversationId:item.conversation.conversationId,reason:'transcript_unavailable: No supported transcript content was returned.'}))
+    run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures,...unavailableFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage}
     await deps.store.putRun(run)
     // A reserved slot is never retried automatically. An ambiguous post-Jev failure needs operator reconciliation.
     for(const task of tasks){
@@ -65,7 +66,7 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
       if(slot || !await deps.store.reserveEvaluation(id,deps.now().toISOString())){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,reason:'evaluation_uncertain: prior Jev request may have been charged; reconcile before retry.'});run.evaluationsFailed++;continue}
       try{
         const result=await deps.jev.evaluate({conversation:task.conversation,scorecard:toScorecard(task.form),evaluatedAt:deps.now().toISOString(),version:'v0'})
-        const record=recordEvaluation(task.conversation,task.form,result,matchPolicies(task.conversation,[policy]),id,{conversationSource:'genesys-cloud',policyRunId:runId})
+        const record=recordEvaluation(task.conversation,task.form,result,matchPolicies(task.conversation,[policy]),id,{conversationSource:'genesys-cloud',policyRunId:runId,executionMode:provenance})
         await deps.store.completeEvaluation(id,record)
         run.evaluationsSucceeded++
       }catch(error){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,reason:`evaluation_uncertain: ${error instanceof Error?error.message:'Unknown Jev or persistence error'}`});run.evaluationsFailed++}
@@ -77,11 +78,11 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
     await deps.store.putRun(run)
     if(run.status==='completed')await deps.store.completeClaim(claimId,owner)
     else await deps.store.releaseClaim(claimId,owner)
-    return {...run,provenance}
+    return run
   }catch(error){
     const detail=error instanceof Error?error.message:'Unknown error'
     const kind=/authentication|token/i.test(detail)?'genesys_auth':/lease_conflict/i.test(detail)?'lease_conflict':run?'persistence_or_run':'genesys_query_or_plan'
-    if(!run)run={id:runId,policyId:policy.id,policySnapshot:structuredClone(policy),source:'genesys-cloud',startedAt:now,candidateConversationCount:0,matchedConversationCount:0,formsAssigned:[...policy.evaluationFormIds],evaluationsRequested:0,evaluationsSucceeded:0,evaluationsFailed:0,status:'failed',failures:[],period}
+    if(!run)run={id:runId,policyId:policy.id,policySnapshot:structuredClone(policy),source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:0,matchedConversationCount:0,formsAssigned:[...policy.evaluationFormIds],evaluationsRequested:0,evaluationsSucceeded:0,evaluationsFailed:0,status:'failed',failures:[],period}
     run.status=run.evaluationsSucceeded?'partial-failure':'failed';run.completedAt=deps.now().toISOString();run.failures.push({conversationId:'',reason:`${kind}: ${detail}`})
     await deps.store.putRun(run)
     await deps.store.releaseClaim(claimId,owner)
@@ -97,13 +98,15 @@ export async function schedulerTick(deps:RunnerDeps){
     const period=monitoringPeriod(schedule,schedule.nextDueAt!)
     const runId=scheduledRunId(policy,schedule,period)
     try{
-      const run=await executeServerRun(deps,policy,period,runId,'scheduled')
+      const run=await executeServerRun(deps,policy,period,runId,'scheduled',undefined,schedule.id)
       schedule.lastAttemptedAt=now
       if(run.status==='completed')schedule.lastSuccessfulAt=run.completedAt
       schedule.nextDueAt=nextDueAfter(schedule,schedule.nextDueAt!)
       await deps.store.putSchedule(schedule)
       outcomes.push({scheduleId:schedule.id,runId,status:run.status})
     }catch(error){
+      schedule.lastAttemptedAt=now
+      await deps.store.putSchedule(schedule)
       outcomes.push({scheduleId:schedule.id,runId,status:error instanceof Error?error.message:'failed'})
     }
   }

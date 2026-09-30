@@ -14,6 +14,10 @@ No browser receives Firestore credentials, automation credentials, Jev key, or a
 
 Browser-local V0.4 forms, policies, runs, and evaluation records remain in localStorage and are explicitly separate from server history. The Policies page can deliberately publish local forms/policies to the server. It never migrates browser history silently. The local reset and history clear controls do not affect Firestore.
 
+## Current checkpoint
+
+Source branch: `codex/aqm-v0-5-durable-control-plane`; implementation commit `28f8230`. The V0.5 Pages release was explicitly approved and published to `gh-pages` at `dd8894d`; a cache-busted live browser visit displayed the Automation page and its disconnected state. The source implementation passed 84 provider-free Vitest cases, frontend and server builds/typechecks, and focused Playwright journeys at 1440×900, 1920×1080, and 390×844. The deployed Cloud Run revision is `aqm-api-00005-rhf`; health returned 200 and the authenticated Scheduler tick returned 200 with zero schedules. The production npm audit still reports two moderate transitive findings in `uuid` through Firebase Admin's Storage dependency; no high or critical findings were reported. Browser API authorization, real Genesys candidate/transcript retrieval, direct Jev execution, and Firestore result persistence remain unproved live until the signed-in Genesys user ID is verified and an eligible manual plan is confirmed.
+
 ## Remaining setup
 
 1. Confirm the separate Genesys Cloud **Client Credentials** OAuth client has the Analytics, queue lookup, recording, and Speech and Text Analytics permissions needed for the monitored divisions. This is separate from the existing browser PKCE client. The three secret values were added by the user directly in Secret Manager; their contents were never read by the repository tooling. Secret Manager console: `https://console.cloud.google.com/security/secret-manager?project=genesys-aqm-2026`.
