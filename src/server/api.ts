@@ -46,6 +46,27 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
     try{
       const path=url.pathname
       if(request.method==='GET'){
+        if(path==='/api/monitoring-health'){
+          const base:Record<string,unknown>={api:'healthy',genesysAutomation:{status:'unverified'},jev:{status:'unverified'},scheduler:{status:config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:null},firestore:'unavailable',lastRun:null,nextRunAt:null,runCounts:{completed:0,partial:0,failed:0}}
+          try{
+            const [snapshot,schedules]=await Promise.all([deps.store.healthSnapshot(),deps.store.schedules()])
+            const ordered=snapshot.recentRuns,latest=ordered[0]
+            const recent=ordered.slice(0,20),latestScheduled=recent.find(run=>run.executionMode==='scheduled')
+            const nextRun=schedules.filter(schedule=>schedule.enabled&&schedule.nextDueAt).sort((a,b)=>a.nextDueAt!.localeCompare(b.nextDueAt!))[0]
+            base.firestore='available'
+            base.runCounts=snapshot.runCounts
+            base.lastRun=latest?{id:latest.id,policyName:latest.policySnapshot.name,status:latest.status,startedAt:latest.startedAt,completedAt:latest.completedAt,evaluationsSucceeded:latest.evaluationsSucceeded,evaluationsFailed:latest.evaluationsFailed}:null
+            base.nextRunAt=nextRun?.nextDueAt??null
+            const genesysError=latest?.failures.some(failure=>/^genesys_(auth|query_or_plan):/.test(failure.reason))??false
+            base.genesysAutomation={status:!latest?'unverified':genesysError?'error':latest.status==='completed'||latest.status==='partial-failure'?'verified':'unverified'}
+            const jevAttempted=!!latest&&(latest.evaluationsSucceeded+latest.evaluationsFailed>0)
+            base.jev={status:!jevAttempted?'unverified':latest!.evaluationsFailed?'error':'verified'}
+            base.scheduler={status:config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:latestScheduled?.startedAt??null}
+            json(response,200,base);return
+          }catch{
+            json(response,200,base);return
+          }
+        }
         if(path==='/api/analytics'){json(response,200,await operationalAnalytics(deps.store,url.searchParams));return}
         if(path==='/api/form-tests'){const limit=Number(url.searchParams.get('limit')??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Limit must be between 1 and 100.');json(response,200,{items:await deps.store.recentFormTestRuns(limit)});return}
         const collections={'/api/forms':'evaluationForms','/api/policies':'policies','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
@@ -58,7 +79,8 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           if(collection==='evaluationRecords'){
             const matches=(item:import('../domain/types').EvaluationRecord)=>{
               const q=url.searchParams
-              return item.purpose!=='FORM_TEST'&&(!q.get('from')||item.evaluatedAt>=q.get('from')!)&&(!q.get('to')||item.evaluatedAt<=q.get('to')!)&&(!q.get('form')||item.form.id===q.get('form'))&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('agent')||item.agent.name.toLowerCase().includes(q.get('agent')!.toLowerCase()))&&(!q.get('queue')||item.queue.toLowerCase().includes(q.get('queue')!.toLowerCase()))&&(!q.get('source')||item.conversationSource===q.get('source'))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length>0:item.criticalFailures.length===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
+              const formFilter=q.get('form')
+              return item.purpose!=='FORM_TEST'&&(!q.get('from')||item.evaluatedAt>=q.get('from')!)&&(!q.get('to')||item.evaluatedAt<=q.get('to')!)&&(!formFilter||item.form.id===formFilter||`${item.form.id}@${item.form.version}`===formFilter)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('agent')||item.agent.name.toLowerCase().includes(q.get('agent')!.toLowerCase()))&&(!q.get('queue')||item.queue.toLowerCase().includes(q.get('queue')!.toLowerCase()))&&(!q.get('source')||item.conversationSource===q.get('source'))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length>0:item.criticalFailures.length===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
             }
             const items:import('../domain/types').EvaluationRecord[]=[];let nextCursor=cursor,scanned=0,more=true
             while(items.length<rawLimit&&scanned<500&&more){const page=await deps.store.query<import('../domain/types').EvaluationRecord>(collection,Math.min(100,500-scanned),nextCursor);scanned+=page.scanned;let remaining=false;for(const [index,item] of page.items.entries()){nextCursor=item.id;if(matches(item))items.push(item);if(items.length>=rawLimit){remaining=index<page.items.length-1;break}}more=remaining||!!page.nextCursor}
@@ -69,6 +91,8 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         }
         const detail=/^\/api\/evaluations\/([A-Za-z0-9_-]+)$/.exec(path)
         if(detail){const item=await deps.store.evaluation(detail[1]);json(response,item?200:404,item??{error:'Evaluation not found.'});return}
+        const runDetail=/^\/api\/runs\/([A-Za-z0-9_-]+)$/.exec(path)
+        if(runDetail){const item=await deps.store.run(runDetail[1]);json(response,item?200:404,item??{error:'Run not found.'});return}
         const testDetail=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
         if(testDetail){const item=await deps.store.formTestRun(testDetail[1]);json(response,item?200:404,item??{error:'Form test not found.'});return}
         if(path==='/api/schedules'){json(response,200,{items:await deps.store.schedules()});return}

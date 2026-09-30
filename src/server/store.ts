@@ -6,14 +6,16 @@ export interface Claim { id: string; owner: string; leaseUntil: string; status: 
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string }
 export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
+export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface Store {
   forms(): Promise<EvaluationForm[]>; policies(): Promise<InteractionPolicy[]>; schedules(): Promise<Schedule[]>; runs(): Promise<PolicyRun[]>; evaluations(): Promise<EvaluationRecord[]>
-  form(id: string): Promise<EvaluationForm | undefined>; policy(id: string): Promise<InteractionPolicy | undefined>; schedule(id: string): Promise<Schedule | undefined>; evaluation(id:string):Promise<EvaluationRecord|undefined>
+  form(id: string): Promise<EvaluationForm | undefined>; policy(id: string): Promise<InteractionPolicy | undefined>; schedule(id: string): Promise<Schedule | undefined>; run(id:string):Promise<PolicyRun|undefined>; evaluation(id:string):Promise<EvaluationRecord|undefined>
   putForm(value: EvaluationForm): Promise<void>; putPolicy(value: InteractionPolicy): Promise<void>; putSchedule(value: Schedule): Promise<void>
   putRun(value: PolicyRun): Promise<void>; putEvaluation(value: EvaluationRecord): Promise<void>
   claim(id: string, owner: string, now: string, leaseUntil: string): Promise<boolean>; completeClaim(id: string, owner: string): Promise<void>; releaseClaim(id:string,owner:string):Promise<void>
   reserveEvaluation(id: string, now: string): Promise<boolean>; evaluationSlot(id: string): Promise<EvaluationSlot | undefined>; completeEvaluation(id: string, record: EvaluationRecord): Promise<void>
   query<T>(collection:CollectionName, limit:number, cursor?:string):Promise<QueryPage<T>>
+  healthSnapshot():Promise<HealthSnapshot>
   evaluationsByIds(ids:string[]):Promise<EvaluationRecord[]>
   formTestRun(id:string):Promise<FormTestRun|undefined>; createFormTestRun(run:FormTestRun):Promise<boolean>; putFormTestRun(run:FormTestRun):Promise<void>; deleteFormTestRun(id:string):Promise<void>
   recentFormTestRuns(limit:number):Promise<FormTestRun[]>
@@ -24,7 +26,7 @@ export class MemoryStore implements Store {
   private runMap = new Map<string,PolicyRun>(); private evaluationMap = new Map<string,EvaluationRecord>(); private testMap = new Map<string,FormTestRun>(); private claimMap = new Map<string,Claim>(); private slots = new Map<string,EvaluationSlot>()
   async forms() { return copy([...this.formMap.values()]) } async policies() { return copy([...this.policyMap.values()]) } async schedules() { return copy([...this.scheduleMap.values()]) }
   async runs() { return copy([...this.runMap.values()]) } async evaluations() { return copy([...this.evaluationMap.values()]) }
-  async form(id:string) { return copy(this.formMap.get(id)) } async policy(id:string) { return copy(this.policyMap.get(id)) } async schedule(id:string) { return copy(this.scheduleMap.get(id)) } async evaluation(id:string) { return copy(this.evaluationMap.get(id)) }
+  async form(id:string) { return copy(this.formMap.get(id)) } async policy(id:string) { return copy(this.policyMap.get(id)) } async schedule(id:string) { return copy(this.scheduleMap.get(id)) } async run(id:string) { return copy(this.runMap.get(id)) } async evaluation(id:string) { return copy(this.evaluationMap.get(id)) }
   async putForm(v:EvaluationForm) { this.formMap.set(v.id,copy(v)) } async putPolicy(v:InteractionPolicy) { this.policyMap.set(v.id,copy(v)) } async putSchedule(v:Schedule) { this.scheduleMap.set(v.id,copy(v)) }
   async putRun(v:PolicyRun) { this.runMap.set(v.id,copy(v)) } async putEvaluation(v:EvaluationRecord) { this.evaluationMap.set(v.id,copy(v)) }
   async claim(id:string,owner:string,now:string,leaseUntil:string) { const old=this.claimMap.get(id); if (old && (old.status==='completed' || old.leaseUntil>now)) return false; this.claimMap.set(id,{id,owner,claimedAt:now,leaseUntil,status:'running'}); return true }
@@ -39,6 +41,7 @@ export class MemoryStore implements Store {
     const page=rows.slice(0,limit)
     return {items:copy(page.map(([,value])=>value)) as T[],nextCursor:rows.length>limit?page.at(-1)?.[0]:undefined,scanned:page.length}
   }
+  async healthSnapshot():Promise<HealthSnapshot>{const runs=[...this.runMap.values()];return {recentRuns:copy(runs.sort((a,b)=>b.startedAt.localeCompare(a.startedAt)).slice(0,20)),runCounts:{completed:runs.filter(run=>run.status==='completed').length,partial:runs.filter(run=>run.status==='partial-failure').length,failed:runs.filter(run=>run.status==='failed').length}}}
   async evaluationsByIds(ids:string[]) { return copy(ids.map(id=>this.evaluationMap.get(id)).filter((item):item is EvaluationRecord=>!!item)) }
   async formTestRun(id:string){return copy(this.testMap.get(id))}
   async createFormTestRun(run:FormTestRun){if(this.testMap.has(run.id))return false;this.testMap.set(run.id,copy(run));return true}
@@ -74,7 +77,7 @@ export class FirestoreStore implements Store {
   private async put<T>(name:string,id:string,value:T) { await this.collection(name).doc(pathId(id)).set(stored(value)) }
   forms(){return this.all<EvaluationForm>('evaluationForms')} policies(){return this.all<InteractionPolicy>('policies')} schedules(){return this.all<Schedule>('schedules')}
   runs(){return this.all<PolicyRun>('policyRuns')} evaluations(){return this.all<EvaluationRecord>('evaluationRecords')}
-  form(id:string){return this.one<EvaluationForm>('evaluationForms',id)} policy(id:string){return this.one<InteractionPolicy>('policies',id)} schedule(id:string){return this.one<Schedule>('schedules',id)} evaluation(id:string){return this.one<EvaluationRecord>('evaluationRecords',id)}
+  form(id:string){return this.one<EvaluationForm>('evaluationForms',id)} policy(id:string){return this.one<InteractionPolicy>('policies',id)} schedule(id:string){return this.one<Schedule>('schedules',id)} run(id:string){return this.one<PolicyRun>('policyRuns',id)} evaluation(id:string){return this.one<EvaluationRecord>('evaluationRecords',id)}
   putForm(v:EvaluationForm){return this.put('evaluationForms',v.id,v)} putPolicy(v:InteractionPolicy){return this.put('policies',v.id,v)} putSchedule(v:Schedule){return this.put('schedules',v.id,v)}
   putRun(v:PolicyRun){return this.put('policyRuns',v.id,v)} putEvaluation(v:EvaluationRecord){return this.put('evaluationRecords',v.id,v)}
   async claim(id:string,owner:string,now:string,leaseUntil:string) { const ref=this.collection('scheduleExecutionClaims').doc(pathId(id)); return this.db.runTransaction(async tx=>{const doc=await tx.get(ref);const old=doc.data() as Claim|undefined;if(old&&(old.status==='completed'||old.leaseUntil>now))return false;tx.set(ref,{id,owner,claimedAt:now,leaseUntil,status:'running'} satisfies Claim);return true}) }
@@ -90,6 +93,7 @@ export class FirestoreStore implements Store {
     const page=docs.slice(0,limit)
     return {items:page.map(doc=>canonicalValue(doc.data()) as T),nextCursor:docs.length>limit?page.at(-1)?.id:undefined,scanned:page.length}
   }
+  async healthSnapshot():Promise<HealthSnapshot>{const runs=this.collection('policyRuns');const [recent,completed,partial,failed]=await Promise.all([runs.orderBy('startedAt','desc').limit(20).get(),runs.where('status','==','completed').count().get(),runs.where('status','==','partial-failure').count().get(),runs.where('status','==','failed').count().get()]);return {recentRuns:recent.docs.map(doc=>canonicalValue(doc.data()) as PolicyRun),runCounts:{completed:completed.data().count,partial:partial.data().count,failed:failed.data().count}}}
   async evaluationsByIds(ids:string[]) { if(!ids.length)return [];const docs=await this.db.getAll(...ids.map(id=>this.collection('evaluationRecords').doc(pathId(id))));return docs.filter(doc=>doc.exists).map(doc=>canonicalValue(doc.data()) as EvaluationRecord) }
   formTestRun(id:string){return this.one<FormTestRun>('formTestRuns',id)}
   async createFormTestRun(run:FormTestRun){try{await this.collection('formTestRuns').doc(pathId(run.id)).create(stored(run));return true}catch(error){if((error as {code?:number}).code===6)return false;throw error}}
