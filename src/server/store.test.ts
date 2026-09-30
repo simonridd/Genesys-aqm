@@ -7,7 +7,11 @@ import type { EvaluationRecord, PolicyRun } from '../domain/types'
 import type { Schedule } from './schedules'
 function fakeFirestore(){
   const values=new Map<string,unknown>()
-  const ref=(path:string)=>({get:async()=>({exists:values.has(path),data:()=>values.get(path)}),set:async(value:unknown)=>{values.set(path,structuredClone(value))}})
+  const validate=(value:unknown):void=>{
+    if(Array.isArray(value)){expect(value.some(Array.isArray)).toBe(false);value.forEach(validate)}
+    else if(value&&typeof value==='object')Object.values(value).forEach(validate)
+  }
+  const ref=(path:string)=>({get:async()=>({exists:values.has(path),data:()=>values.get(path)}),set:async(value:unknown)=>{validate(value);values.set(path,structuredClone(value))}})
   const db={collection:(name:string)=>({doc:(id:string)=>ref(`${name}/${id}`),get:async()=>({docs:[...values].filter(([key])=>key.startsWith(`${name}/`)).map(([,value])=>({data:()=>structuredClone(value)}))})}),runTransaction:async<T>(fn:(tx:{get:(r:ReturnType<typeof ref>)=>ReturnType<ReturnType<typeof ref>['get']>;set:(r:ReturnType<typeof ref>,v:unknown)=>void;create:(r:ReturnType<typeof ref>,v:unknown)=>void;update:(r:ReturnType<typeof ref>,v:Record<string,unknown>)=>void})=>Promise<T>)=>fn({get:r=>r.get(),set:(r,v)=>{void r.set(v)},create:(r,v)=>{void r.set(v)},update:async(r,v)=>{const d=await r.get();await r.set({...d.data() as object,...v})}})}
   return db as unknown as Firestore
 }
