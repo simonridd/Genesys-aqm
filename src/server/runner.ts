@@ -20,6 +20,8 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   if (!policy.enabled) throw new Error('Policy is disabled.')
   const from=Date.parse(period.periodStart),to=Date.parse(period.periodEnd)
   if (!Number.isFinite(from)||!Number.isFinite(to)||to<=from||to>deps.now().getTime()+60_000||to-from>8*86400_000)throw new Error('Monitoring period must be a past interval of at most eight days.')
+  const forms=await deps.store.forms()
+  for(const id of policy.evaluationFormIds){const form=forms.find(value=>value.id===id);if(form?.origin==='genesys-recreated')throw new Error(`Policy form ${id} is a recreated Genesys form and needs authoritative configuration before use.`);if(!form||formStatus(form)!=='PUBLISHED'||!form.enabled)throw new Error(`Policy form ${id} is not a published version.`)}
   const candidates:Conversation[]=[]
   // A London week across the autumn clock change is 169 hours. Split provider
   // queries at seven-day UTC boundaries while preserving the exact local week.
@@ -34,8 +36,6 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
     }
   }
   const scoped=policy.criteria.anyOf.some(g=>g.some(c=>c.field==='queue'))?await deps.genesys.withQueueNames(candidates):candidates
-  const forms=await deps.store.forms()
-  for(const id of policy.evaluationFormIds){const form=forms.find(value=>value.id===id);if(!form||formStatus(form)!=='PUBLISHED')throw new Error(`Policy form ${id} is not a published version.`)}
   const preliminary=planPolicyRun(policy,scoped,forms,[],'genesys-cloud',period)
   if(preliminary.limitExceeded)throw new Error(`A run is limited to ${MAX_POLICY_CONVERSATIONS} sampled conversations.`)
   const selected=new Map<string,Conversation>();const retrievalFailures:PolicyRunFailure[]=[]

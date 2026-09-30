@@ -39,6 +39,7 @@ export function validatePolicyFormPins(policy: InteractionPolicy, forms: Evaluat
   return policy.evaluationFormIds.flatMap(id => {
     const form = forms.find(item => item.id === id)
     if (!form) return [`Assigned form ${id} does not exist.`]
+    if (form.origin === 'genesys-recreated') return [`Assigned form ${id} is a recreated Genesys form and needs authoritative configuration before use.`]
     if (formStatus(form) !== 'PUBLISHED' || !form.enabled) return [`Assigned form ${id} must be published and enabled.`]
     return []
   })
