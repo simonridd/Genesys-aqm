@@ -1,10 +1,10 @@
-import type { EvaluationForm, EvaluationRecord, InteractionPolicy, PolicyRun } from '../domain/types'
+import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun } from '../domain/types'
 import type { Schedule } from './schedules'
 import type { Firestore } from 'firebase-admin/firestore'
 
 export interface Claim { id: string; owner: string; leaseUntil: string; status: 'running' | 'completed'; claimedAt: string }
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string }
-export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords'
+export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface Store {
   forms(): Promise<EvaluationForm[]>; policies(): Promise<InteractionPolicy[]>; schedules(): Promise<Schedule[]>; runs(): Promise<PolicyRun[]>; evaluations(): Promise<EvaluationRecord[]>
@@ -15,11 +15,13 @@ export interface Store {
   reserveEvaluation(id: string, now: string): Promise<boolean>; evaluationSlot(id: string): Promise<EvaluationSlot | undefined>; completeEvaluation(id: string, record: EvaluationRecord): Promise<void>
   query<T>(collection:CollectionName, limit:number, cursor?:string):Promise<QueryPage<T>>
   evaluationsByIds(ids:string[]):Promise<EvaluationRecord[]>
+  formTestRun(id:string):Promise<FormTestRun|undefined>; createFormTestRun(run:FormTestRun):Promise<boolean>; putFormTestRun(run:FormTestRun):Promise<void>; deleteFormTestRun(id:string):Promise<void>
+  recentFormTestRuns(limit:number):Promise<FormTestRun[]>
 }
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
   private formMap = new Map<string,EvaluationForm>(); private policyMap = new Map<string,InteractionPolicy>(); private scheduleMap = new Map<string,Schedule>()
-  private runMap = new Map<string,PolicyRun>(); private evaluationMap = new Map<string,EvaluationRecord>(); private claimMap = new Map<string,Claim>(); private slots = new Map<string,EvaluationSlot>()
+  private runMap = new Map<string,PolicyRun>(); private evaluationMap = new Map<string,EvaluationRecord>(); private testMap = new Map<string,FormTestRun>(); private claimMap = new Map<string,Claim>(); private slots = new Map<string,EvaluationSlot>()
   async forms() { return copy([...this.formMap.values()]) } async policies() { return copy([...this.policyMap.values()]) } async schedules() { return copy([...this.scheduleMap.values()]) }
   async runs() { return copy([...this.runMap.values()]) } async evaluations() { return copy([...this.evaluationMap.values()]) }
   async form(id:string) { return copy(this.formMap.get(id)) } async policy(id:string) { return copy(this.policyMap.get(id)) } async schedule(id:string) { return copy(this.scheduleMap.get(id)) } async evaluation(id:string) { return copy(this.evaluationMap.get(id)) }
@@ -32,12 +34,17 @@ export class MemoryStore implements Store {
   async evaluationSlot(id:string) { return copy(this.slots.get(id)) }
   async completeEvaluation(id:string,record:EvaluationRecord) { const slot=this.slots.get(id); if (!slot) throw new Error('Evaluation was not reserved.'); await this.putEvaluation(record); slot.status='completed'; slot.recordId=record.id }
   async query<T>(collection:CollectionName,limit:number,cursor?:string):Promise<QueryPage<T>> {
-    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap})[collection]
+    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap})[collection]
     const rows=[...map.entries()].sort(([a],[b])=>a.localeCompare(b)).filter(([id])=>!cursor||id>cursor)
     const page=rows.slice(0,limit)
     return {items:copy(page.map(([,value])=>value)) as T[],nextCursor:rows.length>limit?page.at(-1)?.[0]:undefined,scanned:page.length}
   }
   async evaluationsByIds(ids:string[]) { return copy(ids.map(id=>this.evaluationMap.get(id)).filter((item):item is EvaluationRecord=>!!item)) }
+  async formTestRun(id:string){return copy(this.testMap.get(id))}
+  async createFormTestRun(run:FormTestRun){if(this.testMap.has(run.id))return false;this.testMap.set(run.id,copy(run));return true}
+  async putFormTestRun(run:FormTestRun){this.testMap.set(run.id,copy(run))}
+  async deleteFormTestRun(id:string){this.testMap.delete(id)}
+  async recentFormTestRuns(limit:number){return copy([...this.testMap.values()].sort((a,b)=>b.createdAt.localeCompare(a.createdAt)).slice(0,limit))}
 }
 function pathId(value:string) { if (!/^[A-Za-z0-9_-]{1,180}$/.test(value)) throw new Error('Invalid resource ID.'); return value }
 const nestedArrayKey='__aqmNestedArrayV1'
@@ -84,4 +91,9 @@ export class FirestoreStore implements Store {
     return {items:page.map(doc=>canonicalValue(doc.data()) as T),nextCursor:docs.length>limit?page.at(-1)?.id:undefined,scanned:page.length}
   }
   async evaluationsByIds(ids:string[]) { if(!ids.length)return [];const docs=await this.db.getAll(...ids.map(id=>this.collection('evaluationRecords').doc(pathId(id))));return docs.filter(doc=>doc.exists).map(doc=>canonicalValue(doc.data()) as EvaluationRecord) }
+  formTestRun(id:string){return this.one<FormTestRun>('formTestRuns',id)}
+  async createFormTestRun(run:FormTestRun){try{await this.collection('formTestRuns').doc(pathId(run.id)).create(stored(run));return true}catch(error){if((error as {code?:number}).code===6)return false;throw error}}
+  putFormTestRun(run:FormTestRun){return this.put('formTestRuns',run.id,run)}
+  async deleteFormTestRun(id:string){await this.collection('formTestRuns').doc(pathId(id)).delete()}
+  async recentFormTestRuns(limit:number){const docs=(await this.collection('formTestRuns').orderBy('createdAt','desc').limit(limit).get()).docs;return docs.map(doc=>canonicalValue(doc.data()) as FormTestRun)}
 }

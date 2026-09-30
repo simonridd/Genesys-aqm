@@ -11,6 +11,7 @@ import { ClientCredentialsGenesys, DirectJev } from './providers'
 import { executeServerRun, manualRunId, planFingerprint, planServerRun, schedulerTick, type RunnerDeps } from './runner'
 import { nextDueAfter, validateSchedule, type Schedule } from './schedules'
 import { operationalAnalytics } from './analytics'
+import { executeFormTest, type FormTestInput } from './formTests'
 
 export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string }
 const oidc=new OAuth2Client()
@@ -33,7 +34,7 @@ async function schedulerAuthorized(request:IncomingMessage,config:ApiConfig){
 export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=fetch){
   return createServer(async(request,response)=>{
     const origin=request.headers.origin
-    if(origin===config.origin){response.setHeader('Access-Control-Allow-Origin',config.origin);response.setHeader('Vary','Origin');response.setHeader('Access-Control-Allow-Methods','GET,PUT,POST,OPTIONS');response.setHeader('Access-Control-Allow-Headers','Authorization, Content-Type')}
+    if(origin===config.origin){response.setHeader('Access-Control-Allow-Origin',config.origin);response.setHeader('Vary','Origin');response.setHeader('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');response.setHeader('Access-Control-Allow-Headers','Authorization, Content-Type')}
     if(request.method==='OPTIONS'){json(response,origin===config.origin?204:403,{});return}
     const url=new URL(request.url??'/',`http://${request.headers.host??'localhost'}`)
     if(url.pathname==='/health'&&request.method==='GET'){json(response,200,{status:'ok',schemaVersion:1});return}
@@ -46,6 +47,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const path=url.pathname
       if(request.method==='GET'){
         if(path==='/api/analytics'){json(response,200,await operationalAnalytics(deps.store,url.searchParams));return}
+        if(path==='/api/form-tests'){const limit=Number(url.searchParams.get('limit')??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Limit must be between 1 and 100.');json(response,200,{items:await deps.store.recentFormTestRuns(limit)});return}
         const collections={'/api/forms':'evaluationForms','/api/policies':'policies','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
         if(path in collections){
           const rawLimit=Number(url.searchParams.get('limit')??50)
@@ -67,8 +69,13 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         }
         const detail=/^\/api\/evaluations\/([A-Za-z0-9_-]+)$/.exec(path)
         if(detail){const item=await deps.store.evaluation(detail[1]);json(response,item?200:404,item??{error:'Evaluation not found.'});return}
+        const testDetail=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
+        if(testDetail){const item=await deps.store.formTestRun(testDetail[1]);json(response,item?200:404,item??{error:'Form test not found.'});return}
         if(path==='/api/schedules'){json(response,200,{items:await deps.store.schedules()});return}
       }
+      const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
+      if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
+      if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
       if(request.method==='PUT'){
         const match=/^\/api\/(forms|policies|schedules)\/([A-Za-z0-9_-]+)$/.exec(path)
         if(match){const value=await body(request);if(!obj(value)||value.id!==match[2]||!id(match[2]))throw new Error('Invalid resource identity.')

@@ -60,6 +60,7 @@ export interface EvaluationRecord {
 }
 export interface FormTestRun {
   id: string; formId: string; formSnapshot: EvaluationForm; createdAt: string
+  status?: 'running' | 'completed' | 'partial-failure' | 'failed'
   sampleSource: ConversationSourceId; selectedConversationIds: string[]
   sampleConfiguration: { strategy: 'manual' | 'recent' | 'deterministic-random'; count: number; seed?: string; filters?: Record<string,string> }
   expectedRequests: number; provider?: string; model?: string
