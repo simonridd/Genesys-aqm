@@ -8,6 +8,7 @@ export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'ev
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface Store {
+  findProductionEvaluation(source:string, conversationId:string, formId:string, version:number):Promise<EvaluationRecord|undefined>
   forms(): Promise<EvaluationForm[]>; policies(): Promise<InteractionPolicy[]>; schedules(): Promise<Schedule[]>; runs(): Promise<PolicyRun[]>; evaluations(): Promise<EvaluationRecord[]>
   form(id: string): Promise<EvaluationForm | undefined>; policy(id: string): Promise<InteractionPolicy | undefined>; schedule(id: string): Promise<Schedule | undefined>; run(id:string):Promise<PolicyRun|undefined>; evaluation(id:string):Promise<EvaluationRecord|undefined>
   putForm(value: EvaluationForm): Promise<void>; putPolicy(value: InteractionPolicy): Promise<void>; putSchedule(value: Schedule): Promise<void>
@@ -24,6 +25,7 @@ const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
   private formMap = new Map<string,EvaluationForm>(); private policyMap = new Map<string,InteractionPolicy>(); private scheduleMap = new Map<string,Schedule>()
   private runMap = new Map<string,PolicyRun>(); private evaluationMap = new Map<string,EvaluationRecord>(); private testMap = new Map<string,FormTestRun>(); private claimMap = new Map<string,Claim>(); private slots = new Map<string,EvaluationSlot>()
+  async findProductionEvaluation(source:string,conversationId:string,formId:string,version:number) { return copy([...this.evaluationMap.values()].find(record=>record.purpose!=='FORM_TEST'&&record.source==='jev'&&record.conversationSource===source&&record.conversationId===conversationId&&record.form.id===formId&&record.form.version===version)) }
   async forms() { return copy([...this.formMap.values()]) } async policies() { return copy([...this.policyMap.values()]) } async schedules() { return copy([...this.scheduleMap.values()]) }
   async runs() { return copy([...this.runMap.values()]) } async evaluations() { return copy([...this.evaluationMap.values()]) }
   async form(id:string) { return copy(this.formMap.get(id)) } async policy(id:string) { return copy(this.policyMap.get(id)) } async schedule(id:string) { return copy(this.scheduleMap.get(id)) } async run(id:string) { return copy(this.runMap.get(id)) } async evaluation(id:string) { return copy(this.evaluationMap.get(id)) }
@@ -75,6 +77,7 @@ export class FirestoreStore implements Store {
   private async all<T>(name:string):Promise<T[]> { const docs=await this.collection(name).get(); return docs.docs.map(d=>canonicalValue(d.data()) as T) }
   private async one<T>(name:string,id:string):Promise<T|undefined> { const doc=await this.collection(name).doc(pathId(id)).get(); return doc.exists?canonicalValue(doc.data()) as T:undefined }
   private async put<T>(name:string,id:string,value:T) { await this.collection(name).doc(pathId(id)).set(stored(value)) }
+  async findProductionEvaluation(source:string,conversationId:string,formId:string,version:number) { const docs=await this.collection('evaluationRecords').where('conversationId','==',conversationId).get();return docs.docs.map(doc=>canonicalValue(doc.data()) as EvaluationRecord).find(record=>record.purpose!=='FORM_TEST'&&record.source==='jev'&&record.conversationSource===source&&record.form.id===formId&&record.form.version===version) }
   forms(){return this.all<EvaluationForm>('evaluationForms')} policies(){return this.all<InteractionPolicy>('policies')} schedules(){return this.all<Schedule>('schedules')}
   runs(){return this.all<PolicyRun>('policyRuns')} evaluations(){return this.all<EvaluationRecord>('evaluationRecords')}
   form(id:string){return this.one<EvaluationForm>('evaluationForms',id)} policy(id:string){return this.one<InteractionPolicy>('policies',id)} schedule(id:string){return this.one<Schedule>('schedules',id)} run(id:string){return this.one<PolicyRun>('policyRuns',id)} evaluation(id:string){return this.one<EvaluationRecord>('evaluationRecords',id)}

@@ -4,6 +4,7 @@ server-dist/
 test-results/
 .env*
 !.env.example
+!.env.production
 .DS_Store
 *.log
 tsconfig.tsbuildinfo

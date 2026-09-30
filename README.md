@@ -1,6 +1,6 @@
-# Genesys AQM · V0.3B prototype
+# Genesys AQM · V0.6.1 prototype
 
-A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE and direct Platform API requests after a user signs in. Simon reported a successful live connection and three real Analytics conversations; a real transcript in AQM remains to be proven.
+A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE and direct Platform API requests after a user signs in. Production evaluation uses Cloud Run with its server-managed Jev credential and durable Firestore records. Browser conversation searches/transcripts share an identity-scoped IndexedDB cache. Real validation of this correction is pending Simon on the Genesys-connected machine.
 
 ## Local development
 
@@ -11,7 +11,9 @@ npm run build
 npm run dev
 ```
 
-Set `VITE_JEV_PROXY_URL` in ignored `.env.local` to the existing public Worker URL ending in `/v1/systemone`. The current public URL is `https://genesys-aqm-jev-proxy.periwinkle-monitor.workers.dev/v1/systemone`. Genesys authentication and API calls no longer use that Worker URL. This URL is public, not a credential. The Jev key remains in tab session storage and is sent through the existing fixed-purpose Worker route.
+Production builds use the public Cloud Run origin in `.env.production` and the public Genesys PKCE defaults in `src/domain/publicConfig.ts`. For local development, put `VITE_AQM_API_ORIGIN` in ignored `.env.local`. `VITE_JEV_PROXY_URL` and a tab Jev key are optional only for the explicit legacy development sandboxes. Normal Conversation Review and durable Form Test do not require Cloudflare or a browser Jev key.
+
+See [V0.6.1 architecture, cache semantics and acceptance checklist](docs/v061-control-plane-cache.md) for the current contract. The older policy-run sections below describe the retained legacy browser implementation.
 
 ## Architecture
 
@@ -21,7 +23,7 @@ The Genesys adapter maps conversation and participant IDs, start/end, media type
 
 ## Genesys browser connection
 
-See [V0.3A PKCE contract, exact client setup, CORS evidence, and proof ledger](docs/v03a-pkce.md), [V0.3B media contracts](docs/v03b-media-contracts.md), and the [review-required Genesys form recreation](docs/v03b-genesys-form.md). Register `https://simonridd.github.io/Genesys-aqm/` as the authorized redirect URI for a **Code Authorization / PKCE** OAuth client. Enter the public Client ID and select the region in Settings, then connect through Genesys Cloud. The browser sends no Genesys client secret. A temporary access token is held in memory and is lost on reload or disconnect. The Jev Worker remains unchanged; its old Genesys routes may remain temporarily for compatibility but are no longer called by this frontend.
+See [V0.3A PKCE contract, exact client setup, CORS evidence, and proof ledger](docs/v03a-pkce.md), [V0.3B media contracts](docs/v03b-media-contracts.md), and the [review-required Genesys form recreation](docs/v03b-genesys-form.md). Register `https://simonridd.github.io/Genesys-aqm/` as the authorized redirect URI for a **Code Authorization / PKCE** OAuth client. Settings starts with the public production PKCE client ID and Ireland region; browser-local overrides are available. Connect through Genesys Cloud. The browser sends no Genesys client secret. A temporary access token is held in memory and is lost on reload or disconnect. The Jev Worker remains unchanged; its old Genesys routes may remain temporarily for compatibility but are no longer called by this frontend.
 
 ## Policy execution
 
@@ -31,11 +33,11 @@ A policy run starts on the Policies page: select policy and source, set time and
 
 ## Data and proof boundary
 
-Genesys interactions are real customer data. Search and transcript data remain in browser memory while the page is open. Evaluation history stores derived results, form snapshots, IDs, metadata and run provenance in browser `localStorage`; policy runs are also browser-local. The Jev request sends a selected normalized transcript and form to TypeSafe only on explicit evaluation. The [proof ledger](docs/v03a-pkce.md#proof-ledger) distinguishes official contract evidence, provider-free tests, Simon's reported live auth and Analytics result, and the still-unproven AQM transcript/evaluation levels.
+Genesys interactions are real customer data. Normalized searches/transcripts are cached locally in IndexedDB with safe identity scope, active-session guards, bounded retention and explicit clear/Disconnect cleanup. They are never synchronized to Firestore. Evaluation history stores derived results, form snapshots, IDs, metadata and run provenance in browser `localStorage`; policy runs are also browser-local. The Jev request sends a selected normalized transcript and form to TypeSafe only on explicit evaluation. The [proof ledger](docs/v03a-pkce.md#proof-ledger) distinguishes official contract evidence, provider-free tests, Simon's reported live auth and Analytics result, and the still-unproven AQM transcript/evaluation levels.
 
 ## Deployment
 
-The Vite base path is `/Genesys-aqm/`. GitHub Pages uses the `gh-pages` branch root. With the public Jev Worker URL set in ignored `.env.local`, `npm run deploy:pages` builds and publishes the frontend. The Worker does not need redeployment for V0.3A. No Genesys client secret belongs in Git, Vite environment variables, browser source, browser storage, or logs.
+The Vite base path is `/Genesys-aqm/`. GitHub Pages uses the `gh-pages` branch root. `npm run deploy:pages` builds with the public Cloud Run origin and publishes the frontend. The Worker is optional legacy development infrastructure. Deploy the trusted API from the exact tested source commit and preserve the AQM runtime configuration. No Genesys client secret belongs in Git, Vite environment variables, browser source, browser storage, or logs.
 
 ## V0.4 automated monitoring (manual runs)
 

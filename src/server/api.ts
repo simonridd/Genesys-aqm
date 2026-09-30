@@ -11,13 +11,14 @@ import { ClientCredentialsGenesys, DirectJev } from './providers'
 import { executeServerRun, manualRunId, planFingerprint, planServerRun, schedulerTick, type RunnerDeps } from './runner'
 import { nextDueAfter, validateSchedule, type Schedule } from './schedules'
 import { operationalAnalytics } from './analytics'
+import { evaluateManual } from './manualEvaluations'
 import { executeFormTest, type FormTestInput } from './formTests'
 
 export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string }
 const oidc=new OAuth2Client()
 const json=(response:ServerResponse,status:number,value:unknown)=>{response.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});response.end(JSON.stringify(value))}
 const bearer=(request:IncomingMessage)=>/^Bearer (.+)$/.exec(request.headers.authorization??'')?.[1]
-async function body(request:IncomingMessage):Promise<unknown>{let text='';for await(const chunk of request){text+=String(chunk);if(text.length>100_000)throw new Error('Request body is too large.')}return JSON.parse(text||'{}') as unknown}
+async function body(request:IncomingMessage):Promise<unknown>{let text='',size=0;for await(const chunk of request){size+=Buffer.byteLength(chunk);text+=String(chunk);if(size>100_000)throw new Error('Request body is too large.')}return JSON.parse(text||'{}') as unknown}
 const obj=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v)
 const id=(v:string)=>/^[A-Za-z0-9_-]{1,100}$/.test(v)
 async function browserAuthorized(request:IncomingMessage,config:ApiConfig,fetcher:typeof fetch){
@@ -97,6 +98,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(testDetail){const item=await deps.store.formTestRun(testDetail[1]);json(response,item?200:404,item??{error:'Form test not found.'});return}
         if(path==='/api/schedules'){json(response,200,{items:await deps.store.schedules()});return}
       }
+      if(request.method==='POST'&&path==='/api/evaluations/manual'){const outcome=await evaluateManual(deps,await body(request));json(response,outcome.status==='uncertain'?409:200,outcome);return}
       const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
       if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}

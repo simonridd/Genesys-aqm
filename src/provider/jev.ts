@@ -57,7 +57,7 @@ export class JevProxyProvider implements EvaluationProvider {
   constructor(private readonly endpoint: string) {}
   async evaluate(request: EvaluationRequest, apiKey: string): Promise<EvaluationResult> {
     if (!apiKey.trim()) throw new Error('Add a TypeSafe Jev API key in Settings first.')
-    if (!this.endpoint) throw new Error('The Jev proxy is not configured for this release. Evaluation is unavailable until the proxy is deployed.')
+    if (!this.endpoint) throw new Error('The legacy sandbox Jev proxy is not configured. Choose the durable server sandbox for normal form testing.')
     let response: Response
     try {
       response = await fetch(this.endpoint, { method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' }, body: JSON.stringify(toJevRequest(request)) })
