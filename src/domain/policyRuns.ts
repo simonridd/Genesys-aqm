@@ -4,6 +4,7 @@ import { validateForm } from './forms'
 import type { Conversation, ConversationSourceId, CoverageCounts, EvaluationForm, EvaluationRecord, EvaluationResult, InteractionPolicy, MonitoringPeriod, MonitoringSampling, PolicyRun, PolicyRunFailure } from './types'
 
 export const MAX_POLICY_CONVERSATIONS = 25
+export const SAMPLING_ALGORITHM = 'fnv1a32-v1'
 export const policyRunsStorageKey = 'genesys-aqm-v03-policy-runs'
 export type PeriodChoice = 'today' | 'yesterday' | 'last7' | 'custom'
 /** Local calendar boundaries are converted once to UTC instants. The end is exclusive. */
@@ -28,7 +29,7 @@ function hash(value: string): number {
 export function effectiveSampling(policy: InteractionPolicy): MonitoringSampling { return policy.sampling ?? { strategy: 'all' } }
 export function deterministicSeed(policy: InteractionPolicy, period: MonitoringPeriod): string {
   const sampling = effectiveSampling(policy)
-  return `${policy.id}|${period.periodStart}|${period.periodEnd}|${sampling.strategy}|${sampling.strategy === 'percentage' ? sampling.percentage : sampling.strategy === 'fixed_count' ? sampling.count : ''}|${sampling.strategy !== 'all' ? sampling.seed ?? '' : ''}`
+  return `${SAMPLING_ALGORITHM}|${policy.id}|${period.periodStart}|${period.periodEnd}|${sampling.strategy}|${sampling.strategy === 'percentage' ? sampling.percentage : sampling.strategy === 'fixed_count' ? sampling.count : ''}|${sampling.seed ?? ''}`
 }
 export function selectSample(policy: InteractionPolicy, eligible: Conversation[], period: MonitoringPeriod): Conversation[] {
   const sampling = effectiveSampling(policy)

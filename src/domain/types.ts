@@ -59,7 +59,7 @@ export interface ConversationPage { conversations: Conversation[]; page: number;
 export interface ConversationSource {
   id: ConversationSourceId; name: string; realData: boolean
   capabilities: { pagination: boolean; filters: Array<'queue' | 'agent' | 'channel' | 'direction'> }
-  status(): Promise<{ state: 'connected' | 'not-configured' | 'error'; detail?: string; region?: string; clientId?: string }>
+  status(): Promise<{ state: 'connected' | 'not-configured' | 'error'; detail?: string; region?: string; clientId?: string; userId?: string }>
   list(query: ConversationQuery): Promise<ConversationPage>
   load(id: string): Promise<Conversation>
 }

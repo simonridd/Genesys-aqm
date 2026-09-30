@@ -1,0 +1,30 @@
+import { describe,it,expect } from 'vitest'
+import type { Firestore } from 'firebase-admin/firestore'
+import { FirestoreStore } from './store'
+import { seedForms } from '../domain/forms'
+import { seedPolicies } from '../domain/policies'
+import type { EvaluationRecord, PolicyRun } from '../domain/types'
+import type { Schedule } from './schedules'
+function fakeFirestore(){
+  const values=new Map<string,unknown>()
+  const ref=(path:string)=>({get:async()=>({exists:values.has(path),data:()=>values.get(path)}),set:async(value:unknown)=>{values.set(path,structuredClone(value))}})
+  const db={collection:(name:string)=>({doc:(id:string)=>ref(`${name}/${id}`),get:async()=>({docs:[...values].filter(([key])=>key.startsWith(`${name}/`)).map(([,value])=>({data:()=>structuredClone(value)}))})}),runTransaction:async<T>(fn:(tx:{get:(r:ReturnType<typeof ref>)=>ReturnType<ReturnType<typeof ref>['get']>;set:(r:ReturnType<typeof ref>,v:unknown)=>void;create:(r:ReturnType<typeof ref>,v:unknown)=>void;update:(r:ReturnType<typeof ref>,v:Record<string,unknown>)=>void})=>Promise<T>)=>fn({get:r=>r.get(),set:(r,v)=>{void r.set(v)},create:(r,v)=>{void r.set(v)},update:async(r,v)=>{const d=await r.get();await r.set({...d.data() as object,...v})}})}
+  return db as unknown as Firestore
+}
+describe('Firestore repository shape',()=>{
+  it('serializes forms, policies, schedules, runs, records and claims',async()=>{
+    const store=new FirestoreStore(fakeFirestore());const form=seedForms[0],policy=seedPolicies[0]
+    const schedule:Schedule={id:'schedule',policyId:policy.id,enabled:true,frequency:'DAILY',timezone:'Europe/London',localTime:'02:00',version:1}
+    const run:PolicyRun={id:'run',policyId:policy.id,policySnapshot:policy,source:'genesys-cloud',startedAt:'2026-09-30T00:00:00Z',candidateConversationCount:0,matchedConversationCount:0,formsAssigned:[],evaluationsRequested:0,evaluationsSucceeded:0,evaluationsFailed:0,status:'completed',failures:[]}
+    const record:EvaluationRecord={id:'evaluation',source:'jev',conversationId:'conversation',conversationSource:'genesys-cloud',agent:{id:'agent',name:'Agent'},queue:'Queue',channel:'voice',topic:'',policyMatches:[],form,evaluatedAt:'2026-09-30T00:00:00Z',overallScore:1,passed:true,criticalFailures:[],questions:[],provider:'typesafe',model:'test'}
+    await store.putForm(form);await store.putPolicy(policy);await store.putSchedule(schedule);await store.putRun(run)
+    expect(await store.forms()).toEqual([form]);expect(await store.policy(policy.id)).toEqual(policy);expect(await store.schedules()).toEqual([schedule]);expect(await store.runs()).toEqual([run])
+    expect(await store.claim('claim','owner','2026-09-30T00:00:00Z','2026-09-30T01:00:00Z')).toBe(true)
+    expect(await store.claim('claim','other','2026-09-30T00:30:00Z','2026-09-30T01:30:00Z')).toBe(false)
+    expect(await store.reserveEvaluation(record.id,'2026-09-30T00:00:00Z')).toBe(true)
+    expect(await store.reserveEvaluation(record.id,'2026-09-30T00:00:00Z')).toBe(false)
+    await store.completeEvaluation(record.id,record)
+    expect(await store.evaluationSlot(record.id)).toMatchObject({status:'completed',recordId:record.id})
+    expect(await store.evaluations()).toEqual([record])
+  })
+})

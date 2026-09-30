@@ -42,7 +42,7 @@ export class GenesysCloudConversationSource implements ConversationSource {
     const session = this.currentSession()
     if (!session) throw new Error('Connect to Genesys Cloud in Settings. Your session may have expired.')
     const response = await fetch(`${REGIONS[session.region].api}${path}`, { ...init, headers: { ...init?.headers, Authorization: `Bearer ${session.accessToken}`, ...(init?.body ? { 'Content-Type': 'application/json' } : {}) } })
-    if (response.status === 401) { disconnect(); throw new Error('Genesys session expired or was rejected. Disconnect and connect again.') }
+    if (response.status === 401) { if (typeof window !== 'undefined') disconnect(); throw new Error('Genesys session expired or was rejected. Check the active authorization.') }
     if (!response.ok) throw new Error(`Genesys API returned HTTP ${response.status}. Check your role and division access.`)
     return response.json()
   }
@@ -50,8 +50,8 @@ export class GenesysCloudConversationSource implements ConversationSource {
     const session = this.currentSession()
     if (!session) return { state: 'not-configured' as const, detail: 'Connect to Genesys Cloud in Settings.' }
     try {
-      const user = await this.request('/api/v2/users/me') as { name?: string; organization?: { name?: string } }
-      return { state: 'connected' as const, detail: `Authenticated as ${user.name ?? 'Genesys user'}${user.organization?.name ? ` · ${user.organization.name}` : ''}`, region: session.region, clientId: session.clientId }
+      const user = await this.request('/api/v2/users/me') as { id?: string; name?: string; organization?: { name?: string } }
+      return { state: 'connected' as const, detail: `Authenticated as ${user.name ?? 'Genesys user'}${user.organization?.name ? ` · ${user.organization.name}` : ''}`, region: session.region, clientId: session.clientId, userId: user.id }
     } catch (e) { return { state: 'error' as const, detail: e instanceof Error ? e.message : 'Connection error' } }
   }
   /** Resolve queue names only when a monitoring policy uses queue-name eligibility. */
