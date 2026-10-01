@@ -1,5 +1,5 @@
-export type Speaker = 'agent' | 'customer'
-export interface Message { id: string; timestamp: string; speaker: Speaker; text: string; subject?: string; senderName?: string }
+export type Speaker = 'agent' | 'customer' | 'bot' | 'system'
+export interface Message { id: string; timestamp: string; speaker: Speaker; text: string; subject?: string; senderName?: string; senderId?: string }
 export interface Conversation {
   conversationId: string; startedAt: string; channel: string
   agent: { id: string; name: string }; customer: { id: string; name: string }

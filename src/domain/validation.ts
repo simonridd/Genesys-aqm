@@ -24,7 +24,7 @@ export function validateConversation(value: unknown): { value?: Conversation; er
       else if (ids.has(message.id)) errors.push(`Message ${i + 1} has a duplicate id.`)
       else ids.add(message.id)
       if (!iso(message.timestamp)) errors.push(`Message ${i + 1} needs a valid timestamp.`)
-      if (message.speaker !== 'agent' && message.speaker !== 'customer') errors.push(`Message ${i + 1} speaker must be agent or customer.`)
+      if (!['agent','customer','bot','system'].includes(String(message.speaker))) errors.push(`Message ${i + 1} speaker must be agent, customer, bot or system.`)
       if (!nonempty(message.text)) errors.push(`Message ${i + 1} needs text.`)
     })
   }

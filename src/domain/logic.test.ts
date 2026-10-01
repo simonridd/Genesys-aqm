@@ -20,7 +20,7 @@ describe('conversation validation', () => {
   it('rejects duplicate message IDs and invalid speakers', () => {
     const invalid = structuredClone(sample) as any
     invalid.messages[1].id = invalid.messages[0].id
-    invalid.messages[1].speaker = 'system'
+    invalid.messages[1].speaker = 'unknown'
     expect(validateConversation(invalid).errors).toEqual(expect.arrayContaining([expect.stringMatching(/duplicate id/), expect.stringMatching(/speaker must be/)]))
   })
 })

@@ -148,3 +148,9 @@ input[readonly] { background: #f8fbfa; }
 @media(max-width:600px){.condition-fields{grid-template-columns:minmax(0,1fr)}.group-heading,.group-toolbar{padding:14px}.group-heading .panel-heading{align-items:flex-start;flex-direction:column}.grouped-form .question-summary{flex-wrap:wrap}.grouped-form .question-actions{width:100%;justify-content:flex-end}.grouped-form .question-main{min-width:0;width:calc(100% - 46px)}.grouped-form .field-note{overflow-wrap:anywhere}.grouped-form .question-editor{padding:14px}.group-toolbar .heading-actions{width:100%;flex-wrap:wrap}}
 .grouped-form .question-main p{white-space:normal;overflow:visible;text-overflow:clip;font-size:12px;line-height:1.55;color:#647e89;overflow-wrap:anywhere}
 .condition-fields input,.condition-fields select{width:100%;padding:9px 10px;background:#fff;border:1px solid #cbdcdf;border-radius:7px;color:#243f49;font-size:12px}
+
+/* Digital context roles use the same transcript layout with explicit labels/colors. */
+.message-row.bot .message-avatar { background: #e9e0ff; color: #594194; }
+.message-row.bot .bubble { background: #f4efff; border: 1px solid #d9c9f2; }
+.message-row.system .message-avatar { background: #e4e9ed; color: #45515c; }
+.message-row.system .bubble { background: #f0f3f5; border: 1px dashed #a3b0bb; }

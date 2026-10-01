@@ -35,9 +35,9 @@ export class CachedGenesysSource implements ConversationSource {
   async recentCandidates(){const context=await this.context();const hit=context.scope?await this.cache.recent(context.scope):null;this.active(context);return hit&&Date.parse(hit.query.from)>=Date.now()-7*86400_000&&Date.parse(hit.query.to)<=Date.now()+60_000?hit:null}
   async withQueueNames(items:Conversation[]){const context=await this.context();const value='withQueueNames' in this.source?await (this.source as GenesysCloudConversationSource).withQueueNames(items):items;this.active(context);return value}
 }
-export const browserGenesysSource=new CachedGenesysSource(new GenesysCloudConversationSource(getSession,fetch,apiOrigin?async id=>{
+export const browserGenesysSource=new CachedGenesysSource(new GenesysCloudConversationSource(getSession,fetch,apiOrigin?async (id,channel)=>{
   const session=getSession();if(!session)throw Error('Connect to Genesys Cloud.')
-  const response=await fetch(`${apiOrigin}/api/conversations/${encodeURIComponent(id)}/email`,{headers:{Authorization:`Bearer ${session.accessToken}`}})
-  if(!response.ok)throw Error('Email content could not be retrieved through the automation service.')
+  const response=await fetch(`${apiOrigin}/api/conversations/${encodeURIComponent(id)}/${channel==='messaging'?'digital':'email'}`,{headers:{Authorization:`Bearer ${session.accessToken}`}})
+  if(!response.ok)throw Error('Digital content could not be retrieved through the automation service.')
   return response.json() as Promise<Conversation>
 }:undefined))

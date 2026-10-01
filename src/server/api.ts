@@ -65,11 +65,11 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         json(response,200,{item:await updateReview(deps.store,reviewDetail[1],input as unknown as ReviewInput,actor,deps.now().toISOString())});return
       }
       if(request.method==='GET'){
-        const email=/^\/api\/conversations\/([a-f0-9-]{20,64})\/email$/i.exec(path)
+        const email=/^\/api\/conversations\/([a-f0-9-]{20,64})\/(email|digital)$/i.exec(path)
         if(email){
           const source=new GenesysCloudConversationSource(()=>({region:config.region,clientId:'interactive',accessToken:bearer(request)!,expiresAt:Date.now()+60_000}),fetcher)
           const conversation=await source.load(email[1])
-          if(conversation.channel!=='email')throw Error('This endpoint supports email conversations only.')
+          if(!['email','messaging'].includes(conversation.channel)||email[2]==='email'&&conversation.channel!=='email')throw Error('This endpoint supports digital conversations only.')
           json(response,200,conversation);return
         }
 

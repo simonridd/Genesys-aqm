@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test'
 import {normalizeGenesys} from '../src/domain/genesys'
 const origin='https://aqm-api-bd54ukouga-nw.a.run.app',id='22222222-2222-4222-8222-222222222222'
 const detail={conversationId:id,conversationStart:'2026-09-30T12:00:00Z',conversationEnd:'2026-09-30T12:10:00Z',participants:[{purpose:'customer',participantName:'Email Customer',sessions:[{sessionId:'33333333-3333-4333-8333-333333333333',mediaType:'email',direction:'inbound',segments:[{queueId:'55555555-5555-4555-8555-555555555555'}]}]},{purpose:'agent',participantName:'Email Agent',userId:'agent'}]}
-for(const viewport of [{width:1440,height:900},{width:390,height:844}])test(`email search, normalized relay, content cache and refresh at ${viewport.width}`,async({browser})=>{
+for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`email search, normalized relay, content cache and refresh at ${viewport.width}`,async({browser})=>{
  const context=await browser.newContext({viewport}),page=await context.newPage();let retrievals=0,searches=0
  await page.addInitScript(()=>{sessionStorage.setItem('genesys-aqm-pkce-transaction',JSON.stringify({region:'eu-west-1',clientId:'e05784c9-2421-4c2b-a3af-79fafb25aea8',verifier:'a'.repeat(43),state:'A'.repeat(43),createdAt:Date.now(),page:'conversations'}));localStorage.setItem('genesys-aqm-v03-source',JSON.stringify('genesys-cloud'))})
  await page.route('https://login.mypurecloud.ie/oauth/token',route=>route.fulfill({json:{access_token:'fixture-token',token_type:'Bearer',expires_in:3600}}))
@@ -17,7 +17,7 @@ for(const viewport of [{width:1440,height:900},{width:390,height:844}])test(`ema
  await page.getByRole('button',{name:'Refresh from Genesys',exact:true}).click();await expect(page.getByText(/Retrieved from Genesys/)).toBeVisible();expect(retrievals).toBe(2)
  const entries=await page.evaluate(async()=>new Promise<unknown[]>((resolve,reject)=>{const req=indexedDB.open('genesys-aqm-conversations-v1',1);req.onsuccess=()=>{const read=req.result.transaction('entries').objectStore('entries').getAll();read.onsuccess=()=>resolve(read.result)};req.onerror=()=>reject(req.error)}))
  expect(JSON.stringify(entries)).toContain('Billing question');expect(JSON.stringify(entries)).not.toMatch(/fixture-token|mediaUri|signed|EML|MIME-Version|attachments/)
- await page.locator('.transcript').screenshot({path:`/private/tmp/aqm-v064-email-${viewport.width}.png`});expect((await page.locator('.email-body').boundingBox())!.width).toBeLessThan(viewport.width)
+ await page.locator('.transcript').screenshot({path:`/private/tmp/aqm-v09-email-${viewport.width}.png`});expect((await page.locator('.email-body').boundingBox())!.width).toBeLessThan(viewport.width)
  await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Settings',exact:true}).click();await page.getByRole('button',{name:'Disconnect',exact:true}).click();await expect(page.getByText(/0 cached searches · 0 cached transcripts/)).toBeVisible()
  await context.close()
 })

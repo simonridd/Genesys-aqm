@@ -39,9 +39,9 @@ export function normalizeEmails(detail:GenesysDetail,items:Array<{recording:Emai
     const signature=JSON.stringify([timestamp,participant.participantId,participant.purpose,email.subject??'',text])
     if(seen.has(id)){if(seen.get(id)!==signature)throw Error('Conflicting email message identity.');continue}
     seen.set(id,signature)
-    messages.push({id:`${detail.conversationId}:email:${id}`,timestamp:new Date(timestamp).toISOString(),speaker:['agent','user'].includes(participant.purpose??'')?'agent':'customer',text,...(email.subject?{subject:email.subject}:{}),...(email.from?.name?{senderName:email.from.name}:{})})
+    messages.push({id:`${detail.conversationId}:email:${id}`,timestamp:new Date(timestamp).toISOString(),speaker:['agent','user'].includes(participant.purpose??'')?'agent':'customer',text,...(email.subject?{subject:email.subject}:{}),...(email.from?.name?{senderName:email.from.name}:{}),...(participant.userId||participant.participantId?{senderId:participant.userId??participant.participantId}:{})})
   }
-  return messages.sort((a,b)=>a.timestamp.localeCompare(b.timestamp))
+  return messages.sort((a,b)=>a.timestamp.localeCompare(b.timestamp)||a.id.localeCompare(b.id))
 }
 export function emailMediaUrl(value:string):URL {
   const url=new URL(value)

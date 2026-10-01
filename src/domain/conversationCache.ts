@@ -7,10 +7,10 @@ export function identityScope(session:AuthSession|null):string|null {
   return JSON.stringify([session.region,session.clientId,session.organizationId??'',session.userId])
 }
 export function queryKey(query:ConversationQuery):string {return JSON.stringify([new Date(query.from).toISOString(),new Date(query.to).toISOString(),query.queue??'',query.agent??'',query.channel??'',query.direction??'',query.page,query.pageSize])}
-const metadataKeys=['source','status','conversationEnd','direction','agent','queue','queueId','topic','wrapUpCode','durationSeconds','sessionId','transcriptStatus','transcriptDetail']
+const metadataKeys=['source','status','conversationEnd','direction','agent','queue','queueId','topic','wrapUpCode','durationSeconds','sessionId','transcriptStatus','transcriptDetail','contentSource','providerMessageCount','nonTextMessageCount','directContentStatus']
 /** Copy only the normalized application schema; no provider payloads, tokens or URL fields. */
 export function normalizedConversation(value:Conversation,transcript=true):Conversation {
-  return {conversationId:value.conversationId,startedAt:value.startedAt,channel:value.channel,agent:{id:value.agent.id,name:value.agent.name},customer:{id:value.customer.id,name:value.customer.name},metadata:Object.fromEntries(metadataKeys.filter(key=>typeof value.metadata[key]==='string').map(key=>[key,value.metadata[key]])),messages:transcript?value.messages.map(message=>({id:message.id,timestamp:message.timestamp,speaker:message.speaker,text:message.text,...(message.subject?{subject:message.subject}:{}),...(message.senderName?{senderName:message.senderName}:{})})):[]}
+  return {conversationId:value.conversationId,startedAt:value.startedAt,channel:value.channel,agent:{id:value.agent.id,name:value.agent.name},customer:{id:value.customer.id,name:value.customer.name},metadata:Object.fromEntries(metadataKeys.filter(key=>typeof value.metadata[key]==='string').map(key=>[key,value.metadata[key]])),messages:transcript?value.messages.map(message=>({id:message.id,timestamp:message.timestamp,speaker:message.speaker,text:message.text,...(message.subject?{subject:message.subject}:{}),...(message.senderName?{senderName:message.senderName}:{}),...(message.senderId?{senderId:message.senderId}:{})})):[]}
 }
 export interface CacheEntry {key:string;scope:string;kind:'search'|'transcript';fetchedAt:number;query?:ConversationQuery;value:ConversationPage|Conversation}
 export interface CacheBackend {all():Promise<CacheEntry[]>; put(entry:CacheEntry):Promise<void>; remove(keys:string[]):Promise<void>}

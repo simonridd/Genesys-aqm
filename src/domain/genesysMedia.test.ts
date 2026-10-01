@@ -27,7 +27,7 @@ describe('Genesys media contracts', () => {
     expect(resolveMediaContract(digital)).toEqual({ type:mediaType, transport:mediaType==='message'?'digital-message':mediaType, communicationIds:[customerCommunication] })
     const normalized=normalizeGenesys(digital, transcript)
     expect(normalized.messages).toEqual([])
-    expect(normalized.metadata.transcriptStatus).toBe(mediaType==='email'?'Not loaded':'Unsupported')
+    expect(normalized.metadata.transcriptStatus).toBe(mediaType==='chat'?'Unsupported':'Not loaded')
   })
   it('loads an Ireland voice transcript from the Genesys download host with no bearer header', async () => {
     const calls: Array<{url:string;init?:RequestInit}> = []
@@ -49,11 +49,12 @@ describe('Genesys media contracts', () => {
   })
   it('does not call the voice transcript endpoint for digital media', async () => {
     const digital: GenesysDetail={...detail,participants:detail.participants?.map(p=>({...p,sessions:p.sessions?.map(s=>({...s,mediaType:'message'}))}))}
-    const fetcher=vi.fn(async()=>ok(digital));vi.stubGlobal('fetch',fetcher)
+    const fetcher=vi.fn(async(_input:RequestInfo|URL)=>ok(digital));vi.stubGlobal('fetch',fetcher)
     const loaded=await source().load(conversationId)
-    expect(fetcher).toHaveBeenCalledTimes(1)
+    expect(fetcher).toHaveBeenCalledTimes(3)
+    expect(fetcher.mock.calls.every(call=>!String(call[0]).includes('speechandtextanalytics'))).toBe(true)
     expect(loaded.channel).toBe('messaging')
-    expect(loaded.metadata.transcriptStatus).toBe('Unsupported')
+    expect(loaded.metadata.transcriptStatus).toBe('Error')
   })
   it('reports a rejected download host without fetching or exposing its URL', async () => {
     const fetcher=vi.fn(async(input:RequestInfo|URL) => String(input).endsWith('/details')?ok(detail):ok({url:'https://untrusted.example/transcript?token=private'}));vi.stubGlobal('fetch',fetcher)

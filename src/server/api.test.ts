@@ -48,3 +48,20 @@ it('email relay enforces the user allowlist and forwards that same PKCE identity
  const response=await fetch(url,{headers:{Authorization:'Bearer allowed-pkce'}});expect(response.status).toBe(200);expect(response.headers.get('cache-control')).toBe('no-store');const value=await response.json() as Conversation;expect(value.messages[0].text).toBe('Private normalized body');expect(JSON.stringify(value)).not.toMatch(/secret|attachments|pkce/)
  expect(requests.filter(r=>!r.url.endsWith('/users/me')).every(r=>r.authorization==='Bearer allowed-pkce')).toBe(true);expect(await store.evaluations()).toEqual([])
 })
+
+it('messaging relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials',async()=>{
+ const store=new MemoryStore(),requests:Array<{url:string;authorization:string|undefined}>=[]
+ const conversationId='22222222-2222-4222-8222-222222222222',recordingId='44444444-4444-4444-8444-444444444444',sessionId='33333333-3333-4333-8333-333333333333'
+ const deps:RunnerDeps={store,now:()=>new Date(),genesys:{list:async()=>{throw Error('Automation must not be used')},load:async()=>{throw Error('Automation must not be used')},withQueueNames:async c=>c},jev:{evaluate:async()=>{throw Error('Jev must not be used')}}}
+ const fetcher:typeof fetch=async(input,init)=>{const url=String(input),authorization=(init?.headers as Record<string,string>)?.Authorization;requests.push({url,authorization});let value:unknown
+ if(url.endsWith('/users/me'))value={id:authorization==='Bearer allowed-pkce'?'allowed':'denied'}
+ else if(url.endsWith('/details'))value={conversationId,conversationStart:'2026-09-30T12:00:00Z',conversationEnd:'2026-09-30T12:10:00Z',participants:[{purpose:'external',sessions:[{sessionId,mediaType:'message',addressSelf:'customer@example.com'}]}]}
+ else if(url.endsWith('/bulk'))value={entities:[{id:'one',conversationId,timestamp:'2026-09-30T12:01:00Z',direction:'inbound',normalizedMessage:{type:'Text',text:'Private normalized body',content:[{contentType:'Attachment',attachment:{url:'https://private.example/secret'}}]}}]}
+ else if(url.endsWith(`/conversations/messages/${conversationId}`))value={id:conversationId,participants:[{id:'p',purpose:'external',messages:[{messageId:'one'}]}]}
+ else value={id:recordingId,sessionId,emailTranscript:[{id:'one',time:'2026-09-30T12:01:00Z',from:{email:'customer@example.com'},textBody:'Private normalized body',attachments:[{url:'https://private.example/secret'}]}]}
+ return new Response(JSON.stringify(value),{status:200})}
+ const server=createApi(deps,{origin:'https://simonridd.github.io',region:'eu-west-1',allowedUserIds:new Set(['allowed']),schedulerEmail:'scheduler@example.com',schedulerAudience:'https://aqm.example.com'},fetcher);servers.push(server);await new Promise<void>(resolve=>server.listen(0,resolve));const url=`http://127.0.0.1:${(server.address() as AddressInfo).port}/api/conversations/${conversationId}/digital`
+ expect((await fetch(url)).status).toBe(401);expect((await fetch(url,{headers:{Authorization:'Bearer denied-pkce'}})).status).toBe(401)
+ const response=await fetch(url,{headers:{Authorization:'Bearer allowed-pkce'}});expect(response.status).toBe(200);expect(response.headers.get('cache-control')).toBe('no-store');const value=await response.json() as Conversation;expect(value.messages[0].text).toBe('Private normalized body');expect(JSON.stringify(value)).not.toMatch(/secret|attachments|pkce/)
+ expect(requests.filter(r=>!r.url.endsWith('/users/me')).every(r=>r.authorization==='Bearer allowed-pkce')).toBe(true);expect(await store.evaluations()).toEqual([])
+})
