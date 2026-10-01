@@ -37,7 +37,7 @@ describe('server recreated form publication', () => {
     const forms=await (await fetch(`${base}/api/forms`,{headers:{Authorization:'Bearer another-browser'}})).json() as {items:EvaluationForm[]}
     expect(forms.items).toEqual([published]);expect(published.version).toBe(1);expect(published.questions).toEqual(form.questions)
   })
-  it.each(['DRAFT','TESTING'] as const)('tests a reconstructed %s without production records, slots, or policy runs',async status=>{
+  it.each(['DRAFT','TESTING','PUBLISHED'] as const)('tests a reconstructed %s without production records, slots, or policy runs',async status=>{
     const {store,deps,evaluate}=fixture(), form={...structuredClone(genesysCustomerServiceForm),status}
     const reserve=vi.spyOn(store,'reserveEvaluation'),claim=vi.spyOn(store,'claim')
     const run=await executeFormTest(deps,{id:`sandbox_${status}`,form,source:'synthetic',selectedConversationIds:[sampleLibrary[0].conversation.conversationId],sampleConfiguration:{strategy:'manual',count:1}})

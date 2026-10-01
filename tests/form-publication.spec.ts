@@ -18,7 +18,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
         const item=route.request().postDataJSON() as EvaluationForm;stored=stored.some(form=>form.id===item.id)?stored.map(form=>form.id===item.id?item:form):[...stored,item];await route.fulfill({json:{ok:true,item}})
       }else if(url.pathname==='/api/forms')await route.fulfill({json:{items:stored}})
       else if(url.pathname.startsWith('/api/form-tests/')&&method==='POST'){
-        const input=route.request().postDataJSON();tests++;expect(input.form.status).toBe('TESTING');expect(input.form.enabled).toBe(false);expect(input.form.version).toBe(1)
+        const input=route.request().postDataJSON();tests++;expect(['TESTING','PUBLISHED']).toContain(input.form.status);expect(input.form.enabled).toBe(input.form.status==='PUBLISHED');expect(input.form.version).toBe(1)
         await route.fulfill({json:{run:{id:input.id,formId:input.form.id,formSnapshot:input.form,createdAt:'2026-10-01T00:00:00Z',sampleSource:input.source,selectedConversationIds:input.selectedConversationIds,sampleConfiguration:input.sampleConfiguration,expectedRequests:input.selectedConversationIds.length,results:[],failures:[],status:'completed'}}})
       }else if(url.pathname==='/api/analytics')await route.fulfill({json:{byForm:[],metrics:{evaluations:0}}})
       else await route.fulfill({json:{items:[]}})
@@ -37,6 +37,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await detail.getByRole('button',{name:'Publish version'}).click();await expect(detail.getByText('PUBLISHED · VERSION 1')).toBeVisible()
     await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v063-published-${viewport.width}.png`})
     const metadata=await detail.locator('.form-meta').boundingBox();expect(metadata!.width).toBeLessThanOrEqual(viewport.width)
+    await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toHaveCount(1);expect(tests).toBe(2)
     expect(reviews).toBe(0)
     expect(stored.find(form=>form.id==='genesys_customer_service_ai_scoring')).toMatchObject({origin:'genesys-recreated',version:1,name:legacy.name,questions:legacy.questions,scoring:legacy.scoring,sourceReview:{status:'REVIEW_REQUIRED'},enabled:true,status:'PUBLISHED'})
     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(1)
