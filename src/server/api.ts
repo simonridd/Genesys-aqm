@@ -1,3 +1,8 @@
+import { randomUUID } from 'node:crypto'
+import { auditContext } from './audit'
+import { Forbidden, sessionAccess, requirePermission, governanceSettings, planPurge, executePurge, auditPage } from './governance'
+import { roles, validateGovernance, type RoleAssignment, type Permission } from '../domain/governance'
+import { StoreConflict } from './store'
 import { monitoringAlerts, defaultAlertConfig } from './alerts'
 import { alertTypes, type OperationalAlert } from '../domain/operationalAlerts'
 import { assertAssetWrite } from '../domain/groupAssets'
@@ -21,7 +26,7 @@ import { executeFormTest, type FormTestInput } from './formTests'
 import { calibrationAnalytics, requestSample, reviewQueue, updateReview, ReviewNotFound } from './reviews'
 import { matchesReviewQueue, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
 
-export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string }
+export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string; bootstrapAdminId?:string }
 const oidc=new OAuth2Client()
 const json=(response:ServerResponse,status:number,value:unknown)=>{response.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});response.end(JSON.stringify(value))}
 const bearer=(request:IncomingMessage)=>/^Bearer (.+)$/.exec(request.headers.authorization??'')?.[1]
@@ -41,6 +46,8 @@ async function schedulerAuthorized(request:IncomingMessage,config:ApiConfig){
   try{const ticket=await oidc.verifyIdToken({idToken:token,audience:config.schedulerAudience});const p=ticket.getPayload();return p?.email===config.schedulerEmail&&p.email_verified===true}catch{return false}
 }
 export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=fetch){
+  const bootstrapId=config.bootstrapAdminId??(config.allowedUserIds.size===1?[...config.allowedUserIds][0]:undefined)
+  if(config.allowedUserIds.size&&(!bootstrapId||!config.allowedUserIds.has(bootstrapId)))throw Error('Configure AQM_BOOTSTRAP_ADMIN_USER_ID as an allowlisted owner before enabling multiple users.')
   return createServer(async(request,response)=>{
     const origin=request.headers.origin
     if(origin===config.origin){response.setHeader('Access-Control-Allow-Origin',config.origin);response.setHeader('Vary','Origin');response.setHeader('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');response.setHeader('Access-Control-Allow-Headers','Authorization, Content-Type')}
@@ -53,8 +60,44 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
     }
     const actor=url.pathname.startsWith('/api/')?await browserAuthorized(request,config,fetcher).catch(()=>null):null
     if(!actor){json(response,401,{error:'Unauthorized'});return}
-    try{
+    await auditContext.run({actor,now:deps.now().toISOString(),correlationId:randomUUID()},async()=>{try{
       const path=url.pathname
+      const access=await sessionAccess(deps.store,actor,bootstrapId)
+      if(request.method==='GET'&&path==='/api/session'){json(response,200,access);return}
+      const rolePath=/^\/api\/roles\/([A-Za-z0-9_-]{1,100})$/.exec(path)
+      let permission:Permission|undefined
+      if(path.startsWith('/api/roles'))permission='roles.manage'
+      else if(path.startsWith('/api/retention'))permission='retention.execute'
+      else if(path==='/api/audit')permission='audit.read'
+      else if(path==='/api/history')permission='history.read'
+      else if(path==='/api/governance')permission=request.method==='GET'?'settings.read':'settings.write'
+      else if(request.method!=='GET'){
+       if(path.startsWith('/api/forms/')||path.startsWith('/api/form-tests/'))permission='forms.write'
+       else if(path.startsWith('/api/question-groups/'))permission='groups.write'
+       else if(path.startsWith('/api/policies/'))permission='policies.write'
+       else if(path.startsWith('/api/schedules/'))permission='schedules.write'
+       else if(path.startsWith('/api/reviews/')||path==='/api/calibration/sample'||/\/review$/.test(path))permission='reviews.write'
+       else if(path.startsWith('/api/alerts/'))permission=path.endsWith('/resolve')?'alerts.resolve':'alerts.acknowledge'
+       else if(path==='/api/evaluations/manual')permission='evaluations.write'
+       else throw new Forbidden()
+      }else{
+       permission=path.startsWith('/api/forms')||path.startsWith('/api/form-tests')?'forms.read':path.startsWith('/api/question-groups')?'groups.read':path.startsWith('/api/policies')||path.startsWith('/api/schedules')?'policies.read':path.startsWith('/api/alerts')?'alerts.read':path.startsWith('/api/reviews')||path.startsWith('/api/calibration')?'reviews.read':'evaluations.read'
+      }
+      if(permission)requirePermission(access,permission)
+      if(request.method==='GET'&&path==='/api/roles'){json(response,200,await deps.store.query('roleAssignments',100,url.searchParams.get('cursor')??undefined));return}
+      if(request.method==='PUT'&&rolePath){
+       const v=await body(request);if(!obj(v)||!roles.includes(v.role as typeof roles[number]))throw Error('Invalid role.')
+       if(!config.allowedUserIds.has(rolePath[1]))throw Error('User must be in the server Genesys allowlist.')
+       if(rolePath[1]===bootstrapId&&v.role!=='ADMIN')throw new Forbidden('The configured bootstrap owner must remain ADMIN.')
+       const prior=await deps.store.governanceRead<RoleAssignment>('roleAssignments',rolePath[1]),now=deps.now().toISOString()
+       const item:RoleAssignment={id:rolePath[1],userId:rolePath[1],...(prior?.displayName?{displayName:prior.displayName}:{}),...(actor.userId===rolePath[1]&&actor.displayName?{displayName:actor.displayName}:{}),role:v.role as typeof roles[number],createdAt:prior?.createdAt??now,updatedAt:now,assignedBy:actor}
+       await deps.store.atomic([{collection:'roleAssignments',id:item.id,value:item,expected:prior}]);json(response,200,{item});return
+      }
+      if(path==='/api/governance'&&request.method==='GET'){json(response,200,await governanceSettings(deps.store));return}
+      if(path==='/api/governance'&&request.method==='PUT'){const settings=validateGovernance(await body(request)),prior=await deps.store.governanceRead('governanceSettings','governance');await deps.store.atomic([{collection:'governanceSettings',id:'governance',value:settings,expected:prior}]);json(response,200,settings);return}
+      if((path==='/api/audit'||path==='/api/history')&&request.method==='GET'){json(response,200,await auditPage(deps.store,url.searchParams,path==='/api/history'));return}
+      if(path==='/api/retention/preview'&&request.method==='POST'){const v=await body(request);if(!obj(v))throw Error('Invalid preview.');json(response,200,await planPurge(deps.store,actor,deps.now().toISOString(),(v.cursors??{}) as import('./governance').PurgePlan['cursors']));return}
+      if(path==='/api/retention/execute'&&request.method==='POST'){const v=await body(request);if(!obj(v)||typeof v.planId!=='string'||!id(v.planId))throw Error('Invalid purge.');json(response,200,await executePurge(deps.store,actor,deps.now().toISOString(),v.planId,v.confirmation));return}
       if(request.method==='GET'&&path==='/api/alerts'){
         const q=url.searchParams,limit=Number(q.get('limit')??50),cursor=q.get('cursor')??undefined
         if(!Number.isInteger(limit)||limit<1||limit>100||cursor&&!id(cursor))throw Error('Invalid alert pagination.')
@@ -156,12 +199,14 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
       const assetPath=/^\/api\/question-groups\/([A-Za-z0-9_-]+)$/.exec(path)
       if(assetPath&&request.method==='GET'){const item=await deps.store.groupAsset(assetPath[1]);json(response,item?200:404,item??{error:'Reusable group not found.'});return}
-      if(assetPath&&request.method==='PUT'){const value=await body(request);if(!obj(value)||value.id!==assetPath[1])throw Error('Invalid asset identity.');const asset=value as unknown as QuestionGroupAsset;assertAssetWrite(await deps.store.groupAsset(asset.id),asset);await deps.store.putGroupAsset(asset);json(response,200,{ok:true,item:asset});return}
+      if(assetPath&&request.method==='PUT'){const value=await body(request);if(!obj(value)||value.id!==assetPath[1])throw Error('Invalid asset identity.');const asset=value as unknown as QuestionGroupAsset;if(asset.status==='PUBLISHED'||asset.status==='RETIRED')requirePermission(access,'groups.publish');assertAssetWrite(await deps.store.groupAsset(asset.id),asset);await deps.store.putGroupAsset(asset);json(response,200,{ok:true,item:asset});return}
       if(request.method==='PUT'){
         const match=/^\/api\/(forms|policies|schedules)\/([A-Za-z0-9_-]+)$/.exec(path)
         if(match){const value=await body(request);if(!obj(value)||value.id!==match[2]||!id(match[2]))throw new Error('Invalid resource identity.')
           if(match[1]==='forms'){
             const form=value as unknown as EvaluationForm
+            if(!['DRAFT','TESTING','PUBLISHED','RETIRED'].includes(formStatus(form)))throw Error('Invalid form lifecycle status.')
+            if(['PUBLISHED','RETIRED'].includes(formStatus(form)))requirePermission(access,'forms.publish')
             const prior=await deps.store.form(form.id)
             if(validateForm(form).length)throw new Error(validateForm(form).join(' '))
             if(prior){
@@ -176,11 +221,11 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
               const errors=productionReadinessErrors(form);if(errors.length)throw new Error(errors.join(' '))
             }
             if(formStatus(form)==='RETIRED'&&form.enabled)throw new Error('Retired form must be disabled.')
-            await deps.store.putForm(form)
+            await deps.store.atomic([{collection:'evaluationForms',id:form.id,value:form,expected:prior}])
             json(response,200,{ok:true,item:form});return
           }
-          if(match[1]==='policies'){const policy=value as unknown as InteractionPolicy;if(!policy.name||!Array.isArray(policy.evaluationFormIds)||!Array.isArray(policy.criteria?.anyOf))throw new Error('Invalid policy.');const errors=validatePolicyFormPins(policy,await deps.store.forms());if(errors.length)throw new Error(errors.join(' '));await deps.store.putPolicy(policy)}
-          if(match[1]==='schedules'){const schedule=value as unknown as Schedule;validateSchedule(schedule);const prior=await deps.store.schedule(schedule.id);if(prior?.policyId!==undefined&&prior.policyId!==schedule.policyId)throw new Error('Schedule policy cannot change.');schedule.nextDueAt=nextDueAfter(schedule,deps.now().toISOString());schedule.lastAttemptedAt=prior?.lastAttemptedAt;schedule.lastSuccessfulAt=prior?.lastSuccessfulAt;await deps.store.putSchedule(schedule)}
+          if(match[1]==='policies'){const policy=value as unknown as InteractionPolicy;if(!policy.name||!Array.isArray(policy.evaluationFormIds)||!Array.isArray(policy.criteria?.anyOf))throw new Error('Invalid policy.');const errors=validatePolicyFormPins(policy,await deps.store.forms());if(errors.length)throw new Error(errors.join(' '));await deps.store.atomic([{collection:'policies',id:policy.id,value:policy,expected:await deps.store.policy(policy.id)}])}
+          if(match[1]==='schedules'){const schedule=value as unknown as Schedule;validateSchedule(schedule);const prior=await deps.store.schedule(schedule.id);if(prior?.policyId!==undefined&&prior.policyId!==schedule.policyId)throw new Error('Schedule policy cannot change.');schedule.nextDueAt=nextDueAfter(schedule,deps.now().toISOString());schedule.lastAttemptedAt=prior?.lastAttemptedAt;schedule.lastSuccessfulAt=prior?.lastSuccessfulAt;await deps.store.atomic([{collection:'schedules',id:schedule.id,value:schedule,expected:prior}])}
           json(response,200,{ok:true});return}
       }
       const review=/^\/api\/evaluations\/([A-Za-z0-9_-]+)\/review$/.exec(path)
@@ -203,7 +248,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         json(response,200,{run});return
       }
       json(response,404,{error:'Not found.'})
-    }catch(error){json(response,error instanceof ReviewConflict?409:error instanceof ReviewNotFound?404:400,{error:error instanceof Error?error.message:'Request failed.'})}
+    }catch(error){json(response,error instanceof Forbidden?403:error instanceof StoreConflict||error instanceof ReviewConflict?409:error instanceof ReviewNotFound?404:400,{error:error instanceof Error?error.message:'Request failed.'})}})
   })
 }
 export function startApi(){
@@ -215,6 +260,6 @@ export function startApi(){
   const alertConfig={minimumSample:Number(process.env.AQM_ALERT_MINIMUM_SAMPLE??defaultAlertConfig.minimumSample),minimumAvailability:Number(process.env.AQM_ALERT_MINIMUM_AVAILABILITY??defaultAlertConfig.minimumAvailability),schedulerToleranceMs:Number(process.env.AQM_SCHEDULER_TOLERANCE_MS??defaultAlertConfig.schedulerToleranceMs)}
   if(!Number.isInteger(alertConfig.minimumSample)||alertConfig.minimumSample<5||!Number.isFinite(alertConfig.minimumAvailability)||alertConfig.minimumAvailability<0||alertConfig.minimumAvailability>1||!Number.isFinite(alertConfig.schedulerToleranceMs)||alertConfig.schedulerToleranceMs<=0)throw Error('Invalid operational alert configuration.')
   const deps:RunnerDeps={store,alertConfig,genesys:new ClientCredentialsGenesys(region,process.env.GENESYS_CLIENT_ID!,process.env.GENESYS_CLIENT_SECRET!),jev:new DirectJev(process.env.JEV_API_KEY!),now:()=>new Date()}
-  const server=createApi(deps,{origin:process.env.AQM_ALLOWED_ORIGIN!,region,allowedUserIds:new Set((process.env.AQM_ALLOWED_GENESYS_USER_IDS??'').split(',').map(s=>s.trim()).filter(Boolean)),schedulerEmail:process.env.AQM_SCHEDULER_EMAIL!,schedulerAudience:process.env.AQM_SCHEDULER_AUDIENCE!})
+  const server=createApi(deps,{origin:process.env.AQM_ALLOWED_ORIGIN!,region,allowedUserIds:new Set((process.env.AQM_ALLOWED_GENESYS_USER_IDS??'').split(',').map(s=>s.trim()).filter(Boolean)),schedulerEmail:process.env.AQM_SCHEDULER_EMAIL!,schedulerAudience:process.env.AQM_SCHEDULER_AUDIENCE!,bootstrapAdminId:process.env.AQM_BOOTSTRAP_ADMIN_USER_ID})
   server.listen(Number(process.env.PORT??8080),'0.0.0.0')
 }

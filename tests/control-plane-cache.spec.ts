@@ -1,3 +1,4 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test,expect } from '@playwright/test'
 import detail from '../src/fixtures/genesys-detail.json' with {type:'json'}
 import transcript from '../src/fixtures/genesys-transcript.json' with {type:'json'}
@@ -15,7 +16,7 @@ for(const viewport of [{width:1440,height:900},{width:390,height:844}]){
   await page.route('https://api-downloads.mypurecloud.ie/**',route=>{downloads++;return route.fulfill({json:transcript})})
   const normalized=normalizeGenesys(detail,transcript);const form=seedForms[0];const record=recordEvaluation(normalized,form,{conversationId,scorecardId:form.id,scorecardVersion:form.version,evaluatedAt:new Date().toISOString(),provider:'typesafe',model:'fixture',questions:[],overallScore:.8,countedWeight:1,rawResponse:{}},[],'fixture-record',{conversationSource:'genesys-cloud',executionMode:'manual'})
   await page.route(`${origin}/**`,async route=>{const url=route.request().url();if(url.endsWith('/manual')){manual++;lastInput=route.request().postDataJSON() as Record<string,unknown>;await route.fulfill({json:{status:manual>1?'duplicate':'created',record}})}else if(url.includes('/forms'))await route.fulfill({json:{items:seedForms}});else if(url.includes('/form-tests'))await route.fulfill({json:{items:[]}});else if(url.includes('/analytics'))await route.fulfill({json:{metrics:{evaluations:manual}}});else await route.fulfill({json:{items:manual?[record]:[]}})})
-  await page.goto(`http://127.0.0.1:4174/Genesys-aqm/?code=fixture-code&state=${'A'.repeat(43)}`)
+  await installOwnerGovernanceFixture(page);await page.goto(`http://127.0.0.1:4174/Genesys-aqm/?code=fixture-code&state=${'A'.repeat(43)}`)
   await expect(page.getByRole('heading',{name:'Completed interactions'})).toBeVisible()
   await page.getByLabel('From',{exact:true}).fill('2026-09-28T00:00');await page.getByLabel('To',{exact:true}).fill('2026-09-29T00:00');await page.getByLabel('Queue ID').fill('55555555-5555-4555-8555-555555555555');await page.getByRole('combobox',{name:'Channel',exact:true}).selectOption('voice');await page.getByRole('combobox',{name:'Direction',exact:true}).selectOption('inbound')
   await page.getByRole('button',{name:'Search completed interactions',exact:true}).click();await expect(page.getByText(/10 shown · page 1 · 20 reported/)).toBeVisible();await page.getByRole('button',{name:'Next →',exact:true}).click();await expect(page.getByText(/1 shown · page 2 · 20 reported/)).toBeVisible();expect(searches).toBe(2)

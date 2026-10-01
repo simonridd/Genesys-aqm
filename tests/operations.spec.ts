@@ -1,8 +1,9 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test, expect } from '@playwright/test'
 for (const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}]) {
   test(`operational collections and form lifecycle at ${viewport.width}`,async({browser})=>{
     const page=await browser.newPage({viewport})
-    await page.goto('http://127.0.0.1:4174/Genesys-aqm/')
+    await installOwnerGovernanceFixture(page);await page.goto('http://127.0.0.1:4174/Genesys-aqm/')
     const nav=page.getByRole('navigation',{name:'Primary navigation'})
     await nav.getByRole('button',{name:'Conversations',exact:true}).click()
     await expect(page.getByRole('heading',{name:'Conversations',exact:true})).toBeVisible()

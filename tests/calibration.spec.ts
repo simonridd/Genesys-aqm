@@ -1,3 +1,4 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test,expect } from '@playwright/test'
 import { aggregateCalibration } from '../src/domain/calibration'
 import { buildReview, matchesReviewQueue, calibrationSample, type HumanReview, type ReviewInput } from '../src/domain/reviews'
@@ -35,7 +36,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
       if(method==='POST'){paidRequests++;await route.fulfill({status:500,json:{error:'Unexpected paid/provider operation'}});return}
       await route.fulfill({json:{items:[]}})
     })
-    await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
+    await installOwnerGovernanceFixture(page);await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
     const nav=page.getByRole('navigation',{name:'Primary navigation'}),panel=page.getByRole('region',{name:'Human review'})
     await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible()
     await page.getByRole('button',{name:'Open evaluation evaluation_1',exact:true}).click()

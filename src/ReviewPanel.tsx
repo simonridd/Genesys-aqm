@@ -1,5 +1,6 @@
+import { usePermission } from './GovernancePanel'
 import { scoreFormResults, effectiveQuestions } from './domain/formComposition'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { EvaluationRecord } from './domain/types'
 import type { AuthSession } from './domain/genesysAuth'
 import { answerCredit, compareAnswer, selectedConfidence, type HumanAnswer, type HumanReview, type ReviewInput } from './domain/reviews'
@@ -15,8 +16,10 @@ export function ReviewPanel({record,review,session,onSaved}:{record:EvaluationRe
   const [editing,setEditing]=useState(review?.status==='IN_REVIEW'),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('')
   const [answers,setAnswers]=useState<HumanAnswer[]>(()=>review?.questions.flatMap(q=>q.human?[{questionId:q.questionId,value:q.human.value,note:q.human.note}]:[])??[])
   const [notes,setNotes]=useState(review?.notes??''),[filter,setFilter]=useState('all')
+  useEffect(()=>{setEditing(review?.status==='IN_REVIEW');setAnswers(review?.questions.flatMap(q=>q.human?[{questionId:q.questionId,value:q.human.value,note:q.human.note}]:[])??[]);setNotes(review?.notes??'')},[review?.revision])
+  const canWrite=usePermission('reviews.write')
   const completed=review?.status==='REVIEWED'
-  const editable=editing&&!completed&&!!session
+  const editable=canWrite&&editing&&!completed&&!!session
   const save=async(action:ReviewInput['action'])=>{
     if(!session)return;setBusy(true);setError('');setNotice('')
     try{const item=await writeHumanReview(session,record,review,action,action==='save'||action==='complete'?answers:undefined,action==='save'||action==='complete'?notes:undefined);onSaved(item);setEditing(item.status==='IN_REVIEW');setNotice(action==='complete'?'Review completed. The original AI result is preserved.':action==='save'?'Review progress saved.':action==='request'?'Review requested.':'Review started.')}
@@ -38,7 +41,7 @@ export function ReviewPanel({record,review,session,onSaved}:{record:EvaluationRe
     <section aria-label="Group comparison"><h3>Group comparison{completed?'':' · human progress preview'}</h3><div className="group-comparison">{preview.groups.map(g=>{const ai=aiGroups.find(a=>a.groupId===g.groupId)?.overallScore??null;return <div className="panel" key={g.groupId}><strong>{g.name}</strong><p>AI group score: {reviewPercent(ai)}</p><p>Human group score: {reviewPercent(g.overallScore)}</p><p>Difference: {ai===null||g.overallScore===null?'—':`${((g.overallScore-ai)*100).toFixed(1)} pp`}</p>{g.critical&&<p>Critical group · {g.passed===false?'FAIL':g.passed===true?'Pass':'Not scored'}</p>}</div>})}</div></section>
     <p className="field-note">Use the evaluated form snapshot. Partial scores are previews; completed reviews contribute to Calibration. AI scores stay in Quality.</p>
     {review?.reviewer&&<p className="field-note">Reviewer: {review.reviewer.displayName??review.reviewer.userId} · {new Date(review.updatedAt).toLocaleString()} · revision {review.revision}</p>}
-    <div className="review-actions">{!completed&&!editing&&<><button className="primary-button" disabled={!session||busy} onClick={()=>void save('start')}>{review?'Continue review':'Review evaluation'}</button>{!review&&<button className="outline-button" disabled={!session||busy} onClick={()=>void save('request')}>Mark for review</button>}</>}{editable&&<><button className="outline-button" disabled={busy} onClick={()=>void save('save')}>Save progress</button><button className="primary-button" disabled={busy||answers.length!==questions.filter(item=>item.ai?.status!=='SKIPPED').length} onClick={()=>void save('complete')}>Complete review</button></>}</div>
+    <div className="review-actions">{canWrite&&!completed&&!editing&&<><button className="primary-button" disabled={!session||busy} onClick={()=>void save('start')}>{review?'Continue review':'Review evaluation'}</button>{!review&&<button className="outline-button" disabled={!session||busy} onClick={()=>void save('request')}>Mark for review</button>}</>}{editable&&<><button className="outline-button" disabled={busy} onClick={()=>void save('save')}>Save progress</button><button className="primary-button" disabled={busy||answers.length!==questions.filter(item=>item.ai?.status!=='SKIPPED').length} onClick={()=>void save('complete')}>Complete review</button></>}</div>
     {!review&&record.reviewState==='REVIEWED'&&<p className="field-note">This evaluation has a legacy review marker, without saved human answers. Complete a human review to include it in Calibration.</p>}
     {!session&&<p className="field-note">Connect to Genesys Cloud to review a durable server evaluation. Browser-only history must already exist on the server.</p>}
     {error&&<p className="inline-error" role="alert">{error} <button className="outline-button" disabled={busy||!session} onClick={async()=>{if(!session)return;setBusy(true);try{const reply=await fetch(`${apiOrigin}/api/reviews/${encodeURIComponent(record.id)}`,{headers:{Authorization:`Bearer ${session.accessToken}`}});if(!reply.ok)throw Error('Could not refresh review.');onSaved(await reply.json() as HumanReview)}catch(reason){setError(reason instanceof Error?reason.message:'Refresh failed.')}finally{setBusy(false)}}}>Refresh review</button></p>}

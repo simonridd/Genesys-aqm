@@ -1,3 +1,4 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test, expect } from '@playwright/test'
 import { seedForms } from '../src/domain/forms'
 import { readFileSync } from 'node:fs'
@@ -32,7 +33,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
    }else if(url.pathname==='/api/analytics')await route.fulfill({json:{byForm:[],metrics:{evaluations:0}}})
    else await route.fulfill({json:{items:[]}})
   })
-  await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
+  await installOwnerGovernanceFixture(page);await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
   const nav=page.getByRole('navigation',{name:'Primary navigation'}),detail=page.locator('.form-detail')
   await expect(page.getByRole('heading',{name:'Evaluation Forms',exact:true})).toBeVisible()
   await page.getByRole('row').filter({hasText:'Alpha form'}).click()

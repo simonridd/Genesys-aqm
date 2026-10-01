@@ -1,3 +1,4 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test, expect } from '@playwright/test'
 import { seedForms } from '../src/domain/forms'
 import type { EvaluationForm } from '../src/domain/types'
@@ -23,7 +24,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
       }else if(url.pathname==='/api/analytics')await route.fulfill({json:{byForm:[],metrics:{evaluations:0}}})
       else await route.fulfill({json:{items:[]}})
     })
-    await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
+    await installOwnerGovernanceFixture(page);await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
     const nav=page.getByRole('navigation',{name:'Primary navigation'}),detail=page.locator('.form-detail')
     const selectRecreated=()=>page.getByRole('row').filter({hasText:'Customer Service - AI Scoring'}).click()
     await expect(page.getByRole('heading',{name:'Evaluation Forms',exact:true})).toBeVisible()
@@ -54,7 +55,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await nav.getByRole('button',{name:'Policies',exact:true}).click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await expect(page.getByRole('checkbox',{name:/Customer Service - AI Scoring/})).toBeVisible()
     // Erase browser form storage and reload: readiness comes from the server record.
     await page.evaluate(()=>localStorage.removeItem('genesys-aqm-v02-forms'))
-    await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`);await nav.getByRole('button',{name:'Evaluation Forms',exact:true}).click();await selectRecreated();await expect(detail.getByText('PUBLISHED · VERSION 1')).toBeVisible()
+    await installOwnerGovernanceFixture(page);await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`);await nav.getByRole('button',{name:'Evaluation Forms',exact:true}).click();await selectRecreated();await expect(detail.getByText('PUBLISHED · VERSION 1')).toBeVisible()
     await detail.getByRole('button',{name:'Edit as new version'}).click();await expect(detail.getByText('DRAFT · VERSION 2')).toBeVisible();await expect(detail.locator('.form-meta').getByRole('alert')).toHaveCount(0);await expect(detail.getByText('Review required before production use',{exact:true})).toHaveCount(0)
     await expect(page.getByText(/needs authoritative configuration|review authoritative configuration/i)).toHaveCount(0)
     await page.getByRole('button',{name:'＋ New form'}).click();await expect(detail.getByText('DRAFT · VERSION 1')).toBeVisible()

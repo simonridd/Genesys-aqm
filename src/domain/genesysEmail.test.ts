@@ -67,7 +67,7 @@ it('interactive relay returns normalized email through the shared identity cache
  const source=new GenesysCloudConversationSource(()=>({region:'eu-west-1',clientId:'public',accessToken:'pkce',expiresAt:Date.now()+3600000}),providerFetch(),relay)
  expect(await source.load(id)).toEqual(value);expect(relay).toHaveBeenCalledWith(id,'email')
  let now=1;const backend=new MemoryCacheBackend(),cache=new ConversationCache(backend,()=>now)
- await cache.saveTranscript('identity',value);expect((await cache.transcript('identity',id))?.value.messages[0].subject).toBe('Help');expect(await cache.transcript('other',id)).toBeNull();now+=TRANSCRIPT_TTL;expect((await cache.transcript('identity',id))?.stale).toBe(true);await cache.clear('identity');expect(await cache.transcript('identity',id)).toBeNull()
+ await cache.saveTranscript('identity',value);expect((await cache.transcript('identity',id))?.value.messages[0].subject).toBe('Help');expect(await cache.transcript('other',id)).toBeNull();now+=TRANSCRIPT_TTL;expect(await cache.transcript('identity',id)).toBeNull();await cache.clear('identity');expect(await cache.transcript('identity',id)).toBeNull()
 })
 
 it.each([403,404])('distinguishes recording HTTP %s from MIME/transport errors',async status=>{

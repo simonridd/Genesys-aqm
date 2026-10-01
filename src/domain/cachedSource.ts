@@ -5,6 +5,7 @@ import { conversationCache, identityScope, type ConversationCache } from './conv
 import type { Conversation, ConversationPage, ConversationQuery, ConversationSource } from './types'
 let generation=0
 export async function clearGenesysCache(scope?:string){generation++;await conversationCache.clear(scope)}
+export async function clearGenesysContentCache(){generation++;await conversationCache.clearContent()}
 onDisconnect(previous=>{void clearGenesysCache(identityScope(previous)??undefined)})
 const identities=new WeakMap<AuthSession,Promise<void>>()
 export class CachedGenesysSource implements ConversationSource {

@@ -1,3 +1,4 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import {test,expect} from '@playwright/test'
 import {seedForms} from '../src/domain/forms'
 const appUrl=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/'
@@ -5,7 +6,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
  const page=await browser.newPage({viewport})
  await page.addInitScript(forms=>{localStorage.setItem('genesys-aqm-v02-forms',JSON.stringify(forms));localStorage.setItem('genesys-aqm-v02-policies',JSON.stringify(['email','messaging'].map(channel=>({id:channel,name:`${channel} policy`,description:'Provider-free digital filtering',enabled:true,criteria:{anyOf:[[{field:'channel',operator:'equals',value:channel}]]},evaluationFormIds:[forms[0].id],sampling:{strategy:'all'},schedule:'manual'}))))},seedForms)
  await page.route('https://api.typesafe.ai/**',()=>{throw Error('No live Jev request authorized')})
- await page.goto(appUrl)
+ await installOwnerGovernanceFixture(page);await page.goto(appUrl)
  const nav=page.getByRole('navigation',{name:'Primary navigation'})
  await nav.getByRole('button',{name:'Policies',exact:true}).click()
  await page.getByText('Legacy browser policy sandbox (local development)',{exact:true}).click()

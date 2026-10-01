@@ -1,3 +1,4 @@
+import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test,expect } from '@playwright/test'
 import { seedForms } from '../src/domain/forms'
 import { scoreFormResults } from '../src/domain/formComposition'
@@ -38,7 +39,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   if(p==='/api/runs')return r.fulfill({json:{items:[]}})
   return r.fulfill({json:{items:[]}})
  })
- await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`)
+ await installOwnerGovernanceFixture(page);await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`)
  const nav=page.getByRole('navigation',{name:'Primary navigation'}),detail=page.locator('.form-detail')
  await expect(page.getByRole('heading',{name:'Evaluation Forms',exact:true})).toBeVisible();await page.getByRole('row').filter({hasText:'Weighted care'}).click()
  await detail.getByRole('radio',{name:'Group weighted',exact:true}).check()

@@ -180,3 +180,8 @@ input[readonly] { background: #f8fbfa; }
   .operational-alerts .operational-table td:nth-child(6)::before { content: 'Status'; }
   .operational-alerts .operational-table td:nth-child(7)::before { content: 'Action'; }
 }
+
+.permission-controls {border:0;padding:0;margin:0;min-width:0;width:100%}
+.governance .panel {margin-bottom:20px}.governance input,.governance select {max-width:100%;width:100%}.governance label {display:flex;flex-direction:column;gap:8px;margin:12px 0}.governance pre {white-space:pre-wrap;overflow-wrap:anywhere}.governance p,.resource-history p {overflow-wrap:anywhere}.resource-history {margin:12px 0}.top-status {flex-wrap:wrap}
+
+.governance {padding-bottom:16px}.governance>.panel {padding:24px}.governance label {font-size:12px;font-weight:600;color:#506b75}.governance input,.governance select {padding:10px 12px;border:1px solid #dbe6e8;border-radius:7px;color:#29434d;background:#fff;min-width:0}.governance input:disabled {background:#f4f7f8}.governance p {font-size:13px;line-height:1.6;color:#58717a}.governance .danger-button {border:1px solid #e4b3b3;border-radius:7px;padding:10px 14px;background:#fff4f4}.governance button {margin:4px 6px 4px 0}.governance pre {font-size:12px}.governance .browser-filters {padding:12px 0}.governance>.panel>label {max-width:360px}@media(max-width:600px){.governance>.panel{padding:18px}.governance .browser-filters{padding:0}.governance h2{font-size:19px}.top-status{max-width:66%;justify-content:flex-end}}
