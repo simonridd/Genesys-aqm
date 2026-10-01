@@ -36,7 +36,7 @@ it('bounds streaming downloads and refuses redirects or arbitrary media hosts',a
  expect(fetcher.mock.calls[0][1]).toMatchObject({credentials:'omit',redirect:'error'});expect(fetcher.mock.calls[0][1]).not.toHaveProperty('headers')
 })
 function providerFetch(mode:'eml'|'structured'|'unavailable'|'bad'='eml'){
- return vi.fn(async(input:RequestInfo|URL)=>{
+ return vi.fn(async(input:RequestInfo|URL,_init?:RequestInit)=>{
   const url=String(input)
   if(url.endsWith('/oauth/token'))return ok({access_token:'server-token',expires_in:3600})
   if(url.endsWith('/details'))return ok(detail)
@@ -67,4 +67,10 @@ it('interactive relay returns normalized email through the shared identity cache
  expect(await source.load(id)).toEqual(value);expect(relay).toHaveBeenCalledWith(id)
  let now=1;const backend=new MemoryCacheBackend(),cache=new ConversationCache(backend,()=>now)
  await cache.saveTranscript('identity',value);expect((await cache.transcript('identity',id))?.value.messages[0].subject).toBe('Help');expect(await cache.transcript('other',id)).toBeNull();now+=TRANSCRIPT_TTL;expect((await cache.transcript('identity',id))?.stale).toBe(true);await cache.clear('identity');expect(await cache.transcript('identity',id)).toBeNull()
+})
+
+it.each([403,404])('distinguishes recording HTTP %s from MIME/transport errors',async status=>{
+ const original=providerFetch(),fetcher:typeof fetch=async(input,init)=>String(input).includes('/recordings?')?new Response('{}',{status}):original(input,init)
+ const source=new GenesysCloudConversationSource(()=>({region:'eu-west-1',clientId:'public',accessToken:'pkce',expiresAt:Date.now()+3600000}),fetcher),conversation=await source.load(id)
+ expect(conversation.messages).toEqual([]);expect(conversation.metadata.transcriptStatus).toBe(status===404?'Unavailable':'Error');expect(conversation.metadata.transcriptDetail).toContain(status===404?'No email recording':'access was denied')
 })

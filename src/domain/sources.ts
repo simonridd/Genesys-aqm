@@ -113,7 +113,9 @@ export class GenesysCloudConversationSource implements ConversationSource {
       conversation.messages=[];conversation.metadata.transcriptStatus='Error'
       // Never return signed media URLs, raw MIME, or provider errors to storage.
       const reason=error instanceof Error?error.message:''
-      conversation.metadata.transcriptDetail=/limit|Malformed|mapped|timestamp|identity|Ambiguous|Unrecognized|Unexpected|Too many/.test(reason)?reason:'Email content could not be retrieved. Check recording permissions, retention and media availability.'
+      if(reason.includes('HTTP 404')){conversation.metadata.transcriptStatus='Unavailable';conversation.metadata.transcriptDetail='No email recording is available for this interaction.'}
+      else if(reason.includes('HTTP 403'))conversation.metadata.transcriptDetail='Email recording access was denied; check recording permissions and division access.'
+      else conversation.metadata.transcriptDetail=/limit|Malformed|mapped|timestamp|identity|Ambiguous|Unrecognized|Unexpected|Too many/.test(reason)?reason:'Email content could not be retrieved. Check recording permissions, retention and media availability.'
     }
     return conversation
   }
