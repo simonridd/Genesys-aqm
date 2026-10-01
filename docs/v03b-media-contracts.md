@@ -1,5 +1,7 @@
 # V0.3B Genesys media contracts
 
+Historical V0.3B evidence is retained below. V0.6.4 adds email through the Recording API and a shared MIME/normalization path; see [the current release contract and proof](v061-control-plane-cache.md#v064-release-checkpoint). Voice browser proof subsequently passed Simon's validation, and V0.6.4 separately proves the server voice monitoring path.
+
 A real Ireland-region voice example (screenshots supplied by Simon on 29 September 2026) established that the Speech and Text Analytics `communicationId` comes from a **customer participant's voice session**. The previous implementation picked the first session across all participants, which can be an agent session. The example also returned a signed `api-downloads.mypurecloud.ie/transcriptsCache/…` URL rather than an AWS hostname visible to the browser. These observations are about voice and must not be projected onto other channels.
 
 | Genesys media type | Communication identity | Transcript transport and raw payload | V0.3B state |

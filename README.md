@@ -1,6 +1,6 @@
-# Genesys AQM · V0.6.1 prototype
+# Genesys AQM · V0.6.4 prototype
 
-A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE and direct Platform API requests after a user signs in. Production evaluation uses Cloud Run with its server-managed Jev credential and durable Firestore records. Browser conversation searches/transcripts share an identity-scoped IndexedDB cache. Real validation of this correction is pending Simon on the Genesys-connected machine.
+A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE after a user signs in. Voice retrieval stays direct; email content uses the trusted Cloud Run API with the same user authorization. Production evaluation uses Cloud Run with its server-managed Jev credential and durable Firestore records. Browser conversation searches/transcripts share an identity-scoped IndexedDB cache. The V0.6.4 server monitoring proof completed two real voice evaluations with two Jev requests and enabled one daily 02:00 Europe/London schedule. Email normalization is fixture-proved; email live content proof is pending Simon because the observed real interaction had no recording available.
 
 ## Local development
 
@@ -13,7 +13,7 @@ npm run dev
 
 Production builds use the public Cloud Run origin in `.env.production` and the public Genesys PKCE defaults in `src/domain/publicConfig.ts`. For local development, put `VITE_AQM_API_ORIGIN` in ignored `.env.local`. `VITE_JEV_PROXY_URL` and a tab Jev key are optional only for the explicit legacy development sandboxes. Normal Conversation Review and durable Form Test do not require Cloudflare or a browser Jev key.
 
-See [V0.6.1 architecture, cache semantics and acceptance checklist](docs/v061-control-plane-cache.md) for the current contract. The older policy-run sections below describe the retained legacy browser implementation.
+See [current architecture, cache semantics and V0.6.4 release evidence](docs/v061-control-plane-cache.md) for the current contract. The older policy-run sections below describe the retained legacy browser implementation.
 
 ## Architecture
 
