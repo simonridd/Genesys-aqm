@@ -29,6 +29,7 @@ export interface EvaluationForm {
   familyId?: string; status?: 'DRAFT' | 'TESTING' | 'PUBLISHED' | 'RETIRED'; createdAt?: string; updatedAt?: string; publishedAt?: string
   questions: ScorecardItem[]
   scoring: { yesThreshold: number; passScore: number; criticalQuestionIds: string[] }; origin?: 'genesys-recreated'; sourceFormId?: string
+  sourceReview?: { status: 'REVIEW_REQUIRED' | 'REVIEWED'; reviewedAt?: string; note?: string }
 }
 export type PolicyField = 'channel' | 'queue' | 'agent' | 'direction' | 'topic' | 'tag'
 export interface PolicyCondition { field: PolicyField; operator: 'equals' | 'includes'; value: string }

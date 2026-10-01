@@ -4,7 +4,7 @@ import { initializeApp } from 'firebase-admin/app'
 import { OAuth2Client } from 'google-auth-library'
 import { REGIONS, type Region } from '../domain/genesysAuth'
 import { validateForm } from '../domain/forms'
-import { formStatus, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
+import { formStatus, markSourceReviewed, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
 import type { EvaluationForm, InteractionPolicy, MonitoringPeriod } from '../domain/types'
 import { FirestoreStore, type Store } from './store'
 import { ClientCredentialsGenesys, DirectJev } from './providers'
@@ -102,10 +102,43 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
       if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
+      const sourceReview=/^\/api\/forms\/([A-Za-z0-9_-]+)\/source-review$/.exec(path)
+      if(request.method==='POST'&&sourceReview){
+        const input=await body(request)
+        if(!obj(input)||input.acknowledged!==true||!obj(input.form))throw new Error('Acknowledge the source review before continuing.')
+        const prior=await deps.store.form(sourceReview[1])
+        if(!prior){json(response,404,{error:'Save the form before reviewing it.'});return}
+        if(input.form.id!==prior.id||!sameDefinition(prior,input.form as unknown as EvaluationForm))throw new Error('Form changed. Review the current version again.')
+        const item=markSourceReviewed(prior,deps.now().toISOString())
+        await deps.store.putForm(item)
+        json(response,200,{item});return
+      }
       if(request.method==='PUT'){
         const match=/^\/api\/(forms|policies|schedules)\/([A-Za-z0-9_-]+)$/.exec(path)
         if(match){const value=await body(request);if(!obj(value)||value.id!==match[2]||!id(match[2]))throw new Error('Invalid resource identity.')
-          if(match[1]==='forms'){const form=value as unknown as EvaluationForm;if(validateForm(form).length)throw new Error('Invalid evaluation form.');if(formStatus(form)==='PUBLISHED'&&!form.enabled)throw new Error('Published form must be enabled.');if(formStatus(form)==='RETIRED'&&form.enabled)throw new Error('Retired form must be disabled.');if(form.origin==='genesys-recreated'&&formStatus(form)==='PUBLISHED')throw new Error('Recreated Genesys form is review-only until authoritative configuration exists.');const prior=await deps.store.form(form.id);if(prior){if(form.version!==prior.version)throw new Error('Form version cannot change under the same ID.');if((formStatus(prior)==='PUBLISHED'||formStatus(prior)==='RETIRED')&&!sameDefinition(prior,form))throw new Error('Published form definition is immutable. Create a new version.');if(formStatus(prior)==='PUBLISHED'&&!['PUBLISHED','RETIRED'].includes(formStatus(form)))throw new Error('Published forms cannot return to editing.');if(formStatus(prior)==='RETIRED'&&formStatus(form)!=='RETIRED')throw new Error('Retired forms cannot be restored.')}await deps.store.putForm(form)}
+          if(match[1]==='forms'){
+            const form=value as unknown as EvaluationForm
+            const prior=await deps.store.form(form.id)
+            if(validateForm(form).length)throw new Error('Invalid evaluation form.')
+            if(prior){
+              if(form.origin!==prior.origin||form.sourceFormId!==prior.sourceFormId)throw new Error('Source provenance cannot change.')
+              if(form.version!==prior.version)throw new Error('Form version cannot change under the same ID.')
+              if((formStatus(prior)==='PUBLISHED'||formStatus(prior)==='RETIRED')&&!sameDefinition(prior,form))throw new Error('Published form definition is immutable. Create a new version.')
+              if(formStatus(prior)==='PUBLISHED'&&!['PUBLISHED','RETIRED'].includes(formStatus(form)))throw new Error('Published forms cannot return to editing.')
+              if(formStatus(prior)==='RETIRED'&&formStatus(form)!=='RETIRED')throw new Error('Retired forms cannot be restored.')
+            }
+            // Review is server-owned: PUT cannot manufacture an acknowledgement.
+            if(form.origin==='genesys-recreated'){
+              form.sourceReview=prior&&sameDefinition(prior,form)?prior.sourceReview??{status:'REVIEW_REQUIRED'}:{status:'REVIEW_REQUIRED'}
+            }else delete form.sourceReview
+            if(formStatus(form)==='PUBLISHED'){
+              if(!form.enabled)throw new Error('Published form must be enabled.')
+              const errors=productionReadinessErrors(form);if(errors.length)throw new Error(errors.join(' '))
+            }
+            if(formStatus(form)==='RETIRED'&&form.enabled)throw new Error('Retired form must be disabled.')
+            await deps.store.putForm(form)
+            json(response,200,{ok:true,item:form});return
+          }
           if(match[1]==='policies'){const policy=value as unknown as InteractionPolicy;if(!policy.name||!Array.isArray(policy.evaluationFormIds)||!Array.isArray(policy.criteria?.anyOf))throw new Error('Invalid policy.');const errors=validatePolicyFormPins(policy,await deps.store.forms());if(errors.length)throw new Error(errors.join(' '));await deps.store.putPolicy(policy)}
           if(match[1]==='schedules'){const schedule=value as unknown as Schedule;validateSchedule(schedule);const prior=await deps.store.schedule(schedule.id);if(prior?.policyId!==undefined&&prior.policyId!==schedule.policyId)throw new Error('Schedule policy cannot change.');schedule.nextDueAt=nextDueAfter(schedule,deps.now().toISOString());schedule.lastAttemptedAt=prior?.lastAttemptedAt;schedule.lastSuccessfulAt=prior?.lastSuccessfulAt;await deps.store.putSchedule(schedule)}
           json(response,200,{ok:true});return}

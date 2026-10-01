@@ -1,6 +1,6 @@
 import { matchPolicies } from './policies'
 import { recordEvaluation } from './evaluations'
-import { validateForm } from './forms'
+import { isOperationalForm } from './formLifecycle'
 import type { Conversation, ConversationSourceId, CoverageCounts, EvaluationForm, EvaluationRecord, EvaluationResult, InteractionPolicy, MonitoringPeriod, MonitoringSampling, PolicyRun, PolicyRunFailure } from './types'
 
 export const MAX_POLICY_CONVERSATIONS = 25
@@ -48,7 +48,7 @@ export interface PolicyRunPlan {
   queueCoverage: PolicyRun['queueCoverage']
 }
 export function planPolicyRun(policy: InteractionPolicy, candidates: Conversation[], forms: EvaluationForm[], records: EvaluationRecord[], source: ConversationSourceId, period: MonitoringPeriod, reEvaluate = false): PolicyRunPlan {
-  const formIds = [...new Set(policy.evaluationFormIds)].filter(id => forms.some(f => f.id === id && f.enabled && validateForm(f).length === 0))
+  const formIds = [...new Set(policy.evaluationFormIds)].filter(id => forms.some(f => f.id === id && isOperationalForm(f)))
   const eligible = candidates.filter(c => matchPolicies(c, [policy]).length > 0)
   const sampled = selectSample(policy, eligible, period)
   const selected = sampled.map(conversation => {

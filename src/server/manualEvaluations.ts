@@ -1,8 +1,7 @@
 import { createHash } from 'node:crypto'
 import { SyntheticConversationSource } from '../domain/sources'
-import { formStatus } from '../domain/formLifecycle'
-import { toScorecard, validateForm } from '../domain/forms'
-import { validateScorecard } from '../domain/validation'
+import { sourceReviewRequired, sourceReviewRequiredMessage, isOperationalForm } from '../domain/formLifecycle'
+import { toScorecard } from '../domain/forms'
 import { recordEvaluation } from '../domain/evaluations'
 import { matchPolicies } from '../domain/policies'
 import type { EvaluationRecord } from '../domain/types'
@@ -22,8 +21,8 @@ export async function evaluateManual(deps:RunnerDeps,raw:unknown):Promise<Manual
   const input=parseManualInput(raw)
   const form=await deps.store.form(input.formId)
   if(!form||form.version!==input.formVersion)throw Error('Exact published form version not found. Publish this version to the automation service first.')
-  if(form.origin==='genesys-recreated')throw Error('Recreated Genesys forms are review-only until authoritative configuration exists.')
-  if(formStatus(form)!=='PUBLISHED'||!form.enabled||validateForm(form).length||validateScorecard(toScorecard(form)).length)throw Error('Form must be published, enabled and operationally eligible.')
+  if(sourceReviewRequired(form))throw Error(sourceReviewRequiredMessage)
+  if(!isOperationalForm(form))throw Error('Form must be published, enabled and operationally eligible.')
   const existing=await deps.store.findProductionEvaluation(input.source,input.conversationId,form.id,form.version)
   if(existing)return {status:'duplicate',record:existing,message:'This conversation already has a production evaluation for this exact form version. No Jev request was made.'}
   const id=`manual_${createHash('sha256').update(JSON.stringify([input.source,input.conversationId,form.id,form.version])).digest('hex').slice(0,40)}`

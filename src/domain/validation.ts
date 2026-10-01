@@ -44,6 +44,7 @@ export function validateScorecard(card: Scorecard): string[] {
   const ids = new Set<string>()
   card.items.forEach((item, i) => {
     const where = `Question ${i + 1}`
+    if (item.enabled && !['noul', 'choice', 'score'].includes(item.type)) errors.push(`${where} has unsupported question semantics.`)
     if (!key(item.id)) errors.push(`${where} ID must use lowercase letters, numbers and underscores, starting with a letter.`)
     if (ids.has(item.id)) errors.push(`${where} has a duplicate ID.`)
     ids.add(item.id)

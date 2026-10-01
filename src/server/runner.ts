@@ -3,7 +3,7 @@ import { matchPolicies } from '../domain/policies'
 import { planPolicyRun, MAX_POLICY_CONVERSATIONS } from '../domain/policyRuns'
 import { toScorecard } from '../domain/forms'
 import { recordEvaluation } from '../domain/evaluations'
-import { formStatus } from '../domain/formLifecycle'
+import { validatePolicyFormPins } from '../domain/formLifecycle'
 import type { Conversation, EvaluationForm, InteractionPolicy, MonitoringPeriod, PolicyRun, PolicyRunFailure } from '../domain/types'
 import type { GenesysReader, JevEvaluator } from './providers'
 import type { Store } from './store'
@@ -21,7 +21,8 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   const from=Date.parse(period.periodStart),to=Date.parse(period.periodEnd)
   if (!Number.isFinite(from)||!Number.isFinite(to)||to<=from||to>deps.now().getTime()+60_000||to-from>8*86400_000)throw new Error('Monitoring period must be a past interval of at most eight days.')
   const forms=await deps.store.forms()
-  for(const id of policy.evaluationFormIds){const form=forms.find(value=>value.id===id);if(form?.origin==='genesys-recreated')throw new Error(`Policy form ${id} is a recreated Genesys form and needs authoritative configuration before use.`);if(!form||formStatus(form)!=='PUBLISHED'||!form.enabled)throw new Error(`Policy form ${id} is not a published version.`)}
+  const errors=validatePolicyFormPins(policy,forms)
+  if(errors.length)throw new Error(errors.join(' '))
   const candidates:Conversation[]=[]
   // A London week across the autumn clock change is 169 hours. Split provider
   // queries at seven-day UTC boundaries while preserving the exact local week.
