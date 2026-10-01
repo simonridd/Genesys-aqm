@@ -14,9 +14,10 @@ describe('recreated Genesys Customer Service form', () => {
     expect(sampleLibrary).toHaveLength(19)
     expect(seedForms.at(-1)?.id).toBe(form.id)
   })
-  it('requires review before evaluation and keeps unsupported source logic disabled', () => {
+  it('is published for evaluation and keeps unsupported source logic disabled', () => {
     const form=genesysCustomerServiceForm
-    expect(form.enabled).toBe(false)
+    expect(form.enabled).toBe(true)
+    expect(form.status).toBe('PUBLISHED')
     expect(form.questions.find(q=>q.id==='call_reason')?.enabled).toBe(false)
     expect(form.questions.find(q=>q.id==='recommend_products')?.enabled).toBe(false)
     expect(form.scoring.criticalQuestionIds).toEqual(['dpa_validation','appropriate_solution'])

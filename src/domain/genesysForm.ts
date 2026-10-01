@@ -1,6 +1,6 @@
 import type { EvaluationForm, ScorecardItem } from './types'
 
-/** Screenshot/OCR-derived AQM adaptation. Source IDs and conditional logic require verification. */
+/** Screenshot/OCR-derived AQM adaptation. Provenance is informational only. */
 const binary = (section: string, groupWeight: number, id: string, title: string, instructions: string, sourceMax: 1|5, enabled: boolean, na = false): ScorecardItem => ({
   id, title, instructions, section, sourceGroupWeight: groupWeight, type: 'choice', weight: 1, enabled,
   options: [
@@ -19,9 +19,10 @@ export const genesysCustomerServiceForm: EvaluationForm = {
   sourceFormId: 'e28b6669-c596-4ef0-babd-8d449caea7e6',
   origin: 'genesys-recreated',
   name: 'Customer Service - AI Scoring',
-  description: 'Recreated from a Genesys form photo and approximate OCR. Review wording, scoring, conditions and group weights before enabling.',
+  description: 'Recreated from a Genesys form photo and approximate OCR.',
   version: 1,
-  enabled: false,
+  status: 'PUBLISHED',
+  enabled: true,
   scoring: { yesThreshold: .65, passScore: .7, criticalQuestionIds: ['dpa_validation', 'appropriate_solution'] },
   questions: [
     binary('Opening', 100, 'appropriate_greeting', 'Did the agent give the appropriate greeting to the customer?', 'Use a warm and polite opening, such as good morning/afternoon/evening, thanks for calling, and an offer to help.', 5, true),

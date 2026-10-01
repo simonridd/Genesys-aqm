@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto'
 import { SyntheticConversationSource } from '../domain/sources'
-import { sourceReviewRequired, sourceReviewRequiredMessage, isOperationalForm } from '../domain/formLifecycle'
+import { isOperationalForm } from '../domain/formLifecycle'
 import { toScorecard } from '../domain/forms'
 import { recordEvaluation } from '../domain/evaluations'
 import { matchPolicies } from '../domain/policies'
@@ -21,7 +21,6 @@ export async function evaluateManual(deps:RunnerDeps,raw:unknown):Promise<Manual
   const input=parseManualInput(raw)
   const form=await deps.store.form(input.formId)
   if(!form||form.version!==input.formVersion)throw Error('Exact published form version not found. Publish this version to the automation service first.')
-  if(sourceReviewRequired(form))throw Error(sourceReviewRequiredMessage)
   if(!isOperationalForm(form))throw Error('Form must be published, enabled and operationally eligible.')
   const existing=await deps.store.findProductionEvaluation(input.source,input.conversationId,form.id,form.version)
   if(existing)return {status:'duplicate',record:existing,message:'This conversation already has a production evaluation for this exact form version. No Jev request was made.'}

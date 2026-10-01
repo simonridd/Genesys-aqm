@@ -1,7 +1,7 @@
 import { describe,it,expect } from 'vitest'
 import type { Firestore } from 'firebase-admin/firestore'
 import { FirestoreStore } from './store'
-import { markSourceReviewed, sourceReviewRequired } from '../domain/formLifecycle'
+import { isOperationalForm } from '../domain/formLifecycle'
 import { seedForms } from '../domain/forms'
 import { seedPolicies } from '../domain/policies'
 import type { EvaluationRecord, PolicyRun } from '../domain/types'
@@ -17,7 +17,7 @@ function fakeFirestore(){
   return db as unknown as Firestore
 }
 describe('Firestore repository shape',()=>{
-  it('reads legacy reconstructed records and durably stores review without recreating the record',async()=>{const db=fakeFirestore(),store=new FirestoreStore(db),legacy=structuredClone(seedForms.at(-1)!);delete legacy.sourceReview;await store.putForm(legacy);const loaded=(await store.form(legacy.id))!;expect(sourceReviewRequired(loaded)).toBe(true);await store.putForm(markSourceReviewed(loaded,'2026-10-01T00:00:00Z'));const anotherBrowser=new FirestoreStore(db);expect(sourceReviewRequired((await anotherBrowser.form(legacy.id))!)).toBe(false);expect(await anotherBrowser.forms()).toHaveLength(1);expect(await anotherBrowser.form(legacy.id)).toMatchObject({id:legacy.id,questions:legacy.questions,scoring:legacy.scoring,sourceFormId:legacy.sourceFormId,sourceReview:{status:'REVIEWED'}})})
+  it('reads legacy sourceReview metadata as inert without recreating the record',async()=>{const db=fakeFirestore(),store=new FirestoreStore(db),legacy={...structuredClone(seedForms.at(-1)!),sourceReview:{status:'REVIEW_REQUIRED' as const}};await store.putForm(legacy);const anotherBrowser=new FirestoreStore(db);const loaded=(await anotherBrowser.form(legacy.id))!;expect(loaded).toEqual(legacy);expect(isOperationalForm(loaded)).toBe(true);expect(await anotherBrowser.forms()).toHaveLength(1)})
 
   it('serializes forms, policies, schedules, runs, records and claims',async()=>{
     const store=new FirestoreStore(fakeFirestore());const form=seedForms[0],policy=seedPolicies[0]

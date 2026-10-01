@@ -4,7 +4,7 @@ import { initializeApp } from 'firebase-admin/app'
 import { OAuth2Client } from 'google-auth-library'
 import { REGIONS, type Region } from '../domain/genesysAuth'
 import { validateForm } from '../domain/forms'
-import { formStatus, markSourceReviewed, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
+import { formStatus, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
 import type { EvaluationForm, InteractionPolicy, MonitoringPeriod } from '../domain/types'
 import { FirestoreStore, type Store } from './store'
 import { ClientCredentialsGenesys, DirectJev } from './providers'
@@ -102,17 +102,6 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
       if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
-      const sourceReview=/^\/api\/forms\/([A-Za-z0-9_-]+)\/source-review$/.exec(path)
-      if(request.method==='POST'&&sourceReview){
-        const input=await body(request)
-        if(!obj(input)||input.acknowledged!==true||!obj(input.form))throw new Error('Acknowledge the source review before continuing.')
-        const prior=await deps.store.form(sourceReview[1])
-        if(!prior){json(response,404,{error:'Save the form before reviewing it.'});return}
-        if(input.form.id!==prior.id||!sameDefinition(prior,input.form as unknown as EvaluationForm))throw new Error('Form changed. Review the current version again.')
-        const item=markSourceReviewed(prior,deps.now().toISOString())
-        await deps.store.putForm(item)
-        json(response,200,{item});return
-      }
       if(request.method==='PUT'){
         const match=/^\/api\/(forms|policies|schedules)\/([A-Za-z0-9_-]+)$/.exec(path)
         if(match){const value=await body(request);if(!obj(value)||value.id!==match[2]||!id(match[2]))throw new Error('Invalid resource identity.')
@@ -127,10 +116,6 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
               if(formStatus(prior)==='PUBLISHED'&&!['PUBLISHED','RETIRED'].includes(formStatus(form)))throw new Error('Published forms cannot return to editing.')
               if(formStatus(prior)==='RETIRED'&&formStatus(form)!=='RETIRED')throw new Error('Retired forms cannot be restored.')
             }
-            // Review is server-owned: PUT cannot manufacture an acknowledgement.
-            if(form.origin==='genesys-recreated'){
-              form.sourceReview=prior&&sameDefinition(prior,form)?prior.sourceReview??{status:'REVIEW_REQUIRED'}:{status:'REVIEW_REQUIRED'}
-            }else delete form.sourceReview
             if(formStatus(form)==='PUBLISHED'){
               if(!form.enabled)throw new Error('Published form must be enabled.')
               const errors=productionReadinessErrors(form);if(errors.length)throw new Error(errors.join(' '))

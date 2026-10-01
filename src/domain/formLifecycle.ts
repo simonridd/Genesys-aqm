@@ -3,27 +3,11 @@ import { toScorecard, validateForm } from './forms'
 import { validateScorecard } from './validation'
 
 export function formStatus(form: EvaluationForm): NonNullable<EvaluationForm['status']> {
-  // Native legacy enabled forms were published in place. Reconstructed legacy
-  // forms were never production-ready, even when stored with enabled=true.
-  if (!form.status && sourceReviewRequired(form)) return 'DRAFT'
   return form.status ?? (form.enabled ? 'PUBLISHED' : 'DRAFT')
 }
 
-export const sourceReviewAcknowledgement = 'I have reviewed this form and understand that it may differ from the original Genesys form.'
-export const sourceReviewRequiredMessage = 'Review required before production use. This form was reconstructed from a screenshot and may differ from the original Genesys configuration.'
-
-export function sourceReviewRequired(form: EvaluationForm): boolean {
-  return form.origin === 'genesys-recreated' && form.sourceReview?.status !== 'REVIEWED'
-}
-
-export function markSourceReviewed(form: EvaluationForm, now: string): EvaluationForm {
-  if (form.origin !== 'genesys-recreated') throw new Error('This form does not require source review.')
-  const status = formStatus(form)
-  return { ...structuredClone(form), status, enabled: status === 'PUBLISHED' && form.enabled, sourceReview: { status: 'REVIEWED', reviewedAt: now, note: sourceReviewAcknowledgement }, updatedAt: now }
-}
-
 export function productionReadinessErrors(form: EvaluationForm): string[] {
-  return [...validateForm(form), ...validateScorecard(toScorecard(form)), ...(sourceReviewRequired(form) ? [sourceReviewRequiredMessage] : [])]
+  return [...validateForm(form), ...validateScorecard(toScorecard(form))]
 }
 
 export function isOperationalForm(form: EvaluationForm): boolean {
@@ -50,7 +34,7 @@ export function nextFormVersion(form: EvaluationForm, existing: EvaluationForm[]
   const familyId = form.familyId ?? form.id
   const version = Math.max(...existing.filter(item => (item.familyId ?? item.id) === familyId).map(item => item.version), form.version) + 1
   return { ...structuredClone(form), id: `${familyId}_v${version}`, familyId,
-    version, status: 'DRAFT', enabled: false, sourceReview: form.origin === 'genesys-recreated' ? { status: 'REVIEW_REQUIRED' } : undefined, createdAt: now, updatedAt: now, publishedAt: undefined }
+    version, status: 'DRAFT', enabled: false, createdAt: now, updatedAt: now, publishedAt: undefined }
 }
 
 export function transitionForm(form: EvaluationForm, to: NonNullable<EvaluationForm['status']>, now: string): EvaluationForm {
