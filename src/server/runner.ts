@@ -1,3 +1,5 @@
+import { ProviderFailure, failureCode } from '../domain/providerFailure'
+import { scheduledRunAlerts, healthySchedulerTick, type AlertConfig } from './alerts'
 import { evaluateForm, maximumEvaluationWaves } from '../domain/formComposition'
 import { createHash } from 'node:crypto'
 import { matchPolicies } from '../domain/policies'
@@ -14,8 +16,9 @@ export function scheduledRunId(policy:InteractionPolicy,schedule:Schedule,period
 export function manualRunId(policy:InteractionPolicy,period:MonitoringPeriod){return `m_${digest(JSON.stringify([policy.id,policy.version??1,period.periodStart,period.periodEnd]))}`}
 export function executionClaimId(policy:InteractionPolicy,period:MonitoringPeriod){return `c_${digest(JSON.stringify([policy.id,policy.version??1,period.periodStart,period.periodEnd]))}`}
 export function evaluationId(contextId:string,conversationId:string,form:EvaluationForm){return `e_${digest(JSON.stringify([contextId,conversationId,form.id,form.version]))}`}
-export interface RunnerDeps { store:Store; genesys:GenesysReader; jev:JevEvaluator; now:()=>Date }
+export interface RunnerDeps { alertConfig?:AlertConfig; store:Store; genesys:GenesysReader; jev:JevEvaluator; now:()=>Date }
 export function planFingerprint(policy:InteractionPolicy,period:MonitoringPeriod,selected:Array<{conversation:{conversationId:string};pendingFormIds:string[]}>) { return digest(JSON.stringify([policy.id,policy.version??1,period,selected.map(item=>[item.conversation.conversationId,item.pendingFormIds])])) }
+async function genesysQuery<T>(operation:()=>Promise<T>):Promise<T>{try{return await operation()}catch(error){throw new ProviderFailure(failureCode(error,'GENESYS_QUERY_FAILURE'),error instanceof Error?error.message:'Genesys query failed.')}}
 export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,period:MonitoringPeriod) {
   if (!policy.enabled) throw new Error('Policy is disabled.')
   const from=Date.parse(period.periodStart),to=Date.parse(period.periodEnd)
@@ -35,20 +38,20 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   for(let cursor=from;cursor<to;cursor+=7*86400_000){
     const chunkEnd=Math.min(cursor+7*86400_000,to)
     for(let page=1;page<=20;page++){
-      const result=await deps.genesys.list({from:new Date(cursor).toISOString(),to:new Date(chunkEnd).toISOString(),page,pageSize:25,...filters})
+      const result=await genesysQuery(()=>deps.genesys.list({from:new Date(cursor).toISOString(),to:new Date(chunkEnd).toISOString(),page,pageSize:25,...filters}))
       candidates.push(...result.conversations)
       if(candidates.length>500)throw new Error('More than 500 candidates; narrow the monitoring period.')
       if(!result.hasMore)break
       if(page===20)throw new Error('More than 500 candidates; narrow the monitoring period.')
     }
   }
-  const scoped=policy.criteria.anyOf.some(g=>g.some(c=>c.field==='queue'))?await deps.genesys.withQueueNames(candidates):candidates
+  const scoped=policy.criteria.anyOf.some(g=>g.some(c=>c.field==='queue'))?await genesysQuery(()=>deps.genesys.withQueueNames(candidates)):candidates
   const preliminary=planPolicyRun(policy,scoped,forms,[],'genesys-cloud',period)
   if(preliminary.limitExceeded)throw new Error(`A run is limited to ${MAX_POLICY_CONVERSATIONS} sampled conversations.`)
   const selected=new Map<string,Conversation>();const retrievalFailures:PolicyRunFailure[]=[]
   for(const item of preliminary.selected){
     try {selected.set(item.conversation.conversationId,await deps.genesys.load(item.conversation.conversationId))}
-    catch(error){retrievalFailures.push({conversationId:item.conversation.conversationId,reason:`transcript_retrieval: ${error instanceof Error?error.message:'Unknown error'}`})}
+    catch(error){retrievalFailures.push({conversationId:item.conversation.conversationId,code:failureCode(error,'GENESYS_QUERY_FAILURE'),channel:item.conversation.channel,reason:`transcript_retrieval: ${error instanceof Error?error.message:'Unknown error'}`})}
   }
   const ready=scoped.map(c=>selected.get(c.conversationId)??c)
   // Only records from this policy-version/period context suppress new work.
@@ -64,8 +67,9 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
   try {
     const {plan,forms,retrievalFailures}=prepared??await planServerRun(deps,policy,period)
     const tasks=plan.selected.flatMap(item=>item.pendingFormIds.map(formId=>({conversation:item.conversation,form:forms.find(f=>f.id===formId)!})))
-    const unavailableFailures=plan.selected.filter(item=>!item.transcriptAvailable&&!retrievalFailures.some(f=>f.conversationId===item.conversation.conversationId)).map(item=>({conversationId:item.conversation.conversationId,reason:'transcript_unavailable: No supported transcript content was returned.'}))
+    const unavailableFailures=plan.selected.filter(item=>!item.transcriptAvailable&&!retrievalFailures.some(f=>f.conversationId===item.conversation.conversationId)).map(item=>({conversationId:item.conversation.conversationId,code:'CONTENT_UNAVAILABLE' as const,channel:item.conversation.channel,reason:'transcript_unavailable: No supported transcript content was returned.'}))
     run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,maximumProviderRequests:tasks.reduce((n,t)=>n+maximumEvaluationWaves(t.form),0),actualProviderRequests:0,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures,...unavailableFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage,queueCoverage:plan.queueCoverage}
+    run.contentAvailability=[...new Set(plan.selected.map(item=>item.conversation.channel))].map(channel=>({channel,sampled:plan.selected.filter(item=>item.conversation.channel===channel).length,available:plan.selected.filter(item=>item.conversation.channel===channel&&item.transcriptAvailable).length}))
     await deps.store.putRun(run)
     // A reserved slot is never retried automatically. An ambiguous post-Jev failure needs operator reconciliation.
     for(const task of tasks){
@@ -75,11 +79,11 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
       if(slot?.status==='completed'){run.evaluationsSucceeded++;continue}
       if(slot || !await deps.store.reserveEvaluation(id,deps.now().toISOString())){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,reason:'evaluation_uncertain: prior Jev request may have been charged; reconcile before retry.'});run.evaluationsFailed++;continue}
       try{
-        const result=await evaluateForm({conversation:task.conversation,form:task.form,evaluatedAt:deps.now().toISOString(),evaluateQuestions:request=>deps.jev.evaluate(request),onProviderRequest:async count=>{await deps.store.recordProviderRequest(id,count);run!.actualProviderRequests=(run!.actualProviderRequests??0)+1;await deps.store.putRun(run!)}})
+        const result=await evaluateForm({conversation:task.conversation,form:task.form,evaluatedAt:deps.now().toISOString(),evaluateQuestions:async request=>{try{return await deps.jev.evaluate(request)}catch(error){throw new ProviderFailure('JEV_FAILURE',error instanceof Error?error.message:'Jev evaluation failed.')}},onProviderRequest:async count=>{await deps.store.recordProviderRequest(id,count);run!.actualProviderRequests=(run!.actualProviderRequests??0)+1;await deps.store.putRun(run!)}})
         const record=recordEvaluation(task.conversation,task.form,result,matchPolicies(task.conversation,[policy]),id,{conversationSource:'genesys-cloud',policyRunId:runId,executionMode:provenance})
         await deps.store.completeEvaluation(id,record)
         run.evaluationsSucceeded++
-      }catch(error){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,reason:`evaluation_uncertain: ${error instanceof Error?error.message:'Unknown Jev or persistence error'}`});run.evaluationsFailed++}
+      }catch(error){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,code:failureCode(error,'RUN_FAILURE'),reason:`evaluation_uncertain: ${error instanceof Error?error.message:'Unknown Jev or persistence error'}`});run.evaluationsFailed++}
       await deps.store.putRun(run)
     }
     const coveredIds=new Set([...plan.selected.filter(item=>item.alreadyEvaluatedFormIds.length).map(item=>item.conversation.conversationId),...tasks.filter(task=>run!.failures.every(failure=>failure.conversationId!==task.conversation.conversationId||failure.formId!==task.form.id)).map(task=>task.conversation.conversationId)])
@@ -93,12 +97,15 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
     return run
   }catch(error){
     const detail=error instanceof Error?error.message:'Unknown error'
-    const kind=/authentication|token/i.test(detail)?'genesys_auth':/lease_conflict/i.test(detail)?'lease_conflict':run?'persistence_or_run':'genesys_query_or_plan'
+    const code=failureCode(error,'RUN_FAILURE')
+    const kind=code==='GENESYS_AUTH_FAILURE'?'genesys_auth':code==='GENESYS_QUERY_FAILURE'?'genesys_query_or_plan':'persistence_or_run'
     if(!run)run={id:runId,policyId:policy.id,policySnapshot:structuredClone(policy),source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:0,matchedConversationCount:0,formsAssigned:[...policy.evaluationFormIds],evaluationsRequested:0,evaluationsSucceeded:0,evaluationsFailed:0,status:'failed',failures:[],period}
-    run.status=run.evaluationsSucceeded?'partial-failure':'failed';run.completedAt=deps.now().toISOString();run.failures.push({conversationId:'',reason:`${kind}: ${detail}`})
+    run.status=run.evaluationsSucceeded?'partial-failure':'failed';run.completedAt=deps.now().toISOString();run.failures.push({conversationId:'',code,reason:`${kind}: ${detail}`})
     await deps.store.putRun(run)
     await deps.store.releaseClaim(claimId,owner)
     throw error
+  } finally {
+    if(run?.completedAt)try{await scheduledRunAlerts(deps.store,run,deps.now().toISOString(),deps.alertConfig)}catch{console.error('Operational alert persistence failed.',{runId:run.id})}
   }
 }
 export async function schedulerTick(deps:RunnerDeps){
@@ -122,5 +129,6 @@ export async function schedulerTick(deps:RunnerDeps){
       outcomes.push({scheduleId:schedule.id,runId,status:error instanceof Error?error.message:'failed'})
     }
   }
+  await healthySchedulerTick(deps.store,deps.now().toISOString())
   return outcomes
 }

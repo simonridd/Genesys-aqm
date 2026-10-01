@@ -154,3 +154,29 @@ input[readonly] { background: #f8fbfa; }
 .message-row.bot .bubble { background: #f4efff; border: 1px solid #d9c9f2; }
 .message-row.system .message-avatar { background: #e4e9ed; color: #45515c; }
 .message-row.system .bubble { background: #f0f3f5; border: 1px dashed #a3b0bb; }
+
+.group-scoring-mode label, .group-scoring-settings > label { display: inline-flex; gap: 8px; align-items: center; margin: 8px 20px 8px 0; }
+.group-scoring-settings { border: 1px solid #d9e4e1; border-radius: 8px; padding: 12px; margin-top: 16px; min-width: 0; }
+.group-scoring-settings input[type=checkbox], .group-scoring-mode input[type=radio] { width: auto; }
+.group-critical-failure { border: 2px solid #b33b36; background: #fff5f4; }
+.group-comparison { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; margin: 12px 0; }
+.operational-alerts { margin: 20px 0; }
+.alert-detail { overflow-wrap: anywhere; }
+.alert-detail dl > div { display: flex; gap: 16px; }
+@media (max-width:600px) { .group-comparison { grid-template-columns: 1fr; } .group-scoring-settings .editor-grid { grid-template-columns: 1fr; } }
+.evaluation-groups .group-result, .group-comparison > .panel, .operational-alerts { padding: 18px; }
+.evaluation-groups .group-result { margin: 12px 0; }
+@media (max-width:600px) {
+  .operational-alerts .operational-table, .operational-alerts .operational-table tbody, .operational-alerts .operational-table tr, .operational-alerts .operational-table td { display: block; width: 100%; min-width: 0; }
+  .operational-alerts .operational-table thead { display: none; }
+  .operational-alerts .operational-table td { box-sizing: border-box; border: 0; white-space: normal; overflow-wrap: anywhere; padding: 8px 14px; }
+  .operational-alerts .operational-table tr { padding: 10px 0; border-top: 1px solid #d9e4e1; }
+  .operational-alerts .operational-table td::before { display: block; font-size: 11px; color: #597773; margin-bottom: 3px; }
+  .operational-alerts .operational-table td:nth-child(1)::before { content: 'Severity'; }
+  .operational-alerts .operational-table td:nth-child(2)::before { content: 'Type'; }
+  .operational-alerts .operational-table td:nth-child(3)::before { content: 'Policy'; }
+  .operational-alerts .operational-table td:nth-child(4)::before { content: 'Run'; }
+  .operational-alerts .operational-table td:nth-child(5)::before { content: 'Opened'; }
+  .operational-alerts .operational-table td:nth-child(6)::before { content: 'Status'; }
+  .operational-alerts .operational-table td:nth-child(7)::before { content: 'Action'; }
+}

@@ -1,4 +1,4 @@
-import { effectiveQuestions } from './formComposition'
+import { scoreFormResults, effectiveQuestions } from './formComposition'
 import type { EvaluationForm, EvaluationRecord, QuestionResult, ScorecardItem } from './types'
 
 export type ReviewStatus = 'NOT_REVIEWED' | 'REVIEW_REQUESTED' | 'IN_REVIEW' | 'REVIEWED'
@@ -13,6 +13,7 @@ export interface QuestionReview {
   selectedOutcomeConfidence: number | null
 }
 export interface HumanReview {
+  scoringMode?: EvaluationRecord['scoringMode']; humanGroupResults?: EvaluationRecord['groupResults']; humanPassed?: boolean | null; humanCriticalGroupFailures?: string[]; groupComparison?: Array<{groupId:string; name:string; aiScore:number|null; humanScore:number|null; difference:number|null}>
   id: string; evaluationId: string; conversationId: string; formId: string; formVersion: number; formSnapshot: EvaluationForm
   source: 'genesys-cloud' | 'synthetic' | 'uploaded' | 'unknown'; createdAt: string; updatedAt: string; completedAt?: string
   status: Exclude<ReviewStatus, 'NOT_REVIEWED'>; revision: number; reviewer?: Reviewer; notes: string
@@ -74,8 +75,11 @@ export function buildReview(record: EvaluationRecord, prior: HumanReview | undef
   })
   const answered = questions.filter(q=>q.human).length
   if (input.action === 'complete' && answered !== questions.filter(q=>q.ai.status!=='SKIPPED').length) throw Error('Answer every evaluated question before completing the review.')
-  const weight = questions.reduce((sum,q)=>sum+(q.human?.credit !== null && q.human ? snapshotQuestions.find(item=>item.id===q.questionId)!.weight : 0),0)
-  const humanOverallScore = weight > 0 ? questions.reduce((sum,q)=>sum+(q.human?.credit ?? 0)*snapshotQuestions.find(item=>item.id===q.questionId)!.weight,0)/weight : null
+  const humanQuestions: QuestionResult[] = questions.map(q=>({...q.ai,credit:q.human?.credit??null,weightedContribution:q.human?.credit==null?null:q.human.credit*q.ai.weight}))
+  const humanScore=scoreFormResults(record.form,humanQuestions,new Map((record.groupResults??[]).map(g=>[g.groupId,g.status!=='SKIPPED'])))
+  const humanOverallScore=humanScore.overallScore
+  const aiGroups=record.groupResults??scoreFormResults(record.form,record.questions).groups
+  const groupComparison=humanScore.groups.map(g=>{const aiScore=aiGroups.find(a=>a.groupId===g.groupId)?.overallScore??null;return {groupId:g.groupId,name:g.name,aiScore,humanScore:g.overallScore,difference:aiScore===null||g.overallScore===null?null:g.overallScore-aiScore}})
   const revision = (prior?.revision ?? 0)+1
   const status = input.action === 'request' ? 'REVIEW_REQUESTED' : input.action === 'complete' ? 'REVIEWED' : 'IN_REVIEW'
   const events: ReviewEvent[] = [...(prior?.events ?? [])]
@@ -84,7 +88,7 @@ export function buildReview(record: EvaluationRecord, prior: HumanReview | undef
   events.push({kind:input.action==='request'?'review_requested':input.action==='complete'?'review_completed':input.action==='start'?'review_started':'review_saved',at:now,actor,revision})
   if(events.length>200)throw Error('Review audit limit reached; contact the operator.')
   // Only complete scores enter calibration. A partial score is explicitly a progress preview.
-  return {id:record.id,evaluationId:record.id,conversationId:record.conversationId,formId:record.form.id,formVersion:record.form.version,formSnapshot:structuredClone(record.form),source:reviewSource(record),createdAt:prior?.createdAt??now,updatedAt:now,completedAt:status==='REVIEWED'?now:undefined,status,revision,reviewer:status==='REVIEW_REQUESTED'?prior?.reviewer:structuredClone(actor),notes:boundedNote(input.notes??prior?.notes,4000),questions,humanOverallScore,comparison:{aiOverallScore:record.overallScore,humanOverallScore,absoluteScoreDifference:record.overallScore===null||humanOverallScore===null?null:Math.abs(record.overallScore-humanOverallScore),answered,agreements:questions.filter(q=>q.comparison?.exact).length,disagreements:questions.filter(q=>q.comparison&&!q.comparison.exact).length,total:questions.filter(q=>q.ai.status!=='SKIPPED').length},events}
+  return {id:record.id,evaluationId:record.id,conversationId:record.conversationId,formId:record.form.id,formVersion:record.form.version,formSnapshot:structuredClone(record.form),source:reviewSource(record),createdAt:prior?.createdAt??now,updatedAt:now,completedAt:status==='REVIEWED'?now:undefined,status,revision,reviewer:status==='REVIEW_REQUESTED'?prior?.reviewer:structuredClone(actor),notes:boundedNote(input.notes??prior?.notes,4000),questions,humanOverallScore,scoringMode:humanScore.scoringMode,humanGroupResults:humanScore.groups,humanPassed:humanScore.passed,humanCriticalGroupFailures:humanScore.criticalGroupFailures,groupComparison,comparison:{aiOverallScore:record.overallScore,humanOverallScore,absoluteScoreDifference:record.overallScore===null||humanOverallScore===null?null:Math.abs(record.overallScore-humanOverallScore),answered,agreements:questions.filter(q=>q.comparison?.exact).length,disagreements:questions.filter(q=>q.comparison&&!q.comparison.exact).length,total:questions.filter(q=>q.ai.status!=='SKIPPED').length},events}
 }
 export function matchesReviewQueue(record: ReviewEvaluation, query: URLSearchParams): boolean {
   const form=query.get('form'),status=query.get('reviewStatus'),question=query.get('reviewQuestion')

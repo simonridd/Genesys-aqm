@@ -10,7 +10,7 @@ export function validateGroupAsset(asset: QuestionGroupAsset): string[] {
   const errors: string[] = []
   if (!/^[A-Za-z0-9_-]{1,180}$/.test(asset.id) || !/^[A-Za-z0-9_-]{1,180}$/.test(asset.familyId) || !asset.name?.trim() || typeof asset.description !== 'string' || !Number.isInteger(asset.version) || asset.version < 1 || !['DRAFT','PUBLISHED','RETIRED'].includes(asset.status)) errors.push('Asset needs an ID, family, name, description, positive version and valid status.')
   if (!Array.isArray(asset.questions)) return [...errors,'Asset questions must be an array.']
-  const form: EvaluationForm = {id:asset.id,name:asset.name,description:asset.description,version:asset.version,enabled:false,groups:[{id:'asset_group',name:asset.name,condition:asset.condition}],questions:asset.questions.map(q=>({...q,groupId:'asset_group'})),scoring:{yesThreshold:.65,passScore:.7,criticalQuestionIds:[]}}
+  const form: EvaluationForm = {id:asset.id,name:asset.name,description:asset.description,version:asset.version,enabled:false,groups:[{id:'asset_group',name:asset.name,condition:asset.condition,scoring:asset.scoring}],questions:asset.questions.map(q=>({...q,groupId:'asset_group'})),scoring:{yesThreshold:.65,passScore:.7,criticalQuestionIds:[]}}
   errors.push(...validateScorecard({id:asset.id,version:asset.version,title:asset.name,threshold:.65,items:asset.questions}),...validateComposition(form))
   if (asset.questions.some(q=>q.groupId || q.sourceAssetQuestionId)) errors.push('Reusable questions must use asset-local IDs without form instance metadata.')
   return errors
@@ -30,7 +30,7 @@ export function assertAssetWrite(prior:QuestionGroupAsset|undefined,next:Questio
   if (!prior) return
   if (prior.familyId!==next.familyId||prior.version!==next.version) throw Error('Asset family and version are immutable.')
   if (prior.status!=='DRAFT') {
-    if (stable({name:prior.name,description:prior.description,questions:prior.questions,condition:prior.condition})!==stable({name:next.name,description:next.description,questions:next.questions,condition:next.condition})) throw Error('Published asset definition is immutable. Create a new version.')
+    if (stable({name:prior.name,description:prior.description,questions:prior.questions,condition:prior.condition,scoring:prior.scoring})!==stable({name:next.name,description:next.description,questions:next.questions,condition:next.condition,scoring:next.scoring})) throw Error('Published asset definition is immutable. Create a new version.')
     if (!(next.status===prior.status||prior.status==='PUBLISHED'&&next.status==='RETIRED')) throw Error('Published/retired assets cannot return to editing.')
   }
 }
@@ -51,7 +51,7 @@ function snapshot(form:EvaluationForm,groupId:string,asset:QuestionGroupAsset,pr
     if(reserved.has(id))throw Error(`Question ID collision: ${id}. Choose a different group instance ID.`)
     reserved.add(id);ids.set(q.id,id)
   }
-  const group:FormQuestionGroup={id:groupId,name:asset.name,description:asset.description,condition:prior?prior.condition:asset.condition,sourceAsset:{familyId:asset.familyId,assetId:asset.id,assetVersion:asset.version}}
+  const group:FormQuestionGroup={id:groupId,name:asset.name,description:asset.description,scoring:structuredClone(asset.scoring),condition:prior?prior.condition:asset.condition,sourceAsset:{familyId:asset.familyId,assetId:asset.id,assetVersion:asset.version}}
   const questions=asset.questions.map(q=>({...structuredClone(q),id:ids.get(q.id)!,groupId,sourceAssetQuestionId:q.id,condition:remap(q.condition,ids)}))
   const next={...form,groups:prior?form.groups!.map(g=>g.id===groupId?group:g):[...form.groups!,group],questions:[...form.questions.filter(q=>!priorQuestions.some(p=>p.id===q.id)),...questions]}
   const removed=new Set(priorQuestions.filter(q=>!questions.some(p=>p.id===q.id)).map(q=>q.id))
@@ -87,7 +87,7 @@ export function saveGroupAsset(form:EvaluationForm,groupId:string,id:string,now:
   const items=questionsInGroup(materializeGroups(form),group),ids=new Map(items.map(q=>[q.id,q.sourceAssetQuestionId??q.id]))
   const questions=items.map(q=>{const result={...structuredClone(q),id:ids.get(q.id)!,condition:remap(q.condition,ids)};delete result.groupId;delete result.sourceAssetQuestionId;return result})
   const familyId=group.sourceAsset?.familyId??id,version=group.sourceAsset?Math.max(group.sourceAsset.assetVersion,...existing.filter(a=>a.familyId===familyId).map(a=>a.version))+1:1
-  const asset:QuestionGroupAsset={id:group.sourceAsset?`${familyId}_v${version}`:id,familyId,name:group.name,description:group.description??'',version,status:'DRAFT',questions,condition:group.condition,createdAt:now,updatedAt:now}
+  const asset:QuestionGroupAsset={id:group.sourceAsset?`${familyId}_v${version}`:id,familyId,name:group.name,description:group.description??'',version,status:'DRAFT',questions,condition:group.condition,scoring:structuredClone(group.scoring),createdAt:now,updatedAt:now}
   const errors=validateGroupAsset(asset);if(errors.length)throw Error(errors.join(' '))
   return asset
 }

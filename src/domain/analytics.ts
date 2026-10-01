@@ -1,4 +1,5 @@
 import { formGroups, questionsInGroup, scoreResults } from './formComposition'
+import type { HumanReview } from './reviews'
 import type { EvaluationRecord, PolicyRun } from './types'
 export type AnalyticsSourceFilter = 'real' | 'synthetic' | 'all'
 export function filterRecordsBySource(records: EvaluationRecord[], filter: AnalyticsSourceFilter): EvaluationRecord[] {
@@ -20,15 +21,15 @@ export function summarizeCoverage(runs: PolicyRun[]) {
   return { candidate, eligible, sampled, evaluable, evaluated, successful, failed,
     samplingCoverage: coverageRate(sampled,eligible), evaluationCoverage: coverageRate(evaluated,eligible), sampleCompletion: coverageRate(evaluated,evaluable), transcriptAvailability: coverageRate(evaluable,sampled) }
 }
-export interface Breakdown { key: string; count: number; averageScore: number | null; passRate: number | null; criticalFailures: number; formRef?:string; questionId?:string; uncertaintyRate?:number|null; averageConfidence?:number|null; applicableCount?:number; skippedCount?:number; groupId?:string }
+export interface Breakdown { humanAverageScore?:number|null; meanScoreDifference?:number|null; criticalGroupFailures?:number; reviewedCount?:number; key: string; count: number; averageScore: number | null; passRate: number | null; criticalFailures: number; formRef?:string; questionId?:string; uncertaintyRate?:number|null; averageConfidence?:number|null; applicableCount?:number; skippedCount?:number; groupId?:string }
 export function summarize(records: EvaluationRecord[]) {
   const scored = records.filter(r => r.overallScore !== null)
   const decided = records.filter(r => r.passed !== null)
   return { evaluations: records.length, conversations: new Set(records.map(r => r.conversationId)).size,
     averageScore: scored.length ? scored.reduce((n,r) => n + r.overallScore!,0)/scored.length : null,
     passRate: decided.length ? decided.filter(r => r.passed).length/decided.length : null,
-    criticalFailures: records.reduce((n,r) => n + r.criticalFailures.length,0),
-    criticalFailureRate: records.length ? records.filter(r => r.criticalFailures.length > 0).length/records.length : null }
+    criticalFailures: records.reduce((n,r) => n + r.criticalFailures.length+(r.criticalGroupFailures?.length??0),0),
+    criticalFailureRate: records.length ? records.filter(r => r.criticalFailures.length > 0 || (r.criticalGroupFailures?.length??0)>0).length/records.length : null }
 }
 export function breakdown(records: EvaluationRecord[], key: (record: EvaluationRecord) => string): Breakdown[] {
   const groups = new Map<string, EvaluationRecord[]>()
@@ -47,12 +48,15 @@ export function questionBreakdown(records: EvaluationRecord[]): Breakdown[] {
     return {key,formRef,questionId,count:answered.length,applicableCount:answered.length,skippedCount:values.length-answered.length,averageScore:scored.length?scored.reduce((n,q)=>n+q.credit!,0)/scored.length:null,passRate:scored.length?scored.filter(q=>q.credit!>=.67).length/scored.length:null,criticalFailures,uncertaintyRate:answered.length?answered.filter(q=>q.type==='noul'?q.probability!==undefined&&q.probability>=.4&&q.probability<=.6:q.confidence!==undefined&&q.confidence<.6).length/answered.length:null,averageConfidence:confidence.length?confidence.reduce((a,b)=>a+b,0)/confidence.length:null}
   }).sort((a,b)=>(a.averageScore??0)-(b.averageScore??0))
 }
-export function groupBreakdown(records:EvaluationRecord[]):Breakdown[]{
-  const buckets=new Map<string,Array<{applicable:boolean;score:number|null;critical:number}>>()
+export function groupBreakdown(records:EvaluationRecord[],reviews:Map<string,HumanReview>=new Map()):Breakdown[]{
+  const buckets=new Map<string,Array<{applicable:boolean;score:number|null;passed:boolean|null;critical:number;criticalGroup:number;human:number|null;gap:number|null}>>()
   for(const record of records.filter(r=>r.purpose!=='FORM_TEST'))for(const group of formGroups(record.form)){
     const ids=new Set(questionsInGroup(record.form,group).map(q=>q.id)),results=record.questions.filter(q=>ids.has(q.id)),proven=record.groupResults?.find(g=>g.groupId===group.id)
+    const review=reviews.get(record.id),human=review?.status==='REVIEWED'?review.humanGroupResults?.find(g=>g.groupId===group.id)?.overallScore??null:null
+    const score=proven?.overallScore??scoreResults(results).overallScore
     const key=`${record.form.id}@${record.form.version}|${group.id}|${group.name}`
-    buckets.set(key,[...(buckets.get(key)??[]),{applicable:proven?proven.status==='APPLICABLE':results.some(q=>q.status!=='SKIPPED'),score:scoreResults(results).overallScore,critical:record.criticalFailures.filter(id=>ids.has(id)&&results.some(q=>q.id===id&&q.status!=='SKIPPED')).length}])
+    buckets.set(key,[...(buckets.get(key)??[]),{applicable:proven?proven.status==='APPLICABLE':results.some(q=>q.status!=='SKIPPED'),score,passed:proven?.passed??null,critical:record.criticalFailures.filter(id=>ids.has(id)&&results.some(q=>q.id===id&&q.status!=='SKIPPED')).length,criticalGroup:proven?.critical&&proven.passed===false?1:0,human,gap:human===null||score===null?null:human-score}])
   }
-  return [...buckets].map(([compound,values])=>{const [formRef,groupId,key]=compound.split('|'),scored=values.filter(v=>v.applicable&&v.score!==null);return {key,formRef,groupId,count:values.length,applicableCount:values.filter(v=>v.applicable).length,skippedCount:values.filter(v=>!v.applicable).length,averageScore:scored.length?scored.reduce((n,v)=>n+v.score!,0)/scored.length:null,passRate:null,criticalFailures:values.reduce((n,v)=>n+v.critical,0)}})
+  const mean=(v:number[])=>v.length?v.reduce((a,b)=>a+b,0)/v.length:null
+  return [...buckets].map(([compound,values])=>{const [formRef,groupId,key]=compound.split('|'),scored=values.filter(v=>v.applicable&&v.score!==null),decided=values.filter(v=>v.passed!==null);return {key,formRef,groupId,count:values.length,applicableCount:values.filter(v=>v.applicable).length,skippedCount:values.filter(v=>!v.applicable).length,averageScore:mean(scored.map(v=>v.score!)),passRate:decided.length?decided.filter(v=>v.passed).length/decided.length:null,criticalFailures:values.reduce((n,v)=>n+v.critical+v.criticalGroup,0),criticalGroupFailures:values.reduce((n,v)=>n+v.criticalGroup,0),reviewedCount:values.filter(v=>v.human!==null).length,humanAverageScore:mean(values.flatMap(v=>v.human===null?[]:[v.human])),meanScoreDifference:mean(values.flatMap(v=>v.gap===null?[]:[v.gap]))}})
 }

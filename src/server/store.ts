@@ -1,3 +1,5 @@
+import { openAlert, transitionAlert, type AlertInput, type AlertActor, type OperationalAlert, type SchedulerHealth } from '../domain/operationalAlerts'
+import { createHash } from 'node:crypto'
 import { assertAssetWrite } from '../domain/groupAssets'
 import type { HumanReview } from '../domain/reviews'
 import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun, QuestionGroupAsset } from '../domain/types'
@@ -6,12 +8,17 @@ import type { Firestore } from 'firebase-admin/firestore'
 
 export interface Claim { id: string; owner: string; leaseUntil: string; status: 'running' | 'completed'; claimedAt: string }
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string; providerRequestCount?: number }
-export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets'
+export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets' | 'operationalAlerts'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface ReviewWrite { review: HumanReview; expectedRevision: number }
 export class ReviewConflict extends Error { constructor(){super('Review changed in another tab or by another reviewer. Refresh before saving.')} }
 export interface Store {
+  alert(id:string):Promise<OperationalAlert|undefined>; alerts(activeOnly?:boolean):Promise<OperationalAlert[]>
+  upsertAlert(input:AlertInput,now:string):Promise<OperationalAlert>
+  transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor):Promise<OperationalAlert|undefined>
+  schedulerHealth():Promise<SchedulerHealth|undefined>; recordSchedulerHealth(now:string,successful:boolean):Promise<SchedulerHealth>
+
   groupAsset(id:string):Promise<QuestionGroupAsset|undefined>; putGroupAsset(asset:QuestionGroupAsset):Promise<void>
   recordProviderRequest(id:string,count:number):Promise<void>
   review(id:string):Promise<HumanReview|undefined>; reviewsByIds(ids:string[]):Promise<HumanReview[]>
@@ -31,6 +38,14 @@ export interface Store {
 }
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
+  private alertMap=new Map<string,OperationalAlert>(); private schedulerState?:SchedulerHealth
+  async alert(id:string){return copy(this.alertMap.get(id))}
+  async alerts(activeOnly=false){return copy([...this.alertMap.values()].filter(a=>!activeOnly||a.status!=='RESOLVED'))}
+  async upsertAlert(input:AlertInput,now:string){const prior=[...this.alertMap.values()].find(a=>a.dedupKey===input.dedupKey&&a.status!=='RESOLVED');const alert=openAlert(prior,input,now);this.alertMap.set(alert.id,copy(alert));return copy(alert)}
+  async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){const prior=this.alertMap.get(id);if(!prior)return;const next=transitionAlert(prior,action,now,actor);this.alertMap.set(id,copy(next));return copy(next)}
+  async schedulerHealth(){return copy(this.schedulerState)}
+  async recordSchedulerHealth(now:string,successful:boolean){this.schedulerState={initializedAt:this.schedulerState?.initializedAt??now,lastSuccessfulTickAt:successful?now:this.schedulerState?.lastSuccessfulTickAt};return copy(this.schedulerState)}
+
   private assetMap = new Map<string,QuestionGroupAsset>()
   async groupAsset(id:string){return copy(this.assetMap.get(id))}
   async putGroupAsset(asset:QuestionGroupAsset){if([...this.assetMap.values()].some(a=>a.id!==asset.id&&a.familyId===asset.familyId&&a.version===asset.version))throw Error('This reusable family version already exists. Refresh the library.');assertAssetWrite(this.assetMap.get(asset.id),asset);this.assetMap.set(asset.id,copy(asset))}
@@ -57,7 +72,7 @@ export class MemoryStore implements Store {
   async evaluationSlot(id:string) { return copy(this.slots.get(id)) }
   async completeEvaluation(id:string,record:EvaluationRecord) { const slot=this.slots.get(id); if (!slot) throw new Error('Evaluation was not reserved.'); await this.putEvaluation(record); slot.status='completed'; slot.recordId=record.id }
   async query<T>(collection:CollectionName,limit:number,cursor?:string):Promise<QueryPage<T>> {
-    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,questionGroupAssets:this.assetMap})[collection]
+    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,questionGroupAssets:this.assetMap,operationalAlerts:this.alertMap})[collection]
     const rows=[...map.entries()].sort(([a],[b])=>a.localeCompare(b)).filter(([id])=>!cursor||id>cursor)
     const page=rows.slice(0,limit)
     return {items:copy(page.map(([,value])=>value)) as T[],nextCursor:rows.length>limit?page.at(-1)?.[0]:undefined,scanned:page.length}
@@ -91,6 +106,24 @@ function canonicalValue(value:unknown):unknown {
 }
 const stored=(value:unknown)=>firestoreValue(JSON.parse(JSON.stringify(value))) as object
 export class FirestoreStore implements Store {
+  alert(id:string){return this.one<OperationalAlert>('operationalAlerts',id)}
+  async alerts(activeOnly=false){if(!activeOnly)return this.all<OperationalAlert>('operationalAlerts');const docs=await this.collection('operationalAlerts').where('status','in',['OPEN','ACKNOWLEDGED']).get();return docs.docs.map(doc=>canonicalValue(doc.data()) as OperationalAlert)}
+  async upsertAlert(input:AlertInput,now:string){
+    const key=createHash('sha256').update(input.dedupKey).digest('hex'),pointer=this.collection('operationalAlertKeys').doc(key)
+    return this.db.runTransaction(async tx=>{
+      const ptr=await tx.get(pointer),priorId=ptr.data()?.alertId as string|undefined
+      const doc=priorId?await tx.get(this.collection('operationalAlerts').doc(pathId(priorId))):undefined
+      const next=openAlert(doc?.exists?canonicalValue(doc.data()) as OperationalAlert:undefined,input,now)
+      tx.set(this.collection('operationalAlerts').doc(pathId(next.id)),stored(next));tx.set(pointer,{alertId:next.id});return next
+    })
+  }
+  async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){
+    const ref=this.collection('operationalAlerts').doc(pathId(id))
+    return this.db.runTransaction(async tx=>{const doc=await tx.get(ref);if(!doc.exists)return;const next=transitionAlert(canonicalValue(doc.data()) as OperationalAlert,action,now,actor);tx.set(ref,stored(next));return next})
+  }
+  schedulerHealth(){return this.one<SchedulerHealth>('operationalHealth','scheduler')}
+  async recordSchedulerHealth(now:string,successful:boolean){const ref=this.collection('operationalHealth').doc('scheduler');return this.db.runTransaction(async tx=>{const doc=await tx.get(ref),state=doc.data() as SchedulerHealth|undefined;const next={initializedAt:state?.initializedAt??now,lastSuccessfulTickAt:successful?now:state?.lastSuccessfulTickAt};tx.set(ref,stored(next));return next})}
+
   async groupAsset(id:string){return this.one<QuestionGroupAsset>('questionGroupAssets',id)}
   async putGroupAsset(asset:QuestionGroupAsset){const ref=this.collection('questionGroupAssets').doc(pathId(asset.id));await this.db.runTransaction(async tx=>{const old=await tx.get(ref),versions=await tx.get(this.collection('questionGroupAssets').where('familyId','==',asset.familyId).where('version','==',asset.version).limit(2));if(versions.docs.some(doc=>doc.id!==asset.id))throw Error('This reusable family version already exists. Refresh the library.');assertAssetWrite(old.exists?canonicalValue(old.data()) as QuestionGroupAsset:undefined,asset);tx.set(ref,stored(asset))})}
   async recordProviderRequest(id:string,count:number){await this.collection('evaluationSlots').doc(pathId(id)).update({providerRequestCount:count})}

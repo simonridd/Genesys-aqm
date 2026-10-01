@@ -1,3 +1,4 @@
+import { ProviderFailure, failureCode } from './providerFailure'
 import type { Conversation, EvaluationForm, EvaluationRequest, EvaluationResult, FormCondition, FormQuestionGroup, GroupResult, QuestionResult, ScorecardItem } from './types'
 
 /** Legacy snapshots are interpreted without modifying their stored definitions. */
@@ -27,6 +28,7 @@ export function validateComposition(form: EvaluationForm): string[] {
     for (const group of form.groups) if (!/^[a-z][a-z0-9_]*$/.test(group.id) || !group.name?.trim()) errors.push('Each group needs a valid ID and name.')
     for (const q of form.questions) if (q.groupId && !form.groups.some(g => g.id === q.groupId)) errors.push(`${q.title}: group ${q.groupId} does not exist.`)
   }
+  errors.push(...validateGroupScoring(form))
   const check = (condition: FormCondition | undefined, earlier: ScorecardItem[], where: string) => {
     if (!condition) return
     if (condition.kind === 'interaction_metadata') {
@@ -78,8 +80,50 @@ export function scoreResults(questions: QuestionResult[]) {
   const countedWeight = answered.reduce((sum,q) => sum + q.weight,0)
   return { countedWeight, overallScore: countedWeight ? answered.reduce((sum,q) => sum + q.credit! * q.weight,0) / countedWeight : null }
 }
-export class FormEvaluationFailure extends Error {
-  constructor(message: string, readonly providerRequestCount: number) { super(message) }
+export function validateGroupScoring(form: EvaluationForm): string[] {
+  const errors: string[] = [], groups = formGroups(form)
+  if (form.scoring.mode !== undefined && !['QUESTION_WEIGHTED','GROUP_WEIGHTED'].includes(form.scoring.mode)) errors.push('Unsupported scoring mode.')
+  const canScore = (q: ScorecardItem) => q.enabled && q.weight > 0 && (q.type !== 'choice' || q.options.some(o => o.credit !== undefined))
+  for (const g of groups) {
+    const s = g.scoring
+    if(s!==undefined&&(!s||typeof s!=='object'||Array.isArray(s)))errors.push(`${g.name}: invalid group scoring settings.`)
+    if (s?.weight !== undefined && (!Number.isFinite(s.weight) || s.weight <= 0)) errors.push(`${g.name}: group weight must be finite and positive.`)
+    if (s?.passScore !== undefined && (!Number.isFinite(s.passScore) || s.passScore < 0 || s.passScore > 1)) errors.push(`${g.name}: minimum group score must be between 0 and 1.`)
+    if (s?.critical !== undefined && typeof s.critical !== 'boolean') errors.push(`${g.name}: critical must be a boolean.`)
+    if (s?.critical && s.passScore === undefined) errors.push(`${g.name}: critical group requires a minimum group score.`)
+    if (s?.critical && !questionsInGroup(form,g).some(canScore)) errors.push(`${g.name}: critical group needs a scored enabled question.`)
+    if (form.scoring.mode === 'GROUP_WEIGHTED' && questionsInGroup(form,g).some(canScore) && s?.weight === undefined) errors.push(`${g.name}: group weighted mode requires an explicit positive weight.`)
+  }
+  if (form.scoring.mode === 'GROUP_WEIGHTED' && !groups.some(g => g.scoring?.weight && questionsInGroup(form,g).some(canScore))) errors.push('Group weighted form needs at least one weighted scoring group.')
+  return errors
+}
+/** The snapshot and supplied answers are the only scoring inputs. AI and human use this same function. */
+export function scoreFormResults(form: EvaluationForm, questions: QuestionResult[], applicability?: Map<string, boolean>) {
+  questions=questions.map(q=>({...q,weight:form.questions.find(f=>f.id===q.id)?.weight??q.weight}))
+  const scoringMode = form.scoring.mode ?? 'QUESTION_WEIGHTED'
+  const groups: GroupResult[] = formGroups(form).map(g => {
+    const ids = questionsInGroup(form,g).map(q => q.id), items = questions.filter(q => ids.includes(q.id))
+    const applicable = applicability?.get(g.id) ?? !items.some(q => q.skipReason === 'group_condition_false')
+    const score = scoreResults(items), critical = g.scoring?.critical ?? false
+    return { groupId:g.id,name:g.name,status:applicable?'APPLICABLE':'SKIPPED',applicable,...score,
+      weight:g.scoring?.weight,passScore:g.scoring?.passScore,critical,
+      passed:!applicable || score.overallScore===null || g.scoring?.passScore===undefined ? null : score.overallScore>=g.scoring.passScore,
+      questionIds:ids,answered:items.filter(q=>q.status!=='SKIPPED').length,skipped:items.filter(q=>q.status==='SKIPPED').length,
+      ...(applicable && critical && score.overallScore===null ? {anomaly:'NO_SCORED_QUESTIONS' as const} : {}) }
+  })
+  const weighted = groups.filter(g => g.applicable && g.overallScore !== null)
+  const weight = weighted.reduce((sum,g)=>sum+(g.weight??0),0)
+  if (scoringMode === 'GROUP_WEIGHTED' && weighted.some(g=>!Number.isFinite(g.weight)||g.weight!<=0)) throw Error('Applicable scoring group has no valid weight.')
+  for (const g of groups) if(scoringMode==='GROUP_WEIGHTED')g.normalizedWeight=weighted.includes(g)&&weight>0?g.weight!/weight:0
+  const overallScore = scoringMode==='GROUP_WEIGHTED' ? weight>0?weighted.reduce((sum,g)=>sum+g.overallScore!*g.weight!,0)/weight:null : scoreResults(questions).overallScore
+  const criticalGroupFailures=groups.filter(g=>g.critical&&g.passed===false).map(g=>g.groupId)
+  const scoringAnomalies=groups.filter(g=>g.anomaly).map(g=>g.groupId)
+  const criticalFailures=form.scoring.criticalQuestionIds.filter(id=>questions.some(q=>q.id===id&&q.status!=='SKIPPED'&&q.credit!==null&&q.credit<1))
+  const passed=criticalFailures.length||criticalGroupFailures.length||scoringAnomalies.length ? false : overallScore===null?null:overallScore>=form.scoring.passScore
+  return {scoringMode,groups,overallScore,countedWeight:scoringMode==='GROUP_WEIGHTED'?weight:scoreResults(questions).countedWeight,criticalGroupFailures,scoringAnomalies,criticalFailures,passed}
+}
+export class FormEvaluationFailure extends ProviderFailure {
+  constructor(message: string, readonly providerRequestCount: number, code: import('./types').OperationalFailureCode = 'RUN_FAILURE') { super(code,message) }
 }
 export async function evaluateForm(input: {
   conversation: Conversation; form: EvaluationForm; evaluatedAt: string
@@ -125,11 +169,8 @@ export async function evaluateForm(input: {
       }
       model = output.model; provider = output.provider; rawResponses.push(output.rawResponse)
     }
-  } catch (error) { throw new FormEvaluationFailure(error instanceof Error ? error.message : 'Form evaluation failed.',providerRequestCount) }
+  } catch (error) { throw new FormEvaluationFailure(error instanceof Error ? error.message : 'Form evaluation failed.',providerRequestCount,failureCode(error,'RUN_FAILURE')) }
   const questions = ordered.map(q=>results.get(q.id)!)
-  const groupResults: GroupResult[] = groups.map(g => {
-    const items = questionsInGroup(form,g).map(q=>results.get(q.id)!)
-    return {groupId:g.id,name:g.name,status:conditionApplies(g.condition,conversation,results)===false?'SKIPPED':'APPLICABLE',...scoreResults(items),answered:items.filter(q=>q.status!=='SKIPPED').length,skipped:items.filter(q=>q.status==='SKIPPED').length}
-  })
-  return {conversationId:conversation.conversationId,scorecardId:form.id,scorecardVersion:form.version,evaluatedAt,provider,model,questions,...scoreResults(questions),providerRequestCount,groups:groupResults,rawResponse:rawResponses}
+  const scored = scoreFormResults(form,questions,new Map(groups.map(g=>[g.id,conditionApplies(g.condition,conversation,results)!==false])))
+  return {conversationId:conversation.conversationId,scorecardId:form.id,scorecardVersion:form.version,evaluatedAt,provider,model,questions,...scored,providerRequestCount,rawResponse:rawResponses}
 }

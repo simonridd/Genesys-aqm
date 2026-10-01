@@ -12,16 +12,19 @@ export type FormCondition =
   | { kind: 'interaction_metadata'; field: 'channel' | 'queue' | 'direction' | 'topic'; operator: 'equals' | 'in'; values: string[]; equals?: never }
   | { kind: 'question_outcome'; questionId: string; outcomes: string[]; operator?: 'equals' | 'in' }
   | { kind: 'question_credit'; questionId: string; operator: 'greater_than_or_equal' | 'less_than'; value: number }
+export type ScoringMode = 'QUESTION_WEIGHTED' | 'GROUP_WEIGHTED'
+export interface GroupScoring { weight?: number; passScore?: number; critical?: boolean }
 export interface FormQuestionGroup {
+  scoring?: GroupScoring
   id: string; name: string; description?: string; condition?: FormCondition
   sourceAsset?: { familyId: string; assetId: string; assetVersion: number }
 }
 export interface QuestionGroupAsset {
   id: string; familyId: string; name: string; description: string; version: number
-  status: 'DRAFT' | 'PUBLISHED' | 'RETIRED'; questions: ScorecardItem[]
+  status: 'DRAFT' | 'PUBLISHED' | 'RETIRED'; questions: ScorecardItem[]; scoring?: GroupScoring
   createdAt: string; updatedAt: string; publishedAt?: string; condition?: FormCondition
 }
-export interface GroupResult { groupId: string; name: string; status: 'APPLICABLE' | 'SKIPPED'; overallScore: number | null; countedWeight: number; answered: number; skipped: number }
+export interface GroupResult { applicable?: boolean; weight?: number; normalizedWeight?: number; passScore?: number; passed?: boolean | null; critical?: boolean; questionIds?: string[]; anomaly?: 'NO_SCORED_QUESTIONS'; groupId: string; name: string; status: 'APPLICABLE' | 'SKIPPED'; overallScore: number | null; countedWeight: number; answered: number; skipped: number }
 export interface ScorecardItem {
   id: string; title: string; instructions: string; type: QuestionType
   options: Option[]; weight: number; enabled: boolean; section?: string; sourceGroupWeight?: number
@@ -38,13 +41,13 @@ export interface QuestionResult {
 export interface EvaluationResult {
   conversationId: string; scorecardId: string; scorecardVersion: number; evaluatedAt: string
   provider: string; model: string; questions: QuestionResult[]; overallScore: number | null
-  countedWeight: number; rawResponse: unknown; providerRequestCount?: number; groups?: GroupResult[]
+  countedWeight: number; rawResponse: unknown; scoringMode?: ScoringMode; providerRequestCount?: number; groups?: GroupResult[]
 }
 export interface EvaluationForm {
   id: string; name: string; description: string; version: number; enabled: boolean
   familyId?: string; status?: 'DRAFT' | 'TESTING' | 'PUBLISHED' | 'RETIRED'; createdAt?: string; updatedAt?: string; publishedAt?: string
   questions: ScorecardItem[]; groups?: FormQuestionGroup[]
-  scoring: { yesThreshold: number; passScore: number; criticalQuestionIds: string[] }; origin?: 'genesys-recreated'; sourceFormId?: string
+  scoring: { mode?: ScoringMode; yesThreshold: number; passScore: number; criticalQuestionIds: string[] }; origin?: 'genesys-recreated'; sourceFormId?: string
   /** Inert legacy metadata; never used for validation or operational readiness. */
   sourceReview?: { status: 'REVIEW_REQUIRED' | 'REVIEWED'; reviewedAt?: string; note?: string }
 }
@@ -73,7 +76,7 @@ export interface EvaluationRecord {
   conversationSource?: 'synthetic' | 'genesys-cloud' | 'uploaded'; policyRunId?: string; executionMode?: 'manual' | 'scheduled'
   agent: { id: string; name: string }; queue: string; channel: string; topic: string
   policyMatches: PolicyMatch[]; form: EvaluationForm; evaluatedAt: string
-  overallScore: number | null; passed: boolean | null; criticalFailures: string[]
+  scoringMode?: ScoringMode; criticalGroupFailures?: string[]; scoringAnomalies?: string[]; overallScore: number | null; passed: boolean | null; criticalFailures: string[]
   questions: QuestionResult[]; provider: string; model: string; providerRequestCount?: number; groupResults?: GroupResult[]
 }
 export interface FormTestRun {
@@ -94,7 +97,8 @@ export interface ConversationSource {
   list(query: ConversationQuery, refresh?:boolean): Promise<ConversationPage>
   load(id: string, refresh?:boolean): Promise<Conversation>
 }
-export interface PolicyRunFailure { conversationId: string; formId?: string; reason: string }
+export type OperationalFailureCode = 'GENESYS_AUTH_FAILURE' | 'GENESYS_QUERY_FAILURE' | 'JEV_FAILURE' | 'CONTENT_UNAVAILABLE' | 'RUN_FAILURE'
+export interface PolicyRunFailure { code?: OperationalFailureCode; channel?: string; conversationId: string; formId?: string; reason: string }
 export interface PolicyRun {
   id: string; policyId: string; policySnapshot: InteractionPolicy; source: ConversationSourceId
   updatedAt?: string
@@ -105,6 +109,7 @@ export interface PolicyRun {
   status: 'running' | 'completed' | 'partial-failure' | 'failed'; failures: PolicyRunFailure[]
   period?: MonitoringPeriod; sampling?: MonitoringSampling; deterministicSeed?: string
   sampledConversationIds?: string[]; evaluableCount?: number; previouslyEvaluatedCount?: number
+  contentAvailability?: Array<{channel:string; sampled:number; available:number}>
   coverage?: CoverageCounts; agentCoverage?: Array<{ agentId: string; agentName: string; eligible: number; sampled: number; evaluated: number }>
   queueCoverage?: Array<{ queue: string; eligible: number; sampled: number; evaluated: number }>
 }

@@ -1,3 +1,5 @@
+import { monitoringAlerts, defaultAlertConfig } from './alerts'
+import { alertTypes, type OperationalAlert } from '../domain/operationalAlerts'
 import { assertAssetWrite } from '../domain/groupAssets'
 import type { QuestionGroupAsset } from '../domain/types'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
@@ -35,6 +37,7 @@ async function browserAuthorized(request:IncomingMessage,config:ApiConfig,fetche
 }
 async function schedulerAuthorized(request:IncomingMessage,config:ApiConfig){
   const token=bearer(request);if(!token||!config.schedulerAudience||!config.schedulerEmail)return false
+  if(token.split('.').length!==3)return false
   try{const ticket=await oidc.verifyIdToken({idToken:token,audience:config.schedulerAudience});const p=ticket.getPayload();return p?.email===config.schedulerEmail&&p.email_verified===true}catch{return false}
 }
 export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=fetch){
@@ -52,6 +55,29 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
     if(!actor){json(response,401,{error:'Unauthorized'});return}
     try{
       const path=url.pathname
+      if(request.method==='GET'&&path==='/api/alerts'){
+        const q=url.searchParams,limit=Number(q.get('limit')??50),cursor=q.get('cursor')??undefined
+        if(!Number.isInteger(limit)||limit<1||limit>100||cursor&&!id(cursor))throw Error('Invalid alert pagination.')
+        if(q.get('status')&&!['OPEN','ACKNOWLEDGED','RESOLVED','ACTIVE'].includes(q.get('status')!))throw Error('Invalid alert status.')
+        if(q.get('severity')&&!['INFO','WARNING','ERROR'].includes(q.get('severity')!))throw Error('Invalid alert severity.')
+        if(q.get('type')&&!alertTypes.includes(q.get('type') as OperationalAlert['type']))throw Error('Invalid alert type.')
+        await monitoringAlerts(deps.store,deps.now().toISOString(),!!config.schedulerEmail&&!!config.schedulerAudience,deps.alertConfig)
+        const items:OperationalAlert[]=[];let nextCursor=cursor,more=true,scanned=0
+        while(items.length<limit&&more&&scanned<1000){
+          const page=await deps.store.query<OperationalAlert>('operationalAlerts',Math.min(100,1000-scanned),nextCursor);scanned+=page.scanned
+          more=false
+          for(const [index,a] of page.items.entries()){
+            nextCursor=a.id
+            if((!q.get('status')||(q.get('status')==='ACTIVE'?a.status!=='RESOLVED':a.status===q.get('status')))&&(!q.get('severity')||a.severity===q.get('severity'))&&(!q.get('type')||a.type===q.get('type'))&&(!q.get('policy')||a.policyId===q.get('policy'))&&(!q.get('run')||a.runId===q.get('run')))items.push(a)
+            if(items.length===limit){more=index<page.items.length-1;break}
+          }
+          more=more||!!page.nextCursor
+        }
+        json(response,200,{items,nextCursor:more?nextCursor:undefined,scanned,scanLimited:scanned>=1000&&more});return
+      }
+      const alertPath=/^\/api\/alerts\/([A-Za-z0-9_-]{1,100})(?:\/(acknowledge|resolve))?$/.exec(path)
+      if(alertPath&&request.method==='GET'&&!alertPath[2]){const item=await deps.store.alert(alertPath[1]);json(response,item?200:404,item??{error:'Alert not found.'});return}
+      if(alertPath&&request.method==='POST'&&alertPath[2]){const item=await deps.store.transitionAlert(alertPath[1],alertPath[2]==='acknowledge'?'ACKNOWLEDGED':'RESOLVED',deps.now().toISOString(),actor);json(response,item?200:404,item?{item}:{error:'Alert not found.'});return}
       if(request.method==='GET'&&path==='/api/calibration'){json(response,200,await calibrationAnalytics(deps.store,url.searchParams));return}
       if(request.method==='POST'&&path==='/api/calibration/sample'){json(response,200,await requestSample(deps.store,await body(request),actor,deps.now().toISOString()));return}
       if(request.method==='GET'&&(path==='/api/reviews'||path==='/api/review-queue')){
@@ -76,7 +102,8 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(path==='/api/monitoring-health'){
           const base:Record<string,unknown>={api:'healthy',genesysAutomation:{status:'unverified'},jev:{status:'unverified'},scheduler:{status:config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:null},firestore:'unavailable',lastRun:null,nextRunAt:null,runCounts:{completed:0,partial:0,failed:0}}
           try{
-            const [snapshot,schedules]=await Promise.all([deps.store.healthSnapshot(),deps.store.schedules()])
+            const [snapshot,schedules,alerts,schedulerHealth]=await Promise.all([deps.store.healthSnapshot(),deps.store.schedules(),monitoringAlerts(deps.store,deps.now().toISOString(),!!config.schedulerEmail&&!!config.schedulerAudience,deps.alertConfig),deps.store.schedulerHealth()])
+            Object.assign(base,alerts)
             const ordered=snapshot.recentRuns,latest=ordered[0]
             const recent=ordered.slice(0,20),latestScheduled=recent.find(run=>run.executionMode==='scheduled')
             const nextRun=schedules.filter(schedule=>schedule.enabled&&schedule.nextDueAt).sort((a,b)=>a.nextDueAt!.localeCompare(b.nextDueAt!))[0]
@@ -88,7 +115,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             base.genesysAutomation={status:!latest?'unverified':genesysError?'error':latest.status==='completed'||latest.status==='partial-failure'?'verified':'unverified'}
             const jevAttempted=!!latest&&(latest.evaluationsSucceeded+latest.evaluationsFailed>0)
             base.jev={status:!jevAttempted?'unverified':latest!.evaluationsFailed?'error':'verified'}
-            base.scheduler={status:config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:latestScheduled?.startedAt??null}
+            base.scheduler={status:schedulerHealth?.lastSuccessfulTickAt?(Date.parse(deps.now().toISOString())-Date.parse(schedulerHealth.lastSuccessfulTickAt)>(deps.alertConfig??defaultAlertConfig).schedulerToleranceMs?'stale':'healthy'):config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:latestScheduled?.startedAt??null,lastSuccessfulTickAt:schedulerHealth?.lastSuccessfulTickAt??null}
             json(response,200,base);return
           }catch{
             json(response,200,base);return
@@ -106,7 +133,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           if(collection==='evaluationRecords'){
             const matches=(item:ReviewEvaluation)=>{
               const q=url.searchParams
-              return matchesReviewQueue(item,q)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length>0:item.criticalFailures.length===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
+              return matchesReviewQueue(item,q)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
             }
             const items:ReviewEvaluation[]=[];let nextCursor=cursor,scanned=0,more=true
             while(items.length<rawLimit&&scanned<500&&more){const page=await deps.store.query<import('../domain/types').EvaluationRecord>(collection,Math.min(100,500-scanned),nextCursor);scanned+=page.scanned;const reviews=new Map((await deps.store.reviewsByIds(page.items.map(item=>item.id))).map(review=>[review.evaluationId,review]));const joined=page.items.map(item=>({...item,humanReview:reviews.get(item.id)}));let remaining=false;for(const [index,item] of joined.entries()){nextCursor=item.id;if(matches(item))items.push(item);if(items.length>=rawLimit){remaining=index<page.items.length-1;break}}more=remaining||!!page.nextCursor}
@@ -185,7 +212,9 @@ export function startApi(){
   const region=process.env.GENESYS_REGION as Region;if(!REGIONS[region])throw new Error('Invalid Genesys region.')
   initializeApp()
   const store:Store=new FirestoreStore(getFirestore())
-  const deps:RunnerDeps={store,genesys:new ClientCredentialsGenesys(region,process.env.GENESYS_CLIENT_ID!,process.env.GENESYS_CLIENT_SECRET!),jev:new DirectJev(process.env.JEV_API_KEY!),now:()=>new Date()}
+  const alertConfig={minimumSample:Number(process.env.AQM_ALERT_MINIMUM_SAMPLE??defaultAlertConfig.minimumSample),minimumAvailability:Number(process.env.AQM_ALERT_MINIMUM_AVAILABILITY??defaultAlertConfig.minimumAvailability),schedulerToleranceMs:Number(process.env.AQM_SCHEDULER_TOLERANCE_MS??defaultAlertConfig.schedulerToleranceMs)}
+  if(!Number.isInteger(alertConfig.minimumSample)||alertConfig.minimumSample<5||!Number.isFinite(alertConfig.minimumAvailability)||alertConfig.minimumAvailability<0||alertConfig.minimumAvailability>1||!Number.isFinite(alertConfig.schedulerToleranceMs)||alertConfig.schedulerToleranceMs<=0)throw Error('Invalid operational alert configuration.')
+  const deps:RunnerDeps={store,alertConfig,genesys:new ClientCredentialsGenesys(region,process.env.GENESYS_CLIENT_ID!,process.env.GENESYS_CLIENT_SECRET!),jev:new DirectJev(process.env.JEV_API_KEY!),now:()=>new Date()}
   const server=createApi(deps,{origin:process.env.AQM_ALLOWED_ORIGIN!,region,allowedUserIds:new Set((process.env.AQM_ALLOWED_GENESYS_USER_IDS??'').split(',').map(s=>s.trim()).filter(Boolean)),schedulerEmail:process.env.AQM_SCHEDULER_EMAIL!,schedulerAudience:process.env.AQM_SCHEDULER_AUDIENCE!})
   server.listen(Number(process.env.PORT??8080),'0.0.0.0')
 }

@@ -5,7 +5,7 @@ export interface CalibrationGroup {
   key: string; label: string; reviewed: number; questions: number; agreements: number; disagreements: number; agreementRate: number | null
   aiAverageCredit: number | null; humanAverageCredit: number | null; averageAbsoluteCreditDifference: number | null; meanScoreDifference: number | null
   confidenceOnAgreements: number | null; confidenceOnDisagreements: number | null
-  formRef?: string; questionId?: string; evaluationIds: string[]
+  formRef?: string; questionId?: string; groupId?:string; evaluationIds: string[]
 }
 function group(key:string,label:string,reviews:HumanReview[],questions:QuestionReview[]):CalibrationGroup {
   questions=questions.filter(q=>q.ai.status!=='SKIPPED')
@@ -24,10 +24,17 @@ export function aggregateCalibration(records:ReviewEvaluation[],query:URLSearchP
     const items=reviews.filter(r=>`${r.formId}@${r.formVersion}`===form.key)
     return [...new Set(items.flatMap(r=>r.questions.filter(q=>q.ai.status!=='SKIPPED').map(q=>q.questionId)))].map(id=>{const matching=items.filter(r=>r.questions.some(q=>q.questionId===id&&q.ai.status!=='SKIPPED')),qs=matching.flatMap(r=>r.questions.filter(q=>q.questionId===id));return {...group(`${form.key}:${id}`,qs[0].title,matching,qs),formRef:form.key,questionId:id}})
   })
+  const groups=forms.flatMap(form=>{
+    const items=reviews.filter(r=>`${r.formId}@${r.formVersion}`===form.key)
+    return [...new Set(items.flatMap(r=>(r.groupComparison??[]).map(g=>g.groupId)))].map(id=>{
+      const matching=items.filter(r=>r.groupComparison?.some(g=>g.groupId===id&&g.aiScore!==null&&g.humanScore!==null)),values=matching.flatMap(r=>r.groupComparison!.filter(g=>g.groupId===id)),ids=new Set(items[0].formSnapshot.questions.filter(q=>q.groupId===id).map(q=>q.id))
+      return {...group(`${form.key}:${id}`,`${form.label} · ${values[0]?.name??id}`,matching,matching.flatMap(r=>r.questions.filter(q=>ids.has(q.questionId)))),formRef:form.key,groupId:id,aiAverageCredit:mean(values.flatMap(g=>g.aiScore===null?[]:[g.aiScore])),humanAverageCredit:mean(values.flatMap(g=>g.humanScore===null?[]:[g.humanScore])),meanScoreDifference:mean(values.flatMap(g=>g.difference===null?[]:[Math.abs(g.difference)]))}
+    })
+  })
   const byType=(['noul','choice','score'] as const).map(type=>group(type,type==='noul'?'Noul / Yes-No':type==='choice'?'Choice':'Score',reviews.filter(r=>r.questions.some(q=>q.type===type&&q.ai.status!=='SKIPPED')),allQuestions.filter(q=>q.type===type)))
   const bands=[{key:'low',label:'< 60%',min:0,max:.6},{key:'medium',label:'60–79%',min:.6,max:.8},{key:'high',label:'80–89%',min:.8,max:.9},{key:'very-high',label:'90%+',min:.9,max:1.01}]
   const confidenceBands=bands.map(b=>group(b.key,b.label,[],allQuestions.filter(q=>q.selectedOutcomeConfidence!==null&&q.selectedOutcomeConfidence>=b.min&&q.selectedOutcomeConfidence<b.max)))
   confidenceBands.push(group('unknown','Unavailable',[],allQuestions.filter(q=>q.selectedOutcomeConfidence===null)))
-  return {scope:'complete' as const,source:scope.get('source')!,metrics:{evaluationsReviewed:reviews.length,questionsReviewed:summary.questions,exactAgreementRate:summary.agreementRate,averageAbsoluteScoreDifference:summary.meanScoreDifference,unresolved:scoped.filter(r=>['REVIEW_REQUESTED','IN_REVIEW'].includes(reviewStatus(r,r.humanReview))).length,inReview:scoped.filter(r=>reviewStatus(r,r.humanReview)==='IN_REVIEW').length},byForm:forms,byQuestion:questions,byType,confidenceBands}
+  return {scope:'complete' as const,source:scope.get('source')!,metrics:{evaluationsReviewed:reviews.length,questionsReviewed:summary.questions,exactAgreementRate:summary.agreementRate,averageAbsoluteScoreDifference:summary.meanScoreDifference,unresolved:scoped.filter(r=>['REVIEW_REQUESTED','IN_REVIEW'].includes(reviewStatus(r,r.humanReview))).length,inReview:scoped.filter(r=>reviewStatus(r,r.humanReview)==='IN_REVIEW').length},byForm:forms,byGroup:groups,byQuestion:questions,byType,confidenceBands}
 }
 export type CalibrationAnalytics=ReturnType<typeof aggregateCalibration>

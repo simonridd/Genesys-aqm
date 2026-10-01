@@ -1,0 +1,7 @@
+import type { EvaluationRecord } from './domain/types'
+import { scoreFormResults } from './domain/formComposition'
+const pct=(n:number|null|undefined)=>n==null?'Not applicable':`${Math.round(n*100)}%`
+export function GroupResultsPanel({record}:{record:EvaluationRecord}){
+  const groups=record.groupResults??scoreFormResults(record.form,record.questions).groups
+  return <section className="evaluation-groups" aria-label="Group results"><h3>Groups · {(record.scoringMode??record.form.scoring.mode??'QUESTION_WEIGHTED')==='GROUP_WEIGHTED'?'Group weighted':'Question weighted'}</h3>{groups.map(g=><article key={g.groupId} className={`panel group-result ${g.critical&&(g.passed===false||g.anomaly)?'group-critical-failure':''}`}><h3>{g.name} · {pct(g.overallScore)}</h3><p>{g.status==='SKIPPED'?'Skipped':g.anomaly?'Scoring anomaly: no applicable scored questions':g.passed===false?'FAIL':g.passed===true?'Pass':g.overallScore===null?'Not applicable':'No group threshold'}{g.critical?' · Critical group':''}{g.passScore===undefined?'':` · Minimum ${pct(g.passScore)}`}{g.normalizedWeight===undefined?'':` · Overall weight ${pct(g.normalizedWeight)}`}</p>{record.questions.filter(q=>g.questionIds?.includes(q.id)??record.form.questions.some(f=>f.id===q.id&&f.groupId===g.groupId)).map(q=><p key={q.id}><strong>{q.title}</strong> · {q.status==='SKIPPED'?'Skipped':q.outcome} · {pct(q.credit)}</p>)}</article>)}</section>
+}
