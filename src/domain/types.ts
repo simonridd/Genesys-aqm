@@ -53,7 +53,7 @@ export interface PolicyMatch { policyId: string; policyName: string; matchedGrou
 export interface EvaluationRecord {
   id: string; source: 'jev' | 'synthetic-demo'; conversationId: string
   createdAt?: string; updatedAt?: string
-  purpose?: 'PRODUCTION' | 'FORM_TEST'; reviewState?: 'NOT_REVIEWED' | 'REVIEW_REQUESTED' | 'REVIEWED'; reviewedAt?: string
+  purpose?: 'PRODUCTION' | 'FORM_TEST'; reviewState?: 'NOT_REVIEWED' | 'REVIEW_REQUESTED' | 'IN_REVIEW' | 'REVIEWED'; reviewedAt?: string
   conversationSource?: 'synthetic' | 'genesys-cloud' | 'uploaded'; policyRunId?: string; executionMode?: 'manual' | 'scheduled'
   agent: { id: string; name: string }; queue: string; channel: string; topic: string
   policyMatches: PolicyMatch[]; form: EvaluationForm; evaluatedAt: string

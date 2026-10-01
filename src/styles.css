@@ -68,3 +68,60 @@
 .email-body { white-space: pre-wrap; overflow-wrap: anywhere; }
 .email-subject { display: block; margin-bottom: 12px; }
 input[readonly] { background: #f8fbfa; }
+
+/* Human review keeps the immutable AI result and reviewer answer side by side. */
+.human-review { margin-top: 28px; border-top: 1px solid var(--border, #e2e6ed); padding-top: 26px; min-width: 0; }
+.review-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 20px 0; }
+.review-summary > div { background: #f6f7fb; border: 1px solid #e4e7ef; border-radius: 12px; padding: 18px; }
+.review-summary small, .review-summary strong { display: block; }
+.review-summary small { font-size: 10px; letter-spacing: .07em; color: #627084; margin-bottom: 10px; }
+.review-summary strong { font-size: 27px; color: #26324a; }
+.review-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0; }
+.review-question { border: 1px solid #e1e5ee; border-radius: 12px; padding: 22px; margin: 16px 0; overflow-wrap: anywhere; }
+.review-question.disagreement { border-left: 4px solid #bf7414; background: #fffdf9; }
+.review-question-heading { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; }
+.review-question-heading h3 { margin: 8px 0; line-height: 1.45; }
+.review-question-heading .pill { flex-shrink: 0; }
+.review-difference { background: #fff0da; color: #8c4e09; }
+.review-instructions { color: #677186; font-size: 13px; line-height: 1.6; }
+.review-answer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px; }
+.review-ai, .review-human { min-width: 0; }
+.review-ai { background: #f3f5fb; border-radius: 10px; padding: 18px; }
+.review-ai strong, .review-human strong { display: block; margin-top: 10px; font-size: 18px; }
+.review-ai p, .review-human p { font-size: 13px; line-height: 1.5; }
+.review-ai small { display: block; line-height: 1.6; color: #637089; }
+.review-human label, .review-overall-note { display: grid; gap: 8px; font-size: 12px; color: #53617a; }
+.review-human select, .review-human textarea, .review-overall-note textarea { width: 100%; min-width: 0; box-sizing: border-box; padding: 10px 12px; border: 1px solid #ccd3df; border-radius: 8px; background: #fff; color: #24314a; font: inherit; font-size: 14px; }
+.review-human textarea, .review-overall-note textarea { resize: vertical; }
+.review-note, .review-overall-note p { white-space: pre-wrap; overflow-wrap: anywhere; }
+.review-overall-note { margin: 24px 0; }
+.review-audit { font-size: 12px; margin-top: 22px; color: #677186; overflow-wrap: anywhere; }
+.review-audit p { line-height: 1.6; }
+.calibration-sample { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin: 20px 0; }
+.calibration-sample > div { flex: 1 1 300px; }
+.calibration-sample h2 { font-size: 17px; margin: 0 0 6px; }
+.calibration-sample p { font-size: 12px; line-height: 1.6; }
+.calibration-sample label { display: grid; gap: 8px; font-size: 12px; }
+.calibration-sample input, .calibration-sample select { padding: 10px; border: 1px solid #ccd3df; border-radius: 8px; background: white; max-width: 200px; }
+.calibration-sample > p { flex-basis: 100%; }
+.calibration-metrics { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.calibration-metrics small { line-height: 1.5; }
+.calibration-explanation, .calibration-drill { margin: 20px 0; padding: 22px; }
+.calibration-sample { padding: 22px; }
+.calibration-explanation p { font-size: 13px; line-height: 1.6; }
+.reviewed-evaluation-links { display: grid; gap: 8px; overflow-wrap: anywhere; }
+@media (max-width: 1000px) { .review-summary, .calibration-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+  .review-answer-grid { grid-template-columns: 1fr; gap: 18px; }
+  .review-question { padding: 16px; }
+  .review-question-heading { flex-direction: column; gap: 6px; }
+  .review-summary { gap: 8px; }
+  .review-summary > div { padding: 14px 10px; }
+  .review-summary strong { font-size: 23px; }
+  .calibration-metrics { grid-template-columns: 1fr 1fr; }
+  .calibration-sample label { flex: 1 1 100px; }
+  .calibration-sample input, .calibration-sample select { width: 100%; box-sizing: border-box; }
+  .review-actions button { flex: 1 1 140px; }
+  .human-review .panel-heading { flex-wrap: wrap; }
+  .human-review .analytics-tabs { flex-wrap: wrap; }
+}

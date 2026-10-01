@@ -1,7 +1,9 @@
-# Genesys AQM · V0.6.4 prototype
+# Genesys AQM · V0.7 prototype
 
 A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE after a user signs in. Voice retrieval stays direct; email content uses the trusted Cloud Run API with the same user authorization. Production evaluation uses Cloud Run with its server-managed Jev credential and durable Firestore records. Browser conversation searches/transcripts share an identity-scoped IndexedDB cache. The V0.6.4 server monitoring proof completed two real voice evaluations with two Jev requests and enabled one daily 02:00 Europe/London schedule. Email normalization is fixture-proved; email live content proof is pending Simon because the observed real interaction had no recording available.
 
+
+V0.7 adds durable human review beside immutable AI results, partial saves and completion, revision conflicts, review sampling and a separate Calibration area with form/question/type/confidence breakdowns. Calibration defaults to real Genesys evaluations and uses existing evaluation snapshots without Jev calls. See the [V0.7 contract and checkpoint](docs/v061-control-plane-cache.md#v07-human-review-and-calibration-checkpoint).
 ## Local development
 
 ```sh

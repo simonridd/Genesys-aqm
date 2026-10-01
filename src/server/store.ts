@@ -1,13 +1,18 @@
+import type { HumanReview } from '../domain/reviews'
 import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun } from '../domain/types'
 import type { Schedule } from './schedules'
 import type { Firestore } from 'firebase-admin/firestore'
 
 export interface Claim { id: string; owner: string; leaseUntil: string; status: 'running' | 'completed'; claimedAt: string }
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string }
-export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns'
+export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
+export interface ReviewWrite { review: HumanReview; expectedRevision: number }
+export class ReviewConflict extends Error { constructor(){super('Review changed in another tab or by another reviewer. Refresh before saving.')} }
 export interface Store {
+  review(id:string):Promise<HumanReview|undefined>; reviewsByIds(ids:string[]):Promise<HumanReview[]>
+  writeReviews(writes:ReviewWrite[]):Promise<void>
   findProductionEvaluation(source:string, conversationId:string, formId:string, version:number):Promise<EvaluationRecord|undefined>
   forms(): Promise<EvaluationForm[]>; policies(): Promise<InteractionPolicy[]>; schedules(): Promise<Schedule[]>; runs(): Promise<PolicyRun[]>; evaluations(): Promise<EvaluationRecord[]>
   form(id: string): Promise<EvaluationForm | undefined>; policy(id: string): Promise<InteractionPolicy | undefined>; schedule(id: string): Promise<Schedule | undefined>; run(id:string):Promise<PolicyRun|undefined>; evaluation(id:string):Promise<EvaluationRecord|undefined>
@@ -23,8 +28,15 @@ export interface Store {
 }
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
-  private formMap = new Map<string,EvaluationForm>(); private policyMap = new Map<string,InteractionPolicy>(); private scheduleMap = new Map<string,Schedule>()
+  private reviewMap = new Map<string,HumanReview>(); private formMap = new Map<string,EvaluationForm>(); private policyMap = new Map<string,InteractionPolicy>(); private scheduleMap = new Map<string,Schedule>()
   private runMap = new Map<string,PolicyRun>(); private evaluationMap = new Map<string,EvaluationRecord>(); private testMap = new Map<string,FormTestRun>(); private claimMap = new Map<string,Claim>(); private slots = new Map<string,EvaluationSlot>()
+  async review(id:string){return copy(this.reviewMap.get(id))}
+  async reviewsByIds(ids:string[]){return copy(ids.flatMap(id=>{const value=this.reviewMap.get(id);return value?[value]:[]}))}
+  async writeReviews(writes:ReviewWrite[]){
+    if(new Set(writes.map(w=>w.review.id)).size!==writes.length)throw Error('Duplicate review write.')
+    for(const {review,expectedRevision} of writes)if((this.reviewMap.get(review.id)?.revision??0)!==expectedRevision||review.revision!==expectedRevision+1)throw new ReviewConflict()
+    for(const {review} of writes)this.reviewMap.set(review.id,copy(review))
+  }
   async findProductionEvaluation(source:string,conversationId:string,formId:string,version:number) { return copy([...this.evaluationMap.values()].find(record=>record.purpose!=='FORM_TEST'&&record.source==='jev'&&record.conversationSource===source&&record.conversationId===conversationId&&record.form.id===formId&&record.form.version===version)) }
   async forms() { return copy([...this.formMap.values()]) } async policies() { return copy([...this.policyMap.values()]) } async schedules() { return copy([...this.scheduleMap.values()]) }
   async runs() { return copy([...this.runMap.values()]) } async evaluations() { return copy([...this.evaluationMap.values()]) }
@@ -38,7 +50,7 @@ export class MemoryStore implements Store {
   async evaluationSlot(id:string) { return copy(this.slots.get(id)) }
   async completeEvaluation(id:string,record:EvaluationRecord) { const slot=this.slots.get(id); if (!slot) throw new Error('Evaluation was not reserved.'); await this.putEvaluation(record); slot.status='completed'; slot.recordId=record.id }
   async query<T>(collection:CollectionName,limit:number,cursor?:string):Promise<QueryPage<T>> {
-    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap})[collection]
+    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap})[collection]
     const rows=[...map.entries()].sort(([a],[b])=>a.localeCompare(b)).filter(([id])=>!cursor||id>cursor)
     const page=rows.slice(0,limit)
     return {items:copy(page.map(([,value])=>value)) as T[],nextCursor:rows.length>limit?page.at(-1)?.[0]:undefined,scanned:page.length}
@@ -78,6 +90,17 @@ export class FirestoreStore implements Store {
   private async one<T>(name:string,id:string):Promise<T|undefined> { const doc=await this.collection(name).doc(pathId(id)).get(); return doc.exists?canonicalValue(doc.data()) as T:undefined }
   private async put<T>(name:string,id:string,value:T) { await this.collection(name).doc(pathId(id)).set(stored(value)) }
   async findProductionEvaluation(source:string,conversationId:string,formId:string,version:number) { const docs=await this.collection('evaluationRecords').where('conversationId','==',conversationId).get();return docs.docs.map(doc=>canonicalValue(doc.data()) as EvaluationRecord).find(record=>record.purpose!=='FORM_TEST'&&record.source==='jev'&&record.conversationSource===source&&record.form.id===formId&&record.form.version===version) }
+  review(id:string){return this.one<HumanReview>('humanReviews',id)}
+  async reviewsByIds(ids:string[]){if(!ids.length)return [];const docs=await this.db.getAll(...ids.map(id=>this.collection('humanReviews').doc(pathId(id))));return docs.filter(doc=>doc.exists).map(doc=>canonicalValue(doc.data()) as HumanReview)}
+  async writeReviews(writes:ReviewWrite[]){
+    if(new Set(writes.map(w=>w.review.id)).size!==writes.length)throw Error('Duplicate review write.')
+    await this.db.runTransaction(async tx=>{
+      const refs=writes.map(w=>this.collection('humanReviews').doc(pathId(w.review.id)))
+      const docs=await Promise.all(refs.map(ref=>tx.get(ref)))
+      for(const [index,write] of writes.entries())if((docs[index].data()?.revision??0)!==write.expectedRevision||write.review.revision!==write.expectedRevision+1)throw new ReviewConflict()
+      writes.forEach((write,index)=>tx.set(refs[index],stored(write.review)))
+    })
+  }
   forms(){return this.all<EvaluationForm>('evaluationForms')} policies(){return this.all<InteractionPolicy>('policies')} schedules(){return this.all<Schedule>('schedules')}
   runs(){return this.all<PolicyRun>('policyRuns')} evaluations(){return this.all<EvaluationRecord>('evaluationRecords')}
   form(id:string){return this.one<EvaluationForm>('evaluationForms',id)} policy(id:string){return this.one<InteractionPolicy>('policies',id)} schedule(id:string){return this.one<Schedule>('schedules',id)} run(id:string){return this.one<PolicyRun>('policyRuns',id)} evaluation(id:string){return this.one<EvaluationRecord>('evaluationRecords',id)}

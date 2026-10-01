@@ -7,13 +7,15 @@ import { REGIONS, type Region } from '../domain/genesysAuth'
 import { validateForm } from '../domain/forms'
 import { formStatus, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
 import type { EvaluationForm, InteractionPolicy, MonitoringPeriod } from '../domain/types'
-import { FirestoreStore, type Store } from './store'
+import { FirestoreStore, ReviewConflict, type Store } from './store'
 import { ClientCredentialsGenesys, DirectJev } from './providers'
 import { executeServerRun, manualRunId, planFingerprint, planServerRun, schedulerTick, type RunnerDeps } from './runner'
 import { nextDueAfter, validateSchedule, type Schedule } from './schedules'
 import { operationalAnalytics } from './analytics'
 import { evaluateManual } from './manualEvaluations'
 import { executeFormTest, type FormTestInput } from './formTests'
+import { calibrationAnalytics, requestSample, reviewQueue, updateReview, ReviewNotFound } from './reviews'
+import { matchesReviewQueue, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
 
 export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string }
 const oidc=new OAuth2Client()
@@ -23,11 +25,11 @@ async function body(request:IncomingMessage):Promise<unknown>{let text='',size=0
 const obj=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v)
 const id=(v:string)=>/^[A-Za-z0-9_-]{1,100}$/.test(v)
 async function browserAuthorized(request:IncomingMessage,config:ApiConfig,fetcher:typeof fetch){
-  const token=bearer(request);if(!token||!config.allowedUserIds.size)return false
+  const token=bearer(request);if(!token||!config.allowedUserIds.size)return null
   const reply=await fetcher(`${REGIONS[config.region].api}/api/v2/users/me`,{headers:{Authorization:`Bearer ${token}`}})
-  if(!reply.ok)return false
-  const user=await reply.json() as {id?:string}
-  return !!user.id&&config.allowedUserIds.has(user.id)
+  if(!reply.ok)return null
+  const user=await reply.json() as {id?:string;name?:string}
+  return user.id&&config.allowedUserIds.has(user.id)?{userId:user.id,...(typeof user.name==='string'?{displayName:user.name.slice(0,200)}:{})} satisfies Reviewer:null
 }
 async function schedulerAuthorized(request:IncomingMessage,config:ApiConfig){
   const token=bearer(request);if(!token||!config.schedulerAudience||!config.schedulerEmail)return false
@@ -44,9 +46,22 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       if(request.method!=='POST'||!await schedulerAuthorized(request,config)){json(response,403,{error:'Forbidden'});return}
       try{json(response,200,{outcomes:await schedulerTick(deps)})}catch{json(response,500,{error:'Scheduler tick failed.'})}return
     }
-    if(!url.pathname.startsWith('/api/')||!await browserAuthorized(request,config,fetcher)){json(response,401,{error:'Unauthorized'});return}
+    const actor=url.pathname.startsWith('/api/')?await browserAuthorized(request,config,fetcher).catch(()=>null):null
+    if(!actor){json(response,401,{error:'Unauthorized'});return}
     try{
       const path=url.pathname
+      if(request.method==='GET'&&path==='/api/calibration'){json(response,200,await calibrationAnalytics(deps.store,url.searchParams));return}
+      if(request.method==='POST'&&path==='/api/calibration/sample'){json(response,200,await requestSample(deps.store,await body(request),actor,deps.now().toISOString()));return}
+      if(request.method==='GET'&&(path==='/api/reviews'||path==='/api/review-queue')){
+        const queue=await reviewQueue(deps.store,url.searchParams)
+        json(response,200,{scope:'complete',items:path==='/api/reviews'?queue.flatMap(record=>record.humanReview?[record.humanReview]:[]):queue});return
+      }
+      const reviewDetail=/^\/api\/reviews\/([A-Za-z0-9_-]{1,180})$/.exec(path)
+      if(reviewDetail&&request.method==='GET'){const item=await deps.store.review(reviewDetail[1]);json(response,item?200:404,item??{error:'Review not found.'});return}
+      if(reviewDetail&&request.method==='PUT'){
+        const input=await body(request);if(!obj(input))throw Error('Invalid review request.')
+        json(response,200,{item:await updateReview(deps.store,reviewDetail[1],input as unknown as ReviewInput,actor,deps.now().toISOString())});return
+      }
       if(request.method==='GET'){
         const email=/^\/api\/conversations\/([a-f0-9-]{20,64})\/email$/i.exec(path)
         if(email){
@@ -87,20 +102,19 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           if(cursor&&!id(cursor))throw new Error('Invalid cursor.')
           const collection=(collections as Record<string,typeof collections[keyof typeof collections]>)[path]
           if(collection==='evaluationRecords'){
-            const matches=(item:import('../domain/types').EvaluationRecord)=>{
+            const matches=(item:ReviewEvaluation)=>{
               const q=url.searchParams
-              const formFilter=q.get('form')
-              return item.purpose!=='FORM_TEST'&&(!q.get('from')||item.evaluatedAt>=q.get('from')!)&&(!q.get('to')||item.evaluatedAt<=q.get('to')!)&&(!formFilter||item.form.id===formFilter||`${item.form.id}@${item.form.version}`===formFilter)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('agent')||item.agent.name.toLowerCase().includes(q.get('agent')!.toLowerCase()))&&(!q.get('queue')||item.queue.toLowerCase().includes(q.get('queue')!.toLowerCase()))&&(!q.get('source')||item.conversationSource===q.get('source'))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length>0:item.criticalFailures.length===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
+              return matchesReviewQueue(item,q)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length>0:item.criticalFailures.length===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
             }
-            const items:import('../domain/types').EvaluationRecord[]=[];let nextCursor=cursor,scanned=0,more=true
-            while(items.length<rawLimit&&scanned<500&&more){const page=await deps.store.query<import('../domain/types').EvaluationRecord>(collection,Math.min(100,500-scanned),nextCursor);scanned+=page.scanned;let remaining=false;for(const [index,item] of page.items.entries()){nextCursor=item.id;if(matches(item))items.push(item);if(items.length>=rawLimit){remaining=index<page.items.length-1;break}}more=remaining||!!page.nextCursor}
+            const items:ReviewEvaluation[]=[];let nextCursor=cursor,scanned=0,more=true
+            while(items.length<rawLimit&&scanned<500&&more){const page=await deps.store.query<import('../domain/types').EvaluationRecord>(collection,Math.min(100,500-scanned),nextCursor);scanned+=page.scanned;const reviews=new Map((await deps.store.reviewsByIds(page.items.map(item=>item.id))).map(review=>[review.evaluationId,review]));const joined=page.items.map(item=>({...item,humanReview:reviews.get(item.id)}));let remaining=false;for(const [index,item] of joined.entries()){nextCursor=item.id;if(matches(item))items.push(item);if(items.length>=rawLimit){remaining=index<page.items.length-1;break}}more=remaining||!!page.nextCursor}
             json(response,200,{items,nextCursor:more?nextCursor:undefined,scanned,scanLimited:scanned>=500&&more});return
           }
           const page=await deps.store.query(collection,rawLimit,cursor)
           json(response,200,page);return
         }
         const detail=/^\/api\/evaluations\/([A-Za-z0-9_-]+)$/.exec(path)
-        if(detail){const item=await deps.store.evaluation(detail[1]);json(response,item?200:404,item??{error:'Evaluation not found.'});return}
+        if(detail){const item=await deps.store.evaluation(detail[1]);json(response,item?200:404,item?{...item,humanReview:await deps.store.review(item.id)}:{error:'Evaluation not found.'});return}
         const runDetail=/^\/api\/runs\/([A-Za-z0-9_-]+)$/.exec(path)
         if(runDetail){const item=await deps.store.run(runDetail[1]);json(response,item?200:404,item??{error:'Run not found.'});return}
         const testDetail=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
@@ -138,7 +152,12 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           json(response,200,{ok:true});return}
       }
       const review=/^\/api\/evaluations\/([A-Za-z0-9_-]+)\/review$/.exec(path)
-      if(request.method==='POST'&&review){const input=await body(request);if(!obj(input)||input.state!=='REVIEW_REQUESTED'&&input.state!=='REVIEWED')throw new Error('Invalid review state.');const item=await deps.store.evaluation(review[1]);if(!item){json(response,404,{error:'Evaluation not found.'});return}const updated={...item,reviewState:input.state as 'REVIEW_REQUESTED'|'REVIEWED',reviewedAt:deps.now().toISOString(),updatedAt:deps.now().toISOString()};await deps.store.putEvaluation(updated);json(response,200,{item:updated});return}
+      if(request.method==='POST'&&review){
+        const input=await body(request);if(!obj(input)||input.state!=='REVIEW_REQUESTED')throw Error('Use the Human Review API to complete a scored review.')
+        const record=await deps.store.evaluation(review[1]);if(!record)throw new ReviewNotFound('Evaluation not found.')
+        const item=await updateReview(deps.store,record.id,{action:'request',expectedRevision:input.expectedRevision as number,formId:record.form.id,formVersion:record.form.version},actor,deps.now().toISOString())
+        json(response,200,{item});return
+      }
       const match=/^\/api\/policies\/([A-Za-z0-9_-]+)\/(plan|run)$/.exec(path)
       if(request.method==='POST'&&match){const policy=await deps.store.policy(match[1]);if(!policy){json(response,404,{error:'Policy not found.'});return}
         const input=await body(request);if(!obj(input)||!obj(input.period)||typeof input.period.periodStart!=='string'||typeof input.period.periodEnd!=='string')throw new Error('Invalid period.')
@@ -152,7 +171,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         json(response,200,{run});return
       }
       json(response,404,{error:'Not found.'})
-    }catch(error){json(response,400,{error:error instanceof Error?error.message:'Request failed.'})}
+    }catch(error){json(response,error instanceof ReviewConflict?409:error instanceof ReviewNotFound?404:400,{error:error instanceof Error?error.message:'Request failed.'})}
   })
 }
 export function startApi(){
