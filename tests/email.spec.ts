@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test'
 import {normalizeGenesys} from '../src/domain/genesys'
+const appUrl=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/'
 const origin='https://aqm-api-bd54ukouga-nw.a.run.app',id='22222222-2222-4222-8222-222222222222'
 const detail={conversationId:id,conversationStart:'2026-09-30T12:00:00Z',conversationEnd:'2026-09-30T12:10:00Z',participants:[{purpose:'customer',participantName:'Email Customer',sessions:[{sessionId:'33333333-3333-4333-8333-333333333333',mediaType:'email',direction:'inbound',segments:[{queueId:'55555555-5555-4555-8555-555555555555'}]}]},{purpose:'agent',participantName:'Email Agent',userId:'agent'}]}
 for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`email search, normalized relay, content cache and refresh at ${viewport.width}`,async({browser})=>{
@@ -9,7 +10,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
  await page.route('https://api.mypurecloud.ie/**',async route=>{const url=route.request().url();if(url.includes('/users/me'))await route.fulfill({json:{id:'fixture-user',name:'Fixture User'}});else if(url.includes('/details/query')){searches++;expect(route.request().postDataJSON().segmentFilters[0].predicates).toContainEqual({dimension:'mediaType',value:'email'});await route.fulfill({json:{conversations:[detail],totalHits:1}})}else if(url.includes('/routing/queues'))await route.fulfill({json:{name:'Email Queue'}});else {expect(url).not.toContain('speechandtextanalytics');await route.fulfill({json:detail})}})
  const normalized={...normalizeGenesys(detail),metadata:{...normalizeGenesys(detail).metadata,queue:'Email Queue',transcriptStatus:'Available'},messages:[{id:'logical-email',speaker:'customer' as const,timestamp:'2026-09-30T12:01:00Z',subject:'Billing question',senderName:'Email Customer',text:'Please help with my bill.\nThank you.'}]}
  await page.route(`${origin}/**`,async route=>{if(route.request().url().endsWith(`/conversations/${id}/email`)){retrievals++;expect(route.request().headers().authorization).toBe('Bearer fixture-token');await route.fulfill({json:normalized})}else await route.fulfill({json:{items:[]}})})
- await page.goto(`http://127.0.0.1:4174/Genesys-aqm/?code=fixture-code&state=${'A'.repeat(43)}`)
+ await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
  await page.getByLabel('From',{exact:true}).fill('2026-09-30T00:00');await page.getByLabel('To',{exact:true}).fill('2026-10-01T00:00');await page.getByRole('combobox',{name:'Channel',exact:true}).selectOption('email');await page.getByRole('button',{name:'Search completed interactions',exact:true}).click()
  await expect(page.getByRole('row').filter({hasText:id})).toContainText('Email Agent');await page.getByRole('group',{name:'View'}).getByRole('button',{name:'Cards'}).click();await page.getByRole('button',{name:/Open transcript/}).click()
  await expect(page.locator('.email-subject')).toHaveText('Billing question');await expect(page.locator('.email-body')).toContainText('Please help with my bill.');expect(retrievals).toBe(1)
