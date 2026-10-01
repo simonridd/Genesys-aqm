@@ -1,3 +1,4 @@
+import type { EmailRecording, RecordingEmail } from './genesysEmail'
 import { resolveMediaContract } from './genesysMedia'
 import { getSession, disconnect, REGIONS, type AuthSession } from './genesysAuth'
 import { sampleLibrary } from './conversations'
@@ -37,11 +38,11 @@ export class SyntheticConversationSource implements ConversationSource {
 export class GenesysCloudConversationSource implements ConversationSource {
   readonly id = 'genesys-cloud'; readonly name = 'Genesys Cloud'; readonly realData = true
   readonly capabilities = { pagination: true, filters: ['queue','agent','channel','direction'] as Array<'queue'|'agent'|'channel'|'direction'> }
-  constructor(private readonly currentSession: () => AuthSession | null = getSession) {}
+  constructor(private readonly currentSession: () => AuthSession | null = getSession, private readonly fetcher:typeof fetch = fetch, private readonly emailRelay?: (id:string)=>Promise<Conversation>) {}
   private async request(path: string, init?: RequestInit): Promise<unknown> {
     const session = this.currentSession()
     if (!session) throw new Error('Connect to Genesys Cloud in Settings. Your session may have expired.')
-    const response = await fetch(`${REGIONS[session.region].api}${path}`, { ...init, headers: { ...init?.headers, Authorization: `Bearer ${session.accessToken}`, ...(init?.body ? { 'Content-Type': 'application/json' } : {}) } })
+    const response = await (0,this.fetcher)(`${REGIONS[session.region].api}${path}`, { ...init, headers: { ...init?.headers, Authorization: `Bearer ${session.accessToken}`, ...(init?.body ? { 'Content-Type': 'application/json' } : {}) } })
     if (response.status === 401) { if (typeof window !== 'undefined') disconnect(); throw new Error('Genesys session expired or was rejected. Check the active authorization.') }
     if (!response.ok) throw new Error(`Genesys API returned HTTP ${response.status}. Check your role and division access.`)
     return response.json()
@@ -77,6 +78,45 @@ export class GenesysCloudConversationSource implements ConversationSource {
     const completed = all.filter(c => !!c.conversationEnd)
     return { conversations: completed.map(c => normalizeGenesys(c)), page: query.page, pageSize: query.pageSize, total: data.totalHits ?? completed.length, hasMore: all.length === query.pageSize }
   }
+  private async loadEmail(detail:GenesysDetail):Promise<Conversation> {
+    const conversation=normalizeGenesys(detail)
+    const {downloadEmail,emailMediaUrl,MAX_EMAIL_BYTES,normalizeEmails,parseEmail}=await import('./genesysEmail')
+    try {
+      const base=`/api/v2/conversations/${encodeURIComponent(detail.conversationId!)}/recordings`
+      const recordings=await this.request(`${base}?maxWaitMs=5000&formatId=NONE`) as EmailRecording[]
+      if(!Array.isArray(recordings))throw Error('Unexpected email recording response.')
+      const emails=recordings.filter(r=>r.media?.toLowerCase()==='email')
+      if(emails.length>25)throw Error('Too many email recordings (limit 25).')
+      const items:Array<{recording:EmailRecording;email:RecordingEmail}>=[]
+      let total=0
+      for(const summary of emails){
+        if(!summary.id||!/^[a-f0-9-]{20,64}$/i.test(summary.id))throw Error('Invalid email recording identity.')
+        const recording=await this.request(`${base}/${encodeURIComponent(summary.id)}?emailFormatId=EML&download=true&formatId=NONE`) as EmailRecording
+        if(recording.emailTranscript?.length){
+          if(recording.emailTranscript.length>100)throw Error('Too many logical emails.')
+          total+=new TextEncoder().encode(JSON.stringify(recording.emailTranscript)).byteLength
+          if(total>5_000_000)throw Error('Email conversation exceeds the 5 MB limit.')
+          for(const email of recording.emailTranscript){if(new TextEncoder().encode(JSON.stringify(email)).length>MAX_EMAIL_BYTES)throw Error('Email content exceeds the 2 MB limit.');items.push({recording,email})}
+        }else{
+          const urls=[...new Set(Object.values(recording.mediaUris??{}).map(m=>m.mediaUri).filter((v):v is string=>!!v))]
+          if(urls.length>1)throw Error('Ambiguous email media response.')
+          if(!urls.length)continue
+          const bytes=await downloadEmail(emailMediaUrl(urls[0]),this.fetcher);total+=bytes.byteLength
+          if(total>5_000_000)throw Error('Email conversation exceeds the 5 MB limit.')
+          items.push({recording,email:await parseEmail(bytes)})
+        }
+      }
+      conversation.messages=normalizeEmails(detail,items)
+      conversation.metadata.transcriptStatus=conversation.messages.length?'Available':'Unavailable'
+      conversation.metadata.transcriptDetail=conversation.messages.length?'':'No email recording content is available.'
+    }catch(error){
+      conversation.messages=[];conversation.metadata.transcriptStatus='Error'
+      // Never return signed media URLs, raw MIME, or provider errors to storage.
+      const reason=error instanceof Error?error.message:''
+      conversation.metadata.transcriptDetail=/limit|Malformed|mapped|timestamp|identity|Ambiguous|Unrecognized|Unexpected|Too many/.test(reason)?reason:'Email content could not be retrieved. Check recording permissions, retention and media availability.'
+    }
+    return conversation
+  }
   async load(id: string): Promise<Conversation> {
     if (!/^[a-f0-9-]{20,64}$/i.test(id)) throw new Error('Invalid conversation ID.')
     const region = this.currentSession()?.region
@@ -86,6 +126,7 @@ export class GenesysCloudConversationSource implements ConversationSource {
     detail.queueNames = {}
     await Promise.all(queueIds.map(async queueId => { if (!/^[a-f0-9-]{20,64}$/i.test(queueId)) return; try { const queue = await this.request(`/api/v2/routing/queues/${queueId}`) as { name?: string }; if (queue.name) detail.queueNames![queueId] = queue.name } catch { /* name is optional */ } }))
     const media = resolveMediaContract(detail)
+    if(media.type==='email')return this.emailRelay?this.emailRelay(id):this.loadEmail(detail)
     const transcriptParts: GenesysTranscript[] = []
     let transcriptIssue = ''
     if (media.type === 'voice') {
@@ -95,7 +136,7 @@ export class GenesysCloudConversationSource implements ConversationSource {
           const location = await this.request(`/api/v2/speechandtextanalytics/conversations/${encodeURIComponent(id)}/communications/${encodeURIComponent(communicationId)}/transcripturl`) as { url?: string }
           if (!location.url) continue
           const signed = allowedTranscriptUrl(location.url, region)
-          const response = await fetch(signed.toString(), { credentials: 'omit' })
+          const response = await (0,this.fetcher)(signed.toString(), { credentials: 'omit' })
           if (!response.ok) throw new Error(`Transcript download returned HTTP ${response.status}.`)
           if (Number(response.headers.get('Content-Length') ?? 0) >= 5_000_000) throw new Error('Transcript download is too large.')
           const bytes = await response.arrayBuffer()

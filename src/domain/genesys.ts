@@ -1,7 +1,7 @@
 import { resolveMediaContract } from './genesysMedia'
 import type { Conversation, Message } from './types'
 
-export type GenesysSession = { sessionId?: string; mediaType?: string; direction?: string; segments?: Array<{ segmentEnd?: string; wrapUpCode?: string; queueId?: string }> }
+export type GenesysSession = { sessionId?: string; addressSelf?: string; mediaType?: string; direction?: string; segments?: Array<{ segmentEnd?: string; wrapUpCode?: string; queueId?: string }> }
 export type GenesysParticipant = { participantId?: string; purpose?: string; userId?: string; externalContactId?: string; participantName?: string; sessions?: GenesysSession[] }
 export type GenesysDetail = { conversationId?: string; conversationStart?: string; conversationEnd?: string; participants?: GenesysParticipant[]; originatingDirection?: string; queueNames?: Record<string,string> }
 type Phrase = { text?: string; decoratedText?: string; participantPurpose?: string; startTimeMs?: number; phraseIndex?: number }
@@ -34,7 +34,7 @@ export function normalizeGenesys(detail: GenesysDetail, transcript?: GenesysTran
     channel: media.type === 'message' ? 'messaging' : media.type === 'unknown' ? fallback.toLowerCase() : media.type,
     agent: { id: agent?.userId ?? agent?.participantId ?? '', name: agent?.participantName ?? 'Unknown agent' },
     customer: { id: customer?.externalContactId ?? customer?.participantId ?? '', name: customer?.participantName ?? 'Customer' },
-    metadata: { source: 'genesys-cloud', status: detail.conversationEnd ? 'Completed' : 'In progress', conversationEnd: detail.conversationEnd ?? '', direction: session?.direction ?? detail.originatingDirection ?? '', agent: agent?.userId ?? '', queue: detail.queueNames?.[queueId] ?? queueId, queueId, topic: wrapUpCode, wrapUpCode, durationSeconds: String(duration), sessionId: media.type === 'voice' ? (media.communicationIds[0] ?? '') : (session?.sessionId ?? agentSession?.sessionId ?? ''), transcriptStatus: messages.length ? 'Available' : media.type === 'voice' ? 'Unavailable' : 'Unsupported', transcriptDetail: media.type === 'voice' ? '' : `${media.type} transcript retrieval is not implemented yet.` },
+    metadata: { source: 'genesys-cloud', status: detail.conversationEnd ? 'Completed' : 'In progress', conversationEnd: detail.conversationEnd ?? '', direction: session?.direction ?? detail.originatingDirection ?? '', agent: agent?.userId ?? '', queue: detail.queueNames?.[queueId] ?? queueId, queueId, topic: wrapUpCode, wrapUpCode, durationSeconds: String(duration), sessionId: media.type === 'voice' ? (media.communicationIds[0] ?? '') : (session?.sessionId ?? agentSession?.sessionId ?? ''), transcriptStatus: messages.length ? 'Available' : media.type==='email' ? 'Not loaded' : media.type==='voice' ? 'Unavailable' : 'Unsupported', transcriptDetail: ['voice','email'].includes(media.type) ? '' : `${media.type} transcript retrieval is not implemented yet.` },
     messages,
   }
 }

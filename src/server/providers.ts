@@ -19,7 +19,7 @@ export class ClientCredentialsGenesys implements GenesysReader {
       if (!payload.access_token || !Number.isFinite(payload.expires_in) || payload.expires_in!<=0) throw new Error('Genesys automation returned an invalid token.')
       this.token={value:payload.access_token,until:Date.now()+payload.expires_in!*1000}
     }
-    return new GenesysCloudConversationSource(()=>({region:this.region,clientId:this.clientId,accessToken:this.token!.value,expiresAt:this.token!.until}))
+    return new GenesysCloudConversationSource(()=>({region:this.region,clientId:this.clientId,accessToken:this.token!.value,expiresAt:this.token!.until}),this.fetcher)
   }
   async list(query:ConversationQuery){return(await this.source()).list(query)}
   async load(id:string){return(await this.source()).load(id)}

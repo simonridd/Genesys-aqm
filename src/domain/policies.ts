@@ -14,7 +14,7 @@ export function conditionMatches(conversation: Conversation, condition: PolicyCo
   const actual = policyValue(conversation, condition.field).toLowerCase()
   const expected = condition.value.trim().toLowerCase()
   if (!expected) return false
-  return condition.operator === 'equals' ? actual === expected : actual.split(/[,;|]/).some(part => part.trim() === expected)
+  return condition.operator === 'equals' ? actual === expected || condition.field==='queue' && conversation.metadata.queueId?.toLowerCase()===expected : actual.split(/[,;|]/).some(part => part.trim() === expected)
 }
 export function matchPolicies(conversation: Conversation, policies: InteractionPolicy[]): PolicyMatch[] {
   return policies.flatMap(policy => {

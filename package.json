@@ -11,18 +11,21 @@
     "deploy:pages": "npm run build && gh-pages -d dist -b gh-pages",
     "proxy:dev": "wrangler dev --config proxy/wrangler.jsonc",
     "proxy:deploy": "wrangler deploy --config proxy/wrangler.jsonc",
-    "build:server": "esbuild src/server/main.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/main.mjs",
+    "build:server": "esbuild src/server/main.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/main.mjs && esbuild src/server/releaseProof.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/releaseProof.mjs",
     "start:server": "node server-dist/main.mjs",
     "typecheck:server": "tsc --noEmit --module ESNext --moduleResolution Bundler --target ES2022 --lib ES2022,DOM --skipLibCheck --types node src/server/main.ts"
   },
   "dependencies": {
     "firebase-admin": "^14.5.0",
     "google-auth-library": "^11.1.0",
+    "html-to-text": "^10.0.1",
+    "postal-mime": "^4.0.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
+    "@types/html-to-text": "^9.0.4",
     "@types/node": "^26.6.3",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",

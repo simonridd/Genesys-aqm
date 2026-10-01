@@ -2,6 +2,7 @@ import { createServer, type IncomingMessage, type ServerResponse } from 'node:ht
 import { getFirestore } from 'firebase-admin/firestore'
 import { initializeApp } from 'firebase-admin/app'
 import { OAuth2Client } from 'google-auth-library'
+import { GenesysCloudConversationSource } from '../domain/sources'
 import { REGIONS, type Region } from '../domain/genesysAuth'
 import { validateForm } from '../domain/forms'
 import { formStatus, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
@@ -47,6 +48,14 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
     try{
       const path=url.pathname
       if(request.method==='GET'){
+        const email=/^\/api\/conversations\/([a-f0-9-]{20,64})\/email$/i.exec(path)
+        if(email){
+          const source=new GenesysCloudConversationSource(()=>({region:config.region,clientId:'interactive',accessToken:bearer(request)!,expiresAt:Date.now()+60_000}),fetcher)
+          const conversation=await source.load(email[1])
+          if(conversation.channel!=='email')throw Error('This endpoint supports email conversations only.')
+          json(response,200,conversation);return
+        }
+
         if(path==='/api/monitoring-health'){
           const base:Record<string,unknown>={api:'healthy',genesysAutomation:{status:'unverified'},jev:{status:'unverified'},scheduler:{status:config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:null},firestore:'unavailable',lastRun:null,nextRunAt:null,runCounts:{completed:0,partial:0,failed:0}}
           try{

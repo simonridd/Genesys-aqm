@@ -23,13 +23,19 @@ export async function planServerRun(deps:RunnerDeps,policy:InteractionPolicy,per
   const forms=await deps.store.forms()
   const errors=validatePolicyFormPins(policy,forms)
   if(errors.length)throw new Error(errors.join(' '))
+  // Only predicates shared by every OR group are safe to push to Genesys.
+  const filters:Partial<import('../domain/types').ConversationQuery>={}
+  for(const field of ['channel','direction','queue','agent'] as const){
+    const condition=policy.criteria.anyOf[0]?.find(c=>c.field===field&&c.operator==='equals')
+    if(condition&&policy.criteria.anyOf.every(group=>group.some(c=>c.field===field&&c.operator==='equals'&&c.value===condition.value))&&(field!=='queue'||/^[a-f0-9-]{20,64}$/i.test(condition.value)))filters[field]=condition.value
+  }
   const candidates:Conversation[]=[]
   // A London week across the autumn clock change is 169 hours. Split provider
   // queries at seven-day UTC boundaries while preserving the exact local week.
   for(let cursor=from;cursor<to;cursor+=7*86400_000){
     const chunkEnd=Math.min(cursor+7*86400_000,to)
     for(let page=1;page<=20;page++){
-      const result=await deps.genesys.list({from:new Date(cursor).toISOString(),to:new Date(chunkEnd).toISOString(),page,pageSize:25})
+      const result=await deps.genesys.list({from:new Date(cursor).toISOString(),to:new Date(chunkEnd).toISOString(),page,pageSize:25,...filters})
       candidates.push(...result.conversations)
       if(candidates.length>500)throw new Error('More than 500 candidates; narrow the monitoring period.')
       if(!result.hasMore)break

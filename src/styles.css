@@ -59,3 +59,12 @@
 .coverage-drill:hover{background:#f4faf6}
 
 .form-controls { display: grid; gap: 18px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.question-rubric { margin: 12px 0 0; }
+.question-rubric > div { padding: 8px 0; border-top: 1px solid #e1e8e6; }
+.question-rubric dt { font-weight: 600; overflow-wrap: anywhere; }
+.question-rubric dt small { font-weight: 400; }
+.question-rubric dd { margin: 4px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.question-main { min-width: 0; }
+.email-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+.email-subject { display: block; margin-bottom: 12px; }
+input[readonly] { background: #f8fbfa; }

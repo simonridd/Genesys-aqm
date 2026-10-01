@@ -19,3 +19,17 @@ describe('durable runner',()=>{
   it('plans legacy enabled recreated forms using ordinary readiness',async()=>{const {deps,store,evaluate}=fixture();const recreated={...seedForms[0],origin:'genesys-recreated' as const,status:undefined,enabled:true};await store.putForm(recreated);const list=vi.spyOn(deps.genesys,'list');await planServerRun(deps,{...policy,evaluationFormIds:[recreated.id]},period);expect(list).toHaveBeenCalled();expect(evaluate).not.toHaveBeenCalled()})
   it('persists an operational failure when Genesys authentication blocks planning',async()=>{const {deps,store}=fixture();await store.putForm(seedForms[0]);deps.genesys.list=async()=>{throw new Error('Genesys automation authentication failed (HTTP 401).')};await expect(executeServerRun(deps,policy,period,'r_auth','scheduled')).rejects.toThrow('authentication');const [run]=await store.runs();expect(run.status).toBe('failed');expect(run.failures[0].reason).toContain('genesys_auth')})
 })
+
+it('pushes only common AND predicates, preserves OR populations and samples at most three',async()=>{
+ const {deps,store,evaluate}=fixture();await store.putForm(seedForms[0]);const list=vi.spyOn(deps.genesys,'list')
+ const bounded={...policy,sampling:{strategy:'fixed_count' as const,count:3},criteria:{anyOf:[[{field:'channel' as const,operator:'equals' as const,value:'voice'},{field:'direction' as const,operator:'equals' as const,value:'inbound'}]]}}
+ await planServerRun(deps,bounded,period);expect(list).toHaveBeenLastCalledWith(expect.objectContaining({channel:'voice',direction:'inbound',pageSize:25}));expect(evaluate).not.toHaveBeenCalled()
+ const union={...bounded,criteria:{anyOf:[...bounded.criteria.anyOf,[{field:'channel' as const,operator:'equals' as const,value:'email'}]]}}
+ await planServerRun(deps,union,period);expect(list.mock.calls.at(-1)![0]).not.toHaveProperty('channel');expect(list.mock.calls.at(-1)![0]).not.toHaveProperty('direction')
+})
+it('email uses ordinary sampling, evaluator, production records and coverage without persisting content',async()=>{
+ const {deps,store,evaluate}=fixture();await store.putForm(seedForms[0]);const email={...conversation,channel:'email'};deps.genesys.list=async()=>({conversations:[email],page:1,pageSize:25,total:1,hasMore:false});deps.genesys.load=async()=>email
+ const emailPolicy={...policy,criteria:{anyOf:[[{field:'channel' as const,operator:'equals' as const,value:'email'}]]},sampling:{strategy:'fixed_count' as const,count:3}}
+ const planned=await planServerRun(deps,emailPolicy,period);expect(planned.plan.expectedEvaluations).toBe(1)
+ const run=await executeServerRun(deps,emailPolicy,period,'email_run','manual',planned);expect(run.status).toBe('completed');expect(run.coverage?.successfulEvaluationCount).toBe(1);expect(evaluate).toHaveBeenCalledTimes(1);expect(JSON.stringify(await store.evaluations())).not.toContain('Sensitive transcript marker')
+})

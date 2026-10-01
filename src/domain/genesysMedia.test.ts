@@ -27,7 +27,7 @@ describe('Genesys media contracts', () => {
     expect(resolveMediaContract(digital)).toEqual({ type:mediaType, transport:mediaType==='message'?'digital-message':mediaType, communicationIds:[customerCommunication] })
     const normalized=normalizeGenesys(digital, transcript)
     expect(normalized.messages).toEqual([])
-    expect(normalized.metadata.transcriptStatus).toBe('Unsupported')
+    expect(normalized.metadata.transcriptStatus).toBe(mediaType==='email'?'Not loaded':'Unsupported')
   })
   it('loads an Ireland voice transcript from the Genesys download host with no bearer header', async () => {
     const calls: Array<{url:string;init?:RequestInit}> = []
