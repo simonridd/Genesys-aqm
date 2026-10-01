@@ -39,6 +39,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     const nav=page.getByRole('navigation',{name:'Primary navigation'}),panel=page.getByRole('region',{name:'Human review'})
     await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible()
     await page.getByRole('button',{name:'Open evaluation evaluation_1',exact:true}).click()
+    await expect(page.locator('.evaluation-detail').getByText('Actual Jev requests: Not recorded (legacy)',{exact:true})).toBeVisible()
     await panel.getByRole('button',{name:'Mark for review',exact:true}).click()
     await expect(panel.getByText('General Customer Service v17 · REVIEW REQUESTED')).toBeVisible()
     await panel.getByRole('button',{name:'Continue review'}).click()
