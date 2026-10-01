@@ -141,6 +141,7 @@ export class GenesysCloudConversationSource implements ConversationSource {
       if(!Array.isArray(listing.entities))throw new DigitalContentError('Unexpected email preview listing.')
       boundMessages(Math.max(listing.entities.length,listing.total??0))
       if(listing.nextUri||(listing.pageCount??1)>1||listing.total!==undefined&&listing.total>listing.entities.length)throw new DigitalContentError('Direct email preview listing is incomplete.')
+      conversation.metadata.providerMessageCount=String(listing.entities.length)
       const previews=listing.entities
       if(!previews.length)throw new DigitalContentError('Direct email API returned no historical messages.')
       const ids=new Set<string>(),items:Array<{recording:EmailRecording;email:RecordingEmail}>=[]
@@ -161,8 +162,9 @@ export class GenesysCloudConversationSource implements ConversationSource {
       const reason=error instanceof Error?error.message:''
       if(/HTTP (401|403|429|5\d\d)/.test(reason)&&!reason.includes('HTTP 501'))return this.digitalFailure(conversation,error)
       const fallback=await this.loadEmailRecording(detail)
-      fallback.metadata.directContentStatus=/HTTP \d{3}/.exec(reason)?.[0]??'Incomplete or unavailable'
-      if(!fallback.messages.length)fallback.metadata.transcriptDetail=`Direct email content unavailable; ${fallback.metadata.transcriptDetail}`
+      fallback.metadata.providerMessageCount=conversation.metadata.providerMessageCount??'0'
+      fallback.metadata.directContentStatus=/HTTP \d{3}/.exec(reason)?.[0]??(/^(Email sender could not|Email has no|Direct email|Unexpected complete email|Invalid or duplicate email)/.test(reason)?reason:'Incomplete or unavailable')
+      if(!fallback.messages.length)fallback.metadata.transcriptDetail=`Direct email content unavailable (${fallback.metadata.directContentStatus}); ${fallback.metadata.transcriptDetail}`
       return fallback
     }
   }
