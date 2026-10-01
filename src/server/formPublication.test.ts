@@ -1,3 +1,4 @@
+import { fixtureEvaluation } from '../fixtures/evaluationFixture'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { Server } from 'node:http'
 import type { AddressInfo } from 'node:net'
@@ -14,7 +15,7 @@ const servers: Server[] = []
 afterEach(async () => { await Promise.all(servers.splice(0).map(server => new Promise<void>(resolve => server.close(() => resolve())))) })
 function fixture() {
   const store = new MemoryStore()
-  const evaluate = vi.fn(async () => ({ conversationId:'fixture',scorecardId:genesysCustomerServiceForm.id,scorecardVersion:1,evaluatedAt:'2026-10-01T00:00:00Z',provider:'typesafe' as const,model:'fixture',questions:[],overallScore:.8,countedWeight:1,rawResponse:{} }))
+  const evaluate = vi.fn(async (request:import('../domain/types').EvaluationRequest) => fixtureEvaluation(request))
   const deps: RunnerDeps = {store, genesys:{list:async()=>{throw Error('unused')},load:async()=>{throw Error('unused')},withQueueNames:async items=>items},jev:{evaluate},now:()=>new Date('2026-10-01T00:00:00Z')}
   return {store,deps,evaluate}
 }

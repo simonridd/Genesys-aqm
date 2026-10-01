@@ -1,13 +1,14 @@
+import { fixtureEvaluation } from '../fixtures/evaluationFixture'
 import { describe,it,expect,vi } from 'vitest'
 import { MemoryStore } from './store'
 import { executeServerRun, planServerRun, schedulerTick, scheduledRunId, executionClaimId, evaluationId, type RunnerDeps } from './runner'
 import { seedForms } from '../domain/forms'
-import type { Conversation, EvaluationResult, InteractionPolicy } from '../domain/types'
+import type { Conversation, InteractionPolicy } from '../domain/types'
 import type { Schedule } from './schedules'
 const conversation:Conversation={conversationId:'12345678-1234-1234-1234-123456789abc',startedAt:'2026-09-28T12:00:00.000Z',channel:'voice',agent:{id:'a',name:'Agent'},customer:{id:'c',name:'Customer'},metadata:{source:'genesys-cloud',queue:'Service'},messages:[{id:'1',speaker:'customer',timestamp:'2026-09-28T12:00:01.000Z',text:'Sensitive transcript marker'}]}
 const policy:InteractionPolicy={id:'policy',name:'Voice',description:'',enabled:true,version:2,criteria:{anyOf:[[{field:'channel',operator:'equals',value:'voice'}]]},evaluationFormIds:[seedForms[0].id],sampling:{strategy:'all'}}
 const period={periodStart:'2026-09-28T00:00:00.000Z',periodEnd:'2026-09-29T00:00:00.000Z'}
-function fixture(){const store=new MemoryStore();const evaluate=vi.fn(async()=>({conversationId:conversation.conversationId,scorecardId:seedForms[0].id,scorecardVersion:1,evaluatedAt:'2026-09-30T00:00:00.000Z',provider:'typesafe',model:'test',questions:[],overallScore:.8,countedWeight:1,rawResponse:{}} satisfies EvaluationResult));const deps:RunnerDeps={store,genesys:{list:async()=>({conversations:[conversation],page:1,pageSize:25,total:1,hasMore:false}),load:async()=>conversation,withQueueNames:async c=>c},jev:{evaluate},now:()=>new Date('2026-09-30T00:00:00.000Z')};return {store,evaluate,deps}}
+function fixture(){const store=new MemoryStore();const evaluate=vi.fn(async(request:import("../domain/types").EvaluationRequest)=>fixtureEvaluation(request));const deps:RunnerDeps={store,genesys:{list:async()=>({conversations:[conversation],page:1,pageSize:25,total:1,hasMore:false}),load:async()=>conversation,withQueueNames:async c=>c},jev:{evaluate},now:()=>new Date('2026-09-30T00:00:00.000Z')};return {store,evaluate,deps}}
 describe('durable runner',()=>{
   it('executes recreated Customer Service through scheduled production without acknowledgement',async()=>{const {deps,store,evaluate}=fixture();const form={...seedForms.at(-1)!,sourceReview:{status:'REVIEW_REQUIRED' as const}};await store.putForm(form);const run=await executeServerRun(deps,{...policy,evaluationFormIds:[form.id]},period,'recreated_scheduled','scheduled');expect(run.status).toBe('completed');expect(evaluate).toHaveBeenCalledTimes(1);expect((await store.evaluations())[0]).toMatchObject({purpose:'PRODUCTION',executionMode:'scheduled',form})})
 

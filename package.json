@@ -11,9 +11,9 @@
     "deploy:pages": "npm run build && gh-pages -d dist -b gh-pages",
     "proxy:dev": "wrangler dev --config proxy/wrangler.jsonc",
     "proxy:deploy": "wrangler deploy --config proxy/wrangler.jsonc",
-    "build:server": "esbuild src/server/main.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/main.mjs && esbuild src/server/releaseProof.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/releaseProof.mjs",
+    "build:server": "esbuild src/server/main.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/main.mjs && esbuild src/server/releaseProof.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/releaseProof.mjs && esbuild src/server/seedGroupAssets.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/seedGroupAssets.mjs",
     "start:server": "node server-dist/main.mjs",
-    "typecheck:server": "tsc --noEmit --module ESNext --moduleResolution Bundler --target ES2022 --lib ES2022,DOM --skipLibCheck --types node src/server/main.ts"
+    "typecheck:server": "tsc --noEmit --module ESNext --moduleResolution Bundler --target ES2022 --lib ES2022,DOM --skipLibCheck --types node src/server/main.ts src/server/seedGroupAssets.ts"
   },
   "dependencies": {
     "firebase-admin": "^14.5.0",

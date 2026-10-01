@@ -1,3 +1,4 @@
+import { maximumEvaluationWaves, FormEvaluationFailure } from './formComposition'
 import { matchPolicies } from './policies'
 import { recordEvaluation } from './evaluations'
 import { isOperationalForm } from './formLifecycle'
@@ -43,7 +44,7 @@ export interface PolicyRunPlan {
   policySnapshot: InteractionPolicy; source: ConversationSourceId; period: MonitoringPeriod; sampling: MonitoringSampling; seed: string
   candidateCount: number; eligibleCount: number; selected: PlannedConversation[]; formIds: string[]
   sampledCount: number; evaluableCount: number; transcriptUnavailableCount: number; previouslyEvaluatedCount: number
-  alreadyEvaluatedAssignmentCount: number; expectedEvaluations: number; coverage: CoverageCounts
+  alreadyEvaluatedAssignmentCount: number; expectedEvaluations: number; maximumProviderRequests: number; coverage: CoverageCounts
   agentCoverage: PolicyRun['agentCoverage']; limitExceeded: boolean
   queueCoverage: PolicyRun['queueCoverage']
 }
@@ -65,7 +66,7 @@ export function planPolicyRun(policy: InteractionPolicy, candidates: Conversatio
   const agentIds = [...new Set(eligible.map(c => c.agent.id))]
   const agentCoverage = agentIds.map(agentId => ({ agentId, agentName: eligible.find(c => c.agent.id === agentId)!.agent.name, eligible: eligible.filter(c => c.agent.id === agentId).length, sampled: selected.filter(c => c.conversation.agent.id === agentId).length, evaluated: selected.filter(c => c.conversation.agent.id === agentId && c.alreadyEvaluatedFormIds.length > 0).length }))
   const queueCoverage=[...new Set(eligible.map(c=>c.metadata.queue??'Unspecified'))].map(queue=>({queue,eligible:eligible.filter(c=>(c.metadata.queue??'Unspecified')===queue).length,sampled:selected.filter(c=>(c.conversation.metadata.queue??'Unspecified')===queue).length,evaluated:selected.filter(c=>(c.conversation.metadata.queue??'Unspecified')===queue&&c.alreadyEvaluatedFormIds.length>0).length}))
-  return { policySnapshot: structuredClone({...policy,version:policy.version??1}), source, period, sampling: structuredClone(effectiveSampling(policy)), seed: deterministicSeed(policy, period), candidateCount: candidates.length, eligibleCount: eligible.length, selected, formIds, sampledCount: selected.length, evaluableCount, transcriptUnavailableCount: selected.length - evaluableCount, previouslyEvaluatedCount, alreadyEvaluatedAssignmentCount, expectedEvaluations, coverage, agentCoverage, queueCoverage, limitExceeded: selected.length > MAX_POLICY_CONVERSATIONS }
+  return { policySnapshot: structuredClone({...policy,version:policy.version??1}), source, period, sampling: structuredClone(effectiveSampling(policy)), seed: deterministicSeed(policy, period), candidateCount: candidates.length, eligibleCount: eligible.length, selected, formIds, sampledCount: selected.length, evaluableCount, transcriptUnavailableCount: selected.length - evaluableCount, previouslyEvaluatedCount, alreadyEvaluatedAssignmentCount, expectedEvaluations, maximumProviderRequests: selected.reduce((n,c)=>n+c.pendingFormIds.reduce((sum,id)=>sum+maximumEvaluationWaves(forms.find(f=>f.id===id)!),0),0), coverage, agentCoverage, queueCoverage, limitExceeded: selected.length > MAX_POLICY_CONVERSATIONS }
 }
 // Compatibility with V0.3 callers. New monitoring UI uses planPolicyRun directly.
 export interface PolicyRunPreview { candidateCount: number; matched: Conversation[]; formIds: string[]; expectedEvaluations: number; duplicates: Array<{ conversationId: string; formId: string }>; unavailable: string[]; limitExceeded: boolean; plan: PolicyRunPlan }
@@ -79,15 +80,16 @@ export async function executePolicyRun(args: { policy: InteractionPolicy; source
   if (preview.limitExceeded) throw new Error(`A policy run is limited to ${MAX_POLICY_CONVERSATIONS} sampled conversations.`)
   const plan = preview.plan
   const tasks = plan.selected.flatMap(c => (reEvaluate ? (c.transcriptAvailable ? plan.formIds : []) : c.pendingFormIds).map(id => ({ conversation: c.conversation, form: forms.find(f => f.id === id)! })))
-  const run: PolicyRun = { id: crypto.randomUUID(), policyId: policy.id, policySnapshot: structuredClone(plan.policySnapshot), source, startedAt: new Date().toISOString(), candidateConversationCount: plan.candidateCount, matchedConversationCount: plan.eligibleCount, formsAssigned: [...plan.formIds], evaluationsRequested: tasks.length, evaluationsSucceeded: 0, evaluationsFailed: 0, status: 'running', failures: [], period: structuredClone(plan.period), sampling: structuredClone(plan.sampling), deterministicSeed: plan.seed, sampledConversationIds: plan.selected.map(c => c.conversation.conversationId), evaluableCount: plan.evaluableCount, previouslyEvaluatedCount: plan.previouslyEvaluatedCount, coverage: structuredClone(plan.coverage), agentCoverage: structuredClone(plan.agentCoverage), queueCoverage:structuredClone(plan.queueCoverage) }
+  const run: PolicyRun = { id: crypto.randomUUID(), policyId: policy.id, policySnapshot: structuredClone(plan.policySnapshot), source, startedAt: new Date().toISOString(), candidateConversationCount: plan.candidateCount, matchedConversationCount: plan.eligibleCount, formsAssigned: [...plan.formIds], evaluationsRequested: tasks.length, maximumProviderRequests: tasks.reduce((n,t)=>n+maximumEvaluationWaves(t.form),0), actualProviderRequests: 0, evaluationsSucceeded: 0, evaluationsFailed: 0, status: 'running', failures: [], period: structuredClone(plan.period), sampling: structuredClone(plan.sampling), deterministicSeed: plan.seed, sampledConversationIds: plan.selected.map(c => c.conversation.conversationId), evaluableCount: plan.evaluableCount, previouslyEvaluatedCount: plan.previouslyEvaluatedCount, coverage: structuredClone(plan.coverage), agentCoverage: structuredClone(plan.agentCoverage), queueCoverage:structuredClone(plan.queueCoverage) }
   onRun?.(structuredClone(run))
   const created: EvaluationRecord[] = []
   let next = 0, done = 0
   const worker = async () => { while (next < tasks.length) { const task = tasks[next++]; try {
     const result = await evaluateOne(task.conversation, task.form)
+    run.actualProviderRequests=(run.actualProviderRequests??0)+(result.providerRequestCount??1)
     const record = recordEvaluation(task.conversation, task.form, result, matchPolicies(task.conversation, [policy]), undefined, { conversationSource: source, policyRunId: run.id })
     created.push(record); onRecord?.(record); run.evaluationsSucceeded++
-  } catch (error) { const failure: PolicyRunFailure = { conversationId: task.conversation.conversationId, formId: task.form.id, reason: error instanceof Error ? error.message : 'Evaluation failed.' }; run.failures.push(failure); run.evaluationsFailed++ }
+  } catch (error) { run.actualProviderRequests=(run.actualProviderRequests??0)+(error instanceof FormEvaluationFailure?error.providerRequestCount:0); const failure: PolicyRunFailure = { conversationId: task.conversation.conversationId, formId: task.form.id, reason: error instanceof Error ? error.message : 'Evaluation failed.' }; run.failures.push(failure); run.evaluationsFailed++ }
   done++; onProgress?.(done, tasks.length); onRun?.(structuredClone(run)) } }
   await Promise.all(Array.from({ length: Math.min(2, tasks.length) }, worker))
   const coveredIds = new Set([...plan.selected.filter(c => c.alreadyEvaluatedFormIds.length > 0).map(c => c.conversation.conversationId), ...created.map(r => r.conversationId)])

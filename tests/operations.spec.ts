@@ -20,7 +20,7 @@ for (const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:
     await page.getByRole('button',{name:'＋ New form'}).click()
     await expect(page.getByText('DRAFT · VERSION 1')).toBeVisible()
     await expect(page.getByRole('heading',{name:'Test form'})).toBeVisible()
-    await expect(page.getByText('5 expected Jev requests')).toBeVisible()
+    await expect(page.getByText(/5 evaluation assignments · up to 5 Jev requests/)).toBeVisible()
     await page.getByLabel('Execution').selectOption('server')
     await expect(page.getByText(/server uses its configured Jev credential/)).toBeVisible()
     await page.getByLabel('Execution').selectOption('browser')

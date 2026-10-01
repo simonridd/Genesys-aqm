@@ -1,3 +1,5 @@
+import { assertAssetWrite } from '../domain/groupAssets'
+import type { QuestionGroupAsset } from '../domain/types'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
 import { getFirestore } from 'firebase-admin/firestore'
 import { initializeApp } from 'firebase-admin/app'
@@ -94,7 +96,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         }
         if(path==='/api/analytics'){json(response,200,await operationalAnalytics(deps.store,url.searchParams));return}
         if(path==='/api/form-tests'){const limit=Number(url.searchParams.get('limit')??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Limit must be between 1 and 100.');json(response,200,{items:await deps.store.recentFormTestRuns(limit)});return}
-        const collections={'/api/forms':'evaluationForms','/api/policies':'policies','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
+        const collections={'/api/question-groups':'questionGroupAssets','/api/forms':'evaluationForms','/api/policies':'policies','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
         if(path in collections){
           const rawLimit=Number(url.searchParams.get('limit')??50)
           if(!Number.isInteger(rawLimit)||rawLimit<1||rawLimit>100)throw new Error('Limit must be between 1 and 100.')
@@ -125,13 +127,16 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
       if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
+      const assetPath=/^\/api\/question-groups\/([A-Za-z0-9_-]+)$/.exec(path)
+      if(assetPath&&request.method==='GET'){const item=await deps.store.groupAsset(assetPath[1]);json(response,item?200:404,item??{error:'Reusable group not found.'});return}
+      if(assetPath&&request.method==='PUT'){const value=await body(request);if(!obj(value)||value.id!==assetPath[1])throw Error('Invalid asset identity.');const asset=value as unknown as QuestionGroupAsset;assertAssetWrite(await deps.store.groupAsset(asset.id),asset);await deps.store.putGroupAsset(asset);json(response,200,{ok:true,item:asset});return}
       if(request.method==='PUT'){
         const match=/^\/api\/(forms|policies|schedules)\/([A-Za-z0-9_-]+)$/.exec(path)
         if(match){const value=await body(request);if(!obj(value)||value.id!==match[2]||!id(match[2]))throw new Error('Invalid resource identity.')
           if(match[1]==='forms'){
             const form=value as unknown as EvaluationForm
             const prior=await deps.store.form(form.id)
-            if(validateForm(form).length)throw new Error('Invalid evaluation form.')
+            if(validateForm(form).length)throw new Error(validateForm(form).join(' '))
             if(prior){
               if(form.origin!==prior.origin||form.sourceFormId!==prior.sourceFormId)throw new Error('Source provenance cannot change.')
               if(form.version!==prior.version)throw new Error('Form version cannot change under the same ID.')
@@ -164,7 +169,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         const period=input.period as unknown as MonitoringPeriod
         const prepared=await planServerRun(deps,policy,period)
         const fingerprint=planFingerprint(policy,period,prepared.plan.selected)
-        if(match[2]==='plan'){const p=prepared.plan;json(response,200,{fingerprint,period,policyId:policy.id,policyVersion:policy.version??1,candidateCount:p.candidateCount,eligibleCount:p.eligibleCount,sampledCount:p.sampledCount,evaluableCount:p.evaluableCount,expectedEvaluations:p.expectedEvaluations,transcriptUnavailableCount:p.transcriptUnavailableCount,selected:p.selected.map(x=>({conversationId:x.conversation.conversationId,pendingFormIds:x.pendingFormIds,transcriptAvailable:x.transcriptAvailable}))});return}
+        if(match[2]==='plan'){const p=prepared.plan;json(response,200,{fingerprint,period,policyId:policy.id,policyVersion:policy.version??1,candidateCount:p.candidateCount,eligibleCount:p.eligibleCount,sampledCount:p.sampledCount,evaluableCount:p.evaluableCount,expectedEvaluations:p.expectedEvaluations,maximumProviderRequests:p.maximumProviderRequests,transcriptUnavailableCount:p.transcriptUnavailableCount,selected:p.selected.map(x=>({conversationId:x.conversation.conversationId,pendingFormIds:x.pendingFormIds,transcriptAvailable:x.transcriptAvailable}))});return}
         if(input.fingerprint!==fingerprint){json(response,409,{error:'Plan changed. Preview again before execution.'});return}
         const runId=manualRunId(policy,period)
         const run=await executeServerRun(deps,policy,period,runId,'manual',prepared)

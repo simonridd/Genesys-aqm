@@ -1,3 +1,4 @@
+import { materializeGroups } from './formComposition'
 import type { EvaluationForm, InteractionPolicy } from './types'
 import { toScorecard, validateForm } from './forms'
 import { validateScorecard } from './validation'
@@ -24,7 +25,7 @@ function ordered(value: unknown): unknown {
 export function sameDefinition(a: EvaluationForm, b: EvaluationForm): boolean {
   const definition = (form: EvaluationForm) => JSON.stringify(ordered({
     name: form.name, description: form.description, version: form.version,
-    questions: form.questions, scoring: form.scoring, origin: form.origin,
+    groups: form.groups, questions: form.questions, scoring: form.scoring, origin: form.origin,
     sourceFormId: form.sourceFormId,
   }))
   return definition(a) === definition(b)
@@ -33,7 +34,7 @@ export function sameDefinition(a: EvaluationForm, b: EvaluationForm): boolean {
 export function nextFormVersion(form: EvaluationForm, existing: EvaluationForm[], now: string): EvaluationForm {
   const familyId = form.familyId ?? form.id
   const version = Math.max(...existing.filter(item => (item.familyId ?? item.id) === familyId).map(item => item.version), form.version) + 1
-  return { ...structuredClone(form), id: `${familyId}_v${version}`, familyId,
+  return { ...materializeGroups(form), id: `${familyId}_v${version}`, familyId,
     version, status: 'DRAFT', enabled: false, createdAt: now, updatedAt: now, publishedAt: undefined }
 }
 

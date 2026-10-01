@@ -1,3 +1,4 @@
+import { fixtureEvaluation } from '../fixtures/evaluationFixture'
 import { afterEach,describe,it,expect } from 'vitest'
 import { createApi } from './api'
 import { MemoryStore } from './store'
@@ -22,7 +23,7 @@ describe('AQM API authorization',()=>{
     const policy:InteractionPolicy={id:'policy',name:'Voice',description:'',enabled:true,version:1,criteria:{anyOf:[[{field:'channel',operator:'equals',value:'voice'}]]},evaluationFormIds:[form.id]}
     const conversation:Conversation={conversationId:'12345678-1234-1234-1234-123456789abc',startedAt:'2026-09-28T12:00:00Z',channel:'voice',agent:{id:'a',name:'Agent'},customer:{id:'b',name:'Customer'},metadata:{source:'genesys-cloud'},messages:[{id:'m',timestamp:'2026-09-28T12:00:01Z',speaker:'customer',text:'private transcript'}]}
     await store.putForm(form);await store.putPolicy(policy)
-    const deps:RunnerDeps={store,genesys:{list:async()=>({conversations:[conversation],page:1,pageSize:25,total:1,hasMore:false}),load:async()=>conversation,withQueueNames:async c=>c},jev:{evaluate:async()=>({conversationId:conversation.conversationId,scorecardId:form.id,scorecardVersion:form.version,evaluatedAt:'2026-09-30T00:00:00Z',provider:'typesafe',model:'test',questions:[],overallScore:.8,countedWeight:1,rawResponse:{}})},now:()=>new Date('2026-09-30T00:00:00Z')}
+    const deps:RunnerDeps={store,genesys:{list:async()=>({conversations:[conversation],page:1,pageSize:25,total:1,hasMore:false}),load:async()=>conversation,withQueueNames:async c=>c},jev:{evaluate:async(request:import("../domain/types").EvaluationRequest)=>fixtureEvaluation(request)},now:()=>new Date('2026-09-30T00:00:00Z')}
     const server=createApi(deps,{origin:'https://simonridd.github.io',region:'eu-west-1',allowedUserIds:new Set(['allowed']),schedulerEmail:'aqm-scheduler@example.com',schedulerAudience:'https://aqm.example.com'},async()=>new Response(JSON.stringify({id:'allowed'}),{status:200}));servers.push(server);await new Promise<void>(resolve=>server.listen(0,resolve));const base=`http://127.0.0.1:${(server.address() as AddressInfo).port}`
     const period={periodStart:'2026-09-28T00:00:00Z',periodEnd:'2026-09-29T00:00:00Z'},headers={Authorization:'Bearer user-token','Content-Type':'application/json'}
     const post=(route:string,payload:unknown)=>fetch(`${base}${route}`,{method:'POST',headers,body:JSON.stringify(payload)})

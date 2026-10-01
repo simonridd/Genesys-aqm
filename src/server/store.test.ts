@@ -1,5 +1,6 @@
 import { describe,it,expect } from 'vitest'
 import type { Firestore } from 'firebase-admin/firestore'
+import { seedGroupAssets } from '../domain/seedGroupAssets'
 import { FirestoreStore } from './store'
 import { isOperationalForm } from '../domain/formLifecycle'
 import { seedForms } from '../domain/forms'
@@ -13,7 +14,8 @@ function fakeFirestore(){
     else if(value&&typeof value==='object')Object.values(value).forEach(validate)
   }
   const ref=(path:string)=>({get:async()=>({exists:values.has(path),data:()=>values.get(path)}),set:async(value:unknown)=>{validate(value);values.set(path,structuredClone(value))}})
-  const db={collection:(name:string)=>({doc:(id:string)=>ref(`${name}/${id}`),get:async()=>({docs:[...values].filter(([key])=>key.startsWith(`${name}/`)).map(([,value])=>({data:()=>structuredClone(value)}))})}),runTransaction:async<T>(fn:(tx:{get:(r:ReturnType<typeof ref>)=>ReturnType<ReturnType<typeof ref>['get']>;set:(r:ReturnType<typeof ref>,v:unknown)=>void;create:(r:ReturnType<typeof ref>,v:unknown)=>void;update:(r:ReturnType<typeof ref>,v:Record<string,unknown>)=>void})=>Promise<T>)=>fn({get:r=>r.get(),set:(r,v)=>{void r.set(v)},create:(r,v)=>{void r.set(v)},update:async(r,v)=>{const d=await r.get();await r.set({...d.data() as object,...v})}})}
+  const collection=(name:string,filters:Array<[string,unknown]>=[],maximum=Infinity):unknown=>({doc:(id:string)=>ref(`${name}/${id}`),where:(field:string,_operator:string,value:unknown)=>collection(name,[...filters,[field,value]],maximum),limit:(n:number)=>collection(name,filters,n),get:async()=>({docs:[...values].filter(([key,value])=>key.startsWith(`${name}/`)&&filters.every(([field,expected])=>(value as Record<string,unknown>)[field]===expected)).slice(0,maximum).map(([key,value])=>({id:key.split('/')[1],data:()=>structuredClone(value)}))})})
+  const db={collection,runTransaction:async<T>(fn:(tx:{get:(r:ReturnType<typeof ref>)=>ReturnType<ReturnType<typeof ref>['get']>;set:(r:ReturnType<typeof ref>,v:unknown)=>void;create:(r:ReturnType<typeof ref>,v:unknown)=>void;update:(r:ReturnType<typeof ref>,v:Record<string,unknown>)=>void})=>Promise<T>)=>fn({get:r=>r.get(),set:(r,v)=>{void r.set(v)},create:(r,v)=>{void r.set(v)},update:async(r,v)=>{const d=await r.get();await r.set({...d.data() as object,...v})}})}
   return db as unknown as Firestore
 }
 describe('Firestore repository shape',()=>{
@@ -35,3 +37,5 @@ describe('Firestore repository shape',()=>{
     expect(await store.evaluations()).toEqual([record])
   })
 })
+
+it('persists reusable assets transactionally and preserves published immutable snapshots across store instances',async()=>{const db=fakeFirestore(),store=new FirestoreStore(db),asset=structuredClone(seedGroupAssets[0]);await store.putGroupAsset(asset);expect(await new FirestoreStore(db).groupAsset(asset.id)).toEqual(asset);await expect(store.putGroupAsset({...asset,name:'Mutated published asset'})).rejects.toThrow('immutable');await expect(store.putGroupAsset({...asset,id:'duplicate_family_version'})).rejects.toThrow('already exists');expect(await store.groupAsset(asset.id)).toEqual(asset)})

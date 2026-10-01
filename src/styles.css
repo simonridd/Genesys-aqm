@@ -125,3 +125,26 @@ input[readonly] { background: #f8fbfa; }
   .human-review .panel-heading { flex-wrap: wrap; }
   .human-review .analytics-tabs { flex-wrap: wrap; }
 }
+
+/* Group composition uses the same rich question cards for editable and locked forms. */
+.grouped-form{display:grid;gap:18px;margin-top:20px;min-width:0}
+.group-toolbar{padding:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.form-group{display:grid;gap:10px;min-width:0}
+.group-heading{padding:20px;border-left:4px solid #0b8f79}
+.group-heading .editor-grid{margin-bottom:16px}
+.group-heading>.outline-button{margin:6px 8px 6px 0}
+.condition-builder{margin:12px 0;padding:12px;background:#f1f7f5;border-radius:8px;min-width:0}
+.condition-fields{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:12px}
+.condition-fields label{min-width:0;display:grid;gap:6px;font-size:13px}
+.condition-fields input,.condition-fields select,.grouped-form input,.grouped-form select{max-width:100%;min-width:0}
+.grouped-form .question-main>label{display:grid;gap:6px;margin-top:12px;max-width:400px}
+.grouped-form .question-actions{flex-wrap:wrap}
+.group-delete{padding:16px;margin-top:12px;background:#fff3ee;border:1px solid #e2b4a2;border-radius:8px}
+.group-delete button{margin:6px 6px 0 0}
+.reusable-picker{padding:20px;display:grid;gap:16px}
+.reusable-picker>div{padding:14px;border:1px solid #d9e4e1;border-radius:8px}
+.asset-detail{margin-top:24px;min-width:0}
+@media(max-width:900px){.condition-fields{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.condition-fields{grid-template-columns:minmax(0,1fr)}.group-heading,.group-toolbar{padding:14px}.group-heading .panel-heading{align-items:flex-start;flex-direction:column}.grouped-form .question-summary{flex-wrap:wrap}.grouped-form .question-actions{width:100%;justify-content:flex-end}.grouped-form .question-main{min-width:0;width:calc(100% - 46px)}.grouped-form .field-note{overflow-wrap:anywhere}.grouped-form .question-editor{padding:14px}.group-toolbar .heading-actions{width:100%;flex-wrap:wrap}}
+.grouped-form .question-main p{white-space:normal;overflow:visible;text-overflow:clip;font-size:12px;line-height:1.55;color:#647e89;overflow-wrap:anywhere}
+.condition-fields input,.condition-fields select{width:100%;padding:9px 10px;background:#fff;border:1px solid #cbdcdf;border-radius:7px;color:#243f49;font-size:12px}

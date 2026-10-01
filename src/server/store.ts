@@ -1,16 +1,19 @@
+import { assertAssetWrite } from '../domain/groupAssets'
 import type { HumanReview } from '../domain/reviews'
-import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun } from '../domain/types'
+import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun, QuestionGroupAsset } from '../domain/types'
 import type { Schedule } from './schedules'
 import type { Firestore } from 'firebase-admin/firestore'
 
 export interface Claim { id: string; owner: string; leaseUntil: string; status: 'running' | 'completed'; claimedAt: string }
-export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string }
-export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews'
+export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string; providerRequestCount?: number }
+export type CollectionName = 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface ReviewWrite { review: HumanReview; expectedRevision: number }
 export class ReviewConflict extends Error { constructor(){super('Review changed in another tab or by another reviewer. Refresh before saving.')} }
 export interface Store {
+  groupAsset(id:string):Promise<QuestionGroupAsset|undefined>; putGroupAsset(asset:QuestionGroupAsset):Promise<void>
+  recordProviderRequest(id:string,count:number):Promise<void>
   review(id:string):Promise<HumanReview|undefined>; reviewsByIds(ids:string[]):Promise<HumanReview[]>
   writeReviews(writes:ReviewWrite[]):Promise<void>
   findProductionEvaluation(source:string, conversationId:string, formId:string, version:number):Promise<EvaluationRecord|undefined>
@@ -28,6 +31,10 @@ export interface Store {
 }
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
+  private assetMap = new Map<string,QuestionGroupAsset>()
+  async groupAsset(id:string){return copy(this.assetMap.get(id))}
+  async putGroupAsset(asset:QuestionGroupAsset){if([...this.assetMap.values()].some(a=>a.id!==asset.id&&a.familyId===asset.familyId&&a.version===asset.version))throw Error('This reusable family version already exists. Refresh the library.');assertAssetWrite(this.assetMap.get(asset.id),asset);this.assetMap.set(asset.id,copy(asset))}
+  async recordProviderRequest(id:string,count:number){const slot=this.slots.get(id);if(!slot||slot.status!=='started')throw Error('Evaluation is not reserved.');slot.providerRequestCount=count}
   private reviewMap = new Map<string,HumanReview>(); private formMap = new Map<string,EvaluationForm>(); private policyMap = new Map<string,InteractionPolicy>(); private scheduleMap = new Map<string,Schedule>()
   private runMap = new Map<string,PolicyRun>(); private evaluationMap = new Map<string,EvaluationRecord>(); private testMap = new Map<string,FormTestRun>(); private claimMap = new Map<string,Claim>(); private slots = new Map<string,EvaluationSlot>()
   async review(id:string){return copy(this.reviewMap.get(id))}
@@ -50,7 +57,7 @@ export class MemoryStore implements Store {
   async evaluationSlot(id:string) { return copy(this.slots.get(id)) }
   async completeEvaluation(id:string,record:EvaluationRecord) { const slot=this.slots.get(id); if (!slot) throw new Error('Evaluation was not reserved.'); await this.putEvaluation(record); slot.status='completed'; slot.recordId=record.id }
   async query<T>(collection:CollectionName,limit:number,cursor?:string):Promise<QueryPage<T>> {
-    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap})[collection]
+    const map = ({evaluationForms:this.formMap,policies:this.policyMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,questionGroupAssets:this.assetMap})[collection]
     const rows=[...map.entries()].sort(([a],[b])=>a.localeCompare(b)).filter(([id])=>!cursor||id>cursor)
     const page=rows.slice(0,limit)
     return {items:copy(page.map(([,value])=>value)) as T[],nextCursor:rows.length>limit?page.at(-1)?.[0]:undefined,scanned:page.length}
@@ -84,6 +91,9 @@ function canonicalValue(value:unknown):unknown {
 }
 const stored=(value:unknown)=>firestoreValue(JSON.parse(JSON.stringify(value))) as object
 export class FirestoreStore implements Store {
+  async groupAsset(id:string){return this.one<QuestionGroupAsset>('questionGroupAssets',id)}
+  async putGroupAsset(asset:QuestionGroupAsset){const ref=this.collection('questionGroupAssets').doc(pathId(asset.id));await this.db.runTransaction(async tx=>{const old=await tx.get(ref),versions=await tx.get(this.collection('questionGroupAssets').where('familyId','==',asset.familyId).where('version','==',asset.version).limit(2));if(versions.docs.some(doc=>doc.id!==asset.id))throw Error('This reusable family version already exists. Refresh the library.');assertAssetWrite(old.exists?canonicalValue(old.data()) as QuestionGroupAsset:undefined,asset);tx.set(ref,stored(asset))})}
+  async recordProviderRequest(id:string,count:number){await this.collection('evaluationSlots').doc(pathId(id)).update({providerRequestCount:count})}
   constructor(private readonly db: Firestore) {}
   private collection(name:string) { return this.db.collection(name) }
   private async all<T>(name:string):Promise<T[]> { const docs=await this.collection(name).get(); return docs.docs.map(d=>canonicalValue(d.data()) as T) }

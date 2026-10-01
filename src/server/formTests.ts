@@ -1,3 +1,4 @@
+import { evaluateForm, maximumEvaluationWaves } from '../domain/formComposition'
 import { sampleLibrary } from '../domain/conversations'
 import { recordEvaluation } from '../domain/evaluations'
 import { toScorecard, validateForm } from '../domain/forms'
@@ -15,7 +16,7 @@ export async function executeFormTest(deps:RunnerDeps,input:FormTestInput):Promi
   if(JSON.stringify(input.form).length>25_000||input.form.questions.filter(item=>item.enabled).length>50)throw new Error('Form test is limited to 50 enabled questions and a 25 KB form definition.')
   const prior=await deps.store.formTestRun(input.id)
   if(prior){if(prior.formId!==input.form.id||JSON.stringify(prior.selectedConversationIds)!==JSON.stringify(input.selectedConversationIds)||JSON.stringify(prior.formSnapshot)!==JSON.stringify(input.form))throw new Error('Test ID is already bound to a different snapshot or sample.');return prior}
-  const run:FormTestRun={id:input.id,formId:input.form.id,formSnapshot:structuredClone(input.form),createdAt:deps.now().toISOString(),status:'running',sampleSource:input.source,selectedConversationIds:[...input.selectedConversationIds],sampleConfiguration:structuredClone(input.sampleConfiguration),expectedRequests:input.selectedConversationIds.length,results:[],failures:[]}
+  const run:FormTestRun={id:input.id,formId:input.form.id,formSnapshot:structuredClone(input.form),createdAt:deps.now().toISOString(),status:'running',sampleSource:input.source,selectedConversationIds:[...input.selectedConversationIds],sampleConfiguration:structuredClone(input.sampleConfiguration),evaluationAssignments:input.selectedConversationIds.length,expectedRequests:input.selectedConversationIds.length*maximumEvaluationWaves(input.form),actualProviderRequests:0,results:[],failures:[]}
   if(!await deps.store.createFormTestRun(run))return (await deps.store.formTestRun(input.id))!
   // Test records are embedded only in formTestRuns. They never enter evaluation
   // slots, policy runs, production evaluationRecords, or analytics.
@@ -24,7 +25,7 @@ export async function executeFormTest(deps:RunnerDeps,input:FormTestInput):Promi
       const conversation=input.source==='synthetic'?sampleLibrary.find(item=>item.conversation.conversationId===conversationId)?.conversation:await deps.genesys.load(conversationId)
       if(!conversation)throw new Error('Sample conversation not found.')
       if(!conversation.messages.length)throw new Error('Transcript unavailable.')
-      const result=await deps.jev.evaluate({conversation,scorecard:toScorecard(run.formSnapshot),evaluatedAt:deps.now().toISOString(),version:'v0'})
+      const result=await evaluateForm({conversation,form:run.formSnapshot,evaluatedAt:deps.now().toISOString(),evaluateQuestions:request=>deps.jev.evaluate(request),onProviderRequest:async()=>{run.actualProviderRequests=(run.actualProviderRequests??0)+1;await deps.store.putFormTestRun(run)}})
       const record=recordEvaluation(conversation,run.formSnapshot,result,[],`ft_${run.id.replace(/-/g,'_')}_${index}`,{conversationSource:input.source})
       record.purpose='FORM_TEST'
       run.results.push(record);run.provider=result.provider;run.model=result.model

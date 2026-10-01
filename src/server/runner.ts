@@ -1,7 +1,7 @@
+import { evaluateForm, maximumEvaluationWaves } from '../domain/formComposition'
 import { createHash } from 'node:crypto'
 import { matchPolicies } from '../domain/policies'
 import { planPolicyRun, MAX_POLICY_CONVERSATIONS } from '../domain/policyRuns'
-import { toScorecard } from '../domain/forms'
 import { recordEvaluation } from '../domain/evaluations'
 import { validatePolicyFormPins } from '../domain/formLifecycle'
 import type { Conversation, EvaluationForm, InteractionPolicy, MonitoringPeriod, PolicyRun, PolicyRunFailure } from '../domain/types'
@@ -65,16 +65,17 @@ export async function executeServerRun(deps:RunnerDeps,policy:InteractionPolicy,
     const {plan,forms,retrievalFailures}=prepared??await planServerRun(deps,policy,period)
     const tasks=plan.selected.flatMap(item=>item.pendingFormIds.map(formId=>({conversation:item.conversation,form:forms.find(f=>f.id===formId)!})))
     const unavailableFailures=plan.selected.filter(item=>!item.transcriptAvailable&&!retrievalFailures.some(f=>f.conversationId===item.conversation.conversationId)).map(item=>({conversationId:item.conversation.conversationId,reason:'transcript_unavailable: No supported transcript content was returned.'}))
-    run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures,...unavailableFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage,queueCoverage:plan.queueCoverage}
+    run={id:runId,policyId:policy.id,policySnapshot:plan.policySnapshot,source:'genesys-cloud',executionMode:provenance,scheduleId,startedAt:now,candidateConversationCount:plan.candidateCount,matchedConversationCount:plan.eligibleCount,formsAssigned:plan.formIds,evaluationsRequested:tasks.length,maximumProviderRequests:tasks.reduce((n,t)=>n+maximumEvaluationWaves(t.form),0),actualProviderRequests:0,evaluationsSucceeded:0,evaluationsFailed:0,status:'running',failures:[...retrievalFailures,...unavailableFailures],period,sampling:plan.sampling,deterministicSeed:plan.seed,sampledConversationIds:plan.selected.map(c=>c.conversation.conversationId),evaluableCount:plan.evaluableCount,previouslyEvaluatedCount:plan.previouslyEvaluatedCount,coverage:plan.coverage,agentCoverage:plan.agentCoverage,queueCoverage:plan.queueCoverage}
     await deps.store.putRun(run)
     // A reserved slot is never retried automatically. An ambiguous post-Jev failure needs operator reconciliation.
     for(const task of tasks){
       const id=evaluationId(claimId,task.conversation.conversationId,task.form)
       const slot=await deps.store.evaluationSlot(id)
+      if(slot)run.actualProviderRequests=(run.actualProviderRequests??0)+(slot.providerRequestCount??(slot.status==='completed'?1:0))
       if(slot?.status==='completed'){run.evaluationsSucceeded++;continue}
       if(slot || !await deps.store.reserveEvaluation(id,deps.now().toISOString())){run.failures.push({conversationId:task.conversation.conversationId,formId:task.form.id,reason:'evaluation_uncertain: prior Jev request may have been charged; reconcile before retry.'});run.evaluationsFailed++;continue}
       try{
-        const result=await deps.jev.evaluate({conversation:task.conversation,scorecard:toScorecard(task.form),evaluatedAt:deps.now().toISOString(),version:'v0'})
+        const result=await evaluateForm({conversation:task.conversation,form:task.form,evaluatedAt:deps.now().toISOString(),evaluateQuestions:request=>deps.jev.evaluate(request),onProviderRequest:async count=>{await deps.store.recordProviderRequest(id,count);run!.actualProviderRequests=(run!.actualProviderRequests??0)+1;await deps.store.putRun(run!)}})
         const record=recordEvaluation(task.conversation,task.form,result,matchPolicies(task.conversation,[policy]),id,{conversationSource:'genesys-cloud',policyRunId:runId,executionMode:provenance})
         await deps.store.completeEvaluation(id,record)
         run.evaluationsSucceeded++
