@@ -34,7 +34,8 @@ describe('server source review', () => {
     expect((await call(reviewPath,'POST',{acknowledged:true,form},false)).status).toBe(401)
     expect((await call(reviewPath,'POST',{acknowledged:false,form})).status).toBe(400)
     expect((await call(reviewPath,'POST',{acknowledged:true,form:{...form,name:'Stale definition'}})).status).toBe(400)
-    const response=await call(reviewPath,'POST',{acknowledged:true,form});expect(response.status).toBe(200)
+    const reordered={...form,questions:form.questions.map(question=>Object.fromEntries(Object.entries(question).reverse()))}
+    const response=await call(reviewPath,'POST',{acknowledged:true,form:reordered});expect(response.status).toBe(200)
     const reviewed=(await response.json() as {item:EvaluationForm}).item
     expect(await store.form(form.id)).toEqual(reviewed)
     expect(reviewed.status).toBe('DRAFT');expect(reviewed.enabled).toBe(false)

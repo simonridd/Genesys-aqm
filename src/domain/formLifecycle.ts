@@ -30,12 +30,19 @@ export function isOperationalForm(form: EvaluationForm): boolean {
   return formStatus(form) === 'PUBLISHED' && form.enabled && productionReadinessErrors(form).length === 0
 }
 
+// Firestore map key order is not definition content. Array order still matters.
+function ordered(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(ordered)
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).sort(([a], [b]) => a.localeCompare(b)).map(([key, item]) => [key, ordered(item)]))
+  return value
+}
+
 export function sameDefinition(a: EvaluationForm, b: EvaluationForm): boolean {
-  const definition = (form: EvaluationForm) => JSON.stringify({
+  const definition = (form: EvaluationForm) => JSON.stringify(ordered({
     name: form.name, description: form.description, version: form.version,
     questions: form.questions, scoring: form.scoring, origin: form.origin,
     sourceFormId: form.sourceFormId,
-  })
+  }))
   return definition(a) === definition(b)
 }
 
