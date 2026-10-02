@@ -1,0 +1,12 @@
+[
+  {
+    "asset": "index-CstctmN_.js",
+    "sha256": "77d7ebf8742a72ead5cbfde74f28fd4cc99b19570e483070db0814dde6bb3148",
+    "equalsLocalBuild": true
+  },
+  {
+    "asset": "index-CReN8SJ5.css",
+    "sha256": "21b0e96f5fbf6dfa5bfc0d444f548ac36e54a9d0fffc2373dd0c43521f3bbacb",
+    "equalsLocalBuild": true
+  }
+]
