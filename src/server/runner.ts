@@ -1,4 +1,5 @@
 import { ProviderFailure, failureCode } from '../domain/providerFailure'
+import { sweepReviewSla } from './reviewSla'
 import { scheduledRunAlerts, healthySchedulerTick, type AlertConfig } from './alerts'
 import { evaluateForm, maximumEvaluationWaves } from '../domain/formComposition'
 import { createHash } from 'node:crypto'
@@ -130,5 +131,6 @@ export async function schedulerTick(deps:RunnerDeps){
     }
   }
   await healthySchedulerTick(deps.store,deps.now().toISOString())
+  await sweepReviewSla(deps.store,deps.now().toISOString())
   return outcomes
 }

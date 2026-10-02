@@ -1,4 +1,4 @@
-export const alertTypes = ['SCHEDULED_RUN_FAILED','SCHEDULED_RUN_PARTIAL','GENESYS_AUTH_FAILURE','GENESYS_QUERY_FAILURE','JEV_FAILURE','LOW_TRANSCRIPT_AVAILABILITY','LOW_DIGITAL_CONTENT_AVAILABILITY','SCHEDULER_STALE'] as const
+export const alertTypes = ['SCHEDULED_RUN_FAILED','SCHEDULED_RUN_PARTIAL','GENESYS_AUTH_FAILURE','GENESYS_QUERY_FAILURE','JEV_FAILURE','LOW_TRANSCRIPT_AVAILABILITY','LOW_DIGITAL_CONTENT_AVAILABILITY','SCHEDULER_STALE','REVIEW_DUE_SOON','REVIEW_OVERDUE','REVIEW_ESCALATED'] as const
 export type AlertType = typeof alertTypes[number]
 export type AlertSeverity = 'INFO' | 'WARNING' | 'ERROR'
 export type AlertStatus = 'OPEN' | 'ACKNOWLEDGED' | 'RESOLVED'
@@ -6,11 +6,11 @@ export interface AlertActor { userId: string; displayName?: string }
 export interface OperationalAlert {
   id: string; dedupKey: string; type: AlertType; severity: AlertSeverity; status: AlertStatus
   title: string; message: string; createdAt: string; updatedAt: string; lastOccurredAt: string; occurrences: number
-  source: 'scheduled-run' | 'scheduler'; policyId?: string; scheduleId?: string; runId?: string
+  source: 'scheduled-run' | 'scheduler' | 'review-sla'; context?: { evaluationId:string; reviewId:string; formId:string; assigneeUserId?:string; dueAt:string }; resolutionReason?:string; policyId?: string; scheduleId?: string; runId?: string
   metadata: Record<string, number | boolean>; acknowledgedAt?: string; acknowledgedBy?: AlertActor; resolvedAt?: string; resolvedBy?: AlertActor
-  events: Array<{action:'OPENED'|'ACKNOWLEDGED'|'RESOLVED'; at:string; actor?:AlertActor; automatic?:boolean}>
+  events: Array<{action:'OPENED'|'ACKNOWLEDGED'|'RESOLVED'; at:string; actor?:AlertActor; automatic?:boolean; reason?:string}>
 }
-export type AlertInput = Pick<OperationalAlert,'dedupKey'|'type'|'severity'|'title'|'message'|'source'|'policyId'|'scheduleId'|'runId'|'metadata'>
+export type AlertInput = Pick<OperationalAlert,'dedupKey'|'type'|'severity'|'title'|'message'|'source'|'policyId'|'scheduleId'|'runId'|'metadata'|'context'>
 export interface SchedulerHealth { initializedAt: string; lastSuccessfulTickAt?: string }
 export function openAlert(prior:OperationalAlert|undefined,input:AlertInput,now:string):OperationalAlert {
   if(prior&&prior.status!=='RESOLVED')return {...prior,...input,updatedAt:now,lastOccurredAt:now,occurrences:prior.occurrences+1}

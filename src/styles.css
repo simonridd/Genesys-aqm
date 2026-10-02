@@ -232,3 +232,10 @@ input[readonly] { background: #f8fbfa; }
 .reviewer-picker select {max-width:100%}
 .bulk-review-assignment input[type=checkbox] {width:auto}
 @media(max-width:600px){.review-workload .panel-heading{display:block}.review-workload-grid{grid-template-columns:1fr}.assignment-editor .review-actions{flex-wrap:wrap}}
+
+.review-due-state { display: flex; flex-direction: column; align-items: flex-start; gap: .35rem; margin-top: .35rem; }
+.review-due-state small { white-space: nowrap; color: var(--muted, #5b6474); }
+.review-due-soon { background: #e7efff; color: #1a4690; }
+.review-escalated { background: #fbe1e6; color: #9d1938; font-weight: 700; }
+
+.alert-detail { padding: 18px; }

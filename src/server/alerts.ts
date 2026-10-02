@@ -3,7 +3,7 @@ import type { PolicyRun } from '../domain/types'
 import type { Store } from './store'
 export interface AlertConfig { minimumSample: number; minimumAvailability: number; schedulerToleranceMs: number }
 export const defaultAlertConfig:AlertConfig={minimumSample:5,minimumAvailability:.7,schedulerToleranceMs:3*3600_000}
-const titles:Record<AlertType,string>={SCHEDULED_RUN_FAILED:'Scheduled run failed',SCHEDULED_RUN_PARTIAL:'Scheduled run partially completed',GENESYS_AUTH_FAILURE:'Genesys authentication failed',GENESYS_QUERY_FAILURE:'Genesys query failed',JEV_FAILURE:'Jev evaluation failed',LOW_TRANSCRIPT_AVAILABILITY:'Low transcript availability',LOW_DIGITAL_CONTENT_AVAILABILITY:'Low digital content availability',SCHEDULER_STALE:'Scheduler activity is stale'}
+const titles:Record<AlertType,string>={SCHEDULED_RUN_FAILED:'Scheduled run failed',SCHEDULED_RUN_PARTIAL:'Scheduled run partially completed',GENESYS_AUTH_FAILURE:'Genesys authentication failed',GENESYS_QUERY_FAILURE:'Genesys query failed',JEV_FAILURE:'Jev evaluation failed',LOW_TRANSCRIPT_AVAILABILITY:'Low transcript availability',LOW_DIGITAL_CONTENT_AVAILABILITY:'Low digital content availability',SCHEDULER_STALE:'Scheduler activity is stale',REVIEW_DUE_SOON:'Review due soon',REVIEW_OVERDUE:'Review overdue',REVIEW_ESCALATED:'Review escalated'}
 const key=(type:AlertType,policyId?:string)=>`${type}:${policyId??'global'}`
 async function recover(store:Store,type:AlertType,now:string,policyId?:string){for(const a of await store.alerts(true))if(a.dedupKey===key(type,policyId)&&a.status!=='RESOLVED')await store.transitionAlert(a.id,'RESOLVED',now)}
 export async function scheduledRunAlerts(store:Store,run:PolicyRun,now:string,config=defaultAlertConfig){

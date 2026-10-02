@@ -1,5 +1,5 @@
-import { AssignmentEditor } from './ReviewOperations'
-import { isReviewOverdue } from './domain/reviews'
+import { AssignmentEditor, ReviewDueBadge, useReviewSla } from './ReviewOperations'
+import { reviewDueAt } from './domain/reviewSla'
 import { usePermission } from './GovernancePanel'
 import { scoreFormResults, effectiveQuestions } from './domain/formComposition'
 import { useEffect, useState } from 'react'
@@ -15,6 +15,7 @@ export async function writeHumanReview(session:AuthSession,record:EvaluationReco
   return body.item
 }
 export function ReviewPanel({record,review,session,onSaved}:{record:EvaluationRecord;review?:HumanReview;session:AuthSession|null;onSaved:(review:HumanReview)=>void}){
+  const sla=useReviewSla(session)
   const [editing,setEditing]=useState(review?.status==='IN_REVIEW'),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('')
   const [answers,setAnswers]=useState<HumanAnswer[]>(()=>review?.questions.flatMap(q=>q.human?[{questionId:q.questionId,value:q.human.value,note:q.human.note}]:[])??[])
   const [notes,setNotes]=useState(review?.notes??''),[filter,setFilter]=useState('all')
@@ -42,7 +43,7 @@ export function ReviewPanel({record,review,session,onSaved}:{record:EvaluationRe
   const visible=questions.filter(item=>filter==='all'||filter==='agreements'&&item.comparison?.exact||filter==='disagreements'&&item.comparison&&!item.comparison.exact)
   const agreements=questions.filter(item=>item.comparison?.exact).length
   return <section className="human-review" aria-label="Human review"><div className="panel-heading"><div><span className="mini-label">HUMAN REVIEW</span><h2>{completed?'Completed calibration':'Review this evaluation'}</h2><p>{record.form.name} v{record.form.version} · {review?.status.replaceAll('_',' ')??'NOT REVIEWED'}</p></div><span className="pill">{record.source==='synthetic-demo'?'SYNTHETIC DEMO':record.conversationSource==='synthetic'?'SYNTHETIC':record.conversationSource==='genesys-cloud'?'REAL GENESYS DATA':'SOURCE UNVERIFIED'}</span></div>
-    <p>Assigned to: {review?.assignment?.assignee.displayName??review?.assignment?.assignee.userId??'Unassigned'}</p><p>Due: {review?.assignment?.dueAt?new Date(review.assignment.dueAt).toLocaleString():'No due date'} {isReviewOverdue(review,new Date().toISOString())&&<span className="pill review-overdue">OVERDUE</span>}</p>
+    <p>Assigned to: {review?.assignment?.assignee.displayName??review?.assignment?.assignee.userId??'Unassigned'}</p><p>Due: {reviewDueAt(review)?new Date(reviewDueAt(review)!).toLocaleString():'No due date'} <ReviewDueBadge review={review} now={sla.now} settings={sla.settings}/></p>
     {assignedOther&&!completed&&<p className="field-note">Assigned to another reviewer. Review answers are read-only. An assignment manager can explicitly reassign or take over.</p>}
     <AssignmentEditor session={session} review={review} evaluationId={record.id} onSaved={onSaved}/>
     <div className="review-summary"><div><small>AI SCORE</small><strong>{reviewPercent(record.overallScore)}</strong></div><div><small>{completed?'HUMAN SCORE':'HUMAN PROGRESS PREVIEW'}</small><strong>{reviewPercent(preview.overallScore)}</strong></div><div><small>EXACT AGREEMENT</small><strong>{agreements} / {questions.filter(item=>item.ai?.status!=='SKIPPED').length}</strong></div><div><small>ABSOLUTE SCORE GAP</small><strong>{review?.comparison.absoluteScoreDifference==null?'—':`${(review.comparison.absoluteScoreDifference*100).toFixed(1)} pp`}</strong></div></div>

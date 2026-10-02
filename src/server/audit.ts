@@ -23,6 +23,7 @@ export function mutationAudit(collection:string,id:string,next:unknown,prior?:un
  if(type==='retention')action='settings_changed'
  if((type==='form'||type==='group'||type==='policy')&&c.operation)action=c.operation
  const metadata:AuditEvent['metadata']={}
+ if(type==='retention'&&n.reviewSla){const sla=n.reviewSla as {dueSoonHours:number;overdueEscalationHours:number|null};metadata.reviewDueSoonHours=sla.dueSoonHours;metadata.reviewEscalationEnabled=sla.overdueEscalationHours!==null;if(sla.overdueEscalationHours!==null)metadata.reviewEscalationHours=sla.overdueEscalationHours}
  if(typeof n.enabled==='boolean')metadata.enabled=n.enabled
  if(typeof n.version==='number'&&Number.isFinite(n.version))metadata.version=n.version
  if(['DRAFT','TESTING','PUBLISHED','RETIRED','REVIEW_REQUESTED','IN_REVIEW','REVIEWED','OPEN','ACKNOWLEDGED','RESOLVED'].includes(String(n.status)))metadata.status=String(n.status)
@@ -40,10 +41,15 @@ export function mutationAudits(collection:string,id:string,next:unknown,prior?:u
  if(collection==='notificationDestinations'&&prior){const n=next as {configuration?:unknown},p=prior as {configuration?:unknown};const refs=(v:unknown)=>Object.entries((v??{}) as Record<string,unknown>).filter(([k])=>k.endsWith('SecretRef'));if(!isDeepStrictEqual(refs(n.configuration),refs(p.configuration)))return [event,{...event,id:eventId(event.occurredAt),action:'notification_destination.secret_reference_changed',summary:'notification destination secret reference changed'}]}
  if(collection!=='humanReviews')return [event]
  const n=next as {evaluationId?:string;events?:ReviewEvent[]},p=prior as {events?:unknown[]}|undefined
- return (n.events??[]).slice(p?.events?.length??0).map(e=>({...event,id:eventId(event.occurredAt),action:`review.${e.kind.replace('review_','')}`,summary:e.kind.replaceAll('_',' '),metadata:{...event.metadata,evaluationId:n.evaluationId??id,...(e.assignee?{assigneeId:e.assignee.userId}:{}),...(e.dueAt?{dueAt:e.dueAt}:{})}}))
+ return (n.events??[]).slice(p?.events?.length??0).map(e=>({...event,id:eventId(event.occurredAt),action:`review.${e.kind.replace('review_','')}`,summary:e.kind.replaceAll('_',' '),metadata:{...event.metadata,evaluationId:n.evaluationId??id,...(e.assignee?{assigneeId:e.assignee.userId}:{}),...(e.dueAt?{dueAt:e.dueAt}:{}),...(e.dueCleared?{dueCleared:true}:{})}}))
 }
 
 export function bulkReviewAudit(count:number,assigneeId:string,dueAt?:string):AuditEvent|undefined {
  const c=auditContext.getStore();if(!c)return
  return {id:eventId(c.now),occurredAt:c.now,actor:c.actor,action:'review.bulk_assigned',resourceType:'review',resourceId:'bulk',summary:`Assigned ${count} reviews`,metadata:{count,assigneeId,...(dueAt?{dueAt}:{})},correlationId:c.correlationId,source:'browser-api'}
+}
+
+export function bulkDueAudit(count:number,dueAt?:string,previousDueAt?:string,id='bulk'):AuditEvent|undefined {
+ const c=auditContext.getStore();if(!c)return
+ return {id:eventId(c.now),occurredAt:c.now,actor:c.actor,action:'review.bulk_due_changed',resourceType:'review',resourceId:id,summary:'Review due date changed in bulk',metadata:{count,dueCleared:!dueAt,...(dueAt?{dueAt}:{}),...(previousDueAt?{previousDueAt}:{})},correlationId:c.correlationId,source:'browser-api'}
 }

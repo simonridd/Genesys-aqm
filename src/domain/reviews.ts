@@ -1,14 +1,16 @@
+import { reviewDueAt, reviewDueState } from './reviewSla'
+export { reviewQueuePriority } from './reviewSla'
 import { scoreFormResults, effectiveQuestions } from './formComposition'
 import type { EvaluationForm, EvaluationRecord, QuestionResult, ScorecardItem } from './types'
 
 export type ReviewStatus = 'NOT_REVIEWED' | 'REVIEW_REQUESTED' | 'IN_REVIEW' | 'REVIEWED'
 export interface Reviewer { userId: string; displayName?: string }
-export interface ReviewEvent { kind: 'review_assigned' | 'review_reassigned' | 'review_unassigned' | 'review_claimed' | 'review_requested' | 'review_started' | 'review_saved' | 'review_completed'; at: string; actor: Reviewer; revision: number; assignee?: Reviewer; dueAt?: string }
+export interface ReviewEvent { kind: 'review_due_changed' | 'review_assigned' | 'review_reassigned' | 'review_unassigned' | 'review_claimed' | 'review_requested' | 'review_started' | 'review_saved' | 'review_completed'; at: string; actor: Reviewer; revision: number; assignee?: Reviewer; dueAt?: string; dueCleared?: boolean }
 export interface ReviewAssignment { assignee: Reviewer; assignedAt: string; assignedBy: Reviewer; dueAt?: string }
 export interface AssignmentInput { action: 'assign' | 'reassign' | 'unassign'; expectedRevision: number; assigneeId?: string; dueAt?: string; confirmInReview?: boolean }
 export interface ReviewerDirectoryItem extends Reviewer { role: import('./governance').Role }
-export interface ReviewWorkloadRow extends Reviewer { reviewerAccess: boolean; assignedOpen: number; requested: number; inReview: number; overdue: number }
-export interface ReviewWorkload { complete: boolean; needsIndexing: boolean; message?: string; asOf: string; unassignedRequested?: number; items: ReviewWorkloadRow[] }
+export interface ReviewWorkloadRow extends Reviewer { reviewerAccess: boolean; assignedOpen: number; requested: number; inReview: number; dueSoon: number; overdue: number; escalated: number }
+export interface ReviewWorkload { complete: boolean; needsIndexing: boolean; message?: string; asOf: string; unassignedRequested?: number; summary?: import('./reviewSla').ReviewSlaHealth; items: ReviewWorkloadRow[] }
 export interface HumanAnswer { questionId: string; value: string | number; note?: string }
 export interface QuestionReview {
   questionId: string; title: string; type: ScorecardItem['type']; section?: string
@@ -21,7 +23,7 @@ export interface HumanReview {
   scoringMode?: EvaluationRecord['scoringMode']; humanGroupResults?: EvaluationRecord['groupResults']; humanPassed?: boolean | null; humanCriticalGroupFailures?: string[]; groupComparison?: Array<{groupId:string; name:string; aiScore:number|null; humanScore:number|null; difference:number|null}>
   id: string; evaluationId: string; conversationId: string; formId: string; formVersion: number; formSnapshot: EvaluationForm
   source: 'genesys-cloud' | 'synthetic' | 'uploaded' | 'unknown'; createdAt: string; updatedAt: string; completedAt?: string
-  status: Exclude<ReviewStatus, 'NOT_REVIEWED'>; revision: number; assignment?: ReviewAssignment; reviewer?: Reviewer; notes: string
+  status: Exclude<ReviewStatus, 'NOT_REVIEWED'>; revision: number; dueAt?: string; assignment?: ReviewAssignment; reviewer?: Reviewer; notes: string
   questions: QuestionReview[]; humanOverallScore: number | null
   comparison: { aiOverallScore: number | null; humanOverallScore: number | null; absoluteScoreDifference: number | null; answered: number; agreements: number; disagreements: number; total: number }
   events: ReviewEvent[]
@@ -93,7 +95,7 @@ export function buildReview(record: EvaluationRecord, prior: HumanReview | undef
   events.push({kind:input.action==='request'?'review_requested':input.action==='complete'?'review_completed':input.action==='start'?'review_started':'review_saved',at:now,actor,revision})
   if(events.length>200)throw Error('Review audit limit reached; contact the operator.')
   // Only complete scores enter calibration. A partial score is explicitly a progress preview.
-  return {id:record.id,evaluationId:record.id,conversationId:record.conversationId,formId:record.form.id,formVersion:record.form.version,formSnapshot:structuredClone(record.form),source:reviewSource(record),createdAt:prior?.createdAt??now,updatedAt:now,completedAt:status==='REVIEWED'?now:undefined,status,revision,assignment:prior?.assignment,reviewer:status==='REVIEW_REQUESTED'?prior?.reviewer:structuredClone(actor),notes:boundedNote(input.notes??prior?.notes,4000),questions,humanOverallScore,scoringMode:humanScore.scoringMode,humanGroupResults:humanScore.groups,humanPassed:humanScore.passed,humanCriticalGroupFailures:humanScore.criticalGroupFailures,groupComparison,comparison:{aiOverallScore:record.overallScore,humanOverallScore,absoluteScoreDifference:record.overallScore===null||humanOverallScore===null?null:Math.abs(record.overallScore-humanOverallScore),answered,agreements:questions.filter(q=>q.comparison?.exact).length,disagreements:questions.filter(q=>q.comparison&&!q.comparison.exact).length,total:questions.filter(q=>q.ai.status!=='SKIPPED').length},events}
+  return {id:record.id,evaluationId:record.id,conversationId:record.conversationId,formId:record.form.id,formVersion:record.form.version,formSnapshot:structuredClone(record.form),source:reviewSource(record),createdAt:prior?.createdAt??now,updatedAt:now,completedAt:status==='REVIEWED'?now:undefined,status,revision,dueAt:prior?.dueAt,assignment:prior?.assignment,reviewer:status==='REVIEW_REQUESTED'?prior?.reviewer:structuredClone(actor),notes:boundedNote(input.notes??prior?.notes,4000),questions,humanOverallScore,scoringMode:humanScore.scoringMode,humanGroupResults:humanScore.groups,humanPassed:humanScore.passed,humanCriticalGroupFailures:humanScore.criticalGroupFailures,groupComparison,comparison:{aiOverallScore:record.overallScore,humanOverallScore,absoluteScoreDifference:record.overallScore===null||humanOverallScore===null?null:Math.abs(record.overallScore-humanOverallScore),answered,agreements:questions.filter(q=>q.comparison?.exact).length,disagreements:questions.filter(q=>q.comparison&&!q.comparison.exact).length,total:questions.filter(q=>q.ai.status!=='SKIPPED').length},events}
 }
 export function matchesReviewQueue(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString()): boolean {
   const form=query.get('form'),status=query.get('reviewStatus'),question=query.get('reviewQuestion')
@@ -115,21 +117,21 @@ export function calibrationSample(records: ReviewEvaluation[], query: URLSearchP
 }
 
 /** Due state is derived; completed reviews can never be overdue. Day boundaries use the operator's London timezone. */
-export const isReviewOverdue = (review: HumanReview | undefined, now: string) => !!review && review.status !== 'REVIEWED' && !!review.assignment?.dueAt && Date.parse(review.assignment.dueAt) < Date.parse(now)
+export const isReviewOverdue = (review: HumanReview | undefined, now: string) => ['OVERDUE','ESCALATED'].includes(reviewDueState(review,now))
 const londonDay = (iso: string) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London', year:'numeric', month:'2-digit', day:'2-digit' }).format(new Date(iso))
 export function matchesReviewOperations(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString()): boolean {
-  const review = record.humanReview, assignment = review?.assignment, filter = query.get('assignment'), due = query.get('due')
+  const review = record.humanReview, assignment = review?.assignment, dueAt = reviewDueAt(review), filter = query.get('assignment'), due = query.get('due')
   const mine = query.get('reviewQueue') === 'mine'
   if (mine && (!actorId || assignment?.assignee.userId !== actorId || !['REVIEW_REQUESTED','IN_REVIEW'].includes(review?.status ?? ''))) return false
   if (filter === 'unassigned' && assignment || filter === 'assigned' && !assignment) return false
   if (filter === 'mine' && (!actorId || assignment?.assignee.userId !== actorId)) return false
   if (filter && !['all','unassigned','assigned','mine'].includes(filter) && assignment?.assignee.userId !== filter) return false
-  if (due === 'none' && assignment?.dueAt) return false
+  if (due === 'none' && dueAt) return false
   if (due && !['all','none'].includes(due)) {
-    if (!assignment?.dueAt || review?.status === 'REVIEWED') return false
+    if (!dueAt || review?.status === 'REVIEWED') return false
     if (due === 'overdue' && !isReviewOverdue(review,now)) return false
-    if (due === 'today' && londonDay(assignment.dueAt) !== londonDay(now)) return false
-    if (due === 'week' && (Date.parse(assignment.dueAt) < Date.parse(now) || Date.parse(assignment.dueAt) > Date.parse(now) + 7*86400000)) return false
+    if (due === 'today' && londonDay(dueAt) !== londonDay(now)) return false
+    if (due === 'week' && (Date.parse(dueAt) < Date.parse(now) || Date.parse(dueAt) > Date.parse(now) + 7*86400000)) return false
   }
   return true
 }
@@ -154,10 +156,5 @@ export function buildAssignment(record: EvaluationRecord, prior: HumanReview | u
   const kind = input.action === 'assign' ? 'review_assigned' : input.action === 'reassign' ? 'review_reassigned' : 'review_unassigned'
   const event: ReviewEvent = {kind,at:now,actor:structuredClone(actor),revision,...(assignee || prior?.assignment?.assignee ? {assignee:structuredClone(assignee ?? prior!.assignment!.assignee)} : {}),...(dueAt?{dueAt}:{})}
   if (base.events.length >= 200) throw Error('Review audit limit reached; contact the operator.')
-  return {...base,assignment,updatedAt:now,revision,events:[...base.events,event]}
-}
-/** A derived priority column keeps OperationalTable's global sorting behavior unchanged. */
-export function reviewQueuePriority(record: ReviewEvaluation, now: string): string {
-  const review=record.humanReview, due=review?.assignment?.dueAt
-  return `${isReviewOverdue(review,now)?'0':'1'}|${due ?? '9999'}|${review?.createdAt ?? record.evaluatedAt}|${record.id}`
+  return {...base,dueAt:input.action==='unassign'?reviewDueAt(prior):undefined,assignment,updatedAt:now,revision,events:[...base.events,event]}
 }

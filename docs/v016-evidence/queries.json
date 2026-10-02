@@ -1,0 +1,24 @@
+[
+  {
+    "collection": "humanReviews",
+    "statusIn": [
+      "REVIEW_REQUESTED",
+      "IN_REVIEW"
+    ],
+    "orderBy": "__name__ ASC",
+    "limit": 101,
+    "querySucceeded": true,
+    "documents": 0
+  },
+  {
+    "collection": "operationalAlerts",
+    "statusIn": [
+      "OPEN",
+      "ACKNOWLEDGED"
+    ],
+    "orderBy": "__name__ ASC",
+    "limit": 101,
+    "querySucceeded": true,
+    "documents": 0
+  }
+]

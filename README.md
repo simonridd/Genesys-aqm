@@ -1,7 +1,9 @@
-# Genesys AQM · V0.14
+# Genesys AQM · V0.16
 
 A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE after a user signs in. Voice retrieval stays direct; email content uses the trusted Cloud Run API with the same user authorization. Production evaluation uses Cloud Run with its server-managed Jev credential and durable Firestore records. Browser conversation searches/transcripts share an identity-scoped IndexedDB cache. The V0.6.4 server monitoring proof completed two real voice evaluations with two Jev requests and enabled one daily 02:00 Europe/London schedule. Email normalization is fixture-proved; email live content proof is pending Simon because the observed real interaction had no recording available.
 
+
+V0.16 adds explicit-date review SLA reminders/escalation, automatic alert resolution through the existing notification pipeline, bounded health reporting, prioritized review queues and protected bulk due-date updates. See [the V0.16 contract](docs/v016-review-sla.md).
 
 V0.14 makes Policies the durable authoring surface, with explicit versioned saves, stale-tab conflicts, exact published form pins and optional daily/weekly schedules. Overview & Runs handles monitoring and manual execution. See [the V0.14 contract](docs/v014-policy-authoring.md).
 

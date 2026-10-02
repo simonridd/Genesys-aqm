@@ -1,4 +1,7 @@
-import { buildAssignment, buildReview, isReviewOverdue, validateDueAt, type AssignmentInput, type HumanReview, type Reviewer, type ReviewerDirectoryItem, type ReviewInput, type ReviewWorkload, type ReviewWorkloadRow } from '../domain/reviews'
+import { reviewMutationSla, activeReviewScan, reviewSlaSummary } from './reviewSla'
+import { reviewDueAt, reviewDueState } from '../domain/reviewSla'
+import { governanceSettings } from './governance'
+import { buildAssignment, buildReview, validateDueAt, type AssignmentInput, type HumanReview, type Reviewer, type ReviewerDirectoryItem, type ReviewInput, type ReviewWorkload, type ReviewWorkloadRow } from '../domain/reviews'
 import { hasPermission, type RoleAssignment } from '../domain/governance'
 import type { EvaluationRecord } from '../domain/types'
 import { Forbidden } from './governance'
@@ -32,6 +35,7 @@ export async function assignReview(store:Store,id:string,input:AssignmentInput,a
   const target=input.action==='unassign'?undefined:await assigneeIdentity(store,input.assigneeId,authority,actor)
   const review=buildAssignment(record,prior,input,target?.assignee,actor,now)
   await store.atomic([guard,...(target?[target.guard]:[]),...reviewWrite(record,prior,review)])
+  await reviewMutationSla(store,review.id,now)
   return review
 }
 export async function scoreAssignedReview(store:Store,id:string,input:ReviewInput,actor:Reviewer,now:string,authority:ReviewAuthority) {
@@ -46,11 +50,13 @@ export async function scoreAssignedReview(store:Store,id:string,input:ReviewInpu
   const claim=!!prior&&prior.status==='REVIEW_REQUESTED'&&!prior.assignment&&['claim','start','save','complete'].includes(input.action)
   const review=buildReview(record,prior,{...input,action:input.action==='claim'?'start':input.action},actor,now)
   if(claim){
-    review.assignment={assignee:identity(actor.userId,actor.displayName),assignedAt:now,assignedBy:identity(actor.userId,actor.displayName)}
+    review.assignment={...(reviewDueAt(prior)?{dueAt:reviewDueAt(prior)}:{}),assignee:identity(actor.userId,actor.displayName),assignedAt:now,assignedBy:identity(actor.userId,actor.displayName)}
+    review.dueAt=undefined
     review.events.splice(prior!.events.length,0,{kind:'review_claimed',at:now,actor,assignee:actor,revision:review.revision})
     if(review.events.length>200)throw Error('Review audit limit reached; contact the operator.')
   }
   await store.atomic([guard,...reviewWrite(record,prior,review)])
+  await reviewMutationSla(store,review.id,now)
   return review
 }
 export interface BulkAssignmentInput { items: Array<{evaluationId:string;expectedRevision:number}>; assigneeId:string; dueAt?:string }
@@ -70,6 +76,7 @@ export async function bulkAssignReviews(store:Store,input:BulkAssignmentInput,ac
   }
   const audit=bulkReviewAudit(items.length,target.assignee.userId,dueAt)
   await store.atomic(writes,audit?[audit]:[])
+  for(const review of items)await reviewMutationSla(store,review.id,now)
   return {items,count:items.length}
 }
 export async function reviewerDirectory(store:Store,q:URLSearchParams,authority:ReviewAuthority,actor:Reviewer) {
@@ -95,23 +102,24 @@ export async function reviewWorkload(store:Store,now:string,authority:ReviewAuth
   try {
     // Keep both existing evaluation/review completeness ceilings, including missing-review evaluations.
     await collectReviewData<EvaluationRecord>(store,'evaluationRecords')
-    reviews=await collectReviewData<HumanReview>(store,'humanReviews')
+    const scan=await activeReviewScan(store);if(!scan.complete)throw Error('Review SLA scan incomplete: limit of 2000 active reviews reached.');reviews=scan.items
     roles=await collectReviewData<RoleAssignment>(store,'roleAssignments')
   }catch(e){if(e instanceof Error&&e.message.includes('limit of 2000'))return {complete:false,needsIndexing:true,message:e.message,asOf:now,items:[]};throw e}
+  const settings=await governanceSettings(store),summary=await reviewSlaSummary(store,now)
   const roleMap=new Map(roles.map(r=>[r.userId,r])),rows=new Map<string,ReviewWorkloadRow>()
   const rowFor=(who:Reviewer)=>{
-    let row=rows.get(who.userId);if(row)return row
+    let row=rows.get(who.userId);if(row){if(!row.displayName&&who.displayName)row.displayName=who.displayName;return row}
     const role=roleMap.get(who.userId),access=authority.allowedUserIds.has(who.userId)&&hasPermission(who.userId===authority.bootstrapId?'ADMIN':role?.role??'VIEWER','reviews.write')
-    row={...identity(who.userId,role?.displayName??who.displayName),reviewerAccess:access,assignedOpen:0,requested:0,inReview:0,overdue:0};rows.set(who.userId,row);return row
+    row={...identity(who.userId,role?.displayName??who.displayName),reviewerAccess:access,assignedOpen:0,requested:0,inReview:0,dueSoon:0,overdue:0,escalated:0};rows.set(who.userId,row);return row
   }
   for(const role of roles)if(authority.allowedUserIds.has(role.userId)&&hasPermission(role.role,'reviews.write'))rowFor(role)
   if(authority.bootstrapId)rowFor({userId:authority.bootstrapId})
   let unassignedRequested=0
   for(const review of reviews){
     if(review.status==='REVIEWED')continue
-    if(!review.assignment){if(review.status==='REVIEW_REQUESTED')unassignedRequested++;continue}
-    const row=rowFor(review.assignment.assignee);row.assignedOpen++;if(review.status==='REVIEW_REQUESTED')row.requested++;else row.inReview++;if(isReviewOverdue(review,now))row.overdue++
+    if(!review.assignment&&review.status==='REVIEW_REQUESTED')unassignedRequested++
+    const row=rowFor(review.assignment?.assignee??{userId:'unassigned',displayName:'Unassigned'});row.assignedOpen++;if(review.status==='REVIEW_REQUESTED')row.requested++;else row.inReview++;const state=reviewDueState(review,now,settings.reviewSla);if(state==='DUE_SOON')row.dueSoon++;if(state==='OVERDUE')row.overdue++;if(state==='ESCALATED')row.escalated++
   }
-  return {complete:true,needsIndexing:false,asOf:now,unassignedRequested,items:[...rows.values()].sort((a,b)=>(a.displayName??a.userId).localeCompare(b.displayName??b.userId))}
+  return {complete:true,needsIndexing:false,asOf:now,unassignedRequested,summary,items:[...rows.values()].sort((a,b)=>(a.displayName??a.userId).localeCompare(b.displayName??b.userId))}
 }
 export async function assertSampleAssignment(store:Store,actor:Reviewer,authority:ReviewAuthority,assigneeId:string,dueAt?:string) { await roleGuard(store,actor.userId,authority,'reviews.assign');await assigneeIdentity(store,assigneeId,authority,actor);validateDueAt(dueAt) }

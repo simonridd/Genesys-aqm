@@ -10,16 +10,22 @@ import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, 
 import type { Schedule } from './schedules'
 import type { Firestore } from 'firebase-admin/firestore'
 
+const slaKey=(value:string)=>createHash('sha256').update(value).digest('hex')
+
 export interface Claim { id: string; owner: string; leaseUntil: string; status: 'running' | 'completed'; claimedAt: string }
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string; providerRequestCount?: number }
 export interface AtomicWrite {collection:CollectionName; id:string; value?:unknown; expected:unknown;checkOnly?:boolean}
 export class StoreConflict extends Error {constructor(){super('Data changed. Preview or refresh again.')}}
-export type CollectionName = 'notificationDestinationHealth' | 'notificationControl' | 'notificationDestinations' | 'notificationRules' | 'notificationDeliveries' | 'notificationEvents' | 'schedules' | 'roleAssignments' | 'governanceSettings' | 'auditEvents' | 'purgePlans' | 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets' | 'operationalAlerts'
+export type CollectionName = 'operationalHealth' | 'notificationDestinationHealth' | 'notificationControl' | 'notificationDestinations' | 'notificationRules' | 'notificationDeliveries' | 'notificationEvents' | 'schedules' | 'roleAssignments' | 'governanceSettings' | 'auditEvents' | 'purgePlans' | 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets' | 'operationalAlerts'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface ReviewWrite { review: HumanReview; expectedRevision: number }
 export class ReviewConflict extends Error { constructor(){super('Review changed in another tab or by another reviewer. Refresh before saving.')} }
 export interface Store {
+  activeReviewPage(limit:number,cursor?:string):Promise<QueryPage<HumanReview>>
+  activeAlertPage(limit:number,cursor?:string):Promise<QueryPage<OperationalAlert>>
+  syncReviewSla(id:string,expected:HumanReview|undefined,input:AlertInput|undefined,now:string,reason:string):Promise<void>
+
   notificationWork(kind:'events',now:string,limit:number):Promise<NotificationEvent[]>
   notificationWork(kind:'deliveries',now:string,limit:number):Promise<NotificationDelivery[]>
   notificationHistory(alertId?:string,destinationId?:string,limit?:number,cursor?:string):Promise<QueryPage<NotificationDelivery>>
@@ -50,9 +56,10 @@ export interface Store {
   formTestRun(id:string):Promise<FormTestRun|undefined>; createFormTestRun(run:FormTestRun):Promise<boolean>; putFormTestRun(run:FormTestRun):Promise<void>; deleteFormTestRun(id:string):Promise<void>
   recentFormTestRuns(limit:number):Promise<FormTestRun[]>
 }
+const reactivateSla=(alert:OperationalAlert,now:string):OperationalAlert=>({...alert,status:'OPEN',updatedAt:now,resolvedAt:undefined,resolvedBy:undefined,resolutionReason:undefined,events:[...alert.events,{action:'OPENED',at:now,automatic:true,reason:'Review SLA stage became active again after settings changed.'}]})
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
-  private governanceMaps = {notificationDestinationHealth:new Map<string,unknown>(),notificationControl:new Map<string,unknown>(),notificationDestinations:new Map<string,unknown>(),notificationRules:new Map<string,unknown>(),notificationDeliveries:new Map<string,unknown>(),notificationEvents:new Map<string,unknown>(),roleAssignments:new Map<string,unknown>(),governanceSettings:new Map<string,unknown>(),auditEvents:new Map<string,unknown>(),purgePlans:new Map<string,unknown>()}
+  private governanceMaps = {operationalHealth:new Map<string,unknown>(),notificationDestinationHealth:new Map<string,unknown>(),notificationControl:new Map<string,unknown>(),notificationDestinations:new Map<string,unknown>(),notificationRules:new Map<string,unknown>(),notificationDeliveries:new Map<string,unknown>(),notificationEvents:new Map<string,unknown>(),roleAssignments:new Map<string,unknown>(),governanceSettings:new Map<string,unknown>(),auditEvents:new Map<string,unknown>(),purgePlans:new Map<string,unknown>()}
   private maps(){return {...this.governanceMaps,evaluationForms:this.formMap,policies:this.policyMap,schedules:this.scheduleMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,questionGroupAssets:this.assetMap,operationalAlerts:this.alertMap}}
   async governanceRead<T>(collection:CollectionName,id:string){return copy(this.maps()[collection].get(id)) as T|undefined}
   private audit(collection:string,id:string,next:unknown,prior?:unknown){for(const e of mutationAudits(collection,id,next,prior))this.governanceMaps.auditEvents.set(e.id,copy(e))}
@@ -71,11 +78,25 @@ export class MemoryStore implements Store {
   async notificationHistory(alertId?:string,destinationId?:string,limit=50,cursor?:string){const rows=([...this.governanceMaps.notificationDeliveries.values()] as NotificationDelivery[]).filter(v=>(!alertId||v.alertId===alertId)&&(!destinationId||v.destinationId===destinationId)&&(!cursor||v.id>cursor)).sort((a,b)=>a.id.localeCompare(b.id));return {items:copy(rows.slice(0,limit)),scanned:Math.min(rows.length,limit),nextCursor:rows.length>limit?rows[limit-1].id:undefined}}
   async notificationHealth(now:string){const rows=[...this.governanceMaps.notificationDeliveries.values()] as NotificationDelivery[];return {pending:rows.filter(d=>d.state==='PENDING'||d.state==='RETRYING').length,failed24h:rows.filter(d=>d.state==='FAILED'&&d.updatedAt>=new Date(Date.parse(now)-86400000).toISOString()).length,lastSuccessfulAt:rows.filter(d=>d.deliveredAt).map(d=>d.deliveredAt!).sort().at(-1)??null}}
 
+  private reviewAlertKeys=new Map<string,{alertId?:string}>()
+  async activeReviewPage(limit:number,cursor?:string){const rows=[...this.reviewMap.values()].filter(r=>['REVIEW_REQUESTED','IN_REVIEW'].includes(r.status)&&(!cursor||r.id>cursor)).sort((a,b)=>a.id.localeCompare(b.id));return {items:copy(rows.slice(0,limit)),scanned:Math.min(rows.length,limit),nextCursor:rows.length>limit?rows[limit-1].id:undefined}}
+  async activeAlertPage(limit:number,cursor?:string){const rows=[...this.alertMap.values()].filter(r=>r.status!=='RESOLVED'&&(!cursor||r.id>cursor)).sort((a,b)=>a.id.localeCompare(b.id));return {items:copy(rows.slice(0,limit)),scanned:Math.min(rows.length,limit),nextCursor:rows.length>limit?rows[limit-1].id:undefined}}
+  async syncReviewSla(id:string,expected:HumanReview|undefined,input:AlertInput|undefined,now:string,reason:string){
+    if(!isDeepStrictEqual(this.reviewMap.get(id),expected))throw new StoreConflict()
+    const currentKey=slaKey(`REVIEW_CURRENT:${id}`),stageKey=input?slaKey(input.dedupKey):undefined
+    const oldId=this.reviewAlertKeys.get(currentKey)?.alertId,stage=stageKey?this.reviewAlertKeys.get(stageKey):undefined
+    const old=oldId?this.alertMap.get(oldId):undefined
+    if(old&&old.status!=='RESOLVED'&&old.dedupKey!==input?.dedupKey){const next={...transitionAlert(old,'RESOLVED',now),resolutionReason:reason};next.events[next.events.length-1].reason=reason;this.alertMap.set(next.id,copy(next));const event=alertNotificationEvent(next,'RESOLVED',now);if(!this.governanceMaps.notificationEvents.has(event.id))this.governanceMaps.notificationEvents.set(event.id,copy(event))}
+    if(input&&stageKey&&!stage){const next={...openAlert(undefined,input,now),id:`review_${stageKey}`};this.alertMap.set(next.id,copy(next));this.reviewAlertKeys.set(stageKey,{alertId:next.id});const event=alertNotificationEvent(next,'OPEN',now);if(!this.governanceMaps.notificationEvents.has(event.id))this.governanceMaps.notificationEvents.set(event.id,copy(event))}
+    const seen=stage?.alertId?this.alertMap.get(stage.alertId):undefined
+    if(input&&seen?.status==='RESOLVED'&&seen.events.at(-1)?.automatic)this.alertMap.set(seen.id,copy(reactivateSla(seen,now)))
+    this.reviewAlertKeys.set(currentKey,{...(input&&stageKey?{alertId:stage?.alertId??`review_${stageKey}`}:{})})
+  }
   private alertMap=new Map<string,OperationalAlert>(); private schedulerState?:SchedulerHealth
   async alert(id:string){return copy(this.alertMap.get(id))}
   async alerts(activeOnly=false){return copy([...this.alertMap.values()].filter(a=>!activeOnly||a.status!=='RESOLVED'))}
   async upsertAlert(input:AlertInput,now:string){const prior=[...this.alertMap.values()].find(a=>a.dedupKey===input.dedupKey&&a.status!=='RESOLVED');const alert=openAlert(prior,input,now);this.alertMap.set(alert.id,copy(alert));if(!prior){const e=alertNotificationEvent(alert,'OPEN',now);this.governanceMaps.notificationEvents.set(e.id,copy(e))}return copy(alert)}
-  async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){const prior=this.alertMap.get(id);if(!prior)return;const next=transitionAlert(prior,action,now,actor);this.audit('operationalAlerts',id,next,prior);this.alertMap.set(id,copy(next));if(prior.status!=='RESOLVED'&&next.status==='RESOLVED'){const e=alertNotificationEvent(next,'RESOLVED',now);this.governanceMaps.notificationEvents.set(e.id,copy(e))}return copy(next)}
+  async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){const prior=this.alertMap.get(id);if(!prior)return;const next=transitionAlert(prior,action,now,actor);this.audit('operationalAlerts',id,next,prior);this.alertMap.set(id,copy(next));if(prior.status!=='RESOLVED'&&next.status==='RESOLVED'){const e=alertNotificationEvent(next,'RESOLVED',now);if(!this.governanceMaps.notificationEvents.has(e.id))this.governanceMaps.notificationEvents.set(e.id,copy(e))}return copy(next)}
   async schedulerHealth(){return copy(this.schedulerState)}
   async recordSchedulerHealth(now:string,successful:boolean){this.schedulerState={initializedAt:this.schedulerState?.initializedAt??now,lastSuccessfulTickAt:successful?now:this.schedulerState?.lastSuccessfulTickAt};return copy(this.schedulerState)}
 
@@ -172,6 +193,27 @@ export class FirestoreStore implements Store {
     return {pending:pending.data().count,failed24h:failed.docs.filter(d=>d.data().state==='FAILED').length,lastSuccessfulAt:last.docs[0]?.data().deliveredAt??null}
   }
 
+  async activeReviewPage(limit:number,cursor?:string){let q=this.collection('humanReviews').where('status','in',['REVIEW_REQUESTED','IN_REVIEW']).orderBy('__name__').limit(limit+1);if(cursor)q=q.startAfter(this.collection('humanReviews').doc(pathId(cursor)));const docs=(await q.get()).docs,page=docs.slice(0,limit);return {items:page.map(d=>canonicalValue(d.data()) as HumanReview),scanned:page.length,nextCursor:docs.length>limit?page.at(-1)?.id:undefined}}
+  async activeAlertPage(limit:number,cursor?:string){let q=this.collection('operationalAlerts').where('status','in',['OPEN','ACKNOWLEDGED']).orderBy('__name__').limit(limit+1);if(cursor)q=q.startAfter(this.collection('operationalAlerts').doc(pathId(cursor)));const docs=(await q.get()).docs,page=docs.slice(0,limit);return {items:page.map(d=>canonicalValue(d.data()) as OperationalAlert),scanned:page.length,nextCursor:docs.length>limit?page.at(-1)?.id:undefined}}
+  async syncReviewSla(id:string,expected:HumanReview|undefined,input:AlertInput|undefined,now:string,reason:string){
+    const currentRef=this.collection('operationalAlertKeys').doc(slaKey(`REVIEW_CURRENT:${id}`)),stageKey=input?slaKey(input.dedupKey):undefined
+    await this.db.runTransaction(async tx=>{
+      const reviewDoc=await tx.get(this.collection('humanReviews').doc(pathId(id)))
+      if(!isDeepStrictEqual(reviewDoc.exists?canonicalValue(reviewDoc.data()):undefined,expected))throw new StoreConflict()
+      const current=await tx.get(currentRef),oldId=current.data()?.alertId as string|undefined
+      const stageRef=stageKey?this.collection('operationalAlertKeys').doc(stageKey):undefined,stage=stageRef?await tx.get(stageRef):undefined
+      const oldRef=oldId?this.collection('operationalAlerts').doc(pathId(oldId)):undefined,oldDoc=oldRef?await tx.get(oldRef):undefined
+      const old=oldDoc?.exists?canonicalValue(oldDoc.data()) as OperationalAlert:undefined
+      const seenRef=stage?.data()?.alertId?this.collection('operationalAlerts').doc(pathId(stage.data()!.alertId)):undefined,seenDoc=seenRef?await tx.get(seenRef):undefined
+      const seen=seenDoc?.exists?canonicalValue(seenDoc.data()) as OperationalAlert:undefined
+      const resolvedRef=old?this.collection('notificationEvents').doc(`${old.id}_RESOLVED`):undefined,resolvedDoc=resolvedRef?await tx.get(resolvedRef):undefined
+      if(old&&oldRef&&old.status!=='RESOLVED'&&old.dedupKey!==input?.dedupKey){const next={...transitionAlert(old,'RESOLVED',now),resolutionReason:reason};next.events[next.events.length-1].reason=reason;tx.set(oldRef,stored(next));const event=alertNotificationEvent(next,'RESOLVED',now);if(!resolvedDoc?.exists)tx.create(this.collection('notificationEvents').doc(event.id),stored(event))}
+      if(input&&stageRef&&stageKey&&!stage?.exists){const next={...openAlert(undefined,input,now),id:`review_${stageKey}`};tx.create(this.collection('operationalAlerts').doc(next.id),stored(next));tx.set(stageRef,{alertId:next.id});const event=alertNotificationEvent(next,'OPEN',now);tx.create(this.collection('notificationEvents').doc(event.id),stored(event))}
+      if(input&&seenRef&&seen?.status==='RESOLVED'&&seen.events.at(-1)?.automatic)tx.set(seenRef,stored(reactivateSla(seen,now)))
+      // Stage tombstones survive resolved-alert retention, preserving notification idempotence.
+      if(current.exists||input)tx.set(currentRef,input?{alertId:stage?.data()?.alertId??`review_${stageKey}`}:{})
+    })
+  }
   alert(id:string){return this.one<OperationalAlert>('operationalAlerts',id)}
   async alerts(activeOnly=false){if(!activeOnly)return this.all<OperationalAlert>('operationalAlerts');const docs=await this.collection('operationalAlerts').where('status','in',['OPEN','ACKNOWLEDGED']).get();return docs.docs.map(doc=>canonicalValue(doc.data()) as OperationalAlert)}
   async upsertAlert(input:AlertInput,now:string){
@@ -185,7 +227,7 @@ export class FirestoreStore implements Store {
   }
   async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){
     const ref=this.collection('operationalAlerts').doc(pathId(id))
-    return this.db.runTransaction(async tx=>{const doc=await tx.get(ref);if(!doc.exists)return;const next=transitionAlert(canonicalValue(doc.data()) as OperationalAlert,action,now,actor);if(doc.data()?.status!=='RESOLVED'&&next.status==='RESOLVED'){const e=alertNotificationEvent(next,'RESOLVED',now);tx.create(this.collection('notificationEvents').doc(e.id),stored(e))}tx.set(ref,stored(next));this.audit(tx,'operationalAlerts',id,next,canonicalValue(doc.data()));return next})
+    return this.db.runTransaction(async tx=>{const doc=await tx.get(ref);if(!doc.exists)return;const next=transitionAlert(canonicalValue(doc.data()) as OperationalAlert,action,now,actor);const eventRef=this.collection('notificationEvents').doc(`${next.id}_RESOLVED`),eventDoc=next.status==='RESOLVED'?await tx.get(eventRef):undefined;if(doc.data()?.status!=='RESOLVED'&&next.status==='RESOLVED'&&!eventDoc?.exists){const e=alertNotificationEvent(next,'RESOLVED',now);tx.create(eventRef,stored(e))}tx.set(ref,stored(next));this.audit(tx,'operationalAlerts',id,next,canonicalValue(doc.data()));return next})
   }
   schedulerHealth(){return this.one<SchedulerHealth>('operationalHealth','scheduler')}
   async recordSchedulerHealth(now:string,successful:boolean){const ref=this.collection('operationalHealth').doc('scheduler');return this.db.runTransaction(async tx=>{const doc=await tx.get(ref),state=doc.data() as SchedulerHealth|undefined;const next={initializedAt:state?.initializedAt??now,lastSuccessfulTickAt:successful?now:state?.lastSuccessfulTickAt};tx.set(ref,stored(next));return next})}

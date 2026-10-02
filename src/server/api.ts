@@ -27,8 +27,11 @@ import { nextDueAfter, validateSchedule, type Schedule } from './schedules'
 import { operationalAnalytics } from './analytics'
 import { evaluateManual } from './manualEvaluations'
 import { executeFormTest, type FormTestInput } from './formTests'
+import { bulkReviewDue, type BulkDueInput } from './bulkReviewDue'
+import { sweepReviewSla, reviewSlaSummary, activeReviewScan } from './reviewSla'
 import { assignReview, scoreAssignedReview, bulkAssignReviews, reviewerDirectory, reviewWorkload, type BulkAssignmentInput } from './reviewOperations'
 import { calibrationAnalytics, requestSample, reviewQueue, updateReview, ReviewNotFound } from './reviews'
+import { reviewQueuePriority } from '../domain/reviewSla'
 import { matchesReviewQueue, type AssignmentInput, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
 
 export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string; bootstrapAdminId?:string }
@@ -79,13 +82,14 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       else if(path.startsWith('/api/retention'))permission='retention.execute'
       else if(path==='/api/audit')permission='audit.read'
       else if(path==='/api/history')permission='history.read'
+      else if(path==='/api/review-sla/refresh')permission='settings.write'
       else if(path==='/api/governance')permission=request.method==='GET'?'settings.read':'settings.write'
       else if(request.method!=='GET'){
        if(path.startsWith('/api/forms/')||path.startsWith('/api/form-tests/'))permission='forms.write'
        else if(path.startsWith('/api/question-groups/'))permission='groups.write'
        else if(path.startsWith('/api/policies/'))permission='policies.write'
        else if(path.startsWith('/api/schedules/'))permission='schedules.write'
-       else if(path==='/api/reviews/bulk-assign'||path.endsWith('/assignment'))permission='reviews.assign'
+       else if(path==='/api/reviews/bulk-assign'||path==='/api/reviews/bulk-due'||path.endsWith('/assignment'))permission='reviews.assign'
        else if(path.startsWith('/api/reviews/')||path==='/api/calibration/sample'||/\/review$/.test(path))permission='reviews.write'
        else if(path.startsWith('/api/alerts/'))permission=path.endsWith('/resolve')?'alerts.resolve':'alerts.acknowledge'
        else if(path==='/api/evaluations/manual')permission='evaluations.write'
@@ -163,6 +167,8 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const alertPath=/^\/api\/alerts\/([A-Za-z0-9_-]{1,100})(?:\/(acknowledge|resolve))?$/.exec(path)
       if(alertPath&&request.method==='GET'&&!alertPath[2]){const item=await deps.store.alert(alertPath[1]);json(response,item?200:404,item??{error:'Alert not found.'});return}
       if(alertPath&&request.method==='POST'&&alertPath[2]){const item=await deps.store.transitionAlert(alertPath[1],alertPath[2]==='acknowledge'?'ACKNOWLEDGED':'RESOLVED',deps.now().toISOString(),actor);json(response,item?200:404,item?{item}:{error:'Alert not found.'});return}
+      if(request.method==='POST'&&path==='/api/review-sla/refresh'){json(response,200,await sweepReviewSla(deps.store,deps.now().toISOString()));return}
+      if(request.method==='POST'&&path==='/api/reviews/bulk-due'){const input=await body(request);if(!obj(input))throw Error('Invalid bulk due date.');json(response,200,await bulkReviewDue(deps.store,input as unknown as BulkDueInput,actor,deps.now().toISOString(),authority));return}
       if(request.method==='GET'&&path==='/api/reviewers'){json(response,200,await reviewerDirectory(deps.store,url.searchParams,authority,actor));return}
       if(request.method==='GET'&&path==='/api/review-workload'){json(response,200,await reviewWorkload(deps.store,deps.now().toISOString(),authority));return}
       if(request.method==='POST'&&path==='/api/reviews/bulk-assign'){const input=await body(request);if(!obj(input))throw Error('Invalid bulk assignment.');json(response,200,await bulkAssignReviews(deps.store,input as unknown as BulkAssignmentInput,actor,deps.now().toISOString(),authority));return}
@@ -197,6 +203,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             const ordered=snapshot.recentRuns,latest=ordered[0]
             const recent=ordered.slice(0,20),latestScheduled=recent.find(run=>run.executionMode==='scheduled')
             const nextRun=schedules.filter(schedule=>schedule.enabled&&schedule.nextDueAt).sort((a,b)=>a.nextDueAt!.localeCompare(b.nextDueAt!))[0]
+            try{base.reviewWorkload=await reviewSlaSummary(deps.store,deps.now().toISOString());base.reviewSlaSweep=await deps.store.governanceRead('operationalHealth','reviewSla')}catch{base.reviewWorkload={complete:false,message:'Review SLA scan incomplete'}}
             base.notifications=await deps.store.notificationHealth(deps.now().toISOString())
             base.firestore='available'
             base.runCounts=snapshot.runCounts
@@ -225,6 +232,14 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             const matches=(item:ReviewEvaluation)=>{
               const q=url.searchParams
               return matchesReviewQueue(item,q,actor.userId,deps.now().toISOString())&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
+            }
+            if(url.searchParams.get('reviewQueue')==='mine'){
+              const scan=await activeReviewScan(deps.store);if(!scan.complete)throw Error('Review SLA scan incomplete: narrow or index the active review queue.')
+              const reviews=scan.items.filter(r=>r.assignment?.assignee.userId===actor.userId),joined:ReviewEvaluation[]=[]
+              for(let offset=0;offset<reviews.length;offset+=100){const part=reviews.slice(offset,offset+100),map=new Map(part.map(r=>[r.evaluationId,r]));joined.push(...(await deps.store.evaluationsByIds(part.map(r=>r.evaluationId))).map(r=>({...r,humanReview:map.get(r.id)})))}
+              const settings=await governanceSettings(deps.store),now=deps.now().toISOString(),ordered=joined.filter(matches).sort((a,b)=>reviewQueuePriority(a,now,settings.reviewSla).localeCompare(reviewQueuePriority(b,now,settings.reviewSla)))
+              const offset=cursor?ordered.findIndex(r=>r.id===cursor)+1:0,items=ordered.slice(offset,offset+rawLimit)
+              json(response,200,{items,scanned:scan.scanned,scanLimited:false,nextCursor:offset+rawLimit<ordered.length?items.at(-1)?.id:undefined});return
             }
             const items:ReviewEvaluation[]=[];let nextCursor=cursor,scanned=0,more=true
             while(items.length<rawLimit&&scanned<500&&more){const page=await deps.store.query<import('../domain/types').EvaluationRecord>(collection,Math.min(100,500-scanned),nextCursor);scanned+=page.scanned;const reviews=new Map((await deps.store.reviewsByIds(page.items.map(item=>item.id))).map(review=>[review.evaluationId,review]));const joined=page.items.map(item=>({...item,humanReview:reviews.get(item.id)}));let remaining=false;for(const [index,item] of joined.entries()){nextCursor=item.id;if(matches(item))items.push(item);if(items.length>=rawLimit){remaining=index<page.items.length-1;break}}more=remaining||!!page.nextCursor}
