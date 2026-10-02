@@ -1,0 +1,55 @@
+{
+  "matchingCollections": 22,
+  "totalCollections": 23,
+  "changedCollections": {
+    "operationalHealth": {
+      "before": {
+        "count": 2,
+        "sha256": "5e1701f83865e870f1ca652dc8a806ae8607dad9a7ae1c27b0beb0a370d92acf",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-02T14:00:04.936276Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-02T14:00:04.748162Z",
+            "lastSuccessfulTickAt": "2026-10-02T14:00:04.682Z"
+          }
+        ]
+      },
+      "after": {
+        "count": 2,
+        "sha256": "dcea12d8016d745939f1dff4ea9a4c24b09a333191789c12f4d53c8f4f4aac68",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-02T15:00:05.400811Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-02T15:00:05.163558Z",
+            "lastSuccessfulTickAt": "2026-10-02T15:00:05.080Z"
+          }
+        ]
+      }
+    }
+  },
+  "runtimeComparison": {
+    "revision": true,
+    "image": true,
+    "runtimeConfigSha256": true,
+    "serviceIamSha256": true,
+    "schedulerConfigSha256": true,
+    "secrets": true
+  },
+  "schedulerRuntimeUnchanged": false,
+  "schedulerBefore": {
+    "lastAttemptTime": "2026-10-02T14:00:04.557120Z",
+    "scheduleTime": "2026-10-02T15:00:04.028877Z",
+    "status": {}
+  },
+  "schedulerAfter": {
+    "lastAttemptTime": "2026-10-02T15:00:04.948765Z",
+    "scheduleTime": "2026-10-02T16:00:04.028877Z",
+    "status": {}
+  }
+}

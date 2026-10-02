@@ -54,6 +54,12 @@ Reproduction and logs: [V0.18C evidence](v018c-evidence/README.md).
 
 ## Deployment and preservation
 
-Publication and final before/after preservation comparison are pending. No backend runtime source changed, so **no Cloud Run revision will be deployed**. Only the requested source branch and existing GitHub Pages publication branch will be pushed. Production proof uses read-only collection counts/hashes and runtime/IAM/secret-metadata/Scheduler hashes; it does not read secret values or mutate production configuration.
+Tested and deployed application source: **83ff8523c26b37b8704706af453cab379a8d3901**. GitHub Pages HEAD: **cd77f96f35c1dd59eca6257ffd6285a5755625d2**. All **seven publicly published files** match the exact production-preview build byte-for-byte. [Public site](https://simonridd.github.io/Genesys-aqm/), [Pages proof](v018c-evidence/pages.json). All **11 focused journeys** pass against that production build.
+
+No backend runtime source changed. **No Cloud Run revision was deployed**; **aqm-api-v018b-11e8e36** and its image remain unchanged. Runtime configuration, service IAM, Secret Manager metadata/immutable version lists/IAM and Scheduler configuration hashes all match.
+
+[Preservation comparison](v018c-evidence/preservation.json): **22/23 production collection snapshots have identical counts and hashes**. Forms, policies, schedules/claims, reusable groups, evaluations, HumanReviews, runs, alerts, notification configuration/history, roles, Governance, Form Tests, audit and evaluation slots are unchanged. The only collection difference is **operationalHealth**, which still contains two records and reflects the natural hourly Scheduler tick at **16:00 BST on 2 October 2026** (15:00 UTC). Its last successful tick advanced from 14:00:04.682Z to 15:00:05.080Z; Scheduler lastAttemptTime advanced accordingly. No collection count changed, and no evaluation/provider execution or production configuration mutation was initiated by this tranche.
+
+Only **codex/aqm-v0-18c-definition-authority** and the explicitly requested existing **gh-pages** publication branch were pushed. Main remains **17d8d06032db3fb6996552c26e298fc5369d4692**. No PR, merge or release tag was created. A subsequent documentation-only commit records deployment proof without changing deployed application code. Production proof uses read-only counts/hashes and runtime/IAM/secret-metadata/Scheduler hashes; it never reads secret values.
 
 R06+, V0.18D/E, browser evaluation history, demo analytics storage, provider execution/idempotency and release tagging remain outside this tranche.
