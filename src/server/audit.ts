@@ -2,7 +2,7 @@ import { AsyncLocalStorage } from 'node:async_hooks'
 import { isDeepStrictEqual } from 'node:util'
 import { randomUUID } from 'node:crypto'
 import type { AuditEvent } from '../domain/governance'
-import type { Reviewer } from '../domain/reviews'
+import type { ReviewEvent, Reviewer } from '../domain/reviews'
 const eventId=(now:string)=>`${String(Date.parse(now)).padStart(13,'0')}_${randomUUID()}`
 export const auditContext=new AsyncLocalStorage<{actor:Reviewer; now:string; correlationId:string;operation?:'cloned'|'imported'|'draft_saved'}>()
 /** Metadata is constructed here from schema fields, never copied from a request or resource body. */
@@ -39,6 +39,11 @@ export function mutationAudits(collection:string,id:string,next:unknown,prior?:u
  const event=mutationAudit(collection,id,next,prior);if(!event)return []
  if(collection==='notificationDestinations'&&prior){const n=next as {configuration?:unknown},p=prior as {configuration?:unknown};const refs=(v:unknown)=>Object.entries((v??{}) as Record<string,unknown>).filter(([k])=>k.endsWith('SecretRef'));if(!isDeepStrictEqual(refs(n.configuration),refs(p.configuration)))return [event,{...event,id:eventId(event.occurredAt),action:'notification_destination.secret_reference_changed',summary:'notification destination secret reference changed'}]}
  if(collection!=='humanReviews')return [event]
- const n=next as {events?:{kind:string}[]},p=prior as {events?:unknown[]}|undefined
- return (n.events??[]).slice(p?.events?.length??0).map(e=>({...event,id:eventId(event.occurredAt),action:`review.${e.kind.replace('review_','')}`,summary:e.kind.replaceAll('_',' ')}))
+ const n=next as {evaluationId?:string;events?:ReviewEvent[]},p=prior as {events?:unknown[]}|undefined
+ return (n.events??[]).slice(p?.events?.length??0).map(e=>({...event,id:eventId(event.occurredAt),action:`review.${e.kind.replace('review_','')}`,summary:e.kind.replaceAll('_',' '),metadata:{...event.metadata,evaluationId:n.evaluationId??id,...(e.assignee?{assigneeId:e.assignee.userId}:{}),...(e.dueAt?{dueAt:e.dueAt}:{})}}))
+}
+
+export function bulkReviewAudit(count:number,assigneeId:string,dueAt?:string):AuditEvent|undefined {
+ const c=auditContext.getStore();if(!c)return
+ return {id:eventId(c.now),occurredAt:c.now,actor:c.actor,action:'review.bulk_assigned',resourceType:'review',resourceId:'bulk',summary:`Assigned ${count} reviews`,metadata:{count,assigneeId,...(dueAt?{dueAt}:{})},correlationId:c.correlationId,source:'browser-api'}
 }

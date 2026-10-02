@@ -1,5 +1,5 @@
 import type { Reviewer } from './reviews'
-export const permissions = ['notifications.read','notifications.write','notifications.test','forms.read','forms.write','forms.publish','groups.read','groups.write','groups.publish','policies.read','policies.write','schedules.write','evaluations.read','evaluations.write','reviews.read','reviews.write','alerts.read','alerts.acknowledge','alerts.resolve','settings.read','settings.write','roles.manage','retention.execute','audit.read','history.read'] as const
+export const permissions = ['notifications.read','notifications.write','notifications.test','forms.read','forms.write','forms.publish','groups.read','groups.write','groups.publish','policies.read','policies.write','schedules.write','evaluations.read','evaluations.write','reviews.read','reviews.write','reviews.assign','alerts.read','alerts.acknowledge','alerts.resolve','settings.read','settings.write','roles.manage','retention.execute','audit.read','history.read'] as const
 export type Permission = typeof permissions[number]
 export const roles = ['ADMIN','AUTHOR','REVIEWER','VIEWER'] as const
 export type Role = typeof roles[number]

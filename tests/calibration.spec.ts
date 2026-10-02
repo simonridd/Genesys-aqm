@@ -25,7 +25,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
         const input=route.request().postDataJSON() as ReviewInput
         if(conflictNext){conflictNext=false;reviews.set(id,buildReview(record,prior,{...reviewInput(record,'save',prior!.revision),answers:fixtureAnswers.slice(0,1),notes:'Saved by another reviewer'},actor,now));await route.fulfill({status:409,json:{error:'Review changed in another tab or by another reviewer. Refresh before saving.'}});return}
         expect(input.expectedRevision).toBe(prior?.revision??0)
-        const item=buildReview(record,prior,input,actor,now);reviews.set(id,item);await route.fulfill({json:{item}});return
+        const item=buildReview(record,prior,{...input,action:input.action==='claim'?'start':input.action},actor,now);reviews.set(id,item);await route.fulfill({json:{item}});return
       }
       if(path==='/api/calibration'){await route.fulfill({json:aggregateCalibration(joined(),url.searchParams)});return}
       if(path==='/api/calibration/sample'){
@@ -43,7 +43,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await expect(page.locator('.evaluation-detail').getByText('Actual Jev requests: Not recorded (legacy)',{exact:true})).toBeVisible()
     await panel.getByRole('button',{name:'Mark for review',exact:true}).click()
     await expect(panel.getByText('General Customer Service v17 · REVIEW REQUESTED')).toBeVisible()
-    await panel.getByRole('button',{name:'Continue review'}).click()
+    await panel.getByRole('button',{name:'Claim and start review'}).click()
     await panel.getByLabel('Human answer: Warm opening',{exact:true}).selectOption('No')
     await panel.getByLabel('Question note: Warm opening',{exact:true}).fill('The opening was abrupt.')
     await panel.getByRole('button',{name:'Save progress'}).click()

@@ -27,8 +27,9 @@ import { nextDueAfter, validateSchedule, type Schedule } from './schedules'
 import { operationalAnalytics } from './analytics'
 import { evaluateManual } from './manualEvaluations'
 import { executeFormTest, type FormTestInput } from './formTests'
+import { assignReview, scoreAssignedReview, bulkAssignReviews, reviewerDirectory, reviewWorkload, type BulkAssignmentInput } from './reviewOperations'
 import { calibrationAnalytics, requestSample, reviewQueue, updateReview, ReviewNotFound } from './reviews'
-import { matchesReviewQueue, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
+import { matchesReviewQueue, type AssignmentInput, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
 
 export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string; bootstrapAdminId?:string }
 const oidc=new OAuth2Client()
@@ -67,6 +68,9 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
     await auditContext.run({actor,now:deps.now().toISOString(),correlationId:randomUUID()},async()=>{try{
       const path=url.pathname
       const access=await sessionAccess(deps.store,actor,bootstrapId)
+      const authority={bootstrapId,allowedUserIds:config.allowedUserIds}
+      if(url.searchParams.get('assignment')==='mine'||url.searchParams.get('reviewQueue')==='mine'){url.searchParams.delete('assigneeId')}
+      if(url.searchParams.get('due')&&!['all','overdue','today','week','none'].includes(url.searchParams.get('due')!))throw Error('Invalid due filter.')
       if(request.method==='GET'&&path==='/api/session'){json(response,200,access);return}
       const rolePath=/^\/api\/roles\/([A-Za-z0-9_-]{1,100})$/.exec(path)
       let permission:Permission|undefined
@@ -81,6 +85,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
        else if(path.startsWith('/api/question-groups/'))permission='groups.write'
        else if(path.startsWith('/api/policies/'))permission='policies.write'
        else if(path.startsWith('/api/schedules/'))permission='schedules.write'
+       else if(path==='/api/reviews/bulk-assign'||path.endsWith('/assignment'))permission='reviews.assign'
        else if(path.startsWith('/api/reviews/')||path==='/api/calibration/sample'||/\/review$/.test(path))permission='reviews.write'
        else if(path.startsWith('/api/alerts/'))permission=path.endsWith('/resolve')?'alerts.resolve':'alerts.acknowledge'
        else if(path==='/api/evaluations/manual')permission='evaluations.write'
@@ -158,17 +163,22 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const alertPath=/^\/api\/alerts\/([A-Za-z0-9_-]{1,100})(?:\/(acknowledge|resolve))?$/.exec(path)
       if(alertPath&&request.method==='GET'&&!alertPath[2]){const item=await deps.store.alert(alertPath[1]);json(response,item?200:404,item??{error:'Alert not found.'});return}
       if(alertPath&&request.method==='POST'&&alertPath[2]){const item=await deps.store.transitionAlert(alertPath[1],alertPath[2]==='acknowledge'?'ACKNOWLEDGED':'RESOLVED',deps.now().toISOString(),actor);json(response,item?200:404,item?{item}:{error:'Alert not found.'});return}
+      if(request.method==='GET'&&path==='/api/reviewers'){json(response,200,await reviewerDirectory(deps.store,url.searchParams,authority,actor));return}
+      if(request.method==='GET'&&path==='/api/review-workload'){json(response,200,await reviewWorkload(deps.store,deps.now().toISOString(),authority));return}
+      if(request.method==='POST'&&path==='/api/reviews/bulk-assign'){const input=await body(request);if(!obj(input))throw Error('Invalid bulk assignment.');json(response,200,await bulkAssignReviews(deps.store,input as unknown as BulkAssignmentInput,actor,deps.now().toISOString(),authority));return}
+      const assignmentPath=/^\/api\/reviews\/([A-Za-z0-9_-]{1,180})\/assignment$/.exec(path)
+      if(request.method==='PUT'&&assignmentPath){const input=await body(request);if(!obj(input))throw Error('Invalid assignment.');json(response,200,{item:await assignReview(deps.store,assignmentPath[1],input as unknown as AssignmentInput,actor,deps.now().toISOString(),authority)});return}
       if(request.method==='GET'&&path==='/api/calibration'){json(response,200,await calibrationAnalytics(deps.store,url.searchParams));return}
-      if(request.method==='POST'&&path==='/api/calibration/sample'){json(response,200,await requestSample(deps.store,await body(request),actor,deps.now().toISOString()));return}
+      if(request.method==='POST'&&path==='/api/calibration/sample'){json(response,200,await requestSample(deps.store,await body(request),actor,deps.now().toISOString(),authority));return}
       if(request.method==='GET'&&(path==='/api/reviews'||path==='/api/review-queue')){
-        const queue=await reviewQueue(deps.store,url.searchParams)
+        const queue=await reviewQueue(deps.store,url.searchParams,actor.userId,deps.now().toISOString())
         json(response,200,{scope:'complete',items:path==='/api/reviews'?queue.flatMap(record=>record.humanReview?[record.humanReview]:[]):queue});return
       }
       const reviewDetail=/^\/api\/reviews\/([A-Za-z0-9_-]{1,180})$/.exec(path)
       if(reviewDetail&&request.method==='GET'){const item=await deps.store.review(reviewDetail[1]);json(response,item?200:404,item??{error:'Review not found.'});return}
       if(reviewDetail&&request.method==='PUT'){
         const input=await body(request);if(!obj(input))throw Error('Invalid review request.')
-        json(response,200,{item:await updateReview(deps.store,reviewDetail[1],input as unknown as ReviewInput,actor,deps.now().toISOString())});return
+        json(response,200,{item:await scoreAssignedReview(deps.store,reviewDetail[1],input as unknown as ReviewInput,actor,deps.now().toISOString(),authority)});return
       }
       if(request.method==='GET'){
         const email=/^\/api\/conversations\/([a-f0-9-]{20,64})\/(email|digital)$/i.exec(path)
@@ -214,7 +224,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           if(collection==='evaluationRecords'){
             const matches=(item:ReviewEvaluation)=>{
               const q=url.searchParams
-              return matchesReviewQueue(item,q)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
+              return matchesReviewQueue(item,q,actor.userId,deps.now().toISOString())&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
             }
             const items:ReviewEvaluation[]=[];let nextCursor=cursor,scanned=0,more=true
             while(items.length<rawLimit&&scanned<500&&more){const page=await deps.store.query<import('../domain/types').EvaluationRecord>(collection,Math.min(100,500-scanned),nextCursor);scanned+=page.scanned;const reviews=new Map((await deps.store.reviewsByIds(page.items.map(item=>item.id))).map(review=>[review.evaluationId,review]));const joined=page.items.map(item=>({...item,humanReview:reviews.get(item.id)}));let remaining=false;for(const [index,item] of joined.entries()){nextCursor=item.id;if(matches(item))items.push(item);if(items.length>=rawLimit){remaining=index<page.items.length-1;break}}more=remaining||!!page.nextCursor}

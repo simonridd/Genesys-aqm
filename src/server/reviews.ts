@@ -1,3 +1,4 @@
+import { bulkAssignReviews, type ReviewAuthority } from './reviewOperations'
 import { aggregateCalibration } from '../domain/calibration'
 import { buildReview, calibrationSample, matchesReviewQueue, type HumanReview, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
 import type { EvaluationRecord } from '../domain/types'
@@ -21,15 +22,24 @@ export async function updateReview(store:Store,evaluationId:string,input:ReviewI
   const review=buildReview(record,prior,input,actor,now)
   await store.writeReviews([{review,expectedRevision:input.expectedRevision}]);return review
 }
-export async function reviewQueue(store:Store,query:URLSearchParams){return (await joinedReviewRecords(store)).filter(record=>matchesReviewQueue(record,query))}
+export async function reviewQueue(store:Store,query:URLSearchParams,actorId?:string,now?:string){return (await joinedReviewRecords(store)).filter(record=>matchesReviewQueue(record,query,actorId,now))}
 export async function calibrationAnalytics(store:Store,query:URLSearchParams){return aggregateCalibration(await joinedReviewRecords(store),query)}
-export async function requestSample(store:Store,input:unknown,actor:Reviewer,now:string){
+export async function requestSample(store:Store,input:unknown,actor:Reviewer,now:string,authority?:ReviewAuthority){
   if(!input||typeof input!=='object'||Array.isArray(input))throw Error('Invalid calibration sample.')
-  const value=input as {count:number;strategy:'recent'|'deterministic';seed?:string;filters?:Record<string,string>}
+  const value=input as {count:number;strategy:'recent'|'deterministic';seed?:string;filters?:Record<string,string>;assigneeId?:string;dueAt?:string}
   if(value.filters&&(!Object.entries(value.filters).every(([key,v])=>['source','form','agent','queue','from','to'].includes(key)&&typeof v==='string')))throw Error('Invalid sample filters.')
   if(value.seed!==undefined&&typeof value.seed!=='string')throw Error('Invalid sample seed.')
   const filters=new URLSearchParams(value.filters);if(!filters.get('source'))filters.set('source','genesys-cloud')
   const selected=calibrationSample(await joinedReviewRecords(store),filters,value.count,value.strategy,value.seed??'calibration-v07')
+  if(value.dueAt&&!value.assigneeId)throw Error('Select a reviewer to set a sample due date.')
+  if(value.assigneeId){
+    if(!authority)throw Error('Assignment authority required.')
+    // Even an empty sample must validate the assignee/permission and due date.
+    const {assertSampleAssignment}=await import('./reviewOperations');await assertSampleAssignment(store,actor,authority,value.assigneeId,value.dueAt)
+    if(!selected.length)return {items:[],selected:0,requested:value.count,strategy:value.strategy,seed:value.seed??'calibration-v07'}
+    const result=await bulkAssignReviews(store,{items:selected.map(record=>({evaluationId:record.id,expectedRevision:0})),assigneeId:value.assigneeId,dueAt:value.dueAt},actor,now,authority)
+    return {...result,selected:result.count,requested:value.count,strategy:value.strategy,seed:value.seed??'calibration-v07'}
+  }
   const reviews=selected.map(record=>buildReview(record,undefined,{action:'request',expectedRevision:0,formId:record.form.id,formVersion:record.form.version},actor,now))
   if(reviews.length)await store.writeReviews(reviews.map(review=>({review,expectedRevision:0})))
   return {items:reviews,selected:reviews.length,requested:value.count,strategy:value.strategy,seed:value.seed??'calibration-v07'}
