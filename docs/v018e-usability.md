@@ -47,7 +47,7 @@ Evidence includes heading focus/in-view, close/opener return for Forms, Groups, 
 - Full deterministic suite: 558 tests in 58 files pass.
 - Frontend typecheck/build, server typecheck and server build pass.
 - Development browser validation: 109 journeys pass, covering the focused usability suite and V0.18A save protection, V0.18B investigations, V0.18C saved-definition authority, V0.18D first-use/Settings, review assignment/SLA, cache, governance and notifications. Three additional existing calibration/scoring/conflict journeys pass. Final additions verify notification focus and active-cohort preservation; 46 focused/conversation/cache/first-use journeys were rerun after the final conversation table audit.
-- Seventeen journeys pass against the deployable production build at all requested viewports. The shared table harness also passes against Vite with event-count assertions.
+- Seventeen journeys pass against the deployable production build at all requested viewports. The same 17 journeys pass against the published public assets with production APIs/providers mocked. The shared table harness also passes against Vite with event-count assertions.
 - Provider requests and mutations in browser validation are mocked or in-memory. New focused journeys abort external traffic except explicitly fictional OAuth/API responses. No paid Jev, live Genesys provider call, real notification or production review mutation occurs.
 
 Reproduction and logs: [v018e-evidence/README.md](v018e-evidence/README.md). Publication/preservation proof is recorded after deployment in `pages.json` and `preservation.json` in that directory.
@@ -55,3 +55,9 @@ Reproduction and logs: [v018e-evidence/README.md](v018e-evidence/README.md). Pub
 ## Deferred
 
 R13 performance/request tuning remains open and measurement-led. Broad R10 terminology cleanup remains deferred. Browser execution retirement remains deferred. No usage endpoint, caching redesign, Overview fetch consolidation, speculative lazy loading, persisted domain field or backend/schema change was added.
+
+## Publication and preservation proof
+
+Published application source: `66138b7621cb016c07f245cfae9d8cc9113bcd3c`. GitHub Pages HEAD: `e25aa48b3621ddfe118c7ab13df05aa910429cf0`. All seven public assets match the validated build byte-for-byte. Public application: https://simonridd.github.io/Genesys-aqm/. Subsequent commits record evidence only, with no application-source changes.
+
+All 23/23 production collection counts and SHA-256 hashes match. Cloud Run remains `aqm-api-v018b-11e8e36`; image, runtime configuration, IAM, secret metadata and Scheduler configuration match. Scheduler runtime and operationalHealth hashes also match: no natural Scheduler difference occurred in this publication window. No production product data/configuration or HumanReview was mutated.
