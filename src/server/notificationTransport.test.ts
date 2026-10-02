@@ -1,0 +1,13 @@
+import { EventEmitter } from 'node:events'
+import { afterEach,expect,it,vi } from 'vitest'
+const {fakeRequest}=vi.hoisted(()=>({fakeRequest:vi.fn()}))
+vi.mock('node:https',()=>({request:fakeRequest}))
+import { securePost } from './notificationProviders'
+const target={url:new URL('https://public.example/path'),address:'8.8.8.8',family:4,body:'{}',headers:{}}
+function requestFixture(){const req=new EventEmitter() as EventEmitter&{end:()=>void;destroy:(e:Error)=>void};req.end=vi.fn();req.destroy=vi.fn(e=>{req.emit('error',e);req.emit('close')});let response:((r:EventEmitter&{statusCode:number})=>void)|undefined;fakeRequest.mockImplementation((_url,_options,cb)=>{response=cb;return req});return{req,response:()=>response!}}
+afterEach(()=>{vi.useRealTimers();vi.clearAllMocks()})
+it('pins the validated address and disables reuse',async()=>{const f=requestFixture(),promise=securePost(target),socket=new EventEmitter();f.req.emit('socket',socket);socket.emit('secureConnect');const res=Object.assign(new EventEmitter(),{statusCode:200});f.response()(res);res.emit('data',Buffer.from('safe'));res.emit('end');f.req.emit('close');await expect(promise).resolves.toBe(200);const options=fakeRequest.mock.calls[0][1];expect(options.agent).toBe(false);expect(options.family).toBe(4);const cb=vi.fn();options.lookup('public.example',{},cb);expect(cb).toHaveBeenCalledWith(null,'8.8.8.8',4)})
+it('connect is bounded to five seconds',async()=>{vi.useFakeTimers();const f=requestFixture(),promise=securePost(target),assertion=expect(promise).rejects.toMatchObject({code:'CONNECT_TIMEOUT',transient:true});await vi.advanceTimersByTimeAsync(5000);await assertion;expect(f.req.destroy).toHaveBeenCalledTimes(1)})
+it('response and total request are bounded to fifteen seconds',async()=>{vi.useFakeTimers();const f=requestFixture(),promise=securePost(target),assertion=expect(promise).rejects.toMatchObject({code:'TIMEOUT',transient:true});const socket=new EventEmitter();f.req.emit('socket',socket);socket.emit('secureConnect');await vi.advanceTimersByTimeAsync(15000);await assertion})
+it('response bodies are discarded and bounded to 16 KiB',async()=>{const f=requestFixture(),promise=securePost(target),assertion=expect(promise).rejects.toMatchObject({code:'RESPONSE_TOO_LARGE',transient:false});const res=Object.assign(new EventEmitter(),{statusCode:200});f.response()(res);res.emit('data',Buffer.alloc(16385));await assertion})
+it('connection exceptions are sanitized',async()=>{const f=requestFixture(),promise=securePost(target),assertion=expect(promise).rejects.toMatchObject({code:'CONNECTION_FAILURE'});f.req.emit('error',Error('secret URL token'));f.req.emit('close');await assertion})

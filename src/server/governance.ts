@@ -12,13 +12,13 @@ export async function sessionAccess(store:Store,actor:Reviewer,bootstrapId?:stri
  if(!roles.includes(role))throw new Forbidden('Invalid role assignment.')
  return {actor,role,permissions:rolePermissions[role],bootstrap}
 }
-export async function governanceSettings(store:Store){return await store.governanceRead<GovernanceSettings>('governanceSettings','governance')??{...defaultGovernance}}
+export async function governanceSettings(store:Store){return {...defaultGovernance,...await store.governanceRead<GovernanceSettings>('governanceSettings','governance')}}
 export interface PurgePlan {id:string;actorId:string;cutoff:string;expiresAt:string;settings:GovernanceSettings;cursors:Partial<Record<CollectionName,string>>;fingerprint:string;counts:Record<string,number>;scanned:number;continuation:Partial<Record<CollectionName,string>>;complete:boolean;executed?:boolean}
-const retentionCollections=['evaluationRecords','humanReviews','policyRuns','operationalAlerts','auditEvents'] as const
+const retentionCollections=['evaluationRecords','humanReviews','policyRuns','operationalAlerts','auditEvents','notificationDeliveries'] as const
 const old=(timestamp:unknown,days:number|null,cutoff:string)=>days!==null&&typeof timestamp==='string'&&Number.isFinite(Date.parse(timestamp))&&Date.parse(timestamp)<Date.parse(cutoff)-days*86400000
 /** Preview one bounded scan window. Counts apply to this window, never claim full-dataset totals. */
 export async function scanPurge(store:Store,settings:GovernanceSettings,cutoff:string,cursors:PurgePlan['cursors']={}){
- const writes:AtomicWrite[]=[],counts:Record<string,number>={evaluations:0,reviews:0,policyRuns:0,alerts:0,audit:0},continuation:PurgePlan['continuation']={};let scanned=0
+ const writes:AtomicWrite[]=[],counts:Record<string,number>={evaluations:0,reviews:0,policyRuns:0,alerts:0,audit:0,notificationDeliveries:0},continuation:PurgePlan['continuation']={};let scanned=0
  const seen=new Set<string>()
  const add=(collection:CollectionName,v:{id:string},kind:string)=>{const key=collection+v.id;if(seen.has(key))return;seen.add(key);writes.push({collection,id:v.id,expected:v});counts[kind]++}
  for(const collection of retentionCollections){
@@ -31,6 +31,7 @@ export async function scanPurge(store:Store,settings:GovernanceSettings,cutoff:s
    if(collection==='humanReviews'&&old(row.updatedAt,settings.reviewRetentionDays,cutoff))add(collection,row,'reviews')
    if(collection==='policyRuns'&&row.status!=='running'&&old(row.completedAt,settings.policyRunRetentionDays,cutoff))add(collection,row,'policyRuns')
    if(collection==='operationalAlerts'&&row.status==='RESOLVED'&&old(row.resolvedAt??row.updatedAt,settings.alertRetentionDays,cutoff))add(collection,row,'alerts')
+   if(collection==='notificationDeliveries'&&['DELIVERED','FAILED','SUPPRESSED'].includes(String(row.state))&&old(row.updatedAt,settings.notificationDeliveryRetentionDays??null,cutoff))add(collection,row,'notificationDeliveries')
    if(collection==='auditEvents'&&old(row.occurredAt,settings.auditRetentionDays,cutoff))add(collection,row,'audit')
   }
  }
@@ -47,7 +48,7 @@ export async function executePurge(store:Store,actor:Reviewer,now:string,id:stri
  const plan=await store.governanceRead<PurgePlan>('purgePlans',id);if(!plan||plan.actorId!==actor.userId)throw new Forbidden('Preview this purge with your current identity first.')
  if(plan.executed)return {plan,alreadyExecuted:true}
  if(plan.expiresAt<now)throw new StoreConflict()
- const rawSettings=await store.governanceRead<GovernanceSettings>('governanceSettings','governance'),settings=rawSettings??{...defaultGovernance},scan=await scanPurge(store,settings,plan.cutoff,plan.cursors)
+ const rawSettings=await store.governanceRead<GovernanceSettings>('governanceSettings','governance'),settings={...defaultGovernance,...rawSettings},scan=await scanPurge(store,settings,plan.cutoff,plan.cursors)
  if(scan.fingerprint!==plan.fingerprint)throw new StoreConflict()
  // Protect against settings changes between recalculation and commit. Review writers read the evaluation in their transaction.
  const done={...plan,executed:true}

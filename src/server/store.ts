@@ -1,3 +1,4 @@
+import { alertNotificationEvent, type NotificationEvent, type NotificationDelivery } from '../domain/notifications'
 import { openAlert, transitionAlert, type AlertInput, type AlertActor, type OperationalAlert, type SchedulerHealth } from '../domain/operationalAlerts'
 import { isDeepStrictEqual } from 'node:util'
 import { mutationAudits, auditContext } from './audit'
@@ -13,12 +14,17 @@ export interface Claim { id: string; owner: string; leaseUntil: string; status: 
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string; providerRequestCount?: number }
 export interface AtomicWrite {collection:CollectionName; id:string; value?:unknown; expected:unknown;checkOnly?:boolean}
 export class StoreConflict extends Error {constructor(){super('Data changed. Preview or refresh again.')}}
-export type CollectionName = 'schedules' | 'roleAssignments' | 'governanceSettings' | 'auditEvents' | 'purgePlans' | 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets' | 'operationalAlerts'
+export type CollectionName = 'notificationDestinationHealth' | 'notificationControl' | 'notificationDestinations' | 'notificationRules' | 'notificationDeliveries' | 'notificationEvents' | 'schedules' | 'roleAssignments' | 'governanceSettings' | 'auditEvents' | 'purgePlans' | 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets' | 'operationalAlerts'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface ReviewWrite { review: HumanReview; expectedRevision: number }
 export class ReviewConflict extends Error { constructor(){super('Review changed in another tab or by another reviewer. Refresh before saving.')} }
 export interface Store {
+  notificationWork(kind:'events',now:string,limit:number):Promise<NotificationEvent[]>
+  notificationWork(kind:'deliveries',now:string,limit:number):Promise<NotificationDelivery[]>
+  notificationHistory(alertId?:string,destinationId?:string,limit?:number,cursor?:string):Promise<QueryPage<NotificationDelivery>>
+  notificationHealth(now:string):Promise<import('../domain/notifications').NotificationHealth>
+
   governanceRead<T>(collection:CollectionName,id:string):Promise<T|undefined>
   atomic(writes:AtomicWrite[],events?:AuditEvent[]):Promise<void>
 
@@ -46,7 +52,7 @@ export interface Store {
 }
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
-  private governanceMaps = {roleAssignments:new Map<string,unknown>(),governanceSettings:new Map<string,unknown>(),auditEvents:new Map<string,unknown>(),purgePlans:new Map<string,unknown>()}
+  private governanceMaps = {notificationDestinationHealth:new Map<string,unknown>(),notificationControl:new Map<string,unknown>(),notificationDestinations:new Map<string,unknown>(),notificationRules:new Map<string,unknown>(),notificationDeliveries:new Map<string,unknown>(),notificationEvents:new Map<string,unknown>(),roleAssignments:new Map<string,unknown>(),governanceSettings:new Map<string,unknown>(),auditEvents:new Map<string,unknown>(),purgePlans:new Map<string,unknown>()}
   private maps(){return {...this.governanceMaps,evaluationForms:this.formMap,policies:this.policyMap,schedules:this.scheduleMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,questionGroupAssets:this.assetMap,operationalAlerts:this.alertMap}}
   async governanceRead<T>(collection:CollectionName,id:string){return copy(this.maps()[collection].get(id)) as T|undefined}
   private audit(collection:string,id:string,next:unknown,prior?:unknown){for(const e of mutationAudits(collection,id,next,prior))this.governanceMaps.auditEvents.set(e.id,copy(e))}
@@ -57,11 +63,19 @@ export class MemoryStore implements Store {
     for(const e of events)this.governanceMaps.auditEvents.set(e.id,copy(e))
   }
 
+  async notificationWork(kind:'events',now:string,limit:number):Promise<NotificationEvent[]>
+  async notificationWork(kind:'deliveries',now:string,limit:number):Promise<NotificationDelivery[]>
+  async notificationWork(kind:'events'|'deliveries',now:string,limit:number):Promise<any[]> {
+    return copy([...this.governanceMaps[kind==='events'?'notificationEvents':'notificationDeliveries'].values()].filter(v=>{const row=v as NotificationEvent&NotificationDelivery;return kind==='events'?!row.routed:!!row.nextAttemptAt&&row.nextAttemptAt<=now}).sort((a:any,b:any)=>(a.nextAttemptAt??a.createdAt).localeCompare(b.nextAttemptAt??b.createdAt)).slice(0,limit))
+  }
+  async notificationHistory(alertId?:string,destinationId?:string,limit=50,cursor?:string){const rows=([...this.governanceMaps.notificationDeliveries.values()] as NotificationDelivery[]).filter(v=>(!alertId||v.alertId===alertId)&&(!destinationId||v.destinationId===destinationId)&&(!cursor||v.id>cursor)).sort((a,b)=>a.id.localeCompare(b.id));return {items:copy(rows.slice(0,limit)),scanned:Math.min(rows.length,limit),nextCursor:rows.length>limit?rows[limit-1].id:undefined}}
+  async notificationHealth(now:string){const rows=[...this.governanceMaps.notificationDeliveries.values()] as NotificationDelivery[];return {pending:rows.filter(d=>d.state==='PENDING'||d.state==='RETRYING').length,failed24h:rows.filter(d=>d.state==='FAILED'&&d.updatedAt>=new Date(Date.parse(now)-86400000).toISOString()).length,lastSuccessfulAt:rows.filter(d=>d.deliveredAt).map(d=>d.deliveredAt!).sort().at(-1)??null}}
+
   private alertMap=new Map<string,OperationalAlert>(); private schedulerState?:SchedulerHealth
   async alert(id:string){return copy(this.alertMap.get(id))}
   async alerts(activeOnly=false){return copy([...this.alertMap.values()].filter(a=>!activeOnly||a.status!=='RESOLVED'))}
-  async upsertAlert(input:AlertInput,now:string){const prior=[...this.alertMap.values()].find(a=>a.dedupKey===input.dedupKey&&a.status!=='RESOLVED');const alert=openAlert(prior,input,now);this.alertMap.set(alert.id,copy(alert));return copy(alert)}
-  async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){const prior=this.alertMap.get(id);if(!prior)return;const next=transitionAlert(prior,action,now,actor);this.audit('operationalAlerts',id,next,prior);this.alertMap.set(id,copy(next));return copy(next)}
+  async upsertAlert(input:AlertInput,now:string){const prior=[...this.alertMap.values()].find(a=>a.dedupKey===input.dedupKey&&a.status!=='RESOLVED');const alert=openAlert(prior,input,now);this.alertMap.set(alert.id,copy(alert));if(!prior){const e=alertNotificationEvent(alert,'OPEN',now);this.governanceMaps.notificationEvents.set(e.id,copy(e))}return copy(alert)}
+  async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){const prior=this.alertMap.get(id);if(!prior)return;const next=transitionAlert(prior,action,now,actor);this.audit('operationalAlerts',id,next,prior);this.alertMap.set(id,copy(next));if(prior.status!=='RESOLVED'&&next.status==='RESOLVED'){const e=alertNotificationEvent(next,'RESOLVED',now);this.governanceMaps.notificationEvents.set(e.id,copy(e))}return copy(next)}
   async schedulerHealth(){return copy(this.schedulerState)}
   async recordSchedulerHealth(now:string,successful:boolean){this.schedulerState={initializedAt:this.schedulerState?.initializedAt??now,lastSuccessfulTickAt:successful?now:this.schedulerState?.lastSuccessfulTickAt};return copy(this.schedulerState)}
 
@@ -138,6 +152,26 @@ export class FirestoreStore implements Store {
     })
   }
 
+  async notificationWork(kind:'events',now:string,limit:number):Promise<NotificationEvent[]>
+  async notificationWork(kind:'deliveries',now:string,limit:number):Promise<NotificationDelivery[]>
+  async notificationWork(kind:'events'|'deliveries',now:string,limit:number):Promise<any[]> {
+    const query=kind==='events'?this.collection('notificationEvents').where('routed','==',false).limit(limit):this.collection('notificationDeliveries').where('nextAttemptAt','<=',now).orderBy('nextAttemptAt').limit(limit)
+    return (await query.get()).docs.map(d=>canonicalValue(d.data()))
+  }
+  async notificationHistory(alertId?:string,destinationId?:string,limit=50,cursor?:string){
+    let q=this.collection('notificationDeliveries').orderBy('__name__').limit(limit+1)
+    if(alertId)q=q.where('alertId','==',alertId)
+    if(destinationId)q=q.where('destinationId','==',destinationId)
+    if(cursor)q=q.startAfter(this.collection('notificationDeliveries').doc(pathId(cursor)))
+    const docs=(await q.get()).docs;return {items:docs.slice(0,limit).map(d=>canonicalValue(d.data()) as NotificationDelivery),scanned:Math.min(docs.length,limit),nextCursor:docs.length>limit?docs[limit-1].id:undefined}
+  }
+  async notificationHealth(now:string){
+    const c=this.collection('notificationDeliveries'),cutoff=new Date(Date.parse(now)-86400000).toISOString()
+    // Single-field queries avoid a deployment dependency on composite indexes.
+    const [pending,failed,last]=await Promise.all([c.where('state','in',['PENDING','RETRYING']).count().get(),c.where('updatedAt','>=',cutoff).get(),c.orderBy('deliveredAt','desc').limit(1).get()])
+    return {pending:pending.data().count,failed24h:failed.docs.filter(d=>d.data().state==='FAILED').length,lastSuccessfulAt:last.docs[0]?.data().deliveredAt??null}
+  }
+
   alert(id:string){return this.one<OperationalAlert>('operationalAlerts',id)}
   async alerts(activeOnly=false){if(!activeOnly)return this.all<OperationalAlert>('operationalAlerts');const docs=await this.collection('operationalAlerts').where('status','in',['OPEN','ACKNOWLEDGED']).get();return docs.docs.map(doc=>canonicalValue(doc.data()) as OperationalAlert)}
   async upsertAlert(input:AlertInput,now:string){
@@ -146,12 +180,12 @@ export class FirestoreStore implements Store {
       const ptr=await tx.get(pointer),priorId=ptr.data()?.alertId as string|undefined
       const doc=priorId?await tx.get(this.collection('operationalAlerts').doc(pathId(priorId))):undefined
       const next=openAlert(doc?.exists?canonicalValue(doc.data()) as OperationalAlert:undefined,input,now)
-      tx.set(this.collection('operationalAlerts').doc(pathId(next.id)),stored(next));tx.set(pointer,{alertId:next.id});return next
+      tx.set(this.collection('operationalAlerts').doc(pathId(next.id)),stored(next));tx.set(pointer,{alertId:next.id});if(!doc?.exists||(doc.data()?.status==='RESOLVED')){const e=alertNotificationEvent(next,'OPEN',now);tx.create(this.collection('notificationEvents').doc(e.id),stored(e))}return next
     })
   }
   async transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor){
     const ref=this.collection('operationalAlerts').doc(pathId(id))
-    return this.db.runTransaction(async tx=>{const doc=await tx.get(ref);if(!doc.exists)return;const next=transitionAlert(canonicalValue(doc.data()) as OperationalAlert,action,now,actor);tx.set(ref,stored(next));this.audit(tx,'operationalAlerts',id,next,canonicalValue(doc.data()));return next})
+    return this.db.runTransaction(async tx=>{const doc=await tx.get(ref);if(!doc.exists)return;const next=transitionAlert(canonicalValue(doc.data()) as OperationalAlert,action,now,actor);if(doc.data()?.status!=='RESOLVED'&&next.status==='RESOLVED'){const e=alertNotificationEvent(next,'RESOLVED',now);tx.create(this.collection('notificationEvents').doc(e.id),stored(e))}tx.set(ref,stored(next));this.audit(tx,'operationalAlerts',id,next,canonicalValue(doc.data()));return next})
   }
   schedulerHealth(){return this.one<SchedulerHealth>('operationalHealth','scheduler')}
   async recordSchedulerHealth(now:string,successful:boolean){const ref=this.collection('operationalHealth').doc('scheduler');return this.db.runTransaction(async tx=>{const doc=await tx.get(ref),state=doc.data() as SchedulerHealth|undefined;const next={initializedAt:state?.initializedAt??now,lastSuccessfulTickAt:successful?now:state?.lastSuccessfulTickAt};tx.set(ref,stored(next));return next})}

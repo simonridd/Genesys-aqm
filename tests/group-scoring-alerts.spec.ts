@@ -34,6 +34,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   if(p==='/api/reviews/weighted_record'&&m==='PUT'){review=buildReview(evaluation(),review,r.request().postDataJSON() as ReviewInput,actor,now);return r.fulfill({json:{item:review}})}
   if(p==='/api/calibration')return r.fulfill({json:aggregateCalibration([{...evaluation(),humanReview:review}])})
   if(p==='/api/alerts')return r.fulfill({json:{items:u.searchParams.get('status')==='ACTIVE'&&alert.status==='RESOLVED'?[]:[alert]}})
+  if(p.endsWith('/notifications'))return r.fulfill({json:{items:[]}})
   if(p.startsWith(`/api/alerts/${alert.id}/`)){alert=transitionAlert(alert,p.endsWith('/acknowledge')?'ACKNOWLEDGED':'RESOLVED',now,actor);return r.fulfill({json:{item:alert}})}
   if(p==='/api/monitoring-health')return r.fulfill({json:{...alertSummary([alert]),api:'healthy',firestore:'available',genesysAutomation:{status:'verified'},jev:{status:'verified'},scheduler:{status:'healthy',lastSuccessfulTickAt:now},lastRun:null,nextRunAt:null,runCounts:{completed:0,partial:1,failed:0}}})
   if(p==='/api/runs')return r.fulfill({json:{items:[]}})

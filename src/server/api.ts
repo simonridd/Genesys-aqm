@@ -1,3 +1,6 @@
+import { destinationInput, ruleInput, safeDestination, requestTest, notificationTick, type Providers } from './notifications'
+import { EmailProvider, WebhookProvider, secretManagerResolver } from './notificationProviders'
+import type { NotificationDestination, NotificationRule } from '../domain/notifications'
 import { randomUUID } from 'node:crypto'
 import { auditContext } from './audit'
 import { Forbidden, sessionAccess, requirePermission, governanceSettings, planPurge, executePurge, auditPage } from './governance'
@@ -45,7 +48,7 @@ async function schedulerAuthorized(request:IncomingMessage,config:ApiConfig){
   if(token.split('.').length!==3)return false
   try{const ticket=await oidc.verifyIdToken({idToken:token,audience:config.schedulerAudience});const p=ticket.getPayload();return p?.email===config.schedulerEmail&&p.email_verified===true}catch{return false}
 }
-export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=fetch){
+export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=fetch,notificationProviders?:Providers){
   const bootstrapId=config.bootstrapAdminId??(config.allowedUserIds.size===1?[...config.allowedUserIds][0]:undefined)
   if(config.allowedUserIds.size&&(!bootstrapId||!config.allowedUserIds.has(bootstrapId)))throw Error('Configure AQM_BOOTSTRAP_ADMIN_USER_ID as an allowlisted owner before enabling multiple users.')
   return createServer(async(request,response)=>{
@@ -54,9 +57,9 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
     if(request.method==='OPTIONS'){json(response,origin===config.origin?204:403,{});return}
     const url=new URL(request.url??'/',`http://${request.headers.host??'localhost'}`)
     if(url.pathname==='/health'&&request.method==='GET'){json(response,200,{status:'ok',schemaVersion:1});return}
-    if(url.pathname==='/internal/scheduler/tick'){
+    if(url.pathname==='/internal/scheduler/tick'||url.pathname==='/internal/notifications/tick'){
       if(request.method!=='POST'||!await schedulerAuthorized(request,config)){json(response,403,{error:'Forbidden'});return}
-      try{json(response,200,{outcomes:await schedulerTick(deps)})}catch{json(response,500,{error:'Scheduler tick failed.'})}return
+      try{const outcomes=url.pathname==='/internal/scheduler/tick'?await schedulerTick(deps):undefined;let notifications:unknown={status:'not_configured'};if(notificationProviders){try{notifications=await notificationTick(deps.store,notificationProviders,deps.now)}catch{notifications={status:'dispatch_failed'}}}json(response,200,{outcomes,notifications})}catch{json(response,500,{error:'Scheduler tick failed.'})}return
     }
     const actor=url.pathname.startsWith('/api/')?await browserAuthorized(request,config,fetcher).catch(()=>null):null
     if(!actor){json(response,401,{error:'Unauthorized'});return}
@@ -66,7 +69,8 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       if(request.method==='GET'&&path==='/api/session'){json(response,200,access);return}
       const rolePath=/^\/api\/roles\/([A-Za-z0-9_-]{1,100})$/.exec(path)
       let permission:Permission|undefined
-      if(path.startsWith('/api/roles'))permission='roles.manage'
+      if(path.startsWith('/api/notifications'))permission=request.method==='GET'?'notifications.read':path.endsWith('/test')?'notifications.test':'notifications.write'
+      else if(path.startsWith('/api/roles'))permission='roles.manage'
       else if(path.startsWith('/api/retention'))permission='retention.execute'
       else if(path==='/api/audit')permission='audit.read'
       else if(path==='/api/history')permission='history.read'
@@ -84,6 +88,30 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
        permission=path.startsWith('/api/forms')||path.startsWith('/api/form-tests')?'forms.read':path.startsWith('/api/question-groups')?'groups.read':path.startsWith('/api/policies')||path.startsWith('/api/schedules')?'policies.read':path.startsWith('/api/alerts')?'alerts.read':path.startsWith('/api/reviews')||path.startsWith('/api/calibration')?'reviews.read':'evaluations.read'
       }
       if(permission)requirePermission(access,permission)
+      if(path==='/api/notifications/health'&&request.method==='GET'){json(response,200,await deps.store.notificationHealth(deps.now().toISOString()));return}
+      if(path==='/api/notifications/deliveries'&&request.method==='GET'){
+       const q=url.searchParams,limit=Number(q.get('limit')??50),cursor=q.get('cursor')??undefined
+       if(!Number.isInteger(limit)||limit<1||limit>100||['alertId','destinationId','cursor'].some(k=>q.get(k)&&!id(q.get(k)!)))throw Error('Invalid notification pagination.')
+       const page=await deps.store.notificationHistory(q.get('alertId')??undefined,q.get('destinationId')??undefined,limit,cursor)
+       json(response,200,{...page,items:page.items.map(({payload,leaseOwner,...d})=>d)});return
+      }
+      if(path==='/api/notifications/destinations'&&request.method==='GET'){const page=await deps.store.query<NotificationDestination>('notificationDestinations',100);json(response,200,{...page,items:await Promise.all(page.items.map(async d=>({...safeDestination(d),lastDelivery:await deps.store.governanceRead('notificationDestinationHealth',d.id)})))});return}
+      if(path==='/api/notifications/rules'&&request.method==='GET'){json(response,200,await deps.store.query('notificationRules',50));return}
+      const notificationPath=/^\/api\/notifications\/(destinations|rules)\/([A-Za-z0-9_-]{1,100})(?:\/(test))?$/.exec(path)
+      if(notificationPath&&request.method==='POST'&&notificationPath[1]==='destinations'&&notificationPath[3]==='test'){const delivery=await requestTest(deps.store,notificationPath[2],deps.now().toISOString());json(response,202,{item:delivery});return}
+      if(notificationPath&&request.method==='PUT'&&!notificationPath[3]){
+       const collection=notificationPath[1]==='destinations'?'notificationDestinations':'notificationRules',prior=await deps.store.governanceRead<NotificationDestination|NotificationRule>(collection,notificationPath[2]),input=await body(request)
+       if(!obj(input)||input.id!==notificationPath[2])throw Error('Invalid notification identity.')
+       // Safe GET projection omits secret references. Omitted refs preserve existing ones on edit.
+       if(collection==='notificationDestinations'&&prior&&obj(input.configuration))input.configuration={...(prior as NotificationDestination).configuration,...input.configuration}
+       const item=collection==='notificationDestinations'?destinationInput(input,deps.now().toISOString(),prior as NotificationDestination|undefined):ruleInput(input,deps.now().toISOString(),prior as NotificationRule|undefined)
+       const catalogControl=await deps.store.governanceRead<{revision:number}>('notificationControl','catalog')
+       const catalog=await deps.store.query(collection,collection==='notificationRules'?51:101),limit=collection==='notificationRules'?50:100
+       if(!prior&&catalog.items.length>=limit)throw Error('Notification configuration limit reached.')
+       const guards:import('./store').AtomicWrite[]=[]
+       if(collection==='notificationRules')for(const destId of (item as NotificationRule).destinationIds){const d=await deps.store.governanceRead<NotificationDestination>('notificationDestinations',destId);if(!d)throw Error('Unknown notification destination.');guards.push({collection:'notificationDestinations',id:destId,expected:d,checkOnly:true})}
+       await deps.store.atomic([{collection:'notificationControl',id:'catalog',expected:catalogControl,value:{revision:(catalogControl?.revision??0)+1}},...guards,{collection,id:item.id,value:item,expected:prior}]);json(response,200,{item:collection==='notificationDestinations'?safeDestination(item as NotificationDestination):item});return
+      }
       if(request.method==='GET'&&path==='/api/roles'){json(response,200,await deps.store.query('roleAssignments',100,url.searchParams.get('cursor')??undefined));return}
       if(request.method==='PUT'&&rolePath){
        const v=await body(request);if(!obj(v)||!roles.includes(v.role as typeof roles[number]))throw Error('Invalid role.')
@@ -118,6 +146,14 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         }
         json(response,200,{items,nextCursor:more?nextCursor:undefined,scanned,scanLimited:scanned>=1000&&more});return
       }
+      const alertNotifications=/^\/api\/alerts\/([A-Za-z0-9_-]{1,100})\/notifications$/.exec(path)
+      if(alertNotifications&&request.method==='GET'){
+       const limit=Number(url.searchParams.get('limit')??50),cursor=url.searchParams.get('cursor')??undefined
+       if(!Number.isInteger(limit)||limit<1||limit>100||cursor&&!id(cursor))throw Error('Invalid notification pagination.')
+       const page=await deps.store.notificationHistory(alertNotifications[1],undefined,limit,cursor)
+       const items=await Promise.all(page.items.map(async d=>({id:d.id,destinationName:(await deps.store.governanceRead<NotificationDestination>('notificationDestinations',d.destinationId))?.name??'Retired destination',state:d.state,event:d.event,attemptCount:d.attemptCount,lastErrorCode:d.lastErrorCode})))
+       json(response,200,{...page,items});return
+      }
       const alertPath=/^\/api\/alerts\/([A-Za-z0-9_-]{1,100})(?:\/(acknowledge|resolve))?$/.exec(path)
       if(alertPath&&request.method==='GET'&&!alertPath[2]){const item=await deps.store.alert(alertPath[1]);json(response,item?200:404,item??{error:'Alert not found.'});return}
       if(alertPath&&request.method==='POST'&&alertPath[2]){const item=await deps.store.transitionAlert(alertPath[1],alertPath[2]==='acknowledge'?'ACKNOWLEDGED':'RESOLVED',deps.now().toISOString(),actor);json(response,item?200:404,item?{item}:{error:'Alert not found.'});return}
@@ -150,6 +186,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             const ordered=snapshot.recentRuns,latest=ordered[0]
             const recent=ordered.slice(0,20),latestScheduled=recent.find(run=>run.executionMode==='scheduled')
             const nextRun=schedules.filter(schedule=>schedule.enabled&&schedule.nextDueAt).sort((a,b)=>a.nextDueAt!.localeCompare(b.nextDueAt!))[0]
+            base.notifications=await deps.store.notificationHealth(deps.now().toISOString())
             base.firestore='available'
             base.runCounts=snapshot.runCounts
             base.lastRun=latest?{id:latest.id,policyName:latest.policySnapshot.name,status:latest.status,startedAt:latest.startedAt,completedAt:latest.completedAt,evaluationsSucceeded:latest.evaluationsSucceeded,evaluationsFailed:latest.evaluationsFailed}:null
@@ -260,6 +297,8 @@ export function startApi(){
   const alertConfig={minimumSample:Number(process.env.AQM_ALERT_MINIMUM_SAMPLE??defaultAlertConfig.minimumSample),minimumAvailability:Number(process.env.AQM_ALERT_MINIMUM_AVAILABILITY??defaultAlertConfig.minimumAvailability),schedulerToleranceMs:Number(process.env.AQM_SCHEDULER_TOLERANCE_MS??defaultAlertConfig.schedulerToleranceMs)}
   if(!Number.isInteger(alertConfig.minimumSample)||alertConfig.minimumSample<5||!Number.isFinite(alertConfig.minimumAvailability)||alertConfig.minimumAvailability<0||alertConfig.minimumAvailability>1||!Number.isFinite(alertConfig.schedulerToleranceMs)||alertConfig.schedulerToleranceMs<=0)throw Error('Invalid operational alert configuration.')
   const deps:RunnerDeps={store,alertConfig,genesys:new ClientCredentialsGenesys(region,process.env.GENESYS_CLIENT_ID!,process.env.GENESYS_CLIENT_SECRET!),jev:new DirectJev(process.env.JEV_API_KEY!),now:()=>new Date()}
-  const server=createApi(deps,{origin:process.env.AQM_ALLOWED_ORIGIN!,region,allowedUserIds:new Set((process.env.AQM_ALLOWED_GENESYS_USER_IDS??'').split(',').map(s=>s.trim()).filter(Boolean)),schedulerEmail:process.env.AQM_SCHEDULER_EMAIL!,schedulerAudience:process.env.AQM_SCHEDULER_AUDIENCE!,bootstrapAdminId:process.env.AQM_BOOTSTRAP_ADMIN_USER_ID})
+  const secrets=secretManagerResolver(process.env.GOOGLE_CLOUD_PROJECT??'genesys-aqm-2026')
+  const notificationProviders:Providers={WEBHOOK:new WebhookProvider(secrets),EMAIL:new EmailProvider(secrets)}
+  const server=createApi(deps,{origin:process.env.AQM_ALLOWED_ORIGIN!,region,allowedUserIds:new Set((process.env.AQM_ALLOWED_GENESYS_USER_IDS??'').split(',').map(s=>s.trim()).filter(Boolean)),schedulerEmail:process.env.AQM_SCHEDULER_EMAIL!,schedulerAudience:process.env.AQM_SCHEDULER_AUDIENCE!,bootstrapAdminId:process.env.AQM_BOOTSTRAP_ADMIN_USER_ID},fetch,notificationProviders)
   server.listen(Number(process.env.PORT??8080),'0.0.0.0')
 }
