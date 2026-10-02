@@ -37,3 +37,18 @@ export function analyticsReturnUrl(url:URL):URL {
 export function analyticsQuestionFilters(cohort:Record<string,string>,formRef:string,questionId:string):Record<string,string>{
  return {...Object.fromEntries(analyticsCohortKeys.map(key=>[key,cohort[key]??''])),form:formRef,question:questionId,cohort:'analytics'}
 }
+
+export const settingsSections = ['connection','access','reviews','privacy','notifications','audit','advanced'] as const
+export type SettingsSection = typeof settingsSections[number]
+export const settingsLabels:Record<SettingsSection,string> = {connection:'Connection',access:'Access',reviews:'Reviews',privacy:'Privacy & retention',notifications:'Notifications',audit:'Audit',advanced:'Advanced / Development'}
+export function settingsSection(query:URLSearchParams):SettingsSection {
+ const value=query.get('settingsSection')
+ return settingsSections.includes(value as SettingsSection)?value as SettingsSection:'connection'
+}
+/** Settings carries no conversation, evaluation, policy, run or analytics scope. */
+export function settingsUrl(url:URL,section:SettingsSection='connection'):URL {
+ const next=new URL(url)
+ for(const key of [...evaluationFilterKeys,...analyticsReturnKeys,'origin','runId','policyId','alertId','analyticsTab'])next.searchParams.delete(key)
+ next.hash='';next.searchParams.set('page','settings');next.searchParams.set('settingsSection',section)
+ return next
+}

@@ -25,3 +25,10 @@ describe('browser API source', () => {
   it('injects bearer token and handles 401 without leaking it', async () => { const fetcher=vi.fn(async()=>new Response('',{status:401}));vi.stubGlobal('fetch',fetcher);const source=new GenesysCloudConversationSource(()=>fakeSession);await expect(source.status()).resolves.toMatchObject({state:'error'});expect(new Headers((fetcher.mock.calls as unknown as Array<[unknown, RequestInit]>)[0]![1].headers).get('Authorization')).toBe('Bearer test-token');expect(JSON.stringify(await source.status())).not.toContain('test-token') })
   it('rejects expired sessions', async () => { const source=new GenesysCloudConversationSource(()=>null);await expect(source.load('00000000-0000-0000-0000-000000000000')).rejects.toThrow('Connect') })
 })
+it('retains a safe Settings section in the OAuth transaction and restores it after exchange',async()=>{
+ const assign=vi.fn();vi.stubGlobal('window',{location:{href:'https://simonridd.github.io/Genesys-aqm/?page=settings&settingsSection=connection',assign}})
+ await beginLogin(config,'settings');const transaction=JSON.parse(storage.getItem('genesys-aqm-pkce-transaction')!);expect(transaction.settingsSection).toBe('connection')
+ vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify({access_token:'fixture',token_type:'Bearer',expires_in:3600}))))
+ expect(await completeCallback(new URL(`https://simonridd.github.io/Genesys-aqm/?code=fixture&state=${transaction.state}`))).toBe('settings')
+ const restored=new URL((vi.mocked(history.replaceState).mock.calls.at(-1)![2]) as string);expect(restored.searchParams.get('settingsSection')).toBe('connection');expect(restored.searchParams.get('page')).toBe('settings');expect(restored.searchParams.has('code')).toBe(false)
+})

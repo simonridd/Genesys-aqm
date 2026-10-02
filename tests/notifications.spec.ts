@@ -26,6 +26,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   return r.fulfill({json:{items:[]}})
  })
  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+ if(role==='ADMIN'||role==='AUTHOR')await page.getByRole('navigation',{name:'Settings sections'}).getByRole('button',{name:'Notifications',exact:true}).click()
  const panel=page.getByRole('region',{name:'Notifications',exact:true}),nav=page.getByRole('navigation',{name:'Primary navigation'})
  if(role==='ADMIN'){
   await panel.getByRole('button',{name:'New destination',exact:true}).click();const form=panel.getByRole('form',{name:'Destination form'});await form.getByLabel('Destination name').fill('Operations webhook');await form.getByLabel('Webhook URL secret reference').fill('projects/genesys-aqm-2026/secrets/aqm-notification-test/versions/latest');await form.screenshot({path:`/private/tmp/aqm-v012-destination-${viewport.width}.png`});await form.getByRole('button',{name:'Save destination',exact:true}).click();await expect(panel.getByText('Notification destination saved.')).toBeVisible()

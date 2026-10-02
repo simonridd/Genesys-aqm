@@ -1,3 +1,4 @@
+import { settingsSection, settingsUrl, type SettingsSection } from './navigation'
 import { publicGenesysConfig } from './publicConfig'
 /** Browser-only Genesys Cloud code authorization with PKCE. */
 export const REDIRECT_URI = 'https://simonridd.github.io/Genesys-aqm/'
@@ -12,7 +13,7 @@ export const REGIONS = {
 export type Region = keyof typeof REGIONS
 export type AuthConfig = { region: Region; clientId: string }
 export type AuthSession = AuthConfig & { accessToken: string; expiresAt: number; userId?:string; organizationId?:string }
-type Transaction = AuthConfig & { verifier: string; state: string; createdAt: number; page: string; evaluationId?: string }
+type Transaction = AuthConfig & { verifier: string; state: string; createdAt: number; page: string; settingsSection?:SettingsSection; evaluationId?: string }
 const configKey = 'genesys-aqm-pkce-config'
 const transactionKey = 'genesys-aqm-pkce-transaction'
 let session: AuthSession | null = null
@@ -28,7 +29,7 @@ export function generateVerifier() { return randomUrlSafe(64) }
 export function generateState() { return randomUrlSafe(32) }
 export async function challenge(verifier: string): Promise<string> { if (!/^[A-Za-z0-9._~-]{43,128}$/.test(verifier)) throw new Error('Invalid PKCE verifier.'); const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier)); return btoa(String.fromCharCode(...new Uint8Array(digest))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '') }
 export function authorizationUrl(config: AuthConfig, codeChallenge: string, state: string, redirectUri = REDIRECT_URI) { if (!validRegion(config.region) || !/^[\w-]{8,128}$/.test(config.clientId) || !/^[A-Za-z0-9_-]{43}$/.test(codeChallenge) || !/^[A-Za-z0-9_-]{43}$/.test(state)) throw new Error('Invalid OAuth request.'); const url = new URL('/oauth/authorize', REGIONS[config.region].login); url.search = new URLSearchParams({ response_type: 'code', client_id: config.clientId, redirect_uri: redirectUri, code_challenge: codeChallenge, code_challenge_method: 'S256', state }).toString(); return url.toString() }
-export async function beginLogin(config: AuthConfig, page: string, redirectUri = REDIRECT_URI) { saveConfig(config); const verifier = generateVerifier(), state = generateState(); const url = authorizationUrl(config, await challenge(verifier), state, redirectUri); const evaluationId=new URL(window.location.href).searchParams.get('evaluationId');const transaction: Transaction = { ...config, verifier, state, createdAt: Date.now(), page,...(evaluationId&&/^[A-Za-z0-9_-]{1,180}$/.test(evaluationId)?{evaluationId}:{}) }; sessionStorage.setItem(transactionKey, JSON.stringify(transaction)); window.location.assign(url) }
+export async function beginLogin(config: AuthConfig, page: string, redirectUri = REDIRECT_URI) { saveConfig(config); const verifier = generateVerifier(), state = generateState(); const url = authorizationUrl(config, await challenge(verifier), state, redirectUri); const evaluationId=new URL(window.location.href).searchParams.get('evaluationId');const transaction: Transaction = { ...config, verifier, state, createdAt: Date.now(), page,...(page==='settings'?{settingsSection:settingsSection(new URL(window.location.href).searchParams)}:{}),...(evaluationId&&/^[A-Za-z0-9_-]{1,180}$/.test(evaluationId)?{evaluationId}:{}) }; sessionStorage.setItem(transactionKey, JSON.stringify(transaction)); window.location.assign(url) }
 export function parseCallback(url: URL): { code: string; state: string } | null { const params = url.searchParams; if (!params.has('code') && !params.has('error') && !params.has('state')) return null; if (params.has('error')) throw new Error('Genesys authorization was declined or failed.'); if (params.getAll('code').length !== 1 || params.getAll('state').length !== 1 || !params.get('code') || !params.get('state')) throw new Error('Invalid Genesys authorization response.'); return { code: params.get('code')!, state: params.get('state')! } }
 export function cleanCallbackUrl(url: URL) { const clean = new URL(url); for (const key of ['code','state','error','error_description','session_state']) clean.searchParams.delete(key); return clean.pathname + clean.search + clean.hash }
 export async function completeCallback(url = new URL(window.location.href), redirectUri = REDIRECT_URI): Promise<string | null> {
@@ -46,5 +47,6 @@ export async function completeCallback(url = new URL(window.location.href), redi
   session = { region: transaction.region, clientId: transaction.clientId, accessToken: data.access_token, expiresAt: Date.now() + data.expires_in! * 1000 }
   try { const reply=await fetch(`${REGIONS[session.region].api}/api/v2/users/me`,{headers:{Authorization:`Bearer ${session.accessToken}`}});if(reply.ok){const user=await reply.json() as {id?:string;organization?:{id?:string}};session.userId=user.id;session.organizationId=user.organization?.id} }catch{ /* Browsing remains available; cache requires a verified identity. */ }
   if(transaction.evaluationId&&/^[A-Za-z0-9_-]{1,180}$/.test(transaction.evaluationId)){const link=new URL(cleanCallbackUrl(url),url);link.searchParams.set('page','evaluations');link.searchParams.set('evaluationSource','server');link.searchParams.set('evaluationId',transaction.evaluationId);history.replaceState(null,'',link.pathname+link.search);return 'evaluations'}
+  if(transaction.page==='settings'){const query=new URLSearchParams({settingsSection:transaction.settingsSection??'connection'});history.replaceState(null,'',settingsUrl(new URL(cleanCallbackUrl(url),url),settingsSection(query)))}
   return transaction.page
 }

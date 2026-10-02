@@ -1,3 +1,6 @@
+import { SetupChecklist } from './SetupChecklist'
+import type { SavedCollection } from './useSavedConfiguration'
+import type { EvaluationForm } from './domain/types'
 import { loadPolicyCollection } from './domain/policyClient'
 import { usePermission } from './GovernancePanel'
 import { AlertsPanel } from './AlertsPanel'
@@ -13,9 +16,10 @@ const origin=(import.meta.env.VITE_AQM_API_ORIGIN??'').trim().replace(/\/$/,'')
 interface Snapshot {policies:InteractionPolicy[];schedules:Schedule[];runs:PolicyRun[]}
 const empty:Snapshot={policies:[],schedules:[],runs:[]}
 function localInput(date:Date){return new Date(date.getTime()-date.getTimezoneOffset()*60_000).toISOString().slice(0,16)}
-export function AutomationPanel({session,selectedPolicyId,onEditPolicy,onReview,onExplore,onAnalytics,onPage}:{session:AuthSession|null;selectedPolicyId:string|null;onEditPolicy:(id:string)=>void;onReview:(id:string)=>void;onExplore:OverviewActions['onExplore'];onAnalytics:OverviewActions['onAnalytics'];onPage:OverviewActions['onPage']}){
+export function AutomationPanel({savedForms,session,selectedPolicyId,onEditPolicy,onReview,onExplore,onAnalytics,onPage}:{savedForms:SavedCollection<EvaluationForm>;session:AuthSession|null;selectedPolicyId:string|null;onEditPolicy:(id:string)=>void;onReview:(id:string)=>void;onExplore:OverviewActions['onExplore'];onAnalytics:OverviewActions['onAnalytics'];onPage:OverviewActions['onPage']}){
   const canWrite=usePermission('policies.write')
   const refreshSequence=useRef(0)
+  const [configurationReady,setConfigurationReady]=useState(false)
   const [data,setData]=useState<Snapshot>(empty),[state,setState]=useState<'not-configured'|'disconnected'|'connected'|'error'>(origin?'disconnected':'not-configured')
   const [overview,setOverview]=useState<OverviewSnapshot|null>(null),[range,setRange]=useState<7|30>(7),[refreshing,setRefreshing]=useState(false),[overviewError,setOverviewError]=useState(''),[selectedAlert,setSelectedAlert]=useState<string|null>(null),[alertRequest,setAlertRequest]=useState(0)
   const manualRef=useRef<HTMLDetailsElement>(null),operationsRef=useRef<HTMLDetailsElement>(null)
@@ -34,10 +38,10 @@ export function AutomationPanel({session,selectedPolicyId,onEditPolicy,onReview,
   const refresh=async()=>{
     if(!origin||!session)return
     const request=++refreshSequence.current
-    setRefreshing(true);setOverviewError('')
+    setRefreshing(true);setOverviewError('');setConfigurationReady(false)
     const overviewRequest=call(`/api/overview?range=${range}`).then(snapshot=>{if(request!==refreshSequence.current)return;setOverview(snapshot as unknown as OverviewSnapshot);setState('connected')}).catch(error=>{if(request!==refreshSequence.current)return;setOverviewError(error instanceof Error?error.message:'Overview unavailable.');if(!overview)setState('error')}).finally(()=>{if(request===refreshSequence.current)setRefreshing(false)})
     const configCall=<T,>(path:string)=>call(path) as Promise<T>
-    const operationsRequest=Promise.all([loadPolicyCollection<InteractionPolicy>(configCall,'/api/policies'),loadPolicyCollection<Schedule>(configCall,'/api/schedules'),call('/api/runs?limit=100')]).then(([policies,schedules,runs])=>{if(request===refreshSequence.current)setData({policies,schedules,runs:runs.items as PolicyRun[]})}).catch(()=>{if(request===refreshSequence.current)setMessage('Detailed operations temporarily unavailable.')})
+    const operationsRequest=Promise.all([loadPolicyCollection<InteractionPolicy>(configCall,'/api/policies'),loadPolicyCollection<Schedule>(configCall,'/api/schedules'),call('/api/runs?limit=100')]).then(([policies,schedules,runs])=>{if(request===refreshSequence.current){setData({policies,schedules,runs:runs.items as PolicyRun[]});setConfigurationReady(true)}}).catch(()=>{if(request===refreshSequence.current)setMessage('Detailed operations temporarily unavailable.')})
     await Promise.all([overviewRequest,operationsRequest])
   }
   useEffect(()=>{setOverview(null);void refresh();return()=>{refreshSequence.current++}},[session?.accessToken,range])
@@ -52,6 +56,7 @@ export function AutomationPanel({session,selectedPolicyId,onEditPolicy,onReview,
   const visibleRun=runDetail?.id===selectedRun?runDetail:data.runs.find(item=>item.id===selectedRun)
   return <div className="page-content overview-page"><div className="page-heading"><div><div className="eyebrow">OPERATIONAL HOME</div><h1>Overview</h1><p>Quality, coverage and work requiring attention.</p><small>{overview?`Updated ${new Date(overview.generatedAt).toLocaleTimeString('en-GB',{timeZone:'Europe/London'})} · Europe/London`:'Durable operational data'}</small></div><div className="heading-actions"><label>Dashboard range<select value={range} onChange={e=>setRange(Number(e.target.value) as 7|30)}><option value={7}>7 days</option><option value={30}>30 days</option></select></label><button className="outline-button" disabled={refreshing||!session||!origin} onClick={()=>void refresh()}>{refreshing?'Refreshing…':'Refresh'}</button></div></div>
     {overviewError&&<p className="inline-error" role="alert">{overviewError}{overview?' · Showing the last successful snapshot.':''}</p>}
+    {session&&configurationReady&&savedForms.loaded&&!savedForms.loading&&overview?.recentRuns.complete&&overview.lastAutomatedRun.complete&&<SetupChecklist forms={savedForms.items} policies={data.policies} schedules={data.schedules} runs={[...data.runs.map(run=>({id:run.id,policyId:run.policyId,policyName:run.policySnapshot.name,status:run.status,startedAt:run.startedAt,trigger:run.executionMode??'manual',evaluationsSucceeded:run.evaluationsSucceeded,evaluationsFailed:run.evaluationsFailed})),...(overview.lastAutomatedRun.data?[overview.lastAutomatedRun.data]:[])]} onForms={()=>onPage('forms')} onPolicies={id=>id?onEditPolicy(id):onPage('policies')} onRuns={()=>{document.querySelector('[aria-label="Recent runs"]')?.scrollIntoView({block:'start'})}}/>}
     {overview&&<OverviewSummary data={overview} actions={{onEditPolicy,onReview,onExplore,onAnalytics,onPage,onRun:openRun,onAlert:openAlert}} onManual={()=>{manualRef.current?.setAttribute('open','');manualRef.current?.scrollIntoView({block:'start'})}}/>}
     {state==='connected'&&session&&origin&&<><details className="panel overview-manual" ref={manualRef} open={!!selectedPolicyId}><summary>Run a policy now</summary><p>Plan → preview → confirm → execute. Select a policy and inspect the plan before confirming a real evaluation.</p>
       <div className="browser-filters"><label>Server policy<select value={selected} onChange={e=>{setSelected(e.target.value);setPreview(null)}}><option value="">Select policy</option>{data.policies.map(p=><option key={p.id} value={p.id}>{p.name} · v{p.version??1}</option>)}</select></label></div>

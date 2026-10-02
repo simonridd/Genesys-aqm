@@ -1,0 +1,35 @@
+[WebServer] (node:51359) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 26 tests using 1 worker
+
+(node:51420) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1440 (618ms)
+  ✓   2 tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1440 (835ms)
+  ✓   3 tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1920 (645ms)
+  ✓   4 tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1920 (914ms)
+  ✓   5 tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 390 (554ms)
+  ✓   6 tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 390 (795ms)
+  ✓   7 tests/first-use-settings.spec.ts:60:68 › coherent Settings for ADMIN (305ms)
+  ✓   8 tests/first-use-settings.spec.ts:60:68 › coherent Settings for AUTHOR (306ms)
+  ✓   9 tests/first-use-settings.spec.ts:60:68 › coherent Settings for REVIEWER (259ms)
+  ✓  10 tests/first-use-settings.spec.ts:60:68 › coherent Settings for VIEWER (287ms)
+  ✓  11 tests/first-use-settings.spec.ts:67:34 › saved setup stage 0 (322ms)
+  ✓  12 tests/first-use-settings.spec.ts:67:34 › saved setup stage 1 (281ms)
+  ✓  13 tests/first-use-settings.spec.ts:67:34 › saved setup stage 2 (311ms)
+  ✓  14 tests/first-use-settings.spec.ts:67:34 › saved setup stage 3 (278ms)
+  ✓  15 tests/first-use-settings.spec.ts:67:34 › saved setup stage 4 (199ms)
+  ✓  16 tests/first-use-settings.spec.ts:73:1 › OAuth error returns to Connection with visible error (124ms)
+  ✓  17 tests/first-use-settings.spec.ts:74:229 › Settings deep link default (106ms)
+  ✓  18 tests/first-use-settings.spec.ts:74:229 › Settings deep link invalid (128ms)
+  ✓  19 tests/first-use-settings.spec.ts:74:229 › Settings deep link connection (136ms)
+  ✓  20 tests/first-use-settings.spec.ts:74:229 › Settings deep link access (138ms)
+  ✓  21 tests/first-use-settings.spec.ts:74:229 › Settings deep link reviews (107ms)
+  ✓  22 tests/first-use-settings.spec.ts:74:229 › Settings deep link privacy (142ms)
+  ✓  23 tests/first-use-settings.spec.ts:74:229 › Settings deep link notifications (105ms)
+  ✓  24 tests/first-use-settings.spec.ts:74:229 › Settings deep link audit (107ms)
+  ✓  25 tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback success (270ms)
+  ✓  26 tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback failure (278ms)
+
+  26 passed (9.5s)
