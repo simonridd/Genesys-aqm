@@ -1,0 +1,788 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1440,
+  "pageWidth": 1440,
+  "height": 2826,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Evaluation Forms"
+    },
+    {
+      "level": "H2",
+      "text": "General Customer Service"
+    },
+    {
+      "level": "H2",
+      "text": "Question groups"
+    },
+    {
+      "level": "H3",
+      "text": "Overall scoring"
+    },
+    {
+      "level": "H3",
+      "text": "Customer care"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Forms\nVIEWER\nJev managed securely by automation service\nCONFIGURATION\nEvaluation Forms\n\nPolicies pin published versions. Drafts can be tested without entering production analytics.\n\nTable\nCards\nStatus\nAll statuses\nDraft\nTesting\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nAssigned to policy\nUnassigned\nSearch\n6 results\nForm name ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nAssigned policies\n\t\nServer evaluations\n\t\nServer avg score\n\t\nLast modified\n\nSales / Service Quality\tPUBLISHED\tv1\t5\t1\t0\t—\t—\nRetention / Cancellation\tPUBLISHED\tv1\t5\t1\t0\t—\t—\nGeneral Customer Service\tPUBLISHED\tv17\t3\t5\t8\t66%\t—\nCustomer Service - AI Scoring\tPUBLISHED\tv1\t9\t0\t0\t—\t—\nCompliance & Identity Verification\tPUBLISHED\tv1\t5\t2\t0\t—\t—\nComplaints Handling\tPUBLISHED\tv1\t5\t1\t0\t—\t—\nPUBLISHED · VERSION 17\nGeneral Customer Service\nExport JSON\n\nThis version's question and scoring definition is locked. Historical evaluations retain its snapshot.\n\nForm name\nDescription\nPass score\n70%\nCritical questions\nWarm opening\nUnderstanding the issue\nResolution\nQuestion groups\n\nQuestion weights determine the overall score. Read-only published definition.\n\nAdd group\nAdd reusable group\nOverall scoring\nQuestion weighted\nGroup weighted\n\nQuestion weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.\n\nYes threshold65%\nCustomer care\n↑\n↓\nDuplicate group\nDelete group\nGroup name\nGroup description\nGroup scoring\nUse group scoring settings\n01\nWarm opening\nYes / No\n\nDid the agent greet the customer and offer help at the start of the conversation?\n\nWeight 1 · Enabled · ID greeting\n\n↑\n↓\nRead only\n02\nUnderstanding the issue\nOrdered score\n\nHow effectively did the agent establish and acknowledge the customer’s actual issue?\n\nWeight 1.2 · Enabled · ID understanding\n\nPoor (poor · credit 0)\nAbsent or counterproductive behaviour.\nNeeds improvement (needs_improvement · credit 0.33)\nSome appropriate behaviour, with clear gaps.\nGood (good · credit 0.67)\nAppropriate and effective behaviour with minor gaps.\nExcellent (excellent · credit 1)\nConsistently clear, effective and considerate behaviour.\n↑\n↓\nRead only\n03\nResolution\nMultiple choice\n\nWhat is the best description of the issue outcome by the end of the conversation?\n\nWeight 1.5 · Enabled · ID resolution\n\nFully resolved (fully_resolved · credit 1)\nThe customer’s issue was resolved in the conversation.\nPartially resolved (partially_resolved · credit 0.5)\nMeaningful progress, but further action remains.\nUnresolved (unresolved · credit 0)\nThe issue remained unresolved with no meaningful progress.\nNot applicable (not_applicable · credit unscored)\nThe conversation does not present a resolvable issue.\n↑\n↓\nRead only\nAdd question",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Table",
+      "top": 160.59375,
+      "left": 1253.96875,
+      "right": 1323.140625,
+      "width": 69.171875,
+      "height": 39,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Cards",
+      "top": 160.59375,
+      "left": 1323.140625,
+      "right": 1397,
+      "width": 73.859375,
+      "height": 39,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 434.59375,
+      "left": 285,
+      "right": 1397,
+      "width": 1112,
+      "height": 310,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Form name ↓",
+      "top": 435.59375,
+      "left": 286,
+      "right": 534.34375,
+      "width": 248.34375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 435.59375,
+      "left": 536.34375,
+      "right": 635.0625,
+      "width": 98.71875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Version ",
+      "top": 435.59375,
+      "left": 637.0625,
+      "right": 718.1875,
+      "width": 81.125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions ",
+      "top": 435.59375,
+      "left": 720.1875,
+      "right": 819.234375,
+      "width": 99.046875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Assigned policies ",
+      "top": 435.59375,
+      "left": 821.234375,
+      "right": 970,
+      "width": 148.765625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Server evaluations ",
+      "top": 435.59375,
+      "left": 972,
+      "right": 1127.21875,
+      "width": 155.21875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Server avg score ",
+      "top": 435.59375,
+      "left": 1129.21875,
+      "right": 1271.4375,
+      "width": 142.21875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Last modified ",
+      "top": 435.59375,
+      "left": 1273.4375,
+      "right": 1396,
+      "width": 122.5625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "SECTION",
+      "class": "form-detail",
+      "text": "",
+      "top": 767.59375,
+      "left": 284,
+      "right": 1398,
+      "width": 1114,
+      "height": 1977.90625,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Export JSON",
+      "top": 790.59375,
+      "left": 1279.28125,
+      "right": 1375,
+      "width": 95.71875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Add group",
+      "top": 1242.546875,
+      "left": 1149.15625,
+      "right": 1233.359375,
+      "width": 84.203125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Add reusable group",
+      "top": 1242.546875,
+      "left": 1243.359375,
+      "right": 1377,
+      "width": 133.640625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↑",
+      "top": 1600.21875,
+      "left": 1121.65625,
+      "right": 1145.65625,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↓",
+      "top": 1600.21875,
+      "left": 1155.65625,
+      "right": 1179.65625,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Duplicate group",
+      "top": 1595.21875,
+      "left": 1189.65625,
+      "right": 1303.921875,
+      "width": 114.265625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "danger-button",
+      "text": "Delete group",
+      "top": 1602.71875,
+      "left": 1313.921875,
+      "right": 1377,
+      "width": 63.078125,
+      "height": 19,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↑",
+      "top": 1865.53125,
+      "left": 1248.234375,
+      "right": 1272.234375,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↓",
+      "top": 1865.53125,
+      "left": 1277.234375,
+      "right": 1301.234375,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "edit-button",
+      "text": "Read only",
+      "top": 1864.03125,
+      "left": 1311.234375,
+      "right": 1381,
+      "width": 69.765625,
+      "height": 27,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↑",
+      "top": 2108.71875,
+      "left": 1248.234375,
+      "right": 1272.234375,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↓",
+      "top": 2108.71875,
+      "left": 1277.234375,
+      "right": 1301.234375,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "edit-button",
+      "text": "Read only",
+      "top": 2107.21875,
+      "left": 1311.234375,
+      "right": 1381,
+      "width": 69.765625,
+      "height": 27,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↑",
+      "top": 2483.90625,
+      "left": 1248.234375,
+      "right": 1272.234375,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "icon-button",
+      "text": "↓",
+      "top": 2483.90625,
+      "left": 1277.234375,
+      "right": 1301.234375,
+      "width": 24,
+      "height": 24,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "edit-button",
+      "text": "Read only",
+      "top": 2482.40625,
+      "left": 1311.234375,
+      "right": 1381,
+      "width": 69.765625,
+      "height": 27,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "add-row",
+      "text": "Add question",
+      "top": 2701.5,
+      "left": 284,
+      "right": 1398,
+      "width": 1114,
+      "height": 44,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "Sales / Service QualityPUBLISHEDv1510——",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Retention / CancellationPUBLISHEDv1510——",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "General Customer ServicePUBLISHEDv1735866%—",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Customer Service - AI ScoringPUBLISHEDv1900——",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Compliance & Identity VerificationPUBLISHEDv1520——",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Complaints HandlingPUBLISHEDv1510——",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1112,
+      "scrollWidth": 1112
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Table",
+      "disabled": false
+    },
+    {
+      "text": "Cards",
+      "disabled": false
+    },
+    {
+      "text": "Form name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Version ",
+      "disabled": false
+    },
+    {
+      "text": "Questions ",
+      "disabled": false
+    },
+    {
+      "text": "Assigned policies ",
+      "disabled": false
+    },
+    {
+      "text": "Server evaluations ",
+      "disabled": false
+    },
+    {
+      "text": "Server avg score ",
+      "disabled": false
+    },
+    {
+      "text": "Last modified ",
+      "disabled": false
+    },
+    {
+      "text": "Export JSON",
+      "disabled": false
+    },
+    {
+      "text": "Add group",
+      "disabled": true
+    },
+    {
+      "text": "Add reusable group",
+      "disabled": true
+    },
+    {
+      "text": "↑",
+      "disabled": true
+    },
+    {
+      "text": "↓",
+      "disabled": true
+    },
+    {
+      "text": "Duplicate group",
+      "disabled": true
+    },
+    {
+      "text": "Delete group",
+      "disabled": true
+    },
+    {
+      "text": "↑",
+      "disabled": true
+    },
+    {
+      "text": "↓",
+      "disabled": true
+    },
+    {
+      "text": "Read only",
+      "disabled": true
+    },
+    {
+      "text": "↑",
+      "disabled": true
+    },
+    {
+      "text": "↓",
+      "disabled": true
+    },
+    {
+      "text": "Read only",
+      "disabled": true
+    },
+    {
+      "text": "↑",
+      "disabled": true
+    },
+    {
+      "text": "↓",
+      "disabled": true
+    },
+    {
+      "text": "Read only",
+      "disabled": true
+    },
+    {
+      "text": "Add question",
+      "disabled": true
+    }
+  ],
+  "fields": [
+    {
+      "label": "Library status",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Library version",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Library usage",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Form name",
+      "type": null,
+      "disabled": false,
+      "readOnly": true
+    },
+    {
+      "label": "Description",
+      "type": null,
+      "disabled": false,
+      "readOnly": true
+    },
+    {
+      "label": "Pass score 70%",
+      "type": "range",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Warm opening",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Understanding the issue",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Resolution",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": " Question weighted",
+      "type": "radio",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": " Group weighted",
+      "type": "radio",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Yes threshold65%",
+      "type": "range",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Group name",
+      "type": null,
+      "disabled": false,
+      "readOnly": true
+    },
+    {
+      "label": "Group description",
+      "type": null,
+      "disabled": false,
+      "readOnly": true
+    },
+    {
+      "label": " Use group scoring settings",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Enable Warm opening",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Enable Understanding the issue",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Enable Resolution",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100",
+    "/api/governance",
+    "/api/analytics",
+    "/api/forms?limit=100"
+  ],
+  "errors": []
+}

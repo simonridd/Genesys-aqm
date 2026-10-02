@@ -1,0 +1,62 @@
+[
+  {
+    "tag": "BUTTON",
+    "text": "Name ↓",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Status ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Version ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Questions ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Used by forms ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Last modified ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "Save starter library to server",
+    "aria": null
+  },
+  {
+    "tag": "BODY",
+    "text": "G·Genesys AQMQUALITY INTELLIGENCEMONITOR◌OverviewQUALITY◷Evaluations▥Analytics◎CalibrationCONFIGURATION◇Policies▤Evaluation Forms▦Question Groups⚙SettingsINTERACTIONS☷Conversations◈Conversation review✦Powered by JevTyped AI decisions, shaped into clear quality signals.V0.17 OPERATIONAL OVERVIEW • 2026Workspace / GroupsADMINJev managed securely by automation serviceREAL ORGANIZATIONAL DATACompleted interactionsBrowse a small, recent window. Transcripts are loaded only when you open an interaction.TableCardsConnection settingsFromToQueue IDAgent IDChannelAnyMessagingChatEmailVoiceDirectionAnyInboundOutboundSearch completed interactions0 shown · page 1 · 0 reported by Genesys. Only completed interactions appear.Search0 resultsTimestamp ↓Conversation ID Source Channel Agent Queue Direction Topic Transcript Search completed interactions to see results.← PreviousNext →CONFIGURATIONQuestion GroupsVersioned reusable templates. Forms retain independent snapshots.Import reusable groupNew group assetStatusAll statusesDraftPublishedRetiredVersionAll versionsLatest version per familyUsageAll usageUsedUnusedSearch4 resultsName ↓Status Version Questions Used by forms Last modified Resolution & Next StepsPUBLISHEDv13010/1/2026Identity & Security VerificationPUBLISHEDv13010/1/2026Customer Experience / EmpathyPUBLISHEDv13010/1/2026Call ClosingPUBLISHEDv12010/1/2026Save starter library to server\n",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "◌Overview",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "◷Evaluations",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "▥Analytics",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "text": "◎Calibration",
+    "aria": null
+  }
+]

@@ -1,0 +1,1168 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1920,
+  "pageWidth": 1920,
+  "height": 5500,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Governance"
+    },
+    {
+      "level": "H2",
+      "text": "Privacy & data inventory"
+    },
+    {
+      "level": "H2",
+      "text": "Review reminders"
+    },
+    {
+      "level": "H2",
+      "text": "Server retention"
+    },
+    {
+      "level": "H2",
+      "text": "Retention preview & purge"
+    },
+    {
+      "level": "H2",
+      "text": "Role administration"
+    },
+    {
+      "level": "H2",
+      "text": "Audit history"
+    },
+    {
+      "level": "H2",
+      "text": "Notifications"
+    },
+    {
+      "level": "H3",
+      "text": "Destinations"
+    },
+    {
+      "level": "H3",
+      "text": "Rules"
+    },
+    {
+      "level": "H3",
+      "text": "Delivery history"
+    },
+    {
+      "level": "H1",
+      "text": "Settings"
+    },
+    {
+      "level": "H2",
+      "text": "Automation service"
+    },
+    {
+      "level": "H2",
+      "text": "Browser Jev evaluation key"
+    },
+    {
+      "level": "H2",
+      "text": "Cached Genesys data"
+    },
+    {
+      "level": "H2",
+      "text": "Genesys Cloud"
+    },
+    {
+      "level": "H2",
+      "text": "Reset demo data and history"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Settings\nADMIN\nJev managed securely by automation service\nCONFIGURATION & PRIVACY\nGovernance\n\nAccess, change history and safe data retention.\n\nPrivacy & data inventory\n\nStored server-side: EvaluationRecords, form snapshots, PolicyRuns, HumanReviews, alerts, role assignments, audit events and configuration.\n\nNot stored server-side: raw voice transcripts, raw email bodies, raw message transcripts, Genesys OAuth tokens, signed media URLs or raw EML/ZIP.\n\nBrowser only: normalized conversation content, with the configured cache lifetime. Search results have an independent short lifetime.\n\nBrowser sandbox evaluation history is separate. Clear or reset it using the existing browser controls.\n\nBrowser conversation cache hours\n\n0 disables persistent conversation content. Default: 24 hours.\n\nClear cached conversation content now\nReview reminders\n\nOnly reviews with an explicit due date are monitored.\n\nDue soon hours\nHours before due time\nNo escalation\nEscalation hours\nHours after due time\nSave review reminders\nRefresh review SLA state\nServer retention\n\nBlank means retain indefinitely. Saving settings never deletes data. Evaluation purges also remove their dependent reviews. Active alerts are retained.\n\nEvaluation retention days\nReview retention days\nPolicy run retention days\nResolved alert retention days\nAudit retention days\nNotification delivery retention days\nSave governance settings\nRetention preview & purge\n\nPreview uses saved settings. Each window scans at most 300 records. Counts below apply to this window; continue for more records.\n\nPreview retention\nRole administration\n\nAssignments use Genesys user IDs from the server allowlist. The configured bootstrap owner retains ADMIN access.\n\nGenesys user ID\nAssigned role\nADMIN\nAUTHOR\nREVIEWER\nVIEWER\nAssign role\nSearch\n0 results\nUser ↓\n\t\nRole\n\t\nUpdated\n\nNo records match these filters.\n\nAudit history\nAudit from\nAudit to\nActor user ID\nResource type\nAudit action\nLoad audit history\nSearch\n0 results\nTime ↓\n\t\nActor\n\t\nAction\n\t\nResource\n\t\nSummary\n\nNo records match these filters.\n\nNotifications\nRefresh notifications\n\nRoute new operational alerts to email or HTTPS webhooks. Delivery runs after each scheduler tick; existing alerts are not backfilled.\n\nDestinations\nNew destination\nSearch\n1 results\nName ↓\n\t\nType\n\t\nStatus\n\t\nLast delivery\n\t\nActions\n\nOperations webhook\tWEBHOOK\tEnabled\t—\t\nEdit Operations webhook\nSend test to Operations webhook\nRules\nNew rule\nSearch\n0 results\nName ↓\n\t\nSeverity\n\t\nAlert types\n\t\nDestinations\n\t\nStatus\n\t\nActions\n\nNo notification rules configured.\n\nDelivery history\nSearch\n0 results\nDestination ↓\n\t\nEvent\n\t\nState\n\t\nAttempts\n\t\nUpdated\n\t\nError code\n\nNo notification deliveries yet.\n\nCONNECTION & PRIVACY\nSettings\n\nConnect Genesys Cloud to browse interactions and use the trusted automation service.\n\nAutomation service\n\nJev managed securely by automation service. Connect Genesys Cloud to authorize production evaluation.\n\nLegacy browser sandbox (local development)\nCached Genesys data\n\nLocal to this browser. Search snapshots last 15 minutes; completed conversation content uses the lifetime configured in Governance (24 hours by default). An active Genesys session is required to view cached data. Disconnect clears that identity's cache.\n\n0 cached searches · 0 cached transcripts\n\nClear cached Genesys data\nG\nREAL ORGANIZATIONAL DATA\nGenesys Cloud\nConnected\nGenesys Cloud sign-in\n\nAuthentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.\n\nRegion\nEU (Ireland)\nEU (Frankfurt)\nUS East\nUS West\nAustralia\nJapan\nOAuth Client ID\n\nRedirect URI: https://simonridd.github.io/Genesys-aqm/\n\nRegion: EU (Ireland) · Session expires 2:00:00 PM\n\nVerify connection\nDisconnect\n◎\nTrusted evaluation\n\nProduction evaluations go through Cloud Run. Jev credentials stay on the server.\n\n▤\nYour forms\n\nDraft edits stay in this browser until you choose Save changes. When connected, Save changes persists the draft to the automation service. Form questions are sent to Jev only when you evaluate.\n\n← Back to conversation review\nReset demo data and history\n\nRestore seeded forms and policies and clear all browser-local evaluation records.\n\nReset demo data / history",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear cached conversation content now",
+      "top": 556.484375,
+      "left": 393,
+      "right": 636.453125,
+      "width": 243.453125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Save review reminders",
+      "top": 909.1875,
+      "left": 393,
+      "right": 546.546875,
+      "width": 153.546875,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh review SLA state",
+      "top": 909.1875,
+      "left": 562.546875,
+      "right": 723.453125,
+      "width": 160.90625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Save governance settings",
+      "top": 1365.890625,
+      "left": 393,
+      "right": 563.03125,
+      "width": 170.03125,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Preview retention",
+      "top": 1568.59375,
+      "left": 393,
+      "right": 516.109375,
+      "width": 123.109375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Assign role",
+      "top": 1826.296875,
+      "left": 1318.328125,
+      "right": 1762.984375,
+      "width": 444.65625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 2014.296875,
+      "left": 394,
+      "right": 1768,
+      "width": 1374,
+      "height": 54,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "User ↓",
+      "top": 2019.296875,
+      "left": 395,
+      "right": 860.59375,
+      "width": 465.59375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Role ",
+      "top": 2019.296875,
+      "left": 862.59375,
+      "right": 1230.890625,
+      "width": 368.296875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Updated ",
+      "top": 2019.296875,
+      "left": 1232.890625,
+      "right": 1767,
+      "width": 534.109375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Load audit history",
+      "top": 2534,
+      "left": 393,
+      "right": 518.609375,
+      "width": 125.609375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 2704,
+      "left": 394,
+      "right": 1768,
+      "width": 1374,
+      "height": 54,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Time ↓",
+      "top": 2709,
+      "left": 395,
+      "right": 658.875,
+      "width": 263.875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Actor ",
+      "top": 2709,
+      "left": 660.875,
+      "right": 890.453125,
+      "width": 229.578125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Action ",
+      "top": 2709,
+      "left": 892.453125,
+      "right": 1142.90625,
+      "width": 250.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Resource ",
+      "top": 2709,
+      "left": 1144.90625,
+      "right": 1452.171875,
+      "width": 307.265625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Summary ",
+      "top": 2709,
+      "left": 1454.171875,
+      "right": 1767,
+      "width": 312.828125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh notifications",
+      "top": 2986.796875,
+      "left": 1629.453125,
+      "right": 1769,
+      "width": 139.546875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "New destination",
+      "top": 3057.796875,
+      "left": 1649.21875,
+      "right": 1769,
+      "width": 119.78125,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3204.515625,
+      "left": 394,
+      "right": 1768,
+      "width": 1374,
+      "height": 107,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Name ↓",
+      "top": 3205.515625,
+      "left": 395,
+      "right": 642.4375,
+      "width": 247.4375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Type ",
+      "top": 3205.515625,
+      "left": 644.4375,
+      "right": 792.6875,
+      "width": 148.25,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 3205.515625,
+      "left": 794.6875,
+      "right": 917.078125,
+      "width": 122.390625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Last delivery ",
+      "top": 3205.515625,
+      "left": 919.078125,
+      "right": 1098.859375,
+      "width": 179.78125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Actions ",
+      "top": 3205.515625,
+      "left": 1100.859375,
+      "right": 1767,
+      "width": 666.140625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Edit Operations webhook",
+      "top": 3263.515625,
+      "left": 1113.859375,
+      "right": 1278.109375,
+      "width": 164.25,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Send test to Operations webhook",
+      "top": 3263.515625,
+      "left": 1288.109375,
+      "right": 1496.4375,
+      "width": 208.328125,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "New rule",
+      "top": 3328.515625,
+      "left": 1690.09375,
+      "right": 1769,
+      "width": 78.90625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3475.234375,
+      "left": 394,
+      "right": 1768,
+      "width": 1374,
+      "height": 46,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Name ↓",
+      "top": 3476.234375,
+      "left": 395,
+      "right": 606.4375,
+      "width": 211.4375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Severity ",
+      "top": 3476.234375,
+      "left": 608.4375,
+      "right": 822.109375,
+      "width": 213.671875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Alert types ",
+      "top": 3476.234375,
+      "left": 824.109375,
+      "right": 1086.25,
+      "width": 262.140625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Destinations ",
+      "top": 3476.234375,
+      "left": 1088.25,
+      "right": 1374.65625,
+      "width": 286.40625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 3476.234375,
+      "left": 1376.65625,
+      "right": 1561.390625,
+      "width": 184.734375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Actions ",
+      "top": 3476.234375,
+      "left": 1563.390625,
+      "right": 1767,
+      "width": 203.609375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3755.953125,
+      "left": 394,
+      "right": 1768,
+      "width": 1374,
+      "height": 46,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Destination ↓",
+      "top": 3756.953125,
+      "left": 395,
+      "right": 704.890625,
+      "width": 309.890625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Event ",
+      "top": 3756.953125,
+      "left": 706.890625,
+      "right": 879.25,
+      "width": 172.359375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "State ",
+      "top": 3756.953125,
+      "left": 881.25,
+      "right": 1048.828125,
+      "width": 167.578125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Attempts ",
+      "top": 3756.953125,
+      "left": 1050.828125,
+      "right": 1287.46875,
+      "width": 236.640625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Updated ",
+      "top": 3756.953125,
+      "left": 1289.46875,
+      "right": 1512.265625,
+      "width": 222.796875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Error code ",
+      "top": 3756.953125,
+      "left": 1514.265625,
+      "right": 1767,
+      "width": 252.734375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Save key",
+      "top": 4626.234375,
+      "left": 588,
+      "right": 667,
+      "width": 79,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear key",
+      "top": 4626.234375,
+      "left": 676,
+      "right": 754.109375,
+      "width": 78.109375,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear cached Genesys data",
+      "top": 4438.359375,
+      "left": 564,
+      "right": 739.96875,
+      "width": 175.96875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "settings-card panel genesys-settings",
+      "text": "",
+      "top": 4491.359375,
+      "left": 563,
+      "right": 1599,
+      "width": 1036,
+      "height": 429.59375,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Verify connection",
+      "top": 4857.953125,
+      "left": 588,
+      "right": 716.0625,
+      "width": 128.0625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Disconnect",
+      "top": 4842.953125,
+      "left": 725.0625,
+      "right": 814.6875,
+      "width": 89.625,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "← Back to conversation review",
+      "top": 5093.953125,
+      "left": 563,
+      "right": 728.40625,
+      "width": 165.40625,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "danger-button",
+      "text": "Reset demo data / history",
+      "top": 5347.859375,
+      "left": 586,
+      "right": 712.453125,
+      "width": 126.453125,
+      "height": 19,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [
+    {
+      "width": 1374,
+      "scrollWidth": 1374
+    },
+    {
+      "width": 1374,
+      "scrollWidth": 1374
+    },
+    {
+      "width": 1374,
+      "scrollWidth": 1374
+    },
+    {
+      "width": 1374,
+      "scrollWidth": 1374
+    },
+    {
+      "width": 1374,
+      "scrollWidth": 1374
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Clear cached conversation content now",
+      "disabled": false
+    },
+    {
+      "text": "Save review reminders",
+      "disabled": false
+    },
+    {
+      "text": "Refresh review SLA state",
+      "disabled": false
+    },
+    {
+      "text": "Save governance settings",
+      "disabled": false
+    },
+    {
+      "text": "Preview retention",
+      "disabled": false
+    },
+    {
+      "text": "Assign role",
+      "disabled": true
+    },
+    {
+      "text": "User ↓",
+      "disabled": false
+    },
+    {
+      "text": "Role ",
+      "disabled": false
+    },
+    {
+      "text": "Updated ",
+      "disabled": false
+    },
+    {
+      "text": "Load audit history",
+      "disabled": false
+    },
+    {
+      "text": "Time ↓",
+      "disabled": false
+    },
+    {
+      "text": "Actor ",
+      "disabled": false
+    },
+    {
+      "text": "Action ",
+      "disabled": false
+    },
+    {
+      "text": "Resource ",
+      "disabled": false
+    },
+    {
+      "text": "Summary ",
+      "disabled": false
+    },
+    {
+      "text": "Refresh notifications",
+      "disabled": false
+    },
+    {
+      "text": "New destination",
+      "disabled": false
+    },
+    {
+      "text": "Name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Type ",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Last delivery ",
+      "disabled": false
+    },
+    {
+      "text": "Actions ",
+      "disabled": false
+    },
+    {
+      "text": "Edit Operations webhook",
+      "disabled": false
+    },
+    {
+      "text": "Send test to Operations webhook",
+      "disabled": false
+    },
+    {
+      "text": "New rule",
+      "disabled": false
+    },
+    {
+      "text": "Name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Severity ",
+      "disabled": false
+    },
+    {
+      "text": "Alert types ",
+      "disabled": false
+    },
+    {
+      "text": "Destinations ",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Actions ",
+      "disabled": false
+    },
+    {
+      "text": "Destination ↓",
+      "disabled": false
+    },
+    {
+      "text": "Event ",
+      "disabled": false
+    },
+    {
+      "text": "State ",
+      "disabled": false
+    },
+    {
+      "text": "Attempts ",
+      "disabled": false
+    },
+    {
+      "text": "Updated ",
+      "disabled": false
+    },
+    {
+      "text": "Error code ",
+      "disabled": false
+    },
+    {
+      "text": "Save key",
+      "disabled": true
+    },
+    {
+      "text": "Clear key",
+      "disabled": true
+    },
+    {
+      "text": "Clear cached Genesys data",
+      "disabled": false
+    },
+    {
+      "text": "Verify connection",
+      "disabled": false
+    },
+    {
+      "text": "Disconnect",
+      "disabled": false
+    },
+    {
+      "text": "← Back to conversation review",
+      "disabled": false
+    },
+    {
+      "text": "Reset demo data / history",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Browser conversation cache hours",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Due soon hours",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "No escalation",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Escalation hours",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Evaluation retention days",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Review retention days",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Policy run retention days",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Resolved alert retention days",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Audit retention days",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Notification delivery retention days",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Genesys user ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Assigned roleADMINAUTHORREVIEWERVIEWER",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Audit from",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Audit to",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Actor user ID",
+      "type": "text",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Resource type",
+      "type": "text",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Audit action",
+      "type": "text",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "TypeSafe Jev API key",
+      "type": "password",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "RegionEU (Ireland)EU (Frankfurt)US EastUS WestAustraliaJapan",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "OAuth Client ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/analytics",
+    "/api/forms?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/governance",
+    "/api/notifications/destinations",
+    "/api/notifications/rules",
+    "/api/notifications/deliveries",
+    "/api/roles"
+  ],
+  "errors": []
+}

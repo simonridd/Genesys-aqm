@@ -1,0 +1,425 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=calibration",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1440,
+  "pageWidth": 1440,
+  "height": 910,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Calibration"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Calibration\nADMIN\nJev managed securely by automation service\nHUMAN + AI\nCalibration\n\nCompare completed human reviews with the original AI evaluations.\n\nCalibration source\nReal Genesys only\nSynthetic only\nAll sources\nUploaded only\nUnknown provenance\nCalibration form @ version\nCalibration agent\nCalibration queue\nCalibration from\nCalibration to\n\nDiagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs.\n\nEvaluations reviewed\n1\nQuestions reviewed\n3\nExact agreement\n33%\nMean absolute score gap\n16.0 pp\nUnresolved reviews\n4\n0 in progress\nForm / version\nGroups\nQuestions\nQuestion types\nConfidence vs disagreement\nSearch\n1 results\nDimension ↓\n\t\nReviews\n\t\nQuestions\n\t\nExact agreement\n\t\nDisagreements\n\t\nMean score gap\n\nGeneral Customer Service v17\t1\t3\t33%\t2\t16.0 pp",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Form / version",
+      "top": 575.59375,
+      "left": 284,
+      "right": 441.609375,
+      "width": 157.609375,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Groups",
+      "top": 575.59375,
+      "left": 449.609375,
+      "right": 553.0625,
+      "width": 103.453125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions",
+      "top": 575.59375,
+      "left": 561.0625,
+      "right": 686.8125,
+      "width": 125.75,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Question types",
+      "top": 575.59375,
+      "left": 694.8125,
+      "right": 861.015625,
+      "width": 166.203125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Confidence vs disagreement",
+      "top": 575.59375,
+      "left": 869.015625,
+      "right": 1139.8125,
+      "width": 270.796875,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 722.59375,
+      "left": 285,
+      "right": 1397,
+      "width": 1112,
+      "height": 90,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Dimension ↓",
+      "top": 723.59375,
+      "left": 286,
+      "right": 612.484375,
+      "width": 326.484375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Reviews ",
+      "top": 723.59375,
+      "left": 614.484375,
+      "right": 723.9375,
+      "width": 109.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions ",
+      "top": 723.59375,
+      "left": 725.9375,
+      "right": 853.6875,
+      "width": 127.75,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Exact agreement ",
+      "top": 723.59375,
+      "left": 855.6875,
+      "right": 1043.8125,
+      "width": 188.125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Disagreements ",
+      "top": 723.59375,
+      "left": 1045.8125,
+      "right": 1217,
+      "width": 171.1875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Mean score gap ",
+      "top": 723.59375,
+      "left": 1219,
+      "right": 1396,
+      "width": 177,
+      "height": 43,
+      "inTable": true
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "General Customer Service v171333%216.0 pp",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1112,
+      "scrollWidth": 1112
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Form / version",
+      "disabled": false
+    },
+    {
+      "text": "Groups",
+      "disabled": false
+    },
+    {
+      "text": "Questions",
+      "disabled": false
+    },
+    {
+      "text": "Question types",
+      "disabled": false
+    },
+    {
+      "text": "Confidence vs disagreement",
+      "disabled": false
+    },
+    {
+      "text": "Dimension ↓",
+      "disabled": false
+    },
+    {
+      "text": "Reviews ",
+      "disabled": false
+    },
+    {
+      "text": "Questions ",
+      "disabled": false
+    },
+    {
+      "text": "Exact agreement ",
+      "disabled": false
+    },
+    {
+      "text": "Disagreements ",
+      "disabled": false
+    },
+    {
+      "text": "Mean score gap ",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Calibration sourceReal Genesys onlySynthetic onlyAll sourcesUploaded onlyUnknown provenance",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Calibration form @ version",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Calibration agent",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Calibration queue",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Calibration from",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Calibration to",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud"
+  ],
+  "errors": []
+}

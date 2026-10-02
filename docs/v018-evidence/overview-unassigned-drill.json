@@ -1,0 +1,862 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&evaluationSource=server&assignment=unassigned",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1440,
+  "pageWidth": 1440,
+  "height": 2288,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Evaluations"
+    },
+    {
+      "level": "H2",
+      "text": "Review workload"
+    },
+    {
+      "level": "H2",
+      "text": "Select a calibration sample"
+    },
+    {
+      "level": "H2",
+      "text": "Bulk assignment"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Evaluations\nADMIN\nJev managed securely by automation service\nQUALITY\nEvaluations\n\nProduction results with form snapshots and provider provenance.\n\nReview workload\n\nOpen reviews across the server, including unassigned work.\n\nMy review queue\nUnassigned requested reviews (1)\n\nComplete server summary · 10/2/2026, 1:00:00 PM\n\nadmin\nAssigned open\n3\nRequested\n3\nIn review\n0\nDue soon\n1\nOverdue\n1\nEscalated\n1\nUnassigned\nAssigned open\n1\nRequested\n1\nIn review\n0\nDue soon\n0\nOverdue\n0\nEscalated\n0\nHistory\nServer\nThis browser\nReview status\nAll\nNOT REVIEWED\nREVIEW REQUESTED\nIN REVIEW\nREVIEWED\nAssignment\nAll\nUnassigned\nAssigned\nAssigned to me\nOwner\nSLA state\nAll states\nDue soon\nOverdue\nEscalated\nDue\nAll\nOverdue\nDue today\nDue next 7 days\nNo due date\nForm ID @ version\nAgent\nQueue\nResult\nAll\nPass\nFail\nQuestion failures\nFrom\nTo\nPolicy ID\nSource\nAll\nGenesys Cloud\nSynthetic\nUploaded\nTrigger\nAll\nManual\nScheduled\nCritical failure\nAll\nYes\nNo\nRefresh\n\nServer filters scan a bounded window of up to 500 records per request. Use Next to continue the search.\n\nSelect a calibration sample\n\nMark existing, unreviewed evaluations. Source: genesys-cloud; uses form, agent, queue and date filters above.\n\nSample size\nSelection\nMost recent\nDeterministic sample\nAssign sample to\nLeave unassigned\nOwner · ADMIN\nSample due date\nRequest sample\nBulk assignment\n\n0 selected · maximum 20 · requested, in-progress or unreviewed evaluations; due dates require an active review\n\nBulk assign to\nSelect reviewer\nOwner · ADMIN\nBulk due date\nAssign 0 reviews\nSet due date\nClear due date\nClear selection\nSearch\n5 results\nEvaluated ↓\n\t\nSelect\n\t\nConversation\n\t\nAgent\n\t\nQueue\n\t\nForm\n\t\nSource\n\t\nAI score\n\t\nReview\n\t\nHuman score\n\t\nAgreement\n\t\nAssigned to\n\t\nDue\n\t\nReviewer\n\t\nReviewed at\n\n10/1/2026, 11:00:00 AM\t\tconversation-recent\tFixture Agent\tCustomer care\tGeneral Customer Service v17\tgenesys-cloud\t80%\tNOT_REVIEWED\t—\t—\tUnassigned\t\nNo due date\n\t—\t—\n10/1/2026, 9:00:00 AM\t\tfixture-conversation\tFixture Agent\tCustomer care\tGeneral Customer Service v17\tgenesys-cloud\t78%\tREVIEWED\t62%\t1/3\tUnassigned\t\nCompleted\n\tadmin\t10/2/2026, 1:00:00 PM\n9/15/2026, 11:00:00 AM\t\tconversation-older\tFixture Agent\tCustomer care\tGeneral Customer Service v17\tgenesys-cloud\t40%\tNOT_REVIEWED\t—\t—\tUnassigned\t\nNo due date\n\t—\t—\n8/1/2026, 1:00:00 PM\t\tfixture-conversation\tFixture Agent\tCustomer care\tGeneral Customer Service v17\tgenesys-cloud\t78%\tREVIEW_REQUESTED\t—\t0/3\tUnassigned\t10/5/2026, 1:00:00 PM\nDue in 3 days\n\t—\t—\n8/1/2026, 11:00:00 AM\t\tconversation-ancient\tFixture Agent\tCustomer care\tGeneral Customer Service v17\tgenesys-cloud\t20%\tNOT_REVIEWED\t—\t—\tUnassigned\t\nNo due date\n\t—\t—\nFirst page\nNext server page →",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "My review queue",
+      "top": 272.59375,
+      "left": 1033.515625,
+      "right": 1156.578125,
+      "width": 123.0625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Unassigned requested reviews (1)",
+      "top": 272.59375,
+      "left": 1166.578125,
+      "right": 1375,
+      "width": 208.421875,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh",
+      "top": 1039.59375,
+      "left": 666.328125,
+      "right": 1015.65625,
+      "width": 349.328125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Request sample",
+      "top": 1283.15625,
+      "left": 307,
+      "right": 421.265625,
+      "width": 114.265625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Assign 0 reviews",
+      "top": 1521.0625,
+      "left": 1020.328125,
+      "right": 1354.984375,
+      "width": 334.65625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Set due date",
+      "top": 1571.0625,
+      "left": 327,
+      "right": 661.65625,
+      "width": 334.65625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear due date",
+      "top": 1571.0625,
+      "left": 673.65625,
+      "right": 1008.328125,
+      "width": 334.671875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear selection",
+      "top": 1571.0625,
+      "left": 1020.328125,
+      "right": 1354.984375,
+      "width": 334.65625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 1772.0625,
+      "left": 285,
+      "right": 1397,
+      "width": 1112,
+      "height": 382.59375,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Evaluated ↓",
+      "top": 1773.0625,
+      "left": 286,
+      "right": 391.625,
+      "width": 105.625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Select ",
+      "top": 1773.0625,
+      "left": 393.625,
+      "right": 462.0625,
+      "width": 68.4375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Conversation ",
+      "top": 1773.0625,
+      "left": 464.0625,
+      "right": 642.0625,
+      "width": 178,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Agent ",
+      "top": 1773.0625,
+      "left": 644.0625,
+      "right": 711.078125,
+      "width": 67.015625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Queue ",
+      "top": 1773.0625,
+      "left": 713.078125,
+      "right": 798.5,
+      "width": 85.421875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Form ",
+      "top": 1773.0625,
+      "left": 800.5,
+      "right": 978.5,
+      "width": 178,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Source ",
+      "top": 1773.0625,
+      "left": 980.5,
+      "right": 1062.390625,
+      "width": 81.890625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "AI score ",
+      "top": 1773.0625,
+      "left": 1064.390625,
+      "right": 1144,
+      "width": 79.609375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Review ",
+      "top": 1773.0625,
+      "left": 1146,
+      "right": 1298.296875,
+      "width": 152.296875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Human score ",
+      "top": 1773.0625,
+      "left": 1300.296875,
+      "right": 1412.3125,
+      "width": 112.015625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Agreement ",
+      "top": 1773.0625,
+      "left": 1414.3125,
+      "right": 1513.859375,
+      "width": 99.546875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Assigned to ",
+      "top": 1773.0625,
+      "left": 1515.859375,
+      "right": 1619.015625,
+      "width": 103.15625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Due ",
+      "top": 1773.0625,
+      "left": 1621.015625,
+      "right": 1714.359375,
+      "width": 93.34375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Reviewer ",
+      "top": 1773.0625,
+      "left": 1716.359375,
+      "right": 1801.8125,
+      "width": 85.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Reviewed at ",
+      "top": 1773.0625,
+      "left": 1803.8125,
+      "right": 1908.671875,
+      "width": 104.859375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "conversation-recent",
+      "top": 1853.0625,
+      "left": 477.0625,
+      "right": 590.015625,
+      "width": 112.953125,
+      "height": 14,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "fixture-conversation",
+      "top": 1917.0625,
+      "left": 477.0625,
+      "right": 589.703125,
+      "width": 112.640625,
+      "height": 14,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "conversation-older",
+      "top": 1981.0625,
+      "left": 477.0625,
+      "right": 582.09375,
+      "width": 105.03125,
+      "height": 14,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "fixture-conversation",
+      "top": 2045.0625,
+      "left": 477.0625,
+      "right": 589.703125,
+      "width": 112.640625,
+      "height": 14,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "conversation-ancient",
+      "top": 2125.65625,
+      "left": 477.0625,
+      "right": 595.234375,
+      "width": 118.171875,
+      "height": 14,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "First page",
+      "top": 2173.65625,
+      "left": 1175.984375,
+      "right": 1257.25,
+      "width": 81.265625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Next server page →",
+      "top": 2173.65625,
+      "left": 1265.25,
+      "right": 1398,
+      "width": 132.75,
+      "height": 34,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "10/1/2026, 11:00:00 AMconversation-recentFixture AgentCustomer careGeneral Customer Service v17genesys-cloud80%NOT_REVIEWED——UnassignedNo due date——",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "10/1/2026, 9:00:00 AMfixture-conversationFixture AgentCustomer careGeneral Customer Service v17genesys-cloud78%REVIEWED62%1/3UnassignedCompletedadmin10/2/2026, 1:00:00 PM",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "9/15/2026, 11:00:00 AMconversation-olderFixture AgentCustomer careGeneral Customer Service v17genesys-cloud40%NOT_REVIEWED——UnassignedNo due date——",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "8/1/2026, 1:00:00 PMfixture-conversationFixture AgentCustomer careGeneral Customer Service v17genesys-cloud78%REVIEW_REQUESTED—0/3Unassigned10/5/2026, 1:00:00 PMDue in 3 days——",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "8/1/2026, 11:00:00 AMconversation-ancientFixture AgentCustomer careGeneral Customer Service v17genesys-cloud20%NOT_REVIEWED——UnassignedNo due date——",
+      "tabIndex": -1,
+      "buttons": 2
+    }
+  ],
+  "tables": [
+    {
+      "width": 1112,
+      "scrollWidth": 1625
+    }
+  ],
+  "buttons": [
+    {
+      "text": "My review queue",
+      "disabled": false
+    },
+    {
+      "text": "Unassigned requested reviews (1)",
+      "disabled": false
+    },
+    {
+      "text": "Refresh",
+      "disabled": false
+    },
+    {
+      "text": "Request sample",
+      "disabled": false
+    },
+    {
+      "text": "Assign 0 reviews",
+      "disabled": true
+    },
+    {
+      "text": "Set due date",
+      "disabled": true
+    },
+    {
+      "text": "Clear due date",
+      "disabled": true
+    },
+    {
+      "text": "Clear selection",
+      "disabled": true
+    },
+    {
+      "text": "Evaluated ↓",
+      "disabled": false
+    },
+    {
+      "text": "Select ",
+      "disabled": false
+    },
+    {
+      "text": "Conversation ",
+      "disabled": false
+    },
+    {
+      "text": "Agent ",
+      "disabled": false
+    },
+    {
+      "text": "Queue ",
+      "disabled": false
+    },
+    {
+      "text": "Form ",
+      "disabled": false
+    },
+    {
+      "text": "Source ",
+      "disabled": false
+    },
+    {
+      "text": "AI score ",
+      "disabled": false
+    },
+    {
+      "text": "Review ",
+      "disabled": false
+    },
+    {
+      "text": "Human score ",
+      "disabled": false
+    },
+    {
+      "text": "Agreement ",
+      "disabled": false
+    },
+    {
+      "text": "Assigned to ",
+      "disabled": false
+    },
+    {
+      "text": "Due ",
+      "disabled": false
+    },
+    {
+      "text": "Reviewer ",
+      "disabled": false
+    },
+    {
+      "text": "Reviewed at ",
+      "disabled": false
+    },
+    {
+      "text": "conversation-recent",
+      "disabled": false
+    },
+    {
+      "text": "fixture-conversation",
+      "disabled": false
+    },
+    {
+      "text": "conversation-older",
+      "disabled": false
+    },
+    {
+      "text": "fixture-conversation",
+      "disabled": false
+    },
+    {
+      "text": "conversation-ancient",
+      "disabled": false
+    },
+    {
+      "text": "First page",
+      "disabled": true
+    },
+    {
+      "text": "Next server page →",
+      "disabled": true
+    }
+  ],
+  "fields": [
+    {
+      "label": "HistoryServerThis browser",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Review statusAllNOT REVIEWEDREVIEW REQUESTEDIN REVIEWREVIEWED",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Assignment",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "SLA state",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Due",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Form ID @ version",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Agent",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Queue",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "ResultAllPassFail",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Question failures",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "From",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "To",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Policy ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "SourceAllGenesys CloudSyntheticUploaded",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "TriggerAllManualScheduled",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Critical failureAllYesNo",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Sample size",
+      "type": "number",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "SelectionMost recentDeterministic sample",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Assign sample to",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Sample due date",
+      "type": "datetime-local",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Bulk assign to",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Bulk due date",
+      "type": "datetime-local",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Select evaluation recent",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Select evaluation completed",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Select evaluation older",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Select evaluation unassigned",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Select evaluation ancient",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50&assignment=unassigned"
+  ],
+  "errors": []
+}

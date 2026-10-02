@@ -1,0 +1,31 @@
+{
+  "base": "dd449b6e8eef5a8d39bf2cedd5951ad01999dc9a",
+  "branch": "codex/aqm-v0-18-product-review",
+  "trackedDiffBeforeDocumentationCommit": [],
+  "untrackedPathsWithinAllowedReviewScope": true,
+  "unchangedProductTreeAndBlobIds": {
+    "src": "ef7d4f3b4c4eea7b9b0da5c0766ff21fcbc26393",
+    "tests": "7f162bdfc03a7e42faa1ddec3706bbdbd56844e2",
+    "proxy": "0047bcaf166f0b75fd1bfe70311a7c7e48c5b73d",
+    "public": "dcf00d2ea8632606b07ecb369c22222b86c79958",
+    "scripts": "e4a66914fd0e755379fac9d212843e63b8e8e608",
+    "package.json": "4a7b67306f70f82702c7890592fa13e4fe43570b",
+    "package-lock.json": "9f4835beff57eb18174549b227b25d0e4702bd3b",
+    "vite.config.ts": "a1cbcade9cd486c3e1a1eed2a0baed5e617527ce",
+    "playwright.config.ts": "0752481b519e17298d853b6bf28a64059cc67e64",
+    ".env.production": "3ea98dd39c5bcdd397d55f4b664d4ea78e139db4",
+    "index.html": "4a9a59f9f27292cf99caad7acd8f736c6621ced4",
+    "tsconfig.json": "4fa58dad451d0897a3393104016a2a2003edca7f"
+  },
+  "environmentBuilderV2Touched": false,
+  "productBehaviorModified": false,
+  "pullRequestCreated": false,
+  "liveGenesysCalls": 0,
+  "paidJevCalls": 0,
+  "remoteTag": {
+    "name": "v0.17.0",
+    "type": "annotated",
+    "object": "581cabab77946f48079f4e945a15489d0a403372",
+    "peeled": "dd449b6e8eef5a8d39bf2cedd5951ad01999dc9a"
+  }
+}

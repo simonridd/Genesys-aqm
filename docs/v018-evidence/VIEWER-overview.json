@@ -1,0 +1,956 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1440,
+  "pageWidth": 1440,
+  "height": 2799,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Overview"
+    },
+    {
+      "level": "H2",
+      "text": "Attention required"
+    },
+    {
+      "level": "H2",
+      "text": "Operational health"
+    },
+    {
+      "level": "H2",
+      "text": "Quality & coverage"
+    },
+    {
+      "level": "H3",
+      "text": "Coverage"
+    },
+    {
+      "level": "H2",
+      "text": "Review workload"
+    },
+    {
+      "level": "H2",
+      "text": "Automation"
+    },
+    {
+      "level": "H3",
+      "text": "Last automated run"
+    },
+    {
+      "level": "H3",
+      "text": "Upcoming scheduled work"
+    },
+    {
+      "level": "H2",
+      "text": "Recent runs"
+    },
+    {
+      "level": "H3",
+      "text": "Operational alerts 3"
+    },
+    {
+      "level": "H3",
+      "text": "Monitoring runs"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Overview\nVIEWER\nJev managed securely by automation service\nOPERATIONAL HOME\nOverview\n\nQuality, coverage and work requiring attention.\n\nUpdated 13:00:00 · Europe/London\nDashboard range\n7 days\n30 days\nRefresh\nAttention required\nAction needed\n2 errors\n1 escalated review\n1 overdue review\n1 warning\n1 failed notification delivery (24h)\nERROR\nReview escalated\nOpen review →\nERROR\nScheduled run failed\nOpen run →\nWARNING\nScheduler activity is stale\nOpen alert →\nOperational health\nAutomation\nAttention\nGenesys\nUnverified\nJev\nError\nScheduler\nHealthy\nNotifications\nFailed deliveries\nReview SLA\nEscalated\n\nAPI healthy · Firestore available · Last scheduler tick 2 Oct, 12:00. Genesys and Jev reflect durable run evidence.\n\nNotifications: 2 pending · 1 failed (24h) · Last success —\n\nQuality & coverage\nLast 7 days\nEvaluations\n2 →\nAverage quality\n79% →\nPass rate\n100%\nCritical failures\n0 →\n79%\n10-01 · 2 evaluations\n\nLimited history · 2 evaluations in this period.\n\nCoverage\nEligible\n20\nSampled\n10\nContent available\n6\nEvaluated\n4\nFailed\n3\n\nSampling coverage 50% · Evaluation coverage 20%\n\nCoverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.\n\nExplore coverage →\nReview workload\nCurrent state\nOpen\n4 →\nDue soon\n1 →\nOverdue\n1 →\nEscalated\n1 →\nUnassigned\n1 →\nAll review work →\nAutomation\n\n1 completed · 0 partial · 1 failed · 0 running in the last 7 days\n\nLast automated run\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nscheduled\n2 evaluations\ncompleted\n\nLatest successful scheduled execution.\n\nUpcoming scheduled work\nDaily Voice Customer Service AQM\nDAILY\nNext due 3 Oct, 02:00\nLast success 1 Oct, 03:00\nView policy →\nDaily Voice Customer Service AQM\nWEEKLY\nNext due 5 Oct, 02:00\nLast success —\nView policy →\nRecent runs\n2 Oct, 09:00\nDaily Voice Customer Service AQM\nmanual\n0 evaluations · 3 failed\nfailed\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nscheduled\n2 evaluations\ncompleted\n15 Sept, 03:00\nDaily Voice Customer Service AQM\nscheduled\n2 evaluations\ncompleted\nRun a policy now\nDetailed alerts & run operations",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh",
+      "top": 184.59375,
+      "left": 1329,
+      "right": 1398,
+      "width": 69,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "2 errors",
+      "top": 328.09375,
+      "left": 314,
+      "right": 355.546875,
+      "width": 41.546875,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 escalated review",
+      "top": 328.09375,
+      "left": 379.546875,
+      "right": 477.5625,
+      "width": 98.015625,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 overdue review",
+      "top": 328.09375,
+      "left": 501.5625,
+      "right": 590.296875,
+      "width": 88.734375,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 warning",
+      "top": 328.09375,
+      "left": 614.296875,
+      "right": 663.734375,
+      "width": 49.4375,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-alert",
+      "text": "ERRORReview escalatedOpen review →",
+      "top": 359.59375,
+      "left": 314,
+      "right": 1371,
+      "width": 1057,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-alert",
+      "text": "ERRORScheduled run failedOpen run →",
+      "top": 420.59375,
+      "left": 314,
+      "right": 1371,
+      "width": 1057,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-alert",
+      "text": "WARNINGScheduler activity is staleOpen alert →",
+      "top": 481.59375,
+      "left": 314,
+      "right": 1371,
+      "width": 1057,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "2 →",
+      "top": 1042.96875,
+      "left": 327,
+      "right": 368.703125,
+      "width": 41.703125,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "79% →",
+      "top": 1042.96875,
+      "left": 596,
+      "right": 671.84375,
+      "width": 75.84375,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "0 →",
+      "top": 1042.96875,
+      "left": 1134,
+      "right": 1178.625,
+      "width": 44.625,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "Explore coverage →",
+      "top": 1446.0625,
+      "left": 311,
+      "right": 417.390625,
+      "width": 106.390625,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "4 →",
+      "top": 1622.0625,
+      "left": 327,
+      "right": 370.390625,
+      "width": 43.390625,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 542.1875,
+      "right": 578.984375,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 757.390625,
+      "right": 794.1875,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 972.59375,
+      "right": 1009.390625,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 1187.796875,
+      "right": 1224.59375,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "All review work →",
+      "top": 1670.25,
+      "left": 311,
+      "right": 433.328125,
+      "width": 122.328125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "top": 1913.96875,
+      "left": 311,
+      "right": 1371,
+      "width": 1060,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "View policy →",
+      "top": 2099.6875,
+      "left": 1295.40625,
+      "right": 1371,
+      "width": 75.59375,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "View policy →",
+      "top": 2168.6875,
+      "left": 1295.40625,
+      "right": 1371,
+      "width": 75.59375,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "2 Oct, 09:00Daily Voice Customer Service AQMmanual0 evaluations · 3 failedfailed",
+      "top": 2318.6875,
+      "left": 311,
+      "right": 1371,
+      "width": 1060,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "top": 2380.6875,
+      "left": 311,
+      "right": 1371,
+      "width": 1060,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "15 Sept, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "top": 2442.6875,
+      "left": 311,
+      "right": 1371,
+      "width": 1060,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh alerts",
+      "top": 2730.6875,
+      "left": 1249.296875,
+      "right": 1352,
+      "width": 102.703125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3075.40625,
+      "left": 331,
+      "right": 1351,
+      "width": 1020,
+      "height": 178,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Severity ↓",
+      "top": 3076.40625,
+      "left": 332,
+      "right": 444.40625,
+      "width": 112.40625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Type ",
+      "top": 3076.40625,
+      "left": 446.40625,
+      "right": 658.484375,
+      "width": 212.078125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Policy ",
+      "top": 3076.40625,
+      "left": 660.484375,
+      "right": 808.40625,
+      "width": 147.921875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Run ",
+      "top": 3076.40625,
+      "left": 810.40625,
+      "right": 948.859375,
+      "width": 138.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Opened ",
+      "top": 3076.40625,
+      "left": 950.859375,
+      "right": 1181.265625,
+      "width": 230.40625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 3076.40625,
+      "left": 1183.265625,
+      "right": 1265.421875,
+      "width": 82.15625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Action ",
+      "top": 3076.40625,
+      "left": 1267.421875,
+      "right": 1350,
+      "width": 82.578125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3444.125,
+      "left": 312,
+      "right": 1370,
+      "width": 1058,
+      "height": 229,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Started ↓",
+      "top": 3445.125,
+      "left": 313,
+      "right": 492.53125,
+      "width": 179.53125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Policy ",
+      "top": 3445.125,
+      "left": 494.53125,
+      "right": 676.78125,
+      "width": 182.25,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Source ",
+      "top": 3445.125,
+      "left": 678.78125,
+      "right": 782.359375,
+      "width": 103.578125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Period ",
+      "top": 3445.125,
+      "left": 784.359375,
+      "right": 853.171875,
+      "width": 68.8125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Trigger ",
+      "top": 3445.125,
+      "left": 855.171875,
+      "right": 944.03125,
+      "width": 88.859375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Eligible ",
+      "top": 3445.125,
+      "left": 946.03125,
+      "right": 1019.765625,
+      "width": 73.734375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Sampled ",
+      "top": 3445.125,
+      "left": 1021.765625,
+      "right": 1105.78125,
+      "width": 84.015625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Succeeded ",
+      "top": 3445.125,
+      "left": 1107.78125,
+      "right": 1207.9375,
+      "width": 100.15625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Failed ",
+      "top": 3445.125,
+      "left": 1209.9375,
+      "right": 1275.59375,
+      "width": 65.65625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 3445.125,
+      "left": 1277.59375,
+      "right": 1369,
+      "width": 91.40625,
+      "height": 43,
+      "inTable": true
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "WARNINGScheduler activity is staleScheduler—2026-10-02T12:00:00.000ZOPEN",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "ERRORScheduled run faileddaily_voicemanual_recent2026-10-02T12:00:00.000ZOPEN",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "ERRORReview escalatedReview workload—2026-10-02T12:00:00.000ZOPEN",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "2026-10-02T08:00:00.000ZDaily Voice Customer Service AQMgenesys-cloud—manual10503failed",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "2026-10-01T02:00:00.000ZDaily Voice Customer Service AQMgenesys-cloud—scheduled10520completed",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "2026-09-15T02:00:00.000ZDaily Voice Customer Service AQMgenesys-cloud—scheduled10520completed",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1020,
+      "scrollWidth": 1020
+    },
+    {
+      "width": 1058,
+      "scrollWidth": 1058
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Refresh",
+      "disabled": false
+    },
+    {
+      "text": "2 errors",
+      "disabled": false
+    },
+    {
+      "text": "1 escalated review",
+      "disabled": false
+    },
+    {
+      "text": "1 overdue review",
+      "disabled": false
+    },
+    {
+      "text": "1 warning",
+      "disabled": false
+    },
+    {
+      "text": "ERRORReview escalatedOpen review →",
+      "disabled": false
+    },
+    {
+      "text": "ERRORScheduled run failedOpen run →",
+      "disabled": false
+    },
+    {
+      "text": "WARNINGScheduler activity is staleOpen alert →",
+      "disabled": false
+    },
+    {
+      "text": "2 →",
+      "disabled": false
+    },
+    {
+      "text": "79% →",
+      "disabled": false
+    },
+    {
+      "text": "0 →",
+      "disabled": false
+    },
+    {
+      "text": "Explore coverage →",
+      "disabled": false
+    },
+    {
+      "text": "4 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "All review work →",
+      "disabled": false
+    },
+    {
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "disabled": false
+    },
+    {
+      "text": "View policy →",
+      "disabled": false
+    },
+    {
+      "text": "View policy →",
+      "disabled": false
+    },
+    {
+      "text": "2 Oct, 09:00Daily Voice Customer Service AQMmanual0 evaluations · 3 failedfailed",
+      "disabled": false
+    },
+    {
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "disabled": false
+    },
+    {
+      "text": "15 Sept, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "disabled": false
+    },
+    {
+      "text": "Refresh alerts",
+      "disabled": false
+    },
+    {
+      "text": "Severity ↓",
+      "disabled": false
+    },
+    {
+      "text": "Type ",
+      "disabled": false
+    },
+    {
+      "text": "Policy ",
+      "disabled": false
+    },
+    {
+      "text": "Run ",
+      "disabled": false
+    },
+    {
+      "text": "Opened ",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Action ",
+      "disabled": false
+    },
+    {
+      "text": "Started ↓",
+      "disabled": false
+    },
+    {
+      "text": "Policy ",
+      "disabled": false
+    },
+    {
+      "text": "Source ",
+      "disabled": false
+    },
+    {
+      "text": "Period ",
+      "disabled": false
+    },
+    {
+      "text": "Trigger ",
+      "disabled": false
+    },
+    {
+      "text": "Eligible ",
+      "disabled": false
+    },
+    {
+      "text": "Sampled ",
+      "disabled": false
+    },
+    {
+      "text": "Succeeded ",
+      "disabled": false
+    },
+    {
+      "text": "Failed ",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Dashboard range7 days30 days",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Server policySelect policyDaily Voice Customer Service AQM · v1",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Alert statusActiveOpenAcknowledgedResolvedAll",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Alert severityAllINFOWARNINGERROR",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health"
+  ],
+  "errors": []
+}

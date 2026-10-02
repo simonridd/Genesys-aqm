@@ -1,0 +1,391 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 390,
+  "pageWidth": 390,
+  "height": 2506,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Quality analytics"
+    },
+    {
+      "level": "H2",
+      "text": "Quality by day"
+    },
+    {
+      "level": "H2",
+      "text": "Score distribution"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nWorkspace / Analytics\nADMIN\nJev managed securely by automation service\nThis browser\nServer analytics\nSERVER ANALYTICS\nQuality analytics\n\nAggregated in Cloud Run from durable production evaluations. The endpoint returns complete totals or an explicit size error.\n\nFrom\nTo\nSource\nAll\nGenesys Cloud\nSynthetic\nPolicy ID\nForm ID @ version\nAgent\nQueue\nChannel\nTrigger\nAll\nManual\nScheduled\n\nComplete scan: 8 production/test records inspected, 3 runs inspected. Form tests are excluded from quality.\n\nOverview\nAgents\nQueues\nForms\nGroups\nQuestions\nCoverage\nEvaluated conversations\n4\nEvaluations\n8\nAverage quality\n66%\nPass rate\n75%\nCritical failure rate\n25%\nReview\n4 requested · 0 in progress · 1 reviewed\nQuality by day\n\nAverage score, pass rate and critical failures for evaluations performed that day.\n\n2026-08-01 · 5 evaluations · 67% average · 80% pass · 1 critical failures\n\n2026-09-15 · 1 evaluations · 40% average · 0% pass · 1 critical failures\n\n2026-10-01 · 2 evaluations · 79% average · 100% pass · 0 critical failures\n\nScore distribution\n0–20%\n0\n20–40%\n1\n40–60%\n1\n60–80%\n5\n80–100%\n1",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "This browser",
+      "top": 179,
+      "left": 15,
+      "right": 120.21875,
+      "width": 105.21875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Server analytics",
+      "top": 179,
+      "left": 126.21875,
+      "right": 251.140625,
+      "width": 124.921875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Overview",
+      "top": 1086.578125,
+      "left": 15,
+      "right": 134.28125,
+      "width": 119.28125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Agents",
+      "top": 1086.578125,
+      "left": 142.28125,
+      "right": 243.78125,
+      "width": 101.5,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Queues",
+      "top": 1086.578125,
+      "left": 251.78125,
+      "right": 357.8125,
+      "width": 106.03125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Forms",
+      "top": 1086.578125,
+      "left": 365.8125,
+      "right": 460.15625,
+      "width": 94.34375,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Groups",
+      "top": 1086.578125,
+      "left": 468.15625,
+      "right": 571.609375,
+      "width": 103.453125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions",
+      "top": 1086.578125,
+      "left": 579.609375,
+      "right": 705.359375,
+      "width": 125.75,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Coverage",
+      "top": 1086.578125,
+      "left": 713.359375,
+      "right": 833.640625,
+      "width": 120.28125,
+      "height": 43,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [],
+  "buttons": [
+    {
+      "text": "This browser",
+      "disabled": false
+    },
+    {
+      "text": "Server analytics",
+      "disabled": false
+    },
+    {
+      "text": "Overview",
+      "disabled": false
+    },
+    {
+      "text": "Agents",
+      "disabled": false
+    },
+    {
+      "text": "Queues",
+      "disabled": false
+    },
+    {
+      "text": "Forms",
+      "disabled": false
+    },
+    {
+      "text": "Groups",
+      "disabled": false
+    },
+    {
+      "text": "Questions",
+      "disabled": false
+    },
+    {
+      "text": "Coverage",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "From",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "To",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "SourceAllGenesys CloudSynthetic",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Policy ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Form ID @ version",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Agent",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Queue",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Channel",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "TriggerAllManualScheduled",
+      "type": null,
+      "disabled": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics"
+  ],
+  "errors": []
+}

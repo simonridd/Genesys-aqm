@@ -1,0 +1,1196 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1920,
+  "pageWidth": 1920,
+  "height": 4231,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Overview"
+    },
+    {
+      "level": "H2",
+      "text": "Attention required"
+    },
+    {
+      "level": "H2",
+      "text": "Operational health"
+    },
+    {
+      "level": "H2",
+      "text": "Quality & coverage"
+    },
+    {
+      "level": "H3",
+      "text": "Coverage"
+    },
+    {
+      "level": "H2",
+      "text": "Review workload"
+    },
+    {
+      "level": "H2",
+      "text": "Automation"
+    },
+    {
+      "level": "H3",
+      "text": "Last automated run"
+    },
+    {
+      "level": "H3",
+      "text": "Upcoming scheduled work"
+    },
+    {
+      "level": "H2",
+      "text": "Recent runs"
+    },
+    {
+      "level": "H3",
+      "text": "Operational alerts 3"
+    },
+    {
+      "level": "H3",
+      "text": "Scheduler activity is stale · WARNING"
+    },
+    {
+      "level": "H3",
+      "text": "Monitoring runs"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Overview\nADMIN\nJev managed securely by automation service\nOPERATIONAL HOME\nOverview\n\nQuality, coverage and work requiring attention.\n\nUpdated 13:00:00 · Europe/London\nDashboard range\n7 days\n30 days\nRefresh\nAttention required\nAction needed\n2 errors\n1 escalated review\n1 overdue review\n1 warning\n1 failed notification delivery (24h)\nERROR\nReview escalated\nOpen review →\nERROR\nScheduled run failed\nOpen run →\nWARNING\nScheduler activity is stale\nOpen alert →\nOperational health\nAutomation\nAttention\nGenesys\nUnverified\nJev\nError\nScheduler\nHealthy\nNotifications\nFailed deliveries\nReview SLA\nEscalated\n\nAPI healthy · Firestore available · Last scheduler tick 2 Oct, 12:00. Genesys and Jev reflect durable run evidence.\n\nNotifications: 2 pending · 1 failed (24h) · Last success —\n\nQuality & coverage\nLast 7 days\nEvaluations\n2 →\nAverage quality\n79% →\nPass rate\n100%\nCritical failures\n0 →\n79%\n10-01 · 2 evaluations\n\nLimited history · 2 evaluations in this period.\n\nCoverage\nEligible\n20\nSampled\n10\nContent available\n6\nEvaluated\n4\nFailed\n3\n\nSampling coverage 50% · Evaluation coverage 20%\n\nCoverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.\n\nExplore coverage →\nReview workload\nCurrent state\nOpen\n4 →\nDue soon\n1 →\nOverdue\n1 →\nEscalated\n1 →\nUnassigned\n1 →\nMy review queue →\nAll review work →\nAutomation\nRun a policy now\n\n1 completed · 0 partial · 1 failed · 0 running in the last 7 days\n\nLast automated run\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nscheduled\n2 evaluations\ncompleted\n\nLatest successful scheduled execution.\n\nUpcoming scheduled work\nDaily Voice Customer Service AQM\nDAILY\nNext due 3 Oct, 02:00\nLast success 1 Oct, 03:00\nView/Edit policy →\nDaily Voice Customer Service AQM\nWEEKLY\nNext due 5 Oct, 02:00\nLast success —\nView/Edit policy →\nRecent runs\n2 Oct, 09:00\nDaily Voice Customer Service AQM\nmanual\n0 evaluations · 3 failed\nfailed\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nscheduled\n2 evaluations\ncompleted\n15 Sept, 03:00\nDaily Voice Customer Service AQM\nscheduled\n2 evaluations\ncompleted\nEvaluation Forms →\nPolicies →\nOpen alerts →\nSettings →\nRun a policy now\nDetailed alerts & run operations\nOperational alerts 3\nRefresh alerts\nOPEN ALERTS (INCLUDING ACKNOWLEDGED)\n3\nERRORS\n2\nWARNINGS\n1\nAlert status\nActive\nOpen\nAcknowledged\nResolved\nAll\nAlert severity\nAll\nINFO\nWARNING\nERROR\nSearch\n3 results\nSeverity ↓\n\t\nType\n\t\nPolicy\n\t\nRun\n\t\nOpened\n\t\nStatus\n\t\nAction\n\nWARNING\tScheduler activity is stale\tScheduler\t—\t2026-10-02T12:00:00.000Z\tOPEN\t\nAcknowledge\nResolve\n\nERROR\tScheduled run failed\tdaily_voice\tmanual_recent\t2026-10-02T12:00:00.000Z\tOPEN\t\nAcknowledge\nResolve\n\nERROR\tReview escalated\tReview workload\t—\t2026-10-02T12:00:00.000Z\tOPEN\t\nAcknowledge\nResolve\nScheduler activity is stale · WARNING\nClose alert\n\nInspect scheduler\n\nSCHEDULER_STALE · OPEN · Occurrences 1\n\nOpened 2026-10-02T12:00:00.000Z · Last observed 2026-10-02T12:00:00.000Z\n\nNotifications\n\nNo notification deliveries recorded.\n\nAlert history\n\nOPENED · 2026-10-02T12:00:00.000Z · · Scheduler\n\nMonitoring runs\nSearch\n3 results\nStarted ↓\n\t\nPolicy\n\t\nSource\n\t\nPeriod\n\t\nTrigger\n\t\nEligible\n\t\nSampled\n\t\nSucceeded\n\t\nFailed\n\t\nStatus\n\n2026-10-02T08:00:00.000Z\tDaily Voice Customer Service AQM\tgenesys-cloud\t—\tmanual\t10\t5\t0\t3\tfailed\n2026-10-01T02:00:00.000Z\tDaily Voice Customer Service AQM\tgenesys-cloud\t—\tscheduled\t10\t5\t2\t0\tcompleted\n2026-09-15T02:00:00.000Z\tDaily Voice Customer Service AQM\tgenesys-cloud\t—\tscheduled\t10\t5\t2\t0\tcompleted",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh",
+      "top": 184.59375,
+      "left": 1725,
+      "right": 1794,
+      "width": 69,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "2 errors",
+      "top": 328.09375,
+      "left": 398,
+      "right": 439.546875,
+      "width": 41.546875,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 escalated review",
+      "top": 328.09375,
+      "left": 463.546875,
+      "right": 561.5625,
+      "width": 98.015625,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 overdue review",
+      "top": 328.09375,
+      "left": 585.5625,
+      "right": 674.296875,
+      "width": 88.734375,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 warning",
+      "top": 328.09375,
+      "left": 698.296875,
+      "right": 747.734375,
+      "width": 49.4375,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-alert",
+      "text": "ERRORReview escalatedOpen review →",
+      "top": 359.59375,
+      "left": 398,
+      "right": 1767,
+      "width": 1369,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-alert",
+      "text": "ERRORScheduled run failedOpen run →",
+      "top": 420.59375,
+      "left": 398,
+      "right": 1767,
+      "width": 1369,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-alert",
+      "text": "WARNINGScheduler activity is staleOpen alert →",
+      "top": 481.59375,
+      "left": 398,
+      "right": 1767,
+      "width": 1369,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "2 →",
+      "top": 1042.96875,
+      "left": 411,
+      "right": 452.703125,
+      "width": 41.703125,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "79% →",
+      "top": 1042.96875,
+      "left": 758,
+      "right": 833.84375,
+      "width": 75.84375,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "0 →",
+      "top": 1042.96875,
+      "left": 1452,
+      "right": 1496.625,
+      "width": 44.625,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "Explore coverage →",
+      "top": 1446.0625,
+      "left": 395,
+      "right": 501.390625,
+      "width": 106.390625,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "4 →",
+      "top": 1622.0625,
+      "left": 411,
+      "right": 454.390625,
+      "width": 43.390625,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 688.59375,
+      "right": 725.390625,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 966.1875,
+      "right": 1002.984375,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 1243.796875,
+      "right": 1280.59375,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "1 →",
+      "top": 1622.0625,
+      "left": 1521.390625,
+      "right": 1558.1875,
+      "width": 36.796875,
+      "height": 32.1875,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "My review queue →",
+      "top": 1670.25,
+      "left": 395,
+      "right": 531.65625,
+      "width": 136.65625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "All review work →",
+      "top": 1672.25,
+      "left": 543.65625,
+      "right": 665.984375,
+      "width": 122.328125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Run a policy now",
+      "top": 1784.25,
+      "left": 1648.75,
+      "right": 1767,
+      "width": 118.25,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "top": 1917.96875,
+      "left": 395,
+      "right": 1767,
+      "width": 1372,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "View/Edit policy →",
+      "top": 2103.6875,
+      "left": 1664.78125,
+      "right": 1767,
+      "width": 102.21875,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "View/Edit policy →",
+      "top": 2172.6875,
+      "left": 1664.78125,
+      "right": 1767,
+      "width": 102.21875,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "2 Oct, 09:00Daily Voice Customer Service AQMmanual0 evaluations · 3 failedfailed",
+      "top": 2322.6875,
+      "left": 395,
+      "right": 1767,
+      "width": 1372,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "top": 2384.6875,
+      "left": 395,
+      "right": 1767,
+      "width": 1372,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "overview-run",
+      "text": "15 Sept, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "top": 2446.6875,
+      "left": 395,
+      "right": 1767,
+      "width": 1372,
+      "height": 53,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Evaluation Forms →",
+      "top": 2548.6875,
+      "left": 368,
+      "right": 501.546875,
+      "width": 133.546875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Policies →",
+      "top": 2548.6875,
+      "left": 513.546875,
+      "right": 596.4375,
+      "width": 82.890625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Open alerts →",
+      "top": 2548.6875,
+      "left": 608.4375,
+      "right": 712.96875,
+      "width": 104.53125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Settings →",
+      "top": 2548.6875,
+      "left": 724.96875,
+      "right": 811.484375,
+      "width": 86.515625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh alerts",
+      "top": 2790.6875,
+      "left": 1645.296875,
+      "right": 1748,
+      "width": 102.703125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3122.40625,
+      "left": 415,
+      "right": 1747,
+      "width": 1332,
+      "height": 229,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Severity ↓",
+      "top": 3123.40625,
+      "left": 416,
+      "right": 542.890625,
+      "width": 126.890625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Type ",
+      "top": 3123.40625,
+      "left": 544.890625,
+      "right": 784.078125,
+      "width": 239.1875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Policy ",
+      "top": 3123.40625,
+      "left": 786.078125,
+      "right": 952.984375,
+      "width": 166.90625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Run ",
+      "top": 3123.40625,
+      "left": 954.984375,
+      "right": 1111.203125,
+      "width": 156.21875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Opened ",
+      "top": 3123.40625,
+      "left": 1113.203125,
+      "right": 1373.015625,
+      "width": 259.8125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 3123.40625,
+      "left": 1375.015625,
+      "right": 1467.828125,
+      "width": 92.8125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Action ",
+      "top": 3123.40625,
+      "left": 1469.828125,
+      "right": 1746,
+      "width": 276.171875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Acknowledge",
+      "top": 3181.40625,
+      "left": 1482.828125,
+      "right": 1583.46875,
+      "width": 100.640625,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Resolve",
+      "top": 3181.40625,
+      "left": 1595.46875,
+      "right": 1664.78125,
+      "width": 69.3125,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Acknowledge",
+      "top": 3242.40625,
+      "left": 1482.828125,
+      "right": 1583.46875,
+      "width": 100.640625,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Resolve",
+      "top": 3242.40625,
+      "left": 1595.46875,
+      "right": 1664.78125,
+      "width": 69.3125,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Acknowledge",
+      "top": 3303.40625,
+      "left": 1482.828125,
+      "right": 1583.46875,
+      "width": 100.640625,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Resolve",
+      "top": 3303.40625,
+      "left": 1595.46875,
+      "right": 1664.78125,
+      "width": 69.3125,
+      "height": 34,
+      "inTable": true
+    },
+    {
+      "tag": "SECTION",
+      "class": "panel alert-detail",
+      "text": "",
+      "top": 3368.40625,
+      "left": 414,
+      "right": 1748,
+      "width": 1334,
+      "height": 386.78125,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Close alert",
+      "top": 3387.40625,
+      "left": 1642.90625,
+      "right": 1729,
+      "width": 86.09375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 3928.90625,
+      "left": 396,
+      "right": 1766,
+      "width": 1370,
+      "height": 178,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Started ↓",
+      "top": 3929.90625,
+      "left": 397,
+      "right": 637.359375,
+      "width": 240.359375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Policy ",
+      "top": 3929.90625,
+      "left": 639.359375,
+      "right": 921.890625,
+      "width": 282.53125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Source ",
+      "top": 3929.90625,
+      "left": 923.890625,
+      "right": 1062.609375,
+      "width": 138.71875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Period ",
+      "top": 3929.90625,
+      "left": 1064.609375,
+      "right": 1147.390625,
+      "width": 82.78125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Trigger ",
+      "top": 3929.90625,
+      "left": 1149.390625,
+      "right": 1256.171875,
+      "width": 106.78125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Eligible ",
+      "top": 3929.90625,
+      "left": 1258.171875,
+      "right": 1346.84375,
+      "width": 88.671875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Sampled ",
+      "top": 3929.90625,
+      "left": 1348.84375,
+      "right": 1449.828125,
+      "width": 100.984375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Succeeded ",
+      "top": 3929.90625,
+      "left": 1451.828125,
+      "right": 1572.140625,
+      "width": 120.3125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Failed ",
+      "top": 3929.90625,
+      "left": 1574.140625,
+      "right": 1653.140625,
+      "width": 79,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 3929.90625,
+      "left": 1655.140625,
+      "right": 1765,
+      "width": 109.859375,
+      "height": 43,
+      "inTable": true
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "WARNINGScheduler activity is staleScheduler—2026-10-02T12:00:00.000ZOPENAcknowledgeResolve",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "ERRORScheduled run faileddaily_voicemanual_recent2026-10-02T12:00:00.000ZOPENAcknowledgeResolve",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "ERRORReview escalatedReview workload—2026-10-02T12:00:00.000ZOPENAcknowledgeResolve",
+      "tabIndex": -1,
+      "buttons": 2
+    },
+    {
+      "text": "2026-10-02T08:00:00.000ZDaily Voice Customer Service AQMgenesys-cloud—manual10503failed",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "2026-10-01T02:00:00.000ZDaily Voice Customer Service AQMgenesys-cloud—scheduled10520completed",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "2026-09-15T02:00:00.000ZDaily Voice Customer Service AQMgenesys-cloud—scheduled10520completed",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1332,
+      "scrollWidth": 1332
+    },
+    {
+      "width": 1370,
+      "scrollWidth": 1370
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Refresh",
+      "disabled": false
+    },
+    {
+      "text": "2 errors",
+      "disabled": false
+    },
+    {
+      "text": "1 escalated review",
+      "disabled": false
+    },
+    {
+      "text": "1 overdue review",
+      "disabled": false
+    },
+    {
+      "text": "1 warning",
+      "disabled": false
+    },
+    {
+      "text": "ERRORReview escalatedOpen review →",
+      "disabled": false
+    },
+    {
+      "text": "ERRORScheduled run failedOpen run →",
+      "disabled": false
+    },
+    {
+      "text": "WARNINGScheduler activity is staleOpen alert →",
+      "disabled": false
+    },
+    {
+      "text": "2 →",
+      "disabled": false
+    },
+    {
+      "text": "79% →",
+      "disabled": false
+    },
+    {
+      "text": "0 →",
+      "disabled": false
+    },
+    {
+      "text": "Explore coverage →",
+      "disabled": false
+    },
+    {
+      "text": "4 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "1 →",
+      "disabled": false
+    },
+    {
+      "text": "My review queue →",
+      "disabled": false
+    },
+    {
+      "text": "All review work →",
+      "disabled": false
+    },
+    {
+      "text": "Run a policy now",
+      "disabled": false
+    },
+    {
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "disabled": false
+    },
+    {
+      "text": "View/Edit policy →",
+      "disabled": false
+    },
+    {
+      "text": "View/Edit policy →",
+      "disabled": false
+    },
+    {
+      "text": "2 Oct, 09:00Daily Voice Customer Service AQMmanual0 evaluations · 3 failedfailed",
+      "disabled": false
+    },
+    {
+      "text": "1 Oct, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "disabled": false
+    },
+    {
+      "text": "15 Sept, 03:00Daily Voice Customer Service AQMscheduled2 evaluationscompleted",
+      "disabled": false
+    },
+    {
+      "text": "Evaluation Forms →",
+      "disabled": false
+    },
+    {
+      "text": "Policies →",
+      "disabled": false
+    },
+    {
+      "text": "Open alerts →",
+      "disabled": false
+    },
+    {
+      "text": "Settings →",
+      "disabled": false
+    },
+    {
+      "text": "Refresh alerts",
+      "disabled": false
+    },
+    {
+      "text": "Severity ↓",
+      "disabled": false
+    },
+    {
+      "text": "Type ",
+      "disabled": false
+    },
+    {
+      "text": "Policy ",
+      "disabled": false
+    },
+    {
+      "text": "Run ",
+      "disabled": false
+    },
+    {
+      "text": "Opened ",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Action ",
+      "disabled": false
+    },
+    {
+      "text": "Acknowledge",
+      "disabled": false
+    },
+    {
+      "text": "Resolve",
+      "disabled": false
+    },
+    {
+      "text": "Acknowledge",
+      "disabled": false
+    },
+    {
+      "text": "Resolve",
+      "disabled": false
+    },
+    {
+      "text": "Acknowledge",
+      "disabled": false
+    },
+    {
+      "text": "Resolve",
+      "disabled": false
+    },
+    {
+      "text": "Close alert",
+      "disabled": false
+    },
+    {
+      "text": "Started ↓",
+      "disabled": false
+    },
+    {
+      "text": "Policy ",
+      "disabled": false
+    },
+    {
+      "text": "Source ",
+      "disabled": false
+    },
+    {
+      "text": "Period ",
+      "disabled": false
+    },
+    {
+      "text": "Trigger ",
+      "disabled": false
+    },
+    {
+      "text": "Eligible ",
+      "disabled": false
+    },
+    {
+      "text": "Sampled ",
+      "disabled": false
+    },
+    {
+      "text": "Succeeded ",
+      "disabled": false
+    },
+    {
+      "text": "Failed ",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Dashboard range7 days30 days",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Server policySelect policyDaily Voice Customer Service AQM · v1",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Alert statusActiveOpenAcknowledgedResolvedAll",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Alert severityAllINFOWARNINGERROR",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/analytics",
+    "/api/forms?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/governance",
+    "/api/notifications/destinations",
+    "/api/notifications/rules",
+    "/api/notifications/deliveries",
+    "/api/roles",
+    "/api/forms?limit=100",
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/alerts/73745262-7085-43cb-88af-7f199413fd63",
+    "/api/alerts/73745262-7085-43cb-88af-7f199413fd63/notifications"
+  ],
+  "errors": []
+}

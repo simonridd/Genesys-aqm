@@ -1,0 +1,215 @@
+{
+  "url": "https://simonridd.github.io/Genesys-aqm/?page=automation",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 390,
+  "pageWidth": 390,
+  "height": 844,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Overview"
+    },
+    {
+      "level": "H2",
+      "text": "Connect to Genesys Cloud"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nWorkspace / Overview\nConnect to the automation service\nOPERATIONAL HOME\nOverview\n\nQuality, coverage and work requiring attention.\n\nDurable operational data\nDashboard range\n7 days\n30 days\nRefresh\nConnect to Genesys Cloud\n\nConnect to Genesys Cloud to view operational AQM health.\n\nConnection settings →",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh",
+      "top": 257,
+      "left": 191.25,
+      "right": 260.25,
+      "width": 69,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Connection settings →",
+      "top": 450.578125,
+      "left": 117.375,
+      "right": 272.609375,
+      "width": 155.234375,
+      "height": 38,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [],
+  "buttons": [
+    {
+      "text": "Refresh",
+      "disabled": true
+    },
+    {
+      "text": "Connection settings →",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Dashboard range7 days30 days",
+      "type": null,
+      "disabled": false
+    }
+  ]
+}

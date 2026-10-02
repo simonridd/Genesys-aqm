@@ -1,0 +1,388 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1920,
+  "pageWidth": 1920,
+  "height": 1080,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Question Groups"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Groups\nADMIN\nJev managed securely by automation service\nCONFIGURATION\nQuestion Groups\n\nVersioned reusable templates. Forms retain independent snapshots.\n\nImport reusable group\nNew group asset\nStatus\nAll statuses\nDraft\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nUsed\nUnused\nSearch\n4 results\nName ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nUsed by forms\n\t\nLast modified\n\nResolution & Next Steps\tPUBLISHED\tv1\t3\t0\t10/1/2026\nIdentity & Security Verification\tPUBLISHED\tv1\t3\t0\t10/1/2026\nCustomer Experience / Empathy\tPUBLISHED\tv1\t3\t0\t10/1/2026\nCall Closing\tPUBLISHED\tv1\t2\t0\t10/1/2026\nSave starter library to server",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "New group asset",
+      "top": 162.59375,
+      "left": 1672.25,
+      "right": 1794,
+      "width": 121.75,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 434.59375,
+      "left": 369,
+      "right": 1793,
+      "width": 1424,
+      "height": 222,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Name ↓",
+      "top": 435.59375,
+      "left": 370,
+      "right": 804.65625,
+      "width": 434.65625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 435.59375,
+      "left": 806.65625,
+      "right": 989.359375,
+      "width": 182.703125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Version ",
+      "top": 435.59375,
+      "left": 991.359375,
+      "right": 1141.8125,
+      "width": 150.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions ",
+      "top": 435.59375,
+      "left": 1143.8125,
+      "right": 1327.125,
+      "width": 183.3125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Used by forms ",
+      "top": 435.59375,
+      "left": 1329.125,
+      "right": 1563.640625,
+      "width": 234.515625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Last modified ",
+      "top": 435.59375,
+      "left": 1565.640625,
+      "right": 1792,
+      "width": 226.359375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Save starter library to server",
+      "top": 673.59375,
+      "left": 368,
+      "right": 549.640625,
+      "width": 181.640625,
+      "height": 34,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "Resolution & Next StepsPUBLISHEDv13010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Identity & Security VerificationPUBLISHEDv13010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Customer Experience / EmpathyPUBLISHEDv13010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Call ClosingPUBLISHEDv12010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1424,
+      "scrollWidth": 1424
+    }
+  ],
+  "buttons": [
+    {
+      "text": "New group asset",
+      "disabled": false
+    },
+    {
+      "text": "Name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Version ",
+      "disabled": false
+    },
+    {
+      "text": "Questions ",
+      "disabled": false
+    },
+    {
+      "text": "Used by forms ",
+      "disabled": false
+    },
+    {
+      "text": "Last modified ",
+      "disabled": false
+    },
+    {
+      "text": "Save starter library to server",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Import reusable group",
+      "type": "file",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Library status",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Library version",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Library usage",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/analytics",
+    "/api/forms?limit=100",
+    "/api/form-tests?limit=100"
+  ],
+  "errors": []
+}

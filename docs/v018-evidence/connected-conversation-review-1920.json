@@ -1,0 +1,362 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1920,
+  "pageWidth": 1920,
+  "height": 1320,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Conversation review"
+    },
+    {
+      "level": "H2",
+      "text": "Genesys Cloud interaction"
+    },
+    {
+      "level": "H2",
+      "text": "Messaging Customer with Messaging Agent"
+    },
+    {
+      "level": "H2",
+      "text": "Applicable evaluations"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Evaluate\nADMIN\nJev managed securely by automation service\nConversation source\nReal organizational data · Genesys Cloud\nSynthetic\nGenesys Cloud\nAUTOMATED QUALITY MANAGEMENT\nConversation review\n\nInspect the selected conversation, policy matches, and applicable forms.\n\n← Back to conversations\nBrowse real interactions →\nCURRENT CONVERSATION\nGenesys Cloud interaction\nREAL GENESYS DATA\nChange conversation\n↑ Upload JSON\nMC\nCONVERSATION TRANSCRIPT\nMessaging Customer with Messaging Agent\n30 Sept 2026 · messaging · 22222222-2222-4222-8222-222222222222\nCompleted\nSOURCE\ngenesys-cloud\nCONVERSATIONEND\n2026-09-30T12:10:00Z\nDIRECTION\ninbound\nAGENT\nagent\nQUEUE\nMessaging Queue\nQUEUEID\n55555555-5555-4555-8555-555555555555\nDURATIONSECONDS\n600\nSESSIONID\n33333333-3333-4333-8333-333333333333\nTRANSCRIPTSTATUS\nAvailable\nMESSAGES\n4\n30 Sept 2026\nM\nMessaging Customer\n13:01\nPlease help with my bill.\nB\nService Assistant\nBot\n13:01\nI will connect you.\nS\nSystem\nSystem\n13:01\nConnected to service team.\nM\nMessaging Agent\n13:02\nI can help.\nEnd of conversation\n·\n4 messages\n\nRetrieved from Genesys · 10/2/2026, 1:00:01 PM\n\nRefresh from Genesys\nPOLICY ROUTING\n1 matches\nApplicable evaluations\nCross-channel monitoring sample\nchannel equals messaging\nGeneral Customer Service\n3 questions · v17 · up to 1 Jev requests\nEvaluate →\nManual form selection\nGeneral Customer Service\n\n1 form evaluation · up to 1 Jev requests\n\n✦ Evaluate selected form →\n\nProduction selection includes only published, valid forms . Draft and testing forms can be tested in the isolated sandbox.\n\nTest a draft/testing form\n\nJev managed securely by automation service. The exact published server form is authoritative.\n\n◎\nOne result per form\n\nEach production evaluation is saved to the automation service with its exact published form and routing provenance.",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Synthetic",
+      "top": 109,
+      "left": 1655.640625,
+      "right": 1738.296875,
+      "width": 82.65625,
+      "height": 32,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "selected",
+      "text": "Genesys Cloud",
+      "top": 109,
+      "left": 1743.296875,
+      "right": 1854,
+      "width": 110.703125,
+      "height": 32,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "← Back to conversations",
+      "top": 260.59375,
+      "left": 1133.328125,
+      "right": 1294.515625,
+      "width": 161.1875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Browse real interactions →",
+      "top": 260.59375,
+      "left": 1621.609375,
+      "right": 1794,
+      "width": 172.390625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Change conversation",
+      "top": 419.59375,
+      "left": 391,
+      "right": 533.4375,
+      "width": 142.4375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "↑ Upload JSON",
+      "top": 419.59375,
+      "left": 543.4375,
+      "right": 653.546875,
+      "width": 110.109375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh from Genesys",
+      "top": 1204.84375,
+      "left": 369,
+      "right": 515.109375,
+      "width": 146.109375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "assignment",
+      "text": "General Customer Service3 questions · v17 · up to 1 Jev requestsEvaluate →",
+      "top": 516.25,
+      "left": 1304.640625,
+      "right": 1770.984375,
+      "width": 466.34375,
+      "height": 66,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button evaluate-button",
+      "text": "✦ Evaluate selected form →",
+      "top": 688.25,
+      "left": 1304.640625,
+      "right": 1770.984375,
+      "width": 466.34375,
+      "height": 42,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "Test a draft/testing form",
+      "top": 796.25,
+      "left": 1304.640625,
+      "right": 1436.671875,
+      "width": 132.03125,
+      "height": 14,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [],
+  "buttons": [
+    {
+      "text": "Synthetic",
+      "disabled": false
+    },
+    {
+      "text": "Genesys Cloud",
+      "disabled": false
+    },
+    {
+      "text": "← Back to conversations",
+      "disabled": false
+    },
+    {
+      "text": "Browse real interactions →",
+      "disabled": false
+    },
+    {
+      "text": "Change conversation",
+      "disabled": false
+    },
+    {
+      "text": "↑ Upload JSON",
+      "disabled": false
+    },
+    {
+      "text": "Refresh from Genesys",
+      "disabled": false
+    },
+    {
+      "text": "General Customer Service3 questions · v17 · up to 1 Jev requestsEvaluate →",
+      "disabled": false
+    },
+    {
+      "text": "✦ Evaluate selected form →",
+      "disabled": false
+    },
+    {
+      "text": "Test a draft/testing form",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Upload conversation JSON",
+      "type": "file",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Manual form selectionGeneral Customer Service",
+      "type": null,
+      "disabled": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/forms?limit=100"
+  ],
+  "errors": []
+}

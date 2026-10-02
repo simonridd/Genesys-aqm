@@ -1,0 +1,499 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1920,
+  "pageWidth": 1920,
+  "height": 1080,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Completed interactions"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Conversations\nADMIN\nJev managed securely by automation service\nConversation source\nReal organizational data · Genesys Cloud\nSynthetic\nGenesys Cloud\nREAL ORGANIZATIONAL DATA\nCompleted interactions\n\nBrowse a small, recent window. Transcripts are loaded only when you open an interaction.\n\nTable\nCards\nConnection settings\nFrom\nTo\nQueue ID\nAgent ID\nChannel\nAny\nMessaging\nChat\nEmail\nVoice\nDirection\nAny\nInbound\nOutbound\nSearch completed interactions\n\n0 shown · page 1 · 0 reported by Genesys. Only completed interactions appear.\n\nSearch\n0 results\nTimestamp ↓\n\t\nConversation ID\n\t\nSource\n\t\nChannel\n\t\nAgent\n\t\nQueue\n\t\nDirection\n\t\nTopic\n\t\nTranscript\n\nSearch completed interactions to see results.\n\n← Previous\nNext →",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Synthetic",
+      "top": 109,
+      "left": 1655.640625,
+      "right": 1738.296875,
+      "width": 82.65625,
+      "height": 32,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "selected",
+      "text": "Genesys Cloud",
+      "top": 109,
+      "left": 1743.296875,
+      "right": 1854,
+      "width": 110.703125,
+      "height": 32,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Table",
+      "top": 254.59375,
+      "left": 1502.328125,
+      "right": 1571.5,
+      "width": 69.171875,
+      "height": 39,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Cards",
+      "top": 254.59375,
+      "left": 1571.5,
+      "right": 1645.359375,
+      "width": 73.859375,
+      "height": 39,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Connection settings",
+      "top": 257.09375,
+      "left": 1656.359375,
+      "right": 1794,
+      "width": 137.640625,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Search completed interactions",
+      "top": 488.59375,
+      "left": 389,
+      "right": 842.328125,
+      "width": 453.328125,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 680.59375,
+      "left": 369,
+      "right": 1793,
+      "width": 1424,
+      "height": 46,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Timestamp ↓",
+      "top": 681.59375,
+      "left": 370,
+      "right": 562.828125,
+      "width": 192.828125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Conversation ID ",
+      "top": 681.59375,
+      "left": 564.828125,
+      "right": 879.984375,
+      "width": 315.15625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Source ",
+      "top": 681.59375,
+      "left": 881.984375,
+      "right": 1004.734375,
+      "width": 122.75,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Channel ",
+      "top": 681.59375,
+      "left": 1006.734375,
+      "right": 1142.59375,
+      "width": 135.859375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Agent ",
+      "top": 681.59375,
+      "left": 1144.59375,
+      "right": 1256.40625,
+      "width": 111.8125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Queue ",
+      "top": 681.59375,
+      "left": 1258.40625,
+      "right": 1376.375,
+      "width": 117.96875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Direction ",
+      "top": 681.59375,
+      "left": 1378.375,
+      "right": 1524.5625,
+      "width": 146.1875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Topic ",
+      "top": 681.59375,
+      "left": 1526.5625,
+      "right": 1632.21875,
+      "width": 105.65625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Transcript ",
+      "top": 681.59375,
+      "left": 1634.21875,
+      "right": 1792,
+      "width": 157.78125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "← Previous",
+      "top": 832.59375,
+      "left": 1631.359375,
+      "right": 1719.09375,
+      "width": 87.734375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Next →",
+      "top": 832.59375,
+      "left": 1727.09375,
+      "right": 1794,
+      "width": 66.90625,
+      "height": 34,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [
+    {
+      "width": 1424,
+      "scrollWidth": 1424
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Synthetic",
+      "disabled": false
+    },
+    {
+      "text": "Genesys Cloud",
+      "disabled": false
+    },
+    {
+      "text": "Table",
+      "disabled": false
+    },
+    {
+      "text": "Cards",
+      "disabled": false
+    },
+    {
+      "text": "Connection settings",
+      "disabled": false
+    },
+    {
+      "text": "Search completed interactions",
+      "disabled": false
+    },
+    {
+      "text": "Timestamp ↓",
+      "disabled": false
+    },
+    {
+      "text": "Conversation ID ",
+      "disabled": false
+    },
+    {
+      "text": "Source ",
+      "disabled": false
+    },
+    {
+      "text": "Channel ",
+      "disabled": false
+    },
+    {
+      "text": "Agent ",
+      "disabled": false
+    },
+    {
+      "text": "Queue ",
+      "disabled": false
+    },
+    {
+      "text": "Direction ",
+      "disabled": false
+    },
+    {
+      "text": "Topic ",
+      "disabled": false
+    },
+    {
+      "text": "Transcript ",
+      "disabled": false
+    },
+    {
+      "text": "← Previous",
+      "disabled": true
+    },
+    {
+      "text": "Next →",
+      "disabled": true
+    }
+  ],
+  "fields": [
+    {
+      "label": "From",
+      "type": "datetime-local",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "To",
+      "type": "datetime-local",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Queue ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Agent ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "ChannelAnyMessagingChatEmailVoice",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "DirectionAnyInboundOutbound",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health"
+  ],
+  "errors": []
+}

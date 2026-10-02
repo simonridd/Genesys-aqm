@@ -1,0 +1,422 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 390,
+  "pageWidth": 390,
+  "height": 2447,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Analytics"
+    },
+    {
+      "level": "H2",
+      "text": "Quality trends start here"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nWorkspace / Analytics\nConnect to the automation service\nThis browser\nServer analytics\nQUALITY SIGNALS\nAnalytics\n\nBrowser-local production records and run observations. Server analytics require a separate complete aggregation.\n\nLoad demo analytics data\nRemove demo data\nClear history\nShow \nReal only\nSynthetic only\nAll sources\n0 Genesys Jev results\n·\n31 synthetic / other records\nFrom\nTo\nPolicy\nAll policies\nCustomer Service Messaging\nCross-channel monitoring sample\nComplaints\nCancellation & Retention\nSecurity Reviews\nSales & Service\nForm version\nAll versions\nGeneral Customer Service v1\nCompliance & Identity Verification v1\nComplaints Handling v1\nRetention / Cancellation v1\nSales / Service Quality v1\nAgent\nAll agents\nAlex Morgan\nJordan Lee\nPriya Shah\nCasey Brown\nSam Rivera\nTaylor Quinn\nQueue\nAll queues\nCustomer Service\nOrders\nBilling\nComplaints\nRetention\nTechnical Support\nSales\nChannel\nAll channels\nmessaging\nvoice\nTrigger\nAll\nManual\nScheduled\n\nProduction evaluations only. Coverage uses run observations and follows source, date and policy filters; agent, queue and form filters apply to quality only.\n\nQuality\nCoverage\nAgents\nQueues\nForms\nGroups\nQuestions\nEVALUATIONS\n0\nCONVERSATIONS\n0\nAVERAGE SCORE\n—\nPASS RATE\n—\nREVIEW REQUESTED\n0\nREVIEWED\n0\nCRITICAL FAILURES\n0\n—\nQuality trends start here\n\nNo evaluations for this source filter yet. Choose another source or complete an evaluation.\n\nShow all sources",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "This browser",
+      "top": 204,
+      "left": 30,
+      "right": 135.21875,
+      "width": 105.21875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Server analytics",
+      "top": 204,
+      "left": 141.21875,
+      "right": 266.140625,
+      "width": 124.921875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Load demo analytics data",
+      "top": 253,
+      "left": 242.21875,
+      "right": 375,
+      "width": 132.78125,
+      "height": 48,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Remove demo data",
+      "top": 311,
+      "left": 242.21875,
+      "right": 373.6875,
+      "width": 131.46875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "danger-button",
+      "text": "Clear history",
+      "top": 355,
+      "left": 242.21875,
+      "right": 305.125,
+      "width": 62.90625,
+      "height": 19,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Quality",
+      "top": 1152,
+      "left": 15,
+      "right": 118.015625,
+      "width": 103.015625,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Coverage",
+      "top": 1152,
+      "left": 126.015625,
+      "right": 246.296875,
+      "width": 120.28125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Agents",
+      "top": 1152,
+      "left": 254.296875,
+      "right": 355.796875,
+      "width": 101.5,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Queues",
+      "top": 1152,
+      "left": 363.796875,
+      "right": 469.828125,
+      "width": 106.03125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Forms",
+      "top": 1152,
+      "left": 477.828125,
+      "right": 572.171875,
+      "width": 94.34375,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Groups",
+      "top": 1152,
+      "left": 580.171875,
+      "right": 683.625,
+      "width": 103.453125,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions",
+      "top": 1152,
+      "left": 691.625,
+      "right": 817.375,
+      "width": 125.75,
+      "height": 43,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Show all sources",
+      "top": 2292.90625,
+      "left": 134.296875,
+      "right": 255.6875,
+      "width": 121.390625,
+      "height": 38,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [],
+  "buttons": [
+    {
+      "text": "This browser",
+      "disabled": false
+    },
+    {
+      "text": "Server analytics",
+      "disabled": false
+    },
+    {
+      "text": "Load demo analytics data",
+      "disabled": false
+    },
+    {
+      "text": "Remove demo data",
+      "disabled": false
+    },
+    {
+      "text": "Clear history",
+      "disabled": false
+    },
+    {
+      "text": "Quality",
+      "disabled": false
+    },
+    {
+      "text": "Coverage",
+      "disabled": false
+    },
+    {
+      "text": "Agents",
+      "disabled": false
+    },
+    {
+      "text": "Queues",
+      "disabled": false
+    },
+    {
+      "text": "Forms",
+      "disabled": false
+    },
+    {
+      "text": "Groups",
+      "disabled": false
+    },
+    {
+      "text": "Questions",
+      "disabled": false
+    },
+    {
+      "text": "Show all sources",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Show Real onlySynthetic onlyAll sources",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "From",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "To",
+      "type": "date",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "PolicyAll policiesCustomer Service MessagingCross-channel monitoring sampleComplaintsCancellation & RetentionSecurity ReviewsSales & Service",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Form versionAll versionsGeneral Customer Service v1Compliance & Identity Verification v1Complaints Handling v1Retention / Cancellation v1Sales / Service Quality v1",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "AgentAll agentsAlex MorganJordan LeePriya ShahCasey BrownSam RiveraTaylor Quinn",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "QueueAll queuesCustomer ServiceOrdersBillingComplaintsRetentionTechnical SupportSales",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "ChannelAll channelsmessagingvoice",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "TriggerAllManualScheduled",
+      "type": null,
+      "disabled": false
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1440,
+  "pageWidth": 1440,
+  "height": 900,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Question Groups"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Groups\nREVIEWER\nJev managed securely by automation service\nCONFIGURATION\nQuestion Groups\n\nVersioned reusable templates. Forms retain independent snapshots.\n\nStatus\nAll statuses\nDraft\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nUsed\nUnused\nSearch\n4 results\nName ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nUsed by forms\n\t\nLast modified\n\nResolution & Next Steps\tPUBLISHED\tv1\t3\t0\t10/1/2026\nIdentity & Security Verification\tPUBLISHED\tv1\t3\t0\t10/1/2026\nCustomer Experience / Empathy\tPUBLISHED\tv1\t3\t0\t10/1/2026\nCall Closing\tPUBLISHED\tv1\t2\t0\t10/1/2026",
+  "geometry": [
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 434.59375,
+      "left": 285,
+      "right": 1397,
+      "width": 1112,
+      "height": 222,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Name ↓",
+      "top": 435.59375,
+      "left": 286,
+      "right": 624.984375,
+      "width": 338.984375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 435.59375,
+      "left": 626.984375,
+      "right": 769.21875,
+      "width": 142.234375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Version ",
+      "top": 435.59375,
+      "left": 771.21875,
+      "right": 888.265625,
+      "width": 117.046875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Questions ",
+      "top": 435.59375,
+      "left": 890.265625,
+      "right": 1032.984375,
+      "width": 142.71875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Used by forms ",
+      "top": 435.59375,
+      "left": 1034.984375,
+      "right": 1217.671875,
+      "width": 182.6875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Last modified ",
+      "top": 435.59375,
+      "left": 1219.671875,
+      "right": 1396,
+      "width": 176.328125,
+      "height": 43,
+      "inTable": true
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "Resolution & Next StepsPUBLISHEDv13010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Identity & Security VerificationPUBLISHEDv13010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Customer Experience / EmpathyPUBLISHEDv13010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "Call ClosingPUBLISHEDv12010/1/2026",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1112,
+      "scrollWidth": 1112
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Version ",
+      "disabled": false
+    },
+    {
+      "text": "Questions ",
+      "disabled": false
+    },
+    {
+      "text": "Used by forms ",
+      "disabled": false
+    },
+    {
+      "text": "Last modified ",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Library status",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Library version",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Library usage",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100",
+    "/api/governance",
+    "/api/analytics",
+    "/api/forms?limit=100"
+  ],
+  "errors": []
+}

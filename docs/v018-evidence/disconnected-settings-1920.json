@@ -1,0 +1,384 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1920,
+  "pageWidth": 1920,
+  "height": 2735,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Governance"
+    },
+    {
+      "level": "H2",
+      "text": "Privacy & data inventory"
+    },
+    {
+      "level": "H2",
+      "text": "Review reminders"
+    },
+    {
+      "level": "H2",
+      "text": "Notifications"
+    },
+    {
+      "level": "H1",
+      "text": "Settings"
+    },
+    {
+      "level": "H2",
+      "text": "Automation service"
+    },
+    {
+      "level": "H2",
+      "text": "Browser Jev evaluation key"
+    },
+    {
+      "level": "H2",
+      "text": "Cached Genesys data"
+    },
+    {
+      "level": "H2",
+      "text": "Genesys Cloud"
+    },
+    {
+      "level": "H2",
+      "text": "Reset demo data and history"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Settings\nConnect to the automation service\nCONFIGURATION & PRIVACY\nGovernance\n\nAccess, change history and safe data retention.\n\nPrivacy & data inventory\n\nStored server-side: EvaluationRecords, form snapshots, PolicyRuns, HumanReviews, alerts, role assignments, audit events and configuration.\n\nNot stored server-side: raw voice transcripts, raw email bodies, raw message transcripts, Genesys OAuth tokens, signed media URLs or raw EML/ZIP.\n\nBrowser only: normalized conversation content, with the configured cache lifetime. Search results have an independent short lifetime.\n\nBrowser sandbox evaluation history is separate. Clear or reset it using the existing browser controls.\n\nBrowser conversation cache hours\n\n0 disables persistent conversation content. Default: 24 hours.\n\nClear cached conversation content now\nReview reminders\n\nOnly reviews with an explicit due date are monitored.\n\nDue soon hours\nHours before due time\nNo escalation\nEscalation hours\nHours after due time\nNotifications\nRefresh notifications\n\nRoute new operational alerts to email or HTTPS webhooks. Delivery runs after each scheduler tick; existing alerts are not backfilled.\n\nConnect to Genesys Cloud to configure notifications.\n\nCONNECTION & PRIVACY\nSettings\n\nConnect Genesys Cloud to browse interactions and use the trusted automation service.\n\nAutomation service\n\nJev managed securely by automation service. Connect Genesys Cloud to authorize production evaluation.\n\nLegacy browser sandbox (local development)\nCached Genesys data\n\nLocal to this browser. Search snapshots last 15 minutes; completed conversation content uses the lifetime configured in Governance (24 hours by default). An active Genesys session is required to view cached data. Disconnect clears that identity's cache.\n\n0 cached searches · 0 cached transcripts\n\nClear cached Genesys data\nG\nREAL ORGANIZATIONAL DATA\nGenesys Cloud\nDisconnected\nGenesys Cloud sign-in\n\nAuthentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.\n\nRegion\nEU (Ireland)\nEU (Frankfurt)\nUS East\nUS West\nAustralia\nJapan\nOAuth Client ID\n\nRedirect URI: https://simonridd.github.io/Genesys-aqm/\n\nRegion: EU (Ireland)\n\nConnect to Genesys Cloud\n◎\nTrusted evaluation\n\nProduction evaluations go through Cloud Run. Jev credentials stay on the server.\n\n▤\nYour forms\n\nDraft edits stay in this browser until you choose Save changes. When connected, Save changes persists the draft to the automation service. Form questions are sent to Jev only when you evaluate.\n\n← Back to conversation review\nReset demo data and history\n\nRestore seeded forms and policies and clear all browser-local evaluation records.\n\nReset demo data / history",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear cached conversation content now",
+      "top": 556.484375,
+      "left": 393,
+      "right": 636.453125,
+      "width": 243.453125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh notifications",
+      "top": 1033.1875,
+      "left": 1629.453125,
+      "right": 1769,
+      "width": 139.546875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Save key",
+      "top": 1861.46875,
+      "left": 588,
+      "right": 667,
+      "width": 79,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear key",
+      "top": 1861.46875,
+      "left": 676,
+      "right": 754.109375,
+      "width": 78.109375,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Clear cached Genesys data",
+      "top": 1673.59375,
+      "left": 564,
+      "right": 739.96875,
+      "width": 175.96875,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "settings-card panel genesys-settings",
+      "text": "",
+      "top": 1726.59375,
+      "left": 563,
+      "right": 1599,
+      "width": 1036,
+      "height": 429.59375,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Connect to Genesys Cloud",
+      "top": 2093.1875,
+      "left": 588,
+      "right": 763.625,
+      "width": 175.625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "← Back to conversation review",
+      "top": 2329.1875,
+      "left": 563,
+      "right": 728.40625,
+      "width": 165.40625,
+      "height": 14,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "danger-button",
+      "text": "Reset demo data / history",
+      "top": 2583.09375,
+      "left": 586,
+      "right": 712.453125,
+      "width": 126.453125,
+      "height": 19,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [],
+  "tables": [],
+  "buttons": [
+    {
+      "text": "Clear cached conversation content now",
+      "disabled": false
+    },
+    {
+      "text": "Refresh notifications",
+      "disabled": true
+    },
+    {
+      "text": "Save key",
+      "disabled": true
+    },
+    {
+      "text": "Clear key",
+      "disabled": true
+    },
+    {
+      "text": "Clear cached Genesys data",
+      "disabled": false
+    },
+    {
+      "text": "Connect to Genesys Cloud",
+      "disabled": false
+    },
+    {
+      "text": "← Back to conversation review",
+      "disabled": false
+    },
+    {
+      "text": "Reset demo data / history",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Browser conversation cache hours",
+      "type": "number",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Due soon hours",
+      "type": "number",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "No escalation",
+      "type": "checkbox",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "Escalation hours",
+      "type": "number",
+      "disabled": true,
+      "readOnly": false
+    },
+    {
+      "label": "TypeSafe Jev API key",
+      "type": "password",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "RegionEU (Ireland)EU (Frankfurt)US EastUS WestAustraliaJapan",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "OAuth Client ID",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "governance",
+    "reviewSla": {
+      "dueSoonHours": 24,
+      "overdueEscalationHours": 48
+    },
+    "browserContentCacheHours": 24,
+    "evaluationRetentionDays": 2,
+    "reviewRetentionDays": null,
+    "policyRunRetentionDays": null,
+    "alertRetentionDays": null,
+    "auditRetentionDays": null,
+    "notificationDeliveryRetentionDays": null
+  }
+]

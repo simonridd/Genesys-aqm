@@ -1,0 +1,547 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 1440,
+  "pageWidth": 1440,
+  "height": 1799,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Conversations"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\nMONITOR\n◌\nOverview\nQUALITY\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nCONFIGURATION\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\nINTERACTIONS\n☷\nConversations\n◈\nConversation review\n✦\nPowered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.17 OPERATIONAL OVERVIEW • 2026\nWorkspace / Conversations\nADMIN\nJev managed securely by automation service\nConversation source\nFictional sample data · no credentials\nSynthetic\nGenesys Cloud\nSYNTHETIC CONVERSATION LIBRARY\nConversations\n\nFictional scenarios across queues, channels and service outcomes.\n\nTable\nCards\nQueue\nAll queues\nCustomer Service\nOrders\nBilling\nComplaints\nRetention\nTechnical Support\nSales\nChannel\nAll channels\nmessaging\nvoice\nSearch\n19 results\nTimestamp ↓\n\t\nConversation ID\n\t\nSource\n\t\nChannel\n\t\nAgent\n\t\nQueue\n\t\nDirection\n\t\nTopic\n\t\nTranscript\n\t\nEvaluations\n\n29 Sept 2026\tconv-delivery-002\tSynthetic\tmessaging\tJordan Lee\tOrders\tinbound\tDelayed delivery\tAvailable\t0\n29 Sept 2026\tconv-billing-001\tSynthetic\tmessaging\tAlex Morgan\tCustomer Service\tinbound\tBilling\tAvailable\t0\n17 Sept 2026\tsyn-sales-service\tSynthetic\tvoice\tAlex Morgan\tSales\tinbound\tSales\tAvailable\t0\n16 Sept 2026\tsyn-compliant-unresolved\tSynthetic\tvoice\tTaylor Quinn\tCustomer Service\tinbound\tBilling\tAvailable\t0\n15 Sept 2026\tsyn-correct-poor-experience\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tReturns\tAvailable\t0\n14 Sept 2026\tsyn-empathy-process-gap\tSynthetic\tmessaging\tSam Rivera\tCustomer Service\tinbound\tBilling\tAvailable\t0\n13 Sept 2026\tsyn-incomplete-resolution\tSynthetic\tmessaging\tJordan Lee\tTechnical Support\tinbound\tTechnical\tAvailable\t0\n12 Sept 2026\tsyn-vulnerable-customer\tSynthetic\tvoice\tPriya Shah\tBilling\tinbound\tBilling\tAvailable\t0\n11 Sept 2026\tsyn-transfer\tSynthetic\tvoice\tTaylor Quinn\tTechnical Support\tinbound\tTechnical\tAvailable\t0\n10 Sept 2026\tsyn-repeat-contact\tSynthetic\tvoice\tSam Rivera\tCustomer Service\tinbound\tDelivery\tAvailable\t0\n9 Sept 2026\tsyn-verification-failure\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tSecurity\tAvailable\t0\n8 Sept 2026\tsyn-verification-success\tSynthetic\tmessaging\tAlex Morgan\tCustomer Service\tinbound\tSecurity\tAvailable\t0\n7 Sept 2026\tsyn-retention-attempt\tSynthetic\tvoice\tJordan Lee\tRetention\tinbound\tCancellation\tAvailable\t0\n6 Sept 2026\tsyn-cancellation\tSynthetic\tmessaging\tPriya Shah\tRetention\tinbound\tCancellation\tAvailable\t0\n5 Sept 2026\tsyn-complaint\tSynthetic\tvoice\tSam Rivera\tComplaints\tinbound\tComplaint\tAvailable\t0\n4 Sept 2026\tsyn-billing-dispute\tSynthetic\tvoice\tAlex Morgan\tBilling\tinbound\tBilling\tAvailable\t0\n3 Sept 2026\tsyn-poor-service\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tBilling\tAvailable\t0\n2 Sept 2026\tsyn-mediocre-service\tSynthetic\tmessaging\tJordan Lee\tCustomer Service\tinbound\tDelivery\tAvailable\t0\n1 Sept 2026\tsyn-excellent-service\tSynthetic\tmessaging\tPriya Shah\tCustomer Service\tinbound\tDelivery\tAvailable\t0",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "selected",
+      "text": "Synthetic",
+      "top": 109,
+      "left": 1175.640625,
+      "right": 1258.296875,
+      "width": 82.65625,
+      "height": 32,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Genesys Cloud",
+      "top": 109,
+      "left": 1263.296875,
+      "right": 1374,
+      "width": 110.703125,
+      "height": 32,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "active",
+      "text": "Table",
+      "top": 254.59375,
+      "left": 1253.96875,
+      "right": 1323.140625,
+      "width": 69.171875,
+      "height": 39,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Cards",
+      "top": 254.59375,
+      "left": 1323.140625,
+      "right": 1397,
+      "width": 73.859375,
+      "height": 39,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 530.59375,
+      "left": 285,
+      "right": 1397,
+      "width": 1112,
+      "height": 1171,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Timestamp ↓",
+      "top": 531.59375,
+      "left": 286,
+      "right": 400.71875,
+      "width": 114.71875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Conversation ID ",
+      "top": 531.59375,
+      "left": 402.71875,
+      "right": 601.8125,
+      "width": 199.09375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Source ",
+      "top": 531.59375,
+      "left": 603.8125,
+      "right": 687.4375,
+      "width": 83.625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Channel ",
+      "top": 531.59375,
+      "left": 689.4375,
+      "right": 779.625,
+      "width": 90.1875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Agent ",
+      "top": 531.59375,
+      "left": 781.625,
+      "right": 871.625,
+      "width": 90,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Queue ",
+      "top": 531.59375,
+      "left": 873.625,
+      "right": 991.453125,
+      "width": 117.828125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Direction ",
+      "top": 531.59375,
+      "left": 993.453125,
+      "right": 1080.234375,
+      "width": 86.78125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Topic ",
+      "top": 531.59375,
+      "left": 1082.234375,
+      "right": 1197.046875,
+      "width": 114.8125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Transcript ",
+      "top": 531.59375,
+      "left": 1199.046875,
+      "right": 1292.71875,
+      "width": 93.671875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Evaluations ",
+      "top": 531.59375,
+      "left": 1294.71875,
+      "right": 1396,
+      "width": 101.28125,
+      "height": 43,
+      "inTable": true
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "29 Sept 2026conv-delivery-002SyntheticmessagingJordan LeeOrdersinboundDelayed deliveryAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "29 Sept 2026conv-billing-001SyntheticmessagingAlex MorganCustomer ServiceinboundBillingAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "17 Sept 2026syn-sales-serviceSyntheticvoiceAlex MorganSalesinboundSalesAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "16 Sept 2026syn-compliant-unresolvedSyntheticvoiceTaylor QuinnCustomer ServiceinboundBillingAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "15 Sept 2026syn-correct-poor-experienceSyntheticmessagingCasey BrownCustomer ServiceinboundReturnsAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "14 Sept 2026syn-empathy-process-gapSyntheticmessagingSam RiveraCustomer ServiceinboundBillingAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "13 Sept 2026syn-incomplete-resolutionSyntheticmessagingJordan LeeTechnical SupportinboundTechnicalAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "12 Sept 2026syn-vulnerable-customerSyntheticvoicePriya ShahBillinginboundBillingAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "11 Sept 2026syn-transferSyntheticvoiceTaylor QuinnTechnical SupportinboundTechnicalAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "10 Sept 2026syn-repeat-contactSyntheticvoiceSam RiveraCustomer ServiceinboundDeliveryAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "9 Sept 2026syn-verification-failureSyntheticmessagingCasey BrownCustomer ServiceinboundSecurityAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "8 Sept 2026syn-verification-successSyntheticmessagingAlex MorganCustomer ServiceinboundSecurityAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "7 Sept 2026syn-retention-attemptSyntheticvoiceJordan LeeRetentioninboundCancellationAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "6 Sept 2026syn-cancellationSyntheticmessagingPriya ShahRetentioninboundCancellationAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "5 Sept 2026syn-complaintSyntheticvoiceSam RiveraComplaintsinboundComplaintAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "4 Sept 2026syn-billing-disputeSyntheticvoiceAlex MorganBillinginboundBillingAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "3 Sept 2026syn-poor-serviceSyntheticmessagingCasey BrownCustomer ServiceinboundBillingAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "2 Sept 2026syn-mediocre-serviceSyntheticmessagingJordan LeeCustomer ServiceinboundDeliveryAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    },
+    {
+      "text": "1 Sept 2026syn-excellent-serviceSyntheticmessagingPriya ShahCustomer ServiceinboundDeliveryAvailable0",
+      "tabIndex": -1,
+      "buttons": 0
+    }
+  ],
+  "tables": [
+    {
+      "width": 1112,
+      "scrollWidth": 1112
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Synthetic",
+      "disabled": false
+    },
+    {
+      "text": "Genesys Cloud",
+      "disabled": false
+    },
+    {
+      "text": "Table",
+      "disabled": false
+    },
+    {
+      "text": "Cards",
+      "disabled": false
+    },
+    {
+      "text": "Timestamp ↓",
+      "disabled": false
+    },
+    {
+      "text": "Conversation ID ",
+      "disabled": false
+    },
+    {
+      "text": "Source ",
+      "disabled": false
+    },
+    {
+      "text": "Channel ",
+      "disabled": false
+    },
+    {
+      "text": "Agent ",
+      "disabled": false
+    },
+    {
+      "text": "Queue ",
+      "disabled": false
+    },
+    {
+      "text": "Direction ",
+      "disabled": false
+    },
+    {
+      "text": "Topic ",
+      "disabled": false
+    },
+    {
+      "text": "Transcript ",
+      "disabled": false
+    },
+    {
+      "text": "Evaluations ",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "QueueAll queuesCustomer ServiceOrdersBillingComplaintsRetentionTechnical SupportSales",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "ChannelAll channelsmessagingvoice",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/analytics",
+    "/api/forms?limit=100",
+    "/api/form-tests?limit=100",
+    "/api/governance",
+    "/api/notifications/destinations",
+    "/api/notifications/rules",
+    "/api/notifications/deliveries",
+    "/api/roles"
+  ],
+  "errors": []
+}

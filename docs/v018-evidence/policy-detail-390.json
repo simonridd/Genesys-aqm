@@ -1,0 +1,585 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 390,
+  "pageWidth": 390,
+  "height": 3088,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Policies"
+    },
+    {
+      "level": "H2",
+      "text": "Daily Voice Customer Service AQM"
+    },
+    {
+      "level": "H3",
+      "text": "Interaction criteria"
+    },
+    {
+      "level": "H3",
+      "text": "Sampling"
+    },
+    {
+      "level": "H3",
+      "text": "Published evaluation forms"
+    },
+    {
+      "level": "H3",
+      "text": "Readiness"
+    },
+    {
+      "level": "H3",
+      "text": "Automation"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nWorkspace / Policies\nADMIN\nJev managed securely by automation service\nCONFIGURATION\nPolicies\n\nDurable server policies · exact published form versions · optional daily or weekly automation.\n\nRefresh durable policies\n＋ New policy\nStatus\nAll\nEnabled\nDisabled\nSchedule\nAll\nManual\nDaily\nWeekly\nForms\nAll\nHas assigned forms\nNo assigned forms\nSearch\n1 results\nName ↓\n\t\nStatus\n\t\nVersion\n\t\nCriteria\n\t\nAssigned forms\n\t\nSampling\n\t\nSchedule\n\t\nLast modified\n\nDaily Voice Customer Service AQM\tEnabled\tv1\t\tGeneral Customer Service v17\tAll eligible\tWeekly on Monday at 02:00 Europe/London\t—\nDURABLE POLICY · v1\nDaily Voice Customer Service AQM\nView runs\nDuplicate policy\nSave changes\n\nSaved — to server\n\nPolicy name\nDescription\nEnabled (requires Save changes)\nInteraction criteria\n\nMatch ALL conditions in any one group. Groups are joined with OR.\n\nAdd OR group\nSampling\nSampling strategy\nAll eligible\nPercentage\nFixed count\nSample seed (optional)\nPublished evaluation forms\n\nAssignments pin the exact form ID and version. New versions do not replace these pins.\n\nGeneral Customer Service · v17 · 3 questions · weighted · general_service\nReadiness\nPOLICY\nEnabled\nFORMS\n1 published form assigned\nSAMPLING\nAll eligible\nSCHEDULE (SAVED)\nWeekly on Monday at 02:00 Europe/London\nNEXT RUN\n05/10/2026, 02:00:00\nAdd at least one Match ALL group.\nAutomation\n\nDaily evaluates the previous day; weekly evaluates the previous Monday–Sunday. Policy and schedule save separately.\n\nAutomation\nManual\nDaily\nWeekly\nWeekday\nMonday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday\nLocal time\nTimezone\nSchedule enabled\nSave schedule\n\nSchedule matches server\n\nNext due: 05/10/2026, 02:00:00 · Last attempted: — · Last successful: —\n\nView history",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh durable policies",
+      "top": 205,
+      "left": 251.6875,
+      "right": 375,
+      "width": 123.3125,
+      "height": 48,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "＋ New policy",
+      "top": 263,
+      "left": 251.6875,
+      "right": 356.765625,
+      "width": 105.078125,
+      "height": 40,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 712.171875,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 141,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Name ↓",
+      "top": 713.171875,
+      "left": 17,
+      "right": 235,
+      "width": 218,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 713.171875,
+      "left": 237,
+      "right": 311.453125,
+      "width": 74.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Version ",
+      "top": 713.171875,
+      "left": 313.453125,
+      "right": 389.4375,
+      "width": 75.984375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Criteria ",
+      "top": 713.171875,
+      "left": 391.4375,
+      "right": 467.703125,
+      "width": 76.265625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Assigned forms ",
+      "top": 713.171875,
+      "left": 469.703125,
+      "right": 596.421875,
+      "width": 126.71875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Sampling ",
+      "top": 713.171875,
+      "left": 598.421875,
+      "right": 685.4375,
+      "width": 87.015625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Schedule ",
+      "top": 713.171875,
+      "left": 687.4375,
+      "right": 806.9375,
+      "width": 119.5,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Last modified ",
+      "top": 713.171875,
+      "left": 808.9375,
+      "right": 923.734375,
+      "width": 114.796875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "Daily Voice Customer Service AQM",
+      "top": 793.171875,
+      "left": 30,
+      "right": 216.71875,
+      "width": 186.71875,
+      "height": 14,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "View runs",
+      "top": 982.171875,
+      "left": 32,
+      "right": 112.734375,
+      "width": 80.734375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Duplicate policy",
+      "top": 982.171875,
+      "left": 122.734375,
+      "right": 238.515625,
+      "width": 115.78125,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "Save changes",
+      "top": 980.171875,
+      "left": 248.515625,
+      "right": 354.140625,
+      "width": 105.625,
+      "height": 38,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Add OR group",
+      "top": 1343.5625,
+      "left": 32,
+      "right": 134.34375,
+      "width": 102.34375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Save schedule",
+      "top": 2811.96875,
+      "left": 32,
+      "right": 137.59375,
+      "width": 105.59375,
+      "height": 34,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "View history",
+      "top": 3005.359375,
+      "left": 15,
+      "right": 81.78125,
+      "width": 66.78125,
+      "height": 14,
+      "inTable": false
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "Daily Voice Customer Service AQMEnabledv1General Customer Service v17All eligibleWeekly on Monday at 02:00 Europe/London—",
+      "tabIndex": -1,
+      "buttons": 1
+    }
+  ],
+  "tables": [
+    {
+      "width": 358,
+      "scrollWidth": 909
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Refresh durable policies",
+      "disabled": false
+    },
+    {
+      "text": "＋ New policy",
+      "disabled": false
+    },
+    {
+      "text": "Name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Version ",
+      "disabled": false
+    },
+    {
+      "text": "Criteria ",
+      "disabled": false
+    },
+    {
+      "text": "Assigned forms ",
+      "disabled": false
+    },
+    {
+      "text": "Sampling ",
+      "disabled": false
+    },
+    {
+      "text": "Schedule ",
+      "disabled": false
+    },
+    {
+      "text": "Last modified ",
+      "disabled": false
+    },
+    {
+      "text": "Daily Voice Customer Service AQM",
+      "disabled": false
+    },
+    {
+      "text": "View runs",
+      "disabled": false
+    },
+    {
+      "text": "Duplicate policy",
+      "disabled": false
+    },
+    {
+      "text": "Save changes",
+      "disabled": true
+    },
+    {
+      "text": "Add OR group",
+      "disabled": false
+    },
+    {
+      "text": "Save schedule",
+      "disabled": true
+    },
+    {
+      "text": "View history",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Policy status",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Policy schedule filter",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Policy forms filter",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Policy name",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Description",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Enabled (requires Save changes)",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Sampling strategyAll eligiblePercentageFixed count",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Sample seed (optional)",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "General Customer Service · v17 · 3 questions · weighted · general_service",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Automation",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "WeekdayMondayTuesdayWednesdayThursdayFridaySaturdaySunday",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Local time",
+      "type": "time",
+      "disabled": false,
+      "readOnly": false
+    },
+    {
+      "label": "Timezone",
+      "type": null,
+      "disabled": false,
+      "readOnly": true
+    },
+    {
+      "label": "Schedule enabled",
+      "type": "checkbox",
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100"
+  ],
+  "errors": []
+}

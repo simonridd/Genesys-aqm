@@ -1,0 +1,408 @@
+{
+  "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+  "fontStatus": "loaded",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "unloaded"
+    },
+    {
+      "family": "DM Sans",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    }
+  ],
+  "width": 390,
+  "pageWidth": 390,
+  "height": 925,
+  "headings": [
+    {
+      "level": "H1",
+      "text": "Policies"
+    }
+  ],
+  "text": "G\n·\nGenesys AQM\nQUALITY INTELLIGENCE\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nWorkspace / Policies\nADMIN\nJev managed securely by automation service\nCONFIGURATION\nPolicies\n\nDurable server policies · exact published form versions · optional daily or weekly automation.\n\nRefresh durable policies\n＋ New policy\nStatus\nAll\nEnabled\nDisabled\nSchedule\nAll\nManual\nDaily\nWeekly\nForms\nAll\nHas assigned forms\nNo assigned forms\nSearch\n1 results\nName ↓\n\t\nStatus\n\t\nVersion\n\t\nCriteria\n\t\nAssigned forms\n\t\nSampling\n\t\nSchedule\n\t\nLast modified\n\nDaily Voice Customer Service AQM\tEnabled\tv1\t\tGeneral Customer Service v17\tAll eligible\tWeekly on Monday at 02:00 Europe/London\t—",
+  "geometry": [
+    {
+      "tag": "BUTTON",
+      "class": "outline-button",
+      "text": "Refresh durable policies",
+      "top": 205,
+      "left": 251.6875,
+      "right": 375,
+      "width": 123.3125,
+      "height": 48,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "primary-button",
+      "text": "＋ New policy",
+      "top": 263,
+      "left": 251.6875,
+      "right": 356.765625,
+      "width": 105.078125,
+      "height": 40,
+      "inTable": false
+    },
+    {
+      "tag": "DIV",
+      "class": "table-scroll",
+      "text": "",
+      "top": 712.171875,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "height": 141,
+      "inTable": false
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Name ↓",
+      "top": 713.171875,
+      "left": 17,
+      "right": 235,
+      "width": 218,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Status ",
+      "top": 713.171875,
+      "left": 237,
+      "right": 311.453125,
+      "width": 74.453125,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Version ",
+      "top": 713.171875,
+      "left": 313.453125,
+      "right": 389.4375,
+      "width": 75.984375,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Criteria ",
+      "top": 713.171875,
+      "left": 391.4375,
+      "right": 467.703125,
+      "width": 76.265625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Assigned forms ",
+      "top": 713.171875,
+      "left": 469.703125,
+      "right": 596.421875,
+      "width": 126.71875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Sampling ",
+      "top": 713.171875,
+      "left": 598.421875,
+      "right": 685.4375,
+      "width": 87.015625,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Schedule ",
+      "top": 713.171875,
+      "left": 687.4375,
+      "right": 806.9375,
+      "width": 119.5,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "",
+      "text": "Last modified ",
+      "top": 713.171875,
+      "left": 808.9375,
+      "right": 923.734375,
+      "width": 114.796875,
+      "height": 43,
+      "inTable": true
+    },
+    {
+      "tag": "BUTTON",
+      "class": "text-link",
+      "text": "Daily Voice Customer Service AQM",
+      "top": 793.171875,
+      "left": 30,
+      "right": 216.71875,
+      "width": 186.71875,
+      "height": 14,
+      "inTable": true
+    }
+  ],
+  "selectableRows": [
+    {
+      "text": "Daily Voice Customer Service AQMEnabledv1General Customer Service v17All eligibleWeekly on Monday at 02:00 Europe/London—",
+      "tabIndex": -1,
+      "buttons": 1
+    }
+  ],
+  "tables": [
+    {
+      "width": 358,
+      "scrollWidth": 909
+    }
+  ],
+  "buttons": [
+    {
+      "text": "Refresh durable policies",
+      "disabled": false
+    },
+    {
+      "text": "＋ New policy",
+      "disabled": false
+    },
+    {
+      "text": "Name ↓",
+      "disabled": false
+    },
+    {
+      "text": "Status ",
+      "disabled": false
+    },
+    {
+      "text": "Version ",
+      "disabled": false
+    },
+    {
+      "text": "Criteria ",
+      "disabled": false
+    },
+    {
+      "text": "Assigned forms ",
+      "disabled": false
+    },
+    {
+      "text": "Sampling ",
+      "disabled": false
+    },
+    {
+      "text": "Schedule ",
+      "disabled": false
+    },
+    {
+      "text": "Last modified ",
+      "disabled": false
+    },
+    {
+      "text": "Daily Voice Customer Service AQM",
+      "disabled": false
+    }
+  ],
+  "fields": [
+    {
+      "label": "Policy status",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Policy schedule filter",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Policy forms filter",
+      "type": null,
+      "disabled": false
+    },
+    {
+      "label": "Search table",
+      "type": null,
+      "disabled": false,
+      "readOnly": false
+    }
+  ],
+  "requests": [
+    "/api/overview?range=7",
+    "/api/policies?limit=100",
+    "/api/schedules?limit=100",
+    "/api/runs?limit=100",
+    "/api/session",
+    "/api/governance",
+    "/api/question-groups?limit=100",
+    "/api/alerts?limit=50&status=ACTIVE&severity=",
+    "/api/monitoring-health",
+    "/api/review-workload",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations?limit=50",
+    "/api/reviewers?limit=50",
+    "/api/governance",
+    "/api/evaluations/completed",
+    "/api/analytics",
+    "/api/calibration?source=genesys-cloud",
+    "/api/policies?limit=100",
+    "/api/forms?limit=100",
+    "/api/schedules?limit=100"
+  ],
+  "errors": []
+}
