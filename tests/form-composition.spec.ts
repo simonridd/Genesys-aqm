@@ -13,6 +13,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
  test(`provider-free group composition and reusable snapshots at ${viewport.width}`,async({browser})=>{
   test.setTimeout(90_000)
   const context=await browser.newContext({viewport}),page=await context.newPage(),errors:string[]=[]
+  page.on('dialog',dialog=>{if(dialog.message().startsWith('Unsaved changes'))void dialog.accept()})
   page.on('pageerror',e=>errors.push(e.message))
   let forms=[draft('alpha','Alpha form'),draft('beta','Beta form'),{...structuredClone(seedForms.at(-1)!),version:17}],assets:QuestionGroupAsset[]=[],providerCalls=0
   await page.addInitScript(()=>sessionStorage.setItem('genesys-aqm-pkce-transaction',JSON.stringify({region:'eu-west-1',clientId:'e05784c9-2421-4c2b-a3af-79fafb25aea8',verifier:'a'.repeat(43),state:'A'.repeat(43),createdAt:Date.now(),page:'forms'})))

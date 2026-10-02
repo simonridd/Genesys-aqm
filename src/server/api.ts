@@ -1,3 +1,4 @@
+import { cloneForm, importDefinition } from '../domain/portability'
 import { destinationInput, ruleInput, safeDestination, requestTest, notificationTick, type Providers } from './notifications'
 import { EmailProvider, WebhookProvider, secretManagerResolver } from './notificationProviders'
 import type { NotificationDestination, NotificationRule } from '../domain/notifications'
@@ -16,7 +17,6 @@ import { initializeApp } from 'firebase-admin/app'
 import { OAuth2Client } from 'google-auth-library'
 import { GenesysCloudConversationSource } from '../domain/sources'
 import { REGIONS, type Region } from '../domain/genesysAuth'
-import { validateForm } from '../domain/forms'
 import { formStatus, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
 import type { EvaluationForm, InteractionPolicy, MonitoringPeriod } from '../domain/types'
 import { FirestoreStore, ReviewConflict, type Store } from './store'
@@ -234,6 +234,16 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
       if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
+      const clonePath=/^\/api\/forms\/([A-Za-z0-9_-]+)\/clone$/.exec(path)
+      if(request.method==='POST'&&(clonePath||path==='/api/forms/import'||path==='/api/question-groups/import')){
+        const now=deps.now().toISOString(),newId=`${path.startsWith('/api/forms/')?'form':'asset'}_${randomUUID().replaceAll('-','')}`
+        const operation=clonePath?'cloned':'imported'
+        auditContext.getStore()!.operation=operation
+        if(clonePath){requirePermission(access,'forms.read');const source=await deps.store.form(clonePath[1]);if(!source){json(response,404,{error:'Source form not found.'});return}const item=cloneForm(source,newId,now);await deps.store.atomic([{collection:'evaluationForms',id:item.id,value:item,expected:undefined}]);json(response,201,{item});return}
+        const value=await body(request)
+        if(path==='/api/forms/import'){const item=importDefinition('form',value,newId,now);await deps.store.atomic([{collection:'evaluationForms',id:item.id,value:item,expected:undefined}]);json(response,201,{item});return}
+        const item=importDefinition('group',value,newId,now);await deps.store.atomic([{collection:'questionGroupAssets',id:item.id,value:item,expected:undefined}]);json(response,201,{item});return
+      }
       const assetPath=/^\/api\/question-groups\/([A-Za-z0-9_-]+)$/.exec(path)
       if(assetPath&&request.method==='GET'){const item=await deps.store.groupAsset(assetPath[1]);json(response,item?200:404,item??{error:'Reusable group not found.'});return}
       if(assetPath&&request.method==='PUT'){const value=await body(request);if(!obj(value)||value.id!==assetPath[1])throw Error('Invalid asset identity.');const asset=value as unknown as QuestionGroupAsset;if(asset.status==='PUBLISHED'||asset.status==='RETIRED')requirePermission(access,'groups.publish');assertAssetWrite(await deps.store.groupAsset(asset.id),asset);await deps.store.putGroupAsset(asset);json(response,200,{ok:true,item:asset});return}
@@ -245,7 +255,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             if(!['DRAFT','TESTING','PUBLISHED','RETIRED'].includes(formStatus(form)))throw Error('Invalid form lifecycle status.')
             if(['PUBLISHED','RETIRED'].includes(formStatus(form)))requirePermission(access,'forms.publish')
             const prior=await deps.store.form(form.id)
-            if(validateForm(form).length)throw new Error(validateForm(form).join(' '))
+            if(productionReadinessErrors(form).length)throw new Error(productionReadinessErrors(form).join(' '))
             if(prior){
               if(form.origin!==prior.origin||form.sourceFormId!==prior.sourceFormId)throw new Error('Source provenance cannot change.')
               if(form.version!==prior.version)throw new Error('Form version cannot change under the same ID.')
@@ -258,6 +268,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
               const errors=productionReadinessErrors(form);if(errors.length)throw new Error(errors.join(' '))
             }
             if(formStatus(form)==='RETIRED'&&form.enabled)throw new Error('Retired form must be disabled.')
+            if(prior&&['DRAFT','TESTING'].includes(formStatus(prior))&&formStatus(prior)===formStatus(form))auditContext.getStore()!.operation='draft_saved'
             await deps.store.atomic([{collection:'evaluationForms',id:form.id,value:form,expected:prior}])
             json(response,200,{ok:true,item:form});return
           }

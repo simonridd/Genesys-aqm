@@ -199,3 +199,5 @@ input[readonly] { background: #f8fbfa; }
 @media(max-width:600px){.notifications form {padding:16px}.notifications form .browser-filters {grid-template-columns:1fr}}
 .notifications>.panel {padding:24px}
 @media(max-width:600px){.notifications>.panel {padding:16px}}
+
+.bulk-toolbar{padding:16px;flex-wrap:wrap;gap:8px;margin-bottom:16px}.bulk-toolbar select{max-width:100%;padding:8px;border:1px solid #d4e0e2;border-radius:8px;background:#fff}

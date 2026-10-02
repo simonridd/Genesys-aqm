@@ -4,7 +4,7 @@ import { randomUUID } from 'node:crypto'
 import type { AuditEvent } from '../domain/governance'
 import type { Reviewer } from '../domain/reviews'
 const eventId=(now:string)=>`${String(Date.parse(now)).padStart(13,'0')}_${randomUUID()}`
-export const auditContext=new AsyncLocalStorage<{actor:Reviewer; now:string; correlationId:string}>()
+export const auditContext=new AsyncLocalStorage<{actor:Reviewer; now:string; correlationId:string;operation?:'cloned'|'imported'|'draft_saved'}>()
 /** Metadata is constructed here from schema fields, never copied from a request or resource body. */
 export function mutationAudit(collection:string,id:string,next:unknown,prior?:unknown):AuditEvent|undefined {
  const c=auditContext.getStore();if(!c)return
@@ -21,6 +21,7 @@ export function mutationAudit(collection:string,id:string,next:unknown,prior?:un
  if(type==='alert')action=n.status==='RESOLVED'?'resolve':'acknowledge'
  if(type==='role')action=prior?'change':'assign'
  if(type==='retention')action='settings_changed'
+ if((type==='form'||type==='group')&&c.operation)action=c.operation
  const metadata:AuditEvent['metadata']={}
  if(typeof n.enabled==='boolean')metadata.enabled=n.enabled
  if(typeof n.version==='number'&&Number.isFinite(n.version))metadata.version=n.version
