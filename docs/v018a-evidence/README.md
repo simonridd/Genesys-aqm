@@ -23,3 +23,5 @@ Screenshots from the final production preview were inspected at all three viewpo
 | Pending recovery reference | [1440](form-test-recovery-1440.png) | [1920](form-test-recovery-1920.png) | [390](form-test-recovery-390.png) |
 
 Native dialog text and exact cancellation/acceptance decisions are in [confirmations.txt](confirmations.txt). Native browser confirmations are not rendered into Playwright page screenshots. Successful test/build logs are retained as `.txt` files. Existing regression output documents the initial two cache harness failures, with their passing rerun in `cache-regression.txt`; the form protection itself was preserved.
+
+Deployment: [Pages byte comparison](pages.json), [production preservation comparison](preservation.json). Source fd26f4dad3a8ee666feaadf9cb7ba277f8c9cb9a; Pages 7d4c936110f74ddfdb910d6d254b8f923b34ee12. All 23 production collection counts/hashes and Cloud Run/Scheduler configuration/state are unchanged; no natural scheduler differences were observed.

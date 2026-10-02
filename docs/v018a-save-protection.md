@@ -43,6 +43,10 @@ The existing native browser confirmation convention is retained. Dirty/save stat
 
 ## Deployment and preservation
 
-Deployment identifiers and before/after comparison will be recorded after publishing the tested build. Backend source under `src/server` is unchanged, and all four compiled backend bundles match the baseline exactly when compiled from the same relative entry points ([proof](v018a-evidence/backend.json)); no Cloud Run revision is required.
+Tested application source: **fd26f4dad3a8ee666feaadf9cb7ba277f8c9cb9a**. GitHub Pages HEAD: **7d4c936110f74ddfdb910d6d254b8f923b34ee12**. [Public site](https://simonridd.github.io/Genesys-aqm/) bytes match the exact tested build ([Pages proof](v018a-evidence/pages.json)). The implementation and this final evidence are pushed only to the requested source branch, plus the existing gh-pages publication branch. Main remains at the canonical base. No PR or tag was created.
+
+Backend source under `src/server` is unchanged, and all four compiled backend bundles match the baseline exactly when compiled from the same relative entry points ([proof](v018a-evidence/backend.json)). **No Cloud Run deployment was performed**; the unchanged revision is **aqm-api-v017-7d4b401**.
+
+[Production preservation proof](v018a-evidence/preservation.json): **23/23 collection counts and hashes match before/after**, covering forms, reusable groups, policies, schedules/claims, evaluations, reviews, runs, alerts, notification configuration/history, roles, Governance, audit, test history and operational state. Cloud Run's entire service description/spec, revision and Scheduler configuration/runtime state also match. **No natural scheduler differences occurred in this comparison window.** No production settings save, reset, test-history deletion, retention purge or paid Jev request was initiated.
 
 Production verification uses read-only aggregate counts and hashes. No production document contents, identifiers, tokens or personal information are saved in the evidence. Runtime configuration checks are recorded as hashes/equality results, without exposing environment or secret values.

@@ -1,0 +1,43 @@
+{
+  "source": "fd26f4dad3a8ee666feaadf9cb7ba277f8c9cb9a",
+  "pagesHead": "7d4c936110f74ddfdb910d6d254b8f923b34ee12",
+  "site": "https://simonridd.github.io/Genesys-aqm/",
+  "files": {
+    ".nojekyll": {
+      "equal": true,
+      "localSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "remoteSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "assets/genesysEmail-BJj4UQKD.js": {
+      "equal": true,
+      "localSha256": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2",
+      "remoteSha256": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2"
+    },
+    "assets/index-BtlBPaom.css": {
+      "equal": true,
+      "localSha256": "7f38ccf6d1898e1d69a22b487f938d51da3485350d2d2e3a9d911afd585f66e1",
+      "remoteSha256": "7f38ccf6d1898e1d69a22b487f938d51da3485350d2d2e3a9d911afd585f66e1"
+    },
+    "assets/index-DXsPMqvX.js": {
+      "equal": true,
+      "localSha256": "d6d4afe63de50dc795a41296e0720f530022ca12a844583062ee4acaff1a7948",
+      "remoteSha256": "d6d4afe63de50dc795a41296e0720f530022ca12a844583062ee4acaff1a7948"
+    },
+    "index.html": {
+      "equal": true,
+      "localSha256": "bac0868e72b8e54db6143c65e62ec5d05604614e42317843fd73161774535d9d",
+      "remoteSha256": "bac0868e72b8e54db6143c65e62ec5d05604614e42317843fd73161774535d9d"
+    },
+    "samples/billing-conversation.json": {
+      "equal": true,
+      "localSha256": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+      "remoteSha256": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040"
+    },
+    "samples/delivery-conversation.json": {
+      "equal": true,
+      "localSha256": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+      "remoteSha256": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7"
+    }
+  },
+  "allEqual": true
+}
