@@ -1,0 +1,352 @@
+{
+  "evidence": "Read-only projection of captured production baseline; not an authenticated live API response",
+  "source": "7d4b401ee1508e25db47723c24acb2d806ab754e",
+  "seven": {
+    "generatedAt": "2026-10-02T12:25:33.880Z",
+    "range": {
+      "days": 7,
+      "from": "2026-09-25T12:25:33.880Z",
+      "to": "2026-10-02T12:25:33.880Z"
+    },
+    "health": {
+      "complete": true,
+      "data": {
+        "api": "healthy",
+        "firestore": "available",
+        "genesysAutomation": {
+          "status": "verified"
+        },
+        "jev": {
+          "status": "unverified"
+        },
+        "scheduler": {
+          "status": "configured_unverified",
+          "lastSuccessfulTickAt": null
+        }
+      }
+    },
+    "analytics": {
+      "complete": true,
+      "data": {
+        "quality": {
+          "evaluations": 8,
+          "conversations": 6,
+          "averageScore": 0.3011913213561287,
+          "passRate": 0,
+          "criticalFailures": 5,
+          "criticalFailureRate": 0.375
+        },
+        "coverage": {
+          "candidate": 32,
+          "eligible": 30,
+          "sampled": 16,
+          "evaluable": 6,
+          "evaluated": 6,
+          "successful": 6,
+          "failed": 0,
+          "samplingCoverage": 0.5333333333333333,
+          "evaluationCoverage": 0.2,
+          "sampleCompletion": 1,
+          "transcriptAvailability": 0.375
+        },
+        "qualityTrend": [
+          {
+            "key": "2026-10-01",
+            "count": 8,
+            "averageScore": 0.3011913213561287,
+            "passRate": 0,
+            "criticalFailures": 5
+          }
+        ],
+        "runCounts": {
+          "completed": 2,
+          "partial": 1,
+          "failed": 0,
+          "running": 0
+        }
+      }
+    },
+    "reviews": {
+      "complete": true,
+      "data": {
+        "open": 0,
+        "dueSoon": 0,
+        "overdue": 0,
+        "escalated": 0,
+        "unassigned": 0
+      }
+    },
+    "alerts": {
+      "complete": true,
+      "data": {
+        "openAlerts": 0,
+        "errors": 0,
+        "warnings": 0,
+        "items": []
+      }
+    },
+    "notifications": {
+      "complete": true,
+      "data": {
+        "pending": 0,
+        "failed24h": 0,
+        "lastSuccessfulAt": null
+      }
+    },
+    "schedules": {
+      "complete": true,
+      "data": {
+        "nextRunAt": "2026-10-03T01:00:00.000Z",
+        "items": [
+          {
+            "id": "daily_voice_customer_service_aqm_daily",
+            "policyId": "daily_voice_customer_service_aqm",
+            "policyName": "Daily Voice Customer Service AQM",
+            "frequency": "DAILY",
+            "nextDueAt": "2026-10-03T01:00:00.000Z",
+            "lastSuccessfulAt": "2026-10-02T01:00:08.428Z"
+          }
+        ]
+      }
+    },
+    "recentRuns": {
+      "complete": true,
+      "data": {
+        "lastRun": {
+          "id": "r_3ada5020677e14fddb182c27ae6ed70ccaa3d145",
+          "policyId": "daily_voice_customer_service_aqm",
+          "policyName": "Daily Voice Customer Service AQM",
+          "status": "completed",
+          "startedAt": "2026-10-02T01:00:07.851Z",
+          "completedAt": "2026-10-02T01:00:08.428Z",
+          "trigger": "scheduled",
+          "evaluationsSucceeded": 0,
+          "evaluationsFailed": 0
+        },
+        "items": [
+          {
+            "id": "r_3ada5020677e14fddb182c27ae6ed70ccaa3d145",
+            "policyId": "daily_voice_customer_service_aqm",
+            "policyName": "Daily Voice Customer Service AQM",
+            "status": "completed",
+            "startedAt": "2026-10-02T01:00:07.851Z",
+            "completedAt": "2026-10-02T01:00:08.428Z",
+            "trigger": "scheduled",
+            "evaluationsSucceeded": 0,
+            "evaluationsFailed": 0
+          },
+          {
+            "id": "m_98e28bf2826c0752ce6f2791961ee2dea1f031fb",
+            "policyId": "sample_monitoring",
+            "policyName": "Cross-channel monitoring sample",
+            "status": "partial-failure",
+            "startedAt": "2026-10-01T15:28:43.687Z",
+            "completedAt": "2026-10-01T15:28:45.706Z",
+            "trigger": "manual",
+            "evaluationsSucceeded": 4,
+            "evaluationsFailed": 0
+          },
+          {
+            "id": "m_eb9fb061535f71734a2560425e867adc0e411439",
+            "policyId": "daily_voice_customer_service_aqm",
+            "policyName": "Daily Voice Customer Service AQM",
+            "status": "completed",
+            "startedAt": "2026-10-01T10:38:36.266Z",
+            "completedAt": "2026-10-01T10:38:37.593Z",
+            "trigger": "manual",
+            "evaluationsSucceeded": 2,
+            "evaluationsFailed": 0
+          }
+        ]
+      }
+    },
+    "lastAutomatedRun": {
+      "complete": true,
+      "data": {
+        "id": "r_3ada5020677e14fddb182c27ae6ed70ccaa3d145",
+        "policyId": "daily_voice_customer_service_aqm",
+        "policyName": "Daily Voice Customer Service AQM",
+        "status": "completed",
+        "startedAt": "2026-10-02T01:00:07.851Z",
+        "completedAt": "2026-10-02T01:00:08.428Z",
+        "trigger": "scheduled",
+        "evaluationsSucceeded": 0,
+        "evaluationsFailed": 0
+      }
+    }
+  },
+  "thirty": {
+    "generatedAt": "2026-10-02T12:25:33.880Z",
+    "range": {
+      "days": 30,
+      "from": "2026-09-02T12:25:33.880Z",
+      "to": "2026-10-02T12:25:33.880Z"
+    },
+    "health": {
+      "complete": true,
+      "data": {
+        "api": "healthy",
+        "firestore": "available",
+        "genesysAutomation": {
+          "status": "verified"
+        },
+        "jev": {
+          "status": "unverified"
+        },
+        "scheduler": {
+          "status": "configured_unverified",
+          "lastSuccessfulTickAt": null
+        }
+      }
+    },
+    "analytics": {
+      "complete": true,
+      "data": {
+        "quality": {
+          "evaluations": 8,
+          "conversations": 6,
+          "averageScore": 0.3011913213561287,
+          "passRate": 0,
+          "criticalFailures": 5,
+          "criticalFailureRate": 0.375
+        },
+        "coverage": {
+          "candidate": 32,
+          "eligible": 30,
+          "sampled": 16,
+          "evaluable": 6,
+          "evaluated": 6,
+          "successful": 6,
+          "failed": 0,
+          "samplingCoverage": 0.5333333333333333,
+          "evaluationCoverage": 0.2,
+          "sampleCompletion": 1,
+          "transcriptAvailability": 0.375
+        },
+        "qualityTrend": [
+          {
+            "key": "2026-10-01",
+            "count": 8,
+            "averageScore": 0.3011913213561287,
+            "passRate": 0,
+            "criticalFailures": 5
+          }
+        ],
+        "runCounts": {
+          "completed": 2,
+          "partial": 1,
+          "failed": 0,
+          "running": 0
+        }
+      }
+    },
+    "reviews": {
+      "complete": true,
+      "data": {
+        "open": 0,
+        "dueSoon": 0,
+        "overdue": 0,
+        "escalated": 0,
+        "unassigned": 0
+      }
+    },
+    "alerts": {
+      "complete": true,
+      "data": {
+        "openAlerts": 0,
+        "errors": 0,
+        "warnings": 0,
+        "items": []
+      }
+    },
+    "notifications": {
+      "complete": true,
+      "data": {
+        "pending": 0,
+        "failed24h": 0,
+        "lastSuccessfulAt": null
+      }
+    },
+    "schedules": {
+      "complete": true,
+      "data": {
+        "nextRunAt": "2026-10-03T01:00:00.000Z",
+        "items": [
+          {
+            "id": "daily_voice_customer_service_aqm_daily",
+            "policyId": "daily_voice_customer_service_aqm",
+            "policyName": "Daily Voice Customer Service AQM",
+            "frequency": "DAILY",
+            "nextDueAt": "2026-10-03T01:00:00.000Z",
+            "lastSuccessfulAt": "2026-10-02T01:00:08.428Z"
+          }
+        ]
+      }
+    },
+    "recentRuns": {
+      "complete": true,
+      "data": {
+        "lastRun": {
+          "id": "r_3ada5020677e14fddb182c27ae6ed70ccaa3d145",
+          "policyId": "daily_voice_customer_service_aqm",
+          "policyName": "Daily Voice Customer Service AQM",
+          "status": "completed",
+          "startedAt": "2026-10-02T01:00:07.851Z",
+          "completedAt": "2026-10-02T01:00:08.428Z",
+          "trigger": "scheduled",
+          "evaluationsSucceeded": 0,
+          "evaluationsFailed": 0
+        },
+        "items": [
+          {
+            "id": "r_3ada5020677e14fddb182c27ae6ed70ccaa3d145",
+            "policyId": "daily_voice_customer_service_aqm",
+            "policyName": "Daily Voice Customer Service AQM",
+            "status": "completed",
+            "startedAt": "2026-10-02T01:00:07.851Z",
+            "completedAt": "2026-10-02T01:00:08.428Z",
+            "trigger": "scheduled",
+            "evaluationsSucceeded": 0,
+            "evaluationsFailed": 0
+          },
+          {
+            "id": "m_98e28bf2826c0752ce6f2791961ee2dea1f031fb",
+            "policyId": "sample_monitoring",
+            "policyName": "Cross-channel monitoring sample",
+            "status": "partial-failure",
+            "startedAt": "2026-10-01T15:28:43.687Z",
+            "completedAt": "2026-10-01T15:28:45.706Z",
+            "trigger": "manual",
+            "evaluationsSucceeded": 4,
+            "evaluationsFailed": 0
+          },
+          {
+            "id": "m_eb9fb061535f71734a2560425e867adc0e411439",
+            "policyId": "daily_voice_customer_service_aqm",
+            "policyName": "Daily Voice Customer Service AQM",
+            "status": "completed",
+            "startedAt": "2026-10-01T10:38:36.266Z",
+            "completedAt": "2026-10-01T10:38:37.593Z",
+            "trigger": "manual",
+            "evaluationsSucceeded": 2,
+            "evaluationsFailed": 0
+          }
+        ]
+      }
+    },
+    "lastAutomatedRun": {
+      "complete": true,
+      "data": {
+        "id": "r_3ada5020677e14fddb182c27ae6ed70ccaa3d145",
+        "policyId": "daily_voice_customer_service_aqm",
+        "policyName": "Daily Voice Customer Service AQM",
+        "status": "completed",
+        "startedAt": "2026-10-02T01:00:07.851Z",
+        "completedAt": "2026-10-02T01:00:08.428Z",
+        "trigger": "scheduled",
+        "evaluationsSucceeded": 0,
+        "evaluationsFailed": 0
+      }
+    }
+  }
+}

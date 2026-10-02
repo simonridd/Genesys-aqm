@@ -1,0 +1,48 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "allowOrigin": "https://simonridd.github.io",
+    "cacheControl": "no-store",
+    "body": {
+      "status": "ok",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "path": "/api/overview?range=7",
+    "status": 401,
+    "allowOrigin": "https://simonridd.github.io",
+    "cacheControl": "no-store",
+    "body": {
+      "error": "Unauthorized"
+    }
+  },
+  {
+    "path": "/api/overview?range=30",
+    "status": 401,
+    "allowOrigin": "https://simonridd.github.io",
+    "cacheControl": "no-store",
+    "body": {
+      "error": "Unauthorized"
+    }
+  },
+  {
+    "path": "/api/monitoring-health",
+    "status": 401,
+    "allowOrigin": "https://simonridd.github.io",
+    "cacheControl": "no-store",
+    "body": {
+      "error": "Unauthorized"
+    }
+  },
+  {
+    "path": "/api/evaluations?dueState=ESCALATED",
+    "status": 401,
+    "allowOrigin": "https://simonridd.github.io",
+    "cacheControl": "no-store",
+    "body": {
+      "error": "Unauthorized"
+    }
+  }
+]

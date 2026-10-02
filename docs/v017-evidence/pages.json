@@ -1,0 +1,12 @@
+[
+  {
+    "asset": "index-Dun1p5-r.js",
+    "sha256": "c0e54a6cdcd358317483df3ff249e68d0bbeca148fb0cf38f561cf73199ef90c",
+    "equalsLocalBuild": true
+  },
+  {
+    "asset": "index-Qj14Anwb.css",
+    "sha256": "36ecc1b471993ee707d3d9dd7ba53e4ae33b8cda3821f809f12cf89a5187e77b",
+    "equalsLocalBuild": true
+  }
+]

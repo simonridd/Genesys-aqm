@@ -1,0 +1,35 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "overviewVisible": true,
+    "disconnectedMessage": true,
+    "overflow": false,
+    "errors": [],
+    "blocked": []
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "overviewVisible": true,
+    "disconnectedMessage": true,
+    "overflow": false,
+    "errors": [],
+    "blocked": []
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "overviewVisible": true,
+    "disconnectedMessage": true,
+    "overflow": false,
+    "errors": [],
+    "blocked": []
+  }
+]
