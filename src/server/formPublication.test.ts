@@ -33,7 +33,7 @@ describe('server recreated form publication', () => {
     expect((await call(path,'PUT',{...published,questions:form.questions.map((q,i)=>i===0?{...q,type:'multi-select'}:q)})).status).toBe(400)
     expect((await call(path,'PUT',published)).status).toBe(200)
     expect(await store.form(form.id)).toEqual(published);expect(isOperationalForm((await store.form(form.id))!)).toBe(true)
-    expect((await call('/api/policies/p','PUT',{id:'p',name:'P',description:'',enabled:true,criteria:{anyOf:[]},evaluationFormIds:[form.id]})).status).toBe(200)
+    expect((await call('/api/policies/p','PUT',{id:'p',name:'P',description:'',enabled:true,version:1,expectedVersion:null,criteria:{anyOf:[[{field:'channel',operator:'equals',value:'voice'}]]},evaluationFormIds:[form.id]})).status).toBe(200)
     expect((await call(`${path}/source-review`,'POST',{acknowledged:true,form:published})).status).toBe(404)
     const forms=await (await fetch(`${base}/api/forms`,{headers:{Authorization:'Bearer another-browser'}})).json() as {items:EvaluationForm[]}
     expect(forms.items).toEqual([published]);expect(published.version).toBe(1);expect(published.questions).toEqual(form.questions)

@@ -21,7 +21,7 @@ export function mutationAudit(collection:string,id:string,next:unknown,prior?:un
  if(type==='alert')action=n.status==='RESOLVED'?'resolve':'acknowledge'
  if(type==='role')action=prior?'change':'assign'
  if(type==='retention')action='settings_changed'
- if((type==='form'||type==='group')&&c.operation)action=c.operation
+ if((type==='form'||type==='group'||type==='policy')&&c.operation)action=c.operation
  const metadata:AuditEvent['metadata']={}
  if(typeof n.enabled==='boolean')metadata.enabled=n.enabled
  if(typeof n.version==='number'&&Number.isFinite(n.version))metadata.version=n.version

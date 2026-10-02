@@ -74,12 +74,12 @@ describe('append-only server audit',()=>{
   const group={...structuredClone(seedGroupAssets[0]),id:'g',familyId:'g',status:'DRAFT'}
   expect((await call('author','/api/question-groups/g','PUT',group)).status).toBe(200)
   expect((await call('author','/api/question-groups/g','PUT',{...group,status:'PUBLISHED'})).status).toBe(200)
-  const policy={id:'p',name:'Private transcript DO-NOT-AUDIT',description:'secret transcript',enabled:false,evaluationFormIds:['f'],criteria:{anyOf:[]}}
-  expect((await call('author','/api/policies/p','PUT',policy)).status).toBe(200)
-  expect((await call('author','/api/policies/p','PUT',{...policy,description:'updated'})).status).toBe(200)
-  const s={id:'s',policyId:'p',enabled:false,frequency:'MANUAL',timezone:'Europe/London',localTime:'02:00',version:1}
-  expect((await call('author','/api/schedules/s','PUT',s)).status).toBe(200)
-  expect((await call('author','/api/schedules/s','PUT',{...s,localTime:'03:00'})).status).toBe(200)
+  const policy={id:'p',name:'Private transcript DO-NOT-AUDIT',description:'secret transcript',enabled:false,version:1,evaluationFormIds:['f'],criteria:{anyOf:[[{field:'channel',operator:'equals',value:'voice'}]]}}
+  expect((await call('author','/api/policies/p','PUT',{...policy,expectedVersion:null})).status).toBe(200)
+  expect((await call('author','/api/policies/p','PUT',{...policy,description:'updated',expectedVersion:1})).status).toBe(200)
+  const s={id:'schedule_p',policyId:'p',enabled:false,frequency:'MANUAL',timezone:'Europe/London',localTime:'02:00',version:1}
+  expect((await call('author','/api/schedules/schedule_p','PUT',s)).status).toBe(200)
+  expect((await call('author','/api/schedules/schedule_p','PUT',{...s,localTime:'03:00'})).status).toBe(200)
   expect((await call('owner','/api/governance','PUT',defaultGovernance)).status).toBe(200)
   const events=(await store.query<AuditEvent>('auditEvents',100)).items,actions=events.map(e=>e.action)
   expect(actions).toEqual(expect.arrayContaining(['role.assign','form.publish','group.publish','policy.update','schedule.update','retention.settings_changed']))

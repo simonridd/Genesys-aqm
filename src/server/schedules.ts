@@ -26,7 +26,7 @@ export function localInstant(day: string, time = '00:00'): string {
   throw new Error('The configured local time does not occur on this date.')
 }
 export function validateSchedule(s: Schedule) {
-  if (!s.id || !s.policyId || s.version !== 1 || s.timezone !== 'Europe/London' || !['MANUAL','DAILY','WEEKLY'].includes(s.frequency) || !/^([01]\d|2[0-3]):[0-5]\d$/.test(s.localTime) || (s.frequency === 'WEEKLY' && (!Number.isInteger(s.weekday) || s.weekday! < 1 || s.weekday! > 7))) throw new Error('Invalid schedule.')
+  if (typeof s.enabled !== 'boolean' || !s.id || !s.policyId || s.version !== 1 || s.timezone !== 'Europe/London' || !['MANUAL','DAILY','WEEKLY'].includes(s.frequency) || !/^([01]\d|2[0-3]):[0-5]\d$/.test(s.localTime) || (s.frequency === 'WEEKLY' && (!Number.isInteger(s.weekday) || s.weekday! < 1 || s.weekday! > 7))) throw new Error('Invalid schedule.')
 }
 export function nextDueAfter(schedule: Schedule, after: string): string | undefined {
   validateSchedule(schedule)

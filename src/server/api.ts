@@ -1,3 +1,4 @@
+import { savePolicy, duplicatePolicy } from './policyAuthoring'
 import { cloneForm, importDefinition } from '../domain/portability'
 import { destinationInput, ruleInput, safeDestination, requestTest, notificationTick, type Providers } from './notifications'
 import { EmailProvider, WebhookProvider, secretManagerResolver } from './notificationProviders'
@@ -17,7 +18,7 @@ import { initializeApp } from 'firebase-admin/app'
 import { OAuth2Client } from 'google-auth-library'
 import { GenesysCloudConversationSource } from '../domain/sources'
 import { REGIONS, type Region } from '../domain/genesysAuth'
-import { formStatus, productionReadinessErrors, sameDefinition, validatePolicyFormPins } from '../domain/formLifecycle'
+import { formStatus, productionReadinessErrors, sameDefinition } from '../domain/formLifecycle'
 import type { EvaluationForm, InteractionPolicy, MonitoringPeriod } from '../domain/types'
 import { FirestoreStore, ReviewConflict, type Store } from './store'
 import { ClientCredentialsGenesys, DirectJev } from './providers'
@@ -203,7 +204,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         }
         if(path==='/api/analytics'){json(response,200,await operationalAnalytics(deps.store,url.searchParams));return}
         if(path==='/api/form-tests'){const limit=Number(url.searchParams.get('limit')??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Limit must be between 1 and 100.');json(response,200,{items:await deps.store.recentFormTestRuns(limit)});return}
-        const collections={'/api/question-groups':'questionGroupAssets','/api/forms':'evaluationForms','/api/policies':'policies','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
+        const collections={'/api/question-groups':'questionGroupAssets','/api/forms':'evaluationForms','/api/policies':'policies','/api/schedules':'schedules','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
         if(path in collections){
           const rawLimit=Number(url.searchParams.get('limit')??50)
           if(!Number.isInteger(rawLimit)||rawLimit<1||rawLimit>100)throw new Error('Limit must be between 1 and 100.')
@@ -228,12 +229,13 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(runDetail){const item=await deps.store.run(runDetail[1]);json(response,item?200:404,item??{error:'Run not found.'});return}
         const testDetail=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
         if(testDetail){const item=await deps.store.formTestRun(testDetail[1]);json(response,item?200:404,item??{error:'Form test not found.'});return}
-        if(path==='/api/schedules'){json(response,200,{items:await deps.store.schedules()});return}
       }
       if(request.method==='POST'&&path==='/api/evaluations/manual'){const outcome=await evaluateManual(deps,await body(request));json(response,outcome.status==='uncertain'?409:200,outcome);return}
       const testRun=/^\/api\/form-tests\/([A-Za-z0-9_-]+)$/.exec(path)
       if(request.method==='POST'&&testRun){const input=await body(request);if(!obj(input)||!id(testRun[1])||!obj(input.form)||input.id!==testRun[1])throw new Error('Invalid form test request.');const run=await executeFormTest(deps,input as unknown as FormTestInput);json(response,200,{run});return}
       if(request.method==='DELETE'&&testRun){const run=await deps.store.formTestRun(testRun[1]);if(!run){json(response,404,{error:'Form test not found.'});return}if(run.status==='running'){json(response,409,{error:'A running or uncertain test cannot be deleted until reconciled.'});return}await deps.store.deleteFormTestRun(run.id);json(response,200,{ok:true});return}
+      const policyClone=/^\/api\/policies\/([A-Za-z0-9_-]+)\/clone$/.exec(path)
+      if(request.method==='POST'&&policyClone){const item=await duplicatePolicy(deps.store,policyClone[1],`policy_${randomUUID().replaceAll('-','')}`,deps.now().toISOString());json(response,item?201:404,item?{item}:{error:'Source policy not found.'});return}
       const clonePath=/^\/api\/forms\/([A-Za-z0-9_-]+)\/clone$/.exec(path)
       if(request.method==='POST'&&(clonePath||path==='/api/forms/import'||path==='/api/question-groups/import')){
         const now=deps.now().toISOString(),newId=`${path.startsWith('/api/forms/')?'form':'asset'}_${randomUUID().replaceAll('-','')}`
@@ -272,8 +274,27 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             await deps.store.atomic([{collection:'evaluationForms',id:form.id,value:form,expected:prior}])
             json(response,200,{ok:true,item:form});return
           }
-          if(match[1]==='policies'){const policy=value as unknown as InteractionPolicy;if(!policy.name||!Array.isArray(policy.evaluationFormIds)||!Array.isArray(policy.criteria?.anyOf))throw new Error('Invalid policy.');const errors=validatePolicyFormPins(policy,await deps.store.forms());if(errors.length)throw new Error(errors.join(' '));await deps.store.atomic([{collection:'policies',id:policy.id,value:policy,expected:await deps.store.policy(policy.id)}])}
-          if(match[1]==='schedules'){const schedule=value as unknown as Schedule;validateSchedule(schedule);const prior=await deps.store.schedule(schedule.id);if(prior?.policyId!==undefined&&prior.policyId!==schedule.policyId)throw new Error('Schedule policy cannot change.');schedule.nextDueAt=nextDueAfter(schedule,deps.now().toISOString());schedule.lastAttemptedAt=prior?.lastAttemptedAt;schedule.lastSuccessfulAt=prior?.lastSuccessfulAt;await deps.store.atomic([{collection:'schedules',id:schedule.id,value:schedule,expected:prior}])}
+          if(match[1]==='policies'){
+            const policy=value as unknown as InteractionPolicy
+            const item=await savePolicy(deps.store,policy,value.expectedVersion,deps.now().toISOString())
+            json(response,200,{item});return
+          }
+          if(match[1]==='schedules'){
+            const schedule=value as unknown as Schedule;validateSchedule(schedule)
+            const prior=await deps.store.schedule(schedule.id)
+            const policy=await deps.store.policy(schedule.policyId);if(!policy)throw Error('Schedule policy does not exist. Save the policy first.')
+            if(prior&&prior.policyId!==schedule.policyId)throw Error('Schedule policy cannot change.')
+            // New schedules use one deterministic ID per policy; existing identities are preserved.
+            if(!prior&&(await deps.store.schedules()).some(s=>s.policyId===schedule.policyId))throw new StoreConflict()
+            const item:Schedule={id:schedule.id,policyId:schedule.policyId,enabled:schedule.frequency==='MANUAL'?false:schedule.enabled,frequency:schedule.frequency,timezone:schedule.timezone,localTime:schedule.localTime,version:1,...(schedule.weekday!==undefined?{weekday:schedule.weekday}:{})}
+            const unchanged=prior&&prior.enabled===item.enabled&&prior.frequency===item.frequency&&prior.localTime===item.localTime&&prior.weekday===item.weekday&&prior.timezone===item.timezone
+            if(unchanged){json(response,200,{item:prior});return}
+            item.nextDueAt=nextDueAfter(item,deps.now().toISOString());item.lastAttemptedAt=prior?.lastAttemptedAt;item.lastSuccessfulAt=prior?.lastSuccessfulAt
+            // Schedule identity is deterministic for new schedules; legacy identities are preserved.
+            if(!prior&&item.id!==`schedule_${item.policyId}`)throw Error('New schedules must use schedule_<policy ID>.')
+            await deps.store.atomic([{collection:'schedules',id:item.id,value:item,expected:prior}])
+            json(response,200,{item});return
+          }
           json(response,200,{ok:true});return}
       }
       const review=/^\/api\/evaluations\/([A-Za-z0-9_-]+)\/review$/.exec(path)

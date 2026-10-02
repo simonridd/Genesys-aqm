@@ -1,7 +1,9 @@
-# Genesys AQM · V0.7 prototype
+# Genesys AQM · V0.14
 
 A provider-neutral quality management prototype. The built-in 19 conversations and optional demo history are fictional. Genesys Cloud mode uses browser Authorization Code + PKCE after a user signs in. Voice retrieval stays direct; email content uses the trusted Cloud Run API with the same user authorization. Production evaluation uses Cloud Run with its server-managed Jev credential and durable Firestore records. Browser conversation searches/transcripts share an identity-scoped IndexedDB cache. The V0.6.4 server monitoring proof completed two real voice evaluations with two Jev requests and enabled one daily 02:00 Europe/London schedule. Email normalization is fixture-proved; email live content proof is pending Simon because the observed real interaction had no recording available.
 
+
+V0.14 makes Policies the durable authoring surface, with explicit versioned saves, stale-tab conflicts, exact published form pins and optional daily/weekly schedules. Overview & Runs handles monitoring and manual execution. See [the V0.14 contract](docs/v014-policy-authoring.md).
 
 V0.8 adds ordered question groups, provider-neutral conditional waves, explicit skipped results and versioned reusable group snapshots. See [the V0.8 model and migration contract](docs/v08-form-composition.md).
 
@@ -29,7 +31,7 @@ The Genesys adapter maps conversation and participant IDs, start/end, media type
 
 See [V0.3A PKCE contract, exact client setup, CORS evidence, and proof ledger](docs/v03a-pkce.md), [V0.3B media contracts](docs/v03b-media-contracts.md), and the [review-required Genesys form recreation](docs/v03b-genesys-form.md). Register `https://simonridd.github.io/Genesys-aqm/` as the authorized redirect URI for a **Code Authorization / PKCE** OAuth client. Settings starts with the public production PKCE client ID and Ireland region; browser-local overrides are available. Connect through Genesys Cloud. The browser sends no Genesys client secret. A temporary access token is held in memory and is lost on reload or disconnect. The Jev Worker remains unchanged; its old Genesys routes may remain temporarily for compatibility but are no longer called by this frontend.
 
-## Policy execution
+## Legacy browser policy execution (offline sandbox)
 
 A policy run starts on the Policies page: select policy and source, set time and optional queue/agent/channel/direction scope, find candidates, preview matches, unavailable transcripts, duplicate conversation/form versions and expected Jev requests, then explicitly confirm `Evaluate N`. There is a hard maximum of 25 matched conversations and two concurrent Jev requests. A double-click lock prevents accidental duplicate submission. Existing records for the same source, conversation, form ID and form version are skipped unless the user explicitly checks re-evaluate. There are no automatic paid retries.
 
@@ -55,7 +57,7 @@ The plan shows candidate, eligible, sampled, evaluable, and pending counts, the 
 
 Coverage metrics are **run observations**: an interaction in two runs contributes to each run's population. `candidateCount` is source results within the bounded query; `eligibleCount` matches criteria; `sampledCount` is selected after eligibility; `evaluableCount` is sampled with a usable transcript. `evaluatedConversationCount` is sampled interactions with at least one successful assignment (including prior completed assignments). `evaluationCount` counts previously successful assignments plus this run’s successes and failures; `successfulEvaluationCount` counts prior and new successes; `failedEvaluationCount` counts failures in this run. Sampling coverage = sampled / eligible. Evaluation coverage = evaluated sampled / eligible. Sample completion = evaluated sampled / evaluable sampled. Transcript availability = evaluable / sampled. Zero denominators display as unavailable, not 0%. Analytics defaults to real Genesys runs and records and offers a separate Synthetic filter; quality and coverage have separate views.
 
-PolicyRun history snapshots policy configuration, source, resolved period, sampling, deterministic seed, counts, sampled IDs, forms, status, timestamps, and failures. It stores no raw transcript. Run history is browser-local and is intended as an audit of what happened in that browser, not a central enterprise ledger. V0.4 has **manual** run frequency only. Future daily or weekly scheduling must run in a server-side service that calls the same planning and execution domain functions; GitHub Pages does not perform unattended background work.
+PolicyRun history snapshots policy configuration, source, resolved period, sampling, deterministic seed, counts, sampled IDs, forms, status, timestamps, and failures. It stores no raw transcript. Run history is browser-local and is intended as an audit of what happened in that browser, not a central enterprise ledger. V0.4 has **manual** run frequency only. Production daily and weekly scheduling runs in the Cloud Run service; configure it in Policies. GitHub Pages does not perform unattended background work.
 
 ## V0.11 governance
 

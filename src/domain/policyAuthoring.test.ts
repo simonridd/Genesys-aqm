@@ -1,0 +1,20 @@
+import { describe, expect, it } from 'vitest'
+import { clonePolicy, filterPolicies, newPolicy, samePolicyDefinition, validatePolicy } from './policyAuthoring'
+import { seedForms } from './forms'
+import type { InteractionPolicy } from './types'
+const policy:InteractionPolicy={...newPolicy('p'),name:'Voice',criteria:{anyOf:[[{field:'channel',operator:'equals',value:'voice'}]]},evaluationFormIds:[seedForms[0].id]}
+describe('policy definition and validation',()=>{
+ it('starts independent and inert with an explicit incomplete criterion',()=>{const p=newPolicy('new');expect(p).toMatchObject({id:'new',version:1,enabled:false,evaluationFormIds:[],sampling:{strategy:'all'}});expect(p.criteria.anyOf[0][0].value).toBe('');expect(p.criteria.anyOf[0][0].field).not.toBe('channel');expect(p.schedule).toBeUndefined()})
+ it('compares stable semantic definitions without metadata/version or key order',()=>{expect(samePolicyDefinition(policy,{...structuredClone(policy),version:77,updatedAt:'later',criteria:{anyOf:[[{value:'voice',operator:'equals',field:'channel'}]]}})).toBe(true);expect(samePolicyDefinition(policy,{...policy,enabled:true})).toBe(false);expect(samePolicyDefinition({...policy,sampling:undefined},{...policy,sampling:{strategy:'all'}})).toBe(true)})
+ it.each([
+  [{name:''},'name'],[{version:0},'version'],[{criteria:{anyOf:[]}},'Match ALL'],[{criteria:{anyOf:[[]]}},'condition'],[{criteria:{anyOf:[[{field:'channel',operator:'equals',value:'  '}]]}},'value'],[{criteria:{anyOf:[[{field:'bogus',operator:'equals',value:'x'}]]}},'field'],[{criteria:{anyOf:[[{field:'channel',operator:'wrong',value:'voice'}]]}},'operator'],[{criteria:{anyOf:[[{field:'channel',operator:'includes',value:'voice'}]]}},'tags'],[{sampling:{strategy:'percentage',percentage:-1}},'percentage'],[{sampling:{strategy:'percentage',percentage:101}},'percentage'],[{sampling:{strategy:'percentage',percentage:NaN}},'percentage'],[{sampling:{strategy:'fixed_count',count:0}},'1 to 25'],[{sampling:{strategy:'fixed_count',count:26}},'1 to 25'],[{sampling:{strategy:'fixed_count',count:1.5}},'integer'],[{sampling:{strategy:'bad'}},'sampling'],[{evaluationFormIds:['missing']},'does not exist'],[{evaluationFormIds:[seedForms[0].id,seedForms[0].id]},'unique'],[{evaluationFormIds:[null]},'ID']
+ ])('rejects invalid definition %j', (changes,message)=>{expect(validatePolicy({...policy,...changes},seedForms).join(' ')).toContain(message)})
+ it('accepts percentage boundaries, requires operational form pins and allows disabled incomplete assignments',()=>{
+  for(const percentage of [0,100])expect(validatePolicy({...policy,sampling:{strategy:'percentage',percentage}},seedForms)).toEqual([])
+  for(const status of ['DRAFT','TESTING','RETIRED'] as const)expect(validatePolicy(policy,[{...seedForms[0],status}]).join(' ')).toContain('operational')
+  expect(validatePolicy(policy,[{...seedForms[0],enabled:false}]).join(' ')).toContain('operational')
+  expect(validatePolicy({...policy,evaluationFormIds:[]},seedForms)).toEqual([])
+ })
+ it('clones config without version, schedule or metadata and without shared references',()=>{const source={...policy,version:17,enabled:true,sampling:{strategy:'fixed_count' as const,count:3},schedule:'daily' as const,createdAt:'old',updatedAt:'old'};const clone=clonePolicy(source,'copy');expect(clone).toMatchObject({id:'copy',version:1,enabled:false,criteria:source.criteria,sampling:source.sampling,evaluationFormIds:source.evaluationFormIds});expect(clone.schedule).toBeUndefined();expect(clone.createdAt).toBeUndefined();clone.criteria.anyOf[0][0].value='email';expect(source.criteria.anyOf[0][0].value).toBe('voice')})
+ it('combines status, schedule and assignment filters',()=>{const rows=[policy,{...policy,id:'d',enabled:true},{...policy,id:'empty',evaluationFormIds:[]}];const frequency=(id:string)=>id==='d'?'DAILY':'MANUAL';expect(filterPolicies(rows,'Enabled','DAILY','Assigned',frequency).map(p=>p.id)).toEqual(['d']);expect(filterPolicies(rows,'Disabled','MANUAL','Unassigned',frequency).map(p=>p.id)).toEqual(['empty'])})
+})

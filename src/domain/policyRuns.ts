@@ -1,10 +1,11 @@
+import { MAX_FIXED_SAMPLE } from './policyAuthoring'
 import { maximumEvaluationWaves, FormEvaluationFailure } from './formComposition'
 import { matchPolicies } from './policies'
 import { recordEvaluation } from './evaluations'
 import { isOperationalForm } from './formLifecycle'
 import type { Conversation, ConversationSourceId, CoverageCounts, EvaluationForm, EvaluationRecord, EvaluationResult, InteractionPolicy, MonitoringPeriod, MonitoringSampling, PolicyRun, PolicyRunFailure } from './types'
 
-export const MAX_POLICY_CONVERSATIONS = 25
+export const MAX_POLICY_CONVERSATIONS = MAX_FIXED_SAMPLE
 export const SAMPLING_ALGORITHM = 'fnv1a32-v1'
 export const policyRunsStorageKey = 'genesys-aqm-v03-policy-runs'
 export type PeriodChoice = 'today' | 'yesterday' | 'last7' | 'custom'
