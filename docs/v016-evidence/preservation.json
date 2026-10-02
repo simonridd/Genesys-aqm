@@ -1,0 +1,141 @@
+{
+  "collections": {
+    "auditEvents": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "evaluationForms": {
+      "documents": 7,
+      "equal": true,
+      "sha256": "83541663d2fdb611f52658abbd442799ed7c11a19385d6546271c9492b876a82"
+    },
+    "evaluationRecords": {
+      "documents": 8,
+      "equal": true,
+      "sha256": "83f09afd55c106cc33c6098ba92d616e892c3e4eb5f00c8684b2ce33f2846438"
+    },
+    "evaluationSlots": {
+      "documents": 8,
+      "equal": true,
+      "sha256": "fcfdf2b52d2eb4fe86a6a527f63c98bc4bea39cdcbc90c909667d27f6bdb3da8"
+    },
+    "formTestRuns": {
+      "documents": 1,
+      "equal": true,
+      "sha256": "31edab3310e02fb3073579fbfe109751a354dde39fc108cfbebf9d91f9739c83"
+    },
+    "governanceSettings": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "humanReviews": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notificationControl": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notificationDeliveries": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notificationDestinationHealth": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notificationDestinations": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notificationEvents": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notificationRules": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "operationalAlertKeys": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "operationalAlerts": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "operationalHealth": {
+      "documents": 1,
+      "equal": true,
+      "sha256": "3778c2f13429fe621c0c6d2a8f017ee29bb236926c6c1a5aee7109686a493da2"
+    },
+    "policies": {
+      "documents": 7,
+      "equal": true,
+      "sha256": "25c834d2b02213719e761705632843cc028292c90bf530fdc12825809def12c8"
+    },
+    "policyRuns": {
+      "documents": 3,
+      "equal": true,
+      "sha256": "ab7d96f05458c43c18b9efa0ea880c4f48dcc3449773f146ff68448990a7cf4d"
+    },
+    "purgePlans": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "questionGroupAssets": {
+      "documents": 4,
+      "equal": true,
+      "sha256": "3096111299cd49744a485c2bd2757b8f11b34120ad3e0fe954fe532e748b1b97"
+    },
+    "roleAssignments": {
+      "documents": 0,
+      "equal": true,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "scheduleExecutionClaims": {
+      "documents": 3,
+      "equal": true,
+      "sha256": "d11da3f9770a98e58e134344121e6fd0b90081f848061cc26d4036161aec22c2"
+    },
+    "schedules": {
+      "documents": 1,
+      "equal": true,
+      "sha256": "33eeaf1c097a3a5a1d20378da0b9eab778b3008010830ffd4f6c60a81ef1271e"
+    }
+  },
+  "protectedPolicy": {
+    "id": "daily_voice_customer_service_aqm",
+    "equal": true,
+    "sha256": "69a2ef89c181e76f3eaa3b04c5beb63970136e1c09c58d84807eeab85aeec680"
+  },
+  "protectedSchedules": {
+    "equal": true,
+    "sha256": "33eeaf1c097a3a5a1d20378da0b9eab778b3008010830ffd4f6c60a81ef1271e"
+  },
+  "runtimeSpecEqualExceptImage": true,
+  "runtimeAnnotationsEqual": true,
+  "schedulerConfigurationEqual": true,
+  "iamEqual": true,
+  "revision": "aqm-api-v016-ce4f3e8",
+  "imageDigest": "europe-west2-docker.pkg.dev/genesys-aqm-2026/cloud-run-source-deploy/aqm-api@sha256:32bfce18661bae2528c5acc0a4acb5bbe7aeccc474b7797567ee761a006d5ab4",
+  "traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "aqm-api-v016-ce4f3e8"
+    }
+  ]
+}

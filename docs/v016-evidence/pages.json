@@ -1,0 +1,12 @@
+[
+  {
+    "asset": "index-BEYSCsm_.js",
+    "sha256": "6af4a5da6daa2a5cb5d668c8a8c38175077eb427581f1eabd436eb4b522af82a",
+    "equalsLocalBuild": true
+  },
+  {
+    "asset": "index-CEjsHs-N.css",
+    "sha256": "208c485040dc2990bf7ac2d1713bd25ebe5ac3ec36620276f37c5a30c55f5505",
+    "equalsLocalBuild": true
+  }
+]

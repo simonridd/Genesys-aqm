@@ -1,0 +1,35 @@
+[
+  {
+    "path": "/health",
+    "method": "GET",
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "schemaVersion": 1
+    }
+  },
+  {
+    "path": "/api/review-workload",
+    "method": "GET",
+    "status": 401,
+    "body": {
+      "error": "Unauthorized"
+    }
+  },
+  {
+    "path": "/api/review-sla/refresh",
+    "method": "POST",
+    "status": 401,
+    "body": {
+      "error": "Unauthorized"
+    }
+  },
+  {
+    "path": "/api/reviews/bulk-due",
+    "method": "POST",
+    "status": 401,
+    "body": {
+      "error": "Unauthorized"
+    }
+  }
+]
