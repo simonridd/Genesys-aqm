@@ -1,0 +1,38 @@
+[WebServer] (node:69998) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 29 tests using 1 worker
+
+(node:69999) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1440 (3.6s)
+  ✓   2 tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1920 (3.5s)
+  ✓   3 tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 390 (3.4s)
+  ✓   4 tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1440 (850ms)
+  ✓   5 tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1920 (998ms)
+  ✓   6 tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 390 (844ms)
+  ✓   7 tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1440 (1.6s)
+  ✓   8 tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1440 (1.7s)
+  ✓   9 tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1440 (1.7s)
+  ✓  10 tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1440 (1.6s)
+  ✓  11 tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1920 (1.6s)
+  ✓  12 tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1920 (1.5s)
+  ✓  13 tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1920 (1.8s)
+  ✓  14 tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1920 (1.9s)
+  ✓  15 tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 390 (1.5s)
+  ✓  16 tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 390 (1.5s)
+  ✓  17 tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 390 (1.6s)
+  ✓  18 tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 390 (1.5s)
+  ✓  19 tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts (271ms)
+  ✓  20 tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win (1.4s)
+  ✓  21 tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1440 (2.4s)
+  ✓  22 tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1440 (2.2s)
+  ✓  23 tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1920 (2.4s)
+  ✓  24 tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1920 (2.0s)
+  ✓  25 tests/review-operations.spec.ts:11:146 › ADMIN review operations at 390 (2.2s)
+  ✓  26 tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 390 (1.9s)
+  ✓  27 tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1440 (2.7s)
+  ✓  28 tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1920 (2.7s)
+  ✓  29 tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390 (2.8s)
+
+  29 passed (56.8s)

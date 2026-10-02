@@ -102,8 +102,10 @@ export function matchesReviewQueue(record: ReviewEvaluation, query: URLSearchPar
   return matchesReviewOperations(record,query,actorId,now,sla) && record.purpose!=='FORM_TEST' && (!form||record.form.id===form||`${record.form.id}@${record.form.version}`===form)
     && (!status||reviewStatus(record,record.humanReview)===status)
     && (!query.get('source')||query.get('source')==='all'||reviewSource(record)===query.get('source'))
-    && (!query.get('agent')||record.agent.name.toLowerCase().includes(query.get('agent')!.toLowerCase())||record.agent.id===query.get('agent'))
-    && (!query.get('queue')||record.queue.toLowerCase().includes(query.get('queue')!.toLowerCase()))
+    && (!query.get('agent')||(query.get('cohort')==='analytics'?record.agent.name===query.get('agent'):record.agent.name.toLowerCase().includes(query.get('agent')!.toLowerCase())||record.agent.id===query.get('agent')))
+    && (!query.get('queue')||(query.get('cohort')==='analytics'?record.queue===query.get('queue'):record.queue.toLowerCase().includes(query.get('queue')!.toLowerCase())))
+    && (!query.get('channel')||record.channel===query.get('channel'))
+    && (query.get('cohort')!=='analytics'||record.source==='jev')
     && (!query.get('from')||record.evaluatedAt>=query.get('from')!) && (!query.get('to')||record.evaluatedAt<=query.get('to')!)
     && (!question||!!record.humanReview?.questions.some(q=>q.questionId===question&&q.human&&(query.get('comparison')!=='disagreements'||!q.comparison?.exact)))
 }
@@ -122,6 +124,7 @@ const londonDay = (iso: string) => new Intl.DateTimeFormat('en-CA', { timeZone: 
 export function matchesReviewOperations(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString(), sla:ReviewSlaSettings=defaultReviewSla): boolean {
   const review = record.humanReview, assignment = review?.assignment, dueAt = reviewDueAt(review), filter = query.get('assignment'), due = query.get('due')
   if(query.get('dueState')&&reviewDueState(review,now,sla)!==query.get('dueState'))return false
+  if(query.get('reviewQueue')==='active'&&!['REVIEW_REQUESTED','IN_REVIEW'].includes(review?.status??''))return false
   const mine = query.get('reviewQueue') === 'mine'
   if (mine && (!actorId || assignment?.assignee.userId !== actorId || !['REVIEW_REQUESTED','IN_REVIEW'].includes(review?.status ?? ''))) return false
   if (filter === 'unassigned' && assignment || filter === 'assigned' && !assignment) return false
@@ -158,4 +161,14 @@ export function buildAssignment(record: EvaluationRecord, prior: HumanReview | u
   const event: ReviewEvent = {kind,at:now,actor:structuredClone(actor),revision,...(assignee || prior?.assignment?.assignee ? {assignee:structuredClone(assignee ?? prior!.assignment!.assignee)} : {}),...(dueAt?{dueAt}:{})}
   if (base.events.length >= 200) throw Error('Review audit limit reached; contact the operator.')
   return {...base,dueAt:input.action==='unassign'?reviewDueAt(prior):undefined,assignment,updatedAt:now,revision,events:[...base.events,event]}
+}
+
+/** Explorer predicate shared by HTTP and browser history; calibration keeps its own question semantics. */
+export function matchesEvaluationFilters(item:ReviewEvaluation,q:URLSearchParams,actorId?:string,now=new Date().toISOString(),sla:ReviewSlaSettings=defaultReviewSla):boolean {
+ return matchesReviewQueue(item,q,actorId,now,sla)
+  && (!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&(q.get('cohort')==='analytics'?question.status!=='SKIPPED':question.credit!==null&&question.credit<.67)))
+  && (!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))
+  && (!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))
+  && (!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))
+  && (!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
 }

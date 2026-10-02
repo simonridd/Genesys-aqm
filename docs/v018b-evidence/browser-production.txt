@@ -1,0 +1,18 @@
+[WebServer] (node:70170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 9 tests using 1 worker
+
+(node:70186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440 (2.6s)
+  ✓  2 tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1440 (4.1s)
+  ✓  3 tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1440 (930ms)
+  ✓  4 tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920 (2.4s)
+  ✓  5 tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1920 (4.1s)
+  ✓  6 tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1920 (951ms)
+  ✓  7 tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 390 (2.4s)
+  ✓  8 tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 390 (4.3s)
+  ✓  9 tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 390 (919ms)
+
+  9 passed (24.1s)

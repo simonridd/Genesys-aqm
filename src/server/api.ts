@@ -33,7 +33,7 @@ import { sweepReviewSla, reviewSlaSummary, activeReviewScan } from './reviewSla'
 import { assignReview, scoreAssignedReview, bulkAssignReviews, reviewerDirectory, reviewWorkload, type BulkAssignmentInput } from './reviewOperations'
 import { calibrationAnalytics, requestSample, reviewQueue, updateReview, ReviewNotFound } from './reviews'
 import { reviewQueuePriority } from '../domain/reviewSla'
-import { matchesReviewQueue, type AssignmentInput, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
+import { matchesEvaluationFilters, type AssignmentInput, type Reviewer, type ReviewInput, type ReviewEvaluation } from '../domain/reviews'
 
 export interface ApiConfig { origin:string; region:Region; allowedUserIds:Set<string>; schedulerEmail:string; schedulerAudience:string; bootstrapAdminId?:string }
 const oidc=new OAuth2Client()
@@ -229,10 +229,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           const collection=(collections as Record<string,typeof collections[keyof typeof collections]>)[path]
           if(collection==='evaluationRecords'){
             const sla=url.searchParams.get('dueState')?(await governanceSettings(deps.store)).reviewSla:undefined
-            const matches=(item:ReviewEvaluation)=>{
-              const q=url.searchParams
-              return matchesReviewQueue(item,q,actor.userId,deps.now().toISOString(),sla)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
-            }
+            const matches=(item:ReviewEvaluation)=>matchesEvaluationFilters(item,url.searchParams,actor.userId,deps.now().toISOString(),sla)
             if(url.searchParams.get('reviewQueue')==='mine'){
               const scan=await activeReviewScan(deps.store);if(!scan.complete)throw Error('Review SLA scan incomplete: narrow or index the active review queue.')
               const reviews=scan.items.filter(r=>r.assignment?.assignee.userId===actor.userId),joined:ReviewEvaluation[]=[]
