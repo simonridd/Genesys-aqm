@@ -1,0 +1,12 @@
+[
+  {
+    "asset": "index-BQg9HlGt.js",
+    "sha256": "32fc4bcf15dd9a85ced7becea85232bf7742d422201e702c24412de2b5002df4",
+    "equalsLocalBuild": true
+  },
+  {
+    "asset": "index-D6Pz1xBv.css",
+    "sha256": "4183f3eb81081ac4ce0137ecfb79c97a9e8bec4e73e1dcfb834c070b016e8344",
+    "equalsLocalBuild": true
+  }
+]
