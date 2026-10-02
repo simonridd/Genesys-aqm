@@ -8,7 +8,7 @@ const pick=(v:unknown,keys:string[])=>{if(!object(v))throw Error('Malformed defi
 const condition=(v:unknown)=>v===undefined?undefined:pick(v,['kind','field','equals','operator','values','questionId','outcomes','value'])
 const scoring=(v:unknown)=>v===undefined?undefined:pick(v,['weight','passScore','critical'])
 function questions(v:unknown){
- if(!Array.isArray(v)||v.length<1||v.length>500)throw Error('Definition needs 1–500 questions.')
+ if(!Array.isArray(v)||v.length>500)throw Error('Definition supports at most 500 questions.')
  return v.map(q=>{if(!object(q)||['id','title','instructions'].some(k=>typeof q[k]!=='string'))throw Error('Each question needs string ID, title and instructions.');if(String(q.id).length>180||String(q.title).length>2000)throw Error('Question ID/title exceeds the supported length.');const clean=pick(q,['id','title','instructions','type','weight','enabled','section','sourceGroupWeight','groupId','sourceAssetQuestionId']);if(!object(q)||!Array.isArray(q.options)||q.options.length>255||typeof q.enabled!=='boolean'||!['noul','choice','score'].includes(String(q.type)))throw Error('Malformed question definition.');return {...clean,condition:condition(q.condition),options:q.options.map(o=>{if(!object(o)||['key','label','description'].some(k=>typeof o[k]!=='string'))throw Error('Each option needs string key, label and description.');return pick(o,['key','label','description','credit','sourceValue'])})}})
 }
 function bounded(v:unknown,depth=0){
