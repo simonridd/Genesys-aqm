@@ -1,0 +1,2777 @@
+{
+  "reviewDate": "2026-10-02",
+  "timezone": "Europe/London",
+  "base": "dd449b6e8eef5a8d39bf2cedd5951ad01999dc9a",
+  "branch": "codex/aqm-v0-18-product-review",
+  "releaseTag": {
+    "name": "v0.17.0",
+    "type": "annotated",
+    "object": "581cabab77946f48079f4e945a15489d0a403372",
+    "peeled": "dd449b6e8eef5a8d39bf2cedd5951ad01999dc9a"
+  },
+  "deployedApplicationSourceRecordedByV017": "7d4b401ee1508e25db47723c24acb2d806ab754e",
+  "reviewScope": {
+    "journeys": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "primaryPages": [
+      "Overview",
+      "Evaluations",
+      "Analytics",
+      "Calibration",
+      "Policies",
+      "Evaluation Forms",
+      "Question Groups",
+      "Settings",
+      "Conversations",
+      "Conversation review"
+    ],
+    "roles": [
+      "ADMIN",
+      "AUTHOR",
+      "REVIEWER",
+      "VIEWER"
+    ],
+    "viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        1920,
+        1080
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "detailSurfaces": 9,
+    "findings": {
+      "P0": 0,
+      "P1": 9,
+      "P2": 5,
+      "P3": 0
+    }
+  },
+  "validation": {
+    "frontendProductionBuild": "passed",
+    "serverTypecheck": "passed",
+    "deterministicTests": 530,
+    "deterministicTestFiles": 53,
+    "existingBrowserJourneys": 29,
+    "finalEvidenceJourneys": 14,
+    "committedScope": "review documentation and evidence only",
+    "productTreesUnchanged": true,
+    "noDocumentHorizontalOverflowInInventories": true,
+    "browserConsoleErrorsInInventories": 0
+  },
+  "boundaries": {
+    "liveGenesysCalls": 0,
+    "paidJevCalls": 0,
+    "authenticatedProductionAPICalls": 0,
+    "realNotificationSends": 0,
+    "pullRequestCreated": false,
+    "environmentBuilderV2Touched": false,
+    "connectedRecordsAndMutations": "in-memory fixtures; unmatched network requests blocked",
+    "publicInspection": "unauthenticated static site at https://simonridd.github.io/Genesys-aqm/",
+    "fontAssets": "public Google font assets permitted"
+  },
+  "visualInspection": "All-page viewport contact sheets, detail contact sheets and focused crops; loaded-font captures inspected. Inventories supplement visual review.",
+  "proofGaps": [
+    "Simon authenticated Overview and actual operational records",
+    "real OAuth, identity and roles",
+    "actual provider execution, content availability and request accounting",
+    "real notification transport and secrets",
+    "production volume, latency and multi-tab behavior",
+    "formal screen-reader/accessibility conformance"
+  ],
+  "screenshotCount": 131,
+  "screenshots": [
+    {
+      "file": "AUTHOR-evaluations.png",
+      "width": 1440,
+      "height": 2079,
+      "sha256": "c42aad2cfe4eb2a30a68bffc7e024d720659288f128ea778427713a9e07d3541"
+    },
+    {
+      "file": "AUTHOR-forms.png",
+      "width": 1440,
+      "height": 3335,
+      "sha256": "1aa40510087e18d86f88752544c637a09f63b1c4bcd92be8ff739d4bbcc2ebd6"
+    },
+    {
+      "file": "AUTHOR-groups.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "e0809317fb39ecc8b4db18dadc56a2b347092c2e586a964413ddd5e4b13fc436"
+    },
+    {
+      "file": "AUTHOR-overview.png",
+      "width": 1440,
+      "height": 2855,
+      "sha256": "d27a3472b7a77af3252d4e86b7e926ede8ebd50716b08fffaa062b5942107e7e"
+    },
+    {
+      "file": "AUTHOR-policies.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "c32166d3dd4137d10242e5c465a6814b595b9a8358157a75398f2e2eee3e45f2"
+    },
+    {
+      "file": "AUTHOR-settings.png",
+      "width": 1440,
+      "height": 3529,
+      "sha256": "6328ac491c22a3b462efd66e025a7f7a73df1d1e8794732e304fcb4087526860"
+    },
+    {
+      "file": "REVIEWER-evaluations.png",
+      "width": 1440,
+      "height": 2213,
+      "sha256": "ab904c9473fa191d09a9486c71ff036239f098d27a37f5e808ede9e8bd6a5f8f"
+    },
+    {
+      "file": "REVIEWER-forms.png",
+      "width": 1440,
+      "height": 2826,
+      "sha256": "f9988a861e92770f36697656b92d878583c272c0dfd1dc9d7207df03568d79e2"
+    },
+    {
+      "file": "REVIEWER-groups.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "e11b896916acf27af782b238a2a8108732eba541ae185c07af9b73bc172430c3"
+    },
+    {
+      "file": "REVIEWER-overview.png",
+      "width": 1440,
+      "height": 2803,
+      "sha256": "fab53ae5651dbb823c2ffc9762f49beee220e570745abdc200b3472248c8b26e"
+    },
+    {
+      "file": "REVIEWER-policies.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "9d32fcc45b1a133eb9b9c12566a2ccc75a77605af1f089014ff1e5d617b7bd8d"
+    },
+    {
+      "file": "REVIEWER-settings.png",
+      "width": 1440,
+      "height": 2455,
+      "sha256": "2da3b277a1cdbb791b29c99cf9edd719278cade6cee41914f044da843007613d"
+    },
+    {
+      "file": "VIEWER-evaluations.png",
+      "width": 1440,
+      "height": 2079,
+      "sha256": "77a9792c607811e01db2083048dd1115cdc8a7f2bde77a2321d213af3055efc2"
+    },
+    {
+      "file": "VIEWER-forms.png",
+      "width": 1440,
+      "height": 2826,
+      "sha256": "d4181c299d80e8c82942ff22a5b440b22ab19d119ecb4be462773c539978632c"
+    },
+    {
+      "file": "VIEWER-groups.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "6e02d1fa527f50c6670bac7b1c148516986ec0c2355c0013b3431c66a660eedc"
+    },
+    {
+      "file": "VIEWER-overview.png",
+      "width": 1440,
+      "height": 2799,
+      "sha256": "f80c3e9af57c5c2c1a44195f4e523348569c9fb255779ec3e6c739ffb1b9aa85"
+    },
+    {
+      "file": "VIEWER-policies.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "a4ccfeb59d393e9454c2717a39af5511a8e4424522145692aa56d477bbfcae99"
+    },
+    {
+      "file": "VIEWER-settings.png",
+      "width": 1440,
+      "height": 2455,
+      "sha256": "c07c7718b15e45d2d7fd08704b4f72c14b57ae5de7dba4f5a031c227acd8db6a"
+    },
+    {
+      "file": "active-review-assignment-390.png",
+      "width": 310,
+      "height": 3173,
+      "sha256": "e053a0282b65d1bb355d6a0f689a797078d5009b1d49d9fec6f31edafb282557"
+    },
+    {
+      "file": "alert-detail-1440-panel.png",
+      "width": 1022,
+      "height": 388,
+      "sha256": "b3abd14a4da62e9658c63e4326a89527302381934e4a39d4b7cade987aa9a0bd"
+    },
+    {
+      "file": "alert-detail-1440.png",
+      "width": 1440,
+      "height": 4295,
+      "sha256": "c17e505c22b8c1aff90bacffb0e13e3e0a348c2e8bd75f435fc27f2c09e0b903"
+    },
+    {
+      "file": "alert-detail-1920-panel.png",
+      "width": 1334,
+      "height": 388,
+      "sha256": "5151ad6fa2d16ff8fae75c63b2439666621609d40ac9e1e8bb7a4be36b7fb31a"
+    },
+    {
+      "file": "alert-detail-1920.png",
+      "width": 1920,
+      "height": 4231,
+      "sha256": "458a755432f8d817c14ea6c8584480bdbee746a39d908ffd7b63a177c217eca3"
+    },
+    {
+      "file": "alert-detail-390-panel.png",
+      "width": 284,
+      "height": 540,
+      "sha256": "39d6f1a47179bffcd723e0662c49f089b32982a9a40849fb77b4e33413aed4c9"
+    },
+    {
+      "file": "alert-detail-390.png",
+      "width": 390,
+      "height": 7096,
+      "sha256": "d95e5a161d22cb2f86c26ef49e347cd95d60974a326350277fd21d8c280ad995"
+    },
+    {
+      "file": "analytics-1440.png",
+      "width": 1440,
+      "height": 1315,
+      "sha256": "7a2bc6e5dae86ecb258d054b46422e9b8de4e4952e4b5bcde3ad8dcd2ffe6476"
+    },
+    {
+      "file": "analytics-1920.png",
+      "width": 1920,
+      "height": 1276,
+      "sha256": "fdc26be1811c532ba462e85db3201a0fc9776b19516b8d5390133b81a5cffa8c"
+    },
+    {
+      "file": "analytics-390.png",
+      "width": 390,
+      "height": 2506,
+      "sha256": "f899c3a26f1ebd3e30760c6c24c8108e675617b05e2702e5ec58c5dfef834d16"
+    },
+    {
+      "file": "analytics-drill-scope.png",
+      "width": 1440,
+      "height": 2038,
+      "sha256": "3315050c0ce4bca87ddd8c05b4c15adc5d2910b889c39eedf9d48921125dea8f"
+    },
+    {
+      "file": "calibration-1440.png",
+      "width": 1440,
+      "height": 910,
+      "sha256": "2697b61f32f6ce08a431007e2b7af5db5d47216097c0aa7d284a9060940363a9"
+    },
+    {
+      "file": "calibration-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "ecb7b94de8cbd8d72621168af020081ba2c08475bd048d6296c595284ea735a9"
+    },
+    {
+      "file": "calibration-390.png",
+      "width": 390,
+      "height": 1548,
+      "sha256": "cb5557ef6c233b03542099983ba311f78fbbe912413ca909f97cc1fa97b45853"
+    },
+    {
+      "file": "completed-review-390.png",
+      "width": 310,
+      "height": 2306,
+      "sha256": "d2164006cfa08e51b2a017878c987a780d938c1022c0316baf41bbf0bfef7ac1"
+    },
+    {
+      "file": "connected-conversation-review-1440.png",
+      "width": 1440,
+      "height": 1320,
+      "sha256": "32fae07ab5a3a8d196f04285e5b48ea633884a73cb38893d773be4974f3555f5"
+    },
+    {
+      "file": "connected-conversation-review-1920.png",
+      "width": 1920,
+      "height": 1320,
+      "sha256": "7b4107f6d0c75c97dc188d1204ff7ab2d4ea45db87120cd7abadb91ca14b6347"
+    },
+    {
+      "file": "connected-conversation-review-390.png",
+      "width": 390,
+      "height": 2414,
+      "sha256": "e56c0f0b1025a62bee6e09c2369b84c9e4b4b1ac5a3c5ce24a4e7654c7e90c34"
+    },
+    {
+      "file": "connected-conversations-1440.png",
+      "width": 1440,
+      "height": 944,
+      "sha256": "d02fbfd24091786827813abeb0bb3ed00d5fc0246d7b98d61e2b0149d1e0454c"
+    },
+    {
+      "file": "connected-conversations-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "8b7a96b918f03460a1065ea6000077ba71501ce971ac2c5fbb2650e56ccd87ff"
+    },
+    {
+      "file": "connected-conversations-390.png",
+      "width": 390,
+      "height": 1466,
+      "sha256": "7768077408a823789879565949f9501e769fa84af954c565785acf45955a7d47"
+    },
+    {
+      "file": "connected-conversations-empty-1440.png",
+      "width": 1440,
+      "height": 947,
+      "sha256": "a30f03be6270ebeae9ee15c0ae2cbee32a585e2821b894c8f075663bc8e3531f"
+    },
+    {
+      "file": "connected-conversations-empty-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "bd01a869901e57600fc4c8fa13ad1996613f224cd32951c4b015635740bda441"
+    },
+    {
+      "file": "connected-conversations-empty-390.png",
+      "width": 390,
+      "height": 1443,
+      "sha256": "1f09cfea29eccd853123ca372460f029c4df297578863f0afe47eb69aac0b475"
+    },
+    {
+      "file": "conversation-review-1440.png",
+      "width": 1440,
+      "height": 1430,
+      "sha256": "7000947eb8a24b9400ed3807ae3807614e28f3e591792d1e338bc89c0725bf99"
+    },
+    {
+      "file": "conversation-review-1920.png",
+      "width": 1920,
+      "height": 1430,
+      "sha256": "7c65651812869445d200ebc73a3a84c0cf6adb1e1e8294a3bec2dae43f9c276a"
+    },
+    {
+      "file": "conversation-review-390.png",
+      "width": 390,
+      "height": 2408,
+      "sha256": "bf85afbde19b7380ede92236d2bb076e2261b6b91438050716ff5bee2f3defdb"
+    },
+    {
+      "file": "conversations-1440.png",
+      "width": 1440,
+      "height": 1799,
+      "sha256": "b5eac78326dbde98982e635cac11f410523cfb04fa3a00a609de1dde9c2cb762"
+    },
+    {
+      "file": "conversations-1920.png",
+      "width": 1920,
+      "height": 1510,
+      "sha256": "1b4bf8587f53009131524591cec7e7f5ec2d94523e2aba6aecd6fee8a9cccef3"
+    },
+    {
+      "file": "conversations-390.png",
+      "width": 390,
+      "height": 2036,
+      "sha256": "6d590792098990c5f8861f45aeb91bd0d309b54db61f0d50b98f4eae1d81399b"
+    },
+    {
+      "file": "demo-analytics-1440.png",
+      "width": 1440,
+      "height": 1282,
+      "sha256": "45c393375fe8f91c67dcedb815121cf74506365b4e44ee3b8f7d2e860d962f47"
+    },
+    {
+      "file": "demo-analytics-1920.png",
+      "width": 1920,
+      "height": 1282,
+      "sha256": "624d28b27c8f96a1404ddac994082e19bb4ff5168a3112fdfac08fbb92355e2c"
+    },
+    {
+      "file": "demo-analytics-390.png",
+      "width": 390,
+      "height": 2447,
+      "sha256": "307c492fdb344e65649adbfca26d1f8b2f20bf533a882e8409924c5582356b9f"
+    },
+    {
+      "file": "disconnected-landing-1440.png",
+      "width": 1440,
+      "height": 1430,
+      "sha256": "ae348b0c8d3a917db107872cd377e165676e76ea25a8314395bab9a5cf8ed041"
+    },
+    {
+      "file": "disconnected-landing-1920.png",
+      "width": 1920,
+      "height": 1430,
+      "sha256": "b79d1e6567b5c74bf8971286f5de6ef3a3d8a9633b36e4050af19898dade3e06"
+    },
+    {
+      "file": "disconnected-landing-390.png",
+      "width": 390,
+      "height": 2482,
+      "sha256": "24002a8403f7295daf590d15df1fd499a93dd5e6af425f1bf42542fb199e6746"
+    },
+    {
+      "file": "disconnected-settings-1440.png",
+      "width": 1440,
+      "height": 2735,
+      "sha256": "c9899b3788cf4197f171791ee78636be139c326791b2d5bd31d04fb7b9299fb5"
+    },
+    {
+      "file": "disconnected-settings-1920.png",
+      "width": 1920,
+      "height": 2735,
+      "sha256": "5b0700ebefe284b22b4104d19e5641ee5d7afed366994f40c22a763a6153e941"
+    },
+    {
+      "file": "disconnected-settings-390.png",
+      "width": 390,
+      "height": 3462,
+      "sha256": "fe2a7644be6934a52d7645dc469154f7b40b9a1133fa1dff34cfd9024b0395f5"
+    },
+    {
+      "file": "empty-evaluations.png",
+      "width": 1440,
+      "height": 2038,
+      "sha256": "b5f83c6bf769171dace9d8b837cd3a1729363de5a9cf8bd771325c6bb890a518"
+    },
+    {
+      "file": "empty-overview.png",
+      "width": 1440,
+      "height": 2324,
+      "sha256": "c8c797350306c62ef9d5522c21dfdcae077a7d1b5bb7facdf866979b5e36b847"
+    },
+    {
+      "file": "evaluation-review-detail-1440-panel.png",
+      "width": 1114,
+      "height": 2494,
+      "sha256": "41949667772a134e25e55133aa9e6c29ef3351431796b99afe1162b4f61e470e"
+    },
+    {
+      "file": "evaluation-review-detail-1440.png",
+      "width": 1440,
+      "height": 5136,
+      "sha256": "360114da539e2441611b38a1304781002e3723e19c9ed6beec2a8c73343dd3fd"
+    },
+    {
+      "file": "evaluation-review-detail-1920-panel.png",
+      "width": 1426,
+      "height": 2494,
+      "sha256": "41765bede2af331d4086cbe7cac9212059b768b8d086892568320f75e24b90a5"
+    },
+    {
+      "file": "evaluation-review-detail-1920.png",
+      "width": 1920,
+      "height": 5067,
+      "sha256": "d1586a212ad42fc472c13ea959490acb9d4adfcb348fe181b2eb49e5505d2f35"
+    },
+    {
+      "file": "evaluation-review-detail-390-panel.png",
+      "width": 360,
+      "height": 3536,
+      "sha256": "395c6e9cf0bf15ecd9999279600afeeaf6e24e654c69c178e99b85835d727077"
+    },
+    {
+      "file": "evaluation-review-detail-390.png",
+      "width": 390,
+      "height": 7762,
+      "sha256": "150aa96711a3ca7239b0f855a27a24b6e56b0823a66613c3e53d98c1a5d59f15"
+    },
+    {
+      "file": "evaluations-1440.png",
+      "width": 1440,
+      "height": 2623,
+      "sha256": "ba0562d1f72b19967f0463e4deb5ac7a7ede07b0c7138cc2cda7e62d3e8c4b9b"
+    },
+    {
+      "file": "evaluations-1920.png",
+      "width": 1920,
+      "height": 2554,
+      "sha256": "f3ceaa27af70e3193e21500cfef4df98a0b45f3ff46820fc106a0fef00d0d1ec"
+    },
+    {
+      "file": "evaluations-390.png",
+      "width": 390,
+      "height": 4206,
+      "sha256": "b6b62a516c62b4cb1831e7e04ed270a0e108077c248d93be4c39c1e44f7fdbb1"
+    },
+    {
+      "file": "form-detail-1440-panel.png",
+      "width": 1114,
+      "height": 2710,
+      "sha256": "e7e1c99c2d25e42dea2c17fa85aba288a92d2d73bd3d23ae1cd10f77b8eed495"
+    },
+    {
+      "file": "form-detail-1440.png",
+      "width": 1440,
+      "height": 3557,
+      "sha256": "8e9a36f101b4d40794843eeca371d214f1de0795cd320d0183f17053ac5ace7b"
+    },
+    {
+      "file": "form-detail-1920-panel.png",
+      "width": 1426,
+      "height": 2710,
+      "sha256": "9222d6fed93db41e0f4e0d6a59b9cd015a613974823fd0a8cc8f08d771b4f53d"
+    },
+    {
+      "file": "form-detail-1920.png",
+      "width": 1920,
+      "height": 3557,
+      "sha256": "74b871cef91cc2b79d5cc470a99ca318cbbf3119e339b2dec93b70a0c2c0241d"
+    },
+    {
+      "file": "form-detail-390-panel.png",
+      "width": 360,
+      "height": 3762,
+      "sha256": "65d6b4bf7b4c9ac7d2a7105e0339bd6281cbd542ade53f58282823e328c196ea"
+    },
+    {
+      "file": "form-detail-390.png",
+      "width": 390,
+      "height": 4915,
+      "sha256": "6faebcfce031957697770f502387d1db7c096b0cddb544628fd8f91e6dc364eb"
+    },
+    {
+      "file": "forms-1440.png",
+      "width": 1440,
+      "height": 3335,
+      "sha256": "7d1a1b40f025549cecbd7e81812bbc978addbde86b1d136020c175c18f81fe2b"
+    },
+    {
+      "file": "forms-1920.png",
+      "width": 1920,
+      "height": 3335,
+      "sha256": "459415ac2329d04283ac0075ea860a93fef9cf80bbd416963cb103af5789a4d8"
+    },
+    {
+      "file": "forms-390.png",
+      "width": 390,
+      "height": 4767,
+      "sha256": "cf5a0e57f866a373ddced307ff90fbaa19a357afa0d7c115c31608fb9d3f93b2"
+    },
+    {
+      "file": "governance-save-scope.png",
+      "width": 1440,
+      "height": 5534,
+      "sha256": "625690e467c92cf084d3ddb7d30014bfe8711c95c13be9c39e30b1b15414729c"
+    },
+    {
+      "file": "group-after-unsaved-navigation.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "e8ff4657a105f21309c9392b16b0b3950d56d67f8428f28f1d939be80e9be241"
+    },
+    {
+      "file": "group-detail-1440-panel.png",
+      "width": 1114,
+      "height": 1361,
+      "sha256": "e06c1c914fa21cb908f66f6d5b1c2f1b42c19442f7bb383d0e339015a7cafe4a"
+    },
+    {
+      "file": "group-detail-1440.png",
+      "width": 1440,
+      "height": 2172,
+      "sha256": "bd7ca8426c91b096fb89f884b0a8d29302c9a611ec31e1e1e61edb1f45e98422"
+    },
+    {
+      "file": "group-detail-1920-panel.png",
+      "width": 1426,
+      "height": 1361,
+      "sha256": "34d0dfe523c916799e44a9b14d646c91950eb460499714a4029cbcd56fff4740"
+    },
+    {
+      "file": "group-detail-1920.png",
+      "width": 1920,
+      "height": 2172,
+      "sha256": "f457e3d47a36ed587383c048b76cfaad5fdf6940bb18434fc3fe609424fa4752"
+    },
+    {
+      "file": "group-detail-390-panel.png",
+      "width": 360,
+      "height": 1885,
+      "sha256": "b8564734d19a6277bdfe42336292130bf0eb439b8498397ba060774de62460c8"
+    },
+    {
+      "file": "group-detail-390.png",
+      "width": 390,
+      "height": 2980,
+      "sha256": "74596cefeb2cc0fbc9f4144565107085d76e7a6a1120822c360c2864e77bab29"
+    },
+    {
+      "file": "groups-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "e8ff4657a105f21309c9392b16b0b3950d56d67f8428f28f1d939be80e9be241"
+    },
+    {
+      "file": "groups-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "7330ebf2c24f92e431e59a29bacdd34e47ba39a760c098ff7579fd6b139a182d"
+    },
+    {
+      "file": "groups-390.png",
+      "width": 390,
+      "height": 1073,
+      "sha256": "e668c75805ac010e32e94266a4dcda4eeb52115bda5c20d33c0fe686a6315821"
+    },
+    {
+      "file": "incomplete-overview.png",
+      "width": 1440,
+      "height": 2502,
+      "sha256": "17c04ac7cf2fe8dc8397d6bb54bddc09f9d630b6cc863def9edf369947f8645d"
+    },
+    {
+      "file": "keyboard-group-table.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "08905d122387ecd2d88a757b2b1267d969e24211596aa76876a3db6dc7e990d2"
+    },
+    {
+      "file": "no-matching-groups.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "dd4a69990940c6261b2a7e80093b25544d9d5db225e9559eb9cf4067eddfe9c6"
+    },
+    {
+      "file": "notification-destination-1440-panel.png",
+      "width": 1064,
+      "height": 340,
+      "sha256": "0ecefea9efcd5e4ece564fd9430ee1bd620d1d03875d3f01b00c7b49992346de"
+    },
+    {
+      "file": "notification-destination-1440.png",
+      "width": 1440,
+      "height": 5863,
+      "sha256": "f4d72d5021a441275ae411e828127095f4c56a8ef85e5a9ec6e1812f32502c6a"
+    },
+    {
+      "file": "notification-destination-1920-panel.png",
+      "width": 1376,
+      "height": 288,
+      "sha256": "b95f9e12a828b6c5e35bbb0326aff773158df7c48a6747a5c340bd6f17fb9321"
+    },
+    {
+      "file": "notification-destination-1920.png",
+      "width": 1920,
+      "height": 5811,
+      "sha256": "5325b8c2cccc22fc319f5c257593394b44c8956beddd54b12a1c72f4ffaae569"
+    },
+    {
+      "file": "notification-destination-390-panel.png",
+      "width": 326,
+      "height": 573,
+      "sha256": "5708fd6e3edf4284bcb8f4f29765b3fc8099a31fa67e8bb054d64196de35d305"
+    },
+    {
+      "file": "notification-destination-390.png",
+      "width": 390,
+      "height": 7875,
+      "sha256": "49438a5339b29684f6b79e6980b9ac9adcf2f668faae41b89fd25071a53c4641"
+    },
+    {
+      "file": "notification-rule-1440-panel.png",
+      "width": 1064,
+      "height": 864,
+      "sha256": "75b2a63fb3c7f5775c98dd8670a1d8faa68f4a9a72476a3246367129b7c84961"
+    },
+    {
+      "file": "notification-rule-1440.png",
+      "width": 1440,
+      "height": 6388,
+      "sha256": "d1c43b66e976501f1250556eda2f3dc938e9c053e22ba60c8560b33d9e1e4b50"
+    },
+    {
+      "file": "notification-rule-1920-panel.png",
+      "width": 1376,
+      "height": 864,
+      "sha256": "33929167e244e1684922aa840743912dfeda736caa639059432762a43f60e1a6"
+    },
+    {
+      "file": "notification-rule-1920.png",
+      "width": 1920,
+      "height": 6388,
+      "sha256": "0fbc6323558ea133d903e6ec5602f1d02ab6542a36e6e1dc1dd06aa15b505169"
+    },
+    {
+      "file": "notification-rule-390-panel.png",
+      "width": 326,
+      "height": 1128,
+      "sha256": "5c8386095828b71cfd36b2d2237b8018fcef27402c45d553a9361927e26e2ef8"
+    },
+    {
+      "file": "notification-rule-390.png",
+      "width": 390,
+      "height": 8431,
+      "sha256": "033c5e637a0e0e097661f048f4821e07411db05442bf862f3cca0992db62806f"
+    },
+    {
+      "file": "overview-1440.png",
+      "width": 1440,
+      "height": 2859,
+      "sha256": "99e3fc60acfbdf603ef931cfff1160bdd2fba8eb5c60b190d7f7c7056f9a87ea"
+    },
+    {
+      "file": "overview-1920.png",
+      "width": 1920,
+      "height": 2859,
+      "sha256": "7596698a1197f9f229017e28f636ed0b48c59ffbf1356e200682fbe687cecf4f"
+    },
+    {
+      "file": "overview-390.png",
+      "width": 390,
+      "height": 4140,
+      "sha256": "2941292e8e714fbbe535dbf5f5ec17f1d63030080c9a283d35832bdc036bfd8b"
+    },
+    {
+      "file": "overview-open-drill.png",
+      "width": 1440,
+      "height": 2623,
+      "sha256": "09891cd06f8063857602b434f60de71c5343db4918885d2fadfcb7c0cf1ed635"
+    },
+    {
+      "file": "overview-unassigned-drill.png",
+      "width": 1440,
+      "height": 2288,
+      "sha256": "6a806706418e4b7d1fde4655689d3ef17e8245c93d851afade3b7c3678ade07a"
+    },
+    {
+      "file": "permission-denied.png",
+      "width": 1440,
+      "height": 2093,
+      "sha256": "74620adc43b4c1ca5c0533575fac198c201ebc5cf725df7aa7e76aba1d15ed38"
+    },
+    {
+      "file": "policies-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "7044b82895c0f9437ba6633dd929afce17d1314087b8e94a0ad413d99237e74a"
+    },
+    {
+      "file": "policies-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "a51b694efed3d0fef532b4b5a54b4dbefb04e6f5ee738c72814555c30576b80f"
+    },
+    {
+      "file": "policies-390.png",
+      "width": 390,
+      "height": 925,
+      "sha256": "7739ba45b876458e7523bd2748bdb2cdaaeab0a3959d16bc5f8b9b1ecd6e378e"
+    },
+    {
+      "file": "policy-detail-1440.png",
+      "width": 1440,
+      "height": 2173,
+      "sha256": "d99c975313e92e8bd03094552eb2aeb4798197b8486289bce291aa53c8132341"
+    },
+    {
+      "file": "policy-detail-1920.png",
+      "width": 1920,
+      "height": 2157,
+      "sha256": "5486a42a45916d118774577803658584050fc4dcddde553aee6000e789cbf00c"
+    },
+    {
+      "file": "policy-detail-390.png",
+      "width": 390,
+      "height": 3088,
+      "sha256": "884463f75dfcb7345b048e6562d3706c826ee406aff9d67483490c73ca549a1a"
+    },
+    {
+      "file": "public-landing-1440.png",
+      "width": 1440,
+      "height": 1430,
+      "sha256": "ae348b0c8d3a917db107872cd377e165676e76ea25a8314395bab9a5cf8ed041"
+    },
+    {
+      "file": "public-landing-1920.png",
+      "width": 1920,
+      "height": 1430,
+      "sha256": "b79d1e6567b5c74bf8971286f5de6ef3a3d8a9633b36e4050af19898dade3e06"
+    },
+    {
+      "file": "public-landing-390.png",
+      "width": 390,
+      "height": 2482,
+      "sha256": "24002a8403f7295daf590d15df1fd499a93dd5e6af425f1bf42542fb199e6746"
+    },
+    {
+      "file": "public-overview-1440.png",
+      "width": 1440,
+      "height": 900,
+      "sha256": "5528cf4ce25770eee858d085e36f5e103d9ae38b9288721b06690e92eff3b8dd"
+    },
+    {
+      "file": "public-overview-1920.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "e2a2b86a1242bc6ef9add47ca402ea0b4582b0a734e03dd03036ef944908cb63"
+    },
+    {
+      "file": "public-overview-390.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "c3ed03a890f75862d1c7c8a482f83451be8676fabff5d8247940f198ddd4d88d"
+    },
+    {
+      "file": "run-detail-1440-panel.png",
+      "width": 1060,
+      "height": 261,
+      "sha256": "ffecc0096129417ac35e590418abb69bb2f3b4a067d8f1ce6b801331e60ea32c"
+    },
+    {
+      "file": "run-detail-1440.png",
+      "width": 1440,
+      "height": 4555,
+      "sha256": "4def44cbf802dad8b9158a8bea206993bee57a88bf17dbfb735fcb2c0ca37683"
+    },
+    {
+      "file": "run-detail-1920-panel.png",
+      "width": 1372,
+      "height": 261,
+      "sha256": "1456c6ccf9bdd5136b106c7ca60853cb7bd5d71705a917383fa96b13c1c34613"
+    },
+    {
+      "file": "run-detail-1920.png",
+      "width": 1920,
+      "height": 4491,
+      "sha256": "fa526ac87e08ceb16471433b38de87ceea2f73e3b0e03d4d40d0d83bd99edf8f"
+    },
+    {
+      "file": "run-detail-390-panel.png",
+      "width": 322,
+      "height": 370,
+      "sha256": "1bf38f92a62bb6edd3f18ad45834f1ba3b440b9dad56c8ff27eb05cefcddac5c"
+    },
+    {
+      "file": "run-detail-390.png",
+      "width": 390,
+      "height": 7466,
+      "sha256": "86711ca0a1e225c8a82542fa6c8235f404354830707bb1b5ee8ef9b419c4ce77"
+    },
+    {
+      "file": "settings-1440.png",
+      "width": 1440,
+      "height": 5500,
+      "sha256": "350a3a283661c655f460357c22014d49ff1be8b1cbc59f042edcb391984471e3"
+    },
+    {
+      "file": "settings-1920.png",
+      "width": 1920,
+      "height": 5500,
+      "sha256": "e753369fb5cddc1ddf511aee36e0eb429e513f6d75e8160015743caee66e2074"
+    },
+    {
+      "file": "settings-390.png",
+      "width": 390,
+      "height": 7279,
+      "sha256": "88c4397b01d2427070e388a6d571a9f3a5d8dfcb9f99725179e6a5073f88fe84"
+    },
+    {
+      "file": "unavailable-overview.png",
+      "width": 1440,
+      "height": 2592,
+      "sha256": "6b03d8dd6f767a821248d2e3e8fe2f8f38a31292e7ec6d8aa3caabcb9e2547b1"
+    }
+  ],
+  "pageInventories": [
+    {
+      "file": "AUTHOR-evaluations.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2079,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "AUTHOR-forms.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 3335,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "AUTHOR-groups.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "AUTHOR-overview.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2855,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "AUTHOR-policies.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "AUTHOR-settings.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 3529,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "REVIEWER-evaluations.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2213,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "REVIEWER-forms.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2826,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "REVIEWER-groups.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "REVIEWER-overview.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2803,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "REVIEWER-policies.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "REVIEWER-settings.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2455,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "VIEWER-evaluations.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2079,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "VIEWER-forms.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2826,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "VIEWER-groups.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "VIEWER-overview.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2799,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "VIEWER-policies.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "VIEWER-settings.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2455,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "alert-detail-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 4295,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "alert-detail-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 4231,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "alert-detail-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 7096,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "analytics-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1315,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "analytics-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1276,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "analytics-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2506,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "analytics-drill-scope.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&form=general_service&question=greeting",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2038,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "calibration-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=calibration",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 910,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "calibration-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=calibration",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1080,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "calibration-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=calibration",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 1548,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversation-review-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1320,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversation-review-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1320,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversation-review-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2414,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversations-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 944,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversations-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1080,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversations-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 1466,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversations-empty-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 947,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversations-empty-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1080,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "connected-conversations-empty-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 1443,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "conversation-review-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1430,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "conversation-review-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1430,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "conversation-review-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluate",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2408,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "conversations-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1799,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "conversations-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1510,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "conversations-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=conversations",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2036,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "demo-analytics-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1282,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "demo-analytics-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1282,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "demo-analytics-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=analytics",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2447,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "disconnected-landing-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1430,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "disconnected-landing-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1430,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "disconnected-landing-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2482,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "disconnected-settings-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2735,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "disconnected-settings-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 2735,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "disconnected-settings-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 3462,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "empty-evaluations.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2038,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "empty-overview.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation&evaluationSource=server&assignment=unassigned",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2324,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "evaluation-review-detail-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&evaluationId=completed",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 5136,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "evaluation-review-detail-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&evaluationId=completed",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 5067,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "evaluation-review-detail-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&evaluationId=completed",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 7762,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "evaluations-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2623,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "evaluations-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 2554,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "evaluations-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 4206,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "form-detail-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 3557,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "form-detail-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 3557,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "form-detail-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 4915,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "forms-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 3335,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "forms-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 3335,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "forms-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=forms",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 4767,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "governance-save-scope.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings&evaluationSource=server&assignment=unassigned",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 5534,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "group-after-unsaved-navigation.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "group-detail-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2172,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "group-detail-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 2172,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "group-detail-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2980,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "groups-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "groups-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1080,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "groups-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 1073,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "incomplete-overview.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2502,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "keyboard-group-table.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups&evaluationSource=server&assignment=unassigned",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "no-matching-groups.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=groups&evaluationSource=server&assignment=unassigned",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "notification-destination-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 5863,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "notification-destination-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 5811,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "notification-destination-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 7875,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "notification-rule-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 6388,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "notification-rule-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 6388,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "notification-rule-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 8431,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "overview-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2859,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "overview-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 2859,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "overview-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 4140,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "overview-open-drill.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&evaluationSource=server",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2623,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "overview-unassigned-drill.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations&evaluationSource=server&assignment=unassigned",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2288,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "permission-denied.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=evaluations",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2093,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "policies-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "policies-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1080,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "policies-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 925,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "policy-detail-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2173,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "policy-detail-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 2157,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "policy-detail-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=policies",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 3088,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "public-landing-1440.json",
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 1430,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "public-landing-1920.json",
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1430,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "public-landing-390.json",
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 2482,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "public-overview-1440.json",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 900,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "public-overview-1920.json",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=automation",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 1080,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "public-overview-390.json",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=automation",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 844,
+      "fontStatus": "loaded",
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "run-detail-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation&runId=manual_recent",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 4555,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "run-detail-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation&runId=manual_recent",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 4491,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "run-detail-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation&runId=manual_recent",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 7466,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "settings-1440.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 5500,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "settings-1920.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 1920,
+      "pageWidth": 1920,
+      "height": 5500,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "settings-390.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=settings",
+      "width": 390,
+      "pageWidth": 390,
+      "height": 7279,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    },
+    {
+      "file": "unavailable-overview.json",
+      "url": "http://127.0.0.1:4175/Genesys-aqm/?page=automation",
+      "width": 1440,
+      "pageWidth": 1440,
+      "height": 2592,
+      "fontStatus": "loaded",
+      "errors": [],
+      "loadedFonts": [
+        "DM Sans",
+        "Manrope"
+      ]
+    }
+  ],
+  "productionAssets": [
+    {
+      "file": "dist/assets/genesysEmail-BJj4UQKD.js",
+      "sha256": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2"
+    },
+    {
+      "file": "dist/assets/index-Dun1p5-r.js",
+      "sha256": "c0e54a6cdcd358317483df3ff249e68d0bbeca148fb0cf38f561cf73199ef90c"
+    },
+    {
+      "file": "dist/assets/index-Qj14Anwb.css",
+      "sha256": "36ecc1b471993ee707d3d9dd7ba53e4ae33b8cda3821f809f12cf89a5187e77b"
+    }
+  ],
+  "nonImageEvidenceFiles": [
+    {
+      "file": "AUTHOR-evaluations.json",
+      "sha256": "99624467d5256f7689fa45dd8c326f70ff68509bd4fde6b7a8d8370d310940a0"
+    },
+    {
+      "file": "AUTHOR-forms.json",
+      "sha256": "5441a49f313d9ee8509af10bed772b84c353ce0cb651c697e684deca8e89b785"
+    },
+    {
+      "file": "AUTHOR-groups.json",
+      "sha256": "cdce61c30cabdb6ca494e7a504df9d08a7f3b997dca316e0853b47bdd319bf69"
+    },
+    {
+      "file": "AUTHOR-overview.json",
+      "sha256": "293931c5fdb37d2c36e8b29f413d27ec5573cd60dfb1fe9d116018603cf8ef53"
+    },
+    {
+      "file": "AUTHOR-policies.json",
+      "sha256": "c9c757ca259b942645aab54fb055f7aaabe05c2bd8a0a86e7e4d04443da271d6"
+    },
+    {
+      "file": "AUTHOR-settings.json",
+      "sha256": "6aead137ebf3c80316cf3985eef53b4ae932325ad663ea157b81d5296f69a96c"
+    },
+    {
+      "file": "README.md",
+      "sha256": "57634c4732ea64787eeb123a48f06784d29b95b70ac14bf7031fd3e2774cd1c8"
+    },
+    {
+      "file": "REVIEWER-evaluations.json",
+      "sha256": "afff9086b24d0103d4fed8bcc756b9b2de5637e7c0a1d33346499160824cc6b6"
+    },
+    {
+      "file": "REVIEWER-forms.json",
+      "sha256": "e0d466ed94f089cf264233176b14f55035258789c765a1e9521a17734f51bbc2"
+    },
+    {
+      "file": "REVIEWER-groups.json",
+      "sha256": "008dd70860be5649ed25c958ad49dd0411cc7cf8def7d433c755957e32b25e6a"
+    },
+    {
+      "file": "REVIEWER-overview.json",
+      "sha256": "871d384ed4080b13a1ee3a6dfab99c61bf49897a6e6dc4b1c045ad40eb8529df"
+    },
+    {
+      "file": "REVIEWER-policies.json",
+      "sha256": "b16b49f28785dc3e8438fe88529c4aa968c786616b0bd6e5d6a7d7da7d8b2b31"
+    },
+    {
+      "file": "REVIEWER-settings.json",
+      "sha256": "7bbe53988c2b0e4b872817d4afb3738c23f7c764f687fbb69907bc7ab42e7bb7"
+    },
+    {
+      "file": "VIEWER-evaluations.json",
+      "sha256": "6d84023b522075996cef0a06c8aad02343e071f43cf16fa07b0af0d3079ff16d"
+    },
+    {
+      "file": "VIEWER-forms.json",
+      "sha256": "afefa3fee7aab0baa5f77f16e97272482c77db805fe9597370bfa063bec95406"
+    },
+    {
+      "file": "VIEWER-groups.json",
+      "sha256": "e281d8e83a651603ee29555b7aaa96848a4e4013b3ccd50495cf7f1012e86241"
+    },
+    {
+      "file": "VIEWER-overview.json",
+      "sha256": "affac7de997b0eb5128f87ee7a6f691f53a548c58a55eb890ca80848d5185a65"
+    },
+    {
+      "file": "VIEWER-policies.json",
+      "sha256": "33247536d9890899b2b0d23ab28f7310f5f277cad19f3df127997a7fc8f7dc67"
+    },
+    {
+      "file": "VIEWER-settings.json",
+      "sha256": "c0962916a31e29c5d7036beaf5c391178eaa13cc698ef3d1f27fb4b616554cfa"
+    },
+    {
+      "file": "alert-detail-1440.json",
+      "sha256": "403846eecf24201bda6cffc0073da1a1e6de841d53bd076633c5daac4c12f470"
+    },
+    {
+      "file": "alert-detail-1920.json",
+      "sha256": "c37510930f3e87635f22667f632dc843e2b425a0864afae84740b744650e9244"
+    },
+    {
+      "file": "alert-detail-390.json",
+      "sha256": "17a4438abeac9402fadda7eaeeb5f1c732bbcbf6bb2b77366f57e178dfc1e15f"
+    },
+    {
+      "file": "analytics-1440.json",
+      "sha256": "0feb391c64446f2153c211a367c25c7b57d0eff7b49ada3dcdc970dd967c9248"
+    },
+    {
+      "file": "analytics-1920.json",
+      "sha256": "cca9d858950a62b238c35a77e762464646545e4d51829eab0eb9f13b866790a2"
+    },
+    {
+      "file": "analytics-390.json",
+      "sha256": "abddded09e8c9a9271d66272c5041edd02deb35adf723e1d409e9186bc32fcce"
+    },
+    {
+      "file": "analytics-drill-scope.json",
+      "sha256": "d562510008f10bb3958201fef5d7eecdfeaf94a672424b64d11527ad36bf3699"
+    },
+    {
+      "file": "calibration-1440.json",
+      "sha256": "183433eac99f2a1db078e604446aa93b34bb3f623ed94fb4505190004455593e"
+    },
+    {
+      "file": "calibration-1920.json",
+      "sha256": "866ac5b19fd21d4613a3d2550e8c0aa4acba36af0ab89bae87a33470e2bbd979"
+    },
+    {
+      "file": "calibration-390.json",
+      "sha256": "127ec78d6b035600b55149c921f2d146c0396b026fe9acbd5f08694f184f6e1a"
+    },
+    {
+      "file": "capture.log",
+      "sha256": "bddd40264d4ef28e60b3e176e52f508bca2ee7fe5b8502bf7e158da38f9cec1a"
+    },
+    {
+      "file": "capture.spec.ts",
+      "sha256": "1a2aa77624228e36950461b976e4ea481bd7a32ff0055d0423384109334a9cfc"
+    },
+    {
+      "file": "connected-conversation-review-1440.json",
+      "sha256": "6a738dc9165e39cebac05e0db6e409eea3c9e4ce06c2d23b04cebfba5469cf23"
+    },
+    {
+      "file": "connected-conversation-review-1920.json",
+      "sha256": "b3b34dd80aaff55877fbfa4ddc065e66387ae92b87581b97eecb84641dc371a2"
+    },
+    {
+      "file": "connected-conversation-review-390.json",
+      "sha256": "1f2aaab5f3e538d9128f3e4e5cb7c3e96af2509d16c99943bf9a774fd6869ea4"
+    },
+    {
+      "file": "connected-conversations-1440.json",
+      "sha256": "c2e0c3be3c6a533c9e02aecb10ebab50a66029089a04eb41cea91bc322156a73"
+    },
+    {
+      "file": "connected-conversations-1920.json",
+      "sha256": "f15322fc7bcc7d3b6ac814233d81947c46311f047704bfc90b0ae05f304a3876"
+    },
+    {
+      "file": "connected-conversations-390.json",
+      "sha256": "45aac3c24ec49e3fefd50cff6d8f14ab7d3eab6345081aeedec525fc4095728c"
+    },
+    {
+      "file": "connected-conversations-empty-1440.json",
+      "sha256": "263cf2588ec1da44dfb1a0657cbde98b4de7af36792aaaf9bfcdf0de36d055a3"
+    },
+    {
+      "file": "connected-conversations-empty-1920.json",
+      "sha256": "548d73bd3c7989b89dc625a69e706e879cb4b6936ff45591feb63e5f99aee9c5"
+    },
+    {
+      "file": "connected-conversations-empty-390.json",
+      "sha256": "1f3cebf52bba285ff92ee8f4e9ead93202e1f45e31301937ab3d434febdcc9c1"
+    },
+    {
+      "file": "conversation-review-1440.json",
+      "sha256": "2a168441a3d3e364298ec40a8a7f9de3435e487775e0eeea82fb6bf1c114c574"
+    },
+    {
+      "file": "conversation-review-1920.json",
+      "sha256": "1690bb328ac245add9d9c083b58ad9f8580e3014b4661e29c5da3dc77c8ac25c"
+    },
+    {
+      "file": "conversation-review-390.json",
+      "sha256": "f23977bdb9160ad51c54cc6ea84a383150aef666b86972bb8d1e7363ee9e450b"
+    },
+    {
+      "file": "conversations-1440.json",
+      "sha256": "2901f87e17c569305d1992309ce4c754e308b4bb55f39df3d880228507a7b4f2"
+    },
+    {
+      "file": "conversations-1920.json",
+      "sha256": "06b38548cd5ba4a1110a673c1a24fe01083fa9084a648bed58fac980a4d70728"
+    },
+    {
+      "file": "conversations-390.json",
+      "sha256": "f71b56c5a3a30c6a6814c9fca54cbcdb975b84ed2cdbea9d2e6a6d239179bf56"
+    },
+    {
+      "file": "demo-analytics-1440.json",
+      "sha256": "0c27c03a18947c2eb50fef9f3cc90298733d270977d58179aaba6c498523d950"
+    },
+    {
+      "file": "demo-analytics-1920.json",
+      "sha256": "496c02cd1723b4b44dd5de039952c1ed66a7f2dc667d04046f80c089d9d1da55"
+    },
+    {
+      "file": "demo-analytics-390.json",
+      "sha256": "40cc5daf6b229bb5254c92a9b0388357bbaee7233c120b0b1a4ec2df7eb2c285"
+    },
+    {
+      "file": "disconnected-landing-1440.json",
+      "sha256": "eb43c865d85ba8de61a20f6076a7a7f4ad7944173d594d456b5274665eefdc42"
+    },
+    {
+      "file": "disconnected-landing-1920.json",
+      "sha256": "16c736ea75d5342244f30abf6a213818c92a5bb87739896f77f832ff42b57a79"
+    },
+    {
+      "file": "disconnected-landing-390.json",
+      "sha256": "eca93be52820eaca2adcae2bc1bbaf691343a339687f5bdddefc2bcb10e124c3"
+    },
+    {
+      "file": "disconnected-settings-1440.json",
+      "sha256": "48c9fada9bc85f3056289f93dbc38c7012372b57d7a0fa33c9b9ad682e9061c1"
+    },
+    {
+      "file": "disconnected-settings-1920.json",
+      "sha256": "d4ec832812417cc6406882aa484ecfa7fcf9bdcb8adc01f485b9c4c4b52a68fd"
+    },
+    {
+      "file": "disconnected-settings-390.json",
+      "sha256": "32d3dcdc9fa5d43eca9c0a0f71db902a632fa7fdd635747317f535646ee6c2f0"
+    },
+    {
+      "file": "empty-evaluations.json",
+      "sha256": "f93605cf18011d7b2620a7f403c1cabb037c911b491cb18b0f739d2e0fcef9c4"
+    },
+    {
+      "file": "empty-overview.json",
+      "sha256": "209c97b3d9413cd12499e6abc0cc7a088601de192669c3b8856016a9d92a2062"
+    },
+    {
+      "file": "evaluation-review-detail-1440.json",
+      "sha256": "26186a683e2a6d85797683af39e1793db67ebc0ef207ab71289178c4e47af9e7"
+    },
+    {
+      "file": "evaluation-review-detail-1920.json",
+      "sha256": "eee08329757a617842630c7158ca2f37dbd7dddc6ed68c5abb0b6c7527d64b95"
+    },
+    {
+      "file": "evaluation-review-detail-390.json",
+      "sha256": "644005e5d874ae8f13ae12f0f7374dd1ea9e131c0d461fc95de67000f89b1833"
+    },
+    {
+      "file": "evaluations-1440.json",
+      "sha256": "3b7b071f176c00a0a60abca635d4cfc26aca4fee26627a3244966369c6ac382e"
+    },
+    {
+      "file": "evaluations-1920.json",
+      "sha256": "8e607c4f373326a2ad97b7d973e42dcb79d8e7d44198bbe50945f5f43feeed13"
+    },
+    {
+      "file": "evaluations-390.json",
+      "sha256": "684ccefc8ec24287670b9954f94b5ecaaaa9d81e62070f1e726b3da203c78f52"
+    },
+    {
+      "file": "existing-journeys.log",
+      "sha256": "0adf2a6b1c0ba8840d348d1abfa3adb0d463aefe8ec7dbc420b78605b6dc162b"
+    },
+    {
+      "file": "form-detail-1440.json",
+      "sha256": "717463467b8ed5be0740ed9a9bccc725917feb8b63555c781f8a7b8baa00560d"
+    },
+    {
+      "file": "form-detail-1920.json",
+      "sha256": "a59af2811b0c5f475fab3188ffabb22cc3ff747ea1f7b852744758dfda4c0062"
+    },
+    {
+      "file": "form-detail-390.json",
+      "sha256": "2432e971b264152f5af437a75f744783614a0032ec3897d62536870c8076bd3b"
+    },
+    {
+      "file": "forms-1440.json",
+      "sha256": "1d5c0d59021cf7e71b0d6f43c0f0eb4d386f984d71ce0a0f5a6365230259f4cf"
+    },
+    {
+      "file": "forms-1920.json",
+      "sha256": "3f107665690c6f8bc686166f62cc45a6680ee9f2f11dfafd4b24e5af597fbfd7"
+    },
+    {
+      "file": "forms-390.json",
+      "sha256": "6ed342ae20bfd5f2f8ec14c0c9e7d8df4cf5787ea8522426d04db22e77653ce7"
+    },
+    {
+      "file": "governance-save-payload.json",
+      "sha256": "758afd173aa692556d91f7cdf05a16c7a90728f1eedc3bd6feb15c83f68f8fe4"
+    },
+    {
+      "file": "governance-save-scope.json",
+      "sha256": "54174ab728681541e91ae0fe99a7e2a0edf9c9afeee77eaf48b849691c078c7f"
+    },
+    {
+      "file": "group-after-unsaved-navigation.json",
+      "sha256": "29af59dfbda5e75edc3b0a9b3d31646643a67824bf531532ef704bf089f71dbc"
+    },
+    {
+      "file": "group-detail-1440.json",
+      "sha256": "c843b87b3203622ec9fb21cea7872141cfda85da5f67c0027dc5e9ebdd7bc43d"
+    },
+    {
+      "file": "group-detail-1920.json",
+      "sha256": "2922a79f9ea74a128b84597e93ded62b93e3ea43060eea482613e060afd37a31"
+    },
+    {
+      "file": "group-detail-390.json",
+      "sha256": "6549ff39221cce3735f6d5fa67d9e8be27d067d9d99409a13983146187bce55e"
+    },
+    {
+      "file": "group-dirty-probe.json",
+      "sha256": "b4eab525f162f54208ec4ad3d913f0a6478ffffa745e602936f90d81f77d85bb"
+    },
+    {
+      "file": "groups-1440.json",
+      "sha256": "b5666a5aa21f5a2c907e4fd6c606972afad9e3e32df5be6cd1373cb8ba781ae1"
+    },
+    {
+      "file": "groups-1920.json",
+      "sha256": "bc8fe9641cad570363c9dca71be3bf1046325bd0560a48e719dec3d3cae7b4c9"
+    },
+    {
+      "file": "groups-390.json",
+      "sha256": "2ac36e0c30d5e1766b1bf26b4fb039b5efc2c88b6f5f8ff8af32e1713a3a5d2f"
+    },
+    {
+      "file": "incomplete-overview.json",
+      "sha256": "4431631a5933b99a14d0b80f7f0d96b91c096691f23174c47b27f82b0bfd6694"
+    },
+    {
+      "file": "keyboard-group-focus.json",
+      "sha256": "cdbc6555d0b2e353c0be9189d304e9ff270c8d407f23f9e5d1117f9e704bc74a"
+    },
+    {
+      "file": "keyboard-group-table.json",
+      "sha256": "26cdebb88ac24bfaaa27944ce0facc233b268f9924a7c2eddcbb88b7428833f4"
+    },
+    {
+      "file": "no-matching-groups.json",
+      "sha256": "d6258b94bc9aa1b5f9e538cb1797b7026d279a9a604225c75fc002414e0b754c"
+    },
+    {
+      "file": "notification-destination-1440.json",
+      "sha256": "d7de3c0669f279db559c7147ff12cbd3b175893950c01bb36a40d1547e94039c"
+    },
+    {
+      "file": "notification-destination-1920.json",
+      "sha256": "12384c4e1050610e1ef5c91a8e017a51f9d798ba186b2ee42d8be5e80af79fb4"
+    },
+    {
+      "file": "notification-destination-390.json",
+      "sha256": "30b04fb6ad8a42b7fe222b3fc1b892b0c10a435eed49898042a7b8c454f07c6e"
+    },
+    {
+      "file": "notification-rule-1440.json",
+      "sha256": "ed1a6968cf16834f621ebeffad413aa4691543a4d810105633d15e13e50f84ed"
+    },
+    {
+      "file": "notification-rule-1920.json",
+      "sha256": "04ca8b666034d631d6d5aa194db16df56dd03a9be0f572b9589701b80a9cc30c"
+    },
+    {
+      "file": "notification-rule-390.json",
+      "sha256": "652ea41b85dc0bb362168814ad934643595eece6baf9173db9a18ac92bfb5ac7"
+    },
+    {
+      "file": "overview-1440.json",
+      "sha256": "bee8bf721134b09675b3702ced4b96183e07d07fb9f45ead19e67a7ecf301ef3"
+    },
+    {
+      "file": "overview-1920.json",
+      "sha256": "11248af481ee9107ed35a15533a1e9cda1facc2b58d49fb7e4cf4fa82d2cb01f"
+    },
+    {
+      "file": "overview-390.json",
+      "sha256": "090c12d92b16ce4b97cf542e0511693ac8bb3f3b583af612af000543c43bee9f"
+    },
+    {
+      "file": "overview-open-drill.json",
+      "sha256": "4d905d46604de18d7a4551c78d05bf8e27bc569ffc716fa560c13346435f9669"
+    },
+    {
+      "file": "overview-unassigned-drill.json",
+      "sha256": "b569bffaaaac9bb545def7b99d9dc8a22691136837eeca5389e7b264d1c70154"
+    },
+    {
+      "file": "permission-denied.json",
+      "sha256": "9f14eed93531bb18a5473b646a2a608d79f67130ef40bfe712f3f16942094a15"
+    },
+    {
+      "file": "playwright.config.ts",
+      "sha256": "e115ca9794d37d76010028fc0c05d060019c6d11104485d583ac9d29a9d75b22"
+    },
+    {
+      "file": "policies-1440.json",
+      "sha256": "e5cfcacc681dc3e3612c6ee6e8923968b1529a583afbaa54523030c0503223bb"
+    },
+    {
+      "file": "policies-1920.json",
+      "sha256": "d89613819f45e0cb40a2af7c07a721b5a6ee14a3f021b1b5da97334a5d2e3d24"
+    },
+    {
+      "file": "policies-390.json",
+      "sha256": "017b690c11c56a52452ea33eeed54eb0755610cc64dcadfaf7ba3ab27ad8d7be"
+    },
+    {
+      "file": "policy-detail-1440.json",
+      "sha256": "fd6427a4a9a564d6efb31259fd0df26b5d43e2b47d0e895b88c084a216a9a0fd"
+    },
+    {
+      "file": "policy-detail-1920.json",
+      "sha256": "60a3d4eb1dc520043f6533ae96c9ba897032e088459bd11c2747eca1f6c9056e"
+    },
+    {
+      "file": "policy-detail-390.json",
+      "sha256": "722ea631ebed905a50d3f7eb80142ffcfe07cf39432770bcfb8c7a84ffde9d84"
+    },
+    {
+      "file": "preservation.json",
+      "sha256": "35c76362b82400ce54944d5114e139f78b3b166d57894738489821434a147979"
+    },
+    {
+      "file": "public-blocked-1440.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "public-blocked-1920.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "public-blocked-390.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "public-landing-1440.json",
+      "sha256": "0b34a57268a43de0f438cf532a9122f774fafdcea44b3911c1795cbeffe2704d"
+    },
+    {
+      "file": "public-landing-1920.json",
+      "sha256": "de7ba3c3e3f9cf6caf27803d6728019a29bff56957c4d65561cc10b5c8dc9aab"
+    },
+    {
+      "file": "public-landing-390.json",
+      "sha256": "c54cc47e369a84acd26c6fbcc88d315e54d32491670c549e65b7636649ffa83d"
+    },
+    {
+      "file": "public-overview-1440.json",
+      "sha256": "6e2e7562b4b5cd6541a21c7179824e00566c8b49111cfcb3fc8aefc421115462"
+    },
+    {
+      "file": "public-overview-1920.json",
+      "sha256": "2978d9e806908a35944b1cb51594243bb97c9c58643e81f26aec7995d9c09026"
+    },
+    {
+      "file": "public-overview-390.json",
+      "sha256": "00e5c4aa1093acc7f00d88fa213433ec54433f9c1b5e95433c43c5153f22f75c"
+    },
+    {
+      "file": "run-detail-1440.json",
+      "sha256": "104078343497ad1f780c7e1a80b1bc44b48cd5f110997063b5a790b494d2bd17"
+    },
+    {
+      "file": "run-detail-1920.json",
+      "sha256": "911f4e45fd56301d5c24402078b5b46529e1e58df488ad3ca95850fe6a80f244"
+    },
+    {
+      "file": "run-detail-390.json",
+      "sha256": "d393366fa4bbff75d1c36e61c2b479144eaa833a44da40b003b12acf22e33e33"
+    },
+    {
+      "file": "settings-1440.json",
+      "sha256": "f98e87dac8389979c8ebeedb0fe666025c40062af70e1b2206186ec90bff237f"
+    },
+    {
+      "file": "settings-1920.json",
+      "sha256": "eba124affb8a43b6642566f1579254c7cf7a0c91d587ca21764ffcce08b5e74f"
+    },
+    {
+      "file": "settings-390.json",
+      "sha256": "40b1e59f23b67c940849f32bdd1d8c5ca44a31e1e47decc4b65a5cc896c9018f"
+    },
+    {
+      "file": "unavailable-overview.json",
+      "sha256": "2bf20aa8dcc71cc750e64b657a6b469a8d33f15aff3ec8fc611899f977ed21c9"
+    },
+    {
+      "file": "unit-tests.log",
+      "sha256": "88abbd6f40f02ff60de1f9df260d9fde964787b73f809b6eff6e68a950ef7311"
+    }
+  ],
+  "reportSHA256": "06db5799de59d761ab2d9a39cf1e668e0bfed523011b432e1903068458339abb"
+}

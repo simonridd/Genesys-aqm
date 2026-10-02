@@ -27,5 +27,7 @@
     "type": "annotated",
     "object": "581cabab77946f48079f4e945a15489d0a403372",
     "peeled": "dd449b6e8eef5a8d39bf2cedd5951ad01999dc9a"
-  }
+  },
+  "committedChangesWithinAllowedReviewScope": true,
+  "committedProductDiffPaths": []
 }

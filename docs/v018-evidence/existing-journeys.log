@@ -1,0 +1,43 @@
+
+Running 25 tests using 1 worker
+
+(node:24320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440 (1.8s)
+  ✓   2 tests/authoring.spec.ts:56:1 › offline draft stays browser-local (485ms)
+  ✓   3 tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1440 (3.5s)
+  ✓   4 tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 1440 (3.4s)
+  ✓   5 tests/governance.spec.ts:7:164 › ADMIN governance at 1440 (2.0s)
+  ✓   6 tests/governance.spec.ts:7:164 › AUTHOR governance at 1440 (1.5s)
+  ✓   7 tests/governance.spec.ts:7:164 › REVIEWER governance at 1440 (1.3s)
+  ✓   8 tests/governance.spec.ts:7:164 › VIEWER governance at 1440 (1.1s)
+  ✓   9 tests/notifications.spec.ts:6:164 › ADMIN notifications at 1440 (1.3s)
+  ✓  10 tests/notifications.spec.ts:6:164 › AUTHOR notifications at 1440 (642ms)
+  ✓  11 tests/notifications.spec.ts:6:164 › REVIEWER notifications at 1440 (670ms)
+  ✓  12 tests/notifications.spec.ts:6:164 › VIEWER notifications at 1440 (663ms)
+  ✓  13 tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1440 (855ms)
+  ✓  14 tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1920 (854ms)
+  ✓  15 tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 390 (791ms)
+  ✓  16 tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1440 (1.5s)
+  ✓  17 tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1440 (1.5s)
+  ✓  18 tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1440 (1.7s)
+  ✓  19 tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1440 (1.7s)
+  ✓  20 tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win (1.6s)
+  ✓  21 tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440 (1.9s)
+  ✓  22 tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records (507ms)
+  ✓  23 tests/policy-authoring.spec.ts:88:1 › connected load failure does not expose local definitions or production mutation controls (363ms)
+  ✓  24 tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1440 (2.1s)
+  ✓  25 tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1440 (2.0s)
+
+  25 passed (36.6s)
+
+Running 4 tests using 1 worker
+
+(node:28157) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/authoring.spec.ts:9:97 › authoring productivity and portability at 390 (1.8s)
+  ✓  2 tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390 (1.7s)
+  ✓  3 tests/review-operations.spec.ts:11:146 › ADMIN review operations at 390 (2.1s)
+  ✓  4 tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 390 (2.0s)
+
+  4 passed (8.2s)
