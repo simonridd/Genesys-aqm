@@ -18,3 +18,12 @@ export function validateGovernance(input:unknown):GovernanceSettings {
  for(const key of Object.keys(defaultGovernance) as (keyof GovernanceSettings)[]){if(key==='id')continue;if(key==='reviewSla'){out.reviewSla=validateReviewSla(v.reviewSla===undefined?defaultReviewSla:v.reviewSla);continue;}const n=v[key]??(key==='notificationDeliveryRetentionDays'?null:v[key]);if(key==='browserContentCacheHours'){if(typeof n!=='number'||!Number.isFinite(n)||n<0||n>168)throw Error('Browser cache hours must be 0 to 168.');out[key]=n}else{if(n!==null&&(typeof n!=='number'||!Number.isInteger(n)||n<1||n>36500))throw Error('Retention days must be null or an integer from 1 to 36500.');out[key]=n as number|null}}
  return out
 }
+
+export const retentionSettingKeys = ['evaluationRetentionDays','reviewRetentionDays','policyRunRetentionDays','alertRetentionDays','auditRetentionDays','notificationDeliveryRetentionDays'] as const
+export function pendingGovernanceSections(saved:GovernanceSettings,working:GovernanceSettings):string[] {
+ const sections:string[]=[]
+ if(saved.browserContentCacheHours!==working.browserContentCacheHours)sections.push('Privacy / browser cache')
+ if(saved.reviewSla.dueSoonHours!==working.reviewSla.dueSoonHours||saved.reviewSla.overdueEscalationHours!==working.reviewSla.overdueEscalationHours)sections.push('Review reminders')
+ if(retentionSettingKeys.some(key=>saved[key]!==working[key]))sections.push('Retention')
+ return sections
+}

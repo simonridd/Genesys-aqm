@@ -39,7 +39,6 @@ export function PoliciesPage({session,policies:localPolicies,forms:localForms,on
  const dirty=!!policy&&(!saved||!samePolicyDefinition(saved,policy)),scheduleDirty=!!schedule&&!!scheduleDrafts[schedule.policyId]&&scheduleConfig(schedule)!==scheduleConfig(savedSchedule??initialSchedule(schedule.policyId))
  const anyDirty=Object.values(drafts).some(p=>!authority.some(a=>a.id===p.id&&samePolicyDefinition(a,p)))||Object.values(scheduleDrafts).some(s=>scheduleConfig(s)!==scheduleConfig(schedules.find(a=>a.policyId===s.policyId)??initialSchedule(s.policyId)))
  useEffect(()=>{onDirty(anyDirty);return()=>onDirty(false)},[anyDirty,onDirty])
- useEffect(()=>{if(!anyDirty)return;const warn=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue=''};window.addEventListener('beforeunload',warn);return()=>window.removeEventListener('beforeunload',warn)},[anyDirty])
  const update=(p:InteractionPolicy)=>{setDrafts(current=>({...current,[p.id]:p}));setNotice('');setError('')}
  const perform=async(work:()=>Promise<void>)=>{setBusy(true);setError('');setNotice('');try{await work()}catch(e){setError(e instanceof Error?e.message:'Save failed.')}finally{setBusy(false)}}
  const save=()=>perform(async()=>{

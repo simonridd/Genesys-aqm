@@ -1,0 +1,22 @@
+{
+  "base": "b4a7212cc3480013e7a04d38f7b2120c51c600a2",
+  "serverSourcesUnchanged": true,
+  "bundleComparison": {
+    "main": {
+      "equal": true,
+      "sha256": "5ba4d4f369ab661fff8ee387a811bd78332d73604e3c70120f2b1df183546a03"
+    },
+    "releaseProof": {
+      "equal": true,
+      "sha256": "b7ce45e4a1523e0d47ec25b8cb31bf4e94c9488390ad4b92f65f5d5cd65eb4ec"
+    },
+    "digitalProof": {
+      "equal": true,
+      "sha256": "ff0d0919441c0eebb47d7178a2c136ef76f837654298a9df99c9f54ebf2329c6"
+    },
+    "seedGroupAssets": {
+      "equal": true,
+      "sha256": "8f1f24dfaa058f1a42465d7984a9b787b2b059d238a3f0acefe688159bad7b73"
+    }
+  }
+}

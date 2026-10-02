@@ -1,0 +1,22 @@
+[WebServer] (node:46443) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 11 tests using 1 worker
+
+(node:46444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/11] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[2/11] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[3/11] tests/save-protection.spec.ts:123:2 › Form Test destructive confirmations preserve recovery at 1440
+[4/11] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[5/11] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[6/11] tests/save-protection.spec.ts:123:2 › Form Test destructive confirmations preserve recovery at 1920
+[7/11] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[8/11] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[9/11] tests/save-protection.spec.ts:123:2 › Form Test destructive confirmations preserve recovery at 390
+[10/11] tests/save-protection.spec.ts:140:1 › offline group is explicitly saved in this browser, and import is clean
+[11/11] tests/save-protection.spec.ts:150:1 › demo removal, broad local reset and local history clear have exact scope
+  11 passed (13.1s)

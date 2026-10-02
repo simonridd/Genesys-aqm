@@ -1,0 +1,105 @@
+
+Running 34 tests using 1 worker
+
+(node:37470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/34] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440
+[2/34] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1920
+[3/34] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 390
+[4/34] tests/authoring.spec.ts:56:1 › offline draft stays browser-local
+[5/34] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440
+  1) tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator: getByLabel('OAuth Client ID')
+    Expected: "e05784c9-2421-4c2b-a3af-79fafb25aea8"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveValue" getByLabel('OAuth Client ID') with timeout 5000ms
+      - waiting for getByLabel('OAuth Client ID')
+
+
+      28 |   const nav=page.getByRole('navigation',{name:'Primary navigation'});await nav.getByRole('button',{name:'Evaluations',exact:true}).click();await page.getByRole('row').filter({hasText:conversationId}).click();await page.getByRole('button',{name:/Open conversation/}).click();await expect(page.getByText('I need help with my bill.',{exact:true})).toBeVisible();expect(downloads).toBe(2)
+      29 |   await nav.getByRole('button',{name:'Evaluation Forms',exact:true}).click();await page.getByRole('button',{name:'＋ New form'}).click();await expect(page.getByLabel('Execution')).toHaveValue('server');await page.getByRole('combobox',{name:'Source',exact:true}).selectOption('genesys-cloud');await page.getByRole('button',{name:'Load recent',exact:true}).click();await expect(page.getByText(/recent interactions available/)).toBeVisible();expect(searches).toBe(2)
+    > 30 |   await nav.getByRole('button',{name:'Settings',exact:true}).click();await expect(page.getByLabel('OAuth Client ID')).toHaveValue('e05784c9-2421-4c2b-a3af-79fafb25aea8');await expect(page.getByText(/2 cached searches · 1 cached transcripts/)).toBeVisible()
+         |                                                                                                                       ^
+      31 |   const stored=await page.evaluate(async()=>{const db=await new Promise<IDBDatabase>((resolve,reject)=>{const request=indexedDB.open('genesys-aqm-conversations-v1',1);request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)});return new Promise<string>((resolve,reject)=>{const request=db.transaction('entries').objectStore('entries').getAll();request.onsuccess=()=>resolve(JSON.stringify(request.result));request.onerror=()=>reject(request.error)})});expect(stored).toContain('I need help with my bill.');expect(stored).not.toContain('fixture-token');expect(stored).not.toContain('transcriptsCache');expect(stored).not.toContain('fixture-code')
+      32 |   await page.getByRole('button',{name:'Disconnect',exact:true}).click();await expect(page.getByText('Disconnected',{exact:true})).toBeVisible();await expect.poll(async()=>page.evaluate(async()=>{const request=indexedDB.open('genesys-aqm-conversations-v1',1);const db=await new Promise<IDBDatabase>(resolve=>{request.onsuccess=()=>resolve(request.result)});return new Promise<number>(resolve=>{const count=db.transaction('entries').objectStore('entries').count();count.onsuccess=()=>resolve(count.result)})})).toBe(0)
+      33 |   await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByText('I need help with my bill.',{exact:true})).toHaveCount(0)
+        at /Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-v0-18a/tests/control-plane-cache.spec.ts:30:119
+
+    Error Context: test-results/control-plane-cache-provid-b9303--trusted-evaluation-at-1440/error-context.md
+
+
+(node:37494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/34] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390
+  2) tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator: getByLabel('OAuth Client ID')
+    Expected: "e05784c9-2421-4c2b-a3af-79fafb25aea8"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveValue" getByLabel('OAuth Client ID') with timeout 5000ms
+      - waiting for getByLabel('OAuth Client ID')
+
+
+      28 |   const nav=page.getByRole('navigation',{name:'Primary navigation'});await nav.getByRole('button',{name:'Evaluations',exact:true}).click();await page.getByRole('row').filter({hasText:conversationId}).click();await page.getByRole('button',{name:/Open conversation/}).click();await expect(page.getByText('I need help with my bill.',{exact:true})).toBeVisible();expect(downloads).toBe(2)
+      29 |   await nav.getByRole('button',{name:'Evaluation Forms',exact:true}).click();await page.getByRole('button',{name:'＋ New form'}).click();await expect(page.getByLabel('Execution')).toHaveValue('server');await page.getByRole('combobox',{name:'Source',exact:true}).selectOption('genesys-cloud');await page.getByRole('button',{name:'Load recent',exact:true}).click();await expect(page.getByText(/recent interactions available/)).toBeVisible();expect(searches).toBe(2)
+    > 30 |   await nav.getByRole('button',{name:'Settings',exact:true}).click();await expect(page.getByLabel('OAuth Client ID')).toHaveValue('e05784c9-2421-4c2b-a3af-79fafb25aea8');await expect(page.getByText(/2 cached searches · 1 cached transcripts/)).toBeVisible()
+         |                                                                                                                       ^
+      31 |   const stored=await page.evaluate(async()=>{const db=await new Promise<IDBDatabase>((resolve,reject)=>{const request=indexedDB.open('genesys-aqm-conversations-v1',1);request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)});return new Promise<string>((resolve,reject)=>{const request=db.transaction('entries').objectStore('entries').getAll();request.onsuccess=()=>resolve(JSON.stringify(request.result));request.onerror=()=>reject(request.error)})});expect(stored).toContain('I need help with my bill.');expect(stored).not.toContain('fixture-token');expect(stored).not.toContain('transcriptsCache');expect(stored).not.toContain('fixture-code')
+      32 |   await page.getByRole('button',{name:'Disconnect',exact:true}).click();await expect(page.getByText('Disconnected',{exact:true})).toBeVisible();await expect.poll(async()=>page.evaluate(async()=>{const request=indexedDB.open('genesys-aqm-conversations-v1',1);const db=await new Promise<IDBDatabase>(resolve=>{request.onsuccess=()=>resolve(request.result)});return new Promise<number>(resolve=>{const count=db.transaction('entries').objectStore('entries').count();count.onsuccess=()=>resolve(count.result)})})).toBe(0)
+      33 |   await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByText('I need help with my bill.',{exact:true})).toHaveCount(0)
+        at /Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-v0-18a/tests/control-plane-cache.spec.ts:30:119
+
+    Error Context: test-results/control-plane-cache-provid-cc18b-d-trusted-evaluation-at-390/error-context.md
+
+
+(node:37515) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/34] tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 1440
+[8/34] tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 1920
+[9/34] tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 390
+[10/34] tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 1440
+[11/34] tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 1920
+[12/34] tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 390
+[13/34] tests/governance.spec.ts:7:164 › ADMIN governance at 1440
+[14/34] tests/governance.spec.ts:7:164 › AUTHOR governance at 1440
+[15/34] tests/governance.spec.ts:7:164 › REVIEWER governance at 1440
+[16/34] tests/governance.spec.ts:7:164 › VIEWER governance at 1440
+[17/34] tests/governance.spec.ts:7:164 › ADMIN governance at 1920
+[18/34] tests/governance.spec.ts:7:164 › AUTHOR governance at 1920
+[19/34] tests/governance.spec.ts:7:164 › REVIEWER governance at 1920
+[20/34] tests/governance.spec.ts:7:164 › VIEWER governance at 1920
+[21/34] tests/governance.spec.ts:7:164 › ADMIN governance at 390
+[22/34] tests/governance.spec.ts:7:164 › AUTHOR governance at 390
+[23/34] tests/governance.spec.ts:7:164 › REVIEWER governance at 390
+[24/34] tests/governance.spec.ts:7:164 › VIEWER governance at 390
+[25/34] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440
+[26/34] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1920
+[27/34] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390
+[28/34] tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate
+[29/34] tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate
+[30/34] tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records
+[31/34] tests/policy-authoring.spec.ts:88:1 › connected load failure does not expose local definitions or production mutation controls
+[32/34] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1440
+[33/34] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1920
+[34/34] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+  2 failed
+    tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440 
+    tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390 
+  32 passed (1.1m)

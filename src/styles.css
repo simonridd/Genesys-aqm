@@ -280,3 +280,7 @@ input[readonly] { background: #f8fbfa; }
 .overview-attention-counts .text-link,.overview-metric .text-link {margin:0;padding:0}
 .overview-warning {background:#fff0d9;color:#8b5317}
 .overview-attention .panel-heading {margin-bottom:12px}
+
+/* Keep Form Test history actions reachable on narrow viewports. */
+.form-test { min-width:0; }
+.form-test .panel-heading { flex-wrap:wrap; gap:12px; }

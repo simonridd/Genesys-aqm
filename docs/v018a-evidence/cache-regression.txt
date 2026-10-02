@@ -1,0 +1,10 @@
+
+Running 2 tests using 1 worker
+
+(node:38678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440
+[2/2] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390
+  2 passed (4.1s)

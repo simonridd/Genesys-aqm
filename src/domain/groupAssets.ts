@@ -25,6 +25,8 @@ export function transitionAsset(asset:QuestionGroupAsset,status:QuestionGroupAss
   return {...structuredClone(asset),status,updatedAt:now,publishedAt:status==='PUBLISHED'?now:asset.publishedAt}
 }
 const stable = (value:unknown):string => JSON.stringify(value,(_key,item)=>item&&typeof item==='object'&&!Array.isArray(item)?Object.fromEntries(Object.entries(item).sort(([a],[b])=>a.localeCompare(b))):item)
+export const groupAssetDefinition = (asset:QuestionGroupAsset):string => stable({name:asset.name,description:asset.description,questions:asset.questions,condition:asset.condition,scoring:asset.scoring})
+export const groupAssetDirty = (working:QuestionGroupAsset|undefined,saved:QuestionGroupAsset|undefined):boolean => !!working && working.status==='DRAFT' && (!saved || groupAssetDefinition(working)!==groupAssetDefinition(saved))
 export function assertAssetWrite(prior:QuestionGroupAsset|undefined,next:QuestionGroupAsset) {
   const errors = validateGroupAsset(next);if(errors.length)throw Error(errors.join(' '))
   if (!prior) return
