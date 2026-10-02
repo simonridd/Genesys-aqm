@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-v0-18c
+
+
+ Test Files  57 passed (57)
+      Tests  554 passed (554)
+   Start at  15:58:12
+   Duration  3.28s (import 41%, tests 40%, transform 18%, worker 1%)
+
+    Isolate  57 workers spawned · ~131ms startup each (spawn + environment, per file)
+             at least ~615ms faster with isolate: false — reuses workers across files instead of one per file
+

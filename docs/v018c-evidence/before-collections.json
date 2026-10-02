@@ -1,0 +1,104 @@
+{
+  "policies": {
+    "count": 7,
+    "sha256": "25c834d2b02213719e761705632843cc028292c90bf530fdc12825809def12c8"
+  },
+  "schedules": {
+    "count": 1,
+    "sha256": "33eeaf1c097a3a5a1d20378da0b9eab778b3008010830ffd4f6c60a81ef1271e"
+  },
+  "policyRuns": {
+    "count": 3,
+    "sha256": "ab7d96f05458c43c18b9efa0ea880c4f48dcc3449773f146ff68448990a7cf4d"
+  },
+  "evaluationRecords": {
+    "count": 8,
+    "sha256": "83f09afd55c106cc33c6098ba92d616e892c3e4eb5f00c8684b2ce33f2846438"
+  },
+  "humanReviews": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "evaluationForms": {
+    "count": 7,
+    "sha256": "83541663d2fdb611f52658abbd442799ed7c11a19385d6546271c9492b876a82"
+  },
+  "questionGroupAssets": {
+    "count": 4,
+    "sha256": "3096111299cd49744a485c2bd2757b8f11b34120ad3e0fe954fe532e748b1b97"
+  },
+  "roleAssignments": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "governanceSettings": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "operationalAlerts": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationDestinations": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationRules": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "operationalHealth": {
+    "count": 2,
+    "sha256": "5e1701f83865e870f1ca652dc8a806ae8607dad9a7ae1c27b0beb0a370d92acf",
+    "timestamps": [
+      {
+        "updatedAt": "2026-10-02T14:00:04.936276Z",
+        "lastSuccessfulTickAt": null
+      },
+      {
+        "updatedAt": "2026-10-02T14:00:04.748162Z",
+        "lastSuccessfulTickAt": "2026-10-02T14:00:04.682Z"
+      }
+    ]
+  },
+  "scheduleExecutionClaims": {
+    "count": 3,
+    "sha256": "d11da3f9770a98e58e134344121e6fd0b90081f848061cc26d4036161aec22c2"
+  },
+  "evaluationSlots": {
+    "count": 8,
+    "sha256": "fcfdf2b52d2eb4fe86a6a527f63c98bc4bea39cdcbc90c909667d27f6bdb3da8"
+  },
+  "auditEvents": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationDeliveries": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationEvents": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationDestinationHealth": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationControl": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "operationalAlertKeys": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "formTestRuns": {
+    "count": 1,
+    "sha256": "31edab3310e02fb3073579fbfe109751a354dde39fc108cfbebf9d91f9739c83"
+  },
+  "purgePlans": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

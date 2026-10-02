@@ -1,0 +1,57 @@
+[WebServer] (node:12311) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 42 tests using 1 worker
+
+(node:12312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440 (1.8s)
+  ✓   2 tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1920 (1.6s)
+  ✓   3 tests/authoring.spec.ts:9:97 › authoring productivity and portability at 390 (1.4s)
+  ✓   4 tests/authoring.spec.ts:56:1 › offline draft stays browser-local (427ms)
+[WebServer] 3:58:12 PM [vite] (client) [console.error] Each child in a list should have a unique "key" prop.
+[WebServer] 
+[WebServer] Check the render method of `select`. It was passed a child from EvaluationsPage. See https://react.dev/link/warning-keys for more information.
+  ✓   5 tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440 (1.9s)
+[WebServer] 3:58:14 PM [vite] (client) [console.error] Each child in a list should have a unique "key" prop.
+[WebServer] 
+[WebServer] Check the render method of `select`. It was passed a child from EvaluationsPage. See https://react.dev/link/warning-keys for more information.
+  ✓   6 tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390 (2.0s)
+  ✓   7 tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1440 (1.3s)
+  ✓   8 tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1440 (2.1s)
+  ✓   9 tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1440 (896ms)
+  ✓  10 tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1920 (1.5s)
+  ✓  11 tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1920 (2.1s)
+  ✓  12 tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1920 (782ms)
+  ✓  13 tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 390 (1.2s)
+  ✓  14 tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 390 (1.9s)
+  ✓  15 tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 390 (725ms)
+  ✓  16 tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 1440 (2.9s)
+  ✓  17 tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 1920 (2.5s)
+  ✓  18 tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 390 (2.4s)
+  ✓  19 tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 1440 (3.6s)
+  ✓  20 tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 1920 (3.3s)
+  ✓  21 tests/form-publication.spec.ts:9:3 › provider-free recreated form publication and authoritative reload at 390 (3.3s)
+  ✓  22 tests/operations.spec.ts:4:3 › operational collections and form lifecycle at 1440 (849ms)
+  ✓  23 tests/operations.spec.ts:4:3 › operational collections and form lifecycle at 1920 (782ms)
+  ✓  24 tests/operations.spec.ts:4:3 › operational collections and form lifecycle at 390 (613ms)
+  ✓  25 tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440 (1.8s)
+  ✓  26 tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1920 (1.9s)
+  ✓  27 tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390 (1.7s)
+  ✓  28 tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate (360ms)
+  ✓  29 tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate (359ms)
+  ✓  30 tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records (467ms)
+  ✓  31 tests/policy-authoring.spec.ts:88:1 › connected load failure does not expose local definitions or production mutation controls (385ms)
+  ✓  32 tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440 (1.5s)
+  ✓  33 tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440 (1.2s)
+  ✓  34 tests/save-protection.spec.ts:123:2 › Form Test destructive confirmations preserve recovery at 1440 (831ms)
+  ✓  35 tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920 (1.3s)
+  ✓  36 tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920 (1.2s)
+  ✓  37 tests/save-protection.spec.ts:123:2 › Form Test destructive confirmations preserve recovery at 1920 (760ms)
+  ✓  38 tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390 (1.4s)
+  ✓  39 tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390 (1.2s)
+  ✓  40 tests/save-protection.spec.ts:123:2 › Form Test destructive confirmations preserve recovery at 390 (743ms)
+  ✓  41 tests/save-protection.spec.ts:140:1 › offline group is explicitly saved in this browser, and import is clean (530ms)
+  ✓  42 tests/save-protection.spec.ts:150:1 › demo removal, broad local reset and local history clear have exact scope (623ms)
+
+  42 passed (1.0m)
