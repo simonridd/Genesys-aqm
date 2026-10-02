@@ -1,3 +1,4 @@
+import { overviewBrowserFixture } from './overviewFixture'
 import { test, expect, type Page } from '@playwright/test'
 import { seedForms } from '../src/domain/forms'
 import { clonePolicy, newPolicy, samePolicyDefinition } from '../src/domain/policyAuthoring'
@@ -16,6 +17,7 @@ async function fixture(page:Page,role:Role='AUTHOR'){
  await page.route('https://api.typesafe.ai/**',()=>{throw Error('No Jev calls')})
  await page.route(`${origin}/**`,async r=>{
   const request=r.request(),url=new URL(request.url()),path=url.pathname,method=request.method()
+  if(path==='/api/overview')return r.fulfill({json:await overviewBrowserFixture()})
   if(path==='/api/session')return r.fulfill({json:{actor:{userId:'fixture-user'},role,permissions:rolePermissions[role],bootstrap:false}})
   if(path==='/api/governance')return r.fulfill({json:defaultGovernance})
   if(path==='/api/policies'&&method==='GET'){policyPages++;return r.fulfill({json:url.searchParams.get('cursor')?{items:policies.slice(12)}:{items:policies.slice(0,12),nextCursor:'page2'}})}
@@ -70,7 +72,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
  await detail.getByLabel('Automation',{exact:true}).selectOption('WEEKLY');await detail.getByLabel('Weekday').selectOption('5');await detail.getByRole('button',{name:'Save schedule',exact:true}).click();expect(state.schedules.find(s=>s.policyId===clone.id)?.weekday).toBe(5)
  await detail.screenshot({path:`/private/tmp/aqm-v014-detail-${viewport.width}.png`})
  await detail.getByLabel('Automation',{exact:true}).selectOption('MANUAL');await detail.getByRole('button',{name:'Save schedule',exact:true}).click();expect(state.schedules.find(s=>s.policyId===clone.id)?.enabled).toBe(false);expect(state.schedules.filter(s=>s.policyId===clone.id)).toHaveLength(1)
- await detail.getByRole('button',{name:'View runs',exact:true}).click();await expect(page.getByRole('heading',{name:'Automation service'})).toBeVisible();await expect(page.getByLabel('Server policy')).toHaveValue(clone.id);await expect(page.getByRole('button',{name:'Publish local forms and policies to server'})).toHaveCount(0);await expect(page.getByRole('button',{name:'Save server schedule'})).toHaveCount(0)
+ await detail.getByRole('button',{name:'View runs',exact:true}).click();await expect(page.getByRole('heading',{name:'Overview',exact:true})).toBeVisible();await expect(page.getByLabel('Server policy')).toHaveValue(clone.id);await expect(page.getByRole('button',{name:'Publish local forms and policies to server'})).toHaveCount(0);await expect(page.getByRole('button',{name:'Save server schedule'})).toHaveCount(0)
  await page.getByRole('button',{name:'Edit policy & schedule',exact:true}).click();await expect(detail.getByLabel('Policy name')).toHaveValue(clone.name)
  await expect(page.getByText(/Daily and weekly scheduling are planned/)).toHaveCount(0)
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width)

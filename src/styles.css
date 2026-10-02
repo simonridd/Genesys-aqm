@@ -239,3 +239,44 @@ input[readonly] { background: #f8fbfa; }
 .review-escalated { background: #fbe1e6; color: #9d1938; font-weight: 700; }
 
 .alert-detail { padding: 18px; }
+
+.overview-page {display:flex;flex-direction:column;gap:22px}
+.overview-page>.panel,.overview-manual,.overview-operations {padding:26px}
+.overview-page h2 {margin:0 0 18px;font-size:19px}
+.overview-page h3 {margin-top:24px}
+.overview-page .page-heading {margin-bottom:0}
+.overview-page .heading-actions {flex-wrap:wrap;gap:12px}
+.overview-page .heading-actions label {display:flex;gap:8px;align-items:center;font-size:12px}
+.overview-page select {padding:10px;border:1px solid #cbdde1;border-radius:7px;background:white;color:#24464f;font:inherit}
+.overview-attention {border-left:4px solid #379f84;background:#f6fbf9}
+.overview-attention.has-attention {border-left-color:#d27843;background:#fffaf6}
+.overview-attention-counts {display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;font-size:13px}
+.overview-alerts {display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.overview-alert,.overview-run {border:1px solid #dfE8eb;border-radius:8px;background:white;padding:14px;display:grid;gap:12px;text-align:left;color:inherit;font:inherit;cursor:pointer;width:100%;align-items:center}
+.overview-alert {grid-template-columns:90px minmax(0,1fr) auto;font-size:13px}
+.overview-health,.overview-quality,.overview-coverage {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.overview-quality {grid-template-columns:repeat(4,minmax(0,1fr))}
+.overview-coverage {grid-template-columns:repeat(5,minmax(0,1fr))}
+.overview-metric {min-width:0;padding:16px;background:#f6f9fa;border-radius:8px}
+.overview-metric small {display:block;color:#637983;font-size:12px;margin-bottom:8px}
+.overview-metric strong,.overview-metric button {font-size:23px;font-weight:650;color:#23454e;overflow-wrap:anywhere;line-height:1.4}
+.overview-health .overview-metric strong {font-size:18px}
+.overview-unavailable {padding:12px;background:#f5f6fa;border-radius:6px;color:#697880}
+.overview-trend {margin-top:22px;padding-top:16px;border-top:1px solid #e2ebee}
+.overview-trend .bar-chart {display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.overview-trend .bar-track {height:8px;margin:6px 0;background:#e2eeed;border-radius:8px;overflow:hidden}
+.overview-trend .bar-fill {height:100%;background:#3e9485}
+.overview-trend span,.overview-trend small {font-size:11px;color:#617780}
+.overview-runs {display:grid;gap:9px}
+.overview-run {grid-template-columns:125px minmax(150px,1fr) 85px 130px 140px;font-size:12px}
+.overview-schedule {display:grid;grid-template-columns:minmax(150px,1fr) 80px 155px 155px auto;gap:12px;font-size:12px;padding:16px 0;border-top:1px solid #e1eaed;align-items:center}
+.overview-run strong,.overview-schedule strong {overflow-wrap:anywhere}
+.overview-actions {display:flex;flex-wrap:wrap;gap:12px}
+.overview-manual>summary,.overview-operations>summary {font-size:17px;font-weight:650;cursor:pointer}
+.overview-manual[open]>summary,.overview-operations[open]>summary {margin-bottom:18px}
+#overview-run-detail {scroll-margin-top:24px}
+@media(max-width:1100px){.overview-run,.overview-schedule{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-quality{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.overview-page>.panel,.overview-manual,.overview-operations{padding:18px}.overview-health,.overview-quality,.overview-coverage{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.overview-metric{padding:12px}.overview-metric strong,.overview-metric button{font-size:20px}.overview-alert{grid-template-columns:minmax(0,1fr);gap:8px}.overview-run,.overview-schedule{grid-template-columns:minmax(0,1fr);gap:8px}.overview-page .page-heading{align-items:flex-start;gap:16px}.overview-page .page-heading>.heading-actions{justify-content:flex-start}.overview-manual .browser-filters{grid-template-columns:minmax(0,1fr)}.overview-health .overview-metric strong{font-size:16px}}
+.overview-attention-counts .text-link,.overview-metric .text-link {margin:0;padding:0}
+.overview-warning {background:#fff0d9;color:#8b5317}
+.overview-attention .panel-heading {margin-bottom:12px}

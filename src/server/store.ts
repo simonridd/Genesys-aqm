@@ -189,7 +189,8 @@ export class FirestoreStore implements Store {
   async notificationHealth(now:string){
     const c=this.collection('notificationDeliveries'),cutoff=new Date(Date.parse(now)-86400000).toISOString()
     // Single-field queries avoid a deployment dependency on composite indexes.
-    const [pending,failed,last]=await Promise.all([c.where('state','in',['PENDING','RETRYING']).count().get(),c.where('updatedAt','>=',cutoff).get(),c.orderBy('deliveredAt','desc').limit(1).get()])
+    const [pending,failed,last]=await Promise.all([c.where('state','in',['PENDING','RETRYING']).count().get(),c.where('updatedAt','>=',cutoff).limit(2001).get(),c.orderBy('deliveredAt','desc').limit(1).get()])
+    if(failed.docs.length>2000)throw Error('Notification health limit of 2000 reached; indexed aggregation required.')
     return {pending:pending.data().count,failed24h:failed.docs.filter(d=>d.data().state==='FAILED').length,lastSuccessfulAt:last.docs[0]?.data().deliveredAt??null}
   }
 

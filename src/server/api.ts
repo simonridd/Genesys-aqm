@@ -8,8 +8,8 @@ import { auditContext } from './audit'
 import { Forbidden, sessionAccess, requirePermission, governanceSettings, planPurge, executePurge, auditPage } from './governance'
 import { roles, validateGovernance, type RoleAssignment, type Permission } from '../domain/governance'
 import { StoreConflict } from './store'
-import { monitoringAlerts, defaultAlertConfig } from './alerts'
-import { alertTypes, type OperationalAlert } from '../domain/operationalAlerts'
+import { defaultAlertConfig } from './alerts'
+import { alertTypes, alertSummary, type OperationalAlert } from '../domain/operationalAlerts'
 import { assertAssetWrite } from '../domain/groupAssets'
 import type { QuestionGroupAsset } from '../domain/types'
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http'
@@ -25,6 +25,7 @@ import { ClientCredentialsGenesys, DirectJev } from './providers'
 import { executeServerRun, manualRunId, planFingerprint, planServerRun, schedulerTick, type RunnerDeps } from './runner'
 import { nextDueAfter, validateSchedule, type Schedule } from './schedules'
 import { operationalAnalytics } from './analytics'
+import { operationalOverview, providerEvidence } from './overview'
 import { evaluateManual } from './manualEvaluations'
 import { executeFormTest, type FormTestInput } from './formTests'
 import { bulkReviewDue, type BulkDueInput } from './bulkReviewDue'
@@ -74,6 +75,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       const authority={bootstrapId,allowedUserIds:config.allowedUserIds}
       if(url.searchParams.get('assignment')==='mine'||url.searchParams.get('reviewQueue')==='mine'){url.searchParams.delete('assigneeId')}
       if(url.searchParams.get('due')&&!['all','overdue','today','week','none'].includes(url.searchParams.get('due')!))throw Error('Invalid due filter.')
+      if(url.searchParams.get('dueState')&&!['DUE_SOON','OVERDUE','ESCALATED'].includes(url.searchParams.get('dueState')!))throw Error('Invalid review SLA filter.')
       if(request.method==='GET'&&path==='/api/session'){json(response,200,access);return}
       const rolePath=/^\/api\/roles\/([A-Za-z0-9_-]{1,100})$/.exec(path)
       let permission:Permission|undefined
@@ -142,7 +144,6 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(q.get('status')&&!['OPEN','ACKNOWLEDGED','RESOLVED','ACTIVE'].includes(q.get('status')!))throw Error('Invalid alert status.')
         if(q.get('severity')&&!['INFO','WARNING','ERROR'].includes(q.get('severity')!))throw Error('Invalid alert severity.')
         if(q.get('type')&&!alertTypes.includes(q.get('type') as OperationalAlert['type']))throw Error('Invalid alert type.')
-        await monitoringAlerts(deps.store,deps.now().toISOString(),!!config.schedulerEmail&&!!config.schedulerAudience,deps.alertConfig)
         const items:OperationalAlert[]=[];let nextCursor=cursor,more=true,scanned=0
         while(items.length<limit&&more&&scanned<1000){
           const page=await deps.store.query<OperationalAlert>('operationalAlerts',Math.min(100,1000-scanned),nextCursor);scanned+=page.scanned
@@ -198,7 +199,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(path==='/api/monitoring-health'){
           const base:Record<string,unknown>={api:'healthy',genesysAutomation:{status:'unverified'},jev:{status:'unverified'},scheduler:{status:config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:null},firestore:'unavailable',lastRun:null,nextRunAt:null,runCounts:{completed:0,partial:0,failed:0}}
           try{
-            const [snapshot,schedules,alerts,schedulerHealth]=await Promise.all([deps.store.healthSnapshot(),deps.store.schedules(),monitoringAlerts(deps.store,deps.now().toISOString(),!!config.schedulerEmail&&!!config.schedulerAudience,deps.alertConfig),deps.store.schedulerHealth()])
+            const [snapshot,schedules,alerts,schedulerHealth]=await Promise.all([deps.store.healthSnapshot(),deps.store.schedules(),deps.store.alerts(true).then(alertSummary),deps.store.schedulerHealth()])
             Object.assign(base,alerts)
             const ordered=snapshot.recentRuns,latest=ordered[0]
             const recent=ordered.slice(0,20),latestScheduled=recent.find(run=>run.executionMode==='scheduled')
@@ -209,16 +210,14 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             base.runCounts=snapshot.runCounts
             base.lastRun=latest?{id:latest.id,policyName:latest.policySnapshot.name,status:latest.status,startedAt:latest.startedAt,completedAt:latest.completedAt,evaluationsSucceeded:latest.evaluationsSucceeded,evaluationsFailed:latest.evaluationsFailed}:null
             base.nextRunAt=nextRun?.nextDueAt??null
-            const genesysError=latest?.failures.some(failure=>/^genesys_(auth|query_or_plan):/.test(failure.reason))??false
-            base.genesysAutomation={status:!latest?'unverified':genesysError?'error':latest.status==='completed'||latest.status==='partial-failure'?'verified':'unverified'}
-            const jevAttempted=!!latest&&(latest.evaluationsSucceeded+latest.evaluationsFailed>0)
-            base.jev={status:!jevAttempted?'unverified':latest!.evaluationsFailed?'error':'verified'}
+            Object.assign(base,providerEvidence(latest))
             base.scheduler={status:schedulerHealth?.lastSuccessfulTickAt?(Date.parse(deps.now().toISOString())-Date.parse(schedulerHealth.lastSuccessfulTickAt)>(deps.alertConfig??defaultAlertConfig).schedulerToleranceMs?'stale':'healthy'):config.schedulerEmail&&config.schedulerAudience?'configured_unverified':'not_configured',lastRunAt:latestScheduled?.startedAt??null,lastSuccessfulTickAt:schedulerHealth?.lastSuccessfulTickAt??null}
             json(response,200,base);return
           }catch{
             json(response,200,base);return
           }
         }
+        if(path==='/api/overview'){const range=url.searchParams.get('range')??'7';if(!['7','30'].includes(range))throw Error('Overview range must be 7 or 30 days.');json(response,200,await operationalOverview(deps.store,deps.now().toISOString(),Number(range) as 7|30,authority,!!config.schedulerEmail&&!!config.schedulerAudience,deps.alertConfig));return}
         if(path==='/api/analytics'){json(response,200,await operationalAnalytics(deps.store,url.searchParams));return}
         if(path==='/api/form-tests'){const limit=Number(url.searchParams.get('limit')??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Limit must be between 1 and 100.');json(response,200,{items:await deps.store.recentFormTestRuns(limit)});return}
         const collections={'/api/question-groups':'questionGroupAssets','/api/forms':'evaluationForms','/api/policies':'policies','/api/schedules':'schedules','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
@@ -229,9 +228,10 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
           if(cursor&&!id(cursor))throw new Error('Invalid cursor.')
           const collection=(collections as Record<string,typeof collections[keyof typeof collections]>)[path]
           if(collection==='evaluationRecords'){
+            const sla=url.searchParams.get('dueState')?(await governanceSettings(deps.store)).reviewSla:undefined
             const matches=(item:ReviewEvaluation)=>{
               const q=url.searchParams
-              return matchesReviewQueue(item,q,actor.userId,deps.now().toISOString())&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
+              return matchesReviewQueue(item,q,actor.userId,deps.now().toISOString(),sla)&&(!q.get('question')||item.questions.some(question=>question.id===q.get('question')&&question.credit!==null&&question.credit<.67))&&(!q.get('policy')||item.policyMatches.some(match=>match.policyId===q.get('policy')))&&(!q.get('mode')||(item.executionMode??'manual')===q.get('mode'))&&(!q.get('critical')||(q.get('critical')==='yes'?item.criticalFailures.length+(item.criticalGroupFailures?.length??0)>0:item.criticalFailures.length+(item.criticalGroupFailures?.length??0)===0))&&(!q.get('outcome')||(q.get('outcome')==='pass'?item.passed===true:item.passed===false))
             }
             if(url.searchParams.get('reviewQueue')==='mine'){
               const scan=await activeReviewScan(deps.store);if(!scan.complete)throw Error('Review SLA scan incomplete: narrow or index the active review queue.')

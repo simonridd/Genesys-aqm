@@ -1,3 +1,4 @@
+import { overviewBrowserFixture } from './overviewFixture'
 import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test,expect } from '@playwright/test'
 import { seedForms } from '../src/domain/forms'
@@ -36,6 +37,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   if(p==='/api/alerts')return r.fulfill({json:{items:u.searchParams.get('status')==='ACTIVE'&&alert.status==='RESOLVED'?[]:[alert]}})
   if(p.endsWith('/notifications'))return r.fulfill({json:{items:[]}})
   if(p.startsWith(`/api/alerts/${alert.id}/`)){alert=transitionAlert(alert,p.endsWith('/acknowledge')?'ACKNOWLEDGED':'RESOLVED',now,actor);return r.fulfill({json:{item:alert}})}
+  if(p==='/api/overview')return r.fulfill({json:await overviewBrowserFixture({now,alerts:[alert]})})
   if(p==='/api/monitoring-health')return r.fulfill({json:{...alertSummary([alert]),api:'healthy',firestore:'available',genesysAutomation:{status:'verified'},jev:{status:'verified'},scheduler:{status:'healthy',lastSuccessfulTickAt:now},lastRun:null,nextRunAt:null,runCounts:{completed:0,partial:1,failed:0}}})
   if(p==='/api/runs')return r.fulfill({json:{items:[]}})
   return r.fulfill({json:{items:[]}})
@@ -58,7 +60,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
  await expect(panel.getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()
  const comparison=page.getByRole('region',{name:'Group comparison',exact:true});await expect(comparison.getByText('Human group score: 100%').first()).toBeVisible();await expect(comparison.getByText('Difference: 100.0 pp')).toBeVisible();await comparison.screenshot({path:`/private/tmp/aqm-v010-review-${viewport.width}.png`});expect(evaluation().groupResults![1].overallScore).toBe(0)
  await nav.getByRole('button',{name:'Calibration',exact:true}).click();await page.getByRole('button',{name:'Groups',exact:true}).click();await expect(page.getByText('Weighted care v1 · Compliance',{exact:true})).toBeVisible()
- await nav.getByRole('button',{name:'Overview & Runs',exact:true}).click();const alerts=page.getByRole('region',{name:'Operational alerts',exact:true});await expect(alerts.getByText('Scheduled run partially completed',{exact:true})).toBeVisible()
+ await nav.getByRole('button',{name:'Overview',exact:true}).click();await page.locator('.overview-operations>summary').click();const alerts=page.getByRole('region',{name:'Operational alerts',exact:true});await expect(alerts.getByText('Scheduled run partially completed',{exact:true})).toBeVisible()
  await alerts.screenshot({path:`/private/tmp/aqm-v010-alerts-${viewport.width}.png`})
  await alerts.getByRole('button',{name:'Acknowledge',exact:true}).click();await expect(alerts.getByText('ACKNOWLEDGED',{exact:true}).first()).toBeVisible();expect(alert.acknowledgedBy?.userId).toBe(actor.userId)
  await alerts.getByRole('button',{name:'Resolve',exact:true}).click();await expect(alerts.getByText('No alerts match these filters.',{exact:true})).toBeVisible();await alerts.getByLabel('Alert status').selectOption('RESOLVED');await expect(alerts.getByText('RESOLVED',{exact:true}).first()).toBeVisible()

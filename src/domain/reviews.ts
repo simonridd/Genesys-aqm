@@ -1,4 +1,4 @@
-import { reviewDueAt, reviewDueState } from './reviewSla'
+import { reviewDueAt, reviewDueState, defaultReviewSla, type ReviewSlaSettings } from './reviewSla'
 export { reviewQueuePriority } from './reviewSla'
 import { scoreFormResults, effectiveQuestions } from './formComposition'
 import type { EvaluationForm, EvaluationRecord, QuestionResult, ScorecardItem } from './types'
@@ -97,9 +97,9 @@ export function buildReview(record: EvaluationRecord, prior: HumanReview | undef
   // Only complete scores enter calibration. A partial score is explicitly a progress preview.
   return {id:record.id,evaluationId:record.id,conversationId:record.conversationId,formId:record.form.id,formVersion:record.form.version,formSnapshot:structuredClone(record.form),source:reviewSource(record),createdAt:prior?.createdAt??now,updatedAt:now,completedAt:status==='REVIEWED'?now:undefined,status,revision,dueAt:prior?.dueAt,assignment:prior?.assignment,reviewer:status==='REVIEW_REQUESTED'?prior?.reviewer:structuredClone(actor),notes:boundedNote(input.notes??prior?.notes,4000),questions,humanOverallScore,scoringMode:humanScore.scoringMode,humanGroupResults:humanScore.groups,humanPassed:humanScore.passed,humanCriticalGroupFailures:humanScore.criticalGroupFailures,groupComparison,comparison:{aiOverallScore:record.overallScore,humanOverallScore,absoluteScoreDifference:record.overallScore===null||humanOverallScore===null?null:Math.abs(record.overallScore-humanOverallScore),answered,agreements:questions.filter(q=>q.comparison?.exact).length,disagreements:questions.filter(q=>q.comparison&&!q.comparison.exact).length,total:questions.filter(q=>q.ai.status!=='SKIPPED').length},events}
 }
-export function matchesReviewQueue(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString()): boolean {
+export function matchesReviewQueue(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString(), sla:ReviewSlaSettings=defaultReviewSla): boolean {
   const form=query.get('form'),status=query.get('reviewStatus'),question=query.get('reviewQuestion')
-  return matchesReviewOperations(record,query,actorId,now) && record.purpose!=='FORM_TEST' && (!form||record.form.id===form||`${record.form.id}@${record.form.version}`===form)
+  return matchesReviewOperations(record,query,actorId,now,sla) && record.purpose!=='FORM_TEST' && (!form||record.form.id===form||`${record.form.id}@${record.form.version}`===form)
     && (!status||reviewStatus(record,record.humanReview)===status)
     && (!query.get('source')||query.get('source')==='all'||reviewSource(record)===query.get('source'))
     && (!query.get('agent')||record.agent.name.toLowerCase().includes(query.get('agent')!.toLowerCase())||record.agent.id===query.get('agent'))
@@ -119,8 +119,9 @@ export function calibrationSample(records: ReviewEvaluation[], query: URLSearchP
 /** Due state is derived; completed reviews can never be overdue. Day boundaries use the operator's London timezone. */
 export const isReviewOverdue = (review: HumanReview | undefined, now: string) => ['OVERDUE','ESCALATED'].includes(reviewDueState(review,now))
 const londonDay = (iso: string) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London', year:'numeric', month:'2-digit', day:'2-digit' }).format(new Date(iso))
-export function matchesReviewOperations(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString()): boolean {
+export function matchesReviewOperations(record: ReviewEvaluation, query: URLSearchParams, actorId?: string, now = new Date().toISOString(), sla:ReviewSlaSettings=defaultReviewSla): boolean {
   const review = record.humanReview, assignment = review?.assignment, dueAt = reviewDueAt(review), filter = query.get('assignment'), due = query.get('due')
+  if(query.get('dueState')&&reviewDueState(review,now,sla)!==query.get('dueState'))return false
   const mine = query.get('reviewQueue') === 'mine'
   if (mine && (!actorId || assignment?.assignee.userId !== actorId || !['REVIEW_REQUESTED','IN_REVIEW'].includes(review?.status ?? ''))) return false
   if (filter === 'unassigned' && assignment || filter === 'assigned' && !assignment) return false
