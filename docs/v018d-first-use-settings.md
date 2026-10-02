@@ -47,3 +47,9 @@ OAuth stores a validated section in the existing PKCE transaction and restores i
 - Backend runtime source and contracts are unchanged. Publish GitHub Pages only; no Cloud Run revision is deployed.
 
 Evidence and reproduction instructions: [v018d-evidence/README.md](v018d-evidence/README.md). Publication source SHA, Pages HEAD and exact public byte verification are recorded in `v018d-evidence/pages.json`. Production counts/hashes and runtime configuration comparison are recorded in `v018d-evidence/preservation.json`; only natural Scheduler operational changes, if any, are expected and must be reported explicitly.
+
+## Publication proof
+
+Published application source: `6835300d47b13718e8a4caf211428b425c8b6ae6`. GitHub Pages HEAD: `9b1ddef25f93d9b64c579d52b512f862e50f0b7b`. All seven public assets match the local validated build byte-for-byte. Public application: https://simonridd.github.io/Genesys-aqm/. Subsequent branch commits record proof only, with no application-source changes.
+
+All 23/23 production collection counts and SHA-256 hashes match. Cloud Run remains `aqm-api-v018b-11e8e36`; image, runtime configuration, IAM, secret metadata and Scheduler configuration match. Scheduler runtime and operationalHealth hashes also match: no natural Scheduler difference occurred during this publication window. No production product data or configuration was mutated.

@@ -17,3 +17,5 @@ The full development regression run passed 75 journeys; the final deployable pre
 Local mock HTTP servers, Vite and Chromium require localhost socket access. A restricted initial deterministic run could not bind local sockets; the recorded successful run uses execution permission.
 
 Read-only production snapshots reuse the existing `docs/v018a-evidence/preservation-snapshot.py` and `docs/v018b-evidence/runtime-snapshot.py`. They store counts/hashes and runtime identifiers/timestamps only, with no document contents, credentials or secret values. `pages.json` verifies every public dist asset byte; `preservation.json` compares collections, runtime/IAM, secret metadata and Scheduler configuration. No backend deployment occurs.
+
+Published source `6835300d47b13718e8a4caf211428b425c8b6ae6`; Pages HEAD `9b1ddef25f93d9b64c579d52b512f862e50f0b7b`; all seven public asset bytes match. All 23/23 collection counts/hashes and all runtime/configuration/IAM/secret metadata/Scheduler hashes match. Scheduler runtime is unchanged, with no natural Scheduler difference. Cloud Run remains `aqm-api-v018b-11e8e36`.
