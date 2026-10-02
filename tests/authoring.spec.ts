@@ -45,6 +45,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
  await detail.getByRole('button',{name:'Save changes',exact:true}).click()
  await page.getByLabel('Library status').selectOption('PUBLISHED');await expect(page.getByRole('row').filter({hasText:'Edited clone'})).toHaveCount(0);await page.getByLabel('Library status').selectOption('All')
  await page.getByLabel('Library version').selectOption('latest');await page.getByLabel('Library usage').selectOption('Unused');await page.locator('.operational-table-wrap:visible').first().getByLabel('Search table').fill('Edited clone');await expect(page.getByRole('row').filter({hasText:'Published fixture'})).toHaveCount(0);await page.locator('.operational-table-wrap:visible').first().getByLabel('Search table').fill('')
+ await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v013-meta-${viewport.width}.png`})
  await detail.screenshot({path:`/private/tmp/aqm-v013-form-${viewport.width}.png`})
  const downloadPromise=page.waitForEvent('download');await detail.getByRole('button',{name:'Export JSON',exact:true}).click();const download=await downloadPromise,path=await download.path();const data=readFileSync(path!);expect(JSON.parse(data.toString()).schemaVersion).toBe(1)
  await page.getByLabel('Import form',{exact:true}).setInputFiles({name:'form.json',mimeType:'application/json',buffer:data});await expect(detail.getByText('DRAFT · VERSION 1')).toBeVisible();expect(forms.at(-1)?.enabled).toBe(false)

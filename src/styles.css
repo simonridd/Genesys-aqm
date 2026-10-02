@@ -201,3 +201,4 @@ input[readonly] { background: #f8fbfa; }
 @media(max-width:600px){.notifications>.panel {padding:16px}}
 
 .bulk-toolbar{padding:16px;flex-wrap:wrap;gap:8px;margin-bottom:16px}.bulk-toolbar select{max-width:100%;padding:8px;border:1px solid #d4e0e2;border-radius:8px;background:#fff}
+@media(max-width:600px){.form-meta>.panel-heading{flex-direction:column;align-items:flex-start;gap:12px}.form-meta>.panel-heading>.heading-actions{width:100%;margin-top:0;justify-content:flex-start}.form-meta>.panel-heading>div:first-child{width:100%}}
