@@ -1,0 +1,140 @@
+{
+  "sourceSha": "11e8e36ebcc00a079a0e5dc3663d261def5c400f",
+  "collections": {
+    "policies": {
+      "countBefore": 7,
+      "countAfter": 7,
+      "equal": true
+    },
+    "schedules": {
+      "countBefore": 1,
+      "countAfter": 1,
+      "equal": true
+    },
+    "policyRuns": {
+      "countBefore": 3,
+      "countAfter": 3,
+      "equal": true
+    },
+    "evaluationRecords": {
+      "countBefore": 8,
+      "countAfter": 8,
+      "equal": true
+    },
+    "humanReviews": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "evaluationForms": {
+      "countBefore": 7,
+      "countAfter": 7,
+      "equal": true
+    },
+    "questionGroupAssets": {
+      "countBefore": 4,
+      "countAfter": 4,
+      "equal": true
+    },
+    "roleAssignments": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "governanceSettings": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "operationalAlerts": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "notificationDestinations": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "notificationRules": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "operationalHealth": {
+      "countBefore": 2,
+      "countAfter": 2,
+      "equal": true
+    },
+    "scheduleExecutionClaims": {
+      "countBefore": 3,
+      "countAfter": 3,
+      "equal": true
+    },
+    "evaluationSlots": {
+      "countBefore": 8,
+      "countAfter": 8,
+      "equal": true
+    },
+    "auditEvents": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "notificationDeliveries": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "notificationEvents": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "notificationDestinationHealth": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "notificationControl": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "operationalAlertKeys": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    },
+    "formTestRuns": {
+      "countBefore": 1,
+      "countAfter": 1,
+      "equal": true
+    },
+    "purgePlans": {
+      "countBefore": 0,
+      "countAfter": 0,
+      "equal": true
+    }
+  },
+  "allCollectionsEqual": true,
+  "changedCollections": [],
+  "runtimeConfigEqual": true,
+  "serviceIamEqual": true,
+  "schedulerConfigEqual": true,
+  "secretsMetadataVersionsAndIamEqual": true,
+  "schedulerRuntimeEqual": true,
+  "schedulerRuntimeBefore": {
+    "lastAttemptTime": "2026-10-02T14:00:04.557120Z",
+    "scheduleTime": "2026-10-02T15:00:04.028877Z",
+    "status": {}
+  },
+  "schedulerRuntimeAfter": {
+    "lastAttemptTime": "2026-10-02T14:00:04.557120Z",
+    "scheduleTime": "2026-10-02T15:00:04.028877Z",
+    "status": {}
+  },
+  "revisionBefore": "aqm-api-v017-7d4b401",
+  "revisionAfter": "aqm-api-v018b-11e8e36",
+  "imageAfter": "europe-west2-docker.pkg.dev/genesys-aqm-2026/cloud-run-source-deploy/aqm-api@sha256:1e7c2eadb653da699479b09314a546138d8cbe65bd20da95ee2b3fdb5e34a9e5"
+}

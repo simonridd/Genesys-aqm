@@ -1,0 +1,19 @@
+{
+  "sourceSha": "11e8e36ebcc00a079a0e5dc3663d261def5c400f",
+  "revision": "aqm-api-v018b-11e8e36",
+  "imageDigest": "europe-west2-docker.pkg.dev/genesys-aqm-2026/cloud-run-source-deploy/aqm-api@sha256:1e7c2eadb653da699479b09314a546138d8cbe65bd20da95ee2b3fdb5e34a9e5",
+  "ready": true,
+  "archiveCodeMatchesSourceCommit": true,
+  "mainHead": "337006833293115add9dccb531358aa4cac36116",
+  "pagesHead": "699eeff6714d7bc23180d9e0087fcbd0b0851139",
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "schemaVersion": 1
+    }
+  },
+  "anonymousEvaluationRequest": {
+    "status": 401
+  }
+}
