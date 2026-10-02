@@ -322,3 +322,23 @@ input[readonly] { background: #f8fbfa; }
 .settings-page .panel:not(.settings-card) {padding:24px;}
 .settings-page .panel p {font-size:14px;line-height:1.6;color:#637b84;}
 @media(max-width:600px){.page-content.first-use+.source-selector+.page-content .page-heading{flex-wrap:wrap;}.first-use .panel{padding:20px;}.first-use-routes button{width:100%;}}
+
+/* Inline detail navigation and reviewer queue, V0.18E. */
+.text-link:focus-visible,.table-scroll:focus-visible,h1[tabindex]:focus-visible,h2[tabindex]:focus-visible,h3[tabindex]:focus-visible{outline:3px solid #087f6a;outline-offset:4px}
+h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
+.evaluation-modes{margin-bottom:16px}
+.personal-review-summary{margin-bottom:16px;padding:20px}
+.personal-review-summary h2{margin-top:0}
+.personal-review-summary .text-link{margin-top:14px}
+.personal-filters>label:not(.personal-filter),.personal-filters>.text-link{display:none}
+.more-filters{margin-bottom:16px}
+.page-content>details>summary{padding:14px 0;cursor:pointer;font-weight:600}
+@media(max-width:600px){
+ .page-heading{flex-direction:column;align-items:stretch;gap:14px}
+ .page-heading>div{min-width:0;max-width:100%}
+ .page-heading .view-toggle{align-self:flex-start;flex-shrink:0}
+ .conversation-heading-actions{margin-top:0;width:100%;gap:10px}
+ .heading-actions button,.panel-heading button{max-width:100%;white-space:normal;overflow-wrap:anywhere;min-height:40px}
+ .panel-heading{flex-wrap:wrap;gap:12px}
+ .evaluation-modes{margin-top:0}
+}

@@ -1,0 +1,28 @@
+[WebServer] (node:70971) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 17 tests using 1 worker
+
+(node:71014) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[2/17] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[3/17] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[4/17] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[5/17] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[6/17] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[7/17] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[8/17] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[9/17] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[10/17] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[11/17] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[12/17] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[13/17] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[14/17] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[15/17] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[16/17] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[17/17] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  17 passed (12.7s)

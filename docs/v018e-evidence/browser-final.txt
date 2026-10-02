@@ -1,0 +1,65 @@
+[WebServer] (node:70010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 46 tests using 1 worker
+
+(node:70012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/46] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440
+[WebServer] 5:30:57 PM [vite] (client) [console.error] Each child in a list should have a unique "key" prop.
+[WebServer] 
+[WebServer] Check the render method of `select`. It was passed a child from EvaluationsPage. See https://react.dev/link/warning-keys for more information.
+
+[2/46] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390
+[WebServer] 5:30:59 PM [vite] (client) [console.error] Each child in a list should have a unique "key" prop.
+[WebServer] 
+[WebServer] Check the render method of `select`. It was passed a child from EvaluationsPage. See https://react.dev/link/warning-keys for more information.
+
+[3/46] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1440
+[4/46] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1440
+[5/46] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1920
+[6/46] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1920
+[7/46] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 390
+[8/46] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 390
+[9/46] tests/first-use-settings.spec.ts:60:68 › coherent Settings for ADMIN
+[10/46] tests/first-use-settings.spec.ts:60:68 › coherent Settings for AUTHOR
+[11/46] tests/first-use-settings.spec.ts:60:68 › coherent Settings for REVIEWER
+[12/46] tests/first-use-settings.spec.ts:60:68 › coherent Settings for VIEWER
+[13/46] tests/first-use-settings.spec.ts:67:34 › saved setup stage 0
+[14/46] tests/first-use-settings.spec.ts:67:34 › saved setup stage 1
+[15/46] tests/first-use-settings.spec.ts:67:34 › saved setup stage 2
+[16/46] tests/first-use-settings.spec.ts:67:34 › saved setup stage 3
+[17/46] tests/first-use-settings.spec.ts:67:34 › saved setup stage 4
+[18/46] tests/first-use-settings.spec.ts:73:1 › OAuth error returns to Connection with visible error
+[19/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link default
+[20/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link invalid
+[21/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link connection
+[22/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link access
+[23/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link reviews
+[24/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link privacy
+[25/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link notifications
+[26/46] tests/first-use-settings.spec.ts:74:229 › Settings deep link audit
+[27/46] tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback success
+[28/46] tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback failure
+[29/46] tests/operational-table.spec.ts:3:1 › real identity controls, nested event counts, pointer opening and header sort semantics
+[30/46] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[31/46] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[32/46] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[33/46] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[34/46] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[35/46] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[36/46] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[37/46] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[38/46] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[39/46] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[40/46] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[41/46] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[42/46] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[43/46] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[44/46] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[45/46] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[46/46] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  46 passed (29.8s)

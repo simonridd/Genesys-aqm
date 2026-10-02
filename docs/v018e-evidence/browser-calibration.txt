@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+(node:68556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/3] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1440
+[2/3] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1920
+[3/3] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 390
+  3 passed (11.0s)

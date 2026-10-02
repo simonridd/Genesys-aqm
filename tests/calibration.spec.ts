@@ -80,7 +80,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await page.getByRole('button',{name:'Open disagreements',exact:true}).click()
     await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await expect(page.getByLabel('Review status')).toHaveValue('REVIEWED')
     await expect(page.getByRole('button',{name:'Open evaluation evaluation_1',exact:true})).toHaveCount(1);await expect(page.getByRole('button',{name:'Open evaluation evaluation_2',exact:true})).toHaveCount(0)
-    await page.getByLabel('Sample size').fill('2');await page.getByRole('button',{name:'Request sample'}).click();await expect(page.getByRole('region',{name:'Calibration sample'}).getByRole('status')).toContainText('1 existing evaluations marked for review')
+    await page.locator('details>summary').filter({hasText:/^Calibration sample$/}).click();await page.getByLabel('Sample size').fill('2');await page.getByRole('button',{name:'Request sample'}).click();await expect(page.getByRole('region',{name:'Calibration sample'}).getByRole('status')).toContainText('1 existing evaluations marked for review')
     expect(reviews.get('evaluation_2')?.status).toBe('REVIEW_REQUESTED')
     expect(JSON.stringify(records)).toBe(original);expect(paidRequests).toBe(0);expect(providerRequests).toBe(0)
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)

@@ -1,0 +1,128 @@
+[WebServer] (node:68321) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 109 tests using 1 worker
+
+(node:68323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/109] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440
+[WebServer] 5:26:38 PM [vite] (client) [console.error] Each child in a list should have a unique "key" prop.
+[WebServer] 
+[WebServer] Check the render method of `select`. It was passed a child from EvaluationsPage. See https://react.dev/link/warning-keys for more information.
+
+[2/109] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390
+[WebServer] 5:26:40 PM [vite] (client) [console.error] Each child in a list should have a unique "key" prop.
+[WebServer] 
+[WebServer] Check the render method of `select`. It was passed a child from EvaluationsPage. See https://react.dev/link/warning-keys for more information.
+
+[3/109] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1440
+[4/109] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1440
+[5/109] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1440
+[6/109] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1920
+[7/109] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1920
+[8/109] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1920
+[9/109] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 390
+[10/109] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 390
+[11/109] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 390
+[12/109] tests/definition-authority.spec.ts:125:1 › exact voice criteria, missing saved pin, two saved forms and persistent working copies
+[13/109] tests/definition-authority.spec.ts:145:1 › failed shared policy refresh retains dirty policy and separate schedule drafts
+[14/109] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1440
+[15/109] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1440
+[16/109] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1920
+[17/109] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1920
+[18/109] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 390
+[19/109] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 390
+[20/109] tests/first-use-settings.spec.ts:60:68 › coherent Settings for ADMIN
+[21/109] tests/first-use-settings.spec.ts:60:68 › coherent Settings for AUTHOR
+[22/109] tests/first-use-settings.spec.ts:60:68 › coherent Settings for REVIEWER
+[23/109] tests/first-use-settings.spec.ts:60:68 › coherent Settings for VIEWER
+[24/109] tests/first-use-settings.spec.ts:67:34 › saved setup stage 0
+[25/109] tests/first-use-settings.spec.ts:67:34 › saved setup stage 1
+[26/109] tests/first-use-settings.spec.ts:67:34 › saved setup stage 2
+[27/109] tests/first-use-settings.spec.ts:67:34 › saved setup stage 3
+[28/109] tests/first-use-settings.spec.ts:67:34 › saved setup stage 4
+[29/109] tests/first-use-settings.spec.ts:73:1 › OAuth error returns to Connection with visible error
+[30/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link default
+[31/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link invalid
+[32/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link connection
+[33/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link access
+[34/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link reviews
+[35/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link privacy
+[36/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link notifications
+[37/109] tests/first-use-settings.spec.ts:74:229 › Settings deep link audit
+[38/109] tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback success
+[39/109] tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback failure
+[40/109] tests/governance.spec.ts:7:164 › ADMIN governance at 1440
+[41/109] tests/governance.spec.ts:7:164 › AUTHOR governance at 1440
+[42/109] tests/governance.spec.ts:7:164 › REVIEWER governance at 1440
+[43/109] tests/governance.spec.ts:7:164 › VIEWER governance at 1440
+[44/109] tests/governance.spec.ts:7:164 › ADMIN governance at 1920
+[45/109] tests/governance.spec.ts:7:164 › AUTHOR governance at 1920
+[46/109] tests/governance.spec.ts:7:164 › REVIEWER governance at 1920
+[47/109] tests/governance.spec.ts:7:164 › VIEWER governance at 1920
+[48/109] tests/governance.spec.ts:7:164 › ADMIN governance at 390
+[49/109] tests/governance.spec.ts:7:164 › AUTHOR governance at 390
+[50/109] tests/governance.spec.ts:7:164 › REVIEWER governance at 390
+[51/109] tests/governance.spec.ts:7:164 › VIEWER governance at 390
+[52/109] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[53/109] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1440
+[54/109] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1440
+[55/109] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[56/109] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1920
+[57/109] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1920
+[58/109] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[59/109] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 390
+[60/109] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 390
+[61/109] tests/notifications.spec.ts:6:164 › ADMIN notifications at 1440
+[62/109] tests/notifications.spec.ts:6:164 › AUTHOR notifications at 1440
+[63/109] tests/notifications.spec.ts:6:164 › REVIEWER notifications at 1440
+[64/109] tests/notifications.spec.ts:6:164 › VIEWER notifications at 1440
+[65/109] tests/notifications.spec.ts:6:164 › ADMIN notifications at 1920
+[66/109] tests/notifications.spec.ts:6:164 › AUTHOR notifications at 1920
+[67/109] tests/notifications.spec.ts:6:164 › REVIEWER notifications at 1920
+[68/109] tests/notifications.spec.ts:6:164 › VIEWER notifications at 1920
+[69/109] tests/notifications.spec.ts:6:164 › ADMIN notifications at 390
+[70/109] tests/notifications.spec.ts:6:164 › AUTHOR notifications at 390
+[71/109] tests/notifications.spec.ts:6:164 › REVIEWER notifications at 390
+[72/109] tests/notifications.spec.ts:6:164 › VIEWER notifications at 390
+[73/109] tests/operational-table.spec.ts:3:1 › real identity controls, nested event counts, pointer opening and header sort semantics
+[74/109] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1440
+[75/109] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1440
+[76/109] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1920
+[77/109] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1920
+[78/109] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 390
+[79/109] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 390
+[80/109] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1440
+[81/109] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1920
+[82/109] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+[83/109] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[84/109] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[85/109] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+[86/109] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[87/109] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[88/109] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+[89/109] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[90/109] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[91/109] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+[92/109] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[93/109] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[94/109] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[95/109] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[96/109] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[97/109] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[98/109] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[99/109] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[100/109] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[101/109] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[102/109] tests/usability.spec.ts:43:2 › keyboard details, reviewer actions and viewport bounds 1440
+[103/109] tests/usability.spec.ts:59:2 › mobile heading actions and local form/group keyboard journeys 1440
+[104/109] tests/usability.spec.ts:43:2 › keyboard details, reviewer actions and viewport bounds 1920
+[105/109] tests/usability.spec.ts:59:2 › mobile heading actions and local form/group keyboard journeys 1920
+[106/109] tests/usability.spec.ts:43:2 › keyboard details, reviewer actions and viewport bounds 390
+[107/109] tests/usability.spec.ts:59:2 › mobile heading actions and local form/group keyboard journeys 390
+[108/109] tests/usability.spec.ts:78:1 › keyboard run, alert, audit, policy and calibration drill
+[109/109] tests/usability.spec.ts:91:1 › policy read-only reason is permission based
+  109 passed (2.2m)

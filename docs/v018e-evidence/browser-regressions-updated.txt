@@ -1,0 +1,29 @@
+[WebServer] (node:67655) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 18 tests using 1 worker
+
+(node:67675) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/18] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[2/18] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1440
+[3/18] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1440
+[4/18] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[5/18] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1920
+[6/18] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1920
+[7/18] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[8/18] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 390
+[9/18] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 390
+[10/18] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1440
+[11/18] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1440
+[12/18] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1920
+[13/18] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1920
+[14/18] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 390
+[15/18] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 390
+[16/18] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1440
+[17/18] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1920
+[18/18] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+  18 passed (53.1s)
