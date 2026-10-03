@@ -1,0 +1,4 @@
+
+> genesys-aqm@0.1.0 typecheck:server
+> tsc --noEmit --module ESNext --moduleResolution Bundler --target ES2022 --lib ES2022,DOM --skipLibCheck --types node src/server/main.ts src/server/seedGroupAssets.ts src/server/digitalProof.ts
+

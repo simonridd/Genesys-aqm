@@ -1,0 +1,515 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "My reviews",
+    "box": {
+      "x": 284,
+      "y": 230.59375,
+      "width": 95.90625,
+      "height": 37
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1198,
+      "height": 1435.25
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "All evaluations",
+    "box": {
+      "x": 389.90625,
+      "y": 232.59375,
+      "width": 109.796875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1198,
+      "height": 1435.25
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "Close details",
+    "box": {
+      "x": 1272.828125,
+      "y": 0.25,
+      "width": 100.171875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": -1400,
+      "width": 1198,
+      "height": 3772.65625
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "Table",
+    "box": {
+      "x": 1255.4375,
+      "y": 255.59375,
+      "width": 68.78125,
+      "height": 36
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1198,
+      "height": 1876.59375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "Cards",
+    "box": {
+      "x": 1324.21875,
+      "y": 255.59375,
+      "width": 72.78125,
+      "height": 36
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1198,
+      "height": 1876.59375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "← Back to conversations",
+    "box": {
+      "x": 1075,
+      "y": 259.59375,
+      "width": 164.703125,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1198,
+      "height": 1410.59375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "Browse 19 samples →",
+    "box": {
+      "x": 1249.703125,
+      "y": 259.59375,
+      "width": 148.296875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1198,
+      "height": 1410.59375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "Close details",
+    "box": {
+      "x": 683.390625,
+      "y": -0.40625,
+      "width": 100.171875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": -899,
+      "width": 1198,
+      "height": 3484.875
+    }
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "control": "Close details",
+    "box": {
+      "x": 809.875,
+      "y": 17.59375,
+      "width": 100.171875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": -769,
+      "width": 1198,
+      "height": 2123.78125
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "My reviews",
+    "box": {
+      "x": 368,
+      "y": 230.59375,
+      "width": 95.90625,
+      "height": 37
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1678,
+      "height": 1360.0625
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "All evaluations",
+    "box": {
+      "x": 473.90625,
+      "y": 232.59375,
+      "width": 109.796875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1678,
+      "height": 1360.0625
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "Close details",
+    "box": {
+      "x": 1668.828125,
+      "y": 0.0625,
+      "width": 100.171875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": -1325,
+      "width": 1678,
+      "height": 3697.46875
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "Table",
+    "box": {
+      "x": 1651.4375,
+      "y": 255.59375,
+      "width": 68.78125,
+      "height": 36
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1678,
+      "height": 1863.59375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "Cards",
+    "box": {
+      "x": 1720.21875,
+      "y": 255.59375,
+      "width": 72.78125,
+      "height": 36
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1678,
+      "height": 1863.59375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "← Back to conversations",
+    "box": {
+      "x": 1471,
+      "y": 259.59375,
+      "width": 164.703125,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1678,
+      "height": 1401.09375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "Browse 19 samples →",
+    "box": {
+      "x": 1645.703125,
+      "y": 259.59375,
+      "width": 148.296875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": 0,
+      "width": 1678,
+      "height": 1401.09375
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "Close details",
+    "box": {
+      "x": 1079.390625,
+      "y": -0.40625,
+      "width": 100.171875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": -899,
+      "width": 1678,
+      "height": 3472.875
+    }
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "control": "Close details",
+    "box": {
+      "x": 1205.875,
+      "y": 17.59375,
+      "width": 100.171875,
+      "height": 33
+    },
+    "main": {
+      "x": 242,
+      "y": -769,
+      "width": 1678,
+      "height": 2123.78125
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "My reviews",
+    "box": {
+      "x": 15,
+      "y": 327.5,
+      "width": 95.90625,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": 144.515625,
+      "width": 390,
+      "height": 1614.640625
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "All evaluations",
+    "box": {
+      "x": 120.90625,
+      "y": 327.5,
+      "width": 109.796875,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": 144.515625,
+      "width": 390,
+      "height": 1614.640625
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "Close details",
+    "box": {
+      "x": 40,
+      "y": 56.15625,
+      "width": 100.171875,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": -1604.484375,
+      "width": 390,
+      "height": 5022.9375
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "Table",
+    "box": {
+      "x": 16,
+      "y": 441.5,
+      "width": 68.78125,
+      "height": 36
+    },
+    "main": {
+      "x": 0,
+      "y": 144.515625,
+      "width": 390,
+      "height": 1992.984375
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "Cards",
+    "box": {
+      "x": 84.78125,
+      "y": 441.5,
+      "width": 72.78125,
+      "height": 36
+    },
+    "main": {
+      "x": 0,
+      "y": 144.515625,
+      "width": 390,
+      "height": 1992.984375
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "← Back to conversations",
+    "box": {
+      "x": 15,
+      "y": 402.09375,
+      "width": 164.703125,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": 88.515625,
+      "width": 390,
+      "height": 2126.734375
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "Browse 19 samples →",
+    "box": {
+      "x": 189.703125,
+      "y": 402.09375,
+      "width": 148.296875,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": 88.515625,
+      "width": 390,
+      "height": 2126.734375
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "Close details",
+    "box": {
+      "x": 38,
+      "y": 56.09375,
+      "width": 100.171875,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": -1108.484375,
+      "width": 390,
+      "height": 4749.234375
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "control": "Close details",
+    "box": {
+      "x": 38,
+      "y": 75.5,
+      "width": 100.171875,
+      "height": 40
+    },
+    "main": {
+      "x": 0,
+      "y": -1014.484375,
+      "width": 390,
+      "height": 2921.546875
+    }
+  }
+]

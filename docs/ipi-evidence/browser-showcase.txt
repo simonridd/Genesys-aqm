@@ -1,0 +1,14 @@
+[WebServer] (node:6012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:6013) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440 (2.5s)
+  ✓  2 tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920 (2.5s)
+  ✓  3 tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390 (2.4s)
+  ✓  4 tests/showcase.spec.ts:83:1 › keyboard controls, reduced motion, browser back and refresh at every chapter (11.4s)
+  ✓  5 tests/showcase.spec.ts:103:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage (2.7s)
+
+  5 passed (22.3s)

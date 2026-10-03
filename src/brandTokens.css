@@ -1,0 +1,41 @@
+:root {
+  --aqm-font: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --aqm-ink: #36454F;
+  --aqm-muted: #5E6A72;
+  --aqm-navigation: #263337;
+  --aqm-navigation-raised: #36454F;
+  --aqm-on-dark: #FDFEFF;
+  --aqm-on-dark-muted: #C2C7CA;
+  --aqm-background: #F5FCFF;
+  --aqm-surface: #FDFEFF;
+  --aqm-border: #C2C7CA;
+  --aqm-border-subtle: #EAECED;
+  --aqm-primary: #36454F;
+  --aqm-primary-hover: #263337;
+  --aqm-secondary: #4F3645;
+  --aqm-focus: #4F3645;
+  --aqm-focus-on-dark: #D7F5FF;
+  --aqm-accent: #63AB8F;
+  --aqm-selection: #EFF6F3;
+  --aqm-info: #36454F;
+  --aqm-info-surface: #EBFAFF;
+  --aqm-success: #36454F;
+  --aqm-success-surface: #EFF6F3;
+  --aqm-warning: #795216;
+  --aqm-warning-surface: #FFF5DD;
+  --aqm-danger: #A8313A;
+  --aqm-danger-surface: #FFF0F1;
+  --aqm-plum-surface: #EDEAEC;
+  --aqm-chart-1: #63AB8F;
+  --aqm-chart-2: #4F3645;
+  --aqm-chart-3: #C8988C;
+  --aqm-chart-4: #D7F5FF;
+  --aqm-on-dark-faint: #FDFEFF60;
+  --aqm-shadow: #26333720;
+}
+::selection { background: var(--aqm-selection); color: var(--aqm-ink); }
+:focus-visible { outline: 3px solid var(--aqm-focus); outline-offset: 3px; }
+.sidebar :focus-visible { outline-color: var(--aqm-focus-on-dark); }
+.ipi-logo { display: block; width: 82px; height: auto; padding: 10px; background: var(--aqm-surface); border-radius: 6px; flex-shrink: 0; }
+.brand { padding-left: 0; padding-right: 0; gap: 10px; }
+.brand small { letter-spacing: .04em; line-height: 1.5; }

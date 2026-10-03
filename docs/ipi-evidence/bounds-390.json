@@ -1,0 +1,303 @@
+[
+  {
+    "chapter": "1",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 91.453125,
+        "right": 150.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 162.046875,
+        "right": 232.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 244.90625,
+        "right": 286.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "2",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 91.453125,
+        "right": 150.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 162.046875,
+        "right": 232.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 244.90625,
+        "right": 286.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "3",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 91.453125,
+        "right": 150.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 162.046875,
+        "right": 232.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 244.90625,
+        "right": 286.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "4",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 91.453125,
+        "right": 150.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 162.046875,
+        "right": 232.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 244.90625,
+        "right": 286.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "5",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 91.453125,
+        "right": 150.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 162.046875,
+        "right": 232.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 244.90625,
+        "right": 286.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "6",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 91.453125,
+        "right": 150.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 162.046875,
+        "right": 232.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 244.90625,
+        "right": 286.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "7",
+    "viewport": 390,
+    "document": 390,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 286.796875,
+        "right": 370,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 24,
+        "right": 79.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Finish tour",
+        "x": 91.453125,
+        "right": 184.40625,
+        "width": 92.953125
+      },
+      {
+        "text": "Skip chapter",
+        "x": 196.40625,
+        "right": 267.265625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 279.265625,
+        "right": 320.46875,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 24,
+        "right": 96.3125,
+        "width": 72.3125
+      }
+    ]
+  }
+]

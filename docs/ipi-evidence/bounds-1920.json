@@ -1,0 +1,303 @@
+[
+  {
+    "chapter": "1",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 179.453125,
+        "right": 238.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 250.046875,
+        "right": 320.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 332.90625,
+        "right": 374.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "2",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 179.453125,
+        "right": 238.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 250.046875,
+        "right": 320.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 332.90625,
+        "right": 374.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "3",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 179.453125,
+        "right": 238.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 250.046875,
+        "right": 320.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 332.90625,
+        "right": 374.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "4",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 179.453125,
+        "right": 238.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 250.046875,
+        "right": 320.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 332.90625,
+        "right": 374.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "5",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 179.453125,
+        "right": 238.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 250.046875,
+        "right": 320.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 332.90625,
+        "right": 374.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "6",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Next",
+        "x": 179.453125,
+        "right": 238.046875,
+        "width": 58.59375
+      },
+      {
+        "text": "Skip chapter",
+        "x": 250.046875,
+        "right": 320.90625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 332.90625,
+        "right": 374.109375,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  },
+  {
+    "chapter": "7",
+    "viewport": 1920,
+    "document": 1920,
+    "controls": [
+      {
+        "text": "Exit demo",
+        "x": 1516.796875,
+        "right": 1600,
+        "width": 83.203125
+      },
+      {
+        "text": "Back",
+        "x": 112,
+        "right": 167.453125,
+        "width": 55.453125
+      },
+      {
+        "text": "Finish tour",
+        "x": 179.453125,
+        "right": 272.40625,
+        "width": 92.953125
+      },
+      {
+        "text": "Skip chapter",
+        "x": 284.40625,
+        "right": 355.265625,
+        "width": 70.859375
+      },
+      {
+        "text": "Restart",
+        "x": 112,
+        "right": 153.203125,
+        "width": 41.203125
+      },
+      {
+        "text": "Open AQM →",
+        "x": 112,
+        "right": 184.3125,
+        "width": 72.3125
+      }
+    ]
+  }
+]

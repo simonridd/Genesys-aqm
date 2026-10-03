@@ -1,0 +1,7 @@
+{
+  "forbiddenRequests": [],
+  "unchangedStorage": true,
+  "indexedDBUnchanged": true,
+  "sessionFixture": "OAuth fixture established before demo; not live-provider authentication proof",
+  "pageErrors": []
+}

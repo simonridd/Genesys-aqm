@@ -1,0 +1,32 @@
+import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react'
+import { entryRoute } from './routing'
+const Welcome = lazy(() => import('./Welcome'))
+const Demo = lazy(() => import('./Demo'))
+const Live = lazy(() => import('../App').then(module => ({ default: module.App })))
+class DemoBoundary extends Component<{ children: ReactNode; onExit: () => void }, { failed: boolean }> {
+  state = { failed: false }
+  static getDerivedStateFromError() { return { failed: true } }
+  render() {
+    return this.state.failed ? <main className="page-content"><h1>Demo unavailable</h1><p role="alert">The prepared story could not be loaded. No live fallback will be attempted.</p><button className="outline-button" onClick={this.props.onExit}>Exit demo</button></main> : this.props.children
+  }
+}
+export function Root() {
+  const [connected, setConnected] = useState(false)
+  const [entry, setEntry] = useState(() => entryRoute(new URLSearchParams(location.search)))
+  useEffect(() => {
+    const navigate = () => setEntry(entryRoute(new URLSearchParams(location.search), connected))
+    window.addEventListener('popstate', navigate)
+    return () => window.removeEventListener('popstate', navigate)
+  }, [connected])
+  const navigate = (page: string, step?: number) => {
+    const url = new URL(location.href)
+    url.search = new URLSearchParams({ page, ...(page === 'settings' ? { settingsSection: 'connection' } : {}), ...(page === 'demo' ? { tour: 'quality', step: String(step ?? 1) } : {}) }).toString()
+    url.hash = ''
+    window.history.pushState(null, '', url)
+    setEntry(entryRoute(url.searchParams, connected))
+    window.scrollTo(0, 0)
+  }
+  return <Suspense fallback={<main className="page-content" role="status">Loading IPI AQM…</main>}>
+    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} onLive={() => navigate('automation')} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={navigate} onDemo={step => navigate('demo', step)}/> : <Live onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>} 
+  </Suspense>
+}

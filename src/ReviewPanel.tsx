@@ -1,3 +1,4 @@
+import { ReviewScoreSummary } from './ReviewScoreSummary'
 import { AssignmentEditor, ReviewDueBadge, useReviewSla } from './ReviewOperations'
 import { reviewDueAt } from './domain/reviewSla'
 import { usePermission } from './GovernancePanel'
@@ -46,7 +47,7 @@ export function ReviewPanel({record,review,session,onSaved}:{record:EvaluationRe
     <p>Assigned to: {review?.assignment?.assignee.displayName??review?.assignment?.assignee.userId??'Unassigned'}</p><p>Due: {reviewDueAt(review)?new Date(reviewDueAt(review)!).toLocaleString():'No due date'} <ReviewDueBadge review={review} now={sla.now} settings={sla.settings}/></p>
     {assignedOther&&!completed&&<p className="field-note">Assigned to another reviewer. Review answers are read-only. An assignment manager can explicitly reassign or take over.</p>}
     <AssignmentEditor session={session} review={review} evaluationId={record.id} onSaved={onSaved}/>
-    <div className="review-summary"><div><small>AI SCORE</small><strong>{reviewPercent(record.overallScore)}</strong></div><div><small>{completed?'HUMAN SCORE':'HUMAN PROGRESS PREVIEW'}</small><strong>{reviewPercent(preview.overallScore)}</strong></div><div><small>EXACT AGREEMENT</small><strong>{agreements} / {questions.filter(item=>item.ai?.status!=='SKIPPED').length}</strong></div><div><small>ABSOLUTE SCORE GAP</small><strong>{review?.comparison.absoluteScoreDifference==null?'—':`${(review.comparison.absoluteScoreDifference*100).toFixed(1)} pp`}</strong></div></div>
+    <ReviewScoreSummary aiScore={record.overallScore} humanScore={preview.overallScore} agreements={agreements} answered={questions.filter(item=>item.ai?.status!=='SKIPPED').length} gap={review?.comparison.absoluteScoreDifference} completed={completed}/>
     <section aria-label="Group comparison"><h3>Group comparison{completed?'':' · human progress preview'}</h3><div className="group-comparison">{preview.groups.map(g=>{const ai=aiGroups.find(a=>a.groupId===g.groupId)?.overallScore??null;return <div className="panel" key={g.groupId}><strong>{g.name}</strong><p>AI group score: {reviewPercent(ai)}</p><p>Human group score: {reviewPercent(g.overallScore)}</p><p>Difference: {ai===null||g.overallScore===null?'—':`${((g.overallScore-ai)*100).toFixed(1)} pp`}</p>{g.critical&&<p>Critical group · {g.passed===false?'FAIL':g.passed===true?'Pass':'Not scored'}</p>}</div>})}</div></section>
     <p className="field-note">Use the evaluated form snapshot. Partial scores are previews; completed reviews contribute to Calibration. AI scores stay in Quality.</p>
     {review?.reviewer&&<p className="field-note">Reviewer: {review.reviewer.displayName??review.reviewer.userId} · {new Date(review.updatedAt).toLocaleString()} · revision {review.revision}</p>}

@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-ipi-showcase
+
+
+ Test Files  59 passed (59)
+      Tests  566 passed (566)
+   Start at  09:20:21
+   Duration  2.04s (import 41%, tests 37%, transform 20%, worker 2%)
+
+    Isolate  59 workers spawned · ~93ms startup each (spawn + environment, per file)
+             at least ~457ms faster with isolate: false — reuses workers across files instead of one per file
+
