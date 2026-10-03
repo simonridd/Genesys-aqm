@@ -25,5 +25,23 @@
   "focusedNavigation": 30,
   "guards": 5,
   "operationalTable": 1,
-  "deterministic": 621
+  "deterministic": 621,
+  "deployedFullMatrix": {
+    "sourceSha": "5a0dc0687d1b8be0725ea03bd1b54d076febd8ed",
+    "passed": 204,
+    "retainedLegacyFailures": 2,
+    "skipped": 0,
+    "flaky": 0,
+    "report": "public-results.json"
+  },
+  "finalFocusCorrection": {
+    "sourceSha": "9f5ce133fda64d2de458002b67f9002552bbe25b",
+    "frontendDifference": "One CSS focus-colour token, with a computed-colour keyboard regression assertion.",
+    "localPassed": 35,
+    "publicPassed": 35,
+    "deterministicPassed": 621,
+    "buildPassed": true,
+    "localReport": "final-focus-results.json",
+    "publicReport": "final-public-results.json"
+  }
 }

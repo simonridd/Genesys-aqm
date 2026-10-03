@@ -1,0 +1,35 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "sidebarHeight": 379.515625,
+  "navHeight": 299,
+  "visibleDestinations": [
+    "☷Conversations",
+    "▥Analytics",
+    "◌Overview",
+    "◷Evaluations",
+    "◎Calibration",
+    "⚙Settings",
+    "About / product tour"
+  ],
+  "visibleDestinationCount": 7,
+  "collapsedSecondaryGroups": 1,
+  "documentWidth": 390,
+  "bodyWidth": 390,
+  "viewControls": [
+    {
+      "display": "none",
+      "width": 0,
+      "scrollWidth": 0,
+      "selected": "Questions"
+    },
+    {
+      "display": "grid",
+      "width": 360,
+      "scrollWidth": 360,
+      "selected": "Questions"
+    }
+  ]
+}

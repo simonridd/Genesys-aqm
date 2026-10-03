@@ -1,0 +1,23 @@
+{
+  "goal": "Edit an evaluation form and reuse an Answer Set.",
+  "role": "AUTHOR",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actions": [
+    "Open form Fixture choice form v1",
+    "Edit",
+    "Edit question title",
+    "Use reusable Answer Set",
+    "Use Resolution clarity v1",
+    "Save changes"
+  ],
+  "actionCount": 6,
+  "wrongTurns": 0,
+  "groupExpansions": [],
+  "completed": true,
+  "conclusion": "Edited question and reused published Resolution clarity v1; saved exact snapshot.",
+  "route": "https://simonridd.github.io/Genesys-aqm/?page=forms",
+  "kind": "Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold."
+}

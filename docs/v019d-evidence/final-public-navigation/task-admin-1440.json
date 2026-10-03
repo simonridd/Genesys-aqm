@@ -1,0 +1,22 @@
+{
+  "goal": "Check whether anything needs attention, then open Policies.",
+  "role": "ADMIN",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actions": [
+    "Dashboard range: 30 days",
+    "Inspect attention summary",
+    "Policies"
+  ],
+  "actionCount": 3,
+  "wrongTurns": 0,
+  "groupExpansions": [
+    "Configuration"
+  ],
+  "completed": true,
+  "conclusion": "Quality requires attention: two critical failure occurrences; Policies reached from visible Configuration disclosure.",
+  "route": "https://simonridd.github.io/Genesys-aqm/?page=policies",
+  "kind": "Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold."
+}

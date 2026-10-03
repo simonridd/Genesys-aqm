@@ -1,0 +1,24 @@
+{
+  "goal": "Complete the review that needs my attention.",
+  "role": "REVIEWER",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actions": [
+    "Open evaluation review-a",
+    "Start review",
+    "Answer Warm opening",
+    "Open conversation",
+    "← Back to review",
+    "Answer remaining questions",
+    "Complete review"
+  ],
+  "actionCount": 7,
+  "wrongTurns": 0,
+  "groupExpansions": [],
+  "completed": true,
+  "conclusion": "Review completed; evidence detour preserved draft and selected review.",
+  "route": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=review-a",
+  "kind": "Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold."
+}

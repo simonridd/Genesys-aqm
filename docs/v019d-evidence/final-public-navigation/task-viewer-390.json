@@ -1,0 +1,20 @@
+{
+  "goal": "Find the lowest-average quality question.",
+  "role": "VIEWER",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actions": [
+    "View: Questions",
+    "Inspect evaluations →",
+    "Back to Analytics"
+  ],
+  "actionCount": 3,
+  "wrongTurns": 0,
+  "groupExpansions": [],
+  "completed": true,
+  "conclusion": "Lowest-average question: Clear next step, Customer Service v17, 33.3%, 8 applicable answers; exact cohort returned to Questions.",
+  "route": "https://simonridd.github.io/Genesys-aqm/?page=analytics&analyticsTab=questions",
+  "kind": "Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold."
+}
