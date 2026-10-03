@@ -16,4 +16,4 @@ dist/assets/genesysEmail-BJj4UQKD.js  193.81 kB │ gzip:  72.64 kB
 dist/assets/index-DsjV_ENo.js         223.72 kB │ gzip:  70.37 kB
 dist/assets/App-BL9sZQGX.js           391.06 kB │ gzip: 104.53 kB
 
-✓ built in 112ms
+✓ built in 99ms
