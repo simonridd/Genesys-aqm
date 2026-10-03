@@ -86,3 +86,9 @@ Deploy only from an archived implementation commit. Backend release uses `aqm-ap
 Read-only before/after counts and SHA-256 hashes include all discovered top-level collections, the new empty `answerSetAssets` and `answerSetFamilies`, and known operational collections. The expectation is **0 → 0** in both new collections. Deployment proof uses health/anonymous authorization reads and authenticated in-memory fixtures, not production authoring writes. Existing policies, schedules, forms, groups, reviews and evaluation data are preserved. Runtime/IAM/secret/Scheduler configuration is compared separately. Natural Scheduler changes, if any, must be identified by their exact before/after operational timestamps/hashes in preservation evidence.
 
 The final feature branch is pushed for ChatGPT review/merge. This task creates no PR and does not merge main or create `v0.19.0`.
+
+### Completed deployment
+
+Application source: `e92f2d69c1d4cbe691f7e0ee82ea764ffb8e80af`. Ready Cloud Run revision: `aqm-api-v019-e92f2d6`, 100% traffic. Pages HEAD: `7ebfd7b5a8d6b2673b7f89305197e734491493eb`; all 12 public files and the exact Pages Git tree match the tested committed-source build. Health/anonymous authorization boundaries pass, and all 33 provider-free public-site journeys pass.
+
+All 25 production collection counts/hashes match before/after. Both new collections remain 0 → 0. Runtime configuration, IAM, secret metadata and Scheduler configuration/runtime match; no natural Scheduler difference occurred. Existing Daily Voice policy/schedule, forms, groups, evaluation records and reviews are preserved. See [deployment](v019-evidence/deployment.json), [public assets](v019-evidence/pages.json) and [complete preservation hashes/counts](v019-evidence/preservation.json).

@@ -32,4 +32,14 @@ Screenshots/bounds cover library detail, choice picker, update comparison, block
 
 `tag.json` records the absent-before-create V0.18 annotated tag and exact canonical peeled commit. `before-collections.json` and `before-runtime.json` capture read-only hashes/counts and runtime/IAM/secret/Scheduler metadata. `collections-snapshot.py` discovers all top-level collections and includes the empty new authoring asset and family metadata collections. It never saves document contents, identities, credentials or tokens.
 
-Only a committed source archive is deployed. Final deployment metadata, byte comparisons and after-state comparison will be appended after release. Source, image/revision and Pages HEAD may differ from the final evidence-only branch HEAD; the actual source SHA is recorded explicitly.
+Only a committed source archive is deployed. Deployment metadata, byte comparisons and after-state comparison are recorded below. Source, image/revision and Pages HEAD may differ from the final evidence-only branch HEAD; the actual source SHA is recorded explicitly.
+
+## Completed release
+
+Application source: `e92f2d69c1d4cbe691f7e0ee82ea764ffb8e80af`. Cloud Run: `aqm-api-v019-e92f2d6`, ready and serving 100% of traffic. The committed backend/frontend archives match source bytes; the archive frontend build matches the validated build exactly. Health returns 200 and anonymous Answer Set/form requests return 401. No authenticated production authoring mutation was used.
+
+Pages HEAD: `7ebfd7b5a8d6b2673b7f89305197e734491493eb`. [Public AQM](https://simonridd.github.io/Genesys-aqm/). `pages.json` verifies all 12 public files byte-for-byte and verifies the exact Pages Git tree has the same paths/content. `browser-public.txt` records 33 passing journeys: all 19 Answer Set journeys, all 11 showcase regressions and three Question Group journeys at the requested viewports. APIs/providers remain fictional/in-memory. The 33 public journeys overlap the 33 build journeys.
+
+`preservation.json` records **25/25 matching collection counts and hashes**, including `answerSetAssets` **0 → 0** and `answerSetFamilies` **0 → 0**. All existing policy/schedule/form/group/evaluation/review/audit/notification/operational collections match. Runtime configuration, service IAM, secret metadata/versions/IAM and Scheduler configuration match. Scheduler runtime also matches: last attempt `2026-10-03T13:00:04.991663Z`, next scheduled time `2026-10-03T14:00:04.028877Z` in both captures. No natural Scheduler difference occurred in the captured release window. Only the intended revision/image changed.
+
+Remote main remains canonical `efc02d0986c75c938831d1633e98c3420ca7d72e`; the annotated V0.18 tag and peeled commit remain unchanged. No PR, main merge, or V0.19 tag was created. Final branch commits after the application source record release evidence only; application files are compared against the deployed source before the final push.

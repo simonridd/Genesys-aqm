@@ -1,0 +1,29 @@
+{
+  "sourceSha": "e92f2d69c1d4cbe691f7e0ee82ea764ffb8e80af",
+  "revision": "aqm-api-v019-e92f2d6",
+  "imageDigest": "europe-west2-docker.pkg.dev/genesys-aqm-2026/cloud-run-source-deploy/aqm-api@sha256:e4f28e1006efb39fe9443bc16cd4f076496fd27ec30b9dce201adceb84095d7b",
+  "ready": true,
+  "latestReadyRevision": "aqm-api-v019-e92f2d6",
+  "traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "aqm-api-v019-e92f2d6"
+    }
+  ],
+  "archiveCodeMatchesSourceCommit": true,
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "schemaVersion": 1
+    }
+  },
+  "anonymousAnswerSets": {
+    "status": 401
+  },
+  "anonymousForms": {
+    "status": 401
+  },
+  "authenticatedAuthoringProof": "Provider-free real API / MemoryStore fixtures; no production authoring write."
+}

@@ -1,0 +1,18 @@
+{
+  "sourceSha": "e92f2d69c1d4cbe691f7e0ee82ea764ffb8e80af",
+  "archiveBuildMatchesValidatedBuild": true,
+  "files": {
+    "index.html": "de6ad4326c305f92fdea024f5005548b0467a095ee820f8b685cb104fb369e57",
+    "IPIlogo.svg": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples/billing-conversation.json": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+    "samples/delivery-conversation.json": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+    "assets/App-BAoBTKGB.js": "d6fa696dc054ff3ea1e6208c58364fbdc05c03d9594af673e80e1ece2664a308",
+    "assets/reviews-DA7jf8kC.js": "059afbec015b5f49497ca8d8b1b12777f99c1bddd518efb15a96289966c60225",
+    "assets/Welcome-4bnSAzdc.js": "d181b5f96862f7e689a66414fac65a66c94a7db5be215c1036caeebf91d6cd71",
+    "assets/index-B0QOGpnI.js": "6d62a0a6ff265dc2ef3655492c0334d7a9720c90a2953b14a17703b92c44131d",
+    "assets/index-Dh0z4fQh.css": "07894d86ef6952a84edca3af8fc47d4c9a6231fdc20c04032cc0bf263b35b970",
+    "assets/Demo-BWA9tIFc.js": "b59b604d78a8f405449fda66d43a22376630b27455b85b39d196a8b6b682185f",
+    "assets/genesysEmail-BJj4UQKD.js": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2"
+  }
+}

@@ -15,6 +15,10 @@ for path in files:
   time.sleep(5)
  results.append({'path':relative,'sha256':hashlib.sha256(local).hexdigest(),'remoteSha256':hashlib.sha256(remote).hexdigest() if remote is not None else None,'equal':remote==local})
 head=subprocess.check_output(['git','ls-remote','origin','refs/heads/gh-pages'],text=True).split()[0]
-json.dump({'sourceSha':source,'pagesHead':head,'url':base,'allBytesEqual':all(r['equal'] for r in results),'files':results},open(sys.argv[1],'w'),indent=2)
+tracked=subprocess.check_output(['git','ls-tree','-r','--name-only',head],text=True).splitlines()
+local_paths=sorted(p.relative_to(root).as_posix() for p in files)
+assert sorted(tracked)==local_paths, 'Pages tree differs from committed build files.'
+assert all(subprocess.check_output(['git','show',head+':'+relative])==(root/relative).read_bytes() for relative in tracked)
+json.dump({'pagesGitTreeMatchesBuild':True,'sourceSha':source,'pagesHead':head,'url':base,'allBytesEqual':all(r['equal'] for r in results),'files':results},open(sys.argv[1],'w'),indent=2)
 print('Pages files verified:',len(results),'all match:',all(r['equal'] for r in results),'HEAD:',head)
 if not all(r['equal'] for r in results):sys.exit(1)

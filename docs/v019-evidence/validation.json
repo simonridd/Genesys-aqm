@@ -1,0 +1,21 @@
+{
+  "deterministicTests": 597,
+  "deterministicFiles": 61,
+  "focusedTests": 48,
+  "answerSetDevelopmentJourneys": 19,
+  "broaderInitialPassingJourneys": 127,
+  "resolvedInitialFailures": 3,
+  "focusedNavigationReruns": 27,
+  "productionBuildJourneys": 33,
+  "publicJourneys": 33,
+  "countsOverlap": true,
+  "viewports": [
+    "1440x900",
+    "1920x1080",
+    "390x844"
+  ],
+  "noPaidJev": true,
+  "noLiveGenesys": true,
+  "noProductionAuthoringMutation": true,
+  "blockers": []
+}
