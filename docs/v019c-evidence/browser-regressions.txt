@@ -1,0 +1,187 @@
+[WebServer] (node:87727) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 113 tests using 1 worker
+
+(node:87729) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/113] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/113] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/113] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/113] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/113] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/113] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/113] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/113] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/113] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/113] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/113] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/113] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/113] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/113] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/113] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/113] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/113] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/113] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/113] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/113] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[21/113] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[22/113] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[23/113] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[24/113] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[25/113] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[26/113] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[27/113] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[28/113] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[29/113] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[30/113] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[31/113] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[32/113] tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits
+[33/113] tests/authoring-simplification.spec.ts:51:1 › save inline answers as reusable keeps current question until explicit attach
+[34/113] tests/authoring-simplification.spec.ts:52:1 › published and role-read-only questions expand without disabled editing controls
+[35/113] tests/authoring-simplification.spec.ts:53:1 › advanced key used by a condition fails closed with no silent migration
+[36/113] tests/authoring-simplification.spec.ts:54:1 › disconnected question copy remains neutral; reconnect never uploads definitions
+[37/113] tests/authoring-simplification.spec.ts:56:1 › author tasks replay and keyboard reachability from navigation through reusable choices
+[38/113] tests/authoring-simplification.spec.ts:63:1 › group version update and detach preserve copied questions and source definitions
+[39/113] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 1440
+[40/113] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 1920
+[41/113] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 390
+[42/113] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[43/113] tests/investigation-links.spec.ts:76:2 › Overview review counts, workload shortcuts and detail at 1440
+[44/113] tests/investigation-links.spec.ts:90:2 › Calibration disagreement drill clears stale cohort at 1440
+[45/113] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[46/113] tests/investigation-links.spec.ts:76:2 › Overview review counts, workload shortcuts and detail at 1920
+[47/113] tests/investigation-links.spec.ts:90:2 › Calibration disagreement drill clears stale cohort at 1920
+[48/113] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[49/113] tests/investigation-links.spec.ts:76:2 › Overview review counts, workload shortcuts and detail at 390
+[50/113] tests/investigation-links.spec.ts:90:2 › Calibration disagreement drill clears stale cohort at 390
+[51/113] tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1440
+[52/113] tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1920
+[53/113] tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 390
+[54/113] tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1440
+[55/113] tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1440
+[56/113] tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1440
+[57/113] tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1440
+[58/113] tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1920
+[59/113] tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1920
+[60/113] tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1920
+[61/113] tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1920
+[62/113] tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 390
+[63/113] tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 390
+[64/113] tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 390
+[65/113] tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 390
+[66/113] tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts
+  1) tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('Current role')
+    Expected: "ADMIN"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+
+
+      50 |   return json({items:[]})
+      51 |  })
+    > 52 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                               ^
+      53 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}
+      54 | }
+      55 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{
+        at setup (/private/tmp/aqm-v019c-quality-actionability/tests/overview.spec.ts:52:111)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/overview.spec.ts:89:90
+
+    Error Context: test-results/overview-existing-connecte-aed98--Overview-before-App-mounts/error-context.md
+
+
+(node:87991) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[67/113] tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+  2) tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Conversation review', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Conversation review', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Conversation review', exact: true })
+
+
+      90 | test('OAuth return-page intent, evaluation deep link and explicit query page win',async({browser})=>{
+      91 |  for(const returned of ['settings','policies','evaluations']){const page=await browser.newPage();await setup(page,'ADMIN',false,returned);await expect(page.getByRole('heading',{name:returned[0].toUpperCase()+returned.slice(1),exact:true})).toBeVisible();await page.close()}
+    > 92 |  const page=await browser.newPage();await page.route(`${origin}/**`,r=>r.fulfill({json:{items:[]}}));await page.goto(`${app}?evaluationId=linked&page=automation`);await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await page.goto(`${app}?page=policies`);await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await page.goto(app);await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.goto(`${app}?page=automation`);await expect(page.getByText('Connect to Genesys Cloud to view operational AQM health.')).toBeVisible();await page.close()
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+      93 | })
+      94 |
+        at /private/tmp/aqm-v019c-quality-actionability/tests/overview.spec.ts:92:474
+
+    Error Context: test-results/overview-OAuth-return-page-c5f3a-and-explicit-query-page-win/error-context.md
+
+
+(node:88007) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[68/113] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[69/113] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[70/113] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[71/113] tests/reviewer-continuity.spec.ts:99:1 › exact My Reviews filter context survives evidence navigation
+[72/113] tests/reviewer-continuity.spec.ts:107:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[73/113] tests/reviewer-continuity.spec.ts:119:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[74/113] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles All Evaluations without Refresh
+[75/113] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles active cohort without Refresh
+[76/113] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles review status without Refresh
+[77/113] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles due cohort without Refresh
+[78/113] tests/reviewer-continuity.spec.ts:148:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[79/113] tests/reviewer-continuity.spec.ts:166:1 › reassignment retains unsaved notes but removes editing and submission authority
+[80/113] tests/reviewer-continuity.spec.ts:177:1 › 409 refresh retains draft without silently replacing its base
+[81/113] tests/reviewer-continuity.spec.ts:187:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[82/113] tests/reviewer-continuity.spec.ts:198:1 › later server page survives evidence return and completion background reload
+[83/113] tests/reviewer-continuity.spec.ts:209:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[84/113] tests/reviewer-continuity.spec.ts:224:1 › unstarted review returns to selected evaluation heading
+[85/113] tests/reviewer-continuity.spec.ts:231:1 › completion removes the row before a failed background list reload, preserving confirmation
+[86/113] tests/reviewer-continuity.spec.ts:241:1 › failed completion retains all changes and explicit retry completes exactly once
+[87/113] tests/reviewer-continuity.spec.ts:255:1 › reload starts a new session without unsubmitted answers or notes
+[88/113] tests/reviewer-continuity.spec.ts:267:1 › About and workspace handoff retain human work and unload protection in this SPA
+[89/113] tests/reviewer-continuity.spec.ts:278:1 › a pending completion reconciles the current filters rather than the scope at click time
+[90/113] tests/reviewer-continuity.spec.ts:294:1 › completion in another session keeps unfinished answers separate from completed authority
+[91/113] tests/reviewer-continuity.spec.ts:307:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[92/113] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[93/113] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[94/113] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+[95/113] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[96/113] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[97/113] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+[98/113] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[99/113] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[100/113] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+[101/113] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[102/113] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[103/113] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[104/113] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[105/113] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[106/113] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[107/113] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[108/113] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[109/113] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[110/113] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[111/113] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[112/113] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[113/113] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+  2 failed
+    tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts 
+    tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win 
+  111 passed (3.7m)

@@ -1,0 +1,121 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19B SHOWCASE • 2026
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+1–30 September 2026
+
+Genesys Cloud · All policies · All published forms
+
+12 evaluations · 12 evaluated conversations
+Change filters
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+Average quality
+65%
+Evaluated conversations
+12
+12 evaluations
+Pass rate
+50%
+Evaluations with critical failure
+16.7%
+2 failure occurrences
+Review state
+2 Awaiting review
+0 In progress · 1 Reviewed
+What stands out
+Quality attention
+2 critical failure occurrences recorded
+
+Across 12 evaluations · 16.7% of evaluations have a critical failure
+
+Inspect critical evaluations →
+Lowest average question in this cohort
+Customer Service v17 · Clear next step
+
+33.3% average · 8 applicable answers
+
+Inspect evaluations →
+Lowest average queue among queues with evaluated conversations
+Claims
+
+50% average · 6 evaluations
+
+Inspect evaluations →
+Lowest average group in this cohort
+Customer Service v17 · Customer care
+
+71.6% AI average · 8 applicable evaluations
+
+View group comparison →
+
+Comparisons describe this selected cohort. Sample sizes vary; rankings do not establish statistical significance or a cause.
+
+Quality by day
+
+Limited history in this period.
+
+2026-09-10
+50%
+6 evaluations
+2026-09-20
+80%
+6 evaluations
+Score distribution
+0–20%
+0
+20–40%
+0
+40–60%
+6
+60–80%
+0
+80–100%
+6
+Data scope & technical details

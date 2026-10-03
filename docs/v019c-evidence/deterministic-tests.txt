@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-v019c-quality-actionability
+
+
+ Test Files  64 passed (64)
+      Tests  614 passed (614)
+   Start at  20:08:45
+   Duration  1.95s (import 40%, tests 38%, transform 21%, worker 1%)
+
+    Isolate  64 workers spawned · ~85ms startup each (spawn + environment, per file)
+             at least ~458ms faster with isolate: false — reuses workers across files instead of one per file
+

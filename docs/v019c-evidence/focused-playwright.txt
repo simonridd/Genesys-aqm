@@ -1,0 +1,23 @@
+[WebServer] (node:88892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 12 tests using 1 worker
+
+(node:88893) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/12] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440
+[2/12] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1440
+[3/12] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920
+[4/12] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1920
+[5/12] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390
+[6/12] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 390
+[7/12] tests/quality-actionability.spec.ts:36:1 › safe errors, retry, empty scope, unavailable names and sparse history
+[8/12] tests/quality-actionability.spec.ts:39:1 › goal-only route from Overview uses visible quality evidence
+[9/12] tests/quality-actionability.spec.ts:47:1 › Overview Analytics entry replaces stale quality filters
+[10/12] tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1440
+[11/12] tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1920
+[12/12] tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 390
+  12 passed (35.5s)

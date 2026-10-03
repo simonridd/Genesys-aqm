@@ -1,0 +1,304 @@
+[WebServer] (node:86695) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 7 tests using 1 worker
+
+(node:86696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/7] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440
+  1) tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440 ────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+    @@ -1,6 +1,7 @@
+      Array [
+    +   "Set up automated quality monitoring",
+        "Attention required",
+        "Quality and coverage",
+        "Review workload health",
+        "Health summary",
+        "Upcoming automation",
+
+      13 |   const attention=page.getByRole('region',{name:'Attention required'}),quality=page.getByRole('region',{name:'Quality and coverage'}),work=page.getByRole('region',{name:'Review workload health'})
+      14 |   await expect(attention).toContainText('2 critical failure occurrences');await capture(page,'overview-attention');await quality.scrollIntoViewIfNeeded();await capture(page,'overview-quality-coverage');await work.scrollIntoViewIfNeeded();await capture(page,'overview-review-workload');const health=page.getByRole('region',{name:'Health summary'});await health.scrollIntoViewIfNeeded();await capture(page,'overview-health');expect(await health.locator('details').getAttribute('open')).toBeNull()
+    > 15 |   const order=await page.locator('.overview-page>section').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')));expect(order).toEqual(['Attention required','Quality and coverage','Review workload health','Health summary','Upcoming automation','Recent runs'])
+         |                                                                                                                                         ^
+      16 |   await attention.getByRole('button',{name:'Inspect critical evaluations →'}).focus();await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(2);expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({source:'genesys-cloud',critical:'yes',from:'2026-09-02',to:'2026-10-02'});await capture(page,'overview-critical-drill')
+      17 |   await nav(page,'Analytics');await filters(page);await page.getByRole('button',{name:'Change filters',exact:true}).click();await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText('12 evaluations');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible();await capture(page,'analytics-overview')
+      18 |   const insights=page.getByRole('region',{name:'What stands out'}),question=insights.locator('article').filter({hasText:'Lowest average question'})
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:15:137
+
+    Error Context: test-results/quality-actionability-qual-ad8c0-ask-and-exact-insights-1440/error-context.md
+
+
+(node:86701) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/7] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1440
+  2) tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1440 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 20
+    + Received  +  1
+
+    - 1250 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 460
+    - 92% · Content availability · of sampled
+    - Evaluated
+    - 450
+    - 97.8% · Sample completion · of available
+    -
+    - Evaluation coverage: 45% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 10
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    + 1250 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available46092% · Content availability · of sampledEvaluated45097.8% · Sample completion · of availableEvaluation coverage: 45% · Evaluated / eligibleFailed evaluation attempts: 10Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Where coverage was lost500 eligible interactions were not selected by the sampling policy.40 sampled interactions had no usable conversation content.10 interactions had content available but did not reach a completed evaluation.Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1250 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available46092% · Content availability · of sampledEvaluated45097.8% · Sample completion · of availableEvaluation coverage: 45% · Evaluated / eligibleFailed evaluation attempts: 10Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Where coverage was lost500 eligible interactions were not selected by the sampling policy.40 sampled interactions had no usable conversation content.10 interactions had content available but did not reach a completed evaluation.Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt."
+
+
+      28 |  test(`coverage interpretation, scope and consistency ${viewport.width}`,async({page})=>{
+      29 |   await page.setViewportSize(viewport);const state=await qualityFixture(page);await page.getByLabel('Dashboard range').selectOption('30');const overview=page.getByRole('region',{name:'Quality and coverage'});await expect(overview.locator('.coverage-funnel')).toContainText('1000');const expected=await overview.locator('.coverage-funnel').innerText()
+    > 30 |   await overview.getByRole('button',{name:'Explore coverage →'}).click();const funnel=page.locator('.coverage-funnel');await expect(funnel).toHaveText(expected);await expect(funnel).toContainText('50%');await expect(funnel).toContainText('92%');await expect(funnel).toContainText('97.8%');await expect(funnel).toContainText('Evaluation coverage: 45%');await capture(page,'coverage-funnel');await expect(funnel).toContainText('500 eligible interactions were not selected');await expect(funnel).toContainText('40 sampled interactions');await expect(funnel).toContainText('10 interactions had content');await expect(funnel).toContainText('Failed evaluation attempts: 10');await capture(page,'coverage-by-queue')
+         |                                                                                                                                             ^
+      31 |   const claims=page.locator('.coverage-breakdown').filter({hasText:'Claims'});await expect(claims).toContainText('600 Eligible · 300 Sampled · 270 Evaluated');await claims.getByRole('button',{name:'View evaluated quality →'}).focus();await page.keyboard.press('Enter');await expect(page.locator('.analytics-tabs').getByRole('button',{name:'Queues',exact:true})).toHaveAttribute('aria-pressed','true');expect(new URL(page.url()).searchParams.get('queue')).toBe('Claims');await page.locator('.operational-table tbody tr').filter({hasText:'Claims'}).getByRole('button',{name:'Inspect evaluations →'}).click();await expect(evaluations(page)).toHaveCount(6);await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await page.locator('.analytics-tabs').getByRole('button',{name:'Coverage',exact:true}).click();await expect(funnel.locator('li').nth(0)).toContainText('1000')
+      32 |   await nav(page,'Overview');await page.getByLabel('Dashboard range').selectOption('30');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click();const detail=page.locator('#overview-run-detail');await expect(detail).toContainText('Content available');await expect(detail).toContainText('97.8%');await expect(detail).toContainText('Evaluation coverage: 45%');await expect(detail).toContainText('Failed evaluation attempts: 5');await capture(page,'run-detail');expect(await detail.locator('details').getAttribute('open')).toBeNull()
+      33 |   writeFileSync(`${evidence}/coverage-interpretation-${viewport.width}.json`,JSON.stringify({eligible:1000,sampled:500,contentAvailable:460,evaluated:450,samplingCoverage:'500 / 1000 = 50%',evaluationCoverage:'450 / 1000 = 45%',contentAvailability:'460 / 500 = 92%',sampleCompletion:'450 / 460 = 97.8%',failedAttempts:10,scope:'2 run observations; run detail shows one run with half the counts and same rates',interpretation:'Sampling intentional; content unavailable 40; content available but not evaluated 10',kind:'Scripted comprehension assertions'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:30:141
+
+    Error Context: test-results/quality-actionability-cove-672fd--scope-and-consistency-1440/error-context.md
+
+
+(node:86708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/7] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920
+  3) tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920 ────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+    @@ -1,6 +1,7 @@
+      Array [
+    +   "Set up automated quality monitoring",
+        "Attention required",
+        "Quality and coverage",
+        "Review workload health",
+        "Health summary",
+        "Upcoming automation",
+
+      13 |   const attention=page.getByRole('region',{name:'Attention required'}),quality=page.getByRole('region',{name:'Quality and coverage'}),work=page.getByRole('region',{name:'Review workload health'})
+      14 |   await expect(attention).toContainText('2 critical failure occurrences');await capture(page,'overview-attention');await quality.scrollIntoViewIfNeeded();await capture(page,'overview-quality-coverage');await work.scrollIntoViewIfNeeded();await capture(page,'overview-review-workload');const health=page.getByRole('region',{name:'Health summary'});await health.scrollIntoViewIfNeeded();await capture(page,'overview-health');expect(await health.locator('details').getAttribute('open')).toBeNull()
+    > 15 |   const order=await page.locator('.overview-page>section').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')));expect(order).toEqual(['Attention required','Quality and coverage','Review workload health','Health summary','Upcoming automation','Recent runs'])
+         |                                                                                                                                         ^
+      16 |   await attention.getByRole('button',{name:'Inspect critical evaluations →'}).focus();await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(2);expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({source:'genesys-cloud',critical:'yes',from:'2026-09-02',to:'2026-10-02'});await capture(page,'overview-critical-drill')
+      17 |   await nav(page,'Analytics');await filters(page);await page.getByRole('button',{name:'Change filters',exact:true}).click();await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText('12 evaluations');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible();await capture(page,'analytics-overview')
+      18 |   const insights=page.getByRole('region',{name:'What stands out'}),question=insights.locator('article').filter({hasText:'Lowest average question'})
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:15:137
+
+    Error Context: test-results/quality-actionability-qual-466e5-ask-and-exact-insights-1920/error-context.md
+
+
+(node:86713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/7] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1920
+  4) tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1920 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 20
+    + Received  +  1
+
+    - 1250 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 460
+    - 92% · Content availability · of sampled
+    - Evaluated
+    - 450
+    - 97.8% · Sample completion · of available
+    -
+    - Evaluation coverage: 45% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 10
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    + 1250 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available46092% · Content availability · of sampledEvaluated45097.8% · Sample completion · of availableEvaluation coverage: 45% · Evaluated / eligibleFailed evaluation attempts: 10Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Where coverage was lost500 eligible interactions were not selected by the sampling policy.40 sampled interactions had no usable conversation content.10 interactions had content available but did not reach a completed evaluation.Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1250 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available46092% · Content availability · of sampledEvaluated45097.8% · Sample completion · of availableEvaluation coverage: 45% · Evaluated / eligibleFailed evaluation attempts: 10Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Where coverage was lost500 eligible interactions were not selected by the sampling policy.40 sampled interactions had no usable conversation content.10 interactions had content available but did not reach a completed evaluation.Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt."
+
+
+      28 |  test(`coverage interpretation, scope and consistency ${viewport.width}`,async({page})=>{
+      29 |   await page.setViewportSize(viewport);const state=await qualityFixture(page);await page.getByLabel('Dashboard range').selectOption('30');const overview=page.getByRole('region',{name:'Quality and coverage'});await expect(overview.locator('.coverage-funnel')).toContainText('1000');const expected=await overview.locator('.coverage-funnel').innerText()
+    > 30 |   await overview.getByRole('button',{name:'Explore coverage →'}).click();const funnel=page.locator('.coverage-funnel');await expect(funnel).toHaveText(expected);await expect(funnel).toContainText('50%');await expect(funnel).toContainText('92%');await expect(funnel).toContainText('97.8%');await expect(funnel).toContainText('Evaluation coverage: 45%');await capture(page,'coverage-funnel');await expect(funnel).toContainText('500 eligible interactions were not selected');await expect(funnel).toContainText('40 sampled interactions');await expect(funnel).toContainText('10 interactions had content');await expect(funnel).toContainText('Failed evaluation attempts: 10');await capture(page,'coverage-by-queue')
+         |                                                                                                                                             ^
+      31 |   const claims=page.locator('.coverage-breakdown').filter({hasText:'Claims'});await expect(claims).toContainText('600 Eligible · 300 Sampled · 270 Evaluated');await claims.getByRole('button',{name:'View evaluated quality →'}).focus();await page.keyboard.press('Enter');await expect(page.locator('.analytics-tabs').getByRole('button',{name:'Queues',exact:true})).toHaveAttribute('aria-pressed','true');expect(new URL(page.url()).searchParams.get('queue')).toBe('Claims');await page.locator('.operational-table tbody tr').filter({hasText:'Claims'}).getByRole('button',{name:'Inspect evaluations →'}).click();await expect(evaluations(page)).toHaveCount(6);await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await page.locator('.analytics-tabs').getByRole('button',{name:'Coverage',exact:true}).click();await expect(funnel.locator('li').nth(0)).toContainText('1000')
+      32 |   await nav(page,'Overview');await page.getByLabel('Dashboard range').selectOption('30');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click();const detail=page.locator('#overview-run-detail');await expect(detail).toContainText('Content available');await expect(detail).toContainText('97.8%');await expect(detail).toContainText('Evaluation coverage: 45%');await expect(detail).toContainText('Failed evaluation attempts: 5');await capture(page,'run-detail');expect(await detail.locator('details').getAttribute('open')).toBeNull()
+      33 |   writeFileSync(`${evidence}/coverage-interpretation-${viewport.width}.json`,JSON.stringify({eligible:1000,sampled:500,contentAvailable:460,evaluated:450,samplingCoverage:'500 / 1000 = 50%',evaluationCoverage:'450 / 1000 = 45%',contentAvailability:'460 / 500 = 92%',sampleCompletion:'450 / 460 = 97.8%',failedAttempts:10,scope:'2 run observations; run detail shows one run with half the counts and same rates',interpretation:'Sampling intentional; content unavailable 40; content available but not evaluated 10',kind:'Scripted comprehension assertions'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:30:141
+
+    Error Context: test-results/quality-actionability-cove-55e91--scope-and-consistency-1920/error-context.md
+
+
+(node:86720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/7] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390
+  5) tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390 ─────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 0
+    + Received  + 1
+
+    @@ -1,6 +1,7 @@
+      Array [
+    +   "Set up automated quality monitoring",
+        "Attention required",
+        "Quality and coverage",
+        "Review workload health",
+        "Health summary",
+        "Upcoming automation",
+
+      13 |   const attention=page.getByRole('region',{name:'Attention required'}),quality=page.getByRole('region',{name:'Quality and coverage'}),work=page.getByRole('region',{name:'Review workload health'})
+      14 |   await expect(attention).toContainText('2 critical failure occurrences');await capture(page,'overview-attention');await quality.scrollIntoViewIfNeeded();await capture(page,'overview-quality-coverage');await work.scrollIntoViewIfNeeded();await capture(page,'overview-review-workload');const health=page.getByRole('region',{name:'Health summary'});await health.scrollIntoViewIfNeeded();await capture(page,'overview-health');expect(await health.locator('details').getAttribute('open')).toBeNull()
+    > 15 |   const order=await page.locator('.overview-page>section').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')));expect(order).toEqual(['Attention required','Quality and coverage','Review workload health','Health summary','Upcoming automation','Recent runs'])
+         |                                                                                                                                         ^
+      16 |   await attention.getByRole('button',{name:'Inspect critical evaluations →'}).focus();await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(2);expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({source:'genesys-cloud',critical:'yes',from:'2026-09-02',to:'2026-10-02'});await capture(page,'overview-critical-drill')
+      17 |   await nav(page,'Analytics');await filters(page);await page.getByRole('button',{name:'Change filters',exact:true}).click();await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText('12 evaluations');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible();await capture(page,'analytics-overview')
+      18 |   const insights=page.getByRole('region',{name:'What stands out'}),question=insights.locator('article').filter({hasText:'Lowest average question'})
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:15:137
+
+    Error Context: test-results/quality-actionability-qual-c07b7-task-and-exact-insights-390/error-context.md
+
+
+(node:86725) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/7] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 390
+  6) tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 390 ─
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 20
+    + Received  +  1
+
+    - 1250 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 460
+    - 92% · Content availability · of sampled
+    - Evaluated
+    - 450
+    - 97.8% · Sample completion · of available
+    -
+    - Evaluation coverage: 45% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 10
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    + 1250 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available46092% · Content availability · of sampledEvaluated45097.8% · Sample completion · of availableEvaluation coverage: 45% · Evaluated / eligibleFailed evaluation attempts: 10Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Where coverage was lost500 eligible interactions were not selected by the sampling policy.40 sampled interactions had no usable conversation content.10 interactions had content available but did not reach a completed evaluation.Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1250 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available46092% · Content availability · of sampledEvaluated45097.8% · Sample completion · of availableEvaluation coverage: 45% · Evaluated / eligibleFailed evaluation attempts: 10Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Where coverage was lost500 eligible interactions were not selected by the sampling policy.40 sampled interactions had no usable conversation content.10 interactions had content available but did not reach a completed evaluation.Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt."
+
+
+      28 |  test(`coverage interpretation, scope and consistency ${viewport.width}`,async({page})=>{
+      29 |   await page.setViewportSize(viewport);const state=await qualityFixture(page);await page.getByLabel('Dashboard range').selectOption('30');const overview=page.getByRole('region',{name:'Quality and coverage'});await expect(overview.locator('.coverage-funnel')).toContainText('1000');const expected=await overview.locator('.coverage-funnel').innerText()
+    > 30 |   await overview.getByRole('button',{name:'Explore coverage →'}).click();const funnel=page.locator('.coverage-funnel');await expect(funnel).toHaveText(expected);await expect(funnel).toContainText('50%');await expect(funnel).toContainText('92%');await expect(funnel).toContainText('97.8%');await expect(funnel).toContainText('Evaluation coverage: 45%');await capture(page,'coverage-funnel');await expect(funnel).toContainText('500 eligible interactions were not selected');await expect(funnel).toContainText('40 sampled interactions');await expect(funnel).toContainText('10 interactions had content');await expect(funnel).toContainText('Failed evaluation attempts: 10');await capture(page,'coverage-by-queue')
+         |                                                                                                                                             ^
+      31 |   const claims=page.locator('.coverage-breakdown').filter({hasText:'Claims'});await expect(claims).toContainText('600 Eligible · 300 Sampled · 270 Evaluated');await claims.getByRole('button',{name:'View evaluated quality →'}).focus();await page.keyboard.press('Enter');await expect(page.locator('.analytics-tabs').getByRole('button',{name:'Queues',exact:true})).toHaveAttribute('aria-pressed','true');expect(new URL(page.url()).searchParams.get('queue')).toBe('Claims');await page.locator('.operational-table tbody tr').filter({hasText:'Claims'}).getByRole('button',{name:'Inspect evaluations →'}).click();await expect(evaluations(page)).toHaveCount(6);await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await page.locator('.analytics-tabs').getByRole('button',{name:'Coverage',exact:true}).click();await expect(funnel.locator('li').nth(0)).toContainText('1000')
+      32 |   await nav(page,'Overview');await page.getByLabel('Dashboard range').selectOption('30');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click();const detail=page.locator('#overview-run-detail');await expect(detail).toContainText('Content available');await expect(detail).toContainText('97.8%');await expect(detail).toContainText('Evaluation coverage: 45%');await expect(detail).toContainText('Failed evaluation attempts: 5');await capture(page,'run-detail');expect(await detail.locator('details').getAttribute('open')).toBeNull()
+      33 |   writeFileSync(`${evidence}/coverage-interpretation-${viewport.width}.json`,JSON.stringify({eligible:1000,sampled:500,contentAvailable:460,evaluated:450,samplingCoverage:'500 / 1000 = 50%',evaluationCoverage:'450 / 1000 = 45%',contentAvailability:'460 / 500 = 92%',sampleCompletion:'450 / 460 = 97.8%',failedAttempts:10,scope:'2 run observations; run detail shows one run with half the counts and same rates',interpretation:'Sampling intentional; content unavailable 40; content available but not evaluated 10',kind:'Scripted comprehension assertions'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:30:141
+
+    Error Context: test-results/quality-actionability-cove-5fe09-n-scope-and-consistency-390/error-context.md
+
+
+(node:86731) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/7] tests/quality-actionability.spec.ts:36:1 › safe errors, retry, empty scope, unavailable names and sparse history
+  7) tests/quality-actionability.spec.ts:36:1 › safe errors, retry, empty scope, unavailable names and sparse history 
+
+    Error: locator.fill: Error: strict mode violation: getByLabel('From', { exact: true }) resolved to 2 elements:
+        1) <input type="datetime-local" value="2026-10-01T13:00"/> aka getByLabel('From').first()
+        2) <input value="" type="date" id="quality-from"/> aka getByRole('textbox', { name: 'From' })
+
+    Call log:
+      - waiting for getByLabel('From', { exact: true })
+
+
+      35 | }
+      36 | test('safe errors, retry, empty scope, unavailable names and sparse history',async({page})=>{
+    > 37 |  const state=await qualityFixture(page,'analytics');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible();state.failAnalytics();await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.getByLabel('From',{exact:true}).fill('2026-09-10');await expect(page.getByRole('alert')).toContainText('Quality analytics could not be loaded.');expect(await page.locator('body').innerText()).not.toContain('Fictional HTTP');state.failAnalytics(false);await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible();await page.getByLabel('From',{exact:true}).fill('2027-01-01');await expect(page.getByRole('heading',{name:'No evaluations match this scope.'})).toBeVisible();await expect(page.getByRole('region',{name:'What stands out'})).toHaveCount(0);await expect(page.getByText('Limited history in this period.')).toBeVisible();state.failNames();await nav(page,'Overview');await nav(page,'Analytics');await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.getByText('Advanced filters',{exact:true}).click();await expect(page.getByLabel('Policy identifier')).toBeVisible();await expect(page.getByText('Policy names unavailable.',{exact:false})).toBeVisible();expect(state.writes).toEqual([]);expect(state.errors).toEqual([])
+         |                                                                                                                                                                                                                                                                              ^
+      38 | })
+      39 |
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:37:270
+
+    Error Context: test-results/quality-actionability-safe-4e9e9-le-names-and-sparse-history/error-context.md
+
+
+  7 failed
+    tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440 ─────────
+    tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1440 ─
+    tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920 ─────────
+    tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1920 ─
+    tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390 ──────────
+    tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 390 ──
+    tests/quality-actionability.spec.ts:36:1 › safe errors, retry, empty scope, unavailable names and sparse history 

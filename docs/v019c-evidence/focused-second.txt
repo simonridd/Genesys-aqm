@@ -1,0 +1,100 @@
+[WebServer] (node:86980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 7 tests using 1 worker
+
+(node:86981) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/7] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440
+  1) tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440 ────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.analytics-filter-bar').getByLabel('Source', { exact: true })
+
+
+       6 | const evaluations=(page:Page)=>page.getByRole('button',{name:/^Open evaluation /})
+       7 | async function capture(page:Page,name:string){await page.screenshot({path:`${evidence}/${name}-${page.viewportSize()!.width}.png`,fullPage:true});const visible=await page.locator('body').innerText();writeFileSync(`${evidence}/${name}-${page.viewportSize()!.width}.txt`,visible);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)}
+    >  8 | async function filters(page:Page){await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.locator('.analytics-filter-bar').getByLabel('From',{exact:true}).fill('2026-09-01');await page.locator('.analytics-filter-bar').getByLabel('To',{exact:true}).fill('2026-09-30');await page.locator('.analytics-filter-bar').getByLabel('Source',{exact:true}).selectOption('genesys-cloud')}
+         |                                                                                                                                                                                                                                                                                                                                                                                       ^
+       9 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}]){
+      10 |  test(`quality-leader task and exact insights ${viewport.width}`,async({page})=>{
+      11 |   await page.setViewportSize(viewport);const state=await qualityFixture(page)
+        at filters (/private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:8:375)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:17:31
+
+    Error Context: test-results/quality-actionability-qual-ad8c0-ask-and-exact-insights-1440/error-context.md
+
+
+(node:87083) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/7] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1440
+[3/7] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920
+  2) tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920 ────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.analytics-filter-bar').getByLabel('Source', { exact: true })
+
+
+       6 | const evaluations=(page:Page)=>page.getByRole('button',{name:/^Open evaluation /})
+       7 | async function capture(page:Page,name:string){await page.screenshot({path:`${evidence}/${name}-${page.viewportSize()!.width}.png`,fullPage:true});const visible=await page.locator('body').innerText();writeFileSync(`${evidence}/${name}-${page.viewportSize()!.width}.txt`,visible);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)}
+    >  8 | async function filters(page:Page){await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.locator('.analytics-filter-bar').getByLabel('From',{exact:true}).fill('2026-09-01');await page.locator('.analytics-filter-bar').getByLabel('To',{exact:true}).fill('2026-09-30');await page.locator('.analytics-filter-bar').getByLabel('Source',{exact:true}).selectOption('genesys-cloud')}
+         |                                                                                                                                                                                                                                                                                                                                                                                       ^
+       9 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}]){
+      10 |  test(`quality-leader task and exact insights ${viewport.width}`,async({page})=>{
+      11 |   await page.setViewportSize(viewport);const state=await qualityFixture(page)
+        at filters (/private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:8:375)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:17:31
+
+    Error Context: test-results/quality-actionability-qual-466e5-ask-and-exact-insights-1920/error-context.md
+
+
+(node:87136) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/7] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1920
+[5/7] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390
+  3) tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390 ─────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.analytics-filter-bar').getByLabel('Source', { exact: true })
+
+
+       6 | const evaluations=(page:Page)=>page.getByRole('button',{name:/^Open evaluation /})
+       7 | async function capture(page:Page,name:string){await page.screenshot({path:`${evidence}/${name}-${page.viewportSize()!.width}.png`,fullPage:true});const visible=await page.locator('body').innerText();writeFileSync(`${evidence}/${name}-${page.viewportSize()!.width}.txt`,visible);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)}
+    >  8 | async function filters(page:Page){await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.locator('.analytics-filter-bar').getByLabel('From',{exact:true}).fill('2026-09-01');await page.locator('.analytics-filter-bar').getByLabel('To',{exact:true}).fill('2026-09-30');await page.locator('.analytics-filter-bar').getByLabel('Source',{exact:true}).selectOption('genesys-cloud')}
+         |                                                                                                                                                                                                                                                                                                                                                                                       ^
+       9 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}]){
+      10 |  test(`quality-leader task and exact insights ${viewport.width}`,async({page})=>{
+      11 |   await page.setViewportSize(viewport);const state=await qualityFixture(page)
+        at filters (/private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:8:375)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:17:31
+
+    Error Context: test-results/quality-actionability-qual-c07b7-task-and-exact-insights-390/error-context.md
+
+
+(node:87366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/7] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 390
+[7/7] tests/quality-actionability.spec.ts:36:1 › safe errors, retry, empty scope, unavailable names and sparse history
+  3 failed
+    tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440 ─────────
+    tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920 ─────────
+    tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390 ──────────
+  4 passed (1.7m)

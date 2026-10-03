@@ -56,7 +56,7 @@ for(const viewport of sizes)test(`Overview healthy, range, freshness, partial fa
  const context=await browser.newContext({viewport}),page=await context.newPage(),fixture=await setup(page,'ADMIN',false)
  await expect(page.getByRole('heading',{name:'Overview',exact:true})).toBeVisible();await expect(page.getByText('No issues requiring attention. No overdue reviews or failed notifications.')).toBeVisible()
  const quality=page.getByRole('region',{name:'Quality and coverage'}),reviews=page.getByRole('region',{name:'Review workload health'})
- await expect(quality).toContainText('Average quality');await expect(quality).toContainText('80%');await expect(quality).toContainText('Sampling coverage 50%');await expect(quality).toContainText('Evaluation coverage 20%')
+ await expect(quality).toContainText('Average quality');await expect(quality).toContainText('80%');await expect(quality).toContainText('50% · Sampling coverage · of eligible');await expect(quality).toContainText('Evaluation coverage: 20%')
  await expect(reviews).toContainText('Unassigned');await expect(page.getByRole('region',{name:'Health summary'})).toContainText('Verified')
  const identity=fixture.identityCalls();await page.getByLabel('Dashboard range').selectOption('30');await expect(quality).toContainText('60%');await expect(quality).toContainText('Last 30 days');expect(fixture.identityCalls()).toBe(identity);expect(fixture.writes).toEqual([])
  await page.screenshot({path:`/private/tmp/aqm-v017-healthy-${viewport.width}.png`,fullPage:true})
@@ -80,7 +80,7 @@ for(const viewport of sizes)for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEW
  await attention.getByRole('button',{name:/Review escalated.*Open review/}).click();await expect(page).toHaveURL(/evaluationId=escalated/);await expect(page.getByRole('region',{name:'Human review',exact:true})).toBeVisible();await home()
  await attention.getByRole('button',{name:'1 overdue review',exact:true}).click();await expect(page).toHaveURL(/due=overdue/);await expect(page.getByLabel('SLA state')).toHaveValue('OVERDUE');await home()
  await page.getByRole('region',{name:'Review workload health'}).locator('.overview-metric').filter({hasText:'Escalated'}).getByRole('button').click();await expect(page.getByLabel('SLA state')).toHaveValue('ESCALATED');await home()
- await page.getByRole('region',{name:'Quality and coverage'}).locator('.overview-metric').filter({hasText:'Critical failures'}).getByRole('button').click();await expect(page).toHaveURL(/critical=yes/);await home()
+ await page.getByRole('region',{name:'Quality and coverage'}).locator('.overview-metric').filter({hasText:'Critical failure occurrences'}).getByRole('button').click();await expect(page).toHaveURL(/critical=yes/);await home()
  if(role==='REVIEWER'){await work.getByRole('button',{name:'My review queue →',exact:true}).click();await expect(page).toHaveURL(/reviewQueue=mine/);await home()}
  await page.getByRole('region',{name:'Upcoming automation'}).getByRole('button',{name:/View.*policy/}).first().click();await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await expect(page).toHaveURL(/policyId=daily_voice/);await home()
  await page.getByRole('region',{name:'Quality and coverage'}).getByRole('button',{name:'Explore coverage →',exact:true}).click();await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible();await expect(page.locator('.analytics-tabs').getByRole('button',{name:'Coverage',exact:true})).toHaveClass(/active/);await home()

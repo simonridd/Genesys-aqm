@@ -1,0 +1,1586 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-v019c-quality-actionability
+
+ ❯ src/server/manualEvaluations.test.ts (13 tests | 1 failed) 5023ms
+   ❯ manual production evaluation (13)
+     × protects the HTTP route, bounds input bytes and exposes durable results to Explorer and analytics 5005ms
+ ❯ src/server/reviewSlaApi.test.ts (1 test | 1 failed) 5004ms
+   × enforces SLA settings, manual refresh and bulk due permissions; serves health and globally sorted paged My queue without providers 5003ms
+ ❯ src/server/reviewOperations.test.ts (24 tests | 1 failed) 5463ms
+   × enforces HTTP RBAC, safe directory, mine identity and conflict statuses without providers 5004ms
+ ❯ src/server/groupAssets.test.ts (1 test | 1 failed) 5006ms
+   × authorizes durable bounded library routes, protects published versions and returns useful dependency errors 5006ms
+ ❯ src/server/alerts.test.ts (19 tests | 1 failed) 5012ms
+   ❯ durable operational alerts (19)
+     × authenticates APIs, filters and pages alerts, derives actor from server and keeps public health anonymous 5002ms
+ ❯ src/server/formPublication.test.ts (4 tests | 1 failed) 5019ms
+   ❯ server recreated form publication (4)
+     × publishes the existing draft in place without acknowledgement and accepts policy assignment 5004ms
+ ❯ src/server/notificationApi.test.ts (4 tests | 4 failed) 20020ms
+   × ADMIN configuration, safe output, edited refs preserve server values, test is queued and audited 5009ms
+   × AUTHOR read only; REVIEWER/VIEWER configuration forbidden; all roles can inspect safe alert status 5004ms
+   × rejects arbitrary metadata/raw secrets, missing destinations and invalid pagination 5002ms
+   × notification tick retains scheduler OIDC protection 5003ms
+ ❯ src/server/overview.test.ts (14 tests | 4 failed) 20121ms
+   × serves a safe overview to ADMIN and invokes no Genesys/Jev execution providers 5003ms
+   × serves a safe overview to AUTHOR and invokes no Genesys/Jev execution providers 5004ms
+   × serves a safe overview to REVIEWER and invokes no Genesys/Jev execution providers 5003ms
+   × serves a safe overview to VIEWER and invokes no Genesys/Jev execution providers 5004ms
+ ❯ src/server/authoring.test.ts (2 tests | 2 failed) 10009ms
+   × durably saves DRAFT/TESTING without transitions; published definitions stay immutable; failed save leaves server unchanged 5004ms
+   × clones/imports server-authoritatively with safe audit events and read/write permissions 5004ms
+ ❯ src/server/answerSets.test.ts (5 tests | 5 failed) 25016ms
+   ❯ Answer Set durable authoring API (5)
+     × paginates empty/saved libraries with forms permissions and no production seed 5003ms
+     × saves drafts, publishes, rejects mutations, creates new versions and retires safely 5001ms
+     × blocks reviewer/viewer mutation including lifecycle/import/delete 5002ms
+     × enforces family/version uniqueness, stable base type and request bounds 5005ms
+     × imports to a new draft family and audits safe lifecycle metadata/history 5003ms
+ ❯ src/server/reviews.test.ts (8 tests | 6 failed) 30044ms
+   ❯ server review authority without provider calls (6)
+     × creates, saves, completes, persists verified identity and leaves original AI record byte-identical 5011ms
+     × rejects missing/unauthorized caller, fabricated evaluation, form mismatch and invalid question 5004ms
+     × returns 409 for two tabs racing and preserves the winning note/audit event 5002ms
+     × keeps Mark for review without allowing the legacy endpoint to claim reviewed 5004ms
+     × selects existing evaluations only, defaulting to real and obeying the 20 cap 5002ms
+     × refuses misleading complete calibration results beyond the bounded scan 5003ms
+ ❯ src/server/governance.test.ts (17 tests | 7 failed) 35073ms
+   ❯ server-authoritative permissions (5)
+     × uses only the verified identity, preserves bootstrap and does not promote the first user 5007ms
+     × enforces every mutation family even when stale UI submits directly 5002ms
+     × author publishes assets but cannot review or manage governance; reviewer reviews but cannot author 5002ms
+     × role changes take effect on the next request and cannot be overridden by browser role claims 5003ms
+   ❯ append-only server audit (4)
+     × records form/group publications, policies, schedules, role and settings changes with safe actor metadata 5001ms
+     × records the complete review lifecycle and alert transitions 5003ms
+     × bounds, paginates and filters audit queries without logging reads 5002ms
+ ❯ src/server/policyAuthoring.test.ts (7 tests | 6 failed) 30035ms
+   ❯ durable policy authoring API (7)
+     × commits semantic saves once, rejects stale tabs with 409 and preserves failed save state 5007ms
+     × preserves legacy versions, clones independently without operational children and emits concise audit 5003ms
+     × enforces policy and schedule writes while allowing readers to page durable policies 5004ms
+     × saves manual/daily/weekly schedules with derived due time, preserved metadata, no duplicate identity and separate boundaries 5004ms
+     × creates a single schedule despite concurrent creation requests and audits create/save 5002ms
+     × loading authoring collections never migrates Daily Voice policy, schedule, snapshots or evaluations 5004ms
+ ❯ src/server/api.test.ts (8 tests | 8 failed) 40031ms
+   ❯ AQM API authorization (6)
+     × pages collections and rejects published form edits or draft policy pins 5006ms
+     × allows only the configured Pages origin for CORS and requires user auth 5005ms
+     × provides authenticated dependency health and run detail without secret fields 5003ms
+     × keeps form test routes authorized and separate from production history 5004ms
+     × does not accept browser bearer authorization on internal scheduler route 5002ms
+     × requires a fresh preview before manual server execution 5004ms
+   × email relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials 5002ms
+   × messaging relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials 5003ms
+ ❯ src/server/investigationLinks.test.ts (10 tests | 10 failed) 50031ms
+   ❯ truthful investigation lists through real GET /api/evaluations (10)
+     × reconciles exact-version Analytics answered-question cohort including both date endpoints and passing answers 5009ms
+     × reconciles Overview Open, requested Unassigned, due stages and authenticated My queue 5003ms
+     × matches stored channel voice identically on server and browser 5001ms
+     × matches stored channel email identically on server and browser 5003ms
+     × matches stored channel messaging identically on server and browser 5001ms
+     × matches stored channel future-channel identically on server and browser 5003ms
+     × matches stored channel no-such-channel identically on server and browser 5001ms
+     × matches stored channel  identically on server and browser 5003ms
+     × keeps Calibration disagreement cohort and direct evaluation detail authoritative 5002ms
+     × retains honest bounded scans and pagination when matches lie beyond the 500 record window 5004ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 58 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/server/alerts.test.ts > durable operational alerts > authenticates APIs, filters and pages alerts, derives actor from server and keeps public health anonymous
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/alerts.test.ts:35:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/58]⎯
+
+ FAIL  src/server/answerSets.test.ts > Answer Set durable authoring API > paginates empty/saved libraries with forms permissions and no production seed
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/answerSets.test.ts:23:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/58]⎯
+
+ FAIL  src/server/answerSets.test.ts > Answer Set durable authoring API > saves drafts, publishes, rejects mutations, creates new versions and retires safely
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/answerSets.test.ts:24:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/58]⎯
+
+ FAIL  src/server/answerSets.test.ts > Answer Set durable authoring API > blocks reviewer/viewer mutation including lifecycle/import/delete
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/answerSets.test.ts:25:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/58]⎯
+
+ FAIL  src/server/answerSets.test.ts > Answer Set durable authoring API > enforces family/version uniqueness, stable base type and request bounds
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/answerSets.test.ts:26:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/58]⎯
+
+ FAIL  src/server/answerSets.test.ts > Answer Set durable authoring API > imports to a new draft family and audits safe lifecycle metadata/history
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/answerSets.test.ts:27:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/58]⎯
+
+ FAIL  src/server/api.test.ts > AQM API authorization > pages collections and rejects published form edits or draft policy pins
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:15:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/58]⎯
+
+ FAIL  src/server/api.test.ts > AQM API authorization > allows only the configured Pages origin for CORS and requires user auth
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:17:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/58]⎯
+
+ FAIL  src/server/api.test.ts > AQM API authorization > provides authenticated dependency health and run detail without secret fields
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:18:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/58]⎯
+
+ FAIL  src/server/api.test.ts > AQM API authorization > keeps form test routes authorized and separate from production history
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:19:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/58]⎯
+
+ FAIL  src/server/api.test.ts > AQM API authorization > does not accept browser bearer authorization on internal scheduler route
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:20:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/58]⎯
+
+ FAIL  src/server/api.test.ts > AQM API authorization > requires a fresh preview before manual server execution
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:21:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/58]⎯
+
+ FAIL  src/server/api.test.ts > email relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:36:1
+     34|   })
+     35| })
+     36| it('email relay enforces the user allowlist and forwards that same PKC…
+       | ^
+     37|  const store=new MemoryStore(),requests:Array<{url:string;authorizatio…
+     38|  const conversationId='22222222-2222-4222-8222-222222222222',recording…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/58]⎯
+
+ FAIL  src/server/api.test.ts > messaging relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/api.test.ts:52:1
+     50| })
+     51|
+     52| it('messaging relay enforces the user allowlist and forwards that same…
+       | ^
+     53|  const store=new MemoryStore(),requests:Array<{url:string;authorizatio…
+     54|  const conversationId='22222222-2222-4222-8222-222222222222',recording…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/58]⎯
+
+ FAIL  src/server/authoring.test.ts > durably saves DRAFT/TESTING without transitions; published definitions stay immutable; failed save leaves server unchanged
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/authoring.test.ts:14:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/58]⎯
+
+ FAIL  src/server/authoring.test.ts > clones/imports server-authoritatively with safe audit events and read/write permissions
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/authoring.test.ts:15:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/58]⎯
+
+ FAIL  src/server/formPublication.test.ts > server recreated form publication > publishes the existing draft in place without acknowledgement and accepts policy assignment
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/formPublication.test.ts:23:3
+     21| }
+     22| describe('server recreated form publication', () => {
+     23|   it('publishes the existing draft in place without acknowledgement an…
+       |   ^
+     24|     const {store,deps}=fixture(),form={...structuredClone(genesysCusto…
+     25|     await store.putForm(form)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/58]⎯
+
+ FAIL  src/server/governance.test.ts > server-authoritative permissions > uses only the verified identity, preserves bootstrap and does not promote the first user
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:28:2
+     26| }
+     27| describe('server-authoritative permissions',()=>{
+     28|  it('uses only the verified identity, preserves bootstrap and does not…
+       |  ^
+     29|   const {store,call}=await fixture()
+     30|   expect((await (await call('owner','/api/session')).json()).role).toB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/58]⎯
+
+ FAIL  src/server/governance.test.ts > server-authoritative permissions > enforces every mutation family even when stale UI submits directly
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:37:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/58]⎯
+
+ FAIL  src/server/governance.test.ts > server-authoritative permissions > author publishes assets but cannot review or manage governance; reviewer reviews but cannot author
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:43:2
+     41|   for(const path of ['/api/audit','/api/roles','/api/history?resourceT…
+     42|  })
+     43|  it('author publishes assets but cannot review or manage governance; r…
+       |  ^
+     44|   const {store,call}=await fixture(),form={...structuredClone(seedForm…
+     45|   expect((await call('author','/api/forms/f','PUT',form)).status).toBe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/58]⎯
+
+ FAIL  src/server/governance.test.ts > server-authoritative permissions > role changes take effect on the next request and cannot be overridden by browser role claims
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:56:2
+     54|   expect(rolePermissions.AUTHOR).toContain('alerts.acknowledge')
+     55|  })
+     56|  it('role changes take effect on the next request and cannot be overri…
+       |  ^
+     57|   const {call}=await fixture();expect((await call('viewer','/api/forms…
+     58|   expect((await call('owner','/api/roles/viewer','PUT',{role:'AUTHOR'}…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/58]⎯
+
+ FAIL  src/server/governance.test.ts > append-only server audit > records form/group publications, policies, schedules, role and settings changes with safe actor metadata
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:70:2
+     68| })
+     69| describe('append-only server audit',()=>{
+     70|  it('records form/group publications, policies, schedules, role and se…
+       |  ^
+     71|   const {store,call}=await fixture(),form={...structuredClone(seedForm…
+     72|   expect((await call('author','/api/forms/f','PUT',form)).status).toBe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/58]⎯
+
+ FAIL  src/server/governance.test.ts > append-only server audit > records the complete review lifecycle and alert transitions
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:92:2
+     90|   await expect(store.atomic([{collection:'auditEvents',id:publication.…
+     91|  })
+     92|  it('records the complete review lifecycle and alert transitions',asyn…
+       |  ^
+     93|   const {store,call}=await fixture(),e=reviewFixture('e');await store.…
+     94|   for(const [i,action] of (['request','start','save','complete'] as co…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/58]⎯
+
+ FAIL  src/server/governance.test.ts > append-only server audit > bounds, paginates and filters audit queries without logging reads
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/governance.test.ts:101:2
+     99|   expect(actions).toEqual(expect.arrayContaining(['review.requested','…
+    100|  })
+    101|  it('bounds, paginates and filters audit queries without logging reads…
+       |  ^
+    102|   const {store,call}=await fixture(),before=(await store.query('auditE…
+    103|   const a=await (await call('owner','/api/audit?limit=1')).json();expe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/58]⎯
+
+ FAIL  src/server/groupAssets.test.ts > authorizes durable bounded library routes, protects published versions and returns useful dependency errors
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/groupAssets.test.ts:10:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/58]⎯
+
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > reconciles exact-version Analytics answered-question cohort including both date endpoints and passing answers
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/investigationLinks.test.ts:27:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/58]⎯
+
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > reconciles Overview Open, requested Unassigned, due stages and authenticated My queue
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/investigationLinks.test.ts:36:2
+     34|   expect((await rows()).filter(r=>matchesEvaluationFilters(r,q,'admin'…
+     35|  })
+     36|  it('reconciles Overview Open, requested Unassigned, due stages and au…
+       |  ^
+     37|   const {store,get}=await fixture(),snapshot=await operationalOverview…
+     38|   expect(snapshot.reviews.complete).toBe(true);if(!snapshot.reviews.co…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/58]⎯
+
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > matches stored channel voice identically on server and browser
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > matches stored channel email identically on server and browser
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > matches stored channel messaging identically on server and browser
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > matches stored channel future-channel identically on server and browser
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > matches stored channel no-such-channel identically on server and browser
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > matches stored channel  identically on server and browser
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/investigationLinks.test.ts:47:78
+     45|   expect(mine.items).toHaveLength(5);expect(mine.items.every(r=>r.huma…
+     46|  })
+     47|  it.each(['voice','email','messaging','future-channel','no-such-channe…
+       |                                                                              ^
+     48|   const {get,rows}=await fixture(),q=new URLSearchParams(channel?{chan…
+     49|   const expected=(await rows()).filter(r=>r.purpose!=='FORM_TEST'&&(!c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/58]⎯
+
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > keeps Calibration disagreement cohort and direct evaluation detail authoritative
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/investigationLinks.test.ts:53:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/58]⎯
+
+ FAIL  src/server/investigationLinks.test.ts > truthful investigation lists through real GET /api/evaluations > retains honest bounded scans and pagination when matches lie beyond the 500 record window
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/investigationLinks.test.ts:60:2
+     58|   expect(reply.status).toBe(200);expect((await reply.json()).id).toBe(…
+     59|  })
+     60|  it('retains honest bounded scans and pagination when matches lie beyo…
+       |  ^
+     61|   const {store,get}=await fixture(),sample=(await store.evaluations())…
+     62|   for(let i=0;i<510;i++)await store.putEvaluation({...sample,id:`a_${S…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/58]⎯
+
+ FAIL  src/server/manualEvaluations.test.ts > manual production evaluation > protects the HTTP route, bounds input bytes and exposes durable results to Explorer and analytics
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/manualEvaluations.test.ts:29:3
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/58]⎯
+
+ FAIL  src/server/notificationApi.test.ts > ADMIN configuration, safe output, edited refs preserve server values, test is queued and audited
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/notificationApi.test.ts:12:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/58]⎯
+
+ FAIL  src/server/notificationApi.test.ts > AUTHOR read only; REVIEWER/VIEWER configuration forbidden; all roles can inspect safe alert status
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/notificationApi.test.ts:13:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/58]⎯
+
+ FAIL  src/server/notificationApi.test.ts > rejects arbitrary metadata/raw secrets, missing destinations and invalid pagination
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/notificationApi.test.ts:14:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/58]⎯
+
+ FAIL  src/server/notificationApi.test.ts > notification tick retains scheduler OIDC protection
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/notificationApi.test.ts:15:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/58]⎯
+
+ FAIL  src/server/overview.test.ts > serves a safe overview to ADMIN and invokes no Genesys/Jev execution providers
+ FAIL  src/server/overview.test.ts > serves a safe overview to AUTHOR and invokes no Genesys/Jev execution providers
+ FAIL  src/server/overview.test.ts > serves a safe overview to REVIEWER and invokes no Genesys/Jev execution providers
+ FAIL  src/server/overview.test.ts > serves a safe overview to VIEWER and invokes no Genesys/Jev execution providers
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/overview.test.ts:23:68
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/58]⎯
+
+ FAIL  src/server/policyAuthoring.test.ts > durable policy authoring API > commits semantic saves once, rejects stale tabs with 409 and preserves failed save state
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/policyAuthoring.test.ts:27:2
+     25| }
+     26| describe('durable policy authoring API',()=>{
+     27|  it('commits semantic saves once, rejects stale tabs with 409 and pres…
+       |  ^
+     28|   const {store,call}=await fixture(),p=valid()
+     29|   const put=(value:unknown)=>call('/api/policies/p','PUT',value)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/58]⎯
+
+ FAIL  src/server/policyAuthoring.test.ts > durable policy authoring API > preserves legacy versions, clones independently without operational children and emits concise audit
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/policyAuthoring.test.ts:45:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/58]⎯
+
+ FAIL  src/server/policyAuthoring.test.ts > durable policy authoring API > enforces policy and schedule writes while allowing readers to page durable policies
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/policyAuthoring.test.ts:53:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/58]⎯
+
+ FAIL  src/server/policyAuthoring.test.ts > durable policy authoring API > saves manual/daily/weekly schedules with derived due time, preserved metadata, no duplicate identity and separate boundaries
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/policyAuthoring.test.ts:61:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/58]⎯
+
+ FAIL  src/server/policyAuthoring.test.ts > durable policy authoring API > creates a single schedule despite concurrent creation requests and audits create/save
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/policyAuthoring.test.ts:70:2
+     68|   expect((await call('/api/schedules/legacy_schedule','PUT',{...s,loca…
+     69|  })
+     70|  it('creates a single schedule despite concurrent creation requests an…
+       |  ^
+     71|   const {store,call}=await fixture();expect((await call('/api/policies…
+     72|   const schedule={id:'schedule_p',policyId:'p',enabled:true,frequency:…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/58]⎯
+
+ FAIL  src/server/policyAuthoring.test.ts > durable policy authoring API > loading authoring collections never migrates Daily Voice policy, schedule, snapshots or evaluations
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/policyAuthoring.test.ts:76:2
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/58]⎯
+
+ FAIL  src/server/reviewOperations.test.ts > enforces HTTP RBAC, safe directory, mine identity and conflict statuses without providers
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviewOperations.test.ts:45:1
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/58]⎯
+
+ FAIL  src/server/reviewSlaApi.test.ts > enforces SLA settings, manual refresh and bulk due permissions; serves health and globally sorted paged My queue without providers
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviewSlaApi.test.ts:10:1
+      8| import { defaultGovernance } from '../domain/governance'
+      9| const now='2026-10-02T12:00:00.000Z',owner={userId:'owner'}
+     10| it('enforces SLA settings, manual refresh and bulk due permissions; se…
+       | ^
+     11|  const store=new MemoryStore(),users=['owner','reviewer','author','vie…
+     12|  for(const [id,role] of [['reviewer','REVIEWER'],['author','AUTHOR'],[…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/58]⎯
+
+ FAIL  src/server/reviews.test.ts > server review authority without provider calls > creates, saves, completes, persists verified identity and leaves original AI record byte-identical
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviews.test.ts:24:3
+     22| }
+     23| describe('server review authority without provider calls',()=>{
+     24|   it('creates, saves, completes, persists verified identity and leaves…
+       |   ^
+     25|     const {record,store,put,get}=await fixture(),before=JSON.stringify…
+     26|     const requested=await put({...reviewInput(record,'request'),review…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/58]⎯
+
+ FAIL  src/server/reviews.test.ts > server review authority without provider calls > rejects missing/unauthorized caller, fabricated evaluation, form mismatch and invalid question
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviews.test.ts:42:3
+     40|     expect((await put(reviewInput(record,'save',4))).status).toBe(400)
+     41|   })
+     42|   it('rejects missing/unauthorized caller, fabricated evaluation, form…
+       |   ^
+     43|     const {put,base,record}=await fixture()
+     44|     expect((await fetch(`${base}/api/reviews/${record.id}`,{method:'PU…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/58]⎯
+
+ FAIL  src/server/reviews.test.ts > server review authority without provider calls > returns 409 for two tabs racing and preserves the winning note/audit event
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviews.test.ts:51:3
+     49|     expect((await put({...reviewInput(record),expectedRevision:undefin…
+     50|   })
+     51|   it('returns 409 for two tabs racing and preserves the winning note/a…
+       |   ^
+     52|     const {put,record,store}=await fixture()
+     53|     const responses=await Promise.all(['first','second'].map(notes=>pu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/58]⎯
+
+ FAIL  src/server/reviews.test.ts > server review authority without provider calls > keeps Mark for review without allowing the legacy endpoint to claim reviewed
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviews.test.ts:58:3
+     56|     const review=await store.review(record.id);expect(review!.notes).n…
+     57|   })
+     58|   it('keeps Mark for review without allowing the legacy endpoint to cl…
+       |   ^
+     59|     const {base,headers,record,store}=await fixture(),before=await sto…
+     60|     const post=(state:string)=>fetch(`${base}/api/evaluations/${record…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[48/58]⎯
+
+ FAIL  src/server/reviews.test.ts > server review authority without provider calls > selects existing evaluations only, defaulting to real and obeying the 20 cap
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviews.test.ts:64:3
+     62|     expect((await store.review(record.id))?.status).toBe('REVIEW_REQUE…
+     63|   })
+     64|   it('selects existing evaluations only, defaulting to real and obeyin…
+       |   ^
+     65|     const {base,headers,store,record,get}=await fixture()
+     66|     for(let i=0;i<22;i++)await store.putEvaluation({...record,id:`real…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[49/58]⎯
+
+ FAIL  src/server/reviews.test.ts > server review authority without provider calls > refuses misleading complete calibration results beyond the bounded scan
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/server/reviews.test.ts:76:3
+     74|     expect((await (await get('/api/review-queue?source=synthetic')).js…
+     75|   })
+     76|   it('refuses misleading complete calibration results beyond the bound…
+       |   ^
+     77|     const {store,record,get}=await fixture();for(let i=0;i<2000;i++)aw…
+     78|     const response=await get('/api/calibration');expect(response.statu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[50/58]⎯
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 58 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:13:655
+
+ ❯ fixture src/server/api.test.ts:13:621
+ ❯ src/server/api.test.ts:15:107
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "pages collections and rejects published form edits or draft policy pins". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/notificationApi.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "ADMIN configuration, safe output, edited refs preserve server values, test is queued and audited". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviews.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "creates, saves, completes, persists verified identity and leaves original AI record byte-identical". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:29:28
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "uses only the verified identity, preserves bootstrap and does not promote the first user". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/manualEvaluations.test.ts:29:459
+
+ ❯ src/server/manualEvaluations.test.ts:29:425
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/manualEvaluations.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "protects the HTTP route, bounds input bytes and exposes durable results to Explorer and analytics". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "reconciles exact-version Analytics answered-question cohort including both date endpoints and passing answers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/overview.test.ts:25:42
+
+ ❯ src/server/overview.test.ts:25:8
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/overview.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "serves a safe overview to ADMIN and invokes no Genesys/Jev execution providers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviewSlaApi.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "enforces SLA settings, manual refresh and bulk due permissions; serves health and globally sorted paged My queue without providers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/answerSets.test.ts:15:57
+
+ ❯ fixture src/server/answerSets.test.ts:15:29
+ ❯ src/server/answerSets.test.ts:23:130
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/answerSets.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "paginates empty/saved libraries with forms permissions and no production seed". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviewOperations.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "enforces HTTP RBAC, safe directory, mine identity and conflict statuses without providers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:13:655
+
+ ❯ fixture src/server/api.test.ts:13:621
+ ❯ src/server/api.test.ts:17:107
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "allows only the configured Pages origin for CORS and requires user auth". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/notificationApi.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "AUTHOR read only; REVIEWER/VIEWER configuration forbidden; all roles can inspect safe alert status". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviews.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "rejects missing/unauthorized caller, fabricated evaluation, form mismatch and invalid question". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:38:22
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "enforces every mutation family even when stale UI submits directly". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "reconciles Overview Open, requested Unassigned, due stages and authenticated My queue". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/overview.test.ts:25:42
+
+ ❯ src/server/overview.test.ts:25:8
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/overview.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "serves a safe overview to AUTHOR and invokes no Genesys/Jev execution providers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/answerSets.test.ts:15:57
+
+ ❯ fixture src/server/answerSets.test.ts:15:29
+ ❯ src/server/answerSets.test.ts:24:131
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/answerSets.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "saves drafts, publishes, rejects mutations, creates new versions and retires safely". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/policyAuthoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "commits semantic saves once, rejects stale tabs with 409 and preserves failed save state". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/groupAssets.test.ts:12:63
+
+ ❯ src/server/groupAssets.test.ts:12:29
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/groupAssets.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "authorizes durable bounded library routes, protects published versions and returns useful dependency errors". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/alerts.test.ts:37:305
+
+ ❯ src/server/alerts.test.ts:37:271
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/alerts.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "authenticates APIs, filters and pages alerts, derives actor from server and keeps public health anonymous". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:13:655
+
+ ❯ fixture src/server/api.test.ts:13:621
+ ❯ src/server/api.test.ts:18:113
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "provides authenticated dependency health and run detail without secret fields". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/notificationApi.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "rejects arbitrary metadata/raw secrets, missing destinations and invalid pagination". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:44:28
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "author publishes assets but cannot review or manage governance; reviewer reviews but cannot author". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviews.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "returns 409 for two tabs racing and preserves the winning note/audit event". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "matches stored channel voice identically on server and browser". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/overview.test.ts:25:42
+
+ ❯ src/server/overview.test.ts:25:8
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/overview.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "serves a safe overview to REVIEWER and invokes no Genesys/Jev execution providers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/answerSets.test.ts:15:57
+
+ ❯ fixture src/server/answerSets.test.ts:15:29
+ ❯ src/server/answerSets.test.ts:25:112
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/answerSets.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "blocks reviewer/viewer mutation including lifecycle/import/delete". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/policyAuthoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "preserves legacy versions, clones independently without operational children and emits concise audit". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/formPublication.test.ts:27:66
+
+ ❯ src/server/formPublication.test.ts:27:32
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/formPublication.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "publishes the existing draft in place without acknowledgement and accepts policy assignment". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/authoring.test.ts:13:681
+
+ ❯ fixture src/server/authoring.test.ts:13:653
+ ❯ src/server/authoring.test.ts:14:164
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/authoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "durably saves DRAFT/TESTING without transitions; published definitions stay immutable; failed save leaves server unchanged". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:13:655
+
+ ❯ fixture src/server/api.test.ts:13:621
+ ❯ src/server/api.test.ts:19:106
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "keeps form test routes authorized and separate from production history". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/notificationApi.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "notification tick retains scheduler OIDC protection". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:57:22
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "role changes take effect on the next request and cannot be overridden by browser role claims". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviews.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "keeps Mark for review without allowing the legacy endpoint to claim reviewed". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "matches stored channel email identically on server and browser". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/overview.test.ts:25:42
+
+ ❯ src/server/overview.test.ts:25:8
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/overview.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "serves a safe overview to VIEWER and invokes no Genesys/Jev execution providers". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/answerSets.test.ts:15:57
+
+ ❯ fixture src/server/answerSets.test.ts:15:29
+ ❯ src/server/answerSets.test.ts:26:118
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/answerSets.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "enforces family/version uniqueness, stable base type and request bounds". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/policyAuthoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "enforces policy and schedule writes while allowing readers to page durable policies". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/authoring.test.ts:13:681
+
+ ❯ fixture src/server/authoring.test.ts:13:653
+ ❯ src/server/authoring.test.ts:15:129
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/authoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "clones/imports server-authoritatively with safe audit events and read/write permissions". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:13:655
+
+ ❯ fixture src/server/api.test.ts:13:621
+ ❯ src/server/api.test.ts:20:108
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "does not accept browser bearer authorization on internal scheduler route". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:71:28
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "records form/group publications, policies, schedules, role and settings changes with safe actor metadata". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviews.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "selects existing evaluations only, defaulting to real and obeying the 20 cap". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "matches stored channel messaging identically on server and browser". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/answerSets.test.ts:15:57
+
+ ❯ fixture src/server/answerSets.test.ts:15:29
+ ❯ src/server/answerSets.test.ts:27:125
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/answerSets.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "imports to a new draft family and audits safe lifecycle metadata/history". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/policyAuthoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "saves manual/daily/weekly schedules with derived due time, preserved metadata, no duplicate identity and separate boundaries". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:27:343
+
+ ❯ src/server/api.test.ts:27:309
+ ❯ processTicksAndRejections node:internal/process/task_queues:104:5
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "requires a fresh preview before manual server execution". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:93:28
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "records the complete review lifecycle and alert transitions". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/reviews.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "refuses misleading complete calibration results beyond the bounded scan". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "matches stored channel future-channel identically on server and browser". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/policyAuthoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "creates a single schedule despite concurrent creation requests and audits create/save". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:46:277
+
+ ❯ src/server/api.test.ts:46:243
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "email relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/governance.test.ts:22:302
+
+ ❯ fixture src/server/governance.test.ts:22:274
+ ❯ src/server/governance.test.ts:102:28
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/governance.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "bounds, paginates and filters audit queries without logging reads". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "matches stored channel no-such-channel identically on server and browser". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/policyAuthoring.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "loading authoring collections never migrates Daily Voice policy, schedule, snapshots or evaluations". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 0.0.0.0
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ Server.listen node:net:2170:7
+ ❯ src/server/api.test.ts:63:277
+
+ ❯ src/server/api.test.ts:63:243
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:1628:35
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:2783:26
+ ❯ ../aqm-v019-whole-product-review/node_modules/vitest/dist/chunks/run.C5UmxDPh.js:3319:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '0.0.0.0' }
+This error originated in "src/server/api.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "messaging relay enforces the user allowlist and forwards that same PKCE identity without using automation credentials". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "matches stored channel  identically on server and browser". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "keeps Calibration disagreement cohort and direct evaluation detail authoritative". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+Error: listen EPERM: operation not permitted 127.0.0.1
+ ❯ Server.setupListenHandle [as _listen2] node:net:1986:21
+ ❯ listenInCluster node:net:2065:12
+ ❯ node:net:2274:7
+ ❯ processTicksAndRejections node:internal/process/task_queues:90:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+Serialized Error: { code: 'EPERM', errno: -1, syscall: 'listen', address: '127.0.0.1' }
+This error originated in "src/server/investigationLinks.test.ts" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "retains honest bounded scans and pagination when matches lie beyond the 500 record window". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  15 failed | 49 passed (64)
+      Tests  58 failed | 555 passed (613)
+     Errors  58 errors
+   Start at  19:49:23
+   Duration  50.73s (tests 98%, import 1%, transform 1%)
+

@@ -1,0 +1,177 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19B SHOWCASE • 2026
+Workspace / Evaluations
+ADMIN
+Jev managed securely by automation service
+QUALITY
+Evaluations
+
+Production results with form snapshots and provider provenance.
+
+My reviews
+All evaluations
+Back to Analytics
+Investigating:
+Remove
+Form: Customer Service v17 ×
+Remove
+Question: Clear next step ×
+Remove
+Source: Genesys Cloud ×
+Remove
+Analytics cohort ×
+Remove
+From: 2026-09-01 ×
+Remove
+To: 2026-09-30 ×
+Clear investigation filters
+Team review workload
+History
+Server
+This browser
+Review status
+All
+NOT REVIEWED
+REVIEW REQUESTED
+IN REVIEW
+REVIEWED
+Assignment
+All
+Unassigned
+Assigned
+Assigned to me
+SLA state
+All states
+Due soon
+Overdue
+Escalated
+Due
+All
+Overdue
+Due today
+Due next 7 days
+No due date
+Form ID @ version
+Agent
+Queue
+Channel
+Result
+All
+Pass
+Fail
+Answered question
+From
+To
+Policy ID
+Source
+All
+Genesys Cloud
+Synthetic
+Uploaded
+Trigger
+All
+Manual
+Scheduled
+Critical failure
+All
+Yes
+No
+Refresh
+
+Server filters scan a bounded window of up to 500 records per request. Use Next to continue the search.
+
+Calibration sample
+Bulk assignment
+Search
+8 results on this page
+Evaluated ↓
+	
+Select
+	
+Conversation
+	
+Agent
+	
+Queue
+	
+Form
+	
+Source
+	
+AI score
+	
+Review
+	
+Human score
+	
+Agreement
+	
+Assigned to
+	
+Due
+	
+Reviewer
+	
+Reviewed at
+
+9/20/2026, 11:00:00 AM		fictional-6	Sam	Service	Customer Service v17	genesys-cloud	80%	NOT_REVIEWED	—	—	Unassigned	
+No due date
+	—	—
+9/20/2026, 11:00:00 AM		fictional-7	Alex	Service	Customer Service v17	genesys-cloud	80%	NOT_REVIEWED	—	—	Unassigned	
+No due date
+	—	—
+9/10/2026, 11:00:00 AM		fictional-0	Sam	Claims	Customer Service v17	genesys-cloud	50%	REVIEWED	62%	1/3	Unassigned	
+Completed
+	admin	10/2/2026, 1:00:00 PM
+9/10/2026, 11:00:00 AM		fictional-1	Alex	Claims	Customer Service v17	genesys-cloud	50%	REVIEW_REQUESTED	—	0/3	Unassigned	9/28/2026, 1:00:00 PM
+ESCALATED
+Overdue by 4 days
+	—	—
+9/10/2026, 11:00:00 AM		fictional-2	Sam	Claims	Customer Service v17	genesys-cloud	50%	REVIEW_REQUESTED	—	0/3	Unassigned	10/2/2026, 7:00:00 AM
+OVERDUE
+Overdue by 6 hours
+	—	—
+9/10/2026, 11:00:00 AM		fictional-3	Alex	Claims	Customer Service v17	genesys-cloud	50%	NOT_REVIEWED	—	—	Unassigned	
+No due date
+	—	—
+9/10/2026, 11:00:00 AM		fictional-4	Sam	Claims	Customer Service v17	genesys-cloud	50%	NOT_REVIEWED	—	—	Unassigned	
+No due date
+	—	—
+9/10/2026, 11:00:00 AM		fictional-5	Alex	Claims	Customer Service v17	genesys-cloud	50%	NOT_REVIEWED	—	—	Unassigned	
+No due date
+	—	—
+First page
+Next server page →

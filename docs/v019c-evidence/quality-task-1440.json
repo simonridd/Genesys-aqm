@@ -1,0 +1,29 @@
+{
+  "route": [
+    "Overview",
+    "Inspect critical evaluations",
+    "Analytics",
+    "What stands out",
+    "Inspect question evaluations",
+    "Evaluation detail",
+    "Back to Analytics",
+    "Inspect queue evaluations"
+  ],
+  "qualityInvestigationActions": 3,
+  "wrongTurns": 0,
+  "conclusion": "Customer Service v17 · Clear next step, lowest average question, 33.3%, 8 applicable answers; Claims lowest queue average 50%, 6 evaluations",
+  "exactQuestionCohort": {
+    "from": "2026-09-01",
+    "to": "2026-09-30",
+    "source": "genesys-cloud",
+    "form": "general_service@17",
+    "question": "understanding"
+  },
+  "queueCohort": {
+    "from": "2026-09-01",
+    "to": "2026-09-30",
+    "source": "genesys-cloud",
+    "queue": "Claims"
+  },
+  "kind": "Scripted agent task replay; no recruited human tester"
+}

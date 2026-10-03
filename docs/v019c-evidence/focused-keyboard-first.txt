@@ -1,0 +1,104 @@
+[WebServer] (node:88628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 12 tests using 1 worker
+
+(node:88629) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/12] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1440
+[2/12] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1440
+[3/12] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 1920
+[4/12] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 1920
+[5/12] tests/quality-actionability.spec.ts:10:2 › quality-leader task and exact insights 390
+[6/12] tests/quality-actionability.spec.ts:28:2 › coverage interpretation, scope and consistency 390
+[7/12] tests/quality-actionability.spec.ts:36:1 › safe errors, retry, empty scope, unavailable names and sparse history
+[8/12] tests/quality-actionability.spec.ts:39:1 › goal-only route from Overview uses visible quality evidence
+[9/12] tests/quality-actionability.spec.ts:47:1 › Overview Analytics entry replaces stale quality filters
+[10/12] tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1440
+  1) tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1440 ──
+
+    Error: locator.evaluate: Error: strict mode violation: locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' }) resolved to 2 elements:
+        1) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(4)
+        2) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(5)
+
+    Call log:
+      - waiting for locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      51 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`Tab-only quality, filters, table and return ${viewport.width}`,async({page})=>{
+      52 |  await page.setViewportSize(viewport);const state=await qualityFixture(page,'analytics'),trace:string[]=[]
+    > 53 |  async function reach(locator:ReturnType<Page['getByRole']>,label:string){for(let i=0;i<180;i++){if(await locator.evaluate(node=>node===document.activeElement)){trace.push(label);return}await page.keyboard.press('Tab')}throw Error(`Not reachable by Tab: ${label}`)}
+         |                                                                                                                   ^
+      54 |  const change=page.getByRole('button',{name:'Change filters',exact:true});await reach(change,'Change filters');await page.keyboard.press('Enter');const form=page.locator('.analytics-filter-bar').getByLabel('Form',{exact:true});await reach(form,'Form');await page.keyboard.press('ArrowDown');await page.keyboard.press('Tab');await reach(change,'Close filters');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      55 |  const action=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'}).getByRole('button',{name:'Inspect evaluations →'});await reach(action,'Question insight');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(evaluations(page).first(),'Evaluation row');await page.keyboard.press('Enter');await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to Analytics');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      56 |  const questions=page.locator('.analytics-tabs').getByRole('button',{name:'Questions',exact:true});await reach(questions,'Questions view');await page.keyboard.press('Enter');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).getByRole('button',{name:'Inspect evaluations →'});await reach(row,'Question table action');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to question context');await page.keyboard.press('Enter');expect(new URL(page.url()).searchParams.get('analyticsTab')).toBe('questions');writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({trace,method:'Tab traversal with Enter; no mouse clicks'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([])
+        at reach (/private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:53:115)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:56:322
+
+    Error Context: test-results/quality-actionability-Tab--a53e4-lters-table-and-return-1440/error-context.md
+
+
+(node:88648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/12] tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1920
+  2) tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1920 ──
+
+    Error: locator.evaluate: Error: strict mode violation: locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' }) resolved to 2 elements:
+        1) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(4)
+        2) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(5)
+
+    Call log:
+      - waiting for locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      51 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`Tab-only quality, filters, table and return ${viewport.width}`,async({page})=>{
+      52 |  await page.setViewportSize(viewport);const state=await qualityFixture(page,'analytics'),trace:string[]=[]
+    > 53 |  async function reach(locator:ReturnType<Page['getByRole']>,label:string){for(let i=0;i<180;i++){if(await locator.evaluate(node=>node===document.activeElement)){trace.push(label);return}await page.keyboard.press('Tab')}throw Error(`Not reachable by Tab: ${label}`)}
+         |                                                                                                                   ^
+      54 |  const change=page.getByRole('button',{name:'Change filters',exact:true});await reach(change,'Change filters');await page.keyboard.press('Enter');const form=page.locator('.analytics-filter-bar').getByLabel('Form',{exact:true});await reach(form,'Form');await page.keyboard.press('ArrowDown');await page.keyboard.press('Tab');await reach(change,'Close filters');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      55 |  const action=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'}).getByRole('button',{name:'Inspect evaluations →'});await reach(action,'Question insight');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(evaluations(page).first(),'Evaluation row');await page.keyboard.press('Enter');await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to Analytics');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      56 |  const questions=page.locator('.analytics-tabs').getByRole('button',{name:'Questions',exact:true});await reach(questions,'Questions view');await page.keyboard.press('Enter');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).getByRole('button',{name:'Inspect evaluations →'});await reach(row,'Question table action');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to question context');await page.keyboard.press('Enter');expect(new URL(page.url()).searchParams.get('analyticsTab')).toBe('questions');writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({trace,method:'Tab traversal with Enter; no mouse clicks'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([])
+        at reach (/private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:53:115)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:56:322
+
+    Error Context: test-results/quality-actionability-Tab--4c900-lters-table-and-return-1920/error-context.md
+
+
+(node:88653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/12] tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 390
+  3) tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 390 ───
+
+    Error: locator.evaluate: Error: strict mode violation: locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' }) resolved to 2 elements:
+        1) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(4)
+        2) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(5)
+
+    Call log:
+      - waiting for locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      51 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`Tab-only quality, filters, table and return ${viewport.width}`,async({page})=>{
+      52 |  await page.setViewportSize(viewport);const state=await qualityFixture(page,'analytics'),trace:string[]=[]
+    > 53 |  async function reach(locator:ReturnType<Page['getByRole']>,label:string){for(let i=0;i<180;i++){if(await locator.evaluate(node=>node===document.activeElement)){trace.push(label);return}await page.keyboard.press('Tab')}throw Error(`Not reachable by Tab: ${label}`)}
+         |                                                                                                                   ^
+      54 |  const change=page.getByRole('button',{name:'Change filters',exact:true});await reach(change,'Change filters');await page.keyboard.press('Enter');const form=page.locator('.analytics-filter-bar').getByLabel('Form',{exact:true});await reach(form,'Form');await page.keyboard.press('ArrowDown');await page.keyboard.press('Tab');await reach(change,'Close filters');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      55 |  const action=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'}).getByRole('button',{name:'Inspect evaluations →'});await reach(action,'Question insight');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(evaluations(page).first(),'Evaluation row');await page.keyboard.press('Enter');await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to Analytics');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      56 |  const questions=page.locator('.analytics-tabs').getByRole('button',{name:'Questions',exact:true});await reach(questions,'Questions view');await page.keyboard.press('Enter');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).getByRole('button',{name:'Inspect evaluations →'});await reach(row,'Question table action');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to question context');await page.keyboard.press('Enter');expect(new URL(page.url()).searchParams.get('analyticsTab')).toBe('questions');writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({trace,method:'Tab traversal with Enter; no mouse clicks'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([])
+        at reach (/private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:53:115)
+        at /private/tmp/aqm-v019c-quality-actionability/tests/quality-actionability.spec.ts:56:322
+
+    Error Context: test-results/quality-actionability-Tab--dd0ac-ilters-table-and-return-390/error-context.md
+
+
+  3 failed
+    tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1440 ───
+    tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 1920 ───
+    tests/quality-actionability.spec.ts:51:97 › Tab-only quality, filters, table and return 390 ────
+  9 passed (35.1s)

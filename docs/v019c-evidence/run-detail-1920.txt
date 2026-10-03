@@ -1,0 +1,271 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19B SHOWCASE • 2026
+Workspace / Overview
+ADMIN
+Jev managed securely by automation service
+OPERATIONAL HOME
+Overview
+
+Quality, coverage and work requiring attention.
+
+Updated 13:00:00 · Europe/London
+Dashboard range
+7 days
+30 days
+Refresh
+Attention required
+Action needed
+QUALITY ATTENTION · Last 30 days
+
+2 critical failure occurrences in evaluated conversations
+
+Inspect critical evaluations →
+REVIEW & SYSTEM ATTENTION
+0 errors
+1 escalated review
+1 overdue review
+0 warnings
+0 failed notification deliveries (24h)
+Quality & coverage
+Last 30 days
+Average quality
+65% →
+Evaluated conversations
+12
+Evaluations
+12 →
+Pass rate
+50%
+Critical failure occurrences
+2 →
+50%
+09-10 · 6 evaluations
+80%
+09-20 · 6 evaluations
+
+Limited history in this period. · 12 evaluations
+
+Coverage
+
+Genesys Cloud · Last 30 days · All policies. Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.
+
+1250 interactions considered (Candidates) · 1000 met policy criteria
+
+Eligible
+1000
+Met policy criteria
+Sampled
+500
+50% · Sampling coverage · of eligible
+Content available
+460
+92% · Content availability · of sampled
+Evaluated
+450
+97.8% · Sample completion · of available
+
+Evaluation coverage: 45% · Evaluated / eligible
+
+Failed evaluation attempts: 10
+
+Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+
+Explore coverage →
+Review workload
+Current state
+Open
+2 →
+Due soon
+0 →
+Overdue
+1 →
+Escalated
+1 →
+Unassigned
+2 →
+My review queue →
+All review work →
+Operational health
+Automation
+Attention
+Genesys
+Verified
+Jev
+Error
+Scheduler
+Healthy
+Notifications
+Healthy
+Review SLA
+Escalated
+System details
+Automation
+Run a policy now
+
+1 completed · 1 partial · 0 failed · 0 running in the last 30 days
+
+Last automated run
+15 Sept, 03:00
+Daily Voice Customer Service AQM
+Scheduled
+225 evaluations · 5 failed
+Completed
+
+Latest successful scheduled execution.
+
+Upcoming scheduled work
+Daily Voice Customer Service AQM
+DAILY
+Next due 3 Oct, 02:00
+Last success —
+View/Edit policy →
+Recent runs
+15 Sept, 03:00
+Daily Voice Customer Service AQM
+Scheduled
+225 evaluations · 5 failed
+Completed
+15 Sept, 03:00
+Daily Voice Customer Service AQM
+Scheduled
+225 evaluations · 5 failed
+Partial failure
+Evaluation Forms →
+Policies →
+Open alerts →
+Settings →
+Run a policy now
+Detailed alerts & run operations
+Operational alerts 0
+Refresh alerts
+OPEN ALERTS (INCLUDING ACKNOWLEDGED)
+0
+ERRORS
+0
+WARNINGS
+0
+Alert status
+Active
+Open
+Acknowledged
+Resolved
+All
+Alert severity
+All
+INFO
+WARNING
+ERROR
+Search
+0 results on this page
+Severity ↓
+	
+Type
+	
+Policy
+	
+Run
+	
+Opened
+	
+Status
+	
+Action
+
+No alerts match these filters.
+
+Monitoring runs
+Search
+2 results on this page
+Started ↓
+	
+Policy
+	
+Source
+	
+Period
+	
+Trigger
+	
+Eligible
+	
+Sampled
+	
+Completed evaluations
+	
+Failed evaluation attempts
+	
+Status
+
+2026-09-15T02:00:00.000Z	Daily Voice Customer Service AQM	Genesys Cloud	—	scheduled	500	250	225	5	partial-failure
+2026-09-15T02:00:00.000Z	Daily Voice Customer Service AQM	Genesys Cloud	—	scheduled	500	250	225	5	completed
+Daily Voice Customer Service AQM · Run detail
+Close details
+
+Policy v1 · Scheduled · 15/09/2026, 03:00:00
+
+625 interactions considered (Candidates) · 500 met policy criteria
+
+Eligible
+500
+Met policy criteria
+Sampled
+250
+50% · Sampling coverage · of eligible
+Content available
+230
+92% · Content availability · of sampled
+Evaluated
+225
+97.8% · Sample completion · of available
+
+Evaluation coverage: 45% · Evaluated / eligible
+
+Failed evaluation attempts: 5
+
+Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+
+Where coverage was lost
+
+250 eligible interactions were not selected by the sampling policy.
+
+20 sampled interactions had no usable conversation content.
+
+5 interactions had content available but did not reach a completed evaluation.
+
+Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.
+
+Advanced run details
+Explore policy evaluations →
