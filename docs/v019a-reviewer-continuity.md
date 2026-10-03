@@ -79,7 +79,15 @@ The answer to “Can a reviewer safely inspect the evidence, return, and complet
 
 ## Deployment and preservation
 
-Frontend-only. No server route, schema, shared domain implementation or Cloud Run source changed. Pages publication and its exact source/archive/public-byte proof will be recorded here after the committed-source deployment. Initial production snapshots contain only counts/hashes, configuration hashes and health timestamps: [collections](v019a-evidence/before-collections.json), [runtime](v019a-evidence/before-runtime.json). No production review write is required or used for proof.
+Frontend-only. No server route, schema, shared domain implementation or Cloud Run source changed. The tested deployment source is `2bc09d11fb8e04f7ba56e1b3971f0475efbda8b6`. An immutable `git archive` was rebuilt, its frontend inputs matched the commit, and all 12 output files matched the tested build: [committed-build proof](v019a-evidence/committed-build.json), [reproduction script](v019a-evidence/committed-build.py).
+
+[GitHub Pages](https://simonridd.github.io/Genesys-aqm/) HEAD is `25ecab1c02817567c2a6a865d6c8d5d10d360c80`. Every public file and the Pages Git tree matched the committed build byte-for-byte: [public asset proof](v019a-evidence/pages.json). The three viewport reviewer journeys and the All Evaluations retained-row/human-score check were then repeated on the public frontend with intercepted fictional requests: 4 passed, zero failures ([journeys](v019a-evidence/public-browser.txt), [human score](v019a-evidence/public-score.txt)). The earlier `initial-*` deployment proofs document the superseded first publication; the unprefixed proofs are final.
+
+The final evidence-only commit follows the tested source commit without changing frontend build inputs. No Cloud Run deployment occurred. Before/after Cloud Run revision is `aqm-api-v019-e92f2d6`; image, runtime configuration, service IAM, provider secret metadata/versions/IAM and Scheduler configuration hashes match.
+
+Read-only preservation snapshots covered 25 production collections. All 24 domain/other collection hashes match; only `operationalHealth` changed, retaining 2 documents. The successful hourly tick advanced from `2026-10-03T15:00:06.021Z` to `2026-10-03T16:00:09.053Z`. Health update times advanced from `15:00:06.443381Z` / `15:00:06.131197Z` to `16:00:09.590893Z` / `16:00:09.209568Z`. Scheduler last attempt advanced from `15:00:04.536780Z` to `16:00:04.535273Z`, and next scheduled time from `16:00:04.028877Z` to `17:00:04.028877Z`, with unchanged configuration and empty status. This is the observed natural hourly health movement, not a task-triggered Scheduler run. [Preservation comparison](v019a-evidence/preservation.json) links the exact hashes and snapshots.
+
+Production review mutations: **0**. Paid Jev calls: **0**. Live Genesys calls: **0**. Notification calls: **0**. Fixture provider calls are intercepted or explicitly forbidden. Production preservation reads saved only counts/hashes and allowed runtime/health timestamps; no credentials, secret values or production document contents were saved.
 
 The requested model switch could not be applied by the executing turn's tools; the user was asked to select GPT-5.6 Sol / Medium in the app. No claim is made that a runtime model switch occurred.
 
@@ -89,4 +97,4 @@ Connected authoring footer contradiction; mobile form-editor length; Analytics a
 
 ## Handoff
 
-Commit implementation and evidence on the dedicated branch; publish only the tested frontend; push without creating/opening a PR, merging or tagging. Next: ChatGPT review/merge decision.
+Implementation and evidence are committed on the dedicated branch, and the tested frontend is published. The branch is pushed without creating/opening a PR, merging or tagging. Canonical main and the whole-product review branch remain unchanged. Next: ChatGPT review/merge decision.

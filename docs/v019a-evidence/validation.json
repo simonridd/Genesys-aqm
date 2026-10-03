@@ -51,5 +51,38 @@
     "focusedHarness": "Vite non-blocking unload listener; native select keyboard behavior; missing Overview fixture; exact label locator. Corrected without weakening product assertions.",
     "calibrationContract": "Three assertions expected Refresh to overwrite dirty answers. Converted only this directly related assertion to preservation, blocked submit and explicit discard. Unrelated baselines unchanged.",
     "authorityFixtureTiming": "A fixture advanced authority before opening a stale list row and edited during detail fetch; wait for revision 3 before deliberately testing its change to 4. Product conflict protection retained."
+  },
+  "deployment": {
+    "sourceSha": "2bc09d11fb8e04f7ba56e1b3971f0475efbda8b6",
+    "pagesHead": "25ecab1c02817567c2a6a865d6c8d5d10d360c80",
+    "publicFiles": 12,
+    "allBytesEqual": true,
+    "committedBuildMatchesTestedBuild": true,
+    "cloudRunDeployed": false
+  },
+  "publicBrowser": {
+    "startTime": "2026-10-03T16:43:53.256Z",
+    "duration": 7214.139,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "publicHumanScore": {
+    "startTime": "2026-10-03T16:44:20.844Z",
+    "duration": 2048.987,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "preservation": {
+    "domainCollectionsUnchanged": true,
+    "unchangedCollectionHashes": 24,
+    "totalCollections": 25,
+    "naturalHealthMovement": "2026-10-03T15:00:06.021Z -> 2026-10-03T16:00:09.053Z",
+    "runtimeConfigurationUnchanged": true,
+    "cloudRunRevision": "aqm-api-v019-e92f2d6",
+    "productionReviewMutations": 0
   }
 }

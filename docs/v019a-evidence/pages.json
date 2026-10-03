@@ -1,0 +1,81 @@
+{
+  "pagesGitTreeMatchesBuild": true,
+  "sourceSha": "2bc09d11fb8e04f7ba56e1b3971f0475efbda8b6",
+  "pagesHead": "25ecab1c02817567c2a6a865d6c8d5d10d360c80",
+  "url": "https://simonridd.github.io/Genesys-aqm/",
+  "allBytesEqual": true,
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "c0cb212fec402fac537c46f74510f15a58ef3888427dab38ad9c29a4d08f0f4d",
+      "remoteSha256": "c0cb212fec402fac537c46f74510f15a58ef3888427dab38ad9c29a4d08f0f4d",
+      "equal": true
+    },
+    {
+      "path": "IPIlogo.svg",
+      "sha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+      "remoteSha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+      "equal": true
+    },
+    {
+      "path": ".nojekyll",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "remoteSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "path": "samples/billing-conversation.json",
+      "sha256": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+      "remoteSha256": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+      "equal": true
+    },
+    {
+      "path": "samples/delivery-conversation.json",
+      "sha256": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+      "remoteSha256": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+      "equal": true
+    },
+    {
+      "path": "assets/Welcome-VJ4O2OOz.js",
+      "sha256": "b31710d8611028aa41bb2b1f2ed1de9a72584eed390f984c39d28509e16f1974",
+      "remoteSha256": "b31710d8611028aa41bb2b1f2ed1de9a72584eed390f984c39d28509e16f1974",
+      "equal": true
+    },
+    {
+      "path": "assets/Demo-DZEeJUuw.js",
+      "sha256": "595c9c17d0108ae98e4080d6980c4960fcc3970ecf8544f5d2f3af73bcada53e",
+      "remoteSha256": "595c9c17d0108ae98e4080d6980c4960fcc3970ecf8544f5d2f3af73bcada53e",
+      "equal": true
+    },
+    {
+      "path": "assets/App-BeDv5r6C.js",
+      "sha256": "10a3314345a9541f985433d6573dd7e9e7f5d5ceefa30d4440eea83c5996d3aa",
+      "remoteSha256": "10a3314345a9541f985433d6573dd7e9e7f5d5ceefa30d4440eea83c5996d3aa",
+      "equal": true
+    },
+    {
+      "path": "assets/reviews-DA7jf8kC.js",
+      "sha256": "059afbec015b5f49497ca8d8b1b12777f99c1bddd518efb15a96289966c60225",
+      "remoteSha256": "059afbec015b5f49497ca8d8b1b12777f99c1bddd518efb15a96289966c60225",
+      "equal": true
+    },
+    {
+      "path": "assets/index-gAVLCSPQ.js",
+      "sha256": "eaca045972f3f6e571aecb87011be9f1ea3bc2886b6444ac56b6d06573945bcb",
+      "remoteSha256": "eaca045972f3f6e571aecb87011be9f1ea3bc2886b6444ac56b6d06573945bcb",
+      "equal": true
+    },
+    {
+      "path": "assets/index-Dh0z4fQh.css",
+      "sha256": "07894d86ef6952a84edca3af8fc47d4c9a6231fdc20c04032cc0bf263b35b970",
+      "remoteSha256": "07894d86ef6952a84edca3af8fc47d4c9a6231fdc20c04032cc0bf263b35b970",
+      "equal": true
+    },
+    {
+      "path": "assets/genesysEmail-BJj4UQKD.js",
+      "sha256": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2",
+      "remoteSha256": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2",
+      "equal": true
+    }
+  ]
+}
