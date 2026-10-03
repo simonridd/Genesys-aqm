@@ -1,0 +1,12 @@
+
+ RUN  v5.0.2 /private/tmp/aqm-v019b-authoring-simplification
+
+
+ Test Files  63 passed (63)
+      Tests  607 passed (607)
+   Start at  18:49:34
+   Duration  2.09s (import 38%, tests 38%, transform 23%, worker 2%)
+
+    Isolate  63 workers spawned · ~91ms startup each (spawn + environment, per file)
+             at least ~482ms faster with isolate: false — reuses workers across files instead of one per file
+

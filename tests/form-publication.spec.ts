@@ -1,3 +1,5 @@
+import type { Locator } from '@playwright/test'
+async function openActions(detail:Locator){const disclosure=detail.locator('.more-actions');if(await disclosure.getAttribute('open')===null)await disclosure.locator('summary').click()}
 import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test, expect } from '@playwright/test'
 import { seedForms } from '../src/domain/forms'
@@ -30,8 +32,8 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await expect(page.getByRole('heading',{name:'Evaluation Forms',exact:true})).toBeVisible()
     await selectRecreated();await expect(detail.getByLabel('Description',{exact:true})).toHaveValue(legacy.description)
     await expect(page.getByText(/Review required before production use|Reviewed for AQM use|MARK REVIEWED FOR AQM USE|Confirm review/)).toHaveCount(0)
-    await detail.getByRole('button',{name:'Move to testing'}).click();await expect(detail.getByText('TESTING · VERSION 1')).toBeVisible()
-    await detail.getByRole('button',{name:'TEST FORM',exact:true}).click();await expect(page.locator('#form-test')).toBeInViewport();await page.getByLabel('Conversations',{exact:true}).fill('1');await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toBeVisible();expect(tests).toBe(1)
+    await openActions(detail);await detail.getByRole('button',{name:'Move to testing'}).click();await expect(detail.getByText('TESTING · VERSION 1')).toBeVisible()
+    await openActions(detail);await detail.getByRole('button',{name:'TEST FORM',exact:true}).click();await expect(page.locator('#form-test')).toBeInViewport();await page.getByLabel('Conversations',{exact:true}).fill('1');await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toBeVisible();expect(tests).toBe(1)
     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(0);await expect(page.getByRole('button',{name:'Test a draft/testing form'})).toBeVisible()
     await nav.getByRole('button',{name:'Policies',exact:true}).click();await page.getByRole('button',{name:'＋ New policy',exact:true}).click();await expect(page.getByRole('checkbox',{name:/Customer Service - AI Scoring/})).toHaveCount(0)
     page.once('dialog',d=>d.accept());await nav.getByRole('button',{name:'Evaluation Forms',exact:true}).click();await selectRecreated()
@@ -39,16 +41,16 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     const draftCards=await richQuestions()
     await detail.getByRole('button',{name:'Publish version'}).click();await expect(detail.getByText('PUBLISHED · VERSION 1')).toBeVisible()
     expect(await richQuestions()).toEqual(draftCards)
-    await expect(detail.getByLabel('Form name',{exact:true})).toHaveAttribute('readonly','')
-    for(const button of await detail.getByRole('button',{name:'Add question',exact:true}).all())await expect(button).toBeDisabled()
-    for(const input of await detail.locator('.question-card input').all())await expect(input).toBeDisabled()
-    await expect(detail.getByRole('button',{name:'Retire',exact:true})).toBeVisible()
+    await expect(detail.getByLabel('Form name',{exact:true})).toHaveCount(0)
+    await expect(detail.getByRole('button',{name:'Add question',exact:true})).toHaveCount(0)
+    await expect(detail.locator('.question-card input')).toHaveCount(0)
+    await openActions(detail);await expect(detail.getByRole('button',{name:'Retire',exact:true})).toBeVisible()
     await expect(detail.getByRole('button',{name:'TEST FORM',exact:true})).toBeVisible()
     await detail.locator('.question-card').first().screenshot({path:`/private/tmp/aqm-v064-question-${viewport.width}.png`})
     const cardBox=await detail.locator('.question-card').first().boundingBox();expect(cardBox!.width).toBeLessThanOrEqual(viewport.width)
     await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v063-published-${viewport.width}.png`})
     const metadata=await detail.locator('.form-meta').boundingBox();expect(metadata!.width).toBeLessThanOrEqual(viewport.width)
-    await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toHaveCount(1);expect(tests).toBe(2)
+    await page.locator('#form-test-tools>summary').click();await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toHaveCount(1);expect(tests).toBe(2)
     expect(reviews).toBe(0)
     expect(stored.find(form=>form.id==='genesys_customer_service_ai_scoring')).toMatchObject({origin:'genesys-recreated',version:1,name:legacy.name,questions:legacy.questions,scoring:legacy.scoring,sourceReview:{status:'REVIEW_REQUIRED'},enabled:true,status:'PUBLISHED'})
     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(1)
@@ -57,7 +59,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     // Erase browser form storage and reload: readiness comes from the server record.
     await page.evaluate(()=>localStorage.removeItem('genesys-aqm-v02-forms'))
     await installOwnerGovernanceFixture(page);await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`);await nav.getByRole('button',{name:'Evaluation Forms',exact:true}).click();await selectRecreated();await expect(detail.getByText('PUBLISHED · VERSION 1')).toBeVisible()
-    await detail.getByRole('button',{name:'Edit as new version'}).click();await expect(detail.getByText('DRAFT · VERSION 2')).toBeVisible();await expect(detail.locator('.form-meta').getByRole('alert')).toHaveCount(0);await expect(detail.getByText('Review required before production use',{exact:true})).toHaveCount(0)
+    await openActions(detail);await detail.getByRole('button',{name:'Edit as new version'}).click();await expect(detail.getByText('DRAFT · VERSION 2')).toBeVisible();await expect(detail.locator('.form-meta').getByRole('alert')).toHaveCount(0);await expect(detail.getByText('Review required before production use',{exact:true})).toHaveCount(0)
     await expect(page.getByText(/needs authoritative configuration|review authoritative configuration/i)).toHaveCount(0)
     await page.getByRole('button',{name:'＋ New form'}).click();await expect(detail.getByText('DRAFT · VERSION 1')).toBeVisible()
     const native=await page.evaluate(()=>JSON.parse(localStorage.getItem('genesys-aqm-v02-forms')!).find((form:{name:string})=>form.name==='New evaluation form'))

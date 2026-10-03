@@ -1,0 +1,37 @@
+{
+  "deterministic": {
+    "tests": 607,
+    "files": 63,
+    "passed": true
+  },
+  "browser": {
+    "startTime": "2026-10-03T17:56:05.683Z",
+    "duration": 206859.39599999998,
+    "expected": 122,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "focusRepeat": {
+    "tests": 6,
+    "passed": true
+  },
+  "frontendBuild": true,
+  "serverTypecheck": true,
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "independentBlindTester": false,
+  "physicalDeviceOrScreenReaderCertification": false
+}

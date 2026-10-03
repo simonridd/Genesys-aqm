@@ -10,7 +10,7 @@ import { seedForms } from '../src/domain/forms'
 import { exportDefinition,importDefinition } from '../src/domain/portability'
 import type { QuestionGroupAsset,FormTestRun } from '../src/domain/types'
 const app=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/',origin='https://aqm-api-bd54ukouga-nw.a.run.app'
-const evidence='docs/v018a-evidence'
+const evidence=process.env.AQM_SAVE_EVIDENCE??'docs/v018a-evidence'
 mkdirSync(evidence,{recursive:true})
 const form={...structuredClone(seedForms[0]),id:'test-draft',familyId:'test-family',name:'Save protection test form',status:'DRAFT' as const,enabled:false}
 const testRun=(id:string,status:FormTestRun['status'],familyId=form.familyId):FormTestRun=>({id,formId:form.id,formSnapshot:{...form,familyId},status,createdAt:'2026-10-02T12:00:00Z',sampleSource:'synthetic',selectedConversationIds:[],sampleConfiguration:{strategy:'recent',count:0},evaluationAssignments:0,expectedRequests:0,results:[],failures:[]})
@@ -126,7 +126,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   const context=await browser.newContext({viewport}),page=await context.newPage()
   const recovery={id:'exact-recovery-id',form,source:'synthetic',selectedConversationIds:[],sampleConfiguration:{strategy:'recent',count:0}}
   await page.addInitScript(value=>{sessionStorage.setItem('genesys-aqm-v06-pending-test-test-draft',JSON.stringify(value))},recovery)
-  const state=await fixture(page,'forms');await page.getByRole('row').filter({hasText:form.name}).click();const panel=page.locator('#form-test');await expect(panel).toBeVisible();await panel.screenshot({path:`${evidence}/form-test-initial-${viewport.width}.png`})
+  const state=await fixture(page,'forms');await page.getByRole('row').filter({hasText:form.name}).click();await page.locator('#form-test-tools>summary').click();const panel=page.locator('#form-test');await expect(panel).toBeVisible();await panel.screenshot({path:`${evidence}/form-test-initial-${viewport.width}.png`})
   const clear=panel.getByRole('button',{name:"Clear this form's test history",exact:true})
   await dialogAction(page,false,()=>clear.click(),'Completed saved test runs');expect(state.requests.filter(r=>r.method==='DELETE')).toHaveLength(0)
   await dialogAction(page,true,()=>clear.click(),'Running or uncertain tests are retained');await expect(panel.getByRole('status')).toContainText('Completed test history cleared');expect(state.requests.filter(r=>r.method==='DELETE').map(r=>r.path)).toEqual(['/api/form-tests/finished']);expect(state.runs.map(r=>r.id)).toEqual(['running','unknown','other']);expect(state.requests.some(r=>r.path.startsWith('/api/evaluations')&&r.method!=='GET')).toBe(false)

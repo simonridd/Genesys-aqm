@@ -69,7 +69,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   for(const [name,prefix,detailClass] of [['Evaluation Forms','Open form ','.form-detail'],['Question Groups','Open reusable question group ','.asset-detail']]){
    await keyboardTo(page,nav(page,name));await page.keyboard.press('Enter')
    const open=page.getByRole('button',{name:new RegExp(`^${prefix}`)}).first();await keyboardTo(page,open);await page.keyboard.press('Enter')
-   const detail=page.locator(detailClass);await expect(detail.locator('h2').first()).toBeFocused();await expect(detail).toContainText('Published version is read-only. Create a new version to edit.')
+   const detail=page.locator(detailClass);await expect(detail.locator('h2').first()).toBeFocused();await expect(detail).toContainText('Published version is locked.')
    const close=detail.getByRole('button',{name:'Close details',exact:true});await insideMain(page,close);await detail.locator('.form-meta').screenshot({path:`docs/v018e-evidence/${name==='Evaluation Forms'?'form':'group'}-${viewport.width}.png`})
    await keyboardTo(page,close);await page.keyboard.press('Space');await expect(open).toBeFocused()
   }

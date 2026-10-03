@@ -1,0 +1,98 @@
+[WebServer] (node:54345) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 12 tests using 1 worker
+
+(node:54347) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/12] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[2/12] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[3/12] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[4/12] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+  1) tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440 
+
+    Test timeout of 15000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 15000ms exceeded.
+    Call log:
+      - waiting for locator('.answer-set-detail').getByLabel('Answer format', { exact: true })
+
+
+      36 |  })
+      37 |  test(`Customer effort creation, lifecycle and mobile labels ${viewport.width}`,async({page})=>{
+    > 38 |  await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR');try{await screenshot(page,'answers-library');await page.getByRole('button',{name:'New Answer Set',exact:true}).click();const detail=page.locator('.answer-set-detail');await expect(detail.locator('h2')).toBeFocused();await detail.getByLabel('Answer Set name',{exact:true}).fill('Customer effort');await detail.getByLabel('Answer Set description').fill('Less effort earns more credit.');await detail.getByLabel('Answer format',{exact:true}).selectOption('score');for(let i=0;i<3;i++)await detail.getByRole('button',{name:'＋ Add level'}).click();const labels=['Very low','Low','Moderate','High','Very high'];for(const [i,label] of labels.entries()){await detail.getByLabel(`Option ${i+1} label`,{exact:true}).fill(label);await detail.getByLabel(`Option ${i+1} description`,{exact:true}).fill(`${label} customer effort.`);await detail.getByLabel(`Option ${i+1} credit (%)`,{exact:true}).fill(String(100-i*25))};expect(await visibleText(detail)).not.toMatch(/Base type|family|Source value|Stable key/);await bounds(page,detail);await screenshot(page,'answers-editor',detail);await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();await expect(detail).toContainText('Published version is locked');const saved=(await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items[0];expect(saved.options.map(o=>o.credit)).toEqual([1,.75,.5,.25,0]);expect(saved.options.map(o=>o.key)).toEqual(['yes','no','option_3','option_4','option_5']);await detail.getByRole('button',{name:'Edit as new version'}).focus();await page.keyboard.press('Enter');await detail.getByLabel('Option 2 label').fill('Little effort');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();expect((await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items.find(s=>s.version===2)!.options[1].key).toBe('no');expect(state.errors).toEqual([])}finally{await state.close()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+      39 |  })
+      40 | }
+      41 |
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:38:519
+
+    Error Context: test-results/authoring-simplification-C-ecf0e-ycle-and-mobile-labels-1440/error-context.md
+
+
+(node:54446) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/12] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[6/12] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[7/12] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[8/12] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+  2) tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920 
+
+    Test timeout of 15000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 15000ms exceeded.
+    Call log:
+      - waiting for locator('.answer-set-detail').getByLabel('Answer format', { exact: true })
+
+
+      36 |  })
+      37 |  test(`Customer effort creation, lifecycle and mobile labels ${viewport.width}`,async({page})=>{
+    > 38 |  await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR');try{await screenshot(page,'answers-library');await page.getByRole('button',{name:'New Answer Set',exact:true}).click();const detail=page.locator('.answer-set-detail');await expect(detail.locator('h2')).toBeFocused();await detail.getByLabel('Answer Set name',{exact:true}).fill('Customer effort');await detail.getByLabel('Answer Set description').fill('Less effort earns more credit.');await detail.getByLabel('Answer format',{exact:true}).selectOption('score');for(let i=0;i<3;i++)await detail.getByRole('button',{name:'＋ Add level'}).click();const labels=['Very low','Low','Moderate','High','Very high'];for(const [i,label] of labels.entries()){await detail.getByLabel(`Option ${i+1} label`,{exact:true}).fill(label);await detail.getByLabel(`Option ${i+1} description`,{exact:true}).fill(`${label} customer effort.`);await detail.getByLabel(`Option ${i+1} credit (%)`,{exact:true}).fill(String(100-i*25))};expect(await visibleText(detail)).not.toMatch(/Base type|family|Source value|Stable key/);await bounds(page,detail);await screenshot(page,'answers-editor',detail);await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();await expect(detail).toContainText('Published version is locked');const saved=(await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items[0];expect(saved.options.map(o=>o.credit)).toEqual([1,.75,.5,.25,0]);expect(saved.options.map(o=>o.key)).toEqual(['yes','no','option_3','option_4','option_5']);await detail.getByRole('button',{name:'Edit as new version'}).focus();await page.keyboard.press('Enter');await detail.getByLabel('Option 2 label').fill('Little effort');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();expect((await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items.find(s=>s.version===2)!.options[1].key).toBe('no');expect(state.errors).toEqual([])}finally{await state.close()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+      39 |  })
+      40 | }
+      41 |
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:38:519
+
+    Error Context: test-results/authoring-simplification-C-c749f-ycle-and-mobile-labels-1920/error-context.md
+
+
+(node:54482) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/12] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[10/12] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[11/12] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[12/12] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+  3) tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390 
+
+    Test timeout of 15000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 15000ms exceeded.
+    Call log:
+      - waiting for locator('.answer-set-detail').getByLabel('Answer format', { exact: true })
+
+
+      36 |  })
+      37 |  test(`Customer effort creation, lifecycle and mobile labels ${viewport.width}`,async({page})=>{
+    > 38 |  await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR');try{await screenshot(page,'answers-library');await page.getByRole('button',{name:'New Answer Set',exact:true}).click();const detail=page.locator('.answer-set-detail');await expect(detail.locator('h2')).toBeFocused();await detail.getByLabel('Answer Set name',{exact:true}).fill('Customer effort');await detail.getByLabel('Answer Set description').fill('Less effort earns more credit.');await detail.getByLabel('Answer format',{exact:true}).selectOption('score');for(let i=0;i<3;i++)await detail.getByRole('button',{name:'＋ Add level'}).click();const labels=['Very low','Low','Moderate','High','Very high'];for(const [i,label] of labels.entries()){await detail.getByLabel(`Option ${i+1} label`,{exact:true}).fill(label);await detail.getByLabel(`Option ${i+1} description`,{exact:true}).fill(`${label} customer effort.`);await detail.getByLabel(`Option ${i+1} credit (%)`,{exact:true}).fill(String(100-i*25))};expect(await visibleText(detail)).not.toMatch(/Base type|family|Source value|Stable key/);await bounds(page,detail);await screenshot(page,'answers-editor',detail);await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();await expect(detail).toContainText('Published version is locked');const saved=(await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items[0];expect(saved.options.map(o=>o.credit)).toEqual([1,.75,.5,.25,0]);expect(saved.options.map(o=>o.key)).toEqual(['yes','no','option_3','option_4','option_5']);await detail.getByRole('button',{name:'Edit as new version'}).focus();await page.keyboard.press('Enter');await detail.getByLabel('Option 2 label').fill('Little effort');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();expect((await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items.find(s=>s.version===2)!.options[1].key).toBe('no');expect(state.errors).toEqual([])}finally{await state.close()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+      39 |  })
+      40 | }
+      41 |
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:38:519
+
+    Error Context: test-results/authoring-simplification-C-351f3-cycle-and-mobile-labels-390/error-context.md
+
+
+  3 failed
+    tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440 
+    tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920 
+    tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390 
+  9 passed (1.0m)

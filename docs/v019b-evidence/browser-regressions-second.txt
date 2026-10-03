@@ -1,0 +1,112 @@
+[WebServer] (node:56197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 118 tests using 1 worker
+
+(node:56199) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/118] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/118] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/118] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/118] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/118] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/118] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/118] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/118] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/118] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/118] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/118] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/118] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/118] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/118] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/118] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/118] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/118] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/118] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/118] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/118] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[21/118] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[22/118] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[23/118] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[24/118] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[25/118] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[26/118] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[27/118] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[28/118] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[29/118] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[30/118] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[31/118] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[32/118] tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits
+  1) tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits 
+
+    Test timeout of 20000ms exceeded.
+
+    Error: locator.fill: Test timeout of 20000ms exceeded.
+    Call log:
+      - waiting for locator('.asset-detail').getByLabel('Reusable question group name', { exact: true })
+
+
+      45 |  ['group',g,'Import reusable group','.asset-detail','Reusable question group name','Imported group edited'],
+      46 |  ['form',f,'Import form','.form-detail','Form name','Imported form edited']
+    > 47 |  ] as const){await nav(page,kind==='form'?'Evaluation Forms':kind==='group'?'Question Groups':'Answer Sets').click();await page.getByLabel(importLabel,{exact:true}).setInputFiles({name:'fixture.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({schema:`genesys-aqm/${kind}`,schemaVersion:1,exportedAt:now,definition}))});const detail=page.locator(scope);await detail.getByLabel(nameLabel,{exact:true}).fill(name);await detail.getByRole('button',{name:'Save changes',exact:true}).click();if(kind==='form')await detail.locator('.more-actions>summary').click();const pending=page.waitForEvent('download');await detail.getByRole('button',{name:'Export JSON',exact:true}).click();const result=JSON.parse(readFileSync((await(await pending).path())!,'utf8'));expect(kind==='answer-set'?result.definition.options:result.definition.questions[0].options).toEqual(importedSet.options);await detail.getByRole('button',{name:'Close details'}).click()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      48 |  expect(state.errors).toEqual([])
+      49 |  }finally{await state.close()}
+      50 | })
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:47:421
+
+    Error Context: test-results/authoring-simplification-i-815fc-xport-after-unrelated-edits/error-context.md
+
+
+(node:56279) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[33/118] tests/authoring-simplification.spec.ts:51:1 › save inline answers as reusable keeps current question until explicit attach
+[34/118] tests/authoring-simplification.spec.ts:52:1 › published and role-read-only questions expand without disabled editing controls
+[35/118] tests/authoring-simplification.spec.ts:53:1 › advanced key used by a condition fails closed with no silent migration
+[36/118] tests/authoring-simplification.spec.ts:54:1 › disconnected question copy remains neutral; reconnect never uploads definitions
+[37/118] tests/authoring-simplification.spec.ts:56:1 › author tasks replay and keyboard reachability from navigation through reusable choices
+[38/118] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440
+  2) tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440 ─────────────────
+
+    Test was interrupted.
+
+    Error: page.waitForEvent: Test ended.
+    =========================== logs ===========================
+    waiting for event "download"
+    ============================================================
+
+      48 |  await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v013-meta-${viewport.width}.png`})
+      49 |  await detail.screenshot({path:`/private/tmp/aqm-v013-form-${viewport.width}.png`})
+    > 50 |  const downloadPromise=page.waitForEvent('download');await detail.locator('.more-actions>summary').click();await detail.getByRole('button',{name:'Export JSON',exact:true}).click();const download=await downloadPromise,path=await download.path();const data=readFileSync(path!);expect(JSON.parse(data.toString()).schemaVersion).toBe(1)
+         |                             ^
+      51 |  await page.getByLabel('Import form',{exact:true}).setInputFiles({name:'form.json',mimeType:'application/json',buffer:data});await expect(detail.getByText('DRAFT · VERSION 1')).toBeVisible();expect(forms.at(-1)?.enabled).toBe(false)
+      52 |  const nav=page.getByRole('navigation',{name:'Primary navigation'});await nav.getByRole('button',{name:'Question Groups',exact:true}).click();await expect(page.getByRole('heading',{name:'Question Groups',exact:true})).toBeVisible();await page.getByLabel('Library status').selectOption('PUBLISHED');await page.getByLabel('Library version').selectOption('latest');await page.getByLabel('Library usage').selectOption('Unused');await page.getByRole('row').filter({hasText:assets[0].name}).click()
+      53 |  const groupDownload=page.waitForEvent('download');await page.locator('.asset-detail').getByRole('button',{name:'Export JSON'}).click();const groupData=readFileSync((await(await groupDownload).path())!);await page.getByLabel('Import reusable group',{exact:true}).setInputFiles({name:'group.json',mimeType:'application/json',buffer:groupData});await expect(page.locator('.asset-detail h2').first()).toContainText('DRAFT');expect(assets.at(-1)?.status).toBe('DRAFT')
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring.spec.ts:50:29
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.form-detail').getByRole('button', { name: 'Export JSON', exact: true })
+
+
+      48 |  await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v013-meta-${viewport.width}.png`})
+      49 |  await detail.screenshot({path:`/private/tmp/aqm-v013-form-${viewport.width}.png`})
+    > 50 |  const downloadPromise=page.waitForEvent('download');await detail.locator('.more-actions>summary').click();await detail.getByRole('button',{name:'Export JSON',exact:true}).click();const download=await downloadPromise,path=await download.path();const data=readFileSync(path!);expect(JSON.parse(data.toString()).schemaVersion).toBe(1)
+         |                                                                                                                                                                             ^
+      51 |  await page.getByLabel('Import form',{exact:true}).setInputFiles({name:'form.json',mimeType:'application/json',buffer:data});await expect(detail.getByText('DRAFT · VERSION 1')).toBeVisible();expect(forms.at(-1)?.enabled).toBe(false)
+      52 |  const nav=page.getByRole('navigation',{name:'Primary navigation'});await nav.getByRole('button',{name:'Question Groups',exact:true}).click();await expect(page.getByRole('heading',{name:'Question Groups',exact:true})).toBeVisible();await page.getByLabel('Library status').selectOption('PUBLISHED');await page.getByLabel('Library version').selectOption('latest');await page.getByLabel('Library usage').selectOption('Unused');await page.getByRole('row').filter({hasText:assets[0].name}).click()
+      53 |  const groupDownload=page.waitForEvent('download');await page.locator('.asset-detail').getByRole('button',{name:'Export JSON'}).click();const groupData=readFileSync((await(await groupDownload).path())!);await page.getByLabel('Import reusable group',{exact:true}).setInputFiles({name:'group.json',mimeType:'application/json',buffer:groupData});await expect(page.locator('.asset-detail h2').first()).toContainText('DRAFT');expect(assets.at(-1)?.status).toBe('DRAFT')
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring.spec.ts:50:173
+
+
+  1 failed
+    tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits 
+  1 interrupted
+    tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440 ──────────────────
+  80 did not run
+  36 passed (2.9m)

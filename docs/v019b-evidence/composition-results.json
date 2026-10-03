@@ -1,0 +1,373 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/private/tmp/aqm-v019b-authoring-simplification/node_modules/.bin/playwright",
+      "test",
+      "-c",
+      "docs/v019b-evidence/playwright.config.ts",
+      "tests/form-composition.spec.ts",
+      "tests/form-publication.spec.ts",
+      "--timeout=20000",
+      "--max-failures=5"
+    ],
+    "configFile": "/private/tmp/aqm-v019b-authoring-simplification/docs/v019b-evidence/playwright.config.ts",
+    "rootDir": "/private/tmp/aqm-v019b-authoring-simplification/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 5,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/aqm-v019b-authoring-simplification/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/private/tmp/aqm-v019b-authoring-simplification/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 20000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/aqm-v019b-authoring-simplification/docs/v019b-evidence/composition-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --host 127.0.0.1 --port 4174",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "form-composition.spec.ts",
+      "file": "form-composition.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "provider-free group composition and reusable snapshots at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:47:25.133Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "597d66e01f91fb5944eb-a8f464a08867b88c9979",
+          "file": "form-composition.spec.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "provider-free group composition and reusable snapshots at 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3062,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:47:28.246Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "597d66e01f91fb5944eb-e73eab90794be9b2cb81",
+          "file": "form-composition.spec.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "provider-free group composition and reusable snapshots at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 40000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3040,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:47:31.314Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "597d66e01f91fb5944eb-2a5131500d507b476a2d",
+          "file": "form-composition.spec.ts",
+          "line": 15,
+          "column": 2
+        }
+      ]
+    },
+    {
+      "title": "form-publication.spec.ts",
+      "file": "form-publication.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "provider-free recreated form publication and authoritative reload at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 20002,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts",
+                        "column": 88,
+                        "line": 53
+                      },
+                      "message": "Error: locator.click: Test ended.\nCall log:\n\u001b[2m  - waiting for locator('#form-test').getByRole('button', { name: 'Test form', exact: true })\u001b[22m\n\n\n  51 |     await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v063-published-${viewport.width}.png`})\n  52 |     const metadata=await detail.locator('.form-meta').boundingBox();expect(metadata!.width).toBeLessThanOrEqual(viewport.width)\n> 53 |     await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toHaveCount(1);expect(tests).toBe(2)\n     |                                                                                        ^\n  54 |     expect(reviews).toBe(0)\n  55 |     expect(stored.find(form=>form.id==='genesys_customer_service_ai_scoring')).toMatchObject({origin:'genesys-recreated',version:1,name:legacy.name,questions:legacy.questions,scoring:legacy.scoring,sourceReview:{status:'REVIEW_REQUIRED'},enabled:true,status:'PUBLISHED'})\n  56 |     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(1)\n    at /private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts:53:88"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:47:34.364Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019b-authoring-simplification/test-results/form-publication-provider--ddc22-uthoritative-reload-at-1440/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "30861f7ac59db4cb2d07-12fca49cc283d3f8eb68",
+          "file": "form-publication.spec.ts",
+          "line": 11,
+          "column": 3
+        },
+        {
+          "title": "provider-free recreated form publication and authoritative reload at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 20003,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts",
+                        "column": 88,
+                        "line": 53
+                      },
+                      "message": "Error: locator.click: Test ended.\nCall log:\n\u001b[2m  - waiting for locator('#form-test').getByRole('button', { name: 'Test form', exact: true })\u001b[22m\n\n\n  51 |     await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v063-published-${viewport.width}.png`})\n  52 |     const metadata=await detail.locator('.form-meta').boundingBox();expect(metadata!.width).toBeLessThanOrEqual(viewport.width)\n> 53 |     await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toHaveCount(1);expect(tests).toBe(2)\n     |                                                                                        ^\n  54 |     expect(reviews).toBe(0)\n  55 |     expect(stored.find(form=>form.id==='genesys_customer_service_ai_scoring')).toMatchObject({origin:'genesys-recreated',version:1,name:legacy.name,questions:legacy.questions,scoring:legacy.scoring,sourceReview:{status:'REVIEW_REQUIRED'},enabled:true,status:'PUBLISHED'})\n  56 |     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(1)\n    at /private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts:53:88"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:47:54.614Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019b-authoring-simplification/test-results/form-publication-provider--7d9d5-uthoritative-reload-at-1920/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "30861f7ac59db4cb2d07-647e6e2da301eebaa678",
+          "file": "form-publication.spec.ts",
+          "line": 11,
+          "column": 3
+        },
+        {
+          "title": "provider-free recreated form publication and authoritative reload at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 20003,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 20000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts",
+                        "column": 88,
+                        "line": 53
+                      },
+                      "message": "Error: locator.click: Test ended.\nCall log:\n\u001b[2m  - waiting for locator('#form-test').getByRole('button', { name: 'Test form', exact: true })\u001b[22m\n\n\n  51 |     await detail.locator('.form-meta').screenshot({path:`/private/tmp/aqm-v063-published-${viewport.width}.png`})\n  52 |     const metadata=await detail.locator('.form-meta').boundingBox();expect(metadata!.width).toBeLessThanOrEqual(viewport.width)\n> 53 |     await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toHaveCount(1);expect(tests).toBe(2)\n     |                                                                                        ^\n  54 |     expect(reviews).toBe(0)\n  55 |     expect(stored.find(form=>form.id==='genesys_customer_service_ai_scoring')).toMatchObject({origin:'genesys-recreated',version:1,name:legacy.name,questions:legacy.questions,scoring:legacy.scoring,sourceReview:{status:'REVIEW_REQUIRED'},enabled:true,status:'PUBLISHED'})\n  56 |     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(1)\n    at /private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts:53:88"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T17:48:14.936Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019b-authoring-simplification/test-results/form-publication-provider--5bd93-authoritative-reload-at-390/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "30861f7ac59db4cb2d07-e16544e66b2a719de545",
+          "file": "form-publication.spec.ts",
+          "line": 11,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-03T17:47:24.500Z",
+    "duration": 70566.433,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

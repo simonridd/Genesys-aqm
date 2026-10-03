@@ -1,0 +1,143 @@
+[WebServer] (node:56500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 53 tests using 1 worker
+
+(node:56502) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/53] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[2/53] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[3/53] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[4/53] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[5/53] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[6/53] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[7/53] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[8/53] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[9/53] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[10/53] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[11/53] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[12/53] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[13/53] tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits
+[14/53] tests/authoring-simplification.spec.ts:51:1 › save inline answers as reusable keeps current question until explicit attach
+[15/53] tests/authoring-simplification.spec.ts:52:1 › published and role-read-only questions expand without disabled editing controls
+[16/53] tests/authoring-simplification.spec.ts:53:1 › advanced key used by a condition fails closed with no silent migration
+[17/53] tests/authoring-simplification.spec.ts:54:1 › disconnected question copy remains neutral; reconnect never uploads definitions
+[18/53] tests/authoring-simplification.spec.ts:56:1 › author tasks replay and keyboard reachability from navigation through reusable choices
+[19/53] tests/authoring.spec.ts:11:97 › authoring productivity and portability at 1440
+[20/53] tests/authoring.spec.ts:11:97 › authoring productivity and portability at 1920
+[21/53] tests/authoring.spec.ts:11:97 › authoring productivity and portability at 390
+[22/53] tests/authoring.spec.ts:58:1 › offline draft stays browser-local
+[23/53] tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1440
+  1) tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1440 
+
+    Test timeout of 20000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.form-detail').getByRole('button', { name: 'Move to testing' })
+
+
+      33 |     await selectRecreated();await expect(detail.getByLabel('Description',{exact:true})).toHaveValue(legacy.description)
+      34 |     await expect(page.getByText(/Review required before production use|Reviewed for AQM use|MARK REVIEWED FOR AQM USE|Confirm review/)).toHaveCount(0)
+    > 35 |     await detail.getByRole('button',{name:'Move to testing'}).click();await expect(detail.getByText('TESTING · VERSION 1')).toBeVisible()
+         |                                                               ^
+      36 |     await openActions(detail);await detail.getByRole('button',{name:'TEST FORM',exact:true}).click();await expect(page.locator('#form-test')).toBeInViewport();await page.getByLabel('Conversations',{exact:true}).fill('1');await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toBeVisible();expect(tests).toBe(1)
+      37 |     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(0);await expect(page.getByRole('button',{name:'Test a draft/testing form'})).toBeVisible()
+      38 |     await nav.getByRole('button',{name:'Policies',exact:true}).click();await page.getByRole('button',{name:'＋ New policy',exact:true}).click();await expect(page.getByRole('checkbox',{name:/Customer Service - AI Scoring/})).toHaveCount(0)
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts:35:63
+
+    Error Context: test-results/form-publication-provider--ddc22-uthoritative-reload-at-1440/error-context.md
+
+
+(node:56570) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/53] tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1920
+  2) tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1920 
+
+    Test timeout of 20000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.form-detail').getByRole('button', { name: 'Move to testing' })
+
+
+      33 |     await selectRecreated();await expect(detail.getByLabel('Description',{exact:true})).toHaveValue(legacy.description)
+      34 |     await expect(page.getByText(/Review required before production use|Reviewed for AQM use|MARK REVIEWED FOR AQM USE|Confirm review/)).toHaveCount(0)
+    > 35 |     await detail.getByRole('button',{name:'Move to testing'}).click();await expect(detail.getByText('TESTING · VERSION 1')).toBeVisible()
+         |                                                               ^
+      36 |     await openActions(detail);await detail.getByRole('button',{name:'TEST FORM',exact:true}).click();await expect(page.locator('#form-test')).toBeInViewport();await page.getByLabel('Conversations',{exact:true}).fill('1');await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toBeVisible();expect(tests).toBe(1)
+      37 |     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(0);await expect(page.getByRole('button',{name:'Test a draft/testing form'})).toBeVisible()
+      38 |     await nav.getByRole('button',{name:'Policies',exact:true}).click();await page.getByRole('button',{name:'＋ New policy',exact:true}).click();await expect(page.getByRole('checkbox',{name:/Customer Service - AI Scoring/})).toHaveCount(0)
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts:35:63
+
+    Error Context: test-results/form-publication-provider--7d9d5-uthoritative-reload-at-1920/error-context.md
+
+
+(node:56634) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[25/53] tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 390
+  3) tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 390 
+
+    Test timeout of 20000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.form-detail').getByRole('button', { name: 'Move to testing' })
+
+
+      33 |     await selectRecreated();await expect(detail.getByLabel('Description',{exact:true})).toHaveValue(legacy.description)
+      34 |     await expect(page.getByText(/Review required before production use|Reviewed for AQM use|MARK REVIEWED FOR AQM USE|Confirm review/)).toHaveCount(0)
+    > 35 |     await detail.getByRole('button',{name:'Move to testing'}).click();await expect(detail.getByText('TESTING · VERSION 1')).toBeVisible()
+         |                                                               ^
+      36 |     await openActions(detail);await detail.getByRole('button',{name:'TEST FORM',exact:true}).click();await expect(page.locator('#form-test')).toBeInViewport();await page.getByLabel('Conversations',{exact:true}).fill('1');await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page.getByText('0 completed · 0 failed',{exact:true})).toBeVisible();expect(tests).toBe(1)
+      37 |     await nav.getByRole('button',{name:'Conversation review',exact:true}).click();await expect(page.getByLabel('Manual form selection').locator('option').filter({hasText:'Customer Service - AI Scoring'})).toHaveCount(0);await expect(page.getByRole('button',{name:'Test a draft/testing form'})).toBeVisible()
+      38 |     await nav.getByRole('button',{name:'Policies',exact:true}).click();await page.getByRole('button',{name:'＋ New policy',exact:true}).click();await expect(page.getByRole('checkbox',{name:/Customer Service - AI Scoring/})).toHaveCount(0)
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/form-publication.spec.ts:35:63
+
+    Error Context: test-results/form-publication-provider--5bd93-authoritative-reload-at-390/error-context.md
+
+
+(node:56724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[26/53] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[27/53] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[28/53] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+[29/53] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[30/53] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[31/53] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+[32/53] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[33/53] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[34/53] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+[35/53] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[36/53] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[37/53] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[38/53] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[39/53] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[40/53] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[41/53] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[42/53] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[43/53] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[44/53] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[45/53] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[46/53] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[47/53] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[48/53] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[49/53] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[50/53] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[51/53] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[52/53] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[53/53] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  3 failed
+    tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1440 
+    tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1920 
+    tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 390 
+  50 passed (2.3m)

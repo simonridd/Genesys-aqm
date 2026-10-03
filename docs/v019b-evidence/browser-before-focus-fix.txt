@@ -1,0 +1,216 @@
+[WebServer] (node:58095) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 122 tests using 1 worker
+
+(node:58100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/122] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/122] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/122] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/122] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/122] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/122] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/122] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/122] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/122] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/122] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/122] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/122] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/122] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/122] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/122] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/122] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/122] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/122] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/122] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/122] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[21/122] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[22/122] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[23/122] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[24/122] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+  1) tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920 
+
+    Test timeout of 25000ms exceeded.
+
+    Error: locator.fill: Test timeout of 25000ms exceeded.
+    Call log:
+      - waiting for locator('.form-detail').locator('.question-card').getByLabel('Option 1 external/source value')
+        - locator resolved to <input value="" step="any" type="number" aria-label="Option 1 external/source value"/>
+        - fill("17.125")
+      - attempting fill action
+        2 × waiting for element to be visible, enabled and editable
+          - element is not visible
+        - retrying fill action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and editable
+          - element is not visible
+        - retrying fill action
+          - waiting 100ms
+        47 × waiting for element to be visible, enabled and editable
+           - element is not visible
+         - retrying fill action
+           - waiting 500ms
+
+
+      23 |  const expanded=await page.evaluate(()=>({pageHeight:document.documentElement.scrollHeight,questionHeight:document.querySelector('.question-card')!.getBoundingClientRect().height}));if(viewport.width===390){const before=JSON.parse(readFileSync('docs/v019b-evidence/mobile-expanded-before.json','utf8'));writeFileSync(`${evidence}/mobile-expanded-after.json`,JSON.stringify({before,after:expanded,reduction:1-expanded.pageHeight/before.pageHeight},null,2));expect(expanded.pageHeight).toBeLessThan(before.pageHeight*.65)}
+      24 |  await card.locator('.inline-answers>summary').click();await bounds(page,card);await screenshot(page,'inline-option-editor',card);await card.getByLabel('Title',{exact:true}).fill('Resolution quality');await expect(detail.getByRole('status')).toContainText('Unsaved changes');await card.getByRole('button',{name:'Use reusable Answer Set',exact:true}).focus();await page.keyboard.press('Enter');const picker=card.getByRole('dialog');await expect(picker.locator('h4')).toBeFocused();await screenshot(page,'answer-picker',picker);await picker.getByRole('button',{name:'Use Resolution clarity v1'}).focus();await page.keyboard.press('Enter');await expect(card.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await expect(card).toContainText('Using Resolution clarity v1');await expect(card.getByLabel('Option 1 label')).toHaveCount(0);await screenshot(page,'answer-attached',detail);
+    > 25 |  await card.getByRole('button',{name:'Detach and customize',exact:true}).click();await expect(card.getByRole('status')).toContainText('Current answers kept');await card.getByLabel('Option 1 label').fill('Clearly resolved');await card.locator('.option-advanced').first().locator('summary').focus();await page.keyboard.press('Enter');await expect(card.getByLabel('Option 1 key')).toHaveValue('clear');await card.getByLabel('Option 1 external/source value').fill('17.125');await card.getByLabel('Option 1 credit (%)').fill('75');await card.locator('.advanced-details').filter({has:page.getByLabel('Stable question ID')}).locator('summary').click();await expect(card.getByLabel('Stable question ID')).toHaveValue('q');await card.getByRole('button',{name:'Done',exact:true}).last().click();await expect(edit).toBeFocused();await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(detail.getByRole('status')).toContainText('Saved in AQM');expect(await visibleText(detail)).not.toMatch(/save locally|saved locally|to server|familyId|sourceValue/);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^
+      26 |  const saved=(await state.store.form('fixture_choice'))!;expect(saved.questions[0]).toMatchObject({id:'q',title:'Resolution quality'});expect(saved.questions[0].options[0]).toEqual({...a.options[0],label:'Clearly resolved',credit:.75,sourceValue:17.125});expect(saved.questions[0].options.slice(1)).toEqual(a.options.slice(1));expect(state.errors).toEqual([])
+      27 |  }finally{await state.close()}
+      28 |  })
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:25:456
+
+    Error Context: test-results/authoring-simplification-q-6caf3-etach-advanced-mapping-1920/error-context.md
+
+
+(node:67183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[25/122] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[26/122] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[27/122] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[28/122] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+  2) tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390 
+
+    Test timeout of 25000ms exceeded.
+
+    Error: locator.fill: Test timeout of 25000ms exceeded.
+    Call log:
+      - waiting for locator('.form-detail').locator('.question-card').getByLabel('Option 1 external/source value')
+        - locator resolved to <input value="" step="any" type="number" aria-label="Option 1 external/source value"/>
+        - fill("17.125")
+      - attempting fill action
+        2 × waiting for element to be visible, enabled and editable
+          - element is not visible
+        - retrying fill action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and editable
+          - element is not visible
+        - retrying fill action
+          - waiting 100ms
+        46 × waiting for element to be visible, enabled and editable
+           - element is not visible
+         - retrying fill action
+           - waiting 500ms
+
+
+      23 |  const expanded=await page.evaluate(()=>({pageHeight:document.documentElement.scrollHeight,questionHeight:document.querySelector('.question-card')!.getBoundingClientRect().height}));if(viewport.width===390){const before=JSON.parse(readFileSync('docs/v019b-evidence/mobile-expanded-before.json','utf8'));writeFileSync(`${evidence}/mobile-expanded-after.json`,JSON.stringify({before,after:expanded,reduction:1-expanded.pageHeight/before.pageHeight},null,2));expect(expanded.pageHeight).toBeLessThan(before.pageHeight*.65)}
+      24 |  await card.locator('.inline-answers>summary').click();await bounds(page,card);await screenshot(page,'inline-option-editor',card);await card.getByLabel('Title',{exact:true}).fill('Resolution quality');await expect(detail.getByRole('status')).toContainText('Unsaved changes');await card.getByRole('button',{name:'Use reusable Answer Set',exact:true}).focus();await page.keyboard.press('Enter');const picker=card.getByRole('dialog');await expect(picker.locator('h4')).toBeFocused();await screenshot(page,'answer-picker',picker);await picker.getByRole('button',{name:'Use Resolution clarity v1'}).focus();await page.keyboard.press('Enter');await expect(card.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await expect(card).toContainText('Using Resolution clarity v1');await expect(card.getByLabel('Option 1 label')).toHaveCount(0);await screenshot(page,'answer-attached',detail);
+    > 25 |  await card.getByRole('button',{name:'Detach and customize',exact:true}).click();await expect(card.getByRole('status')).toContainText('Current answers kept');await card.getByLabel('Option 1 label').fill('Clearly resolved');await card.locator('.option-advanced').first().locator('summary').focus();await page.keyboard.press('Enter');await expect(card.getByLabel('Option 1 key')).toHaveValue('clear');await card.getByLabel('Option 1 external/source value').fill('17.125');await card.getByLabel('Option 1 credit (%)').fill('75');await card.locator('.advanced-details').filter({has:page.getByLabel('Stable question ID')}).locator('summary').click();await expect(card.getByLabel('Stable question ID')).toHaveValue('q');await card.getByRole('button',{name:'Done',exact:true}).last().click();await expect(edit).toBeFocused();await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(detail.getByRole('status')).toContainText('Saved in AQM');expect(await visibleText(detail)).not.toMatch(/save locally|saved locally|to server|familyId|sourceValue/);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^
+      26 |  const saved=(await state.store.form('fixture_choice'))!;expect(saved.questions[0]).toMatchObject({id:'q',title:'Resolution quality'});expect(saved.questions[0].options[0]).toEqual({...a.options[0],label:'Clearly resolved',credit:.75,sourceValue:17.125});expect(saved.questions[0].options.slice(1)).toEqual(a.options.slice(1));expect(state.errors).toEqual([])
+      27 |  }finally{await state.close()}
+      28 |  })
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:25:456
+
+    Error Context: test-results/authoring-simplification-q-93929-detach-advanced-mapping-390/error-context.md
+
+
+(node:68384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[29/122] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[30/122] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[31/122] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[32/122] tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits
+[33/122] tests/authoring-simplification.spec.ts:51:1 › save inline answers as reusable keeps current question until explicit attach
+[34/122] tests/authoring-simplification.spec.ts:52:1 › published and role-read-only questions expand without disabled editing controls
+[35/122] tests/authoring-simplification.spec.ts:53:1 › advanced key used by a condition fails closed with no silent migration
+[36/122] tests/authoring-simplification.spec.ts:54:1 › disconnected question copy remains neutral; reconnect never uploads definitions
+[37/122] tests/authoring-simplification.spec.ts:56:1 › author tasks replay and keyboard reachability from navigation through reusable choices
+[38/122] tests/authoring-simplification.spec.ts:63:1 › group version update and detach preserve copied questions and source definitions
+[39/122] tests/authoring.spec.ts:11:97 › authoring productivity and portability at 1440
+[40/122] tests/authoring.spec.ts:11:97 › authoring productivity and portability at 1920
+[41/122] tests/authoring.spec.ts:11:97 › authoring productivity and portability at 390
+[42/122] tests/authoring.spec.ts:58:1 › offline draft stays browser-local
+[43/122] tests/definition-authority.spec.ts:60:2 › R05 exact review, saved/local libraries, routing and transitions 1440
+[44/122] tests/definition-authority.spec.ts:87:2 › shared saves, saved picker, dirty refresh and promotion 1440
+[45/122] tests/definition-authority.spec.ts:116:2 › saved endpoint failures and routing loading never show local matches 1440
+[46/122] tests/definition-authority.spec.ts:60:2 › R05 exact review, saved/local libraries, routing and transitions 1920
+[47/122] tests/definition-authority.spec.ts:87:2 › shared saves, saved picker, dirty refresh and promotion 1920
+[48/122] tests/definition-authority.spec.ts:116:2 › saved endpoint failures and routing loading never show local matches 1920
+[49/122] tests/definition-authority.spec.ts:60:2 › R05 exact review, saved/local libraries, routing and transitions 390
+[50/122] tests/definition-authority.spec.ts:87:2 › shared saves, saved picker, dirty refresh and promotion 390
+[51/122] tests/definition-authority.spec.ts:116:2 › saved endpoint failures and routing loading never show local matches 390
+[52/122] tests/definition-authority.spec.ts:127:1 › exact voice criteria, missing saved pin, two saved forms and persistent working copies
+[53/122] tests/definition-authority.spec.ts:147:1 › failed shared policy refresh retains dirty policy and separate schedule drafts
+[54/122] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 1440
+[55/122] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 1920
+[56/122] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 390
+[57/122] tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1440
+[58/122] tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 1920
+[59/122] tests/form-publication.spec.ts:11:3 › provider-free recreated form publication and authoritative reload at 390
+[60/122] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[61/122] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[62/122] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[63/122] tests/reviewer-continuity.spec.ts:99:1 › exact My Reviews filter context survives evidence navigation
+[64/122] tests/reviewer-continuity.spec.ts:107:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[65/122] tests/reviewer-continuity.spec.ts:119:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[66/122] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles All Evaluations without Refresh
+[67/122] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles active cohort without Refresh
+[68/122] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles review status without Refresh
+[69/122] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles due cohort without Refresh
+[70/122] tests/reviewer-continuity.spec.ts:148:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[71/122] tests/reviewer-continuity.spec.ts:166:1 › reassignment retains unsaved notes but removes editing and submission authority
+[72/122] tests/reviewer-continuity.spec.ts:177:1 › 409 refresh retains draft without silently replacing its base
+[73/122] tests/reviewer-continuity.spec.ts:187:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[74/122] tests/reviewer-continuity.spec.ts:198:1 › later server page survives evidence return and completion background reload
+[75/122] tests/reviewer-continuity.spec.ts:209:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[76/122] tests/reviewer-continuity.spec.ts:224:1 › unstarted review returns to selected evaluation heading
+[77/122] tests/reviewer-continuity.spec.ts:231:1 › completion removes the row before a failed background list reload, preserving confirmation
+[78/122] tests/reviewer-continuity.spec.ts:241:1 › failed completion retains all changes and explicit retry completes exactly once
+[79/122] tests/reviewer-continuity.spec.ts:255:1 › reload starts a new session without unsubmitted answers or notes
+[80/122] tests/reviewer-continuity.spec.ts:267:1 › About and workspace handoff retain human work and unload protection in this SPA
+[81/122] tests/reviewer-continuity.spec.ts:278:1 › a pending completion reconciles the current filters rather than the scope at click time
+[82/122] tests/reviewer-continuity.spec.ts:294:1 › completion in another session keeps unfinished answers separate from completed authority
+[83/122] tests/reviewer-continuity.spec.ts:307:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[84/122] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[85/122] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[86/122] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+[87/122] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[88/122] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[89/122] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+[90/122] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[91/122] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[92/122] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+[93/122] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[94/122] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[95/122] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[96/122] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[97/122] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[98/122] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[99/122] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[100/122] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[101/122] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[102/122] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[103/122] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[104/122] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[105/122] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+[106/122] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[107/122] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[108/122] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[109/122] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[110/122] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[111/122] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[112/122] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[113/122] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[114/122] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[115/122] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[116/122] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[117/122] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[118/122] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[119/122] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[120/122] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[121/122] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[122/122] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  2 failed
+    tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920 
+    tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390 
+  120 passed (4.3m)

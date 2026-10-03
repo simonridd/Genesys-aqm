@@ -1,3 +1,5 @@
+import type { Locator } from '@playwright/test'
+async function openActions(detail:Locator){const disclosure=detail.locator('.more-actions');if(await disclosure.getAttribute('open')===null)await disclosure.locator('summary').click()}
 import {test,expect,type Page} from '@playwright/test'
 import {mkdirSync,readFileSync} from 'node:fs'
 import {seedForms} from '../src/domain/forms'
@@ -98,16 +100,16 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
   await expect(page.locator('.reusable-picker')).toContainText(savedGroup.name);await expect(page.locator('.reusable-picker').getByText(seedGroupAssets[0].name,{exact:true})).toHaveCount(0)
   state.failSave=true;await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(detail.getByRole('alert')).toContainText('Fixture save failed');await expect(detail.getByLabel('Form name',{exact:true})).toHaveValue('Unsaved saved form')
   state.failSave=false;await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(detail.getByText('Unsaved changes',{exact:true})).toHaveCount(0)
-  await detail.getByRole('button',{name:'Publish version',exact:true}).click();await expect(detail.getByLabel('Form name',{exact:true})).not.toBeEditable()
+  await detail.getByRole('button',{name:'Publish version',exact:true}).click();await expect(detail.getByLabel('Form name',{exact:true})).toHaveCount(0)
   await nav(page,'Policies').click();await page.getByRole('button',{name:'Updated saved routing',exact:true}).click();await expect(page.getByRole('checkbox',{name:/Unsaved saved form/})).toBeVisible()
   await nav(page,'Conversation review').click();await expect(page.getByLabel('Manual form selection').locator('option')).toHaveText([savedForm.name,'Unsaved saved form'])
   await nav(page,'Question Groups').click();await page.locator('.local-library > summary').click();await page.locator('.local-library').getByRole('button',{name:'Save as AQM draft',exact:true}).first().click()
   const group=page.locator('.asset-detail');await expect(group).toBeVisible();await expect(page.getByRole('heading',{name:'Saved in AQM · 2 saved groups'})).toBeVisible();await group.getByLabel('Reusable question group name',{exact:true}).fill('Imported group B');state.fail='/api/question-groups';await page.getByRole('button',{name:'Refresh saved groups'}).click();await expect(group.getByLabel('Reusable question group name',{exact:true})).toHaveValue('Imported group B');await expect(group.getByText('Unsaved changes',{exact:true})).toBeVisible();state.fail='';await page.getByRole('button',{name:'Refresh saved groups'}).click();await expect(page.getByRole('alert')).toHaveCount(0);await group.getByRole('button',{name:'Publish reusable question group',exact:true}).click();await expect(group.getByLabel('Reusable question group name',{exact:true})).not.toBeEditable()
-  await nav(page,'Evaluation Forms').click();await page.getByRole('row').filter({hasText:'Unsaved saved form'}).click();await detail.getByRole('button',{name:'Edit as new version',exact:true}).click();await detail.getByRole('button',{name:'Add reusable group',exact:true}).click();await expect(page.locator('.reusable-picker')).toContainText('Imported group B')
+  await nav(page,'Evaluation Forms').click();await page.getByRole('row').filter({hasText:'Unsaved saved form'}).click();await openActions(detail);await detail.getByRole('button',{name:'Edit as new version',exact:true}).click();await detail.getByRole('button',{name:'Add reusable group',exact:true}).click();await expect(page.locator('.reusable-picker')).toContainText('Imported group B')
   await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(detail.getByText('Unsaved changes',{exact:true})).toHaveCount(0)
   await page.screenshot({path:`${evidence}/picker-${viewport.width}.png`,fullPage:true})
   await page.getByRole('button',{name:'＋ New form',exact:true}).click();await detail.getByLabel('Form name',{exact:true}).fill('New explicitly saved draft')
-  await detail.getByRole('button',{name:'Edit',exact:true}).click();await detail.getByLabel('Title',{exact:true}).fill('Valid question');await detail.getByLabel('Instructions / question').fill('Was it resolved?')
+  await detail.getByRole('button',{name:'Add question',exact:true}).click();await detail.getByLabel('Title',{exact:true}).fill('Valid question');await detail.getByLabel('Instructions / question').fill('Was it resolved?')
   const prior=state.forms.length;await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('heading',{name:`Saved in AQM · ${prior+1} saved forms`})).toBeVisible();await expect(page.locator('.local-library').getByRole('button',{name:'New explicitly saved draft',exact:true})).toHaveCount(0)
   expect(state.errors).toEqual([]);await context.close()
  })

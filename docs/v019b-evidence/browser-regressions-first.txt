@@ -1,0 +1,315 @@
+[WebServer] (node:54580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 105 tests using 1 worker
+
+(node:54582) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/105] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/105] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/105] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/105] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/105] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/105] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/105] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/105] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/105] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/105] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/105] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/105] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/105] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/105] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/105] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/105] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/105] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/105] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/105] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/105] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[21/105] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[22/105] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[23/105] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[24/105] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[25/105] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[26/105] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[27/105] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[28/105] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[29/105] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[30/105] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[31/105] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[32/105] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1440
+[33/105] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1440
+[34/105] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1440
+[35/105] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1920
+[36/105] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1920
+[37/105] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1920
+[38/105] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 390
+[39/105] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 390
+[40/105] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 390
+[41/105] tests/definition-authority.spec.ts:125:1 › exact voice criteria, missing saved pin, two saved forms and persistent working copies
+[42/105] tests/definition-authority.spec.ts:145:1 › failed shared policy refresh retains dirty policy and separate schedule drafts
+[43/105] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[44/105] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[45/105] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[46/105] tests/reviewer-continuity.spec.ts:99:1 › exact My Reviews filter context survives evidence navigation
+[47/105] tests/reviewer-continuity.spec.ts:107:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[48/105] tests/reviewer-continuity.spec.ts:119:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[49/105] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles All Evaluations without Refresh
+[50/105] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles active cohort without Refresh
+[51/105] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles review status without Refresh
+[52/105] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles due cohort without Refresh
+[53/105] tests/reviewer-continuity.spec.ts:148:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[54/105] tests/reviewer-continuity.spec.ts:166:1 › reassignment retains unsaved notes but removes editing and submission authority
+[55/105] tests/reviewer-continuity.spec.ts:177:1 › 409 refresh retains draft without silently replacing its base
+[56/105] tests/reviewer-continuity.spec.ts:187:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[57/105] tests/reviewer-continuity.spec.ts:198:1 › later server page survives evidence return and completion background reload
+[58/105] tests/reviewer-continuity.spec.ts:209:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[59/105] tests/reviewer-continuity.spec.ts:224:1 › unstarted review returns to selected evaluation heading
+[60/105] tests/reviewer-continuity.spec.ts:231:1 › completion removes the row before a failed background list reload, preserving confirmation
+[61/105] tests/reviewer-continuity.spec.ts:241:1 › failed completion retains all changes and explicit retry completes exactly once
+[62/105] tests/reviewer-continuity.spec.ts:255:1 › reload starts a new session without unsubmitted answers or notes
+[63/105] tests/reviewer-continuity.spec.ts:267:1 › About and workspace handoff retain human work and unload protection in this SPA
+[64/105] tests/reviewer-continuity.spec.ts:278:1 › a pending completion reconciles the current filters rather than the scope at click time
+[65/105] tests/reviewer-continuity.spec.ts:294:1 › completion in another session keeps unfinished answers separate from completed authority
+[66/105] tests/reviewer-continuity.spec.ts:307:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[67/105] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[68/105] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[69/105] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+  1) tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#form-test')
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" locator('#form-test') with timeout 5000ms
+      - waiting for locator('#form-test')
+        14 × locator resolved to <section id="form-test" class="panel form-test">…</section>
+           - unexpected value "hidden"
+
+
+      127 |   const recovery={id:'exact-recovery-id',form,source:'synthetic',selectedConversationIds:[],sampleConfiguration:{strategy:'recent',count:0}}
+      128 |   await page.addInitScript(value=>{sessionStorage.setItem('genesys-aqm-v06-pending-test-test-draft',JSON.stringify(value))},recovery)
+    > 129 |   const state=await fixture(page,'forms');await page.getByRole('row').filter({hasText:form.name}).click();const panel=page.locator('#form-test');await expect(panel).toBeVisible();await panel.screenshot({path:`${evidence}/form-test-initial-${viewport.width}.png`})
+          |                                                                                                                                                                      ^
+      130 |   const clear=panel.getByRole('button',{name:"Clear this form's test history",exact:true})
+      131 |   await dialogAction(page,false,()=>clear.click(),'Completed saved test runs');expect(state.requests.filter(r=>r.method==='DELETE')).toHaveLength(0)
+      132 |   await dialogAction(page,true,()=>clear.click(),'Running or uncertain tests are retained');await expect(panel.getByRole('status')).toContainText('Completed test history cleared');expect(state.requests.filter(r=>r.method==='DELETE').map(r=>r.path)).toEqual(['/api/form-tests/finished']);expect(state.runs.map(r=>r.id)).toEqual(['running','unknown','other']);expect(state.requests.some(r=>r.path.startsWith('/api/evaluations')&&r.method!=='GET')).toBe(false)
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/save-protection.spec.ts:129:166
+
+    Error Context: test-results/save-protection-Form-Test--08279-s-preserve-recovery-at-1440/error-context.md
+
+
+(node:54708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[70/105] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[71/105] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[72/105] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+  2) tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#form-test')
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" locator('#form-test') with timeout 5000ms
+      - waiting for locator('#form-test')
+        14 × locator resolved to <section id="form-test" class="panel form-test">…</section>
+           - unexpected value "hidden"
+
+
+      127 |   const recovery={id:'exact-recovery-id',form,source:'synthetic',selectedConversationIds:[],sampleConfiguration:{strategy:'recent',count:0}}
+      128 |   await page.addInitScript(value=>{sessionStorage.setItem('genesys-aqm-v06-pending-test-test-draft',JSON.stringify(value))},recovery)
+    > 129 |   const state=await fixture(page,'forms');await page.getByRole('row').filter({hasText:form.name}).click();const panel=page.locator('#form-test');await expect(panel).toBeVisible();await panel.screenshot({path:`${evidence}/form-test-initial-${viewport.width}.png`})
+          |                                                                                                                                                                      ^
+      130 |   const clear=panel.getByRole('button',{name:"Clear this form's test history",exact:true})
+      131 |   await dialogAction(page,false,()=>clear.click(),'Completed saved test runs');expect(state.requests.filter(r=>r.method==='DELETE')).toHaveLength(0)
+      132 |   await dialogAction(page,true,()=>clear.click(),'Running or uncertain tests are retained');await expect(panel.getByRole('status')).toContainText('Completed test history cleared');expect(state.requests.filter(r=>r.method==='DELETE').map(r=>r.path)).toEqual(['/api/form-tests/finished']);expect(state.runs.map(r=>r.id)).toEqual(['running','unknown','other']);expect(state.requests.some(r=>r.path.startsWith('/api/evaluations')&&r.method!=='GET')).toBe(false)
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/save-protection.spec.ts:129:166
+
+    Error Context: test-results/save-protection-Form-Test--fabb3-s-preserve-recovery-at-1920/error-context.md
+
+
+(node:54772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[73/105] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[74/105] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[75/105] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+  3) tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#form-test')
+    Expected: visible
+    Received: hidden
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeVisible" locator('#form-test') with timeout 5000ms
+      - waiting for locator('#form-test')
+        14 × locator resolved to <section id="form-test" class="panel form-test">…</section>
+           - unexpected value "hidden"
+
+
+      127 |   const recovery={id:'exact-recovery-id',form,source:'synthetic',selectedConversationIds:[],sampleConfiguration:{strategy:'recent',count:0}}
+      128 |   await page.addInitScript(value=>{sessionStorage.setItem('genesys-aqm-v06-pending-test-test-draft',JSON.stringify(value))},recovery)
+    > 129 |   const state=await fixture(page,'forms');await page.getByRole('row').filter({hasText:form.name}).click();const panel=page.locator('#form-test');await expect(panel).toBeVisible();await panel.screenshot({path:`${evidence}/form-test-initial-${viewport.width}.png`})
+          |                                                                                                                                                                      ^
+      130 |   const clear=panel.getByRole('button',{name:"Clear this form's test history",exact:true})
+      131 |   await dialogAction(page,false,()=>clear.click(),'Completed saved test runs');expect(state.requests.filter(r=>r.method==='DELETE')).toHaveLength(0)
+      132 |   await dialogAction(page,true,()=>clear.click(),'Running or uncertain tests are retained');await expect(panel.getByRole('status')).toContainText('Completed test history cleared');expect(state.requests.filter(r=>r.method==='DELETE').map(r=>r.path)).toEqual(['/api/form-tests/finished']);expect(state.runs.map(r=>r.id)).toEqual(['running','unknown','other']);expect(state.requests.some(r=>r.path.startsWith('/api/evaluations')&&r.method!=='GET')).toBe(false)
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/save-protection.spec.ts:129:166
+
+    Error Context: test-results/save-protection-Form-Test--99112-ns-preserve-recovery-at-390/error-context.md
+
+
+(node:54873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[76/105] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[77/105] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[78/105] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[79/105] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[80/105] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[81/105] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[82/105] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[83/105] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[84/105] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[85/105] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[86/105] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[87/105] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[88/105] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+[89/105] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[90/105] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[91/105] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[92/105] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[93/105] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[94/105] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[95/105] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[96/105] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[97/105] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[98/105] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+  4) tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.form-detail')
+    Expected substring: "Published version is read-only. Create a new version to edit."
+    Received string:    "PUBLISHED · VERSION 1Sales / Service QualityClose detailsMore actionsExport JSONDuplicate as new formTEST FORMEdit as new versionRetirePublished version is locked. Create a new version to edit.Needs-led recommendation and transparent terms. · Pass score 75%Critical questionsCritical questionsClear termsQuestion groupsQuestion weights determine the overall score. Scoring rules · Question weighted · Yes threshold 70%Groups and questions use the scoring rules in this version.General5 questionsView group details01Needs discoveryOrdered scale · Weight 1.5 · EnabledHow well did the agent understand the customer’s needs before recommending a product?4 levels · Poor → ExcellentView details02Relevant recommendationYes / No · Weight 1 · EnabledWas the recommendation linked to the needs the customer expressed?Yes / NoView details03Clear termsYes / No · Weight 2 · EnabledWere price, limitations and important terms clearly disclosed?Yes / NoView details04Customer agencyOrdered scale · Weight 1 · EnabledHow well did the agent give the customer space to decide without pressure?4 levels · Poor → ExcellentView details05Next stepsYes / No · Weight 1 · EnabledWere purchase or follow-up steps made clear?Yes / NoView detailsTest this formISOLATED SANDBOXTest formTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)SourceSyntheticGenesys CloudSelectionMost recentDeterministic randomManual selectionConversations5 conversations · 5 questions · 1 form · 5 evaluation assignments · up to 5 Jev requestsThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.Test formRefresh test history"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.form-detail') with timeout 5000ms
+      - waiting for locator('.form-detail')
+        14 × locator resolved to <section class="form-detail">…</section>
+           - unexpected value "PUBLISHED · VERSION 1Sales / Service QualityClose detailsMore actionsExport JSONDuplicate as new formTEST FORMEdit as new versionRetirePublished version is locked. Create a new version to edit.Needs-led recommendation and transparent terms. · Pass score 75%Critical questionsCritical questionsClear termsQuestion groupsQuestion weights determine the overall score. Scoring rules · Question weighted · Yes threshold 70%Groups and questions use the scoring rules in this version.General5 questionsView group details01Needs discoveryOrdered scale · Weight 1.5 · EnabledHow well did the agent understand the customer’s needs before recommending a product?4 levels · Poor → ExcellentView details02Relevant recommendationYes / No · Weight 1 · EnabledWas the recommendation linked to the needs the customer expressed?Yes / NoView details03Clear termsYes / No · Weight 2 · EnabledWere price, limitations and important terms clearly disclosed?Yes / NoView details04Customer agencyOrdered scale · Weight 1 · EnabledHow well did the agent give the customer space to decide without pressure?4 levels · Poor → ExcellentView details05Next stepsYes / No · Weight 1 · EnabledWere purchase or follow-up steps made clear?Yes / NoView detailsTest this formISOLATED SANDBOXTest formTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)SourceSyntheticGenesys CloudSelectionMost recentDeterministic randomManual selectionConversations5 conversations · 5 questions · 1 form · 5 evaluation assignments · up to 5 Jev requestsThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.Test formRefresh test history"
+
+
+      70 |    await keyboardTo(page,nav(page,name));await page.keyboard.press('Enter')
+      71 |    const open=page.getByRole('button',{name:new RegExp(`^${prefix}`)}).first();await keyboardTo(page,open);await page.keyboard.press('Enter')
+    > 72 |    const detail=page.locator(detailClass);await expect(detail.locator('h2').first()).toBeFocused();await expect(detail).toContainText('Published version is read-only. Create a new version to edit.')
+         |                                                                                                                         ^
+      73 |    const close=detail.getByRole('button',{name:'Close details',exact:true});await insideMain(page,close);await detail.locator('.form-meta').screenshot({path:`docs/v018e-evidence/${name==='Evaluation Forms'?'form':'group'}-${viewport.width}.png`})
+      74 |    await keyboardTo(page,close);await page.keyboard.press('Space');await expect(open).toBeFocused()
+      75 |   }
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/usability.spec.ts:72:121
+
+    Error Context: test-results/usability-mobile-heading-a-0b6c5-roup-keyboard-journeys-1440/error-context.md
+
+
+(node:55914) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[99/105] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[100/105] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+  5) tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.form-detail')
+    Expected substring: "Published version is read-only. Create a new version to edit."
+    Received string:    "PUBLISHED · VERSION 1Sales / Service QualityClose detailsMore actionsExport JSONDuplicate as new formTEST FORMEdit as new versionRetirePublished version is locked. Create a new version to edit.Needs-led recommendation and transparent terms. · Pass score 75%Critical questionsCritical questionsClear termsQuestion groupsQuestion weights determine the overall score. Scoring rules · Question weighted · Yes threshold 70%Groups and questions use the scoring rules in this version.General5 questionsView group details01Needs discoveryOrdered scale · Weight 1.5 · EnabledHow well did the agent understand the customer’s needs before recommending a product?4 levels · Poor → ExcellentView details02Relevant recommendationYes / No · Weight 1 · EnabledWas the recommendation linked to the needs the customer expressed?Yes / NoView details03Clear termsYes / No · Weight 2 · EnabledWere price, limitations and important terms clearly disclosed?Yes / NoView details04Customer agencyOrdered scale · Weight 1 · EnabledHow well did the agent give the customer space to decide without pressure?4 levels · Poor → ExcellentView details05Next stepsYes / No · Weight 1 · EnabledWere purchase or follow-up steps made clear?Yes / NoView detailsTest this formISOLATED SANDBOXTest formTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)SourceSyntheticGenesys CloudSelectionMost recentDeterministic randomManual selectionConversations5 conversations · 5 questions · 1 form · 5 evaluation assignments · up to 5 Jev requestsThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.Test formRefresh test history"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.form-detail') with timeout 5000ms
+      - waiting for locator('.form-detail')
+        14 × locator resolved to <section class="form-detail">…</section>
+           - unexpected value "PUBLISHED · VERSION 1Sales / Service QualityClose detailsMore actionsExport JSONDuplicate as new formTEST FORMEdit as new versionRetirePublished version is locked. Create a new version to edit.Needs-led recommendation and transparent terms. · Pass score 75%Critical questionsCritical questionsClear termsQuestion groupsQuestion weights determine the overall score. Scoring rules · Question weighted · Yes threshold 70%Groups and questions use the scoring rules in this version.General5 questionsView group details01Needs discoveryOrdered scale · Weight 1.5 · EnabledHow well did the agent understand the customer’s needs before recommending a product?4 levels · Poor → ExcellentView details02Relevant recommendationYes / No · Weight 1 · EnabledWas the recommendation linked to the needs the customer expressed?Yes / NoView details03Clear termsYes / No · Weight 2 · EnabledWere price, limitations and important terms clearly disclosed?Yes / NoView details04Customer agencyOrdered scale · Weight 1 · EnabledHow well did the agent give the customer space to decide without pressure?4 levels · Poor → ExcellentView details05Next stepsYes / No · Weight 1 · EnabledWere purchase or follow-up steps made clear?Yes / NoView detailsTest this formISOLATED SANDBOXTest formTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)SourceSyntheticGenesys CloudSelectionMost recentDeterministic randomManual selectionConversations5 conversations · 5 questions · 1 form · 5 evaluation assignments · up to 5 Jev requestsThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.Test formRefresh test history"
+
+
+      70 |    await keyboardTo(page,nav(page,name));await page.keyboard.press('Enter')
+      71 |    const open=page.getByRole('button',{name:new RegExp(`^${prefix}`)}).first();await keyboardTo(page,open);await page.keyboard.press('Enter')
+    > 72 |    const detail=page.locator(detailClass);await expect(detail.locator('h2').first()).toBeFocused();await expect(detail).toContainText('Published version is read-only. Create a new version to edit.')
+         |                                                                                                                         ^
+      73 |    const close=detail.getByRole('button',{name:'Close details',exact:true});await insideMain(page,close);await detail.locator('.form-meta').screenshot({path:`docs/v018e-evidence/${name==='Evaluation Forms'?'form':'group'}-${viewport.width}.png`})
+      74 |    await keyboardTo(page,close);await page.keyboard.press('Space');await expect(open).toBeFocused()
+      75 |   }
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/usability.spec.ts:72:121
+
+    Error Context: test-results/usability-mobile-heading-a-89c2d-roup-keyboard-journeys-1920/error-context.md
+
+
+(node:55958) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[101/105] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[102/105] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+  6) tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.form-detail')
+    Expected substring: "Published version is read-only. Create a new version to edit."
+    Received string:    "PUBLISHED · VERSION 1Sales / Service QualityClose detailsMore actionsExport JSONDuplicate as new formTEST FORMEdit as new versionRetirePublished version is locked. Create a new version to edit.Needs-led recommendation and transparent terms. · Pass score 75%Critical questionsCritical questionsClear termsQuestion groupsQuestion weights determine the overall score. Scoring rules · Question weighted · Yes threshold 70%Groups and questions use the scoring rules in this version.General5 questionsView group details01Needs discoveryOrdered scale · Weight 1.5 · EnabledHow well did the agent understand the customer’s needs before recommending a product?4 levels · Poor → ExcellentView details02Relevant recommendationYes / No · Weight 1 · EnabledWas the recommendation linked to the needs the customer expressed?Yes / NoView details03Clear termsYes / No · Weight 2 · EnabledWere price, limitations and important terms clearly disclosed?Yes / NoView details04Customer agencyOrdered scale · Weight 1 · EnabledHow well did the agent give the customer space to decide without pressure?4 levels · Poor → ExcellentView details05Next stepsYes / No · Weight 1 · EnabledWere purchase or follow-up steps made clear?Yes / NoView detailsTest this formISOLATED SANDBOXTest formTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)SourceSyntheticGenesys CloudSelectionMost recentDeterministic randomManual selectionConversations5 conversations · 5 questions · 1 form · 5 evaluation assignments · up to 5 Jev requestsThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.Test formRefresh test history"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.form-detail') with timeout 5000ms
+      - waiting for locator('.form-detail')
+        14 × locator resolved to <section class="form-detail">…</section>
+           - unexpected value "PUBLISHED · VERSION 1Sales / Service QualityClose detailsMore actionsExport JSONDuplicate as new formTEST FORMEdit as new versionRetirePublished version is locked. Create a new version to edit.Needs-led recommendation and transparent terms. · Pass score 75%Critical questionsCritical questionsClear termsQuestion groupsQuestion weights determine the overall score. Scoring rules · Question weighted · Yes threshold 70%Groups and questions use the scoring rules in this version.General5 questionsView group details01Needs discoveryOrdered scale · Weight 1.5 · EnabledHow well did the agent understand the customer’s needs before recommending a product?4 levels · Poor → ExcellentView details02Relevant recommendationYes / No · Weight 1 · EnabledWas the recommendation linked to the needs the customer expressed?Yes / NoView details03Clear termsYes / No · Weight 2 · EnabledWere price, limitations and important terms clearly disclosed?Yes / NoView details04Customer agencyOrdered scale · Weight 1 · EnabledHow well did the agent give the customer space to decide without pressure?4 levels · Poor → ExcellentView details05Next stepsYes / No · Weight 1 · EnabledWere purchase or follow-up steps made clear?Yes / NoView detailsTest this formISOLATED SANDBOXTest formTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)SourceSyntheticGenesys CloudSelectionMost recentDeterministic randomManual selectionConversations5 conversations · 5 questions · 1 form · 5 evaluation assignments · up to 5 Jev requestsThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.Test formRefresh test history"
+
+
+      70 |    await keyboardTo(page,nav(page,name));await page.keyboard.press('Enter')
+      71 |    const open=page.getByRole('button',{name:new RegExp(`^${prefix}`)}).first();await keyboardTo(page,open);await page.keyboard.press('Enter')
+    > 72 |    const detail=page.locator(detailClass);await expect(detail.locator('h2').first()).toBeFocused();await expect(detail).toContainText('Published version is read-only. Create a new version to edit.')
+         |                                                                                                                         ^
+      73 |    const close=detail.getByRole('button',{name:'Close details',exact:true});await insideMain(page,close);await detail.locator('.form-meta').screenshot({path:`docs/v018e-evidence/${name==='Evaluation Forms'?'form':'group'}-${viewport.width}.png`})
+      74 |    await keyboardTo(page,close);await page.keyboard.press('Space');await expect(open).toBeFocused()
+      75 |   }
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/usability.spec.ts:72:121
+
+    Error Context: test-results/usability-mobile-heading-a-30c3d-group-keyboard-journeys-390/error-context.md
+
+
+(node:55992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[103/105] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[104/105] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[105/105] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  6 failed
+    tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440 
+    tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920 
+    tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390 
+    tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440 
+    tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920 
+    tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390 
+  99 passed (3.3m)

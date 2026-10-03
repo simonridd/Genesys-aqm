@@ -1,0 +1,313 @@
+[WebServer] (node:53886) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 12 tests using 1 worker
+
+(node:53944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/12] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[2/12] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[3/12] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+  1) tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "RENAMED"
+    Received string:    "Resolution clarity · update to v2
+    Cancel·
+    Review the answers below. Nothing changes until you update this question.·
+    CURRENT · v1
+    NEW · v2
+    Changes
+    Mostly clear
+    75%
+    Position 2
+    Mostly clear
+    80%
+    Position 1
+    CREDIT CHANGED · ORDER CHANGED
+    Clear
+    100%
+    Position 1
+    Clear
+    100%
+    Position 2
+    ORDER CHANGED
+    Unclear
+    0%
+    Position 4
+    Unclear
+    0%
+    Position 3
+    Unchanged
+    —
+    Not stated
+    0%
+    Position 4
+    ADDED
+    Partly clear
+    50%
+    Position 3
+    —
+    REMOVED·
+    Resulting order: Mostly clear → Clear → Unclear → Not stated·
+    No dependent condition will break.·
+    Advanced details
+    Update this question to v2"
+
+      31 |  })
+      32 |  test(`human version comparison and blocked question/group repair ${viewport.width}`,async({page})=>{
+    > 33 |  await page.setViewportSize(viewport);const f=applyAnswerSet(draft(),'q',a),v2=version(),state=await fixture(page,'AUTHOR',[a,v2],[f]);try{await nav(page,'Evaluation Forms').click();await page.getByRole('button',{name:'Open form Fixture choice form v1'}).click();const detail=page.locator('.form-detail');await detail.getByRole('button',{name:'Edit',exact:true}).click();await detail.getByRole('button',{name:'Newer version available: v2'}).click();const dialog=detail.getByRole('dialog');for(const label of ['ADDED','REMOVED','RENAMED','CREDIT CHANGED','ORDER CHANGED'])expect(await visibleText(dialog)).toContain(label);expect(await visibleText(dialog)).not.toMatch(/mostly_clear|partly_clear|not_stated|family/);await expect(dialog).toContainText('80%');await expect(dialog).toContainText('No dependent condition will break');expect((await state.store.form(f.id))!.questions[0].options).toEqual(a.options);await screenshot(page,'answer-diff',dialog);await dialog.getByRole('button',{name:'Update this question to v2'}).click();await detail.getByRole('button',{name:'Save changes',exact:true}).click();expect((await state.store.form(f.id))!.questions[0].options).toEqual(v2.options);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+      34 |  const blocked=applyAnswerSet(draft(),'q',a);blocked.questions.push({id:'escalation',groupId:'general',title:'Escalation required',instructions:'Is escalation required?',type:'noul',options:[],weight:1,enabled:true,condition:{kind:'question_outcome',questionId:'q',outcomes:['partly_clear']}});blocked.groups!.push({id:'followup',name:'Follow-up questions',condition:{kind:'question_outcome',questionId:'q',outcomes:['partly_clear']}});await state.store.putForm(blocked);await detail.getByRole('button',{name:'Done',exact:true}).last().click();await detail.getByRole('button',{name:'Close details'}).click();await page.getByRole('button',{name:'Refresh saved forms'}).click();await page.getByRole('button',{name:'Open form Fixture choice form v1'}).click();await detail.locator('.question-card').first().getByRole('button',{name:'Edit',exact:true}).click();const snapshot=JSON.stringify(await state.store.form(f.id)),mutations=state.requests.filter(r=>r.method!=='GET').length;await detail.getByRole('button',{name:'Newer version available: v2'}).click();await expect(dialog.getByRole('alert')).toContainText('Partly clear');await expect(dialog.getByRole('alert')).toContainText('Escalation required');await expect(dialog.getByRole('alert')).toContainText('Follow-up questions');await expect(dialog.getByRole('alert')).toContainText('Change or remove that condition first');await expect(dialog.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();expect(await visibleText(dialog.getByRole('alert'))).not.toMatch(/partly_clear|question_outcome|valid Choice|Noul/);await screenshot(page,'blocked-update',dialog);expect(JSON.stringify(await state.store.form(f.id))).toBe(snapshot);expect(state.requests.filter(r=>r.method!=='GET')).toHaveLength(mutations);await dialog.getByRole('button',{name:'Cancel'}).click();expect(state.errors).toEqual([])
+      35 |  }finally{await state.close()}
+      36 |  })
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:33:606
+
+    Error Context: test-results/authoring-simplification-h-3e318--question-group-repair-1440/error-context.md
+
+
+(node:54010) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/12] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+  2) tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.answer-set-detail').getByLabel('Answer format', { exact: true })
+
+
+      36 |  })
+      37 |  test(`Customer effort creation, lifecycle and mobile labels ${viewport.width}`,async({page})=>{
+    > 38 |  await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR');try{await screenshot(page,'answers-library');await page.getByRole('button',{name:'New Answer Set',exact:true}).click();const detail=page.locator('.answer-set-detail');await expect(detail.locator('h2')).toBeFocused();await detail.getByLabel('Answer Set name',{exact:true}).fill('Customer effort');await detail.getByLabel('Answer Set description').fill('Less effort earns more credit.');await detail.getByLabel('Answer format',{exact:true}).selectOption('score');for(let i=0;i<3;i++)await detail.getByRole('button',{name:'＋ Add level'}).click();const labels=['Very low','Low','Moderate','High','Very high'];for(const [i,label] of labels.entries()){await detail.getByLabel(`Option ${i+1} label`,{exact:true}).fill(label);await detail.getByLabel(`Option ${i+1} description`,{exact:true}).fill(`${label} customer effort.`);await detail.getByLabel(`Option ${i+1} credit (%)`,{exact:true}).fill(String(100-i*25))};expect(await visibleText(detail)).not.toMatch(/Base type|family|Source value|Stable key/);await bounds(page,detail);await screenshot(page,'answers-editor',detail);await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();await expect(detail).toContainText('Published version is locked');const saved=(await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items[0];expect(saved.options.map(o=>o.credit)).toEqual([1,.75,.5,.25,0]);expect(saved.options.map(o=>o.key)).toEqual(['yes','no','option_3','option_4','option_5']);await detail.getByRole('button',{name:'Edit as new version'}).focus();await page.keyboard.press('Enter');await detail.getByLabel('Option 2 label').fill('Little effort');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();expect((await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items.find(s=>s.version===2)!.options[1].key).toBe('no');expect(state.errors).toEqual([])}finally{await state.close()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+      39 |  })
+      40 | }
+      41 |
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:38:519
+
+    Error Context: test-results/authoring-simplification-C-ecf0e-ycle-and-mobile-labels-1440/error-context.md
+
+
+(node:54173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/12] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[6/12] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[7/12] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+  3) tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "RENAMED"
+    Received string:    "Resolution clarity · update to v2
+    Cancel·
+    Review the answers below. Nothing changes until you update this question.·
+    CURRENT · v1
+    NEW · v2
+    Changes
+    Mostly clear
+    75%
+    Position 2
+    Mostly clear
+    80%
+    Position 1
+    CREDIT CHANGED · ORDER CHANGED
+    Clear
+    100%
+    Position 1
+    Clear
+    100%
+    Position 2
+    ORDER CHANGED
+    Unclear
+    0%
+    Position 4
+    Unclear
+    0%
+    Position 3
+    Unchanged
+    —
+    Not stated
+    0%
+    Position 4
+    ADDED
+    Partly clear
+    50%
+    Position 3
+    —
+    REMOVED·
+    Resulting order: Mostly clear → Clear → Unclear → Not stated·
+    No dependent condition will break.·
+    Advanced details
+    Update this question to v2"
+
+      31 |  })
+      32 |  test(`human version comparison and blocked question/group repair ${viewport.width}`,async({page})=>{
+    > 33 |  await page.setViewportSize(viewport);const f=applyAnswerSet(draft(),'q',a),v2=version(),state=await fixture(page,'AUTHOR',[a,v2],[f]);try{await nav(page,'Evaluation Forms').click();await page.getByRole('button',{name:'Open form Fixture choice form v1'}).click();const detail=page.locator('.form-detail');await detail.getByRole('button',{name:'Edit',exact:true}).click();await detail.getByRole('button',{name:'Newer version available: v2'}).click();const dialog=detail.getByRole('dialog');for(const label of ['ADDED','REMOVED','RENAMED','CREDIT CHANGED','ORDER CHANGED'])expect(await visibleText(dialog)).toContain(label);expect(await visibleText(dialog)).not.toMatch(/mostly_clear|partly_clear|not_stated|family/);await expect(dialog).toContainText('80%');await expect(dialog).toContainText('No dependent condition will break');expect((await state.store.form(f.id))!.questions[0].options).toEqual(a.options);await screenshot(page,'answer-diff',dialog);await dialog.getByRole('button',{name:'Update this question to v2'}).click();await detail.getByRole('button',{name:'Save changes',exact:true}).click();expect((await state.store.form(f.id))!.questions[0].options).toEqual(v2.options);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+      34 |  const blocked=applyAnswerSet(draft(),'q',a);blocked.questions.push({id:'escalation',groupId:'general',title:'Escalation required',instructions:'Is escalation required?',type:'noul',options:[],weight:1,enabled:true,condition:{kind:'question_outcome',questionId:'q',outcomes:['partly_clear']}});blocked.groups!.push({id:'followup',name:'Follow-up questions',condition:{kind:'question_outcome',questionId:'q',outcomes:['partly_clear']}});await state.store.putForm(blocked);await detail.getByRole('button',{name:'Done',exact:true}).last().click();await detail.getByRole('button',{name:'Close details'}).click();await page.getByRole('button',{name:'Refresh saved forms'}).click();await page.getByRole('button',{name:'Open form Fixture choice form v1'}).click();await detail.locator('.question-card').first().getByRole('button',{name:'Edit',exact:true}).click();const snapshot=JSON.stringify(await state.store.form(f.id)),mutations=state.requests.filter(r=>r.method!=='GET').length;await detail.getByRole('button',{name:'Newer version available: v2'}).click();await expect(dialog.getByRole('alert')).toContainText('Partly clear');await expect(dialog.getByRole('alert')).toContainText('Escalation required');await expect(dialog.getByRole('alert')).toContainText('Follow-up questions');await expect(dialog.getByRole('alert')).toContainText('Change or remove that condition first');await expect(dialog.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();expect(await visibleText(dialog.getByRole('alert'))).not.toMatch(/partly_clear|question_outcome|valid Choice|Noul/);await screenshot(page,'blocked-update',dialog);expect(JSON.stringify(await state.store.form(f.id))).toBe(snapshot);expect(state.requests.filter(r=>r.method!=='GET')).toHaveLength(mutations);await dialog.getByRole('button',{name:'Cancel'}).click();expect(state.errors).toEqual([])
+      35 |  }finally{await state.close()}
+      36 |  })
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:33:606
+
+    Error Context: test-results/authoring-simplification-h-f4220--question-group-repair-1920/error-context.md
+
+
+(node:54182) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/12] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+  4) tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.answer-set-detail').getByLabel('Answer format', { exact: true })
+
+
+      36 |  })
+      37 |  test(`Customer effort creation, lifecycle and mobile labels ${viewport.width}`,async({page})=>{
+    > 38 |  await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR');try{await screenshot(page,'answers-library');await page.getByRole('button',{name:'New Answer Set',exact:true}).click();const detail=page.locator('.answer-set-detail');await expect(detail.locator('h2')).toBeFocused();await detail.getByLabel('Answer Set name',{exact:true}).fill('Customer effort');await detail.getByLabel('Answer Set description').fill('Less effort earns more credit.');await detail.getByLabel('Answer format',{exact:true}).selectOption('score');for(let i=0;i<3;i++)await detail.getByRole('button',{name:'＋ Add level'}).click();const labels=['Very low','Low','Moderate','High','Very high'];for(const [i,label] of labels.entries()){await detail.getByLabel(`Option ${i+1} label`,{exact:true}).fill(label);await detail.getByLabel(`Option ${i+1} description`,{exact:true}).fill(`${label} customer effort.`);await detail.getByLabel(`Option ${i+1} credit (%)`,{exact:true}).fill(String(100-i*25))};expect(await visibleText(detail)).not.toMatch(/Base type|family|Source value|Stable key/);await bounds(page,detail);await screenshot(page,'answers-editor',detail);await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();await expect(detail).toContainText('Published version is locked');const saved=(await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items[0];expect(saved.options.map(o=>o.credit)).toEqual([1,.75,.5,.25,0]);expect(saved.options.map(o=>o.key)).toEqual(['yes','no','option_3','option_4','option_5']);await detail.getByRole('button',{name:'Edit as new version'}).focus();await page.keyboard.press('Enter');await detail.getByLabel('Option 2 label').fill('Little effort');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();expect((await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items.find(s=>s.version===2)!.options[1].key).toBe('no');expect(state.errors).toEqual([])}finally{await state.close()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+      39 |  })
+      40 | }
+      41 |
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:38:519
+
+    Error Context: test-results/authoring-simplification-C-c749f-ycle-and-mobile-labels-1920/error-context.md
+
+
+(node:54207) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/12] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+  5) tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 3901.3
+    Received:   5213
+
+      21 |  if(viewport.width===390){const before=JSON.parse(readFileSync('docs/v019b-evidence/mobile-before.json','utf8'));expect(collapsed.pageHeight).toBeLessThan(before.pageHeight*.65);writeFileSync(`${evidence}/mobile-after.json`,JSON.stringify({before,after:collapsed,reduction:1-collapsed.pageHeight/before.pageHeight},null,2))}
+      22 |  const edit=card.getByRole('button',{name:'Edit',exact:true});await edit.focus();await page.keyboard.press('Enter');await expect(card.locator('.editor-focus-heading')).toBeFocused();await expect(card.getByLabel('Stable question ID')).toBeHidden();await expect(card.getByLabel('Option 1 key')).toBeHidden();await expect(card.getByLabel('Option 1 external/source value')).toBeHidden();await expect(card.getByLabel('Option 1 credit (%)')).toHaveValue('100');await bounds(page,card);await screenshot(page,'form-expanded',detail);
+    > 23 |  const expanded=await page.evaluate(()=>({pageHeight:document.documentElement.scrollHeight,questionHeight:document.querySelector('.question-card')!.getBoundingClientRect().height}));if(viewport.width===390){const before=JSON.parse(readFileSync('docs/v019b-evidence/mobile-expanded-before.json','utf8'));writeFileSync(`${evidence}/mobile-expanded-after.json`,JSON.stringify({before,after:expanded,reduction:1-expanded.pageHeight/before.pageHeight},null,2));expect(expanded.pageHeight).toBeLessThan(before.pageHeight*.65)}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      24 |  await card.getByLabel('Title',{exact:true}).fill('Resolution quality');await expect(detail.getByRole('status')).toContainText('Unsaved changes');await card.getByRole('button',{name:'Use reusable Answer Set',exact:true}).focus();await page.keyboard.press('Enter');const picker=card.getByRole('dialog');await expect(picker.locator('h4')).toBeFocused();await screenshot(page,'answer-picker',picker);await picker.getByRole('button',{name:'Use Resolution clarity v1'}).focus();await page.keyboard.press('Enter');await expect(card.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await expect(card).toContainText('Using Resolution clarity v1');await expect(card.getByLabel('Option 1 label')).toHaveCount(0);await screenshot(page,'answer-attached',detail);
+      25 |  await card.getByRole('button',{name:'Detach and customize',exact:true}).click();await expect(card.getByRole('status')).toContainText('Current answers kept');await card.getByLabel('Option 1 label').fill('Clearly resolved');await card.locator('.option-advanced').first().locator('summary').focus();await page.keyboard.press('Enter');await expect(card.getByLabel('Option 1 key')).toHaveValue('clear');await card.getByLabel('Option 1 external/source value').fill('17.125');await card.getByLabel('Option 1 credit (%)').fill('75');await card.locator('.advanced-details').filter({has:page.getByLabel('Stable question ID')}).locator('summary').click();await expect(card.getByLabel('Stable question ID')).toHaveValue('q');await card.getByRole('button',{name:'Done',exact:true}).last().click();await expect(edit).toBeFocused();await detail.getByRole('button',{name:'Save changes',exact:true}).click();await expect(detail.getByRole('status')).toContainText('Saved in AQM');expect(await visibleText(detail)).not.toMatch(/save locally|saved locally|to server|familyId|sourceValue/);
+      26 |  const saved=(await state.store.form('fixture_choice'))!;expect(saved.questions[0]).toMatchObject({id:'q',title:'Resolution quality'});expect(saved.questions[0].options[0]).toEqual({...a.options[0],label:'Clearly resolved',credit:.75,sourceValue:17.125});expect(saved.questions[0].options.slice(1)).toEqual(a.options.slice(1));expect(state.errors).toEqual([])
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:23:485
+
+    Error Context: test-results/authoring-simplification-q-93929-detach-advanced-mapping-390/error-context.md
+
+
+(node:54214) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/12] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[11/12] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+  6) tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "RENAMED"
+    Received string:    "Resolution clarity · update to v2
+    Cancel·
+    Review the answers below. Nothing changes until you update this question.·
+    CURRENT · v1
+    NEW · v2
+    Mostly clear
+    75%
+    Position 2
+    Mostly clear
+    80%
+    Position 1
+    CREDIT CHANGED · ORDER CHANGED
+    Clear
+    100%
+    Position 1
+    Clear
+    100%
+    Position 2
+    ORDER CHANGED
+    Unclear
+    0%
+    Position 4
+    Unclear
+    0%
+    Position 3
+    Unchanged
+    —
+    Not stated
+    0%
+    Position 4
+    ADDED
+    Partly clear
+    50%
+    Position 3
+    —
+    REMOVED·
+    Resulting order: Mostly clear → Clear → Unclear → Not stated·
+    No dependent condition will break.·
+    Advanced details
+    Update this question to v2"
+
+      31 |  })
+      32 |  test(`human version comparison and blocked question/group repair ${viewport.width}`,async({page})=>{
+    > 33 |  await page.setViewportSize(viewport);const f=applyAnswerSet(draft(),'q',a),v2=version(),state=await fixture(page,'AUTHOR',[a,v2],[f]);try{await nav(page,'Evaluation Forms').click();await page.getByRole('button',{name:'Open form Fixture choice form v1'}).click();const detail=page.locator('.form-detail');await detail.getByRole('button',{name:'Edit',exact:true}).click();await detail.getByRole('button',{name:'Newer version available: v2'}).click();const dialog=detail.getByRole('dialog');for(const label of ['ADDED','REMOVED','RENAMED','CREDIT CHANGED','ORDER CHANGED'])expect(await visibleText(dialog)).toContain(label);expect(await visibleText(dialog)).not.toMatch(/mostly_clear|partly_clear|not_stated|family/);await expect(dialog).toContainText('80%');await expect(dialog).toContainText('No dependent condition will break');expect((await state.store.form(f.id))!.questions[0].options).toEqual(a.options);await screenshot(page,'answer-diff',dialog);await dialog.getByRole('button',{name:'Update this question to v2'}).click();await detail.getByRole('button',{name:'Save changes',exact:true}).click();expect((await state.store.form(f.id))!.questions[0].options).toEqual(v2.options);
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+      34 |  const blocked=applyAnswerSet(draft(),'q',a);blocked.questions.push({id:'escalation',groupId:'general',title:'Escalation required',instructions:'Is escalation required?',type:'noul',options:[],weight:1,enabled:true,condition:{kind:'question_outcome',questionId:'q',outcomes:['partly_clear']}});blocked.groups!.push({id:'followup',name:'Follow-up questions',condition:{kind:'question_outcome',questionId:'q',outcomes:['partly_clear']}});await state.store.putForm(blocked);await detail.getByRole('button',{name:'Done',exact:true}).last().click();await detail.getByRole('button',{name:'Close details'}).click();await page.getByRole('button',{name:'Refresh saved forms'}).click();await page.getByRole('button',{name:'Open form Fixture choice form v1'}).click();await detail.locator('.question-card').first().getByRole('button',{name:'Edit',exact:true}).click();const snapshot=JSON.stringify(await state.store.form(f.id)),mutations=state.requests.filter(r=>r.method!=='GET').length;await detail.getByRole('button',{name:'Newer version available: v2'}).click();await expect(dialog.getByRole('alert')).toContainText('Partly clear');await expect(dialog.getByRole('alert')).toContainText('Escalation required');await expect(dialog.getByRole('alert')).toContainText('Follow-up questions');await expect(dialog.getByRole('alert')).toContainText('Change or remove that condition first');await expect(dialog.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();expect(await visibleText(dialog.getByRole('alert'))).not.toMatch(/partly_clear|question_outcome|valid Choice|Noul/);await screenshot(page,'blocked-update',dialog);expect(JSON.stringify(await state.store.form(f.id))).toBe(snapshot);expect(state.requests.filter(r=>r.method!=='GET')).toHaveLength(mutations);await dialog.getByRole('button',{name:'Cancel'}).click();expect(state.errors).toEqual([])
+      35 |  }finally{await state.close()}
+      36 |  })
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:33:606
+
+    Error Context: test-results/authoring-simplification-h-f890a-d-question-group-repair-390/error-context.md
+
+
+(node:54221) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/12] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+  7) tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.answer-set-detail').getByLabel('Answer format', { exact: true })
+
+
+      36 |  })
+      37 |  test(`Customer effort creation, lifecycle and mobile labels ${viewport.width}`,async({page})=>{
+    > 38 |  await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR');try{await screenshot(page,'answers-library');await page.getByRole('button',{name:'New Answer Set',exact:true}).click();const detail=page.locator('.answer-set-detail');await expect(detail.locator('h2')).toBeFocused();await detail.getByLabel('Answer Set name',{exact:true}).fill('Customer effort');await detail.getByLabel('Answer Set description').fill('Less effort earns more credit.');await detail.getByLabel('Answer format',{exact:true}).selectOption('score');for(let i=0;i<3;i++)await detail.getByRole('button',{name:'＋ Add level'}).click();const labels=['Very low','Low','Moderate','High','Very high'];for(const [i,label] of labels.entries()){await detail.getByLabel(`Option ${i+1} label`,{exact:true}).fill(label);await detail.getByLabel(`Option ${i+1} description`,{exact:true}).fill(`${label} customer effort.`);await detail.getByLabel(`Option ${i+1} credit (%)`,{exact:true}).fill(String(100-i*25))};expect(await visibleText(detail)).not.toMatch(/Base type|family|Source value|Stable key/);await bounds(page,detail);await screenshot(page,'answers-editor',detail);await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();await expect(detail).toContainText('Published version is locked');const saved=(await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items[0];expect(saved.options.map(o=>o.credit)).toEqual([1,.75,.5,.25,0]);expect(saved.options.map(o=>o.key)).toEqual(['yes','no','option_3','option_4','option_5']);await detail.getByRole('button',{name:'Edit as new version'}).focus();await page.keyboard.press('Enter');await detail.getByLabel('Option 2 label').fill('Little effort');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await detail.getByRole('button',{name:'Publish Answer Set'}).click();expect((await state.store.query<AnswerSetAsset>('answerSetAssets',100)).items.find(s=>s.version===2)!.options[1].key).toBe('no');expect(state.errors).toEqual([])}finally{await state.close()}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+      39 |  })
+      40 | }
+      41 |
+        at /private/tmp/aqm-v019b-authoring-simplification/tests/authoring-simplification.spec.ts:38:519
+
+    Error Context: test-results/authoring-simplification-C-351f3-cycle-and-mobile-labels-390/error-context.md
+
+
+  7 failed
+    tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440 
+    tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440 
+    tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920 
+    tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920 
+    tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390 
+    tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390 
+    tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390 
+  5 passed (1.8m)
