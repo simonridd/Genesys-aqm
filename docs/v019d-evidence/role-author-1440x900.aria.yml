@@ -1,0 +1,14 @@
+- navigation "Primary navigation":
+  - group:
+    - text: Configuration
+    - button "Evaluation Forms"
+    - button "Question Groups"
+    - button "Answer Sets"
+    - button "Policies"
+  - group: Monitor / Quality
+  - group: Interactions
+  - button "Settings"
+  - button "About / product tour"
+- navigation "Breadcrumb":
+  - text: Workspace
+  - strong: Evaluation Forms

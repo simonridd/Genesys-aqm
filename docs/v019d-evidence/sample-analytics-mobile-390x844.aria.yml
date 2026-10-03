@@ -1,0 +1,16 @@
+- navigation "Primary navigation":
+  - group:
+    - text: Interactions
+    - button "Conversations"
+  - group:
+    - text: Monitor / Quality
+    - button "Analytics"
+    - button "Overview"
+    - button "Evaluations"
+    - button "Calibration"
+  - group: Configuration
+  - button "Settings"
+  - button "About / product tour"
+- navigation "Breadcrumb":
+  - text: Workspace
+  - strong: Analytics

@@ -1,0 +1,19 @@
+- navigation "Primary navigation":
+  - group:
+    - text: Monitor / Quality
+    - button "Overview"
+    - button "Evaluations"
+    - button "Analytics"
+    - button "Calibration"
+  - group:
+    - text: Configuration
+    - button "Policies"
+    - button "Evaluation Forms"
+    - button "Question Groups"
+    - button "Answer Sets"
+  - group: Interactions
+  - button "Settings"
+  - button "About / product tour"
+- navigation "Breadcrumb":
+  - text: Workspace
+  - strong: Policies

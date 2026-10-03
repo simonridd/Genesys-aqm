@@ -46,5 +46,30 @@
     "final-public-navigation/calibration-confidence-390x844.png"
   ],
   "note": "Representative captures retained; redundant viewport/state screenshots and page text snapshots removed. Full reports, action traces, geometry, preservation hashes and relevant accessibility snapshots retained.",
-  "screenshotCount": 44
+  "screenshotCount": 44,
+  "accessibilitySnapshots": [
+    "admin-configuration-open-1440x900.aria.yml",
+    "admin-configuration-open-390x844.aria.yml",
+    "analytics-coverage-390x844.aria.yml",
+    "analytics-questions-1440x900.aria.yml",
+    "analytics-questions-390x844.aria.yml",
+    "calibration-confidence-390x844.aria.yml",
+    "contextual-conversation-review-390x844.aria.yml",
+    "mobile-question-return-390x844.aria.yml",
+    "reviewer-configuration-open-1440x900.aria.yml",
+    "reviewer-configuration-open-390x844.aria.yml",
+    "role-admin-1440x900.aria.yml",
+    "role-admin-390x844.aria.yml",
+    "role-author-1440x900.aria.yml",
+    "role-author-390x844.aria.yml",
+    "role-reviewer-1440x900.aria.yml",
+    "role-reviewer-390x844.aria.yml",
+    "role-viewer-1440x900.aria.yml",
+    "role-viewer-390x844.aria.yml",
+    "sample-analytics-mobile-390x844.aria.yml",
+    "settings-admin-1440x900.aria.yml",
+    "settings-admin-390x844.aria.yml",
+    "sidebar-reachability-1440x720.aria.yml"
+  ],
+  "accessibilitySnapshotSource": "5a0dc0687d1b8be0725ea03bd1b54d076febd8ed; final frontend DOM unchanged by the subsequent CSS-only focus-colour correction."
 }
