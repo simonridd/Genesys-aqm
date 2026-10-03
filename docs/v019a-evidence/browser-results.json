@@ -94,12 +94,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2011,
+                  "duration": 2089,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:33.437Z",
+                  "startTime": "2026-10-03T16:37:12.985Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -128,12 +128,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1914,
+                  "duration": 2030,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:35.586Z",
+                  "startTime": "2026-10-03T16:37:15.241Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -162,12 +162,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1733,
+                  "duration": 1798,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:37.506Z",
+                  "startTime": "2026-10-03T16:37:17.275Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -196,12 +196,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1145,
+                  "duration": 1155,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:39.243Z",
+                  "startTime": "2026-10-03T16:37:19.077Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -230,12 +230,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1784,
+                  "duration": 1797,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:40.392Z",
+                  "startTime": "2026-10-03T16:37:20.236Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -264,12 +264,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1246,
+                  "duration": 1273,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:42.180Z",
+                  "startTime": "2026-10-03T16:37:22.039Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -298,12 +298,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1112,
+                  "duration": 1119,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:43.432Z",
+                  "startTime": "2026-10-03T16:37:23.319Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -332,12 +332,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1144,
+                  "duration": 1124,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:44.549Z",
+                  "startTime": "2026-10-03T16:37:24.443Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -366,12 +366,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1143,
+                  "duration": 1110,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:45.698Z",
+                  "startTime": "2026-10-03T16:37:25.572Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -400,12 +400,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1026,
+                  "duration": 1127,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:46.846Z",
+                  "startTime": "2026-10-03T16:37:26.686Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -434,12 +434,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1202,
+                  "duration": 1259,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:47.878Z",
+                  "startTime": "2026-10-03T16:37:27.818Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -468,12 +468,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1130,
+                  "duration": 1139,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:49.085Z",
+                  "startTime": "2026-10-03T16:37:29.081Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -483,7 +483,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-5ae08a57ef92d8de00fd",
           "file": "reviewer-continuity.spec.ts",
-          "line": 164,
+          "line": 166,
           "column": 1
         },
         {
@@ -502,12 +502,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1078,
+                  "duration": 1173,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:50.220Z",
+                  "startTime": "2026-10-03T16:37:30.224Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -517,7 +517,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-8ccfe7df3de46e54390f",
           "file": "reviewer-continuity.spec.ts",
-          "line": 175,
+          "line": 177,
           "column": 1
         },
         {
@@ -536,12 +536,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1555,
+                  "duration": 1591,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:51.302Z",
+                  "startTime": "2026-10-03T16:37:31.401Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -551,7 +551,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-8d4519c67bd31cce88e2",
           "file": "reviewer-continuity.spec.ts",
-          "line": 185,
+          "line": 187,
           "column": 1
         },
         {
@@ -570,12 +570,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1301,
+                  "duration": 1267,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:52.861Z",
+                  "startTime": "2026-10-03T16:37:32.996Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -585,7 +585,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-9a360c815f31e4409c9c",
           "file": "reviewer-continuity.spec.ts",
-          "line": 196,
+          "line": 198,
           "column": 1
         },
         {
@@ -604,12 +604,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1268,
+                  "duration": 1365,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:54.167Z",
+                  "startTime": "2026-10-03T16:37:34.267Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -619,7 +619,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-809c1c3a2b30ece6f642",
           "file": "reviewer-continuity.spec.ts",
-          "line": 207,
+          "line": 209,
           "column": 1
         },
         {
@@ -638,12 +638,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1011,
+                  "duration": 1146,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:55.441Z",
+                  "startTime": "2026-10-03T16:37:35.636Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -653,7 +653,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-1b70753a24c6a00a125d",
           "file": "reviewer-continuity.spec.ts",
-          "line": 222,
+          "line": 224,
           "column": 1
         },
         {
@@ -672,12 +672,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1041,
+                  "duration": 1067,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:56.457Z",
+                  "startTime": "2026-10-03T16:37:36.786Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -687,7 +687,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-744b4c51e8603a8bdfa7",
           "file": "reviewer-continuity.spec.ts",
-          "line": 229,
+          "line": 231,
           "column": 1
         },
         {
@@ -706,12 +706,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1111,
+                  "duration": 1127,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:57.503Z",
+                  "startTime": "2026-10-03T16:37:37.857Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -721,7 +721,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-572e21e5a891fae550eb",
           "file": "reviewer-continuity.spec.ts",
-          "line": 239,
+          "line": 241,
           "column": 1
         },
         {
@@ -740,12 +740,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1784,
+                  "duration": 1898,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:52:58.618Z",
+                  "startTime": "2026-10-03T16:37:38.988Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -755,7 +755,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-4557fb31ac1487e157e0",
           "file": "reviewer-continuity.spec.ts",
-          "line": 253,
+          "line": 255,
           "column": 1
         },
         {
@@ -774,12 +774,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2277,
+                  "duration": 2338,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:53:00.408Z",
+                  "startTime": "2026-10-03T16:37:40.890Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -789,7 +789,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-ab30c2dfd49c852139f1",
           "file": "reviewer-continuity.spec.ts",
-          "line": 265,
+          "line": 267,
           "column": 1
         },
         {
@@ -808,12 +808,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1068,
+                  "duration": 1116,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:53:02.690Z",
+                  "startTime": "2026-10-03T16:37:43.233Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -823,7 +823,7 @@
           ],
           "id": "a96dd61084db3bf9f2b4-8bd6b594084f3b5bcef9",
           "file": "reviewer-continuity.spec.ts",
-          "line": 276,
+          "line": 278,
           "column": 1
         },
         {
@@ -842,12 +842,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1120,
+                  "duration": 1178,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:53:03.762Z",
+                  "startTime": "2026-10-03T16:37:44.355Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -857,7 +857,41 @@
           ],
           "id": "a96dd61084db3bf9f2b4-a279cf5cf537995a9a21",
           "file": "reviewer-continuity.spec.ts",
-          "line": 292,
+          "line": 294,
+          "column": 1
+        },
+        {
+          "title": "a clean saved draft yields to newer completed authority after evidence inspection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1181,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T16:37:45.538Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-c050d73238980daaef79",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 307,
           "column": 1
         }
       ]
@@ -884,12 +918,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2252,
+                  "duration": 2238,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:53:05.164Z",
+                  "startTime": "2026-10-03T16:37:46.911Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -918,12 +952,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2285,
+                  "duration": 2234,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:53:07.420Z",
+                  "startTime": "2026-10-03T16:37:49.153Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -952,12 +986,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1979,
+                  "duration": 2011,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-03T15:53:09.709Z",
+                  "startTime": "2026-10-03T16:37:51.390Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -975,9 +1009,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-03T15:52:32.414Z",
-    "duration": 39312.062,
-    "expected": 26,
+    "startTime": "2026-10-03T16:37:12.035Z",
+    "duration": 41394.183000000005,
+    "expected": 27,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

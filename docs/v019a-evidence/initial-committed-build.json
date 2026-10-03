@@ -1,0 +1,32 @@
+{
+  "sourceSha": "52d16dae9c1c9713904dc41d5b126aee4a7483b2",
+  "releasePath": "/private/tmp/aqm-v019a-committed-52d16da-06mh57yc",
+  "frontendInputs": [
+    "src",
+    "public",
+    "index.html",
+    "package.json",
+    "package-lock.json",
+    "vite.config.ts",
+    "tsconfig.json",
+    ".env.production"
+  ],
+  "archiveInputsMatchCommit": true,
+  "archiveBuildMatchesTestedBuild": true,
+  "fileCount": 12,
+  "files": {
+    "index.html": "86ccead2d63c227b73bf82ac225de02b5338a2e418df6ceaebd2d17038ee62dc",
+    "IPIlogo.svg": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples/billing-conversation.json": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+    "samples/delivery-conversation.json": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+    "assets/index-CclPMagw.js": "6d72bdb8dd8acca9a8d9a4cea5d5f1ec61c7280ca412ea614951f9016cc92a3e",
+    "assets/App-4fSLUTuM.js": "931c7a85ec7a4b5c70b200f916c08db3f2d7f5ae30de3fdfcd9d47572a2f47ce",
+    "assets/reviews-DA7jf8kC.js": "059afbec015b5f49497ca8d8b1b12777f99c1bddd518efb15a96289966c60225",
+    "assets/index-Dh0z4fQh.css": "07894d86ef6952a84edca3af8fc47d4c9a6231fdc20c04032cc0bf263b35b970",
+    "assets/Demo-Cr3eReGx.js": "0dfabc7f331336aefe416376d06c33b74c5fd1b30bff6c9e3ee29ee16826baba",
+    "assets/Welcome-C8EKb9tS.js": "92bead10bf3362e7525375c6555b5bd59774746d2b0f5ff61980552b8aa1c577",
+    "assets/genesysEmail-BJj4UQKD.js": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2"
+  },
+  "backendSourceChanged": false
+}

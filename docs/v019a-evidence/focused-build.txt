@@ -1,37 +1,38 @@
-[WebServer] (node:72553) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:97944) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-Running 26 tests using 1 worker
+Running 27 tests using 1 worker
 
-(node:72557) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:97946) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
-[1/26] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1440
-[2/26] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1920
-[3/26] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 390
-[4/26] tests/reviewer-continuity.spec.ts:99:1 › exact My Reviews filter context survives evidence navigation
-[5/26] tests/reviewer-continuity.spec.ts:107:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
-[6/26] tests/reviewer-continuity.spec.ts:119:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
-[7/26] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles All Evaluations without Refresh
-[8/26] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles active cohort without Refresh
-[9/26] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles review status without Refresh
-[10/26] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles due cohort without Refresh
-[11/26] tests/reviewer-continuity.spec.ts:148:1 › revision conflict retains inputs, blocks submit and requires explicit discard
-[12/26] tests/reviewer-continuity.spec.ts:164:1 › reassignment retains unsaved notes but removes editing and submission authority
-[13/26] tests/reviewer-continuity.spec.ts:175:1 › 409 refresh retains draft without silently replacing its base
-[14/26] tests/reviewer-continuity.spec.ts:185:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
-[15/26] tests/reviewer-continuity.spec.ts:196:1 › later server page survives evidence return and completion background reload
-[16/26] tests/reviewer-continuity.spec.ts:207:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
-[17/26] tests/reviewer-continuity.spec.ts:222:1 › unstarted review returns to selected evaluation heading
-[18/26] tests/reviewer-continuity.spec.ts:229:1 › completion removes the row before a failed background list reload, preserving confirmation
-[19/26] tests/reviewer-continuity.spec.ts:239:1 › failed completion retains all changes and explicit retry completes exactly once
-[20/26] tests/reviewer-continuity.spec.ts:253:1 › reload starts a new session without unsubmitted answers or notes
-[21/26] tests/reviewer-continuity.spec.ts:265:1 › About and workspace handoff retain human work and unload protection in this SPA
-[22/26] tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time
-[23/26] tests/reviewer-continuity.spec.ts:292:1 › completion in another session keeps unfinished answers separate from completed authority
-[24/26] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 1440
-[25/26] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 1920
-[26/26] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 390
-  26 passed (39.3s)
+[1/27] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[2/27] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[3/27] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[4/27] tests/reviewer-continuity.spec.ts:99:1 › exact My Reviews filter context survives evidence navigation
+[5/27] tests/reviewer-continuity.spec.ts:107:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[6/27] tests/reviewer-continuity.spec.ts:119:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[7/27] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles All Evaluations without Refresh
+[8/27] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles active cohort without Refresh
+[9/27] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles review status without Refresh
+[10/27] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles due cohort without Refresh
+[11/27] tests/reviewer-continuity.spec.ts:148:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[12/27] tests/reviewer-continuity.spec.ts:166:1 › reassignment retains unsaved notes but removes editing and submission authority
+[13/27] tests/reviewer-continuity.spec.ts:177:1 › 409 refresh retains draft without silently replacing its base
+[14/27] tests/reviewer-continuity.spec.ts:187:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[15/27] tests/reviewer-continuity.spec.ts:198:1 › later server page survives evidence return and completion background reload
+[16/27] tests/reviewer-continuity.spec.ts:209:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[17/27] tests/reviewer-continuity.spec.ts:224:1 › unstarted review returns to selected evaluation heading
+[18/27] tests/reviewer-continuity.spec.ts:231:1 › completion removes the row before a failed background list reload, preserving confirmation
+[19/27] tests/reviewer-continuity.spec.ts:241:1 › failed completion retains all changes and explicit retry completes exactly once
+[20/27] tests/reviewer-continuity.spec.ts:255:1 › reload starts a new session without unsubmitted answers or notes
+[21/27] tests/reviewer-continuity.spec.ts:267:1 › About and workspace handoff retain human work and unload protection in this SPA
+[22/27] tests/reviewer-continuity.spec.ts:278:1 › a pending completion reconciles the current filters rather than the scope at click time
+[23/27] tests/reviewer-continuity.spec.ts:294:1 › completion in another session keeps unfinished answers separate from completed authority
+[24/27] tests/reviewer-continuity.spec.ts:307:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[25/27] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 1440
+[26/27] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 1920
+[27/27] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 390
+  27 passed (41.4s)

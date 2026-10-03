@@ -1,4 +1,4 @@
-import { reviewDraft, reviewDraftConflict, type ReviewDraftController } from './useReviewDrafts'
+import { observeReview, reviewDraftConflict, type ReviewDraftController } from './useReviewDrafts'
 import { ReviewScoreSummary } from './ReviewScoreSummary'
 import { AssignmentEditor, ReviewDueBadge, useReviewSla } from './ReviewOperations'
 import { reviewDueAt } from './domain/reviewSla'
@@ -21,10 +21,14 @@ export function ReviewPanel({record,review,session,onSaved,drafts,myQueue,onCont
   const savedCallback=useRef(onSaved);savedCallback.current=onSaved
   const confirmation=useRef<HTMLParagraphElement>(null)
   const [busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),[filter,setFilter]=useState('all')
-  const draft=drafts.drafts[record.id]??reviewDraft(record.id,review)
+  const draft=observeReview(drafts.drafts[record.id],record.id,review)
   const {answers,notes,editing}=draft
   const conflict=reviewDraftConflict(draft,review)
-  useEffect(()=>{if(review?.status!=='REVIEWED'||drafts.drafts[record.id]?.dirty)drafts.observe(record.id,review)},[record.id,review,drafts.observe])
+  useEffect(()=>{
+    if(review?.status==='REVIEWED'&&!draft.dirty){
+      if(drafts.drafts[record.id])drafts.clear(record.id)
+    }else drafts.observe(record.id,review)
+  },[record.id,review,drafts.observe,drafts.clear,draft.dirty])
   const canWrite=usePermission('reviews.write')
   const completed=review?.status==='REVIEWED'
   const showingCompleted=completed&&!draft.dirty

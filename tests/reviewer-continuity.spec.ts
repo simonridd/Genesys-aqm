@@ -33,7 +33,7 @@ async function evidenceRoundTrip(page:Page,after?:()=>Promise<unknown>) {
   if(after)await after()
   await page.getByRole('button',{name:'← Back to review',exact:true}).click()
   await expect(page).toHaveURL(exact)
-  await expect(panel(page).getByRole('heading',{name:'Review this evaluation',exact:true})).toBeFocused()
+  await expect(panel(page).getByRole('heading',{level:2})).toBeFocused()
 }
 async function reachable(page:Page,name:string) {
   const control=page.getByRole('button',{name,exact:true})
@@ -140,14 +140,16 @@ for(const [name,query,remains] of [
   await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
   await expect(panel(page).getByRole('status')).toHaveText('Review completed. The original AI result is preserved.')
   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(remains?1:0)
-  if(remains){const row=page.locator('tr').filter({has:page.getByRole('button',{name:'Open evaluation review-a',exact:true})});await expect(row).toContainText('REVIEWED');await expect(row).toContainText('Fictional Reviewer');await expect(row.locator('td').nth(9)).not.toHaveText('—')}
+  if(remains){const row=page.locator('tr').filter({has:page.getByRole('button',{name:'Open evaluation review-a',exact:true})});await expect(row).toContainText('REVIEWED');await expect(row).toContainText('Fictional Reviewer');await expect(row.getByRole('cell',{name:'62%',exact:true})).toBeVisible()}
   expect(new URL(page.url()).searchParams.get('evaluationId')).toBe('review-a')
   expect(puts(state).filter(r=>r.body.action==='complete')).toHaveLength(1)
   expect(JSON.stringify(await state.store.evaluations())).toBe(state.before)
 })
 test('revision conflict retains inputs, blocks submit and requires explicit discard',async({page})=>{
   const state=await continuityFixture(page)
-  await state.advance();await open(page);await edit(page,true)
+  await state.advance();await open(page)
+  await expect(panel(page)).toContainText('revision 3')
+  await edit(page,true)
   expect((await state.store.review('review-a'))!.revision).toBe(3)
   await evidenceRoundTrip(page,()=>state.advance())
   await restored(page)
@@ -300,5 +302,18 @@ test('completion in another session keeps unfinished answers separate from compl
   await panel(page).getByRole('button',{name:'Discard my unsaved answers',exact:true}).click()
   await expect(panel(page).getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()
   await expect(panel(page)).toContainText('Completed in another session')
+  expect(await guard(page)).toEqual({prevented:false,guards:0})
+})
+test('a clean saved draft yields to newer completed authority after evidence inspection',async({page})=>{
+  const state=await continuityFixture(page);await open(page);await edit(page,true)
+  await panel(page).getByRole('button',{name:'Save progress',exact:true}).click()
+  await expect(panel(page).getByRole('status')).toHaveText('Review progress saved.')
+  await evidenceRoundTrip(page,()=>state.completeElsewhere())
+  await expect(panel(page).getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()
+  await expect(panel(page)).toContainText('Completed in another session')
+  await expect(panel(page)).toContainText('The opening was abrupt.')
+  await expect(panel(page)).not.toContainText('UNSAVED')
+  await expect(panel(page).getByRole('alert')).toHaveCount(0)
+  expect(puts(state)).toHaveLength(1)
   expect(await guard(page)).toEqual({prevented:false,guards:0})
 })
