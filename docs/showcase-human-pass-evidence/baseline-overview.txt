@@ -1,0 +1,66 @@
+[WebServer] (node:51487) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:51491) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts (5.1s)
+(node:51497) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win (9.1s)
+
+
+  1) tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('Current role')
+    Expected: "ADMIN"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+
+
+      50 |   return json({items:[]})
+      51 |  })
+    > 52 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                               ^
+      53 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}
+      54 | }
+      55 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{
+        at setup (/private/tmp/aqm-human-pass-baseline/tests/overview.spec.ts:52:111)
+        at /private/tmp/aqm-human-pass-baseline/tests/overview.spec.ts:89:90
+
+    Error Context: test-results/overview-existing-connecte-aed98--Overview-before-App-mounts/error-context.md
+
+  2) tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Conversation review', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Conversation review', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Conversation review', exact: true })
+
+
+      90 | test('OAuth return-page intent, evaluation deep link and explicit query page win',async({browser})=>{
+      91 |  for(const returned of ['settings','policies','evaluations']){const page=await browser.newPage();await setup(page,'ADMIN',false,returned);await expect(page.getByRole('heading',{name:returned[0].toUpperCase()+returned.slice(1),exact:true})).toBeVisible();await page.close()}
+    > 92 |  const page=await browser.newPage();await page.route(`${origin}/**`,r=>r.fulfill({json:{items:[]}}));await page.goto(`${app}?evaluationId=linked&page=automation`);await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await page.goto(`${app}?page=policies`);await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await page.goto(app);await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.goto(`${app}?page=automation`);await expect(page.getByText('Connect to Genesys Cloud to view operational AQM health.')).toBeVisible();await page.close()
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+      93 | })
+      94 |
+        at /private/tmp/aqm-human-pass-baseline/tests/overview.spec.ts:92:474
+
+    Error Context: test-results/overview-OAuth-return-page-c5f3a-and-explicit-query-page-win/error-context.md
+
+  2 failed
+    tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts 
+    tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win 

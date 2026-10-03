@@ -1,0 +1,676 @@
+{
+  "network": [
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Welcome-Bf8gnhFL.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&step=3",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&step=4",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Welcome-Bf8gnhFL.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Welcome-Bf8gnhFL.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&step=1",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&step=4",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&step=4",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Welcome-Bf8gnhFL.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allow": true
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allow": true
+    }
+  ],
+  "keyboard": [
+    {
+      "text": "IPI AQM home",
+      "tag": "A",
+      "outline": "rgb(215, 245, 255) solid 3px",
+      "width": 82,
+      "height": 41.515625
+    },
+    {
+      "text": "Connect Genesys Cloud",
+      "tag": "BUTTON",
+      "outline": "rgb(215, 245, 255) solid 3px",
+      "width": 160.953125,
+      "height": 33
+    },
+    {
+      "text": "Take the guided demo →",
+      "tag": "BUTTON",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 169.984375,
+      "height": 37
+    },
+    {
+      "text": "Explore the prototype",
+      "tag": "BUTTON",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 149.546875,
+      "height": 33
+    },
+    {
+      "text": "See how calibration works →",
+      "tag": "BUTTON",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 159.359375,
+      "height": 13
+    },
+    {
+      "text": "Next",
+      "tag": "BUTTON",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 58.59375,
+      "height": 44
+    },
+    {
+      "text": "Exit demo",
+      "tag": "BUTTON",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 83.203125,
+      "height": 44
+    },
+    {
+      "text": "More options",
+      "tag": "SUMMARY",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 1038,
+      "height": 38
+    },
+    {
+      "text": "IPI AQM\nInteractive demo · fictional data · no live requests\n\nFIVE-MINUTE CUSTOMER CASE\n\nThe customer case\nDefine quality\nEvaluate at scale\nHuman challenge\nManage & pilot\n\nOne conversation, from agreed quality to a pilot decision.\n\nChapter 1 of 5\n\nThe customer case\nWas Jamie given a clear next step?\n\nJamie needs account access before the next shift. Alex restores access, but the team settings are still missing.\n\nJamie Taylor with Alex Morgan\nJamie\n\nThe reset link will not work. I need access before my next shift.\n\nAlex\n\nI understand how frustrating that is. Let us try a fresh reset link.\n\nJamie\n\nThat worked. How long until my team settings return?\n\nAlex\n\nThey should return later. Try signing in again.\n\nJamie\n\nAll right, I will try. Thanks.\n\nAccess is restored. “Later” leaves Jamie without an agreed timeline.\n\nBack\nNext\nExit demo\nMore options",
+      "tag": "BODY",
+      "outline": "rgb(54, 69, 79) none 3px",
+      "width": 1440,
+      "height": 1199.546875
+    },
+    {
+      "activated": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&tour=quality&step=1"
+    },
+    {
+      "evaluationVisible": true
+    },
+    {
+      "reviewVisible": true
+    },
+    {
+      "text": "Average forms per selected conversation",
+      "tag": "INPUT",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 498.4375,
+      "height": 43
+    },
+    {
+      "text": "Average AI requests per form",
+      "tag": "INPUT",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 498.4375,
+      "height": 43
+    },
+    {
+      "text": "Average input tokens per AI request",
+      "tag": "INPUT",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 498.4375,
+      "height": 43
+    },
+    {
+      "text": "Official Jev 1.13 pricing",
+      "tag": "A",
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "width": 148.484375,
+      "height": 17
+    },
+    {
+      "calculatorFields": true
+    }
+  ],
+  "contrast": [
+    {
+      "route": "",
+      "text": "Working prototype",
+      "color": "rgb(94, 106, 114)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 5.356563683146192,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "AUTOMATED QUALITY MANAGEMENT FOR GENESYS CLOUD",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "Take the guided demo →",
+      "color": "rgb(253, 254, 255)",
+      "background": "rgb(54, 69, 79)",
+      "ratio": 9.805375514331464,
+      "font": "11px"
+    },
+    {
+      "route": "",
+      "text": "Five minutes · fictional data · no live requests",
+      "color": "rgb(94, 106, 114)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 5.356563683146192,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "Fictional preview",
+      "color": "rgb(94, 106, 114)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 5.356563683146192,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "See how calibration works →",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(253, 254, 255)",
+      "ratio": 10.686885052886833,
+      "font": "11px"
+    },
+    {
+      "route": "",
+      "text": "THE OPPORTUNITY",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "WHY THIS APPROACH",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "EXPLORE THE ECONOMICS",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "MORE THAN A MODEL DEMONSTRATION",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "Plan a pilot →",
+      "color": "rgb(253, 254, 255)",
+      "background": "rgb(54, 69, 79)",
+      "ratio": 9.805375514331464,
+      "font": "11px"
+    },
+    {
+      "route": "",
+      "text": "PLAN A PILOT",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "10px"
+    },
+    {
+      "route": "",
+      "text": "Connection settings →",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Interactive demo · fictional data · no live requests",
+      "color": "rgb(253, 254, 255)",
+      "background": "rgb(38, 51, 55)",
+      "ratio": 12.908637195629147,
+      "font": "13px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "FIVE-MINUTE CUSTOMER CASE",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "10px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "The customer case",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Define quality",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Evaluate at scale",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Human challenge",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Manage & pilot",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Chapter 1 of 5",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "Next",
+      "color": "rgb(253, 254, 255)",
+      "background": "rgb(54, 69, 79)",
+      "ratio": 9.805375514331464,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=1",
+      "text": "",
+      "color": "rgb(94, 106, 114)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 5.356563683146192,
+      "font": "10px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Interactive demo · fictional data · no live requests",
+      "color": "rgb(253, 254, 255)",
+      "background": "rgb(38, 51, 55)",
+      "ratio": 12.908637195629147,
+      "font": "13px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "FIVE-MINUTE CUSTOMER CASE",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "10px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "The customer case",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Define quality",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Evaluate at scale",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Human challenge",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Manage & pilot",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(239, 246, 243)",
+      "ratio": 9.838712505048237,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Chapter 4 of 5",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "10px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "Next",
+      "color": "rgb(253, 254, 255)",
+      "background": "rgb(54, 69, 79)",
+      "ratio": 9.805375514331464,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "",
+      "color": "rgb(79, 54, 69)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 10.40601058605514,
+      "font": "11px"
+    },
+    {
+      "route": "?page=demo&tour=quality&step=4",
+      "text": "",
+      "color": "rgb(94, 106, 114)",
+      "background": "rgb(245, 252, 255)",
+      "ratio": 5.356563683146192,
+      "font": "10px"
+    }
+  ],
+  "pitch": [
+    {
+      "label": "Problem / welcome",
+      "elapsedSeconds": 31.225,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/"
+    },
+    {
+      "label": "Jev economics",
+      "elapsedSeconds": 66.245,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/"
+    },
+    {
+      "label": "The customer case",
+      "elapsedSeconds": 106.626,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&tour=quality&step=1"
+    },
+    {
+      "label": "Define quality",
+      "elapsedSeconds": 141.691,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&tour=quality&step=2"
+    },
+    {
+      "label": "Evaluate at scale",
+      "elapsedSeconds": 186.741,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&tour=quality&step=3"
+    },
+    {
+      "label": "Human challenge",
+      "elapsedSeconds": 221.806,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&tour=quality&step=4"
+    },
+    {
+      "label": "Manage & pilot",
+      "elapsedSeconds": 251.856,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=demo&tour=quality&step=5"
+    },
+    {
+      "label": "Pilot outline",
+      "elapsedSeconds": 261.916,
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=welcome#pilot"
+    }
+  ],
+  "errors": [],
+  "resize": {
+    "width": 390,
+    "documentWidth": 390
+  },
+  "reducedMotion": "none",
+  "pitchAssumptions": {
+    "dwellSeconds": 260,
+    "description": "Same 260 seconds of explicit explanation dwell as original review; ordinary UI progression, no chapter reloads or detours; not a human presenter measurement."
+  },
+  "pitchElapsedSeconds": 261.918
+}

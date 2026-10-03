@@ -1,0 +1,137 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Evaluations
+Connect Genesys Cloud
+QUALITY
+Evaluations
+
+Production results with form snapshots and provider provenance.
+
+My reviews
+All evaluations
+Team review workload
+History
+Server
+This browser
+Review status
+All
+NOT REVIEWED
+REVIEW REQUESTED
+IN REVIEW
+REVIEWED
+Assignment
+All
+Unassigned
+Assigned
+Assigned to me
+SLA state
+All states
+Due soon
+Overdue
+Escalated
+Due
+All
+Overdue
+Due today
+Due next 7 days
+No due date
+Form ID @ version
+Agent
+Queue
+Channel
+Result
+All
+Pass
+Fail
+Question failures
+From
+To
+Policy ID
+Source
+All
+Genesys Cloud
+Synthetic
+Uploaded
+Trigger
+All
+Manual
+Scheduled
+Critical failure
+All
+Yes
+No
+Refresh
+
+Connect to Genesys Cloud in Settings to view server evaluations.
+
+Server filters scan a bounded window of up to 500 records per request. Use Next to continue the search.
+
+Calibration sample
+Bulk assignment
+Search
+0 results on this page
+Evaluated ↓
+
+Select
+
+Conversation
+
+Agent
+
+Queue
+
+Form
+
+Source
+
+AI score
+
+Review
+
+Human score
+
+Agreement
+
+Assigned to
+
+Due
+
+Reviewer
+
+Reviewed at
+
+No production evaluations on this page.
+
+First page
+Next server page →

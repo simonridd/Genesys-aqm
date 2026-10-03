@@ -22,8 +22,7 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
     await page.addInitScript(() => {
       localStorage.setItem('fictional-existing-draft', 'unchanged')
       sessionStorage.setItem('fictional-existing-credential', 'do-not-read')
-      const original = Storage.prototype.getItem
-      Storage.prototype.getItem = function(key) { if (key.startsWith('genesys-aqm') || key.startsWith('fictional-existing')) throw Error(`Protected storage read: ${key}`); return original.call(this, key) }
+      Storage.prototype.getItem = function(key) { throw Error(`Protected storage read: ${key}`) }
       Storage.prototype.setItem = function(key) { throw Error(`Forbidden storage write: ${key}`) }
       Storage.prototype.removeItem = function(key) { throw Error(`Forbidden storage removal: ${key}`) }
       Storage.prototype.clear = function() { throw Error('Forbidden storage clear') }
@@ -32,84 +31,80 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
     })
     await page.goto(app)
     await expect(page.getByRole('heading', { name: 'More conversations understood. Less manual scoring.' })).toBeVisible()
-    await expect(page.locator('.welcome-hero')).toHaveCSS('opacity', '1')
     const before = await snapshot(page)
-    await page.screenshot({ path: `docs/ipi-evidence/welcome-${viewport.width}.png`, fullPage: true })
-    await page.locator('#economics').scrollIntoViewIfNeeded()
-    await expect(page.getByText('$33.60', { exact: true })).toBeVisible()
+    await expect(page.getByText('$16.80/month', { exact: true })).toBeVisible()
     await page.getByText('Advanced assumptions', { exact: true }).click()
-    await page.getByLabel('Average requests / waves per form').fill('2')
-    await expect(page.getByText('$67.20', { exact: true })).toBeVisible()
-    await page.getByLabel('Conversation volume').fill('')
-    await expect(page.getByRole('alert')).toContainText('finite')
-    await page.getByLabel('Conversation volume').fill('100000')
-    await page.screenshot({ path: `docs/ipi-evidence/estimator-${viewport.width}.png`, fullPage: true })
+    await page.getByLabel('Average AI requests per form', { exact: true }).fill('2')
+    await expect(page.getByText('$33.60/month', { exact: true })).toBeVisible()
+    await page.getByLabel('Conversations per month', { exact: true }).fill('')
+    await expect(page.getByRole('alert')).toContainText('Conversations per month must be between 0 and 1,000,000,000')
+    await page.getByLabel('Conversations per month', { exact: true }).fill('3')
+    await expect(page.getByText('Less than $0.01/month', { exact: true })).toBeVisible()
     await page.getByRole('button', { name: 'Take the guided demo' }).click()
-    const bounds: unknown[] = []
-    for (let step = 1; step <= 7; step++) {
-      await expect(page.getByRole('navigation', { name: 'Tour controls' })).toBeVisible()
+    for (let step = 1; step <= 5; step++) {
       await expect(page.getByRole('heading', { level: 1 })).toBeFocused()
-      await expect(page.getByText(`Chapter ${step} of 7`, { exact: true })).toBeVisible()
+      await expect(page.getByText(`Chapter ${step} of 5`, { exact: true })).toBeVisible()
+      if (step === 1) {
+        await expect(page.getByRole('region', { name: 'Conversation transcript' })).toContainText('They should return later')
+        await expect(page.getByText('Unavailable', { exact: true })).toHaveCount(0)
+      }
+      if (step === 2) await expect(page.locator('.demo-content input,.demo-content select')).toHaveCount(0)
+      if (step === 3) await expect(page.getByRole('region', { name: 'Prepared evaluation' })).toContainText('100%')
       if (step === 4) {
-        await page.getByRole('button', { name: 'Show example evaluation' }).click()
-        await expect(page.getByRole('region', { name: 'Prepared evaluation' })).toContainText('actual AI requests: 0')
+        await expect(page.getByRole('region', { name: 'Independent human review' })).toContainText('56%')
+        await expect(page.getByRole('region', { name: 'Independent human review' })).toContainText('44')
       }
-      if (step === 5) {
-        await page.getByRole('button', { name: 'Investigate Clear next step', exact: true }).click()
-        await expect(page.getByRole('heading', { name: 'Exact cohort · 24 evaluations' })).toBeVisible()
-        await page.getByRole('button', { name: 'Inspect fictional-evaluation-1', exact: true }).click()
-        await expect(page).toHaveURL(/step=4/)
-        await page.getByRole('button', { name: 'Next', exact: true }).click()
-      }
-      if (step === 6) {
-        await page.getByRole('button', { name: 'Save scripted disagreement' }).click()
-        await expect(page.getByRole('status')).toContainText('DEMO memory')
-        await page.getByRole('button', { name: 'Complete review', exact: true }).click()
-        await expect(page.getByText(/Calibration: 2 agreements/)).toBeVisible()
-      }
-      await expect(page.locator('.demo-content')).toHaveCSS('opacity', '1')
-      await page.screenshot({ path: `docs/ipi-evidence/chapter-${step}-${viewport.width}.png`, fullPage: true })
-      bounds.push(await page.evaluate(() => ({ chapter: new URLSearchParams(location.search).get('step'), viewport: innerWidth, document: document.documentElement.scrollWidth, controls: [...document.querySelectorAll('.tour-rail button,.showcase-header button')].map(button => { const box = button.getBoundingClientRect(); return { text: button.textContent, x: box.x, right: box.right, width: box.width } }) })))
+      if (step === 5) await expect(page.getByRole('heading', { name: 'Resolution guidance needs attention' })).toBeVisible()
+      const positions = await page.evaluate(() => ({ width: innerWidth, document: document.documentElement.scrollWidth, nav: document.querySelector('.tour-controls')!.getBoundingClientRect().top, contentEnd: document.querySelector('.tour-controls')!.previousElementSibling!.getBoundingClientRect().bottom }))
+      expect(positions.document).toBeLessThanOrEqual(positions.width)
+      expect(positions.nav).toBeGreaterThanOrEqual(positions.contentEnd)
+      await expect(page.getByRole('button', { name: 'Skip chapter', exact: true })).toHaveCount(0)
       expect(await snapshot(page)).toEqual(before)
-      if (step < 7) await page.getByRole('button', { name: 'Next', exact: true }).click()
+      if (step < 5) await page.getByRole('button', { name: 'Next', exact: true }).click()
     }
-    await page.getByRole('button', { name: 'Restart', exact: true }).click()
-    await expect(page.getByText('Chapter 1 of 7', { exact: true })).toBeVisible()
-    await page.getByRole('button', { name: 'Skip chapter', exact: true }).click()
-    await expect(page.getByText('Chapter 2 of 7', { exact: true })).toBeVisible()
-    await page.getByRole('button', { name: 'Back', exact: true }).click()
-    await expect(page.getByText('Chapter 1 of 7', { exact: true })).toBeVisible()
-    await page.getByRole('button', { name: 'Exit demo', exact: true }).click()
-    await expect(page).toHaveURL(/page=welcome/)
+    await page.getByRole('button', { name: 'Plan a pilot', exact: true }).click()
+    await expect(page.locator('#pilot')).toBeFocused()
+    await expect(page).toHaveURL(/#pilot$/)
     expect(await snapshot(page)).toEqual(before)
     expect(denied.requests).toEqual([]); expect(denied.errors).toEqual([])
-    writeFileSync(`docs/ipi-evidence/bounds-${viewport.width}.json`, JSON.stringify(bounds, null, 2))
     await context.close()
   })
 }
-test('keyboard controls, reduced motion, browser back and refresh at every chapter', async ({ page }) => {
+test('keyboard, self-guided links, reduced motion, history, restart and refresh', async ({ page }) => {
   const denied = await isolate(page)
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  for (let step = 1; step <= 7; step++) {
+  for (let step = 1; step <= 5; step++) {
     await page.goto(`${app}?page=demo&tour=quality&step=${step}`)
     await expect(page.getByRole('heading', { level: 1 })).toBeFocused()
     await page.reload()
-    await expect(page.getByText(`Chapter ${step} of 7`, { exact: true })).toBeVisible()
+    await expect(page.getByText(`Chapter ${step} of 5`, { exact: true })).toBeVisible()
     expect(await page.locator('.demo-content').evaluate(element => getComputedStyle(element).animationName)).toBe('none')
   }
+  await page.getByText('More options', { exact: true }).click()
   await page.getByRole('button', { name: 'Restart', exact: true }).focus(); await page.keyboard.press('Enter')
-  for (let step = 1; step < 7; step++) {
-    const next = page.getByRole('button', { name: 'Next', exact: true }); await next.focus(); await page.keyboard.press('Enter')
-    await expect(page.getByText(`Chapter ${step + 1} of 7`, { exact: true })).toBeVisible()
+  for (let step = 1; step < 5; step++) {
+    await page.getByRole('button', { name: 'Next', exact: true }).focus(); await page.keyboard.press('Enter')
+    await expect(page.getByText(`Chapter ${step + 1} of 5`, { exact: true })).toBeVisible()
   }
-  await page.goBack(); await expect(page.getByText('Chapter 6 of 7', { exact: true })).toBeVisible()
+  await page.goBack(); await expect(page.getByText('Chapter 4 of 5', { exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Back', exact: true }).focus(); await page.keyboard.press('Enter')
-  await expect(page.getByText('Chapter 5 of 7', { exact: true })).toBeVisible()
-  await page.getByRole('button', { name: 'Skip chapter', exact: true }).focus(); await page.keyboard.press('Enter')
-  await expect(page.getByText('Chapter 6 of 7', { exact: true })).toBeVisible()
+  await expect(page.getByText('Chapter 3 of 5', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Manage & pilot', exact: true }).click()
+  await page.getByText('Inspect examples', { exact: true }).click()
+  await page.getByRole('button', { name: 'Inspect Jamie’s review', exact: true }).click()
+  await expect(page.getByRole('region', { name: 'Independent human review' })).toContainText('56%')
   await page.getByRole('button', { name: 'Exit demo', exact: true }).focus(); await page.keyboard.press('Enter')
   await expect(page).toHaveURL(/page=welcome/)
   expect(denied.requests).toEqual([]); expect(denied.errors).toEqual([])
+})
+test('disconnected prototype handoff leads to sample conversations', async ({ page }) => {
+  await page.goto(`${app}?page=demo&step=5`)
+  await page.getByText('More options', { exact: true }).click()
+  await page.getByRole('button', { name: 'Explore the prototype →', exact: true }).click()
+  await expect(page).toHaveURL(/page=conversations/)
+  await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible()
+  await expect(page.locator('.demo-indicator')).toHaveCount(0)
+  await expect(page.locator('.page-content')).toContainText('Synthetic')
 })
 test('demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage', async ({ page }) => {
   await usabilityFixture(page)
@@ -125,11 +120,11 @@ test('demo entered with an established real-session-shaped OAuth fixture never t
     indexedDB.deleteDatabase = function() { throw Error('Forbidden IndexedDB removal') }
   })
   await page.getByRole('button', { name: 'Take the guided demo' }).click()
-  for (let step = 1; step < 7; step++) await page.getByRole('button', { name: 'Next', exact: true }).click()
+  for (let step = 1; step < 5; step++) await page.getByRole('button', { name: 'Next', exact: true }).click()
   await page.getByRole('button', { name: 'Exit demo', exact: true }).click()
   expect(await snapshot(page)).toEqual(before)
   expect(denied.requests).toEqual([]); expect(denied.errors).toEqual([])
-  writeFileSync('docs/ipi-evidence/isolation.json', JSON.stringify({ forbiddenRequests: denied.requests, unchangedStorage: true, indexedDBUnchanged: true, sessionFixture: 'OAuth fixture established before demo; not live-provider authentication proof', pageErrors: denied.errors }, null, 2))
+  writeFileSync('docs/showcase-human-pass-evidence/isolation.json', JSON.stringify({ forbiddenRequests: denied.requests, unchangedStorage: true, indexedDBUnchanged: true, sessionFixture: 'OAuth fixture established before demo; not live-provider authentication proof', pageErrors: denied.errors }, null, 2))
 })
 test('failed lazy demo load stays closed instead of mounting live services', async ({ page }) => {
   const forbidden: string[] = []
@@ -149,6 +144,7 @@ test('explicit Open AQM tears down demo and retains the authenticated product pa
   const fixture = await usabilityFixture(page)
   await page.getByRole('button', { name: 'About / product tour', exact: true }).click()
   await page.getByRole('button', { name: 'Take the guided demo' }).click()
+  await page.getByText('More options', { exact: true }).click()
   await page.getByRole('button', { name: 'Open AQM →', exact: true }).click()
   await expect(page.getByLabel('Current role')).toHaveText('ADMIN')
   await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible()
@@ -180,5 +176,5 @@ test('semantic theme contrast, focus and no obscured tour controls', async ({ pa
     const box = await control.boundingBox()
     if (box && rail) expect(box.x >= rail.x + rail.width - 1 || box.y >= rail.y + rail.height - 1).toBe(true)
   }
-  writeFileSync('docs/ipi-evidence/contrast.json', JSON.stringify(ratios, null, 2))
+  writeFileSync('docs/showcase-human-pass-evidence/contrast.json', JSON.stringify(ratios, null, 2))
 })

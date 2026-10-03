@@ -27,6 +27,6 @@ export function Root() {
     window.scrollTo(0, 0)
   }
   return <Suspense fallback={<main className="page-content" role="status">Loading IPI AQM…</main>}>
-    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} onLive={() => navigate('automation')} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={navigate} onDemo={step => navigate('demo', step)}/> : <Live onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>} 
+    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} connected={connected} onConnect={() => navigate('settings')} onLive={() => navigate(connected ? 'automation' : 'conversations')} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={navigate} onDemo={step => navigate('demo', step)}/> : <Live onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>} 
   </Suspense>
 }

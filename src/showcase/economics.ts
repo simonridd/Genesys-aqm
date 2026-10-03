@@ -1,6 +1,6 @@
 import { claims } from './claims'
 export interface CostInputs { volume: number; percentage: number; forms: number; requests: number; tokens: number }
-export const costPreset: CostInputs = { volume: 100_000, percentage: 100, forms: 1, requests: 1, tokens: 8_000 }
+export const costPreset: CostInputs = { volume: 100_000, percentage: 50, forms: 1, requests: 1, tokens: 8_000 }
 export const costBounds: Record<keyof CostInputs, [number, number]> = { volume: [0, 1e9], percentage: [0, 100], forms: [0, 100], requests: [0, 100], tokens: [0, 64_000] }
 export function estimateCost(input: CostInputs) {
   for (const key of Object.keys(costBounds) as Array<keyof CostInputs>) {

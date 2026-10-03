@@ -19,13 +19,15 @@ describe('Showcase entry boundary', () => {
   })
   it('bounds chapters deterministically', () => {
     for (const value of ['NaN', 'Infinity', '0', '-1', '8', '1.5']) expect(demoStep(new URLSearchParams({ step: value }))).toBe(1)
-    expect(demoStep(new URLSearchParams('step=7'))).toBe(7)
+    expect(demoStep(new URLSearchParams('step=5'))).toBe(5)
+    expect(demoStep(new URLSearchParams('step=6'))).toBe(4)
+    expect(demoStep(new URLSearchParams('step=7'))).toBe(5)
   })
 })
 describe('Illustrative economics', () => {
   it('does not charge questions twice and counts repeated waves', () => {
-    expect(estimateCost(costPreset)?.cost).toBeCloseTo(33.60)
-    expect(estimateCost({ ...costPreset, requests: 2 })?.cost).toBeCloseTo(67.20)
+    expect(estimateCost(costPreset)?.cost).toBeCloseTo(16.80)
+    expect(estimateCost({ ...costPreset, requests: 2 })?.cost).toBeCloseTo(33.60)
     expect(estimateCost({ ...costPreset, volume: 11, percentage: 50, forms: 1.5, requests: 1.2 })).toMatchObject({ selected: 5, evaluations: 7.5, requests: 9 })
     expect(estimateCost({ ...costPreset, percentage: 0 })?.cost).toBe(0)
     expect(claims.price).toMatchObject({ value: .042, category: 'vendor-reported', checkedAt: '2026-10-03', source: 'https://docs.typesafe.ai/models' })

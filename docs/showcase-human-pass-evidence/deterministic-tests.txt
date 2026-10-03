@@ -1,0 +1,20 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-showcase-human-pass
+
+ ❯ src/server/alerts.test.ts (19 tests | 1 failed) 5014ms
+   ❯ durable operational alerts (19)
+     × authenticates APIs, filters and pages alerts, derives actor from server and keeps public health anonymous 5003ms
+ ❯ src/server/reviewOperations.test.ts (24 tests | 1 failed) 5514ms
+   × enforces HTTP RBAC, safe directory, mine identity and conflict statuses without providers 5003ms
+ ❯ src/server/authoring.test.ts (2 tests | 2 failed) 10006ms
+   × durably saves DRAFT/TESTING without transitions; published definitions stay immutable; failed save leaves server unchanged 5003ms
+   × clones/imports server-authoritatively with safe audit events and read/write permissions 5002ms
+ ❯ src/server/reviewSlaApi.test.ts (1 test | 1 failed) 5007ms
+   × enforces SLA settings, manual refresh and bulk due permissions; serves health and globally sorted paged My queue without providers 5006ms
+ ❯ src/server/formPublication.test.ts (4 tests | 1 failed) 5012ms
+   ❯ server recreated form publication (4)
+     × publishes the existing draft in place without acknowledgement and accepts policy assignment 5002ms

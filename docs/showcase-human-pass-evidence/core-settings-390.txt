@@ -1,0 +1,62 @@
+IPI AQM
+Automated Quality Management
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+Workspace / Settings
+Connect Genesys Cloud
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Notifications
+Audit
+Advanced / Development
+Connection
+
+Connect Genesys Cloud to browse real interactions and use saved AQM configuration.
+
+G
+REAL ORGANIZATIONAL DATA
+Genesys Cloud
+Disconnected
+Genesys Cloud sign-in
+
+Authentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.
+
+Region
+EU (Ireland)
+EU (Frankfurt)
+US East
+US West
+Australia
+Japan
+OAuth Client ID
+
+Redirect URI: https://simonridd.github.io/Genesys-aqm/
+
+Region: EU (Ireland)
+
+Connect to Genesys Cloud
