@@ -21,6 +21,7 @@ rerun passes. Node 25 emits the existing Vitest engine warning; tests pass anywa
 - `deterministic-tests.txt`: 566 tests, 59 files.
 - `frontend-build.txt`, `server-typecheck.txt`, `server-build.txt`: compiler/bundles.
 - `browser-final.txt`: 82 passing final built-preview A–E/showcase journeys.
+- `browser-public.txt`: eight passing published-site showcase smoke journeys.
 - `isolation.json`: zero protected requests and identical browser stores.
 - `contrast.json`: semantic text/action/status foreground/background ratios ≥4.5.
 - `bounds-*.json`: seven chapters at each width, no page overflow or offscreen rail/header controls.
@@ -35,6 +36,12 @@ checkpoint captures are not replaced by the regression run's temporary outputs.
 Publication uses the exact qualified dist; `publication.json` records byte hashes,
 tested source and Pages identity. Branch evidence updates do not alter product code.
 No PR, main promotion, tag or backend deployment is performed.
+
+Published implementation source: `7e1c3a3c040f7e02a56b1f00c61e0ecd63d3606b`.
+Pages SHA: `a98fb906cfd96549ee6717d2e1167c8e198b648f`. All 12 public asset
+byte comparisons pass. `pages-deployment.txt` records the existing gh-pages
+publisher result. Main remains the accepted V0.18E base; follow-up branch commits
+only record this evidence.
 
 Fictional tests are not provider/scale/live-authentication proof. No production
 snapshots are asserted here; preservation means this task makes no live protected

@@ -157,6 +157,17 @@ tested source, pushed branch HEAD, gh-pages SHA and byte comparisons are recorde
 in `docs/ipi-evidence/publication.json` after successful publication. Source-only
 documentation/evidence is not included in the dist assets.
 
+Published implementation: `7e1c3a3c040f7e02a56b1f00c61e0ecd63d3606b`.
+Pages HEAD: `a98fb906cfd96549ee6717d2e1167c8e198b648f`.
+All 12 public files match the qualified dist byte-for-byte. Eight additional
+published-site showcase smoke tests pass, with protected endpoints still denied
+or mocked. Main remains `15fd08aa7ed07ff4d88e918dd0b1ce80b43da974`.
+Subsequent branch commits record publication evidence only, not new product code.
+
+- [Welcome](https://simonridd.github.io/Genesys-aqm/?page=welcome)
+- [Guided demo](https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1)
+- [Calculator](https://simonridd.github.io/Genesys-aqm/?page=welcome#economics)
+
 Prior Simon-confirmed voice/manual/unattended proof is user-reported, not retested
 here. Digital-content and external dispatcher/notification proof remain pending.
 Fictional demo and browser tests are not provider, production-scale or actual
