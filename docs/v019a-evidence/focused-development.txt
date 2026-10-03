@@ -1,0 +1,53 @@
+[WebServer] (node:70482) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 17 tests using 1 worker
+
+(node:70483) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[2/17] tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[3/17] tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[4/17] tests/reviewer-continuity.spec.ts:80:1 › exact My Reviews filter context survives evidence navigation
+[5/17] tests/reviewer-continuity.spec.ts:88:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[6/17] tests/reviewer-continuity.spec.ts:100:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[7/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles All Evaluations without Refresh
+[8/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles active cohort without Refresh
+[9/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles review status without Refresh
+[10/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles due cohort without Refresh
+[11/17] tests/reviewer-continuity.spec.ts:129:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[12/17] tests/reviewer-continuity.spec.ts:145:1 › reassignment retains unsaved notes but removes editing and submission authority
+[13/17] tests/reviewer-continuity.spec.ts:156:1 › 409 refresh retains draft; completion failure permits retry without duplicate requests
+[14/17] tests/reviewer-continuity.spec.ts:166:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[15/17] tests/reviewer-continuity.spec.ts:177:1 › later server page survives evidence return and completion background reload
+[16/17] tests/reviewer-continuity.spec.ts:188:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+  1) tests/reviewer-continuity.spec.ts:188:1 › keyboard-only evidence detour returns to review heading, then reviewer completes 
+
+    Error: Control is not reachable by Tab
+
+       at usability-fixture.ts:61
+
+      59 | export async function keyboardTo(page:Page, locator:ReturnType<Page['getByRole']>) {
+      60 |  for(let i=0;i<120;i++) {if(await locator.evaluate(e=>e===document.activeElement))return;await page.keyboard.press('Tab')}
+    > 61 |  throw Error('Control is not reachable by Tab')
+         |        ^
+      62 | }
+      63 | const bounds:unknown[]=[]
+      64 | export async function insideMain(page:Page,locator:ReturnType<Page['getByRole']>) {
+        at keyboardTo (/private/tmp/aqm-v019a-reviewer-continuity/tests/usability-fixture.ts:61:8)
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:200:3
+
+    Error Context: test-results/reviewer-continuity-keyboa-e8260-ing-then-reviewer-completes/error-context.md
+
+
+(node:70509) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[17/17] tests/reviewer-continuity.spec.ts:203:1 › unstarted review returns to selected evaluation heading
+  1 failed
+    tests/reviewer-continuity.spec.ts:188:1 › keyboard-only evidence detour returns to review heading, then reviewer completes 
+  16 passed (27.0s)

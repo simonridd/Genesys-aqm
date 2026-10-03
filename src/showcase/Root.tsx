@@ -1,5 +1,6 @@
 import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react'
 import { entryRoute } from './routing'
+import { useReviewDrafts } from '../useReviewDrafts'
 const Welcome = lazy(() => import('./Welcome'))
 const Demo = lazy(() => import('./Demo'))
 const Live = lazy(() => import('../App').then(module => ({ default: module.App })))
@@ -11,6 +12,15 @@ class DemoBoundary extends Component<{ children: ReactNode; onExit: () => void }
   }
 }
 export function Root() {
+  // About/demo can unmount the workspace too. Keep human work for this SPA's
+  // lifetime without keeping the workspace (or its network effects) mounted.
+  const reviewDrafts=useReviewDrafts()
+  useEffect(()=>{
+    if(!reviewDrafts.dirty)return
+    const warn=(event:BeforeUnloadEvent)=>{event.preventDefault();event.returnValue='You have unsaved human review changes.'}
+    window.addEventListener('beforeunload',warn)
+    return()=>window.removeEventListener('beforeunload',warn)
+  },[reviewDrafts.dirty])
   const [connected, setConnected] = useState(false)
   const [entry, setEntry] = useState(() => entryRoute(new URLSearchParams(location.search)))
   useEffect(() => {
@@ -27,6 +37,6 @@ export function Root() {
     window.scrollTo(0, 0)
   }
   return <Suspense fallback={<main className="page-content" role="status">Loading IPI AQM…</main>}>
-    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} connected={connected} onConnect={() => navigate('settings')} onLive={() => navigate(connected ? 'automation' : 'conversations')} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={navigate} onDemo={step => navigate('demo', step)}/> : <Live onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>}
+    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} connected={connected} onConnect={() => navigate('settings')} onLive={() => navigate(connected ? 'automation' : 'conversations')} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={navigate} onDemo={step => navigate('demo', step)}/> : <Live reviewDrafts={reviewDrafts} onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>}
   </Suspense>
 }

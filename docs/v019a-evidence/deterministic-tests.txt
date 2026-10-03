@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-v019a-reviewer-continuity
+
+
+ Test Files  62 passed (62)
+      Tests  600 passed (600)
+   Start at  16:55:43
+   Duration  2.32s (import 42%, tests 36%, transform 20%, worker 1%)
+
+    Isolate  62 workers spawned · ~93ms startup each (spawn + environment, per file)
+             at least ~481ms faster with isolate: false — reuses workers across files instead of one per file
+

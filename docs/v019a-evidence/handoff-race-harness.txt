@@ -1,0 +1,36 @@
+[WebServer] (node:71703) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 2 tests using 1 worker
+
+(node:71704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] tests/reviewer-continuity.spec.ts:265:1 › About and workspace handoff retain human work and unload protection in this SPA
+[2/2] tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time
+  1) tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Review status', { exact: true })
+
+
+      284 |   })
+      285 |   await panel(page).getByRole('button',{name:'Complete review',exact:true}).click();await received
+    > 286 |   await page.getByLabel('Review status',{exact:true}).selectOption('REVIEWED')
+          |                                                       ^
+      287 |   release()
+      288 |   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
+      289 |   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(1)
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:286:55
+
+    Error Context: test-results/reviewer-continuity-a-pend-11701-han-the-scope-at-click-time/error-context.md
+
+
+  1 failed
+    tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time 
+  1 passed (33.2s)

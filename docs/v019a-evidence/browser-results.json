@@ -1,0 +1,985 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/private/tmp/aqm-v019a-reviewer-continuity/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "docs/v019a-evidence/playwright.config.ts",
+      "tests/reviewer-continuity.spec.ts",
+      "tests/reviewer-effectiveness.spec.ts"
+    ],
+    "configFile": "/private/tmp/aqm-v019a-reviewer-continuity/docs/v019a-evidence/playwright.config.ts",
+    "rootDir": "/private/tmp/aqm-v019a-reviewer-continuity/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/aqm-v019a-reviewer-continuity/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/private/tmp/aqm-v019a-reviewer-continuity/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/aqm-v019a-reviewer-continuity/docs/v019a-evidence/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --host 127.0.0.1 --port 4174",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "reviewer-continuity.spec.ts",
+      "file": "reviewer-continuity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reviewer safely inspects evidence and completes My Reviews at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:33.437Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-951459b8cbeb8823efd7",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 48,
+          "column": 3
+        },
+        {
+          "title": "reviewer safely inspects evidence and completes My Reviews at 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1914,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:35.586Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-61c3409e6576db78102f",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 48,
+          "column": 3
+        },
+        {
+          "title": "reviewer safely inspects evidence and completes My Reviews at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1733,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:37.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-810581d71aca84676b2c",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 48,
+          "column": 3
+        },
+        {
+          "title": "exact My Reviews filter context survives evidence navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:39.243Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-bce7d0bed267584d0c6d",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "Analytics question investigation retains exact cohort, selected evaluation and return tab",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1784,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:40.392Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-43d8a85ac3a0f2dd1b69",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 107,
+          "column": 1
+        },
+        {
+          "title": "save progress adopts returned revision and clears unload guard, then restores authoritative answers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1246,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:42.180Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-0eeee7a5163d4d4efe83",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 119,
+          "column": 1
+        },
+        {
+          "title": "completion reconciles All Evaluations without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1112,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:43.432Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-2cb8f01fd39fec361104",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 138,
+          "column": 12
+        },
+        {
+          "title": "completion reconciles active cohort without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:44.549Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-6e5c163aaa7fb846ae6b",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 138,
+          "column": 12
+        },
+        {
+          "title": "completion reconciles review status without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1143,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:45.698Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-d3b04a3a1f33e6326a42",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 138,
+          "column": 12
+        },
+        {
+          "title": "completion reconciles due cohort without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1026,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:46.846Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-f2c1efc7a71ab18b2696",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 138,
+          "column": 12
+        },
+        {
+          "title": "revision conflict retains inputs, blocks submit and requires explicit discard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:47.878Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-4cfafa10d3375b2b1652",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 148,
+          "column": 1
+        },
+        {
+          "title": "reassignment retains unsaved notes but removes editing and submission authority",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1130,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:49.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-5ae08a57ef92d8de00fd",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 164,
+          "column": 1
+        },
+        {
+          "title": "409 refresh retains draft without silently replacing its base",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1078,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:50.220Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-8ccfe7df3de46e54390f",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "two drafts survive unrelated SPA pages; guard remains until both are resolved",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1555,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:51.302Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-8d4519c67bd31cce88e2",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 185,
+          "column": 1
+        },
+        {
+          "title": "later server page survives evidence return and completion background reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1301,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:52.861Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-9a360c815f31e4409c9c",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 196,
+          "column": 1
+        },
+        {
+          "title": "keyboard-only evidence detour returns to review heading, then reviewer completes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1268,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:54.167Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-809c1c3a2b30ece6f642",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 207,
+          "column": 1
+        },
+        {
+          "title": "unstarted review returns to selected evaluation heading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:55.441Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-1b70753a24c6a00a125d",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 222,
+          "column": 1
+        },
+        {
+          "title": "completion removes the row before a failed background list reload, preserving confirmation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:56.457Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-744b4c51e8603a8bdfa7",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 229,
+          "column": 1
+        },
+        {
+          "title": "failed completion retains all changes and explicit retry completes exactly once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1111,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:57.503Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-572e21e5a891fae550eb",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 239,
+          "column": 1
+        },
+        {
+          "title": "reload starts a new session without unsubmitted answers or notes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1784,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:52:58.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-4557fb31ac1487e157e0",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 253,
+          "column": 1
+        },
+        {
+          "title": "About and workspace handoff retain human work and unload protection in this SPA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2277,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:53:00.408Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-ab30c2dfd49c852139f1",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 265,
+          "column": 1
+        },
+        {
+          "title": "a pending completion reconciles the current filters rather than the scope at click time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1068,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:53:02.690Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-8bd6b594084f3b5bcef9",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 276,
+          "column": 1
+        },
+        {
+          "title": "completion in another session keeps unfinished answers separate from completed authority",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1120,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:53:03.762Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-a279cf5cf537995a9a21",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 292,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "reviewer-effectiveness.spec.ts",
+      "file": "reviewer-effectiveness.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "V0.19 reviewer task recheck 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2252,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:53:05.164Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c68e5a4e92a5b931bb3-874d6837c2e08eec44c5",
+          "file": "reviewer-effectiveness.spec.ts",
+          "line": 7,
+          "column": 97
+        },
+        {
+          "title": "V0.19 reviewer task recheck 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:53:07.420Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c68e5a4e92a5b931bb3-62b514d8ed54a5c5295d",
+          "file": "reviewer-effectiveness.spec.ts",
+          "line": 7,
+          "column": 97
+        },
+        {
+          "title": "V0.19 reviewer task recheck 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1979,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T15:53:09.709Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c68e5a4e92a5b931bb3-1fe8ef22cdef8e945498",
+          "file": "reviewer-effectiveness.spec.ts",
+          "line": 7,
+          "column": 97
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-03T15:52:32.414Z",
+    "duration": 39312.062,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

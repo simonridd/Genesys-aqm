@@ -58,7 +58,14 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await panel.getByLabel('Human answer: Resolution',{exact:true}).selectOption('fully_resolved')
     conflictNext=true
     await panel.getByRole('button',{name:'Save progress'}).click();await expect(panel.getByRole('alert')).toContainText('Refresh before saving')
-    await panel.getByRole('button',{name:'Refresh review'}).click();await expect(panel.getByLabel('Overall review note')).toHaveValue('Saved by another reviewer')
+    await panel.getByRole('button',{name:'Refresh review'}).click()
+    // Refresh must preserve unsubmitted values until an explicit reconciliation.
+    await expect(panel.getByLabel('Overall review note')).toHaveValue('')
+    await expect(panel.getByLabel('Human answer: Understanding the issue',{exact:true})).toHaveValue('2')
+    await expect(panel.getByRole('alert')).toContainText('Your unsaved answers are still held in this session.')
+    await expect(panel.getByRole('button',{name:'Complete review'})).toBeDisabled()
+    await panel.getByRole('button',{name:'Discard my unsaved answers',exact:true}).click()
+    await expect(panel.getByLabel('Overall review note')).toHaveValue('Saved by another reviewer')
     await panel.getByLabel('Human answer: Understanding the issue',{exact:true}).selectOption('2')
     await panel.getByLabel('Human answer: Resolution',{exact:true}).selectOption('fully_resolved')
     await panel.getByLabel('Overall review note').fill('Reviewed against the immutable snapshot.')

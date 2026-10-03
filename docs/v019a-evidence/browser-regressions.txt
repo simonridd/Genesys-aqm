@@ -1,0 +1,92 @@
+[WebServer] (node:73082) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 81 tests using 1 worker
+
+(node:73084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/81] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/81] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/81] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/81] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/81] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/81] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/81] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/81] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/81] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/81] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/81] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/81] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/81] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/81] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/81] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/81] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/81] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/81] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/81] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/81] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1440
+[21/81] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1920
+[22/81] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 390
+[23/81] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 1440
+[24/81] tests/control-plane-cache.spec.ts:11:2 › provider-free navigation, IndexedDB cache and trusted evaluation at 390
+[25/81] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[26/81] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1440
+[27/81] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1440
+[28/81] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[29/81] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1920
+[30/81] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1920
+[31/81] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[32/81] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 390
+[33/81] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 390
+[34/81] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1440
+[35/81] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1440
+[36/81] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1920
+[37/81] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1920
+[38/81] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 390
+[39/81] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 390
+[40/81] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1440
+[41/81] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1920
+[42/81] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+[43/81] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[44/81] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[45/81] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+[46/81] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[47/81] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[48/81] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+[49/81] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[50/81] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[51/81] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+[52/81] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[53/81] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[54/81] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[55/81] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[56/81] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[57/81] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[58/81] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[59/81] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[60/81] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[61/81] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[62/81] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[63/81] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[64/81] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+[65/81] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[66/81] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[67/81] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[68/81] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[69/81] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[70/81] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[71/81] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[72/81] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[73/81] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[74/81] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[75/81] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[76/81] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[77/81] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[78/81] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[79/81] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[80/81] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[81/81] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  81 passed (2.8m)

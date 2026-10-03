@@ -1,0 +1,90 @@
+[WebServer] (node:71258) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 25 tests using 1 worker
+
+(node:71260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/25] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[2/25] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[3/25] tests/reviewer-continuity.spec.ts:48:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[4/25] tests/reviewer-continuity.spec.ts:99:1 › exact My Reviews filter context survives evidence navigation
+[5/25] tests/reviewer-continuity.spec.ts:107:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[6/25] tests/reviewer-continuity.spec.ts:119:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[7/25] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles All Evaluations without Refresh
+[8/25] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles active cohort without Refresh
+[9/25] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles review status without Refresh
+[10/25] tests/reviewer-continuity.spec.ts:138:12 › completion reconciles due cohort without Refresh
+[11/25] tests/reviewer-continuity.spec.ts:148:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[12/25] tests/reviewer-continuity.spec.ts:164:1 › reassignment retains unsaved notes but removes editing and submission authority
+[13/25] tests/reviewer-continuity.spec.ts:175:1 › 409 refresh retains draft without silently replacing its base
+[14/25] tests/reviewer-continuity.spec.ts:185:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[15/25] tests/reviewer-continuity.spec.ts:196:1 › later server page survives evidence return and completion background reload
+[16/25] tests/reviewer-continuity.spec.ts:207:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[17/25] tests/reviewer-continuity.spec.ts:222:1 › unstarted review returns to selected evaluation heading
+[18/25] tests/reviewer-continuity.spec.ts:229:1 › completion removes the row before a failed background list reload, preserving confirmation
+[19/25] tests/reviewer-continuity.spec.ts:239:1 › failed completion retains all changes and explicit retry completes exactly once
+[20/25] tests/reviewer-continuity.spec.ts:253:1 › reload starts a new session without unsubmitted answers or notes
+[21/25] tests/reviewer-continuity.spec.ts:265:1 › About and workspace handoff retain human work and unload protection in this SPA
+  1) tests/reviewer-continuity.spec.ts:265:1 › About and workspace handoff retain human work and unload protection in this SPA 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Evaluations', exact: true })
+
+
+       7 | const panel=(page:Page)=>page.getByRole('region',{name:'Human review',exact:true})
+       8 | const open=(page:Page,id='review-a')=>page.getByRole('button',{name:`Open evaluation ${id}`,exact:true}).click()
+    >  9 | const nav=(page:Page,name:string)=>page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name,exact:true}).click()
+         |                                                                                                                                   ^
+      10 | const guard=(page:Page)=>page.evaluate(()=>{const event=new Event('beforeunload',{cancelable:true});window.dispatchEvent(event);return {prevented:event.defaultPrevented,guards:(window as any).__reviewTrace.guards}})
+      11 | const puts=(state:Awaited<ReturnType<typeof continuityFixture>>)=>state.requests.filter(r=>r.method==='PUT')
+      12 | async function edit(page:Page,all=false) {
+        at nav (/private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:9:131)
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:271:9
+
+    Error Context: test-results/reviewer-continuity-About--9cbc4-load-protection-in-this-SPA/error-context.md
+
+
+(node:71434) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[22/25] tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time
+  2) tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Review status', { exact: true })
+
+
+      284 |   })
+      285 |   await panel(page).getByRole('button',{name:'Complete review',exact:true}).click();await received
+    > 286 |   await page.getByLabel('Review status',{exact:true}).selectOption('REVIEWED')
+          |                                                       ^
+      287 |   release()
+      288 |   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
+      289 |   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(1)
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:286:55
+
+    Error Context: test-results/reviewer-continuity-a-pend-11701-han-the-scope-at-click-time/error-context.md
+
+
+(node:71539) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[23/25] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 1440
+[24/25] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 1920
+[25/25] tests/reviewer-effectiveness.spec.ts:7:97 › V0.19 reviewer task recheck 390
+  2 failed
+    tests/reviewer-continuity.spec.ts:265:1 › About and workspace handoff retain human work and unload protection in this SPA 
+    tests/reviewer-continuity.spec.ts:276:1 › a pending completion reconciles the current filters rather than the scope at click time 
+  23 passed (1.6m)

@@ -1,0 +1,288 @@
+[WebServer] (node:70228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 17 tests using 1 worker
+
+(node:70229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+  1) tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1440 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 0,
+    +   "guards": 1,
+        "prevented": false,
+      }
+
+      41 |     await open(page)
+      42 |     await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+    > 43 |     expect(await guard(page)).toEqual({prevented:false,guards:0})
+         |                               ^
+      44 |     await panel(page).getByRole('button',{name:'Start review',exact:true}).click()
+      45 |     await expect(panel(page).getByLabel('Human answer: Warm opening',{exact:true})).toBeVisible()
+      46 |     expect(await guard(page)).toEqual({prevented:false,guards:0})
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:43:31
+
+    Error Context: test-results/reviewer-continuity-review-1f331-ompletes-My-Reviews-at-1440/error-context.md
+
+
+(node:70235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/17] tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+  2) tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1920 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 0,
+    +   "guards": 1,
+        "prevented": false,
+      }
+
+      41 |     await open(page)
+      42 |     await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+    > 43 |     expect(await guard(page)).toEqual({prevented:false,guards:0})
+         |                               ^
+      44 |     await panel(page).getByRole('button',{name:'Start review',exact:true}).click()
+      45 |     await expect(panel(page).getByLabel('Human answer: Warm opening',{exact:true})).toBeVisible()
+      46 |     expect(await guard(page)).toEqual({prevented:false,guards:0})
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:43:31
+
+    Error Context: test-results/reviewer-continuity-review-02a24-ompletes-My-Reviews-at-1920/error-context.md
+
+
+(node:70240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/17] tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 390
+  3) tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 390 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 0,
+    +   "guards": 1,
+        "prevented": false,
+      }
+
+      41 |     await open(page)
+      42 |     await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+    > 43 |     expect(await guard(page)).toEqual({prevented:false,guards:0})
+         |                               ^
+      44 |     await panel(page).getByRole('button',{name:'Start review',exact:true}).click()
+      45 |     await expect(panel(page).getByLabel('Human answer: Warm opening',{exact:true})).toBeVisible()
+      46 |     expect(await guard(page)).toEqual({prevented:false,guards:0})
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:43:31
+
+    Error Context: test-results/reviewer-continuity-review-271e0-completes-My-Reviews-at-390/error-context.md
+
+
+(node:70245) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/17] tests/reviewer-continuity.spec.ts:80:1 › exact My Reviews filter context survives evidence navigation
+[5/17] tests/reviewer-continuity.spec.ts:88:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[6/17] tests/reviewer-continuity.spec.ts:100:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+  4) tests/reviewer-continuity.spec.ts:100:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 0,
+    +   "guards": 1,
+        "prevented": false,
+      }
+
+      104 |   expect(puts(state)).toHaveLength(1);expect(puts(state)[0].body.expectedRevision).toBe(2)
+      105 |   expect((await state.store.review('review-a'))!.revision).toBe(3)
+    > 106 |   expect(await guard(page)).toEqual({prevented:false,guards:0})
+          |                             ^
+      107 |   await evidenceRoundTrip(page);await restored(page)
+      108 |   await expect(panel(page).getByText(/Unsaved review changes/)).toHaveCount(0)
+      109 |   await panel(page).getByLabel('Overall review note',{exact:true}).fill('UNSAVED second revision')
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:106:29
+
+    Error Context: test-results/reviewer-continuity-save-p-b58f8-tores-authoritative-answers/error-context.md
+
+
+(node:70266) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles All Evaluations without Refresh
+[8/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles active cohort without Refresh
+[9/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles review status without Refresh
+[10/17] tests/reviewer-continuity.spec.ts:119:12 › completion reconciles due cohort without Refresh
+[11/17] tests/reviewer-continuity.spec.ts:129:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+  5) tests/reviewer-continuity.spec.ts:129:1 › revision conflict retains inputs, blocks submit and requires explicit discard 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 0,
+    +   "guards": 1,
+        "prevented": false,
+      }
+
+      141 |   await expect(panel(page).getByLabel('Overall review note',{exact:true})).toHaveValue('New authoritative note')
+      142 |   await expect(panel(page).getByRole('alert')).toHaveCount(0)
+    > 143 |   expect(await guard(page)).toEqual({prevented:false,guards:0})
+          |                             ^
+      144 | })
+      145 | test('reassignment retains unsaved notes but removes editing and submission authority',async({page})=>{
+      146 |   const state=await continuityFixture(page);await open(page);await edit(page,true)
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:143:29
+
+    Error Context: test-results/reviewer-continuity-revisi-c57e3-d-requires-explicit-discard/error-context.md
+
+
+(node:70278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/17] tests/reviewer-continuity.spec.ts:145:1 › reassignment retains unsaved notes but removes editing and submission authority
+  6) tests/reviewer-continuity.spec.ts:145:1 › reassignment retains unsaved notes but removes editing and submission authority 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 1,
+    +   "guards": 2,
+        "prevented": true,
+      }
+
+      152 |   await expect(panel(page).getByRole('button',{name:'Complete review',exact:true})).toHaveCount(0)
+      153 |   expect(puts(state)).toHaveLength(0)
+    > 154 |   expect(await guard(page)).toEqual({prevented:true,guards:1})
+          |                             ^
+      155 | })
+      156 | test('409 refresh retains draft; completion failure permits retry without duplicate requests',async({page})=>{
+      157 |   const state=await continuityFixture(page);await open(page);await edit(page,true);await state.advance()
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:154:29
+
+    Error Context: test-results/reviewer-continuity-reassi-168d8-ng-and-submission-authority/error-context.md
+
+
+(node:70283) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/17] tests/reviewer-continuity.spec.ts:156:1 › 409 refresh retains draft; completion failure permits retry without duplicate requests
+[14/17] tests/reviewer-continuity.spec.ts:166:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+  7) tests/reviewer-continuity.spec.ts:166:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 1,
+    +   "guards": 2,
+        "prevented": true,
+      }
+
+      169 |   await panel(page).getByRole('button',{name:'Save progress',exact:true}).click()
+      170 |   await expect(panel(page).getByRole('status')).toHaveText('Review progress saved.')
+    > 171 |   expect(await guard(page)).toEqual({prevented:true,guards:1})
+          |                             ^
+      172 |   await open(page);await restored(page)
+      173 |   await panel(page).getByRole('button',{name:'Discard my unsaved answers',exact:true}).click()
+      174 |   expect(await guard(page)).toEqual({prevented:false,guards:0})
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:171:29
+
+    Error Context: test-results/reviewer-continuity-two-dr-68171-ins-until-both-are-resolved/error-context.md
+
+
+(node:70292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/17] tests/reviewer-continuity.spec.ts:177:1 › later server page survives evidence return and completion background reload
+[16/17] tests/reviewer-continuity.spec.ts:188:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+  8) tests/reviewer-continuity.spec.ts:188:1 › keyboard-only evidence detour returns to review heading, then reviewer completes 
+
+    Error: Control is not reachable by Tab
+
+       at usability-fixture.ts:61
+
+      59 | export async function keyboardTo(page:Page, locator:ReturnType<Page['getByRole']>) {
+      60 |  for(let i=0;i<120;i++) {if(await locator.evaluate(e=>e===document.activeElement))return;await page.keyboard.press('Tab')}
+    > 61 |  throw Error('Control is not reachable by Tab')
+         |        ^
+      62 | }
+      63 | const bounds:unknown[]=[]
+      64 | export async function insideMain(page:Page,locator:ReturnType<Page['getByRole']>) {
+        at keyboardTo (/private/tmp/aqm-v019a-reviewer-continuity/tests/usability-fixture.ts:61:8)
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:200:3
+
+    Error Context: test-results/reviewer-continuity-keyboa-e8260-ing-then-reviewer-completes/error-context.md
+
+
+(node:70299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[17/17] tests/reviewer-continuity.spec.ts:203:1 › unstarted review returns to selected evaluation heading
+  9) tests/reviewer-continuity.spec.ts:203:1 › unstarted review returns to selected evaluation heading 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+      Object {
+    -   "guards": 0,
+    +   "guards": 1,
+        "prevented": false,
+      }
+
+      206 |   await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click()
+      207 |   await expect(page).toHaveURL(url);await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+    > 208 |   expect(await guard(page)).toEqual({prevented:false,guards:0})
+          |                             ^
+      209 | })
+      210 |
+        at /private/tmp/aqm-v019a-reviewer-continuity/tests/reviewer-continuity.spec.ts:208:29
+
+    Error Context: test-results/reviewer-continuity-unstar-9e9df-selected-evaluation-heading/error-context.md
+
+
+  9 failed
+    tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1440 
+    tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 1920 
+    tests/reviewer-continuity.spec.ts:37:3 › reviewer safely inspects evidence and completes My Reviews at 390 
+    tests/reviewer-continuity.spec.ts:100:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers 
+    tests/reviewer-continuity.spec.ts:129:1 › revision conflict retains inputs, blocks submit and requires explicit discard 
+    tests/reviewer-continuity.spec.ts:145:1 › reassignment retains unsaved notes but removes editing and submission authority 
+    tests/reviewer-continuity.spec.ts:166:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved 
+    tests/reviewer-continuity.spec.ts:188:1 › keyboard-only evidence detour returns to review heading, then reviewer completes 
+    tests/reviewer-continuity.spec.ts:203:1 › unstarted review returns to selected evaluation heading 
+  8 passed (27.3s)
