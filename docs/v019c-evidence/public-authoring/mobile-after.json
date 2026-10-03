@@ -1,0 +1,15 @@
+{
+  "before": {
+    "pageHeight": 4265,
+    "questionHeight": 499.1875,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "after": {
+    "pageHeight": 2663,
+    "questionHeight": 127.78125
+  },
+  "reduction": 0.3756154747948417
+}

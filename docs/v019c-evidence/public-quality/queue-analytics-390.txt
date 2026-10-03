@@ -1,0 +1,68 @@
+IPI AQM
+Automated Quality Management
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+1–30 September 2026
+
+Genesys Cloud · All policies · All published forms
+
+12 evaluations · 12 evaluated conversations
+Change filters
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+
+Inspect evaluations to investigate this selected cohort.
+
+Search
+2 results
+Queue ↓
+	
+Evaluations
+	
+Average quality
+	
+Critical failure occurrences
+	
+Pass rate
+	
+Investigate
+
+Service	6	80%	0	100%	Inspect evaluations →
+Claims	6	50%	2	0%	Inspect evaluations →
+Data scope & technical details

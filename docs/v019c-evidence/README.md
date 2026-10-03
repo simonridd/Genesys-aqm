@@ -20,3 +20,5 @@ All authenticated tasks use fictional intercepted data. No production evaluation
 - `preservation-snapshot.py`, `runtime-snapshot.py`, `compare-preservation.py`: read-only proof scripts reused from earlier tranches.
 
 See [tranche report](../v019c-quality-actionability.md) for mental model, before/after, technical audit, counting units, unchanged rubric and deferred navigation work.
+
+Final public recheck: `public-playwright.txt`, `public-results.json` — 108/108 passed on the exact deployed committed frontend with intercepted APIs. `public-quality/`, `public-reviewer/`, `public-authoring/`, `public-answers/`, `public-save/`, `public-investigation/` contain deployed captures. `frontend-invariance.json` confirms documentation-only changes after the tested source. These tests overlap earlier runs and must not be summed as independent scenarios.

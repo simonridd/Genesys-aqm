@@ -30,5 +30,18 @@
   },
   "rubric": "Unchanged whole-product scale; scoped judgments only",
   "providerCalls": 0,
-  "productionMutations": 0
+  "productionMutations": 0,
+  "deployedFixtureRegression": {
+    "startTime": "2026-10-03T19:13:06.882Z",
+    "duration": 217864.291,
+    "expected": 108,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "testedSourceSha": "c7bc77b40be5ab2b44a2139c1d2196fe7067e850",
+  "pagesHead": "13d3a49ba48c6bb38f3d8a38553e10e7f963c9a6",
+  "publicBytesEqual": true,
+  "cloudRunRevision": "aqm-api-v019-e92f2d6",
+  "productionPreserved": true
 }

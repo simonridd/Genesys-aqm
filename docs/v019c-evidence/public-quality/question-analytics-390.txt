@@ -1,0 +1,77 @@
+IPI AQM
+Automated Quality Management
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+1–30 September 2026
+
+Genesys Cloud · All policies · All published forms
+
+12 evaluations · 12 evaluated conversations
+Change filters
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+
+Each question is kept separate by exact form version. Inspect evaluations to see applicable answers.
+
+About confidence & uncertainty
+Search
+6 results
+Question ↓
+	
+Form version
+	
+Applicable answers
+	
+Average quality
+	
+Critical failure occurrences
+	
+Uncertainty
+	
+Average confidence
+	
+Investigate
+
+Warm opening	Customer Service v17	8	75%	2	0%	—	Inspect evaluations →
+Warm opening	Customer Service v18	4	100%	0	0%	—	Inspect evaluations →
+Resolution	Customer Service v17	8	100%	0	0%	85%	Inspect evaluations →
+Resolution	Customer Service v18	4	100%	0	0%	85%	Inspect evaluations →
+Clear next step	Customer Service v17	8	33.3%	0	0%	75%	Inspect evaluations →
+Clear next step	Customer Service v18	4	66.7%	0	0%	75%	Inspect evaluations →
+Data scope & technical details

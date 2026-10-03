@@ -130,3 +130,31 @@ Role-focused primary navigation; mobile analytics-tab overflow treatment; primar
 - Existing regression matrix: **111 passed, 2 baseline failures, 113 total**, zero skipped/flaky. All V0.19A/V0.19B/V0.18B, Answer Set, save-protection, form-composition and pitch checks pass. Fifteen Overview range/role/attention/drill tests pass. The two legacy Overview failures are the same ones documented in the original whole-product review: development-only `/src/main.tsx` session injection cannot initialize an already-connected session in hashed production bundles; a bare-root expectation still asks for Conversation review where Welcome intentionally renders. Neither test is suppressed or rewritten to green. Presentation-specific selectors/labels were updated while preserving exact data/filter assertions.
 - Regression matrix ran before the final date-summary/style isolation and safe browser-question-ranking refinement; the final focused and deterministic runs verify those changes. Deployed fixture regression checks below verify the committed frontend again.
 - Scope scores are **4/5** for information quality, cleanliness, operational usefulness, ease of use, Analytics actionability, coverage comprehension and Overview prioritization, on the unchanged rubric. These are scoped agent judgments only.
+
+## Deployment and preservation result
+
+Tested committed source: `c7bc77b40be5ab2b44a2139c1d2196fe7067e850`. An immutable `git archive` rebuilt successfully and produced exactly the same 12 files/bytes as the tested frontend. Every frontend input matches that commit. Server, shared domain/provider, package/dependency, public/pitch source and production environment configuration are unchanged from the canonical base.
+
+Pages HEAD: `13d3a49ba48c6bb38f3d8a38553e10e7f963c9a6`, commit message pins the tested source. All 12 public files and the complete Pages Git tree match the tested committed build byte-for-byte. Published at <https://simonridd.github.io/Genesys-aqm/>. Cloud Run remains **`aqm-api-v019-e92f2d6`**; it was not redeployed. No server source changed.
+
+Read-only preservation: 24/25 collection hashes match. All required domain collections match: seven production forms, four Question Groups, zero Answer Set assets/families, seven policies, eight evaluation records, zero Human Reviews and one schedule. These counts describe the existing production dataset, not the fictional proof fixture. Configuration/image/revision/IAM/secret metadata, versions and IAM/Scheduler configuration hashes match. No production configuration/evaluation/review writes, real Genesys/Jev requests or notifications were performed.
+
+The only observed collection change is `operationalHealth`, with two documents retaining their count and moving during the natural hourly Scheduler tick. Exact UTC movement:
+
+| Runtime observation | Before | After |
+|---|---|---|
+| Scheduler lastAttemptTime | 2026-10-03T18:00:04.825057Z | 2026-10-03T19:00:04.827214Z |
+| Scheduler scheduleTime | 2026-10-03T19:00:04.028877Z | 2026-10-03T20:00:04.028877Z |
+| Health lastSuccessfulTickAt | 2026-10-03T18:00:08.336Z | 2026-10-03T19:00:07.506Z |
+| Health document updateTime (first sorted document) | 2026-10-03T18:00:08.807204Z | 2026-10-03T19:00:07.934302Z |
+| Health document updateTime (scheduler document) | 2026-10-03T18:00:08.455164Z | 2026-10-03T19:00:07.643934Z |
+
+Scheduler status remains `{}`; scheduleExecutionClaims and all domain records are unchanged. The timing is consistent with the existing hourly runtime; the agent made only read calls for this proof. See [preservation comparison](v019c-evidence/preservation.json) and [public byte proof](v019c-evidence/pages.json).
+
+The final branch evidence commit may follow the tested source commit with documentation/captures only. It does not alter frontend inputs or deployed bytes. No PR, merge or release tag is created by this tranche.
+
+## Deployed committed-build recheck
+
+**108/108 passed, zero skipped/flaky**, against the public Pages build using intercepted fictional APIs: all 12 quality/coverage/keyboard checks, V0.18B investigation return, V0.19A continuity/completion/reconciliation, V0.19B compact authoring/Answer Set/group/save authority, save protection, composition and unchanged pitch. This suite intentionally covers the connected and public journeys on the deployed artifact; the separate local Overview matrix retains its two documented legacy failures. These are overlapping verification runs, not additive counts of independent scenarios. See [public result](v019c-evidence/public-results.json) and [log](v019c-evidence/public-playwright.txt).
+
+Final source invariance confirms the branch changes after the tested source are documentation/evidence only. The dedicated worktree is committed and pushed with no PR, merge or release tag.

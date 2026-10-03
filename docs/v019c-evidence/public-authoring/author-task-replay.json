@@ -1,0 +1,142 @@
+{
+  "goals": [
+    "Create a quality form that asks whether the resolution was clear, using the reusable four-level Resolution clarity scale.",
+    "Reuse three related questions across another evaluation form."
+  ],
+  "actions": [
+    {
+      "action": "Evaluation Forms",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "New form",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Add question",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Multiple choice",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Use reusable Answer Set",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Use Resolution clarity v1",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Advanced details",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Done",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Save changes",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Question Groups",
+      "page": "Question Groups"
+    },
+    {
+      "action": "Open Resolution & Next Steps",
+      "page": "Question Groups"
+    },
+    {
+      "action": "Close details",
+      "page": "Question Groups"
+    },
+    {
+      "action": "Evaluation Forms",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "New form",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Add reusable group",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Add Resolution & Next Steps",
+      "page": "Evaluation Forms"
+    },
+    {
+      "action": "Save changes",
+      "page": "Evaluation Forms"
+    }
+  ],
+  "completion": [
+    true,
+    true
+  ],
+  "wrongTurns": 0,
+  "confusedAnswerSetsWithGroups": false,
+  "limitations": "Scripted keyboard replay by the implementing agent; not an independent blind or recruited human test. Field fills are additional actions, recorded in the spec.",
+  "errors": [],
+  "requests": [
+    {
+      "path": "/api/session",
+      "method": "GET"
+    },
+    {
+      "path": "/api/governance",
+      "method": "GET"
+    },
+    {
+      "path": "/api/answer-sets",
+      "method": "GET"
+    },
+    {
+      "path": "/api/forms",
+      "method": "GET"
+    },
+    {
+      "path": "/api/policies",
+      "method": "GET"
+    },
+    {
+      "path": "/api/question-groups",
+      "method": "GET"
+    },
+    {
+      "path": "/api/form-tests",
+      "method": "GET"
+    },
+    {
+      "path": "/api/analytics",
+      "method": "GET"
+    },
+    {
+      "path": "/api/form-tests",
+      "method": "GET"
+    },
+    {
+      "path": "/api/forms/form_1791054844330",
+      "method": "PUT"
+    },
+    {
+      "path": "/api/form-tests",
+      "method": "GET"
+    },
+    {
+      "path": "/api/analytics",
+      "method": "GET"
+    },
+    {
+      "path": "/api/form-tests",
+      "method": "GET"
+    },
+    {
+      "path": "/api/forms/form_1791054844729",
+      "method": "PUT"
+    }
+  ]
+}
