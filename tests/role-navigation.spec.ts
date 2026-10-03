@@ -41,8 +41,8 @@ for(const role of roles)test(`${role} shared routes deep-link; labels and access
 test('keyboard disclosures remember session choices, active page wins, product tour preserves them',async({page})=>{
  const state=await fixture(page,'ADMIN',[],[draft()],[],'automation');try{
  const configuration=nav(page).locator('details').filter({has:page.locator('summary').filter({hasText:/^Configuration$/})}),summary=configuration.locator('summary')
- await keyboardTo(page,summary);await page.keyboard.press('Enter');await expect(configuration).toHaveAttribute('open','')
- const forms=nav(page).getByRole('button',{name:'Evaluation Forms',exact:true});await keyboardTo(page,forms);await page.keyboard.press('Enter');expect(await page.evaluate(()=>document.activeElement!==document.body)).toBe(true);await expect(forms).toHaveAttribute('aria-current','page')
+ await keyboardTo(page,summary);expect(await summary.evaluate(e=>getComputedStyle(e).outlineColor)).toBe('rgb(215, 245, 255)');await page.keyboard.press('Enter');await expect(configuration).toHaveAttribute('open','')
+ const forms=nav(page).getByRole('button',{name:'Evaluation Forms',exact:true});await keyboardTo(page,forms);expect(await forms.evaluate(e=>getComputedStyle(e).outlineColor)).toBe('rgb(215, 245, 255)');await page.keyboard.press('Enter');expect(await page.evaluate(()=>document.activeElement!==document.body)).toBe(true);await expect(forms).toHaveAttribute('aria-current','page')
  await navigateWorkspace(page,'Overview');await summary.focus();await page.keyboard.press('Space');await expect(configuration).not.toHaveAttribute('open','')
  await navigateWorkspace(page,'Settings');await expect(configuration).not.toHaveAttribute('open','')
  await nav(page).getByRole('button',{name:'About / product tour',exact:true}).click();await page.getByRole('button',{name:'Open AQM',exact:true}).first().click();await expect(configuration).not.toHaveAttribute('open','')

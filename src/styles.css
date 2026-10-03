@@ -369,7 +369,7 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
 .sidebar nav.workspace-navigation{display:grid;gap:8px;white-space:normal;overflow-x:visible;width:100%}
 .workspace-nav-group>summary{padding:11px 12px;color:var(--aqm-on-dark-muted);font-size:12px;font-weight:700;cursor:pointer;border-radius:8px}
 .workspace-nav-group>summary:hover{background:var(--aqm-navigation-raised)}
-.workspace-nav-group>summary:focus-visible,.workspace-navigation button:focus-visible{outline:2px solid var(--aqm-focus);outline-offset:-2px}
+.workspace-nav-group>summary:focus-visible,.workspace-navigation button:focus-visible{outline:2px solid var(--aqm-focus-on-dark);outline-offset:-2px}
 .workspace-nav-items{display:grid;gap:4px}
 .workspace-nav-utilities{border-top:1px solid var(--aqm-navigation-raised);padding-top:10px;margin-top:4px}
 .mobile-view-switcher{display:none}
