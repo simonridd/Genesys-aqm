@@ -1,0 +1,19 @@
+
+> genesys-aqm@0.1.0 build
+> tsc -b && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 143 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                         0.47 kB │ gzip:   0.32 kB
+dist/assets/index-Dh0z4fQh.css         74.40 kB │ gzip:  13.77 kB
+dist/assets/Welcome-4bnSAzdc.js        12.95 kB │ gzip:   4.60 kB
+dist/assets/Demo-BWA9tIFc.js           20.48 kB │ gzip:   6.79 kB
+dist/assets/reviews-DA7jf8kC.js        23.42 kB │ gzip:   7.78 kB
+dist/assets/genesysEmail-BJj4UQKD.js  193.81 kB │ gzip:  72.64 kB
+dist/assets/index-B0QOGpnI.js         223.72 kB │ gzip:  70.37 kB
+dist/assets/App-BAoBTKGB.js           414.93 kB │ gzip: 110.05 kB
+
+✓ built in 96ms

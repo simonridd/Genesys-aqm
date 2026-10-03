@@ -24,9 +24,15 @@ export interface QuestionGroupAsset {
   status: 'DRAFT' | 'PUBLISHED' | 'RETIRED'; questions: ScorecardItem[]; scoring?: GroupScoring
   createdAt: string; updatedAt: string; publishedAt?: string; condition?: FormCondition
 }
+export interface AnswerSetAsset {
+  id: string; familyId: string; name: string; description: string; version: number
+  type: 'choice' | 'score'; options: Option[]; status: 'DRAFT' | 'PUBLISHED' | 'RETIRED'
+  createdAt: string; updatedAt: string; publishedAt?: string
+}
 export interface GroupResult { applicable?: boolean; weight?: number; normalizedWeight?: number; passScore?: number; passed?: boolean | null; critical?: boolean; questionIds?: string[]; anomaly?: 'NO_SCORED_QUESTIONS'; groupId: string; name: string; status: 'APPLICABLE' | 'SKIPPED'; overallScore: number | null; countedWeight: number; answered: number; skipped: number }
 export interface ScorecardItem {
   id: string; title: string; instructions: string; type: QuestionType
+  sourceAnswerSet?: { familyId: string; answerSetId: string; answerSetVersion: number }
   options: Option[]; weight: number; enabled: boolean; section?: string; sourceGroupWeight?: number
   groupId?: string; sourceAssetQuestionId?: string; condition?: FormCondition
 }

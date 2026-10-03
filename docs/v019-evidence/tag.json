@@ -1,0 +1,10 @@
+{
+  "tag": "v0.18.0",
+  "annotated": true,
+  "verifiedAbsentLocallyAndRemotelyBeforeCreation": true,
+  "tagObject": "ea9c2977e0c34b3d5d556443a3ea08c20815f189",
+  "peeledCommit": "efc02d0986c75c938831d1633e98c3420ca7d72e",
+  "canonicalBaseVerified": true,
+  "branch": "codex/aqm-v0-19-reusable-answer-sets",
+  "worktree": "/Users/simonridd/.codex/worktrees/aqm-v019-answer-sets/Genesys-aqm"
+}

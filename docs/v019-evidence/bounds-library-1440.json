@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Close details",
+    "box": {
+      "x": 1018.09375,
+      "y": 280.5,
+      "width": 100.171875,
+      "height": 33
+    }
+  },
+  {
+    "name": "Export JSON",
+    "box": {
+      "x": 1128.265625,
+      "y": 280.5,
+      "width": 99.3125,
+      "height": 33
+    }
+  },
+  {
+    "name": "Edit as new version",
+    "box": {
+      "x": 1237.578125,
+      "y": 280.5,
+      "width": 135.421875,
+      "height": 33
+    }
+  }
+]

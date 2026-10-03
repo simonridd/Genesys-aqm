@@ -1,3 +1,4 @@
+import { assertAnswerSetWrite } from '../domain/answerSets'
 import { alertNotificationEvent, type NotificationEvent, type NotificationDelivery } from '../domain/notifications'
 import { openAlert, transitionAlert, type AlertInput, type AlertActor, type OperationalAlert, type SchedulerHealth } from '../domain/operationalAlerts'
 import { isDeepStrictEqual } from 'node:util'
@@ -6,7 +7,7 @@ import type { AuditEvent } from '../domain/governance'
 import { createHash } from 'node:crypto'
 import { assertAssetWrite } from '../domain/groupAssets'
 import type { HumanReview } from '../domain/reviews'
-import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun, QuestionGroupAsset } from '../domain/types'
+import type { EvaluationForm, EvaluationRecord, FormTestRun, InteractionPolicy, PolicyRun, AnswerSetAsset, QuestionGroupAsset } from '../domain/types'
 import type { Schedule } from './schedules'
 import type { Firestore } from 'firebase-admin/firestore'
 
@@ -16,7 +17,7 @@ export interface Claim { id: string; owner: string; leaseUntil: string; status: 
 export interface EvaluationSlot { id: string; status: 'started' | 'completed'; startedAt: string; recordId?: string; providerRequestCount?: number }
 export interface AtomicWrite {collection:CollectionName; id:string; value?:unknown; expected:unknown;checkOnly?:boolean}
 export class StoreConflict extends Error {constructor(){super('Data changed. Preview or refresh again.')}}
-export type CollectionName = 'operationalHealth' | 'notificationDestinationHealth' | 'notificationControl' | 'notificationDestinations' | 'notificationRules' | 'notificationDeliveries' | 'notificationEvents' | 'schedules' | 'roleAssignments' | 'governanceSettings' | 'auditEvents' | 'purgePlans' | 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'questionGroupAssets' | 'operationalAlerts'
+export type CollectionName = 'operationalHealth' | 'notificationDestinationHealth' | 'notificationControl' | 'notificationDestinations' | 'notificationRules' | 'notificationDeliveries' | 'notificationEvents' | 'schedules' | 'roleAssignments' | 'governanceSettings' | 'auditEvents' | 'purgePlans' | 'evaluationForms' | 'policies' | 'policyRuns' | 'evaluationRecords' | 'formTestRuns' | 'humanReviews' | 'answerSetAssets' | 'questionGroupAssets' | 'operationalAlerts'
 export interface QueryPage<T> { items: T[]; nextCursor?: string; scanned: number }
 export interface HealthSnapshot { recentRuns: PolicyRun[]; runCounts: { completed: number; partial: number; failed: number } }
 export interface ReviewWrite { review: HumanReview; expectedRevision: number }
@@ -39,6 +40,7 @@ export interface Store {
   transitionAlert(id:string,action:'ACKNOWLEDGED'|'RESOLVED',now:string,actor?:AlertActor):Promise<OperationalAlert|undefined>
   schedulerHealth():Promise<SchedulerHealth|undefined>; recordSchedulerHealth(now:string,successful:boolean):Promise<SchedulerHealth>
 
+  answerSet(id:string):Promise<AnswerSetAsset|undefined>; putAnswerSet(asset:AnswerSetAsset):Promise<void>
   groupAsset(id:string):Promise<QuestionGroupAsset|undefined>; putGroupAsset(asset:QuestionGroupAsset):Promise<void>
   recordProviderRequest(id:string,count:number):Promise<void>
   review(id:string):Promise<HumanReview|undefined>; reviewsByIds(ids:string[]):Promise<HumanReview[]>
@@ -60,7 +62,7 @@ const reactivateSla=(alert:OperationalAlert,now:string):OperationalAlert=>({...a
 const copy = <T>(value: T): T => structuredClone(value)
 export class MemoryStore implements Store {
   private governanceMaps = {operationalHealth:new Map<string,unknown>(),notificationDestinationHealth:new Map<string,unknown>(),notificationControl:new Map<string,unknown>(),notificationDestinations:new Map<string,unknown>(),notificationRules:new Map<string,unknown>(),notificationDeliveries:new Map<string,unknown>(),notificationEvents:new Map<string,unknown>(),roleAssignments:new Map<string,unknown>(),governanceSettings:new Map<string,unknown>(),auditEvents:new Map<string,unknown>(),purgePlans:new Map<string,unknown>()}
-  private maps(){return {...this.governanceMaps,evaluationForms:this.formMap,policies:this.policyMap,schedules:this.scheduleMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,questionGroupAssets:this.assetMap,operationalAlerts:this.alertMap}}
+  private maps(){return {...this.governanceMaps,evaluationForms:this.formMap,policies:this.policyMap,schedules:this.scheduleMap,policyRuns:this.runMap,evaluationRecords:this.evaluationMap,formTestRuns:this.testMap,humanReviews:this.reviewMap,answerSetAssets:this.answerSetMap,questionGroupAssets:this.assetMap,operationalAlerts:this.alertMap}}
   async governanceRead<T>(collection:CollectionName,id:string){return copy(this.maps()[collection].get(id)) as T|undefined}
   private audit(collection:string,id:string,next:unknown,prior?:unknown){for(const e of mutationAudits(collection,id,next,prior))this.governanceMaps.auditEvents.set(e.id,copy(e))}
   async atomic(writes:AtomicWrite[],events:AuditEvent[]=[]){
@@ -100,6 +102,9 @@ export class MemoryStore implements Store {
   async schedulerHealth(){return copy(this.schedulerState)}
   async recordSchedulerHealth(now:string,successful:boolean){this.schedulerState={initializedAt:this.schedulerState?.initializedAt??now,lastSuccessfulTickAt:successful?now:this.schedulerState?.lastSuccessfulTickAt};return copy(this.schedulerState)}
 
+  private answerSetMap=new Map<string,AnswerSetAsset>()
+  async answerSet(id:string){return copy(this.answerSetMap.get(id))}
+  async putAnswerSet(asset:AnswerSetAsset){assertAnswerSetWrite(this.answerSetMap.get(asset.id),asset,[...this.answerSetMap.values()]);this.audit('answerSetAssets',asset.id,asset,this.answerSetMap.get(asset.id));this.answerSetMap.set(asset.id,copy(asset))}
   private assetMap = new Map<string,QuestionGroupAsset>()
   async groupAsset(id:string){return copy(this.assetMap.get(id))}
   async putGroupAsset(asset:QuestionGroupAsset){if([...this.assetMap.values()].some(a=>a.id!==asset.id&&a.familyId===asset.familyId&&a.version===asset.version))throw Error('This reusable family version already exists. Refresh the library.');assertAssetWrite(this.assetMap.get(asset.id),asset);this.audit('questionGroupAssets',asset.id,asset,this.assetMap.get(asset.id));this.assetMap.set(asset.id,copy(asset))}
@@ -233,6 +238,23 @@ export class FirestoreStore implements Store {
   schedulerHealth(){return this.one<SchedulerHealth>('operationalHealth','scheduler')}
   async recordSchedulerHealth(now:string,successful:boolean){const ref=this.collection('operationalHealth').doc('scheduler');return this.db.runTransaction(async tx=>{const doc=await tx.get(ref),state=doc.data() as SchedulerHealth|undefined;const next={initializedAt:state?.initializedAt??now,lastSuccessfulTickAt:successful?now:state?.lastSuccessfulTickAt};tx.set(ref,stored(next));return next})}
 
+  async answerSet(id:string){return this.one<AnswerSetAsset>('answerSetAssets',id)}
+  async putAnswerSet(asset:AnswerSetAsset){
+    const ref=this.collection('answerSetAssets').doc(pathId(asset.id))
+    await this.db.runTransaction(async tx=>{
+      const familyRef=this.collection('answerSetFamilies').doc(pathId(asset.familyId))
+      const old=await tx.get(ref),familyKey=await tx.get(familyRef),family=await tx.get(this.collection('answerSetAssets').where('familyId','==',asset.familyId).limit(1001))
+      if(family.docs.length>1000)throw Error('Answer Set family exceeds the bounded version limit.')
+      assertAnswerSetWrite(old.exists?canonicalValue(old.data()) as AnswerSetAsset:undefined,asset,family.docs.map(doc=>canonicalValue(doc.data()) as AnswerSetAsset))
+      // A shared family document serializes even concurrent first-version creates with different IDs.
+      const key=familyKey.data() as {type:AnswerSetAsset['type'];versions:Record<string,string>}|undefined
+      if(key&&key.type!==asset.type)throw Error('Answer Set family base type is stable.')
+      const versions=key?.versions??Object.fromEntries(family.docs.map(doc=>{const a=canonicalValue(doc.data()) as AnswerSetAsset;return [String(a.version),a.id]}))
+      if(versions[String(asset.version)]&&versions[String(asset.version)]!==asset.id)throw Error('This Answer Set family version already exists. Refresh the library.')
+      tx.set(familyRef,{familyId:asset.familyId,type:asset.type,versions:{...versions,[String(asset.version)]:asset.id}})
+      tx.set(ref,stored(asset));this.audit(tx,'answerSetAssets',asset.id,asset,old.exists?canonicalValue(old.data()):undefined)
+    })
+  }
   async groupAsset(id:string){return this.one<QuestionGroupAsset>('questionGroupAssets',id)}
   async putGroupAsset(asset:QuestionGroupAsset){const ref=this.collection('questionGroupAssets').doc(pathId(asset.id));await this.db.runTransaction(async tx=>{const old=await tx.get(ref),versions=await tx.get(this.collection('questionGroupAssets').where('familyId','==',asset.familyId).where('version','==',asset.version).limit(2));if(versions.docs.some(doc=>doc.id!==asset.id))throw Error('This reusable family version already exists. Refresh the library.');assertAssetWrite(old.exists?canonicalValue(old.data()) as QuestionGroupAsset:undefined,asset);tx.set(ref,stored(asset));this.audit(tx,'questionGroupAssets',asset.id,asset,old.exists?canonicalValue(old.data()):undefined)})}
   async recordProviderRequest(id:string,count:number){await this.collection('evaluationSlots').doc(pathId(id)).update({providerRequestCount:count})}

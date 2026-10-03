@@ -1,0 +1,30 @@
+
+> genesys-aqm@0.1.0 test:answer-sets-browser
+> playwright test tests/answer-sets.spec.ts
+
+
+Running 19 tests using 1 worker
+
+(node:11089) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440 (1.8s)
+  ✓   2 tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440 (2.2s)
+  ✓   3 tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440 (1.4s)
+  ✓   4 tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920 (1.7s)
+  ✓   5 tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920 (2.2s)
+  ✓   6 tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920 (1.4s)
+  ✓   7 tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390 (1.7s)
+  ✓   8 tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390 (2.0s)
+  ✓   9 tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390 (1.4s)
+  ✓  10 tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN (1.1s)
+  ✓  11 tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR (1.0s)
+  ✓  12 tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER (1.0s)
+  ✓  13 tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER (1.0s)
+  ✓  14 tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload (1.3s)
+  ✓  15 tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state (1.7s)
+  ✓  16 tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history (1.1s)
+  ✓  17 tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker (1.2s)
+  ✓  18 tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot (1.2s)
+  ✓  19 tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot (1.2s)
+
+  19 passed (28.9s)

@@ -1,3 +1,4 @@
+import { assertAttachedAnswers } from './answerSets'
 import { conditionReference, materializeGroups, questionsInGroup, validateComposition } from './formComposition'
 import { validateScorecard } from './validation'
 import type { EvaluationForm, FormCondition, FormQuestionGroup, QuestionGroupAsset } from './types'
@@ -30,6 +31,7 @@ export const groupAssetDirty = (working:QuestionGroupAsset|undefined,saved:Quest
 export function assertAssetWrite(prior:QuestionGroupAsset|undefined,next:QuestionGroupAsset) {
   const errors = validateGroupAsset(next);if(errors.length)throw Error(errors.join(' '))
   if (!prior) return
+  for(const q of next.questions){const old=prior.questions.find(p=>p.id===q.id);if(old)assertAttachedAnswers(old,q)}
   if (prior.familyId!==next.familyId||prior.version!==next.version) throw Error('Asset family and version are immutable.')
   if (prior.status!=='DRAFT') {
     if (stable({name:prior.name,description:prior.description,questions:prior.questions,condition:prior.condition,scoring:prior.scoring})!==stable({name:next.name,description:next.description,questions:next.questions,condition:next.condition,scoring:next.scoring})) throw Error('Published asset definition is immutable. Create a new version.')

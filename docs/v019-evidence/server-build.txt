@@ -1,0 +1,20 @@
+
+> genesys-aqm@0.1.0 build:server
+> esbuild src/server/main.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/main.mjs && esbuild src/server/releaseProof.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/releaseProof.mjs && esbuild src/server/digitalProof.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/digitalProof.mjs && esbuild src/server/seedGroupAssets.ts --bundle --platform=node --format=esm --packages=external --outfile=server-dist/seedGroupAssets.mjs
+
+
+  server-dist/main.mjs  327.9kb
+
+⚡ Done in 10ms
+
+  server-dist/releaseProof.mjs  180.2kb
+
+⚡ Done in 5ms
+
+  server-dist/digitalProof.mjs  66.0kb
+
+⚡ Done in 3ms
+
+  server-dist/seedGroupAssets.mjs  58.4kb
+
+⚡ Done in 3ms

@@ -1,4 +1,4 @@
-import type { Conversation, Scorecard } from './types'
+import type { Conversation, Option, Scorecard } from './types'
 
 const object = (value: unknown): value is Record<string, unknown> => typeof value === 'object' && value !== null && !Array.isArray(value)
 const nonempty = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0
@@ -44,6 +44,7 @@ export function validateScorecard(card: Scorecard): string[] {
   const ids = new Set<string>()
   card.items.forEach((item, i) => {
     const where = `Question ${i + 1}`
+    if(item.sourceAnswerSet){const p=item.sourceAnswerSet;if(!['choice','score'].includes(item.type)||![p.familyId,p.answerSetId].every(v=>typeof v==='string'&&/^[A-Za-z0-9_-]{1,180}$/.test(v))||!Number.isInteger(p.answerSetVersion)||p.answerSetVersion<1)errors.push(`${where} has invalid Answer Set provenance.`)}
     if (item.enabled && !['noul', 'choice', 'score'].includes(item.type)) errors.push(`${where} has unsupported question semantics.`)
     if (!key(item.id)) errors.push(`${where} ID must use lowercase letters, numbers and underscores, starting with a letter.`)
     if (ids.has(item.id)) errors.push(`${where} has a duplicate ID.`)
@@ -51,15 +52,25 @@ export function validateScorecard(card: Scorecard): string[] {
     if (!nonempty(item.title) || !nonempty(item.instructions)) errors.push(`${where} needs a title and instructions.`)
     if (!Number.isFinite(item.weight) || item.weight < 0) errors.push(`${where} weight must be zero or greater.`)
     if (item.type === 'choice' || item.type === 'score') {
-      if (item.options.length < 2 || (item.type === 'score' && item.options.length > 10) || (item.type === 'choice' && item.options.length > 255)) errors.push(`${where} needs 2–${item.type === 'score' ? '10' : '255'} options.`)
-      const optionKeys = new Set<string>()
-      item.options.forEach((option, j) => {
-        if (!key(option.key) || !nonempty(option.label) || !nonempty(option.description)) errors.push(`${where} option ${j + 1} needs a valid key, label and description.`)
-        if (optionKeys.has(option.key)) errors.push(`${where} has duplicate option keys.`)
-        optionKeys.add(option.key)
-        if (option.credit !== undefined && (!Number.isFinite(option.credit) || option.credit < 0 || option.credit > 1)) errors.push(`${where} option ${j + 1} credit must be between 0 and 1.`)
-      })
+      errors.push(...validateOptions(item.type,item.options,where))
     }
   })
   return errors
+}
+
+/** Shared authoring contract for inline questions and reusable answers. Array order is semantic. */
+export function validateOptions(type:'choice'|'score',options:Option[],where='Answer set',sourceValues=false):string[] {
+ const errors:string[]=[]
+ if(!Array.isArray(options))return [`${where} options must be an array.`]
+ if(options.length<2||options.length>(type==='score'?10:255))errors.push(`${where} needs 2–${type==='score'?'10':'255'} options.`)
+ const keys=new Set<string>()
+ options.forEach((option,j)=>{
+  if(!object(option)){errors.push(`${where} option ${j+1} must be an object.`);return}
+  if(!key(option.key)||!nonempty(option.label)||!nonempty(option.description))errors.push(`${where} option ${j+1} needs a valid key, label and description.`)
+  if(keys.has(option.key))errors.push(`${where} has duplicate option keys.`)
+  keys.add(option.key)
+  if(option.credit!==undefined&&(!Number.isFinite(option.credit)||option.credit<0||option.credit>1))errors.push(`${where} option ${j+1} credit must be between 0 and 1.`)
+  if(sourceValues&&option.sourceValue!==undefined&&!Number.isFinite(option.sourceValue))errors.push(`${where} option ${j+1} source value must be finite.`)
+ })
+ return errors
 }

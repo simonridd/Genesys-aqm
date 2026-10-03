@@ -1,0 +1,9 @@
+
+ RUN  v5.0.2 /Users/simonridd/.codex/worktrees/aqm-v019-answer-sets/Genesys-aqm
+
+
+ Test Files  4 passed (4)
+      Tests  48 passed (48)
+   Start at  14:05:42
+   Duration  566ms (transform 51%, import 36%, tests 12%, worker 1%)
+

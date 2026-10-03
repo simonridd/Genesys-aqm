@@ -9,11 +9,11 @@ export async function policyCall<T>(origin:string,session:AuthSession,path:strin
 export async function loadPolicyCollection<T>(call:<R>(path:string)=>Promise<R>,path:string):Promise<T[]> {
  const items:T[]=[],seen=new Set<string>();let cursor:string|undefined,pages=0
  do {
-  if(++pages>20)throw Error('Library exceeds the bounded load limit. Narrow the collection before retrying.')
+  if(++pages>(path==='/api/answer-sets'?10:20))throw Error('Library exceeds the bounded load limit. Narrow the collection before retrying.')
   const page=await call<{items:T[];nextCursor?:string}>(`${path}?limit=100${cursor?`&cursor=${encodeURIComponent(cursor)}`:''}`)
-  if(!Array.isArray(page.items))throw Error('Invalid library response.')
+  if(!Array.isArray(page.items)||path==='/api/answer-sets'&&page.items.length>100)throw Error('Invalid library response.')
   items.push(...page.items);cursor=page.nextCursor
-  if(items.length>2000||cursor&&seen.has(cursor))throw Error('Library exceeds the bounded load limit. Narrow the collection before retrying.')
+  if(items.length>(path==='/api/answer-sets'?1000:2000)||cursor&&seen.has(cursor))throw Error('Library exceeds the bounded load limit. Narrow the collection before retrying.')
   if(cursor)seen.add(cursor)
  }while(cursor)
  return items

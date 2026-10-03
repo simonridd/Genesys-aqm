@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { AuthSession } from './domain/genesysAuth'
-import type { EvaluationForm, InteractionPolicy, QuestionGroupAsset } from './domain/types'
+import type { AnswerSetAsset, EvaluationForm, InteractionPolicy, QuestionGroupAsset } from './domain/types'
 import { apiOrigin } from './domain/manualClient'
 import { loadPolicyCollection, policyCall } from './domain/policyClient'
 export type SavedCollection<T> = { items:T[]; loading:boolean; loaded:boolean; error:string; refresh:()=>Promise<boolean>; accept:(item:T)=>void }
@@ -35,5 +35,5 @@ function useSavedCollection<T extends {id:string}>(session:AuthSession|null,path
  return {...current,refresh,accept}
 }
 export function useSavedConfiguration(session:AuthSession|null){
- return {forms:useSavedCollection<EvaluationForm>(session,'/api/forms'),policies:useSavedCollection<InteractionPolicy>(session,'/api/policies'),groups:useSavedCollection<QuestionGroupAsset>(session,'/api/question-groups')}
+ return {answerSets:useSavedCollection<AnswerSetAsset>(session,'/api/answer-sets'),forms:useSavedCollection<EvaluationForm>(session,'/api/forms'),policies:useSavedCollection<InteractionPolicy>(session,'/api/policies'),groups:useSavedCollection<QuestionGroupAsset>(session,'/api/question-groups')}
 }

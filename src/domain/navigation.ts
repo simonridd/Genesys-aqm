@@ -1,4 +1,4 @@
-export const pages=['evaluate','conversations','forms','groups','policies','automation','evaluations','history','analytics','calibration','settings'] as const
+export const pages=['evaluate','conversations','forms','groups','answerSets','policies','automation','evaluations','history','analytics','calibration','settings'] as const
 export type Page=typeof pages[number]
 export function landingPage(query:URLSearchParams,connected:boolean):Page {
  if(query.has('evaluationId'))return 'evaluations'

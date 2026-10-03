@@ -1,3 +1,5 @@
+import { seedAnswerSets } from '../domain/seedAnswerSets'
+import { nextAnswerSetVersion, transitionAnswerSet } from '../domain/answerSets'
 import { describe,it,expect } from 'vitest'
 import type { Firestore } from 'firebase-admin/firestore'
 import { seedGroupAssets } from '../domain/seedGroupAssets'
@@ -39,3 +41,5 @@ describe('Firestore repository shape',()=>{
 })
 
 it('persists reusable assets transactionally and preserves published immutable snapshots across store instances',async()=>{const db=fakeFirestore(),store=new FirestoreStore(db),asset=structuredClone(seedGroupAssets[0]);await store.putGroupAsset(asset);expect(await new FirestoreStore(db).groupAsset(asset.id)).toEqual(asset);await expect(store.putGroupAsset({...asset,name:'Mutated published asset'})).rejects.toThrow('immutable');await expect(store.putGroupAsset({...asset,id:'duplicate_family_version'})).rejects.toThrow('already exists');expect(await store.groupAsset(asset.id)).toEqual(asset)})
+
+it('persists Answer Set family guards and immutable lifecycle transactionally across store instances',async()=>{const db=fakeFirestore(),store=new FirestoreStore(db),a={...structuredClone(seedAnswerSets[1]),status:'DRAFT' as const},now='2026-10-03T00:00:00.000Z';await store.putAnswerSet(a);expect((await db.collection('answerSetFamilies').doc(a.familyId).get()).data()).toEqual({familyId:a.familyId,type:a.type,versions:{'1':a.id}});const published=transitionAnswerSet(a,'PUBLISHED',now);await store.putAnswerSet(published);expect(await new FirestoreStore(db).answerSet(a.id)).toEqual(published);await expect(store.putAnswerSet({...published,name:'Changed'})).rejects.toThrow('immutable');await expect(store.putAnswerSet({...a,id:'duplicate'})).rejects.toThrow('already exists');await expect(store.putAnswerSet({...nextAnswerSetVersion(a,[a],now),type:'score'})).rejects.toThrow('base type');await store.putAnswerSet(transitionAnswerSet(published,'RETIRED',now));expect((await store.answerSet(a.id))?.options).toEqual(a.options)})

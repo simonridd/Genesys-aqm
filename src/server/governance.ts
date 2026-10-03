@@ -59,9 +59,9 @@ export async function auditPage(store:Store,q:URLSearchParams,historyOnly=false)
  const limit=Number(q.get('limit')??50),cursor=q.get('cursor')??undefined
  if(!Number.isInteger(limit)||limit<1||limit>100||cursor&&!/^[A-Za-z0-9_-]{1,180}$/.test(cursor))throw Error('Invalid audit pagination.')
  for(const key of ['from','to'])if(q.get(key)&&!Number.isFinite(Date.parse(q.get(key)!)))throw Error('Invalid audit date.')
- if(historyOnly&&(!['form','group','policy'].includes(q.get('resourceType')??'')||!q.get('resourceId')))throw new Forbidden('Product history requires a form, group, or policy ID.')
+ if(historyOnly&&(!['form','group','policy','answer_set'].includes(q.get('resourceType')??'')||!q.get('resourceId')))throw new Forbidden('Product history requires a form, group, policy, or Answer Set ID.')
  const items:AuditEvent[]=[];let next=cursor,more=true,scanned=0
  while(items.length<limit&&more&&scanned<500){const page=await store.query<AuditEvent>('auditEvents',Math.min(100,500-scanned),next);scanned+=page.scanned;more=false
- for(const [i,e] of page.items.entries()){next=e.id;if((!historyOnly||['form','group','policy'].includes(e.resourceType))&&['actor','resourceType','resourceId','action'].every(k=>!q.get(k)||(k==='actor'?e.actor.userId:e[k as 'resourceType'|'resourceId'|'action'])===q.get(k))&&(!q.get('from')||Date.parse(e.occurredAt)>=Date.parse(q.get('from')!))&&(!q.get('to')||Date.parse(e.occurredAt)<=Date.parse(q.get('to')!)+(/^\d{4}-\d{2}-\d{2}$/.test(q.get('to')!)?86400000-1:0)))items.push(e);if(items.length===limit){more=i<page.items.length-1;break}}more=more||!!page.nextCursor}
+ for(const [i,e] of page.items.entries()){next=e.id;if((!historyOnly||['form','group','policy','answer_set'].includes(e.resourceType))&&['actor','resourceType','resourceId','action'].every(k=>!q.get(k)||(k==='actor'?e.actor.userId:e[k as 'resourceType'|'resourceId'|'action'])===q.get(k))&&(!q.get('from')||Date.parse(e.occurredAt)>=Date.parse(q.get('from')!))&&(!q.get('to')||Date.parse(e.occurredAt)<=Date.parse(q.get('to')!)+(/^\d{4}-\d{2}-\d{2}$/.test(q.get('to')!)?86400000-1:0)))items.push(e);if(items.length===limit){more=i<page.items.length-1;break}}more=more||!!page.nextCursor}
  return {items,nextCursor:more?next:undefined,scanned,scanLimited:scanned>=500&&more}
 }

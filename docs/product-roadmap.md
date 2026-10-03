@@ -1,8 +1,8 @@
 # Product roadmap
 
-## Proposed V0.19 — Reusable Answer Sets
+## Implemented in V0.19 — Reusable Answer Sets
 
-Status: **proposed; not implemented**. This item is separate from the showcase human-effectiveness pass. Reusable Question Groups already exist; reusable answer scales remain a future authoring capability.
+Status: **IMPLEMENTED IN V0.19**. Reusable Answer Sets now support versioned choice/score authoring reuse, explicit snapshot updates and independent historical evaluations. Implementation and proof: [V0.19 documentation](v019-reusable-answer-sets.md).
 
 ### Problem and user value
 
@@ -16,10 +16,10 @@ Examples:
 
 Supported bases: Multiple choice (`choice`) and ordered score (`score`). This is an authoring object, not a new runtime question type.
 
-### Proposed model
+### Implemented model
 
 ```ts
-ReusableAnswerSet {
+AnswerSetAsset {
   id
   familyId
   name
@@ -52,7 +52,7 @@ Mirror Reusable Question Groups. Inserting Published v1 copies options into a qu
 
 A published version cannot change to an incompatible base type. Updating provenance must verify the question base type, preserve stable option keys/source values where compatible, and flag any broken conditional references before publication. Detaching removes provenance but preserves options and scoring. Retiring prevents new insertion while leaving existing snapshots valid.
 
-### Likely author experience
+### Author experience
 
 Question type: Multiple choice. Answers: **Use reusable answer set**. Selected: **Resolution clarity v2**.
 
@@ -65,11 +65,11 @@ Question type: Multiple choice. Answers: **Use reusable answer set**. Selected: 
 
 Actions: Detach; Update to newer version; Save as reusable answer set. No automatic propagation into forms and no runtime dependence on the library.
 
-### Likely implementation tranche and dependencies
+### Implementation and dependencies
 
-Proposed V0.19: model/validation and library lifecycle; versioned definition storage and author permissions; authoring selection/preview/update/detach/save; publication compatibility checks; deterministic snapshot/scoring tests and browser regressions. Delivery and dates are not committed.
+Implemented in V0.19: model/validation and library lifecycle; durable definition storage and existing form-authoring permissions; authoring selection/preview/update/detach/save-as; full composition compatibility checks; JSON portability; safe audit/history; deterministic runtime-equivalence proof and authenticated provider-free browser journeys.
 
-Depend on existing Reusable Question Group lifecycle patterns, V0.18 definition authority and save protection, immutable form publication, option validation, conditional-question references, audit and exact evaluation snapshots. Verify sourceValue and credit compatibility against existing choice/score evaluation and human-review paths before implementation.
+Depend on existing Reusable Question Group lifecycle patterns, V0.18 definition authority and save protection, immutable form publication, option validation, conditional-question references, audit and exact evaluation snapshots. SourceValue and credit compatibility are proven against existing choice/score evaluation and human-review paths.
 
 ### Compatibility and non-goals
 

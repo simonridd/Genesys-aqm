@@ -1,3 +1,4 @@
+import { assertAttachedAnswers } from '../domain/answerSets'
 import { savePolicy, duplicatePolicy } from './policyAuthoring'
 import { cloneForm, importDefinition } from '../domain/portability'
 import { destinationInput, ruleInput, safeDestination, requestTest, notificationTick, type Providers } from './notifications'
@@ -87,7 +88,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
       else if(path==='/api/review-sla/refresh')permission='settings.write'
       else if(path==='/api/governance')permission=request.method==='GET'?'settings.read':'settings.write'
       else if(request.method!=='GET'){
-       if(path.startsWith('/api/forms/')||path.startsWith('/api/form-tests/'))permission='forms.write'
+       if(path.startsWith('/api/answer-sets/')||path.startsWith('/api/forms/')||path.startsWith('/api/form-tests/'))permission='forms.write'
        else if(path.startsWith('/api/question-groups/'))permission='groups.write'
        else if(path.startsWith('/api/policies/'))permission='policies.write'
        else if(path.startsWith('/api/schedules/'))permission='schedules.write'
@@ -97,7 +98,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
        else if(path==='/api/evaluations/manual')permission='evaluations.write'
        else throw new Forbidden()
       }else{
-       permission=path.startsWith('/api/forms')||path.startsWith('/api/form-tests')?'forms.read':path.startsWith('/api/question-groups')?'groups.read':path.startsWith('/api/policies')||path.startsWith('/api/schedules')?'policies.read':path.startsWith('/api/alerts')?'alerts.read':path.startsWith('/api/reviews')||path.startsWith('/api/calibration')?'reviews.read':'evaluations.read'
+       permission=path.startsWith('/api/answer-sets')||path.startsWith('/api/forms')||path.startsWith('/api/form-tests')?'forms.read':path.startsWith('/api/question-groups')?'groups.read':path.startsWith('/api/policies')||path.startsWith('/api/schedules')?'policies.read':path.startsWith('/api/alerts')?'alerts.read':path.startsWith('/api/reviews')||path.startsWith('/api/calibration')?'reviews.read':'evaluations.read'
       }
       if(permission)requirePermission(access,permission)
       if(path==='/api/notifications/health'&&request.method==='GET'){json(response,200,await deps.store.notificationHealth(deps.now().toISOString()));return}
@@ -220,7 +221,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(path==='/api/overview'){const range=url.searchParams.get('range')??'7';if(!['7','30'].includes(range))throw Error('Overview range must be 7 or 30 days.');json(response,200,await operationalOverview(deps.store,deps.now().toISOString(),Number(range) as 7|30,authority,!!config.schedulerEmail&&!!config.schedulerAudience,deps.alertConfig));return}
         if(path==='/api/analytics'){json(response,200,await operationalAnalytics(deps.store,url.searchParams));return}
         if(path==='/api/form-tests'){const limit=Number(url.searchParams.get('limit')??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('Limit must be between 1 and 100.');json(response,200,{items:await deps.store.recentFormTestRuns(limit)});return}
-        const collections={'/api/question-groups':'questionGroupAssets','/api/forms':'evaluationForms','/api/policies':'policies','/api/schedules':'schedules','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
+        const collections={'/api/answer-sets':'answerSetAssets','/api/question-groups':'questionGroupAssets','/api/forms':'evaluationForms','/api/policies':'policies','/api/schedules':'schedules','/api/runs':'policyRuns','/api/evaluations':'evaluationRecords'} as const
         if(path in collections){
           const rawLimit=Number(url.searchParams.get('limit')??50)
           if(!Number.isInteger(rawLimit)||rawLimit<1||rawLimit>100)throw new Error('Limit must be between 1 and 100.')
@@ -268,6 +269,19 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
         if(path==='/api/forms/import'){const item=importDefinition('form',value,newId,now);await deps.store.atomic([{collection:'evaluationForms',id:item.id,value:item,expected:undefined}]);json(response,201,{item});return}
         const item=importDefinition('group',value,newId,now);await deps.store.atomic([{collection:'questionGroupAssets',id:item.id,value:item,expected:undefined}]);json(response,201,{item});return
       }
+
+      if(path==='/api/answer-sets/import'&&request.method==='POST'){
+        auditContext.getStore()!.operation='imported'
+        const item=importDefinition('answer-set',await body(request),`answers_${randomUUID().replaceAll('-','')}`,deps.now().toISOString())
+        await deps.store.putAnswerSet(item);json(response,201,{item});return
+      }
+      const answerPath=/^\/api\/answer-sets\/([A-Za-z0-9_-]+)$/.exec(path)
+      if(answerPath&&request.method==='GET'){const item=await deps.store.answerSet(answerPath[1]);json(response,item?200:404,item??{error:'Answer Set not found.'});return}
+      if(answerPath&&request.method==='PUT'){
+        const value=await body(request);if(!obj(value)||value.id!==answerPath[1])throw Error('Invalid Answer Set identity.')
+        const item=value as unknown as import('../domain/types').AnswerSetAsset
+        await deps.store.putAnswerSet(item);json(response,200,{ok:true,item});return
+      }
       const assetPath=/^\/api\/question-groups\/([A-Za-z0-9_-]+)$/.exec(path)
       if(assetPath&&request.method==='GET'){const item=await deps.store.groupAsset(assetPath[1]);json(response,item?200:404,item??{error:'Reusable group not found.'});return}
       if(assetPath&&request.method==='PUT'){const value=await body(request);if(!obj(value)||value.id!==assetPath[1])throw Error('Invalid asset identity.');const asset=value as unknown as QuestionGroupAsset;if(asset.status==='PUBLISHED'||asset.status==='RETIRED')requirePermission(access,'groups.publish');assertAssetWrite(await deps.store.groupAsset(asset.id),asset);await deps.store.putGroupAsset(asset);json(response,200,{ok:true,item:asset});return}
@@ -281,6 +295,7 @@ export function createApi(deps:RunnerDeps,config:ApiConfig,fetcher:typeof fetch=
             const prior=await deps.store.form(form.id)
             if(productionReadinessErrors(form).length)throw new Error(productionReadinessErrors(form).join(' '))
             if(prior){
+              for(const q of form.questions){const old=prior.questions.find(p=>p.id===q.id);if(old)assertAttachedAnswers(old,q)}
               if(form.origin!==prior.origin||form.sourceFormId!==prior.sourceFormId)throw new Error('Source provenance cannot change.')
               if(form.version!==prior.version)throw new Error('Form version cannot change under the same ID.')
               if((formStatus(prior)==='PUBLISHED'||formStatus(prior)==='RETIRED')&&!sameDefinition(prior,form))throw new Error('Published form definition is immutable. Create a new version.')

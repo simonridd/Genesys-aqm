@@ -11,3 +11,5 @@ tsconfig.tsbuildinfo
 .wrangler/
 
 /node_modules
+
+tests/.generated/
