@@ -1,0 +1,18 @@
+
+Running 10 tests using 1 worker
+
+(node:38164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[2/10] tests/calibration.spec.ts:10:3 › provider-free human review, conflict, calibration and drill-down at 390
+[3/10] tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1440
+[4/10] tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1920
+[5/10] tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 390
+[6/10] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[7/10] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390
+[8/10] tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1440
+[9/10] tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1920
+[10/10] tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 390
+  10 passed (26.2s)

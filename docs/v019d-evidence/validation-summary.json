@@ -1,0 +1,29 @@
+{
+  "uniqueRegressionScenarios": 171,
+  "passed": 169,
+  "remainingFailures": [
+    {
+      "file": "overview.spec.ts",
+      "title": "existing connected session defaults to Overview before App mounts",
+      "status": "failed",
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByLabel('Current role')\nExpected: \u001b[32m\"ADMIN\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByLabel('Current role') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Current role')\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |                                                                                                               ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:53:111)\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:90:90"
+      ],
+      "report": "regression-results.json"
+    },
+    {
+      "file": "overview.spec.ts",
+      "title": "OAuth return-page intent, evaluation deep link and explicit query page win",
+      "status": "failed",
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: 'Conversation review', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('heading', { name: 'Conversation review', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: 'Conversation review', exact: true })\u001b[22m\n\n\n  91 | test('OAuth return-page intent, evaluation deep link and explicit query page win',async({browser})=>{\n  92 |  for(const returned of ['settings','policies','evaluations']){const page=await browser.newPage();await setup(page,'ADMIN',false,returned);await expect(page.getByRole('heading',{name:returned[0].toUpperCase()+returned.slice(1),exact:true})).toBeVisible();await page.close()}\n> 93 |  const page=await browser.newPage();await page.route(`${origin}/**`,r=>r.fulfill({json:{items:[]}}));await page.goto(`${app}?evaluationId=linked&page=automation`);await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await page.goto(`${app}?page=policies`);await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await page.goto(app);await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.goto(`${app}?page=automation`);await expect(page.getByText('Connect to Genesys Cloud to view operational AQM health.')).toBeVisible();await page.close()\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  94 | })\n  95 |\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:93:474"
+      ],
+      "report": "regression-results.json"
+    }
+  ],
+  "correctedTestsSupersedeEarlierFailures": true,
+  "focusedNavigation": 30,
+  "guards": 5,
+  "operationalTable": 1,
+  "deterministic": 621
+}

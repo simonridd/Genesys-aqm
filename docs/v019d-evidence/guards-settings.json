@@ -1,0 +1,19 @@
+{
+  "route": "settings",
+  "dialogs": [
+    "You have unsaved Settings changes. Leave without saving them?",
+    "You have unsaved Settings changes. Leave without saving them?",
+    "You have unsaved Settings changes. Leave without saving them?",
+    "Unsaved changes remain. Leave for the product tour?",
+    "You have unsaved Settings changes. Leave without saving them?"
+  ],
+  "protectedTargets": [
+    "primary Overview",
+    "secondary Conversations",
+    "secondary Evaluation Forms",
+    "About / product tour",
+    "history navigation"
+  ],
+  "beforeUnloadPrevented": true,
+  "fictionalWrites": 0
+}

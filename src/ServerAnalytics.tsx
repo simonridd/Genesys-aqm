@@ -1,3 +1,4 @@
+import { ResponsiveViewSwitcher, analyticsViews } from './ResponsiveViewSwitcher'
 import { useEffect, useRef, useState } from 'react'
 import type { AuthSession } from './domain/genesysAuth'
 import { analyticsCohortKeys, analyticsQuestionFilters } from './domain/navigation'
@@ -59,7 +60,7 @@ export function ServerAnalytics({session,onExplore}:{session:AuthSession|null;on
    </div></details>
    {!session&&<p>Connect in Settings to access Saved AQM analytics.</p>}{loading&&<p role="status">Loading quality analytics…</p>}
    {error&&<div role="alert"><p className="inline-error">Quality analytics could not be loaded.</p><button className="outline-button" onClick={()=>setRetry(value=>value+1)}>Retry</button><details><summary>Technical details</summary><p>{error}</p></details></div>}
-   {data&&<><div className="analytics-tabs" role="group" aria-label="Analytics views">{(['overview','agents','queues','forms','groups','questions','coverage'] as const).map(value=><button key={value} aria-pressed={tab===value} className={tab===value?'active':''} onClick={()=>setTab(value)}>{value[0].toUpperCase()+value.slice(1)}</button>)}</div>
+   {data&&<><ResponsiveViewSwitcher label="Analytics views" options={analyticsViews} value={tab} onChange={setTab}/>
     {tab==='overview'?<><div className="metrics-grid quality-metrics">
      <div className="metric panel"><small>Average quality</small><strong>{pct(data.metrics.averageScore)}</strong></div>
      <div className="metric panel"><small>Evaluated conversations</small><strong>{data.metrics.conversations}</strong><span>{data.metrics.evaluations} evaluations</span></div>

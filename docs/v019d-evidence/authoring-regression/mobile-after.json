@@ -1,0 +1,16 @@
+{
+  "before": {
+    "pageHeight": 4265,
+    "questionHeight": 499.1875,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "after": {
+    "pageHeight": 2860,
+    "workspaceChrome": 390.515625,
+    "questionHeight": 127.78125
+  },
+  "reduction": 0.3294255568581477
+}

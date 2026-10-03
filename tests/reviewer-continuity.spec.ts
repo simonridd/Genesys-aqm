@@ -1,3 +1,4 @@
+import { navigateWorkspace,selectedView } from './workspace-navigation'
 import { test,expect,type Page } from '@playwright/test'
 import { mkdirSync } from 'node:fs'
 import { writeFileSync } from 'node:fs'
@@ -6,7 +7,7 @@ import { keyboardTo } from './usability-fixture'
 const evidence=process.env.AQM_REVIEW_EVIDENCE??'docs/v019a-evidence';mkdirSync(evidence,{recursive:true})
 const panel=(page:Page)=>page.getByRole('region',{name:'Human review',exact:true})
 const open=(page:Page,id='review-a')=>page.getByRole('button',{name:`Open evaluation ${id}`,exact:true}).click()
-const nav=(page:Page,name:string)=>page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name,exact:true}).click()
+const nav=navigateWorkspace
 const guard=(page:Page)=>page.evaluate(()=>{const event=new Event('beforeunload',{cancelable:true});window.dispatchEvent(event);return {prevented:event.defaultPrevented,guards:(window as any).__reviewTrace.guards}})
 const puts=(state:Awaited<ReturnType<typeof continuityFixture>>)=>state.requests.filter(r=>r.method==='PUT')
 async function edit(page:Page,all=false) {
@@ -114,7 +115,7 @@ test('Analytics question investigation retains exact cohort, selected evaluation
   await page.getByRole('button',{name:'Back to Analytics',exact:true}).click()
   const returned=new URL(page.url()).searchParams,original=new URLSearchParams(query)
   for(const key of original.keys())expect(returned.get(key)).toBe(original.get(key))
-  await expect(page.locator('.analytics-tabs').getByRole('button',{name:'Questions',exact:true})).toHaveClass(/active/)
+  expect(await selectedView(page)).toBe('Questions')
 })
 test('save progress adopts returned revision and clears unload guard, then restores authoritative answers',async({page})=>{
   const state=await continuityFixture(page);await open(page);await edit(page)

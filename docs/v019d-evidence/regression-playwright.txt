@@ -1,0 +1,575 @@
+[WebServer] (node:37440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 171 tests using 1 worker
+
+(node:37442) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/171] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/171] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/171] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/171] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/171] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/171] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/171] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/171] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/171] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/171] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/171] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/171] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/171] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/171] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/171] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/171] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[21/171] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[22/171] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[23/171] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[24/171] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[25/171] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[26/171] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[27/171] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[28/171] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+  1) tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390 
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 2772.25
+    Received:   2860
+
+      19 |  await expect(detail.getByRole('status')).toContainText('Saved in AQM');expect(await visibleText(card)).not.toMatch(/partly_clear|sourceValue|\bID\b|Provides a clear/);await expect(card.locator('.condition-fields')).toHaveCount(0);await expect(card.getByText('Weight 1',{exact:false})).toBeVisible();
+      20 |  const collapsed=await page.evaluate(()=>({pageHeight:document.documentElement.scrollHeight,questionHeight:document.querySelector('.question-card')!.getBoundingClientRect().height}));await screenshot(page,'form-collapsed',detail);if(viewport.width===390)await screenshot(page,'form-after-full');
+    > 21 |  if(viewport.width===390){const before=JSON.parse(readFileSync('docs/v019b-evidence/mobile-before.json','utf8'));expect(collapsed.pageHeight).toBeLessThan(before.pageHeight*.65);writeFileSync(`${evidence}/mobile-after.json`,JSON.stringify({before,after:collapsed,reduction:1-collapsed.pageHeight/before.pageHeight},null,2))}
+         |                                                                                                                                               ^
+      22 |  const edit=card.getByRole('button',{name:'Edit',exact:true});await edit.focus();await page.keyboard.press('Enter');await expect(card.locator('.editor-focus-heading')).toBeFocused();await expect(card.getByLabel('Stable question ID')).toBeHidden();await expect(card.getByLabel('Option 1 key')).toBeHidden();await expect(card.getByLabel('Option 1 external/source value')).toBeHidden();await expect(card.getByLabel('Option 1 credit (%)')).toBeHidden();await bounds(page,card);await screenshot(page,'form-expanded',detail);if(viewport.width===390)await screenshot(page,'form-expanded-after-full');
+      23 |  const expanded=await page.evaluate(()=>({pageHeight:document.documentElement.scrollHeight,questionHeight:document.querySelector('.question-card')!.getBoundingClientRect().height}));if(viewport.width===390){const before=JSON.parse(readFileSync('docs/v019b-evidence/mobile-expanded-before.json','utf8'));writeFileSync(`${evidence}/mobile-expanded-after.json`,JSON.stringify({before,after:expanded,reduction:1-expanded.pageHeight/before.pageHeight},null,2));expect(expanded.pageHeight).toBeLessThan(before.pageHeight*.65)}
+      24 |  await card.locator('.inline-answers>summary').click();await bounds(page,card);await screenshot(page,'inline-option-editor',card);await card.getByLabel('Title',{exact:true}).fill('Resolution quality');await expect(detail.getByRole('status')).toContainText('Unsaved changes');await card.getByRole('button',{name:'Use reusable Answer Set',exact:true}).focus();await page.keyboard.press('Enter');const picker=card.getByRole('dialog');await expect(picker.locator('h4')).toBeFocused();await screenshot(page,'answer-picker',picker);await picker.getByRole('button',{name:'Use Resolution clarity v1'}).focus();await page.keyboard.press('Enter');await expect(card.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await expect(card).toContainText('Using Resolution clarity v1');await expect(card.getByLabel('Option 1 label')).toHaveCount(0);await screenshot(page,'answer-attached',detail);
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/authoring-simplification.spec.ts:21:143
+
+    Error Context: test-results/authoring-simplification-q-93929-detach-advanced-mapping-390/error-context.md
+
+
+(node:37520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[29/171] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[30/171] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[31/171] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[32/171] tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits
+[33/171] tests/authoring-simplification.spec.ts:51:1 › save inline answers as reusable keeps current question until explicit attach
+[34/171] tests/authoring-simplification.spec.ts:52:1 › published and role-read-only questions expand without disabled editing controls
+[35/171] tests/authoring-simplification.spec.ts:53:1 › advanced key used by a condition fails closed with no silent migration
+[36/171] tests/authoring-simplification.spec.ts:54:1 › disconnected question copy remains neutral; reconnect never uploads definitions
+[37/171] tests/authoring-simplification.spec.ts:56:1 › author tasks replay and keyboard reachability from navigation through reusable choices
+[38/171] tests/authoring-simplification.spec.ts:63:1 › group version update and detach preserve copied questions and source definitions
+[39/171] tests/calibration.spec.ts:10:3 › provider-free human review, conflict, calibration and drill-down at 1440
+[40/171] tests/calibration.spec.ts:10:3 › provider-free human review, conflict, calibration and drill-down at 1920
+[41/171] tests/calibration.spec.ts:10:3 › provider-free human review, conflict, calibration and drill-down at 390
+  2) tests/calibration.spec.ts:10:3 › provider-free human review, conflict, calibration and drill-down at 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.analytics-tabs').getByRole('button', { name: 'Form / version', exact: true })
+
+
+       at workspace-navigation.ts:11
+
+       9 |  const mobile=page.getByRole('combobox',{name:'View',exact:true})
+      10 |  if(await mobile.isVisible())await mobile.selectOption({label})
+    > 11 |  else await page.locator('.analytics-tabs').getByRole('button',{name:label,exact:true}).click()
+         |                                                                                         ^
+      12 | }
+      13 | export async function selectedView(page:Page){
+      14 |  const mobile=page.getByRole('combobox',{name:'View',exact:true})
+        at chooseView (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/workspace-navigation.ts:11:89)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/calibration.spec.ts:84:5
+
+    Error Context: test-results/calibration-provider-free--0c24d-ation-and-drill-down-at-390/error-context.md
+
+
+(node:37600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[42/171] tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1440
+  3) tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1440 ───────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: /^Open conversation / }).first()
+
+
+      42 |   await page.locator('.showcase-header').getByRole('button',{name:'Connect Genesys Cloud',exact:true}).click();await expect(page).toHaveURL(/page=settings&settingsSection=connection/);await expect(page.getByLabel('OAuth Client ID')).toBeVisible();expect(external).toEqual([])
+      43 |   await navigateWorkspace(page,'Conversations');await page.getByRole('button',{name:'Genesys Cloud',exact:true}).click();await page.getByRole('button',{name:'Connection settings →',exact:true}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+    > 44 |   await navigateWorkspace(page,'Conversations');await page.getByRole('button',{name:/^Open conversation /}).first().click();await page.getByRole('button',{name:'Connect to Genesys Cloud →'}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+         |                                                                                                                     ^
+      45 |   await navigateWorkspace(page,'Evaluation Forms');await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+      46 |   expect(external).toEqual([]);await context.close()
+      47 |  })
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/first-use-settings.spec.ts:44:117
+
+    Error Context: test-results/first-use-settings-first-use-and-connection-routes-at-1440/error-context.md
+
+
+(node:37672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[43/171] tests/first-use-settings.spec.ts:48:2 › shared governance settings survive sections at 1440
+[44/171] tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1920
+  4) tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1920 ───────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: /^Open conversation / }).first()
+
+
+      42 |   await page.locator('.showcase-header').getByRole('button',{name:'Connect Genesys Cloud',exact:true}).click();await expect(page).toHaveURL(/page=settings&settingsSection=connection/);await expect(page.getByLabel('OAuth Client ID')).toBeVisible();expect(external).toEqual([])
+      43 |   await navigateWorkspace(page,'Conversations');await page.getByRole('button',{name:'Genesys Cloud',exact:true}).click();await page.getByRole('button',{name:'Connection settings →',exact:true}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+    > 44 |   await navigateWorkspace(page,'Conversations');await page.getByRole('button',{name:'Synthetic',exact:true}).click();await page.getByRole('button',{name:/^Open conversation /}).first().click();await page.getByRole('button',{name:'Genesys Cloud',exact:true}).click();await page.getByRole('button',{name:'Connect to Genesys Cloud →'}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+         |                                                                                                                     ^
+      45 |   await navigateWorkspace(page,'Evaluation Forms');await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+      46 |   expect(external).toEqual([]);await context.close()
+      47 |  })
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/first-use-settings.spec.ts:44:117
+
+    Error Context: test-results/first-use-settings-first-use-and-connection-routes-at-1920/error-context.md
+
+
+(node:37729) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[45/171] tests/first-use-settings.spec.ts:48:2 › shared governance settings survive sections at 1920
+[46/171] tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 390
+  5) tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 390 ────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: /^Open conversation / }).first()
+
+
+      42 |   await page.locator('.showcase-header').getByRole('button',{name:'Connect Genesys Cloud',exact:true}).click();await expect(page).toHaveURL(/page=settings&settingsSection=connection/);await expect(page.getByLabel('OAuth Client ID')).toBeVisible();expect(external).toEqual([])
+      43 |   await navigateWorkspace(page,'Conversations');await page.getByRole('button',{name:'Genesys Cloud',exact:true}).click();await page.getByRole('button',{name:'Connection settings →',exact:true}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+    > 44 |   await navigateWorkspace(page,'Conversations');await page.getByRole('button',{name:'Synthetic',exact:true}).click();await page.getByRole('button',{name:/^Open conversation /}).first().click();await page.getByRole('button',{name:'Genesys Cloud',exact:true}).click();await page.getByRole('button',{name:'Connect to Genesys Cloud →'}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+         |                                                                                                                     ^
+      45 |   await navigateWorkspace(page,'Evaluation Forms');await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.locator('#form-test').getByRole('button',{name:'Test form',exact:true}).click();await expect(page).toHaveURL(/settingsSection=connection/)
+      46 |   expect(external).toEqual([]);await context.close()
+      47 |  })
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/first-use-settings.spec.ts:44:117
+
+    Error Context: test-results/first-use-settings-first-use-and-connection-routes-at-390/error-context.md
+
+
+(node:37747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[47/171] tests/first-use-settings.spec.ts:48:2 › shared governance settings survive sections at 390
+[48/171] tests/first-use-settings.spec.ts:61:68 › coherent Settings for ADMIN
+[49/171] tests/first-use-settings.spec.ts:61:68 › coherent Settings for AUTHOR
+[50/171] tests/first-use-settings.spec.ts:61:68 › coherent Settings for REVIEWER
+[51/171] tests/first-use-settings.spec.ts:61:68 › coherent Settings for VIEWER
+[52/171] tests/first-use-settings.spec.ts:68:34 › saved setup stage 0
+[53/171] tests/first-use-settings.spec.ts:68:34 › saved setup stage 1
+[54/171] tests/first-use-settings.spec.ts:68:34 › saved setup stage 2
+[55/171] tests/first-use-settings.spec.ts:68:34 › saved setup stage 3
+[56/171] tests/first-use-settings.spec.ts:68:34 › saved setup stage 4
+[57/171] tests/first-use-settings.spec.ts:74:1 › OAuth error returns to Connection with visible error
+[58/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link default
+[59/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link invalid
+[60/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link connection
+[61/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link access
+[62/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link reviews
+[63/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link privacy
+[64/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link notifications
+[65/171] tests/first-use-settings.spec.ts:75:229 › Settings deep link audit
+[66/171] tests/first-use-settings.spec.ts:78:35 › explicit fixture Connect → callback success
+[67/171] tests/first-use-settings.spec.ts:78:35 › explicit fixture Connect → callback failure
+[68/171] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 1440
+[69/171] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 1920
+[70/171] tests/form-composition.spec.ts:15:2 › provider-free group composition and reusable snapshots at 390
+[71/171] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[72/171] tests/investigation-links.spec.ts:77:2 › Overview review counts, workload shortcuts and detail at 1440
+[73/171] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1440
+[74/171] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[75/171] tests/investigation-links.spec.ts:77:2 › Overview review counts, workload shortcuts and detail at 1920
+[76/171] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1920
+[77/171] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+  6) tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.analytics-tabs').getByRole('button', { name: 'Questions', exact: true })
+
+
+       at workspace-navigation.ts:11
+
+       9 |  await page.locator('.responsive-view-switcher').waitFor({state:'visible'})
+      10 |  const mobile=page.getByRole('combobox',{name:'View',exact:true})
+    > 11 |  if(await mobile.isVisible())await mobile.selectOption({label})
+         |                                                                ^
+      12 |  else await page.locator('.analytics-tabs').getByRole('button',{name:label,exact:true}).click()
+      13 | }
+      14 | export async function selectedView(page:Page){
+        at chooseView (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/workspace-navigation.ts:11:89)
+        at cohort (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/investigation-links.spec.ts:53:945)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/investigation-links.spec.ts:58:3
+
+    Error Context: test-results/investigation-links-Analyt-f8670-eturn-and-URL-reload-at-390/error-context.md
+
+
+(node:37814) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[78/171] tests/investigation-links.spec.ts:77:2 › Overview review counts, workload shortcuts and detail at 390
+[79/171] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390
+  7) tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('.analytics-tabs').getByRole('button', { name: 'Questions', exact: true })
+
+
+       at workspace-navigation.ts:11
+
+       9 |  await page.locator('.responsive-view-switcher').waitFor({state:'visible'})
+      10 |  const mobile=page.getByRole('combobox',{name:'View',exact:true})
+    > 11 |  if(await mobile.isVisible())await mobile.selectOption({label})
+         |                                                                ^
+      12 |  else await page.locator('.analytics-tabs').getByRole('button',{name:label,exact:true}).click()
+      13 | }
+      14 | export async function selectedView(page:Page){
+        at chooseView (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/workspace-navigation.ts:11:89)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/investigation-links.spec.ts:94:3
+
+    Error Context: test-results/investigation-links-Calibr-ae37f--clears-stale-cohort-at-390/error-context.md
+
+
+(node:37850) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[80/171] tests/overview.spec.ts:56:29 › Overview healthy, range, freshness, partial failure at 1440
+[81/171] tests/overview.spec.ts:56:29 › Overview healthy, range, freshness, partial failure at 1920
+[82/171] tests/overview.spec.ts:56:29 › Overview healthy, range, freshness, partial failure at 390
+[83/171] tests/overview.spec.ts:71:96 › Overview ADMIN attention and drill-through at 1440
+[84/171] tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1440
+  8) tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1440 ────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Overview', exact: true })
+
+
+      71 | for(const viewport of sizes)for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'] as Role[])test(`Overview ${role} attention and drill-through at ${viewport.width}`,async({browser})=>{
+      72 |  const context=await browser.newContext({viewport}),page=await context.newPage(),fixture=await setup(page,role,true)
+    > 73 |  const nav=page.getByRole('navigation',{name:'Primary navigation'}),home=()=>nav.getByRole('button',{name:'Overview',exact:true}).click(),attention=page.getByRole('region',{name:'Attention required'}),work=page.getByRole('region',{name:'Review workload health'}),automation=page.getByRole('region',{name:'Upcoming automation'})
+         |                                                                                                                                   ^
+      74 |  await expect(attention).toContainText('2 errors');await expect(attention).toContainText('1 overdue review');await expect(attention).toContainText('1 failed notification delivery')
+      75 |  await expect(automation).toContainText('Latest successful scheduled execution.');await expect(automation).toContainText('Next due 3 Oct');await expect(page.getByRole('region',{name:'Recent runs'}).locator('.overview-run')).toHaveCount(3)
+      76 |  await expect(work.getByRole('button',{name:'My review queue →',exact:true})).toHaveCount(role==='ADMIN'||role==='REVIEWER'?1:0)
+        at home (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:73:131)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:86:262
+
+    Error Context: test-results/overview-Overview-AUTHOR-attention-and-drill-through-at-1440/error-context.md
+
+
+(node:37876) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[85/171] tests/overview.spec.ts:71:96 › Overview REVIEWER attention and drill-through at 1440
+[86/171] tests/overview.spec.ts:71:96 › Overview VIEWER attention and drill-through at 1440
+[87/171] tests/overview.spec.ts:71:96 › Overview ADMIN attention and drill-through at 1920
+[88/171] tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1920
+  9) tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1920 ────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Overview', exact: true })
+
+
+      71 | for(const viewport of sizes)for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'] as Role[])test(`Overview ${role} attention and drill-through at ${viewport.width}`,async({browser})=>{
+      72 |  const context=await browser.newContext({viewport}),page=await context.newPage(),fixture=await setup(page,role,true)
+    > 73 |  const nav=page.getByRole('navigation',{name:'Primary navigation'}),home=()=>nav.getByRole('button',{name:'Overview',exact:true}).click(),attention=page.getByRole('region',{name:'Attention required'}),work=page.getByRole('region',{name:'Review workload health'}),automation=page.getByRole('region',{name:'Upcoming automation'})
+         |                                                                                                                                   ^
+      74 |  await expect(attention).toContainText('2 errors');await expect(attention).toContainText('1 overdue review');await expect(attention).toContainText('1 failed notification delivery')
+      75 |  await expect(automation).toContainText('Latest successful scheduled execution.');await expect(automation).toContainText('Next due 3 Oct');await expect(page.getByRole('region',{name:'Recent runs'}).locator('.overview-run')).toHaveCount(3)
+      76 |  await expect(work.getByRole('button',{name:'My review queue →',exact:true})).toHaveCount(role==='ADMIN'||role==='REVIEWER'?1:0)
+        at home (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:73:131)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:86:262
+
+    Error Context: test-results/overview-Overview-AUTHOR-attention-and-drill-through-at-1920/error-context.md
+
+
+(node:37966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[89/171] tests/overview.spec.ts:71:96 › Overview REVIEWER attention and drill-through at 1920
+[90/171] tests/overview.spec.ts:71:96 › Overview VIEWER attention and drill-through at 1920
+[91/171] tests/overview.spec.ts:71:96 › Overview ADMIN attention and drill-through at 390
+[92/171] tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 390
+  10) tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 390 ────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Overview', exact: true })
+
+
+      71 | for(const viewport of sizes)for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'] as Role[])test(`Overview ${role} attention and drill-through at ${viewport.width}`,async({browser})=>{
+      72 |  const context=await browser.newContext({viewport}),page=await context.newPage(),fixture=await setup(page,role,true)
+    > 73 |  const nav=page.getByRole('navigation',{name:'Primary navigation'}),home=()=>nav.getByRole('button',{name:'Overview',exact:true}).click(),attention=page.getByRole('region',{name:'Attention required'}),work=page.getByRole('region',{name:'Review workload health'}),automation=page.getByRole('region',{name:'Upcoming automation'})
+         |                                                                                                                                   ^
+      74 |  await expect(attention).toContainText('2 errors');await expect(attention).toContainText('1 overdue review');await expect(attention).toContainText('1 failed notification delivery')
+      75 |  await expect(automation).toContainText('Latest successful scheduled execution.');await expect(automation).toContainText('Next due 3 Oct');await expect(page.getByRole('region',{name:'Recent runs'}).locator('.overview-run')).toHaveCount(3)
+      76 |  await expect(work.getByRole('button',{name:'My review queue →',exact:true})).toHaveCount(role==='ADMIN'||role==='REVIEWER'?1:0)
+        at home (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:73:131)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:86:262
+
+    Error Context: test-results/overview-Overview-AUTHOR-attention-and-drill-through-at-390/error-context.md
+
+
+(node:38016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[93/171] tests/overview.spec.ts:71:96 › Overview REVIEWER attention and drill-through at 390
+[94/171] tests/overview.spec.ts:71:96 › Overview VIEWER attention and drill-through at 390
+[95/171] tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts
+  11) tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('Current role')
+    Expected: "ADMIN"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+
+
+      51 |   return json({items:[]})
+      52 |  })
+    > 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                               ^
+      54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}
+      55 | }
+      56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{
+        at setup (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:53:111)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:90:90
+
+    Error Context: test-results/overview-existing-connecte-aed98--Overview-before-App-mounts/error-context.md
+
+
+(node:38048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[96/171] tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+  12) tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Conversation review', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Conversation review', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Conversation review', exact: true })
+
+
+      91 | test('OAuth return-page intent, evaluation deep link and explicit query page win',async({browser})=>{
+      92 |  for(const returned of ['settings','policies','evaluations']){const page=await browser.newPage();await setup(page,'ADMIN',false,returned);await expect(page.getByRole('heading',{name:returned[0].toUpperCase()+returned.slice(1),exact:true})).toBeVisible();await page.close()}
+    > 93 |  const page=await browser.newPage();await page.route(`${origin}/**`,r=>r.fulfill({json:{items:[]}}));await page.goto(`${app}?evaluationId=linked&page=automation`);await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await page.goto(`${app}?page=policies`);await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await page.goto(app);await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.goto(`${app}?page=automation`);await expect(page.getByText('Connect to Genesys Cloud to view operational AQM health.')).toBeVisible();await page.close()
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+      94 | })
+      95 |
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/overview.spec.ts:93:474
+
+    Error Context: test-results/overview-OAuth-return-page-c5f3a-and-explicit-query-page-win/error-context.md
+
+
+(node:38064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[97/171] tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 1440
+[98/171] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1440
+[99/171] tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 1920
+[100/171] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1920
+[101/171] tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 390
+[102/171] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 390
+[103/171] tests/quality-actionability.spec.ts:37:1 › safe errors, retry, empty scope, unavailable names and sparse history
+[104/171] tests/quality-actionability.spec.ts:40:1 › goal-only route from Overview uses visible quality evidence
+[105/171] tests/quality-actionability.spec.ts:48:1 › Overview Analytics entry replaces stale quality filters
+[106/171] tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 1440
+[107/171] tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 1920
+[108/171] tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 390
+  13) tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 390 ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.evaluate: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.operational-table tbody tr').filter({ hasText: 'Clear next step' }).filter({ hasText: 'Customer Service v17' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      52 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`Tab-only quality, filters, table and return ${viewport.width}`,async({page})=>{
+      53 |  await page.setViewportSize(viewport);const state=await qualityFixture(page,'analytics'),trace:string[]=[]
+    > 54 |  async function reach(locator:ReturnType<Page['getByRole']>,label:string){for(let i=0;i<180;i++){if(await locator.evaluate(node=>node===document.activeElement)){trace.push(label);return}await page.keyboard.press('Tab')}throw Error(`Not reachable by Tab: ${label}`)}
+         |                                                                                                                   ^
+      55 |  const change=page.getByRole('button',{name:'Change filters',exact:true});await reach(change,'Change filters');await page.keyboard.press('Enter');const form=page.locator('.analytics-filter-bar').getByLabel('Form',{exact:true});await reach(form,'Form');await page.keyboard.press('ArrowDown');await page.keyboard.press('Enter');await page.keyboard.press('Tab');await reach(change,'Close filters');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      56 |  const action=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'}).getByRole('button',{name:'Inspect evaluations →'});await reach(action,'Question insight');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(evaluations(page).first(),'Evaluation row');await page.keyboard.press('Enter');await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to Analytics');await page.keyboard.press('Enter');await expect(page.getByRole('region',{name:'What stands out'})).toBeVisible()
+      57 |  const selector=page.getByRole('combobox',{name:'View',exact:true});if(await selector.isVisible()){await reach(selector,'View selector');await page.keyboard.type('Questions');await page.keyboard.press('Enter')}else{const questions=page.locator('.analytics-tabs').getByRole('button',{name:'Questions',exact:true});await reach(questions,'Questions view');await page.keyboard.press('Enter')};const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'}).getByRole('button',{name:'Inspect evaluations →'});await reach(row,'Question table action');await page.keyboard.press('Enter');await expect(evaluations(page)).toHaveCount(8);await reach(page.getByRole('button',{name:'Back to Analytics',exact:true}),'Back to question context');await page.keyboard.press('Enter');expect(new URL(page.url()).searchParams.get('analyticsTab')).toBe('questions');writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({trace,method:'Tab traversal, native-select type-ahead and Enter; no mouse clicks'},null,2));expect(state.errors).toEqual([]);expect(state.writes).toEqual([])
+        at reach (/private/tmp/aqm-v019d-role-navigation-accessibility/tests/quality-actionability.spec.ts:54:115)
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/quality-actionability.spec.ts:57:633
+
+    Error Context: test-results/quality-actionability-Tab--dd0ac-ilters-table-and-return-390/error-context.md
+
+
+(node:38172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[109/171] tests/reviewer-continuity.spec.ts:49:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[110/171] tests/reviewer-continuity.spec.ts:49:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[111/171] tests/reviewer-continuity.spec.ts:49:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[112/171] tests/reviewer-continuity.spec.ts:100:1 › exact My Reviews filter context survives evidence navigation
+[113/171] tests/reviewer-continuity.spec.ts:108:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[114/171] tests/reviewer-continuity.spec.ts:120:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[115/171] tests/reviewer-continuity.spec.ts:139:12 › completion reconciles All Evaluations without Refresh
+[116/171] tests/reviewer-continuity.spec.ts:139:12 › completion reconciles active cohort without Refresh
+[117/171] tests/reviewer-continuity.spec.ts:139:12 › completion reconciles review status without Refresh
+[118/171] tests/reviewer-continuity.spec.ts:139:12 › completion reconciles due cohort without Refresh
+[119/171] tests/reviewer-continuity.spec.ts:149:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[120/171] tests/reviewer-continuity.spec.ts:167:1 › reassignment retains unsaved notes but removes editing and submission authority
+[121/171] tests/reviewer-continuity.spec.ts:178:1 › 409 refresh retains draft without silently replacing its base
+[122/171] tests/reviewer-continuity.spec.ts:188:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[123/171] tests/reviewer-continuity.spec.ts:199:1 › later server page survives evidence return and completion background reload
+[124/171] tests/reviewer-continuity.spec.ts:210:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[125/171] tests/reviewer-continuity.spec.ts:225:1 › unstarted review returns to selected evaluation heading
+[126/171] tests/reviewer-continuity.spec.ts:232:1 › completion removes the row before a failed background list reload, preserving confirmation
+[127/171] tests/reviewer-continuity.spec.ts:242:1 › failed completion retains all changes and explicit retry completes exactly once
+[128/171] tests/reviewer-continuity.spec.ts:256:1 › reload starts a new session without unsubmitted answers or notes
+[129/171] tests/reviewer-continuity.spec.ts:268:1 › About and workspace handoff retain human work and unload protection in this SPA
+[130/171] tests/reviewer-continuity.spec.ts:279:1 › a pending completion reconciles the current filters rather than the scope at click time
+[131/171] tests/reviewer-continuity.spec.ts:295:1 › completion in another session keeps unfinished answers separate from completed authority
+[132/171] tests/reviewer-continuity.spec.ts:308:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[133/171] tests/save-protection.spec.ts:78:2 › Groups save, replacement and leave protection at 1440
+[134/171] tests/save-protection.spec.ts:101:2 › Governance exact global scope, discard, failures and guards at 1440
+[135/171] tests/save-protection.spec.ts:126:2 › Form Test destructive confirmations preserve recovery at 1440
+[136/171] tests/save-protection.spec.ts:78:2 › Groups save, replacement and leave protection at 1920
+[137/171] tests/save-protection.spec.ts:101:2 › Governance exact global scope, discard, failures and guards at 1920
+[138/171] tests/save-protection.spec.ts:126:2 › Form Test destructive confirmations preserve recovery at 1920
+[139/171] tests/save-protection.spec.ts:78:2 › Groups save, replacement and leave protection at 390
+[140/171] tests/save-protection.spec.ts:101:2 › Governance exact global scope, discard, failures and guards at 390
+[141/171] tests/save-protection.spec.ts:126:2 › Form Test destructive confirmations preserve recovery at 390
+[142/171] tests/save-protection.spec.ts:143:1 › offline group is explicitly saved in this browser, and import is clean
+[143/171] tests/save-protection.spec.ts:153:1 › demo removal, broad local reset and local history clear have exact scope
+[144/171] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[145/171] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[146/171] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[147/171] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[148/171] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[149/171] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[150/171] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[151/171] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[152/171] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[153/171] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[154/171] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+[155/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[156/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[157/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[158/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[159/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[160/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[161/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[162/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[163/171] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[164/171] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[165/171] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[166/171] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[167/171] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[168/171] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[169/171] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+  14) tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill ──────
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator: locator('.run-detail h3')
+    Expected: focused
+    Error: strict mode violation: locator('.run-detail h3') resolved to 2 elements:
+        1) <h3 tabindex="-1">Daily Voice Customer Service AQM · Run detail</h3> aka getByRole('heading', { name: 'Daily Voice Customer Service' })
+        2) <h3>Where coverage was lost</h3> aka getByRole('heading', { name: 'Where coverage was lost' })
+
+    Call log:
+      - Expect "toBeFocused" locator('.run-detail h3') with timeout 5000ms
+      - waiting for locator('.run-detail h3')
+
+
+      82 |  const operations=page.locator('.overview-operations>summary');await keyboardTo(page,operations);await page.keyboard.press('Enter')
+      83 |  const run=page.getByRole('button',{name:/^Open run /}).first();await keyboardTo(page,run);await page.keyboard.press('Enter')
+    > 84 |  await expect(page.locator('.run-detail h3')).toBeFocused();await keyboardTo(page,page.locator('.run-detail').getByRole('button',{name:'Close details'}));await page.keyboard.press('Enter');await expect(run).toBeFocused()
+         |                                               ^
+      85 |  const alert=page.getByRole('button',{name:'Open alert Scheduled run failed',exact:true});await keyboardTo(page,alert);await page.keyboard.press('Enter')
+      86 |  await expect(page.locator('.alert-detail h3')).toBeFocused();await keyboardTo(page,page.getByRole('button',{name:'Close alert',exact:true}));await page.keyboard.press('Enter');await expect(alert).toBeFocused()
+      87 |  await keyboardTo(page,nav(page,'Policies'));await page.keyboard.press('Enter');const policy=page.locator('.operational-table .text-link').first();await keyboardTo(page,policy);await page.keyboard.press('Enter');await expect(page.locator('.policy-detail h2').first()).toBeFocused();await keyboardTo(page,page.locator('.policy-detail').getByRole('button',{name:'Close details'}));await page.keyboard.press('Enter');await expect(policy).toBeFocused()
+        at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/usability.spec.ts:84:47
+
+    Error Context: test-results/usability-keyboard-run-ale-a3236-olicy-and-calibration-drill/error-context.md
+
+
+(node:38274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[170/171] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[171/171] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  14 failed
+    tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390 
+    tests/calibration.spec.ts:10:3 › provider-free human review, conflict, calibration and drill-down at 390 
+    tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1440 ────────────────
+    tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 1920 ────────────────
+    tests/first-use-settings.spec.ts:36:2 › first use and connection routes at 390 ─────────────────
+    tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390 
+    tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390 
+    tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1440 ─────────────
+    tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1920 ─────────────
+    tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 390 ──────────────
+    tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts 
+    tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win 
+    tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 390 ────
+    tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill ────────
+  157 passed (10.0m)

@@ -4,12 +4,12 @@ import { operationalAnalytics } from '../src/server/analytics'
 import { operationalOverview } from '../src/server/overview'
 import { governanceSettings } from '../src/server/governance'
 import { reviewWorkload } from '../src/server/reviewOperations'
-import { rolePermissions } from '../src/domain/governance'
+import { rolePermissions,type Role } from '../src/domain/governance'
 import { matchesEvaluationFilters,buildReview } from '../src/domain/reviews'
 import { reviewFixture,reviewInput } from '../src/fixtures/reviewFixture'
 import { fixtureRun,overviewPolicy,overviewAuthority } from '../src/fixtures/overviewFixture'
 export const app=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/',now='2026-10-02T12:00:00.000Z',api='https://aqm-api-bd54ukouga-nw.a.run.app'
-export async function qualityFixture(page:Page,start='automation'){
+export async function qualityFixture(page:Page,start='automation',role:Role='ADMIN'){
  const store=new MemoryStore(),requests:URL[]=[],errors:string[]=[],writes:string[]=[],blocked:string[]=[];let failAnalytics=false,failNames=false
  await store.putPolicy({...overviewPolicy,criteria:{anyOf:[[{field:'channel',operator:'equals',value:'voice'}]]}})
  const base=reviewFixture();base.form.name='Customer Service';base.form.status='PUBLISHED';base.form.questions=base.form.questions.map(q=>q.id==='understanding'?{...q,title:'Clear next step'}:q)
@@ -35,7 +35,7 @@ export async function qualityFixture(page:Page,start='automation'){
   if(u.origin!==api){blocked.push(u.origin+p);return route.abort()}
   requests.push(u);if(m!=='GET'){writes.push(m+' '+p);return route.abort()}
   const json=(value:unknown)=>route.fulfill({json:value})
-  if(p==='/api/session')return json({actor:{userId:'admin'},role:'ADMIN',permissions:rolePermissions.ADMIN})
+  if(p==='/api/session')return json({actor:{userId:'admin'},role,permissions:rolePermissions[role]})
   if(p==='/api/governance')return json(await governanceSettings(store))
   if(p==='/api/analytics')return failAnalytics?route.fulfill({status:503,json:{error:'Fictional HTTP 503 diagnostics'}}):json(await operationalAnalytics(store,u.searchParams))
   if(p==='/api/overview')return json(await operationalOverview(store,now,u.searchParams.get('range')==='30'?30:7,overviewAuthority,true))
@@ -50,6 +50,6 @@ export async function qualityFixture(page:Page,start='automation'){
   if(p.startsWith('/api/evaluations/')){const id=p.split('/')[3];return json({...await store.evaluation(id),humanReview:await store.review(id)})}
   return json({items:[]})
  })
- await page.goto(`${app}?code=fictional&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText('ADMIN')
+ await page.goto(`${app}?code=fictional&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
  return {store,requests,errors,writes,blocked,failAnalytics:(value=true)=>{failAnalytics=value},failNames:()=>{failNames=true}}
 }

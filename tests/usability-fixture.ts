@@ -57,6 +57,9 @@ export async function usabilityFixture(page:Page,role:Role='ADMIN',query='page=e
  return {store,requests,errors}
 }
 export async function keyboardTo(page:Page, locator:ReturnType<Page['getByRole']>) {
+ const group=locator.locator('xpath=ancestor::details')
+ if(await group.count()&&await locator.evaluate(e=>e.tagName!=='SUMMARY')&&await group.getAttribute('open')===null){await keyboardTo(page,group.locator('summary'));await page.keyboard.press('Enter')}
+
  for(let i=0;i<120;i++) {if(await locator.evaluate(e=>e===document.activeElement))return;await page.keyboard.press('Tab')}
  throw Error('Control is not reachable by Tab')
 }

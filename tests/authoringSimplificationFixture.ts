@@ -15,7 +15,7 @@ export const app=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm
 mkdirSync(evidence,{recursive:true})
 const nav=(page:Page,name:string)=>page.getByRole('navigation').getByRole('button',{name,exact:true})
 export function draft(type:'choice'|'score'='choice'):EvaluationForm{return {...structuredClone(seedForms[0]),id:`fixture_${type}`,familyId:`fixture_${type}`,name:`Fixture ${type} form`,status:'DRAFT',enabled:false,groups:[{id:'general',name:'General'}],questions:[{id:'q',title:'Quality',instructions:'Assess the quality.',groupId:'general',type,options:structuredClone(seedAnswerSets[type==='choice'?1:0].options),weight:1,enabled:true}]}}
-export async function fixture(page:Page,role:Role='ADMIN',sets:AnswerSetAsset[]=[],forms:EvaluationForm[]=[draft(),draft('score')],groups:QuestionGroupAsset[]=[],start='answerSets'){
+export async function fixture(page:Page,role:Role='ADMIN',sets:AnswerSetAsset[]=[],forms:EvaluationForm[]=[draft(),draft('score')],groups:QuestionGroupAsset[]=[],start='answerSets',options:{sessionGate?:Promise<void>}={}){
  const store=new MemoryStore(),errors:string[]=[],requests:{path:string;method:string}[]=[],user=role==='ADMIN'?'owner':role.toLowerCase()
  for(const f of forms)await store.putForm(f)
  for(const group of groups)await store.putGroupAsset(group)
@@ -32,6 +32,7 @@ export async function fixture(page:Page,role:Role='ADMIN',sets:AnswerSetAsset[]=
   if(u.origin==='https://api.mypurecloud.ie'&&u.pathname==='/api/v2/users/me')return route.fulfill({json:{id:user,name:user,organization:{id:'fixture'}}})
   if(u.origin!==api)return route.abort()
   requests.push({path:u.pathname,method:route.request().method()})
+  if(u.pathname==='/api/session'&&options.sessionGate)await options.sessionGate
   const response=await fetch(local+u.pathname+u.search,{method:route.request().method(),headers:{Authorization:'Bearer fixture','Content-Type':'application/json'},body:route.request().postData()??undefined})
   return route.fulfill({status:response.status,body:await response.text(),contentType:'application/json'})
  })

@@ -1,0 +1,49 @@
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved changes to Published group. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved changes to Published group. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved changes to Unsaved new group. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved Settings changes. Leave without saving them?","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"You have unsaved Settings changes. Leave without saving them?","accepted":true}
+{"viewport":{"width":1440,"height":900},"message":"This resets browser-local forms and policies to their starter versions and clears browser-local evaluation and policy-run history.\n\nSaved AQM server data is not affected.\n\nSave or copy any local work you need before continuing.","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"Completed saved test runs for this form will be deleted. Running or uncertain tests are retained. Production evaluations and analytics are unaffected. This cannot be undone.","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"Completed saved test runs for this form will be deleted. Running or uncertain tests are retained. Production evaluations and analytics are unaffected. This cannot be undone.","accepted":true}
+{"viewport":{"width":1440,"height":900},"message":"Clearing this recovery reference means the next test will use a new test ID and may issue AI requests again. Keep the reference if the prior test might still be running or its result is uncertain.","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"Clearing this recovery reference means the next test will use a new test ID and may issue AI requests again. Keep the reference if the prior test might still be running or its result is uncertain.","accepted":true}
+{"viewport":{"width":1440,"height":900},"message":"Clear browser-local test history for this form? Production and server data are unaffected.","accepted":false}
+{"viewport":{"width":1440,"height":900},"message":"Clear browser-local test history for this form? Production and server data are unaffected.","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved changes to Published group. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved changes to Published group. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved changes to Unsaved new group. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved Settings changes. Leave without saving them?","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"You have unsaved Settings changes. Leave without saving them?","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"This resets browser-local forms and policies to their starter versions and clears browser-local evaluation and policy-run history.\n\nSaved AQM server data is not affected.\n\nSave or copy any local work you need before continuing.","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"Completed saved test runs for this form will be deleted. Running or uncertain tests are retained. Production evaluations and analytics are unaffected. This cannot be undone.","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"Completed saved test runs for this form will be deleted. Running or uncertain tests are retained. Production evaluations and analytics are unaffected. This cannot be undone.","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"Clearing this recovery reference means the next test will use a new test ID and may issue AI requests again. Keep the reference if the prior test might still be running or its result is uncertain.","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"Clearing this recovery reference means the next test will use a new test ID and may issue AI requests again. Keep the reference if the prior test might still be running or its result is uncertain.","accepted":true}
+{"viewport":{"width":1920,"height":1080},"message":"Clear browser-local test history for this form? Production and server data are unaffected.","accepted":false}
+{"viewport":{"width":1920,"height":1080},"message":"Clear browser-local test history for this form? Production and server data are unaffected.","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved changes to Published group. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved changes to Published group. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved changes to Saved draft. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved changes to Unsaved new group. Leave this group and discard them?","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved Settings changes. Leave without saving them?","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"You have unsaved Settings changes. Leave without saving them?","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"This resets browser-local forms and policies to their starter versions and clears browser-local evaluation and policy-run history.\n\nSaved AQM server data is not affected.\n\nSave or copy any local work you need before continuing.","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"Completed saved test runs for this form will be deleted. Running or uncertain tests are retained. Production evaluations and analytics are unaffected. This cannot be undone.","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"Completed saved test runs for this form will be deleted. Running or uncertain tests are retained. Production evaluations and analytics are unaffected. This cannot be undone.","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"Clearing this recovery reference means the next test will use a new test ID and may issue AI requests again. Keep the reference if the prior test might still be running or its result is uncertain.","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"Clearing this recovery reference means the next test will use a new test ID and may issue AI requests again. Keep the reference if the prior test might still be running or its result is uncertain.","accepted":true}
+{"viewport":{"width":390,"height":844},"message":"Clear browser-local test history for this form? Production and server data are unaffected.","accepted":false}
+{"viewport":{"width":390,"height":844},"message":"Clear browser-local test history for this form? Production and server data are unaffected.","accepted":true}
+{"viewport":{"width":1280,"height":720},"message":"This resets browser-local forms and policies to their starter versions and clears browser-local evaluation and policy-run history.\n\nSaved AQM server data is not affected.\n\nSave or copy any local work you need before continuing.","accepted":false}
+{"viewport":{"width":1280,"height":720},"message":"Clear browser-local evaluations and policy-run history? Saved server evaluations and runs are unaffected. Forms and policies are unaffected.","accepted":false}
+{"viewport":{"width":1280,"height":720},"message":"Clear browser-local evaluations and policy-run history? Saved server evaluations and runs are unaffected. Forms and policies are unaffected.","accepted":true}
+{"viewport":{"width":1280,"height":720},"message":"This resets browser-local forms and policies to their starter versions and clears browser-local evaluation and policy-run history.\n\nSaved AQM server data is not affected.\n\nSave or copy any local work you need before continuing.","accepted":true}

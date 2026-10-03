@@ -1,0 +1,38 @@
+
+Running 30 tests using 1 worker
+
+(node:39385) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/30] tests/navigation-tasks.spec.ts:10:97 › goal-only REVIEWER 1440
+[2/30] tests/navigation-tasks.spec.ts:10:97 › goal-only AUTHOR 1440
+[3/30] tests/navigation-tasks.spec.ts:10:97 › goal-only VIEWER 1440
+[4/30] tests/navigation-tasks.spec.ts:10:97 › goal-only ADMIN 1440
+[5/30] tests/navigation-tasks.spec.ts:10:97 › goal-only REVIEWER 390
+[6/30] tests/navigation-tasks.spec.ts:10:97 › goal-only AUTHOR 390
+[7/30] tests/navigation-tasks.spec.ts:10:97 › goal-only VIEWER 390
+[8/30] tests/navigation-tasks.spec.ts:10:97 › goal-only ADMIN 390
+[9/30] tests/role-navigation.spec.ts:17:96 › ADMIN role focus and reference capability 1440
+[10/30] tests/role-navigation.spec.ts:17:96 › ADMIN role focus and reference capability 390
+[11/30] tests/role-navigation.spec.ts:17:96 › AUTHOR role focus and reference capability 1440
+[12/30] tests/role-navigation.spec.ts:17:96 › AUTHOR role focus and reference capability 390
+[13/30] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 1440
+[14/30] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 390
+[15/30] tests/role-navigation.spec.ts:17:96 › VIEWER role focus and reference capability 1440
+[16/30] tests/role-navigation.spec.ts:17:96 › VIEWER role focus and reference capability 390
+[17/30] tests/role-navigation.spec.ts:35:25 › ADMIN shared routes deep-link; labels and access stay authoritative
+[18/30] tests/role-navigation.spec.ts:35:25 › AUTHOR shared routes deep-link; labels and access stay authoritative
+[19/30] tests/role-navigation.spec.ts:35:25 › REVIEWER shared routes deep-link; labels and access stay authoritative
+[20/30] tests/role-navigation.spec.ts:35:25 › VIEWER shared routes deep-link; labels and access stay authoritative
+[21/30] tests/role-navigation.spec.ts:41:1 › keyboard disclosures remember session choices, active page wins, product tour preserves them
+[22/30] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x900
+[23/30] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1920x1080
+[24/30] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 390x844
+[25/30] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x720
+[26/30] tests/role-navigation.spec.ts:65:1 › mobile Questions exact drill returns to same view and cohort; Coverage deep link
+[27/30] tests/role-navigation.spec.ts:68:1 › browser sample Analytics has seven discoverable views and selected URL
+[28/30] tests/role-navigation.spec.ts:71:1 › browser history restores page, active reference group and Analytics view
+[29/30] tests/role-navigation.spec.ts:76:1 › review contextual evidence and default My Reviews remain coherent on mobile
+[30/30] tests/role-navigation.spec.ts:80:1 › unresolved access stays neutral and read-only; role arrival preserves route
+  30 passed (1.4m)

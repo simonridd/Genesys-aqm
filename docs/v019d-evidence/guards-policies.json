@@ -1,0 +1,19 @@
+{
+  "route": "policies",
+  "dialogs": [
+    "Unsaved policy or schedule changes. Leave without saving?",
+    "Unsaved policy or schedule changes. Leave without saving?",
+    "Unsaved policy or schedule changes. Leave without saving?",
+    "Unsaved changes remain. Leave for the product tour?",
+    "Unsaved policy or schedule changes. Leave without saving?"
+  ],
+  "protectedTargets": [
+    "primary Overview",
+    "secondary Conversations",
+    "utility Settings",
+    "About / product tour",
+    "history navigation"
+  ],
+  "beforeUnloadPrevented": true,
+  "fictionalWrites": 0
+}

@@ -1,0 +1,19 @@
+{
+  "route": "forms",
+  "dialogs": [
+    "Unsaved changes remain in this browser. Leave without saving to the server?",
+    "Unsaved changes remain in this browser. Leave without saving to the server?",
+    "Unsaved changes remain in this browser. Leave without saving to the server?",
+    "Unsaved changes remain. Leave for the product tour?",
+    "Unsaved changes remain in this browser. Leave without saving to the server?"
+  ],
+  "protectedTargets": [
+    "primary Overview",
+    "secondary Conversations",
+    "utility Settings",
+    "About / product tour",
+    "history navigation"
+  ],
+  "beforeUnloadPrevented": true,
+  "fictionalWrites": 0
+}

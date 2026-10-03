@@ -1,0 +1,19 @@
+{
+  "route": "answerSets",
+  "dialogs": [
+    "You have unsaved changes to Unsaved answers. Leave this Answer Set and discard them?",
+    "You have unsaved changes to Unsaved answers. Leave this Answer Set and discard them?",
+    "You have unsaved changes to Unsaved answers. Leave this Answer Set and discard them?",
+    "Unsaved changes remain. Leave for the product tour?",
+    "You have unsaved changes to Unsaved answers. Leave this Answer Set and discard them?"
+  ],
+  "protectedTargets": [
+    "primary Overview",
+    "secondary Conversations",
+    "utility Settings",
+    "About / product tour",
+    "history navigation"
+  ],
+  "beforeUnloadPrevented": true,
+  "fictionalWrites": 0
+}

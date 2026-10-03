@@ -1,0 +1,102 @@
+[
+  {
+    "page": "Analytics",
+    "width": 360,
+    "scrollWidth": 824,
+    "documentWidth": 390,
+    "buttons": [
+      {
+        "label": "Overview",
+        "bounds": {
+          "x": 15,
+          "right": 135.40625
+        }
+      },
+      {
+        "label": "Agents",
+        "bounds": {
+          "x": 143.40625,
+          "right": 245.765625
+        }
+      },
+      {
+        "label": "Queues",
+        "bounds": {
+          "x": 253.765625,
+          "right": 359.921875
+        }
+      },
+      {
+        "label": "Forms",
+        "bounds": {
+          "x": 367.921875,
+          "right": 463.96875
+        }
+      },
+      {
+        "label": "Groups",
+        "bounds": {
+          "x": 471.96875,
+          "right": 575.578125
+        }
+      },
+      {
+        "label": "Questions",
+        "bounds": {
+          "x": 583.578125,
+          "right": 710.03125
+        }
+      },
+      {
+        "label": "Coverage",
+        "bounds": {
+          "x": 718.03125,
+          "right": 839.140625
+        }
+      }
+    ]
+  },
+  {
+    "page": "Calibration",
+    "width": 360,
+    "scrollWidth": 858,
+    "documentWidth": 390,
+    "buttons": [
+      {
+        "label": "Form / version",
+        "bounds": {
+          "x": 15,
+          "right": 172.875
+        }
+      },
+      {
+        "label": "Groups",
+        "bounds": {
+          "x": 180.875,
+          "right": 284.484375
+        }
+      },
+      {
+        "label": "Questions",
+        "bounds": {
+          "x": 292.484375,
+          "right": 418.9375
+        }
+      },
+      {
+        "label": "Question types",
+        "bounds": {
+          "x": 426.9375,
+          "right": 592.859375
+        }
+      },
+      {
+        "label": "Confidence vs disagreement",
+        "bounds": {
+          "x": 600.859375,
+          "right": 872.84375
+        }
+      }
+    ]
+  }
+]

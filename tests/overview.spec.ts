@@ -1,3 +1,4 @@
+import { selectedView,navigateWorkspace } from './workspace-navigation'
 import { test,expect,type Page } from '@playwright/test'
 import { overviewFixture,overviewNow,overviewAuthority,overviewPolicy } from '../src/fixtures/overviewFixture'
 import { operationalOverview } from '../src/server/overview'
@@ -69,7 +70,7 @@ for(const viewport of sizes)test(`Overview healthy, range, freshness, partial fa
 })
 for(const viewport of sizes)for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'] as Role[])test(`Overview ${role} attention and drill-through at ${viewport.width}`,async({browser})=>{
  const context=await browser.newContext({viewport}),page=await context.newPage(),fixture=await setup(page,role,true)
- const nav=page.getByRole('navigation',{name:'Primary navigation'}),home=()=>nav.getByRole('button',{name:'Overview',exact:true}).click(),attention=page.getByRole('region',{name:'Attention required'}),work=page.getByRole('region',{name:'Review workload health'}),automation=page.getByRole('region',{name:'Upcoming automation'})
+ const nav=page.getByRole('navigation',{name:'Primary navigation'}),home=()=>navigateWorkspace(page,'Overview'),attention=page.getByRole('region',{name:'Attention required'}),work=page.getByRole('region',{name:'Review workload health'}),automation=page.getByRole('region',{name:'Upcoming automation'})
  await expect(attention).toContainText('2 errors');await expect(attention).toContainText('1 overdue review');await expect(attention).toContainText('1 failed notification delivery')
  await expect(automation).toContainText('Latest successful scheduled execution.');await expect(automation).toContainText('Next due 3 Oct');await expect(page.getByRole('region',{name:'Recent runs'}).locator('.overview-run')).toHaveCount(3)
  await expect(work.getByRole('button',{name:'My review queue →',exact:true})).toHaveCount(role==='ADMIN'||role==='REVIEWER'?1:0)
@@ -83,7 +84,7 @@ for(const viewport of sizes)for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEW
  await page.getByRole('region',{name:'Quality and coverage'}).locator('.overview-metric').filter({hasText:'Critical failure occurrences'}).getByRole('button').click();await expect(page).toHaveURL(/critical=yes/);await home()
  if(role==='REVIEWER'){await work.getByRole('button',{name:'My review queue →',exact:true}).click();await expect(page).toHaveURL(/reviewQueue=mine/);await home()}
  await page.getByRole('region',{name:'Upcoming automation'}).getByRole('button',{name:/View.*policy/}).first().click();await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await expect(page).toHaveURL(/policyId=daily_voice/);await home()
- await page.getByRole('region',{name:'Quality and coverage'}).getByRole('button',{name:'Explore coverage →',exact:true}).click();await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible();await expect(page.locator('.analytics-tabs').getByRole('button',{name:'Coverage',exact:true})).toHaveClass(/active/);await home()
+ await page.getByRole('region',{name:'Quality and coverage'}).getByRole('button',{name:'Explore coverage →',exact:true}).click();await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible();expect(await selectedView(page)).toBe('Coverage');await home()
  expect(fixture.errors).toEqual([]);expect(fixture.writes).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close()
 })
 test('existing connected session defaults to Overview before App mounts',async({page})=>{await setup(page,'ADMIN',false,'',true);await expect(page.getByRole('heading',{name:'Overview',exact:true})).toBeVisible()})

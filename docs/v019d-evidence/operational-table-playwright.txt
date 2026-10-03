@@ -1,0 +1,12 @@
+[WebServer] (node:37367) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:37368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] tests/operational-table.spec.ts:3:1 › real identity controls, nested event counts, pointer opening and header sort semantics
+  1 passed (1.2s)

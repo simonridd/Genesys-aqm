@@ -364,3 +364,25 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
 .cohort-summary{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px;margin-bottom:12px}.cohort-summary p{margin:6px 0;overflow-wrap:anywhere}.cohort-summary small{color:var(--aqm-muted)}.analytics-filter-disclosure{padding:12px 18px;margin-bottom:14px}.analytics-filter-disclosure:not([open]){display:none}.advanced-quality-filters{grid-column:1/-1}.advanced-quality-filters[open]{display:flex;flex-wrap:wrap;gap:12px}.quality-metrics{grid-template-columns:repeat(5,minmax(0,1fr))}.quality-review-state strong{font-size:18px}.insight-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.insight-grid article{padding:14px;background:var(--aqm-background);border-radius:10px;min-width:0}.insight-grid article small,.insight-grid article strong{display:block;overflow-wrap:anywhere}.insight-grid article small{color:var(--aqm-muted);margin-bottom:8px}.insight-grid article p{font-size:13px;line-height:1.5}.quality-days>div{display:grid;grid-template-columns:100px minmax(40px,1fr) 55px;gap:8px;align-items:center;padding:8px 0;font-size:12px}.quality-days small{grid-column:2/-1}.coverage-funnel ol{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}.coverage-funnel li{display:grid;grid-template-columns:minmax(120px,1fr) 70px minmax(150px,2fr);gap:12px;align-items:center;padding:12px;background:var(--aqm-background);border-radius:8px}.coverage-funnel li b{font-size:22px}.coverage-funnel li span{font-size:12px;color:var(--aqm-muted)}.coverage-funnel p{font-size:13px;line-height:1.5}.coverage-breakdown{border-bottom:1px solid var(--aqm-border-subtle);padding:12px 0}.quality-analytics pre{white-space:pre-wrap;overflow-wrap:anywhere}.attention-kind{font-size:11px;letter-spacing:.06em;color:var(--aqm-muted);display:block;margin:10px 0 5px}.overview-quality{grid-template-columns:repeat(5,minmax(0,1fr))}
 @media(max-width:1100px){.quality-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.overview-quality{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.cohort-summary{align-items:flex-start;flex-direction:column}.quality-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.quality-metrics .metric{padding:14px;min-height:95px}.quality-metrics .metric strong{font-size:24px}.quality-metrics .quality-review-state{grid-column:1/-1}.quality-metrics .quality-review-state strong{font-size:17px}.insight-grid{grid-template-columns:1fr}.coverage-funnel li{grid-template-columns:minmax(0,1fr) 65px;gap:4px}.coverage-funnel li span{grid-column:1/-1}.coverage-funnel li b{text-align:right}}
+
+/* Workspace role focus and native disclosure, using the established 650px breakpoint. */
+.sidebar nav.workspace-navigation{display:grid;gap:8px;white-space:normal;overflow-x:visible;width:100%}
+.workspace-nav-group>summary{padding:11px 12px;color:var(--aqm-on-dark-muted);font-size:12px;font-weight:700;cursor:pointer;border-radius:8px}
+.workspace-nav-group>summary:hover{background:var(--aqm-navigation-raised)}
+.workspace-nav-group>summary:focus-visible,.workspace-navigation button:focus-visible{outline:2px solid var(--aqm-focus);outline-offset:-2px}
+.workspace-nav-items{display:grid;gap:4px}
+.workspace-nav-utilities{border-top:1px solid var(--aqm-navigation-raised);padding-top:10px;margin-top:4px}
+.mobile-view-switcher{display:none}
+@media(max-width:650px){
+ .sidebar nav.workspace-navigation{display:grid;overflow:visible}
+ .workspace-navigation .workspace-nav-items,.workspace-navigation .workspace-nav-utilities{display:grid}
+ .sidebar .workspace-navigation .nav-item{width:100%;white-space:normal}
+ .workspace-nav-group>summary{padding:10px 12px}
+ .workspace-nav-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+ .workspace-nav-utilities{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .sidebar .workspace-navigation .nav-item{padding:10px 8px;gap:6px;font-size:12px;min-width:0}
+ .workspace-nav-utilities .nav-item:last-child{font-size:11px}
+ .desktop-view-switcher{display:none}
+ .mobile-view-switcher{display:grid;gap:6px;font-weight:700;font-size:13px;margin:12px 0 18px}
+ .mobile-view-switcher select{width:100%;min-width:0;max-width:100%;padding:10px;border:1px solid var(--aqm-border-subtle);border-radius:8px;background:var(--aqm-surface);color:var(--aqm-ink)}
+}

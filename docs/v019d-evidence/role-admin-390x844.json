@@ -1,0 +1,21 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "sidebarHeight": 340.515625,
+  "navHeight": 260,
+  "visibleDestinations": [
+    "◌Overview",
+    "◷Evaluations",
+    "▥Analytics",
+    "◎Calibration",
+    "⚙Settings",
+    "About / product tour"
+  ],
+  "visibleDestinationCount": 6,
+  "collapsedSecondaryGroups": 2,
+  "documentWidth": 390,
+  "bodyWidth": 390,
+  "viewControls": []
+}

@@ -1,0 +1,14 @@
+{
+  "eligible": 1000,
+  "sampled": 500,
+  "contentAvailable": 460,
+  "evaluated": 450,
+  "samplingCoverage": "500 / 1000 = 50%",
+  "evaluationCoverage": "450 / 1000 = 45%",
+  "contentAvailability": "460 / 500 = 92%",
+  "sampleCompletion": "450 / 460 = 97.8%",
+  "failedAttempts": 10,
+  "scope": "2 run observations; run detail shows one run with half the counts and same rates",
+  "interpretation": "Sampling intentional; content unavailable 40; content available but not evaluated 10",
+  "kind": "Scripted comprehension assertions"
+}

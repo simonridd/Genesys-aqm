@@ -4,7 +4,7 @@ import { matchesEvaluationFilters } from '../src/domain/reviews'
 import { investigationNow } from '../src/fixtures/investigationFixture'
 import { reviewQueuePriority } from '../src/domain/reviewSla'
 import type { Role } from '../src/domain/governance'
-const nav=(page:any,name:string)=>page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name,exact:true})
+const nav=(page:any,name:string)=>page.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({has:page.getByText(name,{exact:true})})
 for(const role of ['ADMIN','REVIEWER','AUTHOR','VIEWER'] as Role[])test(`evaluation mode default and permissions ${role}`,async({page})=>{
  const state=await usabilityFixture(page,role)
  const mode=page.getByRole('group',{name:'Evaluation mode'})
@@ -81,7 +81,7 @@ test('keyboard run, alert, audit, policy and calibration drill',async({page})=>{
  await keyboardTo(page,nav(page,'Overview'));await page.keyboard.press('Enter')
  const operations=page.locator('.overview-operations>summary');await keyboardTo(page,operations);await page.keyboard.press('Enter')
  const run=page.getByRole('button',{name:/^Open run /}).first();await keyboardTo(page,run);await page.keyboard.press('Enter')
- await expect(page.locator('.run-detail h3')).toBeFocused();await keyboardTo(page,page.locator('.run-detail').getByRole('button',{name:'Close details'}));await page.keyboard.press('Enter');await expect(run).toBeFocused()
+ await expect(page.locator('.run-detail').getByRole('heading',{name:/· Run detail$/})).toBeFocused();await keyboardTo(page,page.locator('.run-detail').getByRole('button',{name:'Close details'}));await page.keyboard.press('Enter');await expect(run).toBeFocused()
  const alert=page.getByRole('button',{name:'Open alert Scheduled run failed',exact:true});await keyboardTo(page,alert);await page.keyboard.press('Enter')
  await expect(page.locator('.alert-detail h3')).toBeFocused();await keyboardTo(page,page.getByRole('button',{name:'Close alert',exact:true}));await page.keyboard.press('Enter');await expect(alert).toBeFocused()
  await keyboardTo(page,nav(page,'Policies'));await page.keyboard.press('Enter');const policy=page.locator('.operational-table .text-link').first();await keyboardTo(page,policy);await page.keyboard.press('Enter');await expect(page.locator('.policy-detail h2').first()).toBeFocused();await keyboardTo(page,page.locator('.policy-detail').getByRole('button',{name:'Close details'}));await page.keyboard.press('Enter');await expect(policy).toBeFocused()

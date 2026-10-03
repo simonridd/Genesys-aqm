@@ -1,0 +1,14 @@
+{
+  "trace": [
+    "Change filters",
+    "Form",
+    "Close filters",
+    "Question insight",
+    "Evaluation row",
+    "Back to Analytics",
+    "View selector",
+    "Question table action",
+    "Back to question context"
+  ],
+  "method": "Tab traversal, native-select type-ahead and Enter; no mouse clicks"
+}

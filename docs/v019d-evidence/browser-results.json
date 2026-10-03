@@ -1,0 +1,1090 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/private/tmp/aqm-v019d-role-navigation-accessibility/node_modules/.bin/playwright",
+      "test",
+      "-c",
+      "docs/v019d-evidence/playwright.config.ts",
+      "role-navigation.spec.ts",
+      "navigation-tasks.spec.ts",
+      "--max-failures=3"
+    ],
+    "configFile": "/private/tmp/aqm-v019d-role-navigation-accessibility/docs/v019d-evidence/playwright.config.ts",
+    "rootDir": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 3,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/aqm-v019d-role-navigation-accessibility/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/aqm-v019d-role-navigation-accessibility/docs/v019d-evidence/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --host 127.0.0.1 --port 4174",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "navigation-tasks.spec.ts",
+      "file": "navigation-tasks.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "goal-only REVIEWER 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1281,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:08:50.068Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-56b9bf8777bac540e62f",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only AUTHOR 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1211,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:08:51.435Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-379cdd079afba6eaa95d",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only VIEWER 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:08:52.650Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-9d7e5df738c5f9ca9456",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only ADMIN 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6063,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { level: 1 })\nExpected: \u001b[32m\"\u001b[7mInteraction \u001b[27mPolicies\"\u001b[39m\nReceived: \u001b[31m\"Policies\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('heading', { level: 1 }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { level: 1 })\u001b[22m\n\u001b[2m    14 × locator resolved to <h1 tabindex=\"-1\">Policies</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Policies\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { level: 1 })\nExpected: \u001b[32m\"\u001b[7mInteraction \u001b[27mPolicies\"\u001b[39m\nReceived: \u001b[31m\"Policies\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('heading', { level: 1 }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { level: 1 })\u001b[22m\n\u001b[2m    14 × locator resolved to <h1 tabindex=\"-1\">Policies</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Policies\"\u001b[22m\n\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts:23:364",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts",
+                      "column": 364,
+                      "line": 23
+                    },
+                    "snippet": "  21 |   if(role==='VIEWER'){\n  22 |    const insight=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'});await expect(insight).toContainText('Customer Service v17 · Clear next step');await expect(insight).toContainText('33.3% average · 8 applicable answers');await chooseView(page,'Questions');actions.push('View: Questions');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'});await click('Inspect evaluations →',row);await expect(page.getByRole('button',{name:/^Open evaluation /})).toHaveCount(8);await click('Back to Analytics');if(width===390)await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('questions');else await expect(page.locator('.analytics-tabs button[aria-pressed=true]')).toHaveText('Questions');conclusion='Lowest-average question: Clear next step, Customer Service v17, 33.3%, 8 applicable answers; exact cohort returned to Questions.'\n> 23 |   }else{await page.getByLabel('Dashboard range').selectOption('30');actions.push('Dashboard range: 30 days');const attention=page.getByRole('region',{name:'Attention required'});await expect(attention).toContainText('2 critical failure occurrences');actions.push('Inspect attention summary');await go('Policies');await expect(page.getByRole('heading',{level:1})).toHaveText('Interaction Policies');conclusion='Quality requires attention: two critical failure occurrences; Policies reached from visible Configuration disclosure.'}\n     |                                                                                                                                                                                                                                                                                                                                                                            ^\n  24 |   expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])\n  25 |  }\n  26 |  writeFileSync(`${evidence}/task-${role.toLowerCase()}-${width}.json`,JSON.stringify({goal:goals[role],role,viewport:page.viewportSize(),actions,actionCount:actions.length,wrongTurns:0,groupExpansions:expansions,completed:true,conclusion,route:page.url(),kind:'Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold.'},null,2));await page.screenshot({path:`${evidence}/task-${role.toLowerCase()}-${width}.png`})"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts",
+                        "column": 364,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { level: 1 })\nExpected: \u001b[32m\"\u001b[7mInteraction \u001b[27mPolicies\"\u001b[39m\nReceived: \u001b[31m\"Policies\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('heading', { level: 1 }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { level: 1 })\u001b[22m\n\u001b[2m    14 × locator resolved to <h1 tabindex=\"-1\">Policies</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Policies\"\u001b[22m\n\n\n  21 |   if(role==='VIEWER'){\n  22 |    const insight=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'});await expect(insight).toContainText('Customer Service v17 · Clear next step');await expect(insight).toContainText('33.3% average · 8 applicable answers');await chooseView(page,'Questions');actions.push('View: Questions');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'});await click('Inspect evaluations →',row);await expect(page.getByRole('button',{name:/^Open evaluation /})).toHaveCount(8);await click('Back to Analytics');if(width===390)await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('questions');else await expect(page.locator('.analytics-tabs button[aria-pressed=true]')).toHaveText('Questions');conclusion='Lowest-average question: Clear next step, Customer Service v17, 33.3%, 8 applicable answers; exact cohort returned to Questions.'\n> 23 |   }else{await page.getByLabel('Dashboard range').selectOption('30');actions.push('Dashboard range: 30 days');const attention=page.getByRole('region',{name:'Attention required'});await expect(attention).toContainText('2 critical failure occurrences');actions.push('Inspect attention summary');await go('Policies');await expect(page.getByRole('heading',{level:1})).toHaveText('Interaction Policies');conclusion='Quality requires attention: two critical failure occurrences; Policies reached from visible Configuration disclosure.'}\n     |                                                                                                                                                                                                                                                                                                                                                                            ^\n  24 |   expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])\n  25 |  }\n  26 |  writeFileSync(`${evidence}/task-${role.toLowerCase()}-${width}.json`,JSON.stringify({goal:goals[role],role,viewport:page.viewportSize(),actions,actionCount:actions.length,wrongTurns:0,groupExpansions:expansions,completed:true,conclusion,route:page.url(),kind:'Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold.'},null,2));await page.screenshot({path:`${evidence}/task-${role.toLowerCase()}-${width}.png`})\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts:23:364"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:08:54.350Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019d-role-navigation-accessibility/test-results/navigation-tasks-goal-only-ADMIN-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts",
+                    "column": 364,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-65a83369af779574fc8f",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only REVIEWER 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1267,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:00.790Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-d63cc1f094ff1368007e",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only AUTHOR 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1186,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:02.145Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-4b16ee7fc429b2b8c82b",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only VIEWER 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:03.337Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-0c41587a769d27241cb4",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        },
+        {
+          "title": "goal-only ADMIN 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6010,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { level: 1 })\nExpected: \u001b[32m\"\u001b[7mInteraction \u001b[27mPolicies\"\u001b[39m\nReceived: \u001b[31m\"Policies\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('heading', { level: 1 }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { level: 1 })\u001b[22m\n\u001b[2m    14 × locator resolved to <h1 tabindex=\"-1\">Policies</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Policies\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { level: 1 })\nExpected: \u001b[32m\"\u001b[7mInteraction \u001b[27mPolicies\"\u001b[39m\nReceived: \u001b[31m\"Policies\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('heading', { level: 1 }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { level: 1 })\u001b[22m\n\u001b[2m    14 × locator resolved to <h1 tabindex=\"-1\">Policies</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Policies\"\u001b[22m\n\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts:23:364",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts",
+                      "column": 364,
+                      "line": 23
+                    },
+                    "snippet": "  21 |   if(role==='VIEWER'){\n  22 |    const insight=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'});await expect(insight).toContainText('Customer Service v17 · Clear next step');await expect(insight).toContainText('33.3% average · 8 applicable answers');await chooseView(page,'Questions');actions.push('View: Questions');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'});await click('Inspect evaluations →',row);await expect(page.getByRole('button',{name:/^Open evaluation /})).toHaveCount(8);await click('Back to Analytics');if(width===390)await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('questions');else await expect(page.locator('.analytics-tabs button[aria-pressed=true]')).toHaveText('Questions');conclusion='Lowest-average question: Clear next step, Customer Service v17, 33.3%, 8 applicable answers; exact cohort returned to Questions.'\n> 23 |   }else{await page.getByLabel('Dashboard range').selectOption('30');actions.push('Dashboard range: 30 days');const attention=page.getByRole('region',{name:'Attention required'});await expect(attention).toContainText('2 critical failure occurrences');actions.push('Inspect attention summary');await go('Policies');await expect(page.getByRole('heading',{level:1})).toHaveText('Policies');conclusion='Quality requires attention: two critical failure occurrences; Policies reached from visible Configuration disclosure.'}\n     |                                                                                                                                                                                                                                                                                                                                                                            ^\n  24 |   expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])\n  25 |  }\n  26 |  writeFileSync(`${evidence}/task-${role.toLowerCase()}-${width}.json`,JSON.stringify({goal:goals[role],role,viewport:page.viewportSize(),actions,actionCount:actions.length,wrongTurns:0,groupExpansions:expansions,completed:true,conclusion,route:page.url(),kind:'Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold.'},null,2));await page.screenshot({path:`${evidence}/task-${role.toLowerCase()}-${width}.png`})"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts",
+                        "column": 364,
+                        "line": 23
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { level: 1 })\nExpected: \u001b[32m\"\u001b[7mInteraction \u001b[27mPolicies\"\u001b[39m\nReceived: \u001b[31m\"Policies\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('heading', { level: 1 }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { level: 1 })\u001b[22m\n\u001b[2m    14 × locator resolved to <h1 tabindex=\"-1\">Policies</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Policies\"\u001b[22m\n\n\n  21 |   if(role==='VIEWER'){\n  22 |    const insight=page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'});await expect(insight).toContainText('Customer Service v17 · Clear next step');await expect(insight).toContainText('33.3% average · 8 applicable answers');await chooseView(page,'Questions');actions.push('View: Questions');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'});await click('Inspect evaluations →',row);await expect(page.getByRole('button',{name:/^Open evaluation /})).toHaveCount(8);await click('Back to Analytics');if(width===390)await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('questions');else await expect(page.locator('.analytics-tabs button[aria-pressed=true]')).toHaveText('Questions');conclusion='Lowest-average question: Clear next step, Customer Service v17, 33.3%, 8 applicable answers; exact cohort returned to Questions.'\n> 23 |   }else{await page.getByLabel('Dashboard range').selectOption('30');actions.push('Dashboard range: 30 days');const attention=page.getByRole('region',{name:'Attention required'});await expect(attention).toContainText('2 critical failure occurrences');actions.push('Inspect attention summary');await go('Policies');await expect(page.getByRole('heading',{level:1})).toHaveText('Policies');conclusion='Quality requires attention: two critical failure occurrences; Policies reached from visible Configuration disclosure.'}\n     |                                                                                                                                                                                                                                                                                                                                                                            ^\n  24 |   expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])\n  25 |  }\n  26 |  writeFileSync(`${evidence}/task-${role.toLowerCase()}-${width}.json`,JSON.stringify({goal:goals[role],role,viewport:page.viewportSize(),actions,actionCount:actions.length,wrongTurns:0,groupExpansions:expansions,completed:true,conclusion,route:page.url(),kind:'Scripted agent replay of goal-only fictional tasks; no independent human research or action-count usability threshold.'},null,2));await page.screenshot({path:`${evidence}/task-${role.toLowerCase()}-${width}.png`})\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts:23:364"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:05.039Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019d-role-navigation-accessibility/test-results/navigation-tasks-goal-only-ADMIN-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/navigation-tasks.spec.ts",
+                    "column": 364,
+                    "line": 23
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "46d72eac11e82f109e76-8c4e3fff226ccb4c6420",
+          "file": "navigation-tasks.spec.ts",
+          "line": 10,
+          "column": 97
+        }
+      ]
+    },
+    {
+      "title": "role-navigation.spec.ts",
+      "file": "role-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ADMIN role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1266,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:11.432Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-529e347333d85062103c",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "ADMIN role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1240,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:12.790Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-d7b0b4c44741f102f4e4",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "AUTHOR role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:14.036Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-c33880cac5cd4588ba00",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "AUTHOR role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1214,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:15.290Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-622a937be9403c710ba3",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "REVIEWER role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1310,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:16.508Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-ff3a1556e1ee9951b82b",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "REVIEWER role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:17.823Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-b8419b3956dd0435f7e5",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "VIEWER role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1348,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:19.057Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-7256a2ebc0bc43b80cd7",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "VIEWER role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1230,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:20.410Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-8a3d57de8215e7e6bd8e",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "ADMIN shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11079,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:21.645Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-e3ccba257b3d628ec240",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "AUTHOR shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11138,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:32.729Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-0734b16ff5d450d722b7",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "REVIEWER shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11114,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:43.873Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-15659956ac0e1c63a142",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "VIEWER shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11111,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:09:54.993Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-354b80f3b181f6341c1a",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "keyboard disclosures remember session choices, active page wins, product tour preserves them",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1892,
+                  "error": {
+                    "message": "Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Open AQM', exact: true }) resolved to 2 elements:\n    1) <button class=\"outline-button\">Open AQM</button> aka getByRole('banner').getByRole('button', { name: 'Open AQM' })\n    2) <button class=\"outline-button\">Open AQM</button> aka getByRole('region', { name: 'Welcome to IPI AQM' }).getByRole('button', { name: 'Open AQM' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Open AQM', exact: true })\u001b[22m\n",
+                    "stack": "Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Open AQM', exact: true }) resolved to 2 elements:\n    1) <button class=\"outline-button\">Open AQM</button> aka getByRole('banner').getByRole('button', { name: 'Open AQM' })\n    2) <button class=\"outline-button\">Open AQM</button> aka getByRole('region', { name: 'Welcome to IPI AQM' }).getByRole('button', { name: 'Open AQM' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Open AQM', exact: true })\u001b[22m\n\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/role-navigation.spec.ts:48:147",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/role-navigation.spec.ts",
+                      "column": 147,
+                      "line": 48
+                    },
+                    "snippet": "  46 |  await navigateWorkspace(page,'Overview');await summary.focus();await page.keyboard.press('Space');await expect(configuration).not.toHaveAttribute('open','')\n  47 |  await navigateWorkspace(page,'Settings');await expect(configuration).not.toHaveAttribute('open','')\n> 48 |  await nav(page).getByRole('button',{name:'About / product tour',exact:true}).click();await page.getByRole('button',{name:'Open AQM',exact:true}).click();await expect(configuration).not.toHaveAttribute('open','')\n     |                                                                                                                                                   ^\n  49 |  await page.goto(`${app}?page=policies&policyId=missing`);await expect(configuration).toHaveAttribute('open','');await expect(nav(page).getByRole('button',{name:'Policies',exact:true})).toHaveAttribute('aria-current','page')\n  50 |  expect(state.errors).toEqual([])\n  51 |  }finally{await state.close()}"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/role-navigation.spec.ts",
+                        "column": 147,
+                        "line": 48
+                      },
+                      "message": "Error: locator.click: Error: strict mode violation: getByRole('button', { name: 'Open AQM', exact: true }) resolved to 2 elements:\n    1) <button class=\"outline-button\">Open AQM</button> aka getByRole('banner').getByRole('button', { name: 'Open AQM' })\n    2) <button class=\"outline-button\">Open AQM</button> aka getByRole('region', { name: 'Welcome to IPI AQM' }).getByRole('button', { name: 'Open AQM' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Open AQM', exact: true })\u001b[22m\n\n\n  46 |  await navigateWorkspace(page,'Overview');await summary.focus();await page.keyboard.press('Space');await expect(configuration).not.toHaveAttribute('open','')\n  47 |  await navigateWorkspace(page,'Settings');await expect(configuration).not.toHaveAttribute('open','')\n> 48 |  await nav(page).getByRole('button',{name:'About / product tour',exact:true}).click();await page.getByRole('button',{name:'Open AQM',exact:true}).click();await expect(configuration).not.toHaveAttribute('open','')\n     |                                                                                                                                                   ^\n  49 |  await page.goto(`${app}?page=policies&policyId=missing`);await expect(configuration).toHaveAttribute('open','');await expect(nav(page).getByRole('button',{name:'Policies',exact:true})).toHaveAttribute('aria-current','page')\n  50 |  expect(state.errors).toEqual([])\n  51 |  }finally{await state.close()}\n    at /private/tmp/aqm-v019d-role-navigation-accessibility/tests/role-navigation.spec.ts:48:147"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T20:10:06.110Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019d-role-navigation-accessibility/test-results/role-navigation-keyboard-d-dc14c-product-tour-preserves-them/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019d-role-navigation-accessibility/tests/role-navigation.spec.ts",
+                    "column": 147,
+                    "line": 48
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-7791eb6e8c065861efd5",
+          "file": "role-navigation.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 1440x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-8c6fbf12f04e74aaa5d2",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 1920x1080",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-4cd32cf0d30a40a12173",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-29a45e472fabb6e2c558",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 1440x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-8714ef302e27d3b2fb92",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "mobile Questions exact drill returns to same view and cohort; Coverage deep link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-17817254823ee4c1324b",
+          "file": "role-navigation.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "browser sample Analytics has seven discoverable views and selected URL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-a98abbb82f554fda635a",
+          "file": "role-navigation.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "browser history restores page, active reference group and Analytics view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-21c674ae5d03c6abbdf1",
+          "file": "role-navigation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "review contextual evidence and default My Reviews remain coherent on mobile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-33ab4dafe4318f3e1b2c",
+          "file": "role-navigation.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "unresolved access stays neutral and read-only; role arrival preserves route",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-504311b643861ff3b52e",
+          "file": "role-navigation.spec.ts",
+          "line": 80,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 3 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-03T20:08:49.115Z",
+    "duration": 78913.137,
+    "expected": 18,
+    "skipped": 9,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

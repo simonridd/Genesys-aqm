@@ -1,3 +1,4 @@
+import { chooseView } from './workspace-navigation'
 import { installOwnerGovernanceFixture } from './governanceFixture'
 import { test,expect } from '@playwright/test'
 import { aggregateCalibration } from '../src/domain/calibration'
@@ -75,12 +76,12 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await panel.screenshot({path:`/private/tmp/aqm-v07-review-${viewport.width}.png`})
     await nav.getByRole('button',{name:'Calibration',exact:true}).click()
     await expect(page.locator('.calibration-metrics')).toContainText('Evaluations reviewed1');await expect(page.getByLabel('Calibration source')).toHaveValue('genesys-cloud')
-    await page.getByRole('button',{name:'Confidence vs disagreement',exact:true}).click();await expect(page.getByRole('table')).toContainText('90%+')
+    await chooseView(page,'Confidence vs disagreement');await expect(page.getByRole('table')).toContainText('90%+')
     await page.screenshot({path:`/private/tmp/aqm-v07-confidence-${viewport.width}.png`,fullPage:true})
     await page.getByLabel('Calibration source').selectOption('synthetic');await expect(page.locator('.calibration-metrics')).toContainText('Evaluations reviewed1')
     await page.getByLabel('Calibration source').selectOption('all');await expect(page.locator('.calibration-metrics')).toContainText('Evaluations reviewed2')
     await page.getByLabel('Calibration source').selectOption('genesys-cloud')
-    await page.getByRole('button',{name:'Form / version'}).click()
+    await chooseView(page,'Form / version')
     await page.getByRole('row').filter({hasText:'General Customer Service v17'}).click();await expect(page.getByLabel('Calibration form @ version')).toHaveValue('general_service@17')
     await page.getByRole('row').filter({hasText:'Warm opening'}).click()
     await expect(page.getByRole('region',{name:'Question calibration drill-down'})).toContainText('1 reviewed · 0 agree / 1 disagree')

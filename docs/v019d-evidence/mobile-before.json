@@ -1,0 +1,82 @@
+[
+  {
+    "role": "ADMIN",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "visibleDestinationCount": 11,
+    "navHeight": 35,
+    "sidebarHeight": 144.515625,
+    "collapsedSecondaryGroups": 0,
+    "documentWidth": 390,
+    "bodyWidth": 390,
+    "navScrollWidth": 1220,
+    "navClientWidth": 360,
+    "fullyVisibleStripDestinations": [
+      "◌Overview",
+      "◷Evaluations",
+      "▥Analytics"
+    ]
+  },
+  {
+    "role": "AUTHOR",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "visibleDestinationCount": 11,
+    "navHeight": 35,
+    "sidebarHeight": 144.515625,
+    "collapsedSecondaryGroups": 0,
+    "documentWidth": 390,
+    "bodyWidth": 390,
+    "navScrollWidth": 1220,
+    "navClientWidth": 360,
+    "fullyVisibleStripDestinations": [
+      "◌Overview",
+      "◷Evaluations",
+      "▥Analytics"
+    ]
+  },
+  {
+    "role": "REVIEWER",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "visibleDestinationCount": 11,
+    "navHeight": 35,
+    "sidebarHeight": 144.515625,
+    "collapsedSecondaryGroups": 0,
+    "documentWidth": 390,
+    "bodyWidth": 390,
+    "navScrollWidth": 1220,
+    "navClientWidth": 360,
+    "fullyVisibleStripDestinations": [
+      "◌Overview",
+      "◷Evaluations",
+      "▥Analytics"
+    ]
+  },
+  {
+    "role": "VIEWER",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "visibleDestinationCount": 11,
+    "navHeight": 35,
+    "sidebarHeight": 144.515625,
+    "collapsedSecondaryGroups": 0,
+    "documentWidth": 390,
+    "bodyWidth": 390,
+    "navScrollWidth": 1220,
+    "navClientWidth": 360,
+    "fullyVisibleStripDestinations": [
+      "◌Overview",
+      "◷Evaluations",
+      "▥Analytics"
+    ]
+  }
+]
