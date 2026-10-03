@@ -33,5 +33,13 @@
     ]
   ],
   "independentBlindTester": false,
-  "physicalDeviceOrScreenReaderCertification": false
+  "physicalDeviceOrScreenReaderCertification": false,
+  "publicBrowser": {
+    "startTime": "2026-10-03T18:03:12.120Z",
+    "duration": 92843.571,
+    "expected": 62,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
 }

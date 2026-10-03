@@ -1,0 +1,66 @@
+{
+  "sourceSha": "8077c6997ef847cfd535cc275f51b5e6d0ead5b4",
+  "totalCollections": 25,
+  "matchingCollections": 24,
+  "changedCollections": {
+    "operationalHealth": {
+      "before": {
+        "count": 2,
+        "sha256": "a2380dfaeee70723b16bf4c9ba74e443a531dbd717c42ea21ccc5870d0dbef51",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-03T17:00:08.626807Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-03T17:00:08.332487Z",
+            "lastSuccessfulTickAt": "2026-10-03T17:00:08.222Z"
+          }
+        ]
+      },
+      "after": {
+        "count": 2,
+        "sha256": "d4d4efe67d8d38031dc7e5737bd90eb9cf9935c1fa3e8aca100c3bd390789af4",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-03T18:00:08.807204Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-03T18:00:08.455164Z",
+            "lastSuccessfulTickAt": "2026-10-03T18:00:08.336Z"
+          }
+        ]
+      }
+    }
+  },
+  "domainCollectionsUnchanged": true,
+  "runtimeComparison": {
+    "revision": true,
+    "image": true,
+    "runtimeConfigSha256": true,
+    "serviceIamSha256": true,
+    "schedulerConfigSha256": true,
+    "secrets": true
+  },
+  "allRuntimeConfigurationUnchanged": true,
+  "beforeRevision": "aqm-api-v019-e92f2d6",
+  "afterRevision": "aqm-api-v019-e92f2d6",
+  "schedulerRuntimeUnchanged": false,
+  "schedulerBefore": {
+    "lastAttemptTime": "2026-10-03T17:00:04.903819Z",
+    "scheduleTime": "2026-10-03T18:00:04.028877Z",
+    "status": {}
+  },
+  "schedulerAfter": {
+    "lastAttemptTime": "2026-10-03T18:00:04.825057Z",
+    "scheduleTime": "2026-10-03T19:00:04.028877Z",
+    "status": {}
+  },
+  "liveProviderCalls": {
+    "Jev": 0,
+    "Genesys": 0,
+    "notifications": 0
+  },
+  "productionReviewMutations": 0
+}

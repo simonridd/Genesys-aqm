@@ -114,7 +114,11 @@ Before Answer Set mean: 2.8/5. Authoring-scoped after mean: 4.0/5, with provisio
 
 ## Deployment and preservation
 
-Deployment records will be added after committing and publishing the exact tested frontend. Cloud Run must remain `aqm-api-v019-e92f2d6`. The archive rebuild verifies frontend inputs and all built bytes against the tested build; Pages verification compares the Git tree and every public asset byte. Production preservation compares count/hash-only snapshots across 25 collections, runtime configuration, image/revision, IAM, secrets and Scheduler configuration. Naturally occurring Scheduler runtime timestamps are reported separately.
+Tested/deployed frontend source: `8077c6997ef847cfd535cc275f51b5e6d0ead5b4`. Pages HEAD: `ab8e1328edd149fda9daf8f741b851976f23ffd0`. [Public frontend](https://simonridd.github.io/Genesys-aqm/). The immutable Git archive rebuild matches the tested working build byte-for-byte; all 12 public files and the Pages Git tree match that build exactly. Later commits contain deployment/evidence documentation only, with the frontend tree unchanged.
+
+Cloud Run remains `aqm-api-v019-e92f2d6`, with the same image digest. Runtime configuration, IAM, secrets metadata and Scheduler configuration hashes match. 24/25 production collection snapshots match exactly: forms, groups, Answer Sets/families, policies, evaluations and reviews are all unchanged. The only changed collection is `operationalHealth`, whose two existing records advance from the 17:00 to the 18:00 UTC hourly tick. Scheduler last-attempt/next-run timestamps advance correspondingly from 17:00/18:00 to 18:00/19:00. No task-induced production mutation is present in the comparison. [Preservation result](v019b-evidence/preservation.json).
+
+Final local validation: 607 deterministic tests in 63 files, 122 browser tests, six focus-race repeat cases, frontend build and backend typecheck all pass. Screenshots and keyboard checks cover all three required viewports. The published frontend also passes 62/62 authoring, Answer Set and V0.19A reviewer fixture tests. Every production-origin API request in these tests is intercepted into the fictional local API; provider methods throw. [Public run](v019b-evidence/public-browser.txt).
 
 No PR, merge or release tag. No production forms, groups, Answer Sets, policies, evaluations or reviews are changed for proof. No provider or notification calls are made by this task. No environment-builder-v2 files are changed.
 

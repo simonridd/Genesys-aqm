@@ -52,12 +52,27 @@ npx playwright test -c docs/v019b-evidence/playwright.config.ts \
 
 Intermediate raw logs are retained. They include fixture schema/rename mistakes, native-disclosure expectation updates and the focus race discovered during the larger matrix. Publication/group regression changes preserve domain assertions while opening the newly closed controls. Historical V0.18/V0.19 evidence is restored before committing; current outputs are kept here.
 
+Published command (62/62 passed):
+
+```sh
+AQM_BROWSER_URL=https://simonridd.github.io/Genesys-aqm/ \
+AQM_BROWSER_REPORT=docs/v019b-evidence/public-browser-results.json \
+AQM_AUTHORING_EVIDENCE=docs/v019b-evidence/public-authoring \
+AQM_ANSWER_EVIDENCE=docs/v019b-evidence/public-answer-regression \
+AQM_REVIEW_EVIDENCE=docs/v019b-evidence/public-review-regression \
+npx playwright test -c docs/v019b-evidence/playwright.config.ts \
+  tests/authoring-simplification.spec.ts tests/answer-sets.spec.ts \
+  tests/reviewer-continuity.spec.ts --timeout=25000
+```
+
+The public frontend run still uses intercepted fictional local API fixtures; it does not write to the production API. `public-browser.txt` and `public-browser-results.json` record the final results.
+
 ## Deployment / preservation
 
 - `committed-build.json`: immutable Git archive inputs and all build bytes match the tested frontend; no backend/domain/provider source changes.
-- `pages.json`: exact deployed Pages HEAD and all public assets match those build bytes.
+- `pages.json`: Pages HEAD `ab8e1328edd149fda9daf8f741b851976f23ffd0`; all 12 public files and Git tree match source `8077c6997ef847cfd535cc275f51b5e6d0ead5b4` byte-for-byte.
 - `before-collections.json` / `after-collections.json`: count/hash-only snapshots of 25 production collections.
 - `before-runtime.json` / `after-runtime.json`: revision/image/config/IAM/Scheduler/secrets hashes; no secret values or tokens saved.
-- `preservation.json`: comparison, with naturally occurring Scheduler timestamps separate.
+- `preservation.json`: 24/25 collection hashes match; only the two existing operational-health records reflect the natural 18:00 UTC tick. All authoring/evaluation/review/policy data and runtime configuration match. Scheduler timestamps are separate.
 
 No PR, merge or tag. No live Genesys, paid Jev, notification delivery, production authoring/review/evaluation mutation, Cloud Run deployment, runtime-config change or environment-builder-v2 change by this task.
