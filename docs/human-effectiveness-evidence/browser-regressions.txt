@@ -1,0 +1,15 @@
+
+Running 8 tests using 1 worker
+
+(node:31481) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440 (2.9s)
+  ✓  2 tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920 (3.1s)
+  ✓  3 tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390 (3.1s)
+  ✓  4 tests/showcase.spec.ts:90:1 › keyboard controls, reduced motion, browser back and refresh at every chapter (11.3s)
+  ✓  5 tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage (2.6s)
+  ✓  6 tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services (939ms)
+  ✓  7 tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path (2.7s)
+  ✓  8 tests/showcase.spec.ts:159:1 › semantic theme contrast, focus and no obscured tour controls (1.8s)
+
+  8 passed (29.0s)

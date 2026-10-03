@@ -1,0 +1,102 @@
+IPI AQM
+Connect Genesys Cloud
+Working prototype
+
+AUTOMATED QUALITY MANAGEMENT FOR GENESYS CLOUD
+
+More conversations understood.
+Less manual scoring.
+
+An IPI prototype combining Jev’s typed AI decisions with automated quality policies, transparent scoring and human review.
+
+Take the guided demo →
+Connect Genesys Cloud
+
+Five minutes · fictional data · no live requests
+
+From signal to understanding
+Fictional preview
+
+Resolution guidance needs a closer look.
+
+PREPARED AI ANSWER
+Clear next step
+HUMAN JUDGMENT
+Timeline not agreed
+
+One conversation. The same pinned form. A useful disagreement.
+
+See how calibration works →
+THE OPPORTUNITY
+Manual review should inform quality.
+Not be the only way to see it.
+
+Increase visibility across selected conversations, investigate the evidence, and use human judgment where it matters. Controlled coverage is a policy decision, not a claim of unlimited capacity.
+
+WHY THIS APPROACH
+Focused decisions. Transparent scoring. Human control.
+Ask focused questions
+
+Typed decisions evaluate specific criteria, with questions batched where their conditions permit.
+
+Keep scoring in code
+
+Weights, critical criteria and exact form versions make the score explainable.
+
+Learn from disagreement
+
+Human reviews preserve the original AI result and support calibration.
+
+Typed answers can still be wrong. Confidence is not measured correctness; calibrate against human judgments. Confidence reference · checked 2026-10-03.
+
+EXPLORE THE ECONOMICS
+A small model bill. An honest starting point.
+
+Browser-only planning estimates, not measured bills or total operating cost.
+
+Conversation volume
+Selected percentage
+Advanced assumptions
+ESTIMATED MODEL INPUT COST · USD
+$33.60
+
+100,000 selected conversations · 100,000 estimated form evaluations · 100,000 estimated AI requests.
+
+Preset: 100,000 selected conversations × 1 form × 1 request × 8,000 input tokens. Two requests per form doubles the estimate to $67.20.
+
+Average forms and requests can be fractional planning equivalents. Tokens include transcript and questions in each request; repeated transcript input across conditional waves counts again.
+
+Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.
+
+Excluded: transcription, Genesys licensing/retrieval, Cloud Run/Firestore/network, retries, taxes and human review. Not a throughput commitment.
+
+MORE THAN A MODEL DEMONSTRATION
+A connected quality workflow.
+Evaluate
+Inspect a transcript and prepared typed answers
+→
+Automate
+Inspect sampling and an exact pinned form
+→
+Investigate
+Follow an exact question cohort to its evidence
+→
+Review
+Compare a human disagreement without changing AI
+→
+Govern
+Inspect simulated schedules, SLA and audit
+→
+Prototype status & evidence
+Explore a pilot →
+SUGGESTED PILOT OUTLINE
+Start narrow. Calibrate. Decide with evidence.
+Choose one queue and a representative, permissioned conversation set.
+Agree criteria, weights and critical failures with quality reviewers.
+Compare typed decisions with human judgments and investigate disagreement.
+Measure retrieval, accuracy, cost and operational limits before expanding.
+
+No booking or contact details are collected.
+
+IPI AQM · Decision intelligence powered by Jev
+Connection settings →

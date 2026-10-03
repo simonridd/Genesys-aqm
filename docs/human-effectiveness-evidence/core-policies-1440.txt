@@ -1,0 +1,79 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Policies
+Connect Genesys Cloud
+CONFIGURATION
+Policies
+
+Local/demo policy sandbox · saved in this browser only. Connect in Settings for durable authoring.
+
+＋ New policy
+Status
+All
+Enabled
+Disabled
+Schedule
+All
+Manual
+Daily
+Weekly
+Forms
+All
+Has assigned forms
+No assigned forms
+Search
+6 results
+Name ↓
+
+Status
+
+Version
+
+Criteria
+
+Assigned forms
+
+Sampling
+
+Schedule
+
+Last modified
+
+Security Reviews	Enabled	v1	topic equals Security OR tag includes verification	Compliance & Identity Verification v1	All eligible	Manual	—
+Sales & Service	Enabled	v1	queue equals Sales OR topic equals Sales	Sales / Service Quality v1, General Customer Service v1	All eligible	Manual	—
+Customer Service Messaging	Enabled	v1	channel equals messaging AND queue equals Customer Service	General Customer Service v1, Compliance & Identity Verification v1	All eligible	Manual	—
+Cross-channel monitoring sample	Enabled	v1	channel equals messaging OR channel equals voice OR channel equals chat OR channel equals email	General Customer Service v1	50%	Manual	—
+Complaints	Enabled	v1	topic equals Complaint OR queue equals Complaints	Complaints Handling v1, General Customer Service v1	All eligible	Manual	—
+Cancellation & Retention	Enabled	v1	topic equals Cancellation OR queue equals Retention	Retention / Cancellation v1, General Customer Service v1	All eligible	Manual	—
+Legacy browser policy sandbox (local development)

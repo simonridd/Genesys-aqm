@@ -1,0 +1,148 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 3 of 7
+
+Define what good looks like
+
+A reusable care group and weighted, critical resolution criteria make the score explainable. Escalation only applies when Issue resolved is No.
+
+Back
+Next
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+Evaluation Forms
+Simulated · 2026-10-03
+Resolution & ownership v3
+
+Published fictional snapshot · group-weighted scoring · pass threshold 75%
+
+Read-only authored form. Conditional escalation applies only when Issue resolved is No.
+
+Question groups
+
+Group weights determine the overall score. Read-only published definition.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold70%
+Customer care
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Group scoring
+Use group scoring settings
+Group weight
+Minimum group score (%)
+Critical group
+
+A critical group must meet its minimum score for the evaluation to pass. Skipped groups are excluded.
+
+Reusable snapshot v2 · fictional-care
+
+01
+Acknowledged the impact
+Yes / No
+
+Did the agent acknowledge the customer’s difficulty?
+
+Weight 1 · Enabled · ID empathy
+
+↑
+↓
+Read only
+Add question
+Resolution
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Group scoring
+Use group scoring settings
+Group weight
+Minimum group score (%)
+Critical group
+
+A critical group must meet its minimum score for the evaluation to pass. Skipped groups are excluded.
+
+01
+Issue resolved
+Yes / No
+
+Was the customer’s stated issue resolved?
+
+Weight 1 · Enabled · ID resolved
+
+↑
+↓
+Read only
+02
+Clear next step
+Multiple choice
+
+Was a specific next step and realistic timeline agreed?
+
+Weight 2 · Enabled · ID next-step
+
+Clear next step (clear · credit 1)
+Action and timeline agreed.
+Timeline not agreed (unclear · credit 0)
+Action given without a clear timeline.
+↑
+↓
+Read only
+Add question
+Escalation
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+
+Run this group when Issue resolved in No
+
+Group scoring
+Use group scoring settings
+Group weight
+Minimum group score (%)
+Critical group
+
+A critical group must meet its minimum score for the evaluation to pass. Skipped groups are excluded.
+
+01
+Escalation owner identified
+Yes / No
+
+For unresolved cases, was a named owner or team identified?
+
+Weight 1 · Enabled · ID escalated
+
+↑
+↓
+Read only
+Add question

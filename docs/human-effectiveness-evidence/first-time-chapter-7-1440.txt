@@ -1,0 +1,46 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 7 of 7
+
+Operate and govern
+
+Schedules, review SLA, audit and delivery configuration make this more than a model demonstration. All statuses here are simulated; nothing is scheduled or sent.
+
+Back
+Finish tour
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+Governance
+Simulated · 2026-10-03
+Operate with explicit controls
+Scheduling
+Simulated daily, 08:00 Europe/London · next 4 Oct 2026 · not enabled on any server
+Review SLA
+Due soon window: 24 hours · escalation after 48 overdue hours · case state: DUE_SOON
+Alerts
+Prepared warning: resolution guidance needs calibration
+Delivery configuration
+Simulated, disabled destination · no external notification sent
+Retention and audit
+Read-only explanation; no purge or configuration write
+Scripted audit
+Why are live governance actions unavailable?
+Ready to explore a pilot?
+
+Agree a narrow scope, representative content and human calibration before validating accuracy, operating costs and capacity.
+
+Explore a pilot

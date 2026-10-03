@@ -1,0 +1,71 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 5 of 7
+
+Follow the evidence
+
+An exact form-version and question cohort keeps the investigation truthful. Follow Clear next step to the same fictional evaluation.
+
+Back
+Next
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+Analytics
+Simulated · 2026-10-03
+Quality → exact question cohort
+
+Form: Resolution & ownership v3 · 2 Oct 2026 · fictional voice data only.
+
+Search
+1 results
+Question ↓
+
+Evaluations
+
+Average credit
+
+Clear next step	24	79%
+Exact cohort · 24 evaluations
+
+fictional-resolution@3 · next-step · no unrelated records.
+
+Search
+24 results
+Evaluation	Form version	Next step answer
+fictional-evaluation-1	Resolution & ownership v3	Clear next step
+fictional-evaluation-2	Resolution & ownership v3	Clear next step
+fictional-evaluation-3	Resolution & ownership v3	Timeline not agreed
+fictional-evaluation-4	Resolution & ownership v3	Clear next step
+fictional-evaluation-5	Resolution & ownership v3	Clear next step
+fictional-evaluation-6	Resolution & ownership v3	Clear next step
+fictional-evaluation-7	Resolution & ownership v3	Clear next step
+fictional-evaluation-8	Resolution & ownership v3	Timeline not agreed
+fictional-evaluation-9	Resolution & ownership v3	Clear next step
+fictional-evaluation-10	Resolution & ownership v3	Clear next step
+fictional-evaluation-11	Resolution & ownership v3	Clear next step
+fictional-evaluation-12	Resolution & ownership v3	Clear next step
+fictional-evaluation-13	Resolution & ownership v3	Timeline not agreed
+fictional-evaluation-14	Resolution & ownership v3	Clear next step
+fictional-evaluation-15	Resolution & ownership v3	Clear next step
+fictional-evaluation-16	Resolution & ownership v3	Clear next step
+fictional-evaluation-17	Resolution & ownership v3	Clear next step
+fictional-evaluation-18	Resolution & ownership v3	Timeline not agreed
+fictional-evaluation-19	Resolution & ownership v3	Clear next step
+fictional-evaluation-20	Resolution & ownership v3	Clear next step
+← Previous
+Page 1 of 2
+Next →

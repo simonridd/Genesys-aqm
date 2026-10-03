@@ -1,0 +1,52 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 6 of 7
+
+Keep people in control
+
+The scripted human reviewer disagrees about the timeline. Save and complete in demo memory; the original AI answer stays unchanged.
+
+Back
+Next
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+My reviews
+Simulated · 2026-10-03
+My reviews → fictional-evaluation-1
+
+Fictional quality lead · REVIEW REQUESTED · DUE_SOON · due 3 Oct 2026, 17:00 Europe/London
+
+Same pinned Resolution & ownership v3. Original AI result remains immutable.
+
+AI SCORE
+100%
+HUMAN PROGRESS PREVIEW
+—
+EXACT AGREEMENT
+0 / 3
+ABSOLUTE SCORE GAP
+—
+PREPARED AI ANSWER
+Clear next step
+SCRIPTED HUMAN JUDGMENT
+Timeline not agreed
+
+“Later” is not an agreed timeline.
+
+Save scripted disagreement
+Complete review
+Demo review audit (1 events)

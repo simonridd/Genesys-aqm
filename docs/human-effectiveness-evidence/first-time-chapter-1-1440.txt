@@ -1,0 +1,133 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 1 of 7
+
+Understand the operation
+
+Quality, controlled coverage and review workload tell us where to investigate. These numbers are derived from 24 prepared records, not live monitoring.
+
+Back
+Next
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+Overview
+Simulated · 2026-10-03
+Attention required
+Action needed
+0 errors
+0 escalated reviews
+0 overdue reviews
+1 warning
+
+Unavailable · Delivery is simulated; nothing was sent.
+
+WARNING
+Resolution guidance needs calibration
+Open review →
+Operational health
+Automation
+Unavailable
+Genesys
+Unavailable
+Jev
+Unavailable
+Scheduler
+Unavailable
+Notifications
+Unavailable
+Review SLA
+Due soon
+
+Unavailable · Demo: no live health check performed.
+
+Unavailable · Delivery is simulated; nothing was sent.
+
+Quality & coverage
+Last 7 days
+Evaluations
+24 →
+Average quality
+82% →
+Pass rate
+50%
+Critical failures
+15 →
+82%
+10-02 · 24 evaluations
+
+Limited history · 24 evaluations in this period.
+
+Coverage
+Eligible
+48
+Sampled
+24
+Content available
+24
+Evaluated
+24
+Failed
+0
+
+Sampling coverage 50% · Evaluation coverage 50%
+
+Coverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.
+
+Explore coverage →
+Review workload
+Current state
+Open
+1 →
+Due soon
+1 →
+Overdue
+0 →
+Escalated
+0 →
+Unassigned
+1 →
+My review queue →
+All review work →
+Automation
+
+1 completed · 0 partial · 0 failed · 0 running in the last 7 days
+
+Last automated run
+2 Oct, 13:00
+Support resolution monitoring
+simulated scheduled
+24 evaluations
+completed
+
+Latest successful scheduled execution.
+
+Upcoming scheduled work
+Support resolution monitoring
+Simulated DAILY · 08:00 Europe/London
+Next due 4 Oct, 08:00
+Last success —
+View policy →
+Recent runs
+2 Oct, 13:00
+Support resolution monitoring
+simulated scheduled
+24 evaluations
+completed
+Evaluation Forms →
+Policies →
+Open alerts →
+Settings →

@@ -1,0 +1,98 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Analytics
+Connect Genesys Cloud
+This browser
+Server analytics
+QUALITY SIGNALS
+Analytics
+
+Browser-local production records and run observations. Server analytics require a separate complete aggregation.
+
+Load demo analytics data
+Remove prepared demo evaluations
+Clear local evaluation and run history
+Show
+Real only
+Synthetic only
+All sources
+0 Genesys Jev results
+·
+0 synthetic / other records
+From
+To
+Policy
+All policies
+Form version
+All versions
+Agent
+All agents
+Queue
+All queues
+Channel
+All channels
+Trigger
+All
+Manual
+Scheduled
+
+Production evaluations only. Coverage uses run observations and follows source, date and policy filters; agent, queue and form filters apply to quality only.
+
+Quality
+Coverage
+Agents
+Queues
+Forms
+Groups
+Questions
+EVALUATIONS
+0
+CONVERSATIONS
+0
+AVERAGE SCORE
+—
+PASS RATE
+—
+REVIEW REQUESTED
+0
+REVIEWED
+0
+CRITICAL FAILURES
+0
+—
+Quality trends start here
+
+No evaluations for this source filter yet. Choose another source or complete an evaluation.
+
+Show all sources

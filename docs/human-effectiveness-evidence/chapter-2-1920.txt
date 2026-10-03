@@ -1,0 +1,44 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 2 of 7
+
+Decide what to evaluate
+
+One queue, a deterministic 50% sample and the exact v3 form define this example. Coverage is controlled; runtime limits remain unchanged.
+
+Back
+Next
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+Policies
+Simulated · 2026-10-03
+Support resolution monitoring v2
+
+Controlled fictional voice sampling.
+
+Criteria
+Queue equals Fictional customer service
+Deterministic sample
+50% · fictional-quality seed · 24 of 48 eligible conversations
+Pinned form snapshot
+Resolution & ownership v3 →
+Schedule
+Simulated daily at 08:00 Europe/London; next 4 Oct 2026
+
+Read-only. No policy execution or configuration save is available.
+
+Why is running unavailable?

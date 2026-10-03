@@ -1,0 +1,272 @@
+IPI AQM
+Automated Quality Management
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+Workspace / Forms
+Connect Genesys Cloud
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+6 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Browser evaluations
+
+Browser avg score
+
+Last modified
+
+Sales / Service Quality	PUBLISHED	v1	5	1	0	—	—
+Retention / Cancellation	PUBLISHED	v1	5	1	0	—	—
+General Customer Service	PUBLISHED	v1	9	5	0	—	—
+Customer Service - AI Scoring	PUBLISHED	v1	9	0	0	—	—
+Compliance & Identity Verification	PUBLISHED	v1	5	2	0	—	—
+Complaints Handling	PUBLISHED	v1	5	1	0	—	—
+PUBLISHED · VERSION 1
+General Customer Service
+Close details
+Export JSON
+Duplicate as new form
+TEST FORM
+Edit as new version
+Retire
+
+Published version is read-only. Create a new version to edit.
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Warm opening
+Understanding the issue
+Accurate information
+Empathy
+Ownership
+Resolution
+Clear next steps
+Professionalism
+Appropriate close
+Question groups
+
+Question weights determine the overall score. Read-only published definition.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+General
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Group scoring
+Use group scoring settings
+01
+Warm opening
+Yes / No
+
+Did the agent greet the customer and offer help at the start of the conversation?
+
+Weight 1 · Enabled · ID greeting
+
+↑
+↓
+Read only
+02
+Understanding the issue
+Ordered score
+
+How effectively did the agent establish and acknowledge the customer’s actual issue?
+
+Weight 1.2 · Enabled · ID understanding
+
+Poor (poor · credit 0)
+Absent or counterproductive behaviour.
+Needs improvement (needs_improvement · credit 0.33)
+Some appropriate behaviour, with clear gaps.
+Good (good · credit 0.67)
+Appropriate and effective behaviour with minor gaps.
+Excellent (excellent · credit 1)
+Consistently clear, effective and considerate behaviour.
+↑
+↓
+Read only
+03
+Accurate information
+Yes / No
+
+Were the agent’s statements consistent with the facts available in the conversation, without an apparent factual error?
+
+Weight 1.5 · Enabled · ID accuracy
+
+↑
+↓
+Read only
+04
+Empathy
+Ordered score
+
+How well did the agent recognize the customer’s situation and respond with appropriate empathy?
+
+Weight 1 · Enabled · ID empathy
+
+Poor (poor · credit 0)
+Absent or counterproductive behaviour.
+Needs improvement (needs_improvement · credit 0.33)
+Some appropriate behaviour, with clear gaps.
+Good (good · credit 0.67)
+Appropriate and effective behaviour with minor gaps.
+Excellent (excellent · credit 1)
+Consistently clear, effective and considerate behaviour.
+↑
+↓
+Read only
+05
+Ownership
+Yes / No
+
+Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+
+Weight 1 · Enabled · ID ownership
+
+↑
+↓
+Read only
+06
+Resolution
+Multiple choice
+
+What is the best description of the issue outcome by the end of the conversation?
+
+Weight 1.5 · Enabled · ID resolution
+
+Fully resolved (fully_resolved · credit 1)
+The customer’s issue was resolved in the conversation.
+Partially resolved (partially_resolved · credit 0.5)
+Meaningful progress, but further action remains.
+Unresolved (unresolved · credit 0)
+The issue remained unresolved with no meaningful progress.
+Not applicable (not_applicable · credit unscored)
+The conversation does not present a resolvable issue.
+↑
+↓
+Read only
+07
+Clear next steps
+Yes / No
+
+Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+
+Weight 1 · Enabled · ID next_steps
+
+↑
+↓
+Read only
+08
+Professionalism
+Ordered score
+
+How consistently professional, clear and courteous was the agent’s communication?
+
+Weight 1 · Enabled · ID professionalism
+
+Poor (poor · credit 0)
+Absent or counterproductive behaviour.
+Needs improvement (needs_improvement · credit 0.33)
+Some appropriate behaviour, with clear gaps.
+Good (good · credit 0.67)
+Appropriate and effective behaviour with minor gaps.
+Excellent (excellent · credit 1)
+Consistently clear, effective and considerate behaviour.
+↑
+↓
+Read only
+09
+Appropriate close
+Yes / No
+
+Did the agent close the conversation politely and make clear that the exchange was ending?
+
+Weight 1 · Enabled · ID closing
+
+↑
+↓
+Read only
+Add question
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 9 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history

@@ -1,0 +1,85 @@
+{
+  "baseline": "31893cafd79068b652895767aa9a7219b47cfc23",
+  "branch": "codex/aqm-human-effectiveness-review",
+  "deployedSite": "https://simonridd.github.io/Genesys-aqm/",
+  "started": "2026-10-03T11:13:52.746Z",
+  "ended": "2026-10-03T11:16:46.179Z",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "pages": 78,
+  "reviewChecks": 84,
+  "failedChecks": [],
+  "primaryNetworkRequests": 564,
+  "forbiddenPrimaryRequests": [],
+  "primaryErrors": [],
+  "extraForbiddenRequests": [],
+  "extraErrors": [],
+  "stableForbiddenRequests": [],
+  "settledScreenshotPages": [
+    {
+      "name": "welcome-1440",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "opacity": "1"
+    },
+    {
+      "name": "chapter-1-1440",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "opacity": "1"
+    },
+    {
+      "name": "welcome-1920",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "opacity": "1"
+    },
+    {
+      "name": "chapter-1-1920",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "opacity": "1"
+    },
+    {
+      "name": "welcome-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "opacity": "1"
+    },
+    {
+      "name": "chapter-1-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "opacity": "1"
+    }
+  ],
+  "pitchElapsedSeconds": 341.459,
+  "imposedPitchDwellSeconds": 260,
+  "minSampledContrastRatio": 5.064543194303686,
+  "renderedLeakageLines": 99,
+  "build": "passed",
+  "unitTestsPassed": 13,
+  "existingShowcaseBrowserTestsPassed": 8,
+  "showcaseStorageChecksPassed": 21,
+  "scores": {
+    "humanEffectiveness": 3,
+    "valueProposition": 3,
+    "informationQuality": 3,
+    "easeOfUse": 2,
+    "visualQuality": 4,
+    "trust": 4,
+    "cleanliness": 2,
+    "welcome": 4,
+    "calculator": 3,
+    "demo": 2,
+    "continuity": 2
+  },
+  "average": 2.909090909090909,
+  "readiness": "C \u2014 NEEDS ONE FOCUSED IMPROVEMENT PASS"
+}

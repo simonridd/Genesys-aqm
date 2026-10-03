@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/",
+    "method": "GET",
+    "allow": true
+  },
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+    "method": "GET",
+    "allow": true
+  },
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+    "method": "GET",
+    "allow": true
+  },
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-DQN2OQV3.js",
+    "method": "GET",
+    "allow": true
+  },
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+    "method": "GET",
+    "allow": true
+  },
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-C06L3MQ7.js",
+    "method": "GET",
+    "allow": true
+  },
+  {
+    "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-CJ3o3EFT.js",
+    "method": "GET",
+    "allow": true
+  }
+]

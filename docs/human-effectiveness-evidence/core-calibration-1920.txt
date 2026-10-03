@@ -1,0 +1,57 @@
+IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Calibration
+Connect Genesys Cloud
+HUMAN + AI
+Calibration
+
+Compare completed human reviews with the original AI evaluations.
+
+Calibration source
+Real Genesys only
+Synthetic only
+All sources
+Uploaded only
+Unknown provenance
+Calibration form @ version
+Calibration agent
+Calibration queue
+Calibration from
+Calibration to
+
+Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs.
+
+Connect to view calibration
+
+Use Settings to sign in with your authorized Genesys identity.

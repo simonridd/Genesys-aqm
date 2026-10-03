@@ -1,0 +1,115 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+Exit demo
+
+FIVE-MINUTE PRODUCT STORY
+
+Chapter 4 of 7
+
+Inspect a conversation
+
+Jamie regains access, but “later” is not a timeline. Reveal prepared typed answers, then question the ambiguous next-step judgment. No inference occurs.
+
+Back
+Next
+Skip chapter
+Restart
+
+Demo clock: 3 Oct 2026, 13:00 Europe/London
+
+Read-only authored examples; only the scripted human review changes in memory. Reload reseeds this story.
+
+Open AQM →
+
+Explicitly leaves demo and mounts real application services.
+
+FICTIONAL CUSTOMER SERVICE TEAM
+Conversation review
+Simulated · 2026-10-03
+JT
+CONVERSATION TRANSCRIPT
+Jamie Taylor with Alex Morgan
+2 Oct 2026 · voice · fictional-case-01
+Completed
+QUEUE
+Fictional customer service
+TOPIC
+Resolution guidance
+MESSAGES
+6
+2 Oct 2026
+S
+System
+System
+11:00
+Fictional transcript prepared for the guided demo.
+J
+Jamie Taylor
+11:00
+The reset link will not work. I need access before my next shift.
+A
+Alex Morgan
+11:00
+I understand how frustrating that is. Let us try a fresh reset link.
+J
+Jamie Taylor
+11:01
+That worked. How long until my team settings return?
+A
+Alex Morgan
+11:01
+They should return later. Try signing in again.
+J
+Jamie Taylor
+11:02
+All right, I will try. Thanks.
+End of conversation
+·
+6 messages
+Show example evaluation
+Prepared example — no AI request made
+Resolution & ownership v3
+
+AI score 100% · Pass · actual AI requests: 0.
+
+Illustrated execution: one batched wave answers care and resolution; a conditional follow-up wave is only needed if escalation applies. This case skips escalation.
+
+Groups · Group weighted
+Customer care · 100%
+
+Pass · Minimum 75% · Overall weight 33%
+
+Acknowledged the impact · Yes · 100%
+
+Resolution · 100%
+
+Pass · Critical group · Minimum 75% · Overall weight 67%
+
+Issue resolved · Yes · 100%
+
+Clear next step · Clear next step · 100%
+
+Escalation · Not applicable
+
+Skipped · Overall weight 0%
+
+Escalation owner identified · Skipped · Not applicable
+
+Search
+4 results
+Question ↓
+
+Type
+
+Answer
+
+Confidence / Yes probability
+
+Credit
+
+Issue resolved	noul	Yes	90%	100%
+Escalation owner identified	noul	Skipped	—	—
+Clear next step	choice	Clear next step	56%	100%
+Acknowledged the impact	noul	Yes	90%	100%
+
+Typed answers can be wrong. Confidence is not measured correctness.

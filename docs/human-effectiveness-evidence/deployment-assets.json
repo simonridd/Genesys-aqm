@@ -1,0 +1,38 @@
+[
+  {
+    "asset": "index-DUliRyEq.js",
+    "deployedSha256": "7a9e318292382565b2207f621a60bea2724c52e2914fec39c443fdcddc406fce",
+    "localSha256": "7a9e318292382565b2207f621a60bea2724c52e2914fec39c443fdcddc406fce",
+    "match": true
+  },
+  {
+    "asset": "Welcome-DQN2OQV3.js",
+    "deployedSha256": "db134c17650b8e3e682829c40181c5da996597f71df0bb3336f83649cbeffe68",
+    "localSha256": "db134c17650b8e3e682829c40181c5da996597f71df0bb3336f83649cbeffe68",
+    "match": true
+  },
+  {
+    "asset": "Demo-C06L3MQ7.js",
+    "deployedSha256": "a366bdb3c1f579800ebe5888e9dff5e396e5c8033debe53c58583ef8eb31d519",
+    "localSha256": "a366bdb3c1f579800ebe5888e9dff5e396e5c8033debe53c58583ef8eb31d519",
+    "match": true
+  },
+  {
+    "asset": "App-B29qKHDC.js",
+    "deployedSha256": "8bd653e1d5c1c70993be0d7c153bf983e31c1871de3502886f1bf9a412d3223d",
+    "localSha256": "8bd653e1d5c1c70993be0d7c153bf983e31c1871de3502886f1bf9a412d3223d",
+    "match": true
+  },
+  {
+    "asset": "index-DkNzR_c7.css",
+    "deployedSha256": "619bfac7d013d56e2e54052bfdd809e86c117d44750e0b08381d0cbc2e8dd774",
+    "localSha256": "619bfac7d013d56e2e54052bfdd809e86c117d44750e0b08381d0cbc2e8dd774",
+    "match": true
+  },
+  {
+    "asset": "IPIlogo.svg",
+    "deployedSha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+    "localSha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+    "match": true
+  }
+]

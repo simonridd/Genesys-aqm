@@ -1,0 +1,40 @@
+IPI AQM
+Automated Quality Management
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+⚙
+Settings
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+Workspace / Overview
+Connect Genesys Cloud
+OPERATIONAL HOME
+Overview
+
+Quality, coverage and work requiring attention.
+
+Durable operational data
+Dashboard range
+7 days
+30 days
+Refresh
+Connect to Genesys Cloud
+
+Connect to Genesys Cloud to view operational AQM health.
+
+Connection settings →

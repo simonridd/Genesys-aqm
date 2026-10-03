@@ -1,0 +1,168 @@
+{
+  "pages": [
+    {
+      "name": "welcome-1440",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "opacity": "1"
+    },
+    {
+      "name": "chapter-1-1440",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "opacity": "1"
+    },
+    {
+      "name": "welcome-1920",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "opacity": "1"
+    },
+    {
+      "name": "chapter-1-1920",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "opacity": "1"
+    },
+    {
+      "name": "welcome-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "opacity": "1"
+    },
+    {
+      "name": "chapter-1-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "opacity": "1"
+    }
+  ],
+  "network": [
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-DQN2OQV3.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-C06L3MQ7.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-CJ3o3EFT.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-DQN2OQV3.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-C06L3MQ7.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-CJ3o3EFT.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-DQN2OQV3.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DUliRyEq.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DkNzR_c7.css",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-C06L3MQ7.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-CJ3o3EFT.js",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allow": true
+    }
+  ]
+}
