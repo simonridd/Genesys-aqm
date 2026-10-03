@@ -10,3 +10,7 @@ All new captures live here; original review evidence is unchanged.
 - `publication.json`: exact source SHA, Pages HEAD and byte comparisons for every built public asset.
 
 No real authentication, Genesys/Jev inference, production API or notification request is part of these checks. The core screenshots inspect disconnected public destinations; product tests use mocked identities/services. Timed dwell measures harness pacing, not actual human comprehension or runtime capacity.
+
+`browser-final-showcase.txt` records 35 final local showcase/first-use checks. `deployed-showcase.txt` records all nine showcase checks against verified Pages. `deployed-review/` and `deployed-extra/` repeat review/keyboard/pacing on that deployment. `browser-regressions-final.txt` consolidates the corrected 109 important tests; it excludes only the two public-root assertions separately reproduced on canonical main in `baseline-overview.txt`. Their failures are retained in the initial `browser-regressions.txt`.
+
+The long deployed review repeated a static App-module timeout at the mobile handoff. Its 52-state partial record retains all 87 passing showcase checks plus the transport errors. This is disclosed, not counted as a clean full deployed run. `deployed-handoff.txt` verifies the handoff in fresh contexts at all three sizes; `mobile-core.cjs`, `deployed-mobile-core.txt` and `deployed-mobile-core/` record the remaining eleven public mobile states with zero errors/forbidden requests. `local-handoff.txt` validates the strengthened viewport regression locally.

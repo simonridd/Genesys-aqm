@@ -1,0 +1,330 @@
+{
+  "pages": [
+    {
+      "name": "product-transition-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=conversations",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Conversations\nConnect Genesys Cloud\nConversation source\nFictional sample data · no credentials\nSynthetic\nGenesys Cloud\nSYNTHETIC CONVERSATION LIBRARY\nConversations\n\nFictional scenarios across queues, channels and service outcomes.\n\nTable\nCards\nQueue\nAll queues\nCustomer Service\nOrders\nBilling\nComplaints\nRetention\nTechnical Support\nSales\nChannel\nAll channels\nmessaging\nvoice\nSearch\n19 results\nTimestamp ↓\n\t\nConversation ID\n\t\nSource\n\t\nChannel\n\t\nAgent\n\t\nQueue\n\t\nDirection\n\t\nTopic\n\t\nTranscript\n\t\nEvaluations\n\n29 Sept 2026\tconv-delivery-002\tSynthetic\tmessaging\tJordan Lee\tOrders\tinbound\tDelayed delivery\tAvailable\t0\n29 Sept 2026\tconv-billing-001\tSynthetic\tmessaging\tAlex Morgan\tCustomer Service\tinbound\tBilling\tAvailable\t0\n17 Sept 2026\tsyn-sales-service\tSynthetic\tvoice\tAlex Morgan\tSales\tinbound\tSales\tAvailable\t0\n16 Sept 2026\tsyn-compliant-unresolved\tSynthetic\tvoice\tTaylor Quinn\tCustomer Service\tinbound\tBilling\tAvailable\t0\n15 Sept 2026\tsyn-correct-poor-experience\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tReturns\tAvailable\t0\n14 Sept 2026\tsyn-empathy-process-gap\tSynthetic\tmessaging\tSam Rivera\tCustomer Service\tinbound\tBilling\tAvailable\t0\n13 Sept 2026\tsyn-incomplete-resolution\tSynthetic\tmessaging\tJordan Lee\tTechnical Support\tinbound\tTechnical\tAvailable\t0\n12 Sept 2026\tsyn-vulnerable-customer\tSynthetic\tvoice\tPriya Shah\tBilling\tinbound\tBilling\tAvailable\t0\n11 Sept 2026\tsyn-transfer\tSynthetic\tvoice\tTaylor Quinn\tTechnical Support\tinbound\tTechnical\tAvailable\t0\n10 Sept 2026\tsyn-repeat-contact\tSynthetic\tvoice\tSam Rivera\tCustomer Service\tinbound\tDelivery\tAvailable\t0\n9 Sept 2026\tsyn-verification-failure\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tSecurity\tAvailable\t0\n8 Sept 2026\tsyn-verification-success\tSynthetic\tmessaging\tAlex Morgan\tCustomer Service\tinbound\tSecurity\tAvailable\t0\n7 Sept 2026\tsyn-retention-attempt\tSynthetic\tvoice\tJordan Lee\tRetention\tinbound\tCancellation\tAvailable\t0\n6 Sept 2026\tsyn-cancellation\tSynthetic\tmessaging\tPriya Shah\tRetention\tinbound\tCancellation\tAvailable\t0\n5 Sept 2026\tsyn-complaint\tSynthetic\tvoice\tSam Rivera\tComplaints\tinbound\tComplaint\tAvailable\t0\n4 Sept 2026\tsyn-billing-dispute\tSynthetic\tvoice\tAlex Morgan\tBilling\tinbound\tBilling\tAvailable\t0\n3 Sept 2026\tsyn-poor-service\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tBilling\tAvailable\t0\n2 Sept 2026\tsyn-mediocre-service\tSynthetic\tmessaging\tJordan Lee\tCustomer Service\tinbound\tDelivery\tAvailable\t0\n1 Sept 2026\tsyn-excellent-service\tSynthetic\tmessaging\tPriya Shah\tCustomer Service\tinbound\tDelivery\tAvailable\t0"
+    },
+    {
+      "name": "core-automation-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=automation",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Overview\nConnect Genesys Cloud\nOPERATIONAL HOME\nOverview\n\nQuality, coverage and work requiring attention.\n\nDurable operational data\nDashboard range\n7 days\n30 days\nRefresh\nConnect to Genesys Cloud\n\nConnect to Genesys Cloud to view operational AQM health.\n\nConnection settings →"
+    },
+    {
+      "name": "core-evaluations-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Evaluations\nConnect Genesys Cloud\nQUALITY\nEvaluations\n\nProduction results with form snapshots and provider provenance.\n\nMy reviews\nAll evaluations\nTeam review workload\nHistory\nServer\nThis browser\nReview status\nAll\nNOT REVIEWED\nREVIEW REQUESTED\nIN REVIEW\nREVIEWED\nAssignment\nAll\nUnassigned\nAssigned\nAssigned to me\nSLA state\nAll states\nDue soon\nOverdue\nEscalated\nDue\nAll\nOverdue\nDue today\nDue next 7 days\nNo due date\nForm ID @ version\nAgent\nQueue\nChannel\nResult\nAll\nPass\nFail\nQuestion failures\nFrom\nTo\nPolicy ID\nSource\nAll\nGenesys Cloud\nSynthetic\nUploaded\nTrigger\nAll\nManual\nScheduled\nCritical failure\nAll\nYes\nNo\nRefresh\n\nConnect to Genesys Cloud in Settings to view server evaluations.\n\nServer filters scan a bounded window of up to 500 records per request. Use Next to continue the search.\n\nCalibration sample\nBulk assignment\nSearch\n0 results on this page\nEvaluated ↓\n\t\nSelect\n\t\nConversation\n\t\nAgent\n\t\nQueue\n\t\nForm\n\t\nSource\n\t\nAI score\n\t\nReview\n\t\nHuman score\n\t\nAgreement\n\t\nAssigned to\n\t\nDue\n\t\nReviewer\n\t\nReviewed at\n\nNo production evaluations on this page.\n\nFirst page\nNext server page →"
+    },
+    {
+      "name": "core-analytics-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=analytics",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Analytics\nConnect Genesys Cloud\nThis browser\nServer analytics\nQUALITY SIGNALS\nAnalytics\n\nBrowser-local production records and run observations. Server analytics require a separate complete aggregation.\n\nLoad demo analytics data\nRemove prepared demo evaluations\nClear local evaluation and run history\nShow \nReal only\nSynthetic only\nAll sources\n0 Genesys Jev results\n·\n0 synthetic / other records\nFrom\nTo\nPolicy\nAll policies\nForm version\nAll versions\nAgent\nAll agents\nQueue\nAll queues\nChannel\nAll channels\nTrigger\nAll\nManual\nScheduled\n\nProduction evaluations only. Coverage uses run observations and follows source, date and policy filters; agent, queue and form filters apply to quality only.\n\nQuality\nCoverage\nAgents\nQueues\nForms\nGroups\nQuestions\nEVALUATIONS\n0\nCONVERSATIONS\n0\nAVERAGE SCORE\n—\nPASS RATE\n—\nREVIEW REQUESTED\n0\nREVIEWED\n0\nCRITICAL FAILURES\n0\n—\nQuality trends start here\n\nNo evaluations for this source filter yet. Choose another source or complete an evaluation.\n\nShow all sources"
+    },
+    {
+      "name": "core-calibration-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=calibration",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Calibration\nConnect Genesys Cloud\nHUMAN + AI\nCalibration\n\nCompare completed human reviews with the original AI evaluations.\n\nCalibration source\nReal Genesys only\nSynthetic only\nAll sources\nUploaded only\nUnknown provenance\nCalibration form @ version\nCalibration agent\nCalibration queue\nCalibration from\nCalibration to\n\nDiagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs.\n\nConnect to view calibration\n\nUse Settings to sign in with your authorized Genesys identity."
+    },
+    {
+      "name": "core-forms-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=forms",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Forms\nConnect Genesys Cloud\nCONFIGURATION\nEvaluation Forms\n\nPolicies pin published versions. Drafts can be tested without entering production analytics.\n\nTable\nCards\nImport form\n＋ New form\nStatus\nAll statuses\nDraft\nTesting\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nAssigned to policy\nUnassigned\nSearch\n6 results\nForm name ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nAssigned policies\n\t\nBrowser evaluations\n\t\nBrowser avg score\n\t\nLast modified\n\nSales / Service Quality\tPUBLISHED\tv1\t5\t1\t0\t—\t—\nRetention / Cancellation\tPUBLISHED\tv1\t5\t1\t0\t—\t—\nGeneral Customer Service\tPUBLISHED\tv1\t9\t5\t0\t—\t—\nCustomer Service - AI Scoring\tPUBLISHED\tv1\t9\t0\t0\t—\t—\nCompliance & Identity Verification\tPUBLISHED\tv1\t5\t2\t0\t—\t—\nComplaints Handling\tPUBLISHED\tv1\t5\t1\t0\t—\t—\nPUBLISHED · VERSION 1\nGeneral Customer Service\nClose details\nExport JSON\nDuplicate as new form\nTEST FORM\nEdit as new version\nRetire\n\nPublished version is read-only. Create a new version to edit.\n\nForm name\nDescription\nPass score\n70%\nCritical questions\nWarm opening\nUnderstanding the issue\nAccurate information\nEmpathy\nOwnership\nResolution\nClear next steps\nProfessionalism\nAppropriate close\nQuestion groups\n\nQuestion weights determine the overall score. Read-only published definition.\n\nAdd group\nAdd reusable group\nOverall scoring\nQuestion weighted\nGroup weighted\n\nQuestion weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.\n\nYes threshold65%\nGeneral\n↑\n↓\nDuplicate group\nDelete group\nGroup name\nGroup description\nGroup scoring\nUse group scoring settings\n01\nWarm opening\nYes / No\n\nDid the agent greet the customer and offer help at the start of the conversation?\n\nWeight 1 · Enabled · ID greeting\n\n↑\n↓\nRead only\n02\nUnderstanding the issue\nOrdered score\n\nHow effectively did the agent establish and acknowledge the customer’s actual issue?\n\nWeight 1.2 · Enabled · ID understanding\n\nPoor (poor · credit 0)\nAbsent or counterproductive behaviour.\nNeeds improvement (needs_improvement · credit 0.33)\nSome appropriate behaviour, with clear gaps.\nGood (good · credit 0.67)\nAppropriate and effective behaviour with minor gaps.\nExcellent (excellent · credit 1)\nConsistently clear, effective and considerate behaviour.\n↑\n↓\nRead only\n03\nAccurate information\nYes / No\n\nWere the agent’s statements consistent with the facts available in the conversation, without an apparent factual error?\n\nWeight 1.5 · Enabled · ID accuracy\n\n↑\n↓\nRead only\n04\nEmpathy\nOrdered score\n\nHow well did the agent recognize the customer’s situation and respond with appropriate empathy?\n\nWeight 1 · Enabled · ID empathy\n\nPoor (poor · credit 0)\nAbsent or counterproductive behaviour.\nNeeds improvement (needs_improvement · credit 0.33)\nSome appropriate behaviour, with clear gaps.\nGood (good · credit 0.67)\nAppropriate and effective behaviour with minor gaps.\nExcellent (excellent · credit 1)\nConsistently clear, effective and considerate behaviour.\n↑\n↓\nRead only\n05\nOwnership\nYes / No\n\nDid the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?\n\nWeight 1 · Enabled · ID ownership\n\n↑\n↓\nRead only\n06\nResolution\nMultiple choice\n\nWhat is the best description of the issue outcome by the end of the conversation?\n\nWeight 1.5 · Enabled · ID resolution\n\nFully resolved (fully_resolved · credit 1)\nThe customer’s issue was resolved in the conversation.\nPartially resolved (partially_resolved · credit 0.5)\nMeaningful progress, but further action remains.\nUnresolved (unresolved · credit 0)\nThe issue remained unresolved with no meaningful progress.\nNot applicable (not_applicable · credit unscored)\nThe conversation does not present a resolvable issue.\n↑\n↓\nRead only\n07\nClear next steps\nYes / No\n\nWhere further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.\n\nWeight 1 · Enabled · ID next_steps\n\n↑\n↓\nRead only\n08\nProfessionalism\nOrdered score\n\nHow consistently professional, clear and courteous was the agent’s communication?\n\nWeight 1 · Enabled · ID professionalism\n\nPoor (poor · credit 0)\nAbsent or counterproductive behaviour.\nNeeds improvement (needs_improvement · credit 0.33)\nSome appropriate behaviour, with clear gaps.\nGood (good · credit 0.67)\nAppropriate and effective behaviour with minor gaps.\nExcellent (excellent · credit 1)\nConsistently clear, effective and considerate behaviour.\n↑\n↓\nRead only\n09\nAppropriate close\nYes / No\n\nDid the agent close the conversation politely and make clear that the exchange was ending?\n\nWeight 1 · Enabled · ID closing\n\n↑\n↓\nRead only\nAdd question\nISOLATED SANDBOX\nTest form\n\nTry this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.\n\nExecution\nLegacy browser sandbox (development)\nDurable server sandbox (recommended)\nSource\nSynthetic\nGenesys Cloud\nSelection\nMost recent\nDeterministic random\nManual selection\nConversations\n\n5 conversations · 9 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests\n\nThe server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.\n\nTest formRefresh test history"
+    },
+    {
+      "name": "core-policies-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=policies",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Policies\nConnect Genesys Cloud\nCONFIGURATION\nPolicies\n\nLocal/demo policy sandbox · saved in this browser only. Connect in Settings for durable authoring.\n\n＋ New policy\nStatus\nAll\nEnabled\nDisabled\nSchedule\nAll\nManual\nDaily\nWeekly\nForms\nAll\nHas assigned forms\nNo assigned forms\nSearch\n6 results\nName ↓\n\t\nStatus\n\t\nVersion\n\t\nCriteria\n\t\nAssigned forms\n\t\nSampling\n\t\nSchedule\n\t\nLast modified\n\nSecurity Reviews\tEnabled\tv1\ttopic equals Security OR tag includes verification\tCompliance & Identity Verification v1\tAll eligible\tManual\t—\nSales & Service\tEnabled\tv1\tqueue equals Sales OR topic equals Sales\tSales / Service Quality v1, General Customer Service v1\tAll eligible\tManual\t—\nCustomer Service Messaging\tEnabled\tv1\tchannel equals messaging AND queue equals Customer Service\tGeneral Customer Service v1, Compliance & Identity Verification v1\tAll eligible\tManual\t—\nCross-channel monitoring sample\tEnabled\tv1\tchannel equals messaging OR channel equals voice OR channel equals chat OR channel equals email\tGeneral Customer Service v1\t50%\tManual\t—\nComplaints\tEnabled\tv1\ttopic equals Complaint OR queue equals Complaints\tComplaints Handling v1, General Customer Service v1\tAll eligible\tManual\t—\nCancellation & Retention\tEnabled\tv1\ttopic equals Cancellation OR queue equals Retention\tRetention / Cancellation v1, General Customer Service v1\tAll eligible\tManual\t—\nLegacy browser policy sandbox (local development)"
+    },
+    {
+      "name": "core-groups-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=groups",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Groups\nConnect Genesys Cloud\nCONFIGURATION\nQuestion Groups\n\nVersioned reusable templates. Forms retain independent snapshots.\n\nImport reusable group\nNew reusable question group\n\nLibrary edits are saved in this browser. Connect to the automation service for durable storage.\n\nStatus\nAll statuses\nDraft\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nUsed\nUnused\nSearch\n4 results\nName ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nUsed by forms\n\t\nLast modified\n\nResolution & Next Steps\tPUBLISHED\tv1\t3\t0\t10/1/2026\nIdentity & Security Verification\tPUBLISHED\tv1\t3\t0\t10/1/2026\nCustomer Experience / Empathy\tPUBLISHED\tv1\t3\t0\t10/1/2026\nCall Closing\tPUBLISHED\tv1\t2\t0\t10/1/2026"
+    },
+    {
+      "name": "core-settings-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=settings&settingsSection=connection",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Settings\nConnect Genesys Cloud\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nConnection\n\nConnect Genesys Cloud to browse real interactions and use saved AQM configuration.\n\nG\nREAL ORGANIZATIONAL DATA\nGenesys Cloud\nDisconnected\nGenesys Cloud sign-in\n\nAuthentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.\n\nRegion\nEU (Ireland)\nEU (Frankfurt)\nUS East\nUS West\nAustralia\nJapan\nOAuth Client ID\n\nRedirect URI: https://simonridd.github.io/Genesys-aqm/\n\nRegion: EU (Ireland)\n\nConnect to Genesys Cloud"
+    },
+    {
+      "name": "core-conversations-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=conversations",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Conversations\nConnect Genesys Cloud\nConversation source\nFictional sample data · no credentials\nSynthetic\nGenesys Cloud\nSYNTHETIC CONVERSATION LIBRARY\nConversations\n\nFictional scenarios across queues, channels and service outcomes.\n\nTable\nCards\nQueue\nAll queues\nCustomer Service\nOrders\nBilling\nComplaints\nRetention\nTechnical Support\nSales\nChannel\nAll channels\nmessaging\nvoice\nSearch\n19 results\nTimestamp ↓\n\t\nConversation ID\n\t\nSource\n\t\nChannel\n\t\nAgent\n\t\nQueue\n\t\nDirection\n\t\nTopic\n\t\nTranscript\n\t\nEvaluations\n\n29 Sept 2026\tconv-delivery-002\tSynthetic\tmessaging\tJordan Lee\tOrders\tinbound\tDelayed delivery\tAvailable\t0\n29 Sept 2026\tconv-billing-001\tSynthetic\tmessaging\tAlex Morgan\tCustomer Service\tinbound\tBilling\tAvailable\t0\n17 Sept 2026\tsyn-sales-service\tSynthetic\tvoice\tAlex Morgan\tSales\tinbound\tSales\tAvailable\t0\n16 Sept 2026\tsyn-compliant-unresolved\tSynthetic\tvoice\tTaylor Quinn\tCustomer Service\tinbound\tBilling\tAvailable\t0\n15 Sept 2026\tsyn-correct-poor-experience\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tReturns\tAvailable\t0\n14 Sept 2026\tsyn-empathy-process-gap\tSynthetic\tmessaging\tSam Rivera\tCustomer Service\tinbound\tBilling\tAvailable\t0\n13 Sept 2026\tsyn-incomplete-resolution\tSynthetic\tmessaging\tJordan Lee\tTechnical Support\tinbound\tTechnical\tAvailable\t0\n12 Sept 2026\tsyn-vulnerable-customer\tSynthetic\tvoice\tPriya Shah\tBilling\tinbound\tBilling\tAvailable\t0\n11 Sept 2026\tsyn-transfer\tSynthetic\tvoice\tTaylor Quinn\tTechnical Support\tinbound\tTechnical\tAvailable\t0\n10 Sept 2026\tsyn-repeat-contact\tSynthetic\tvoice\tSam Rivera\tCustomer Service\tinbound\tDelivery\tAvailable\t0\n9 Sept 2026\tsyn-verification-failure\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tSecurity\tAvailable\t0\n8 Sept 2026\tsyn-verification-success\tSynthetic\tmessaging\tAlex Morgan\tCustomer Service\tinbound\tSecurity\tAvailable\t0\n7 Sept 2026\tsyn-retention-attempt\tSynthetic\tvoice\tJordan Lee\tRetention\tinbound\tCancellation\tAvailable\t0\n6 Sept 2026\tsyn-cancellation\tSynthetic\tmessaging\tPriya Shah\tRetention\tinbound\tCancellation\tAvailable\t0\n5 Sept 2026\tsyn-complaint\tSynthetic\tvoice\tSam Rivera\tComplaints\tinbound\tComplaint\tAvailable\t0\n4 Sept 2026\tsyn-billing-dispute\tSynthetic\tvoice\tAlex Morgan\tBilling\tinbound\tBilling\tAvailable\t0\n3 Sept 2026\tsyn-poor-service\tSynthetic\tmessaging\tCasey Brown\tCustomer Service\tinbound\tBilling\tAvailable\t0\n2 Sept 2026\tsyn-mediocre-service\tSynthetic\tmessaging\tJordan Lee\tCustomer Service\tinbound\tDelivery\tAvailable\t0\n1 Sept 2026\tsyn-excellent-service\tSynthetic\tmessaging\tPriya Shah\tCustomer Service\tinbound\tDelivery\tAvailable\t0"
+    },
+    {
+      "name": "core-evaluate-390",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluate",
+      "text": "IPI AQM\nAutomated Quality Management\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\n◇\nPolicies\n▤\nEvaluation Forms\n▦\nQuestion Groups\n⚙\nSettings\n☷\nConversations\n◈\nConversation review\nAbout / product tour\nWorkspace / Evaluate\nConnect Genesys Cloud\nConversation source\nFictional sample data · no credentials\nSynthetic\nGenesys Cloud\nAUTOMATED QUALITY MANAGEMENT\nConversation review\n\nInspect the selected conversation, policy matches, and applicable forms.\n\n← Back to conversations\nBrowse 19 samples →\nCURRENT CONVERSATION\nDuplicate payment\nSYNTHETIC SAMPLE\nChange conversation\n↑ Upload JSON\nMP\nCONVERSATION TRANSCRIPT\nMaya Patel with Alex Morgan\n29 Sept 2026 · messaging · conv-billing-001\nClosed\nQUEUE\nCustomer Service\nTOPIC\nBilling\nDIRECTION\ninbound\nMESSAGES\n11\n29 Sept 2026\nM\nMaya Patel\n09:00\nHi, I think I've been charged twice for my September plan. Could you take a look?\nA\nAlex Morgan\n09:00\nHi Maya, you're through to Alex. I'm sorry to hear about the duplicate charge. I'll help you check it.\nA\nAlex Morgan\n09:00\nBefore we discuss your account, could you confirm the last four digits of the phone number on it?\nM\nMaya Patel\n09:00\nSure, 4821.\nA\nAlex Morgan\n09:01\nThank you, that's verified. I can see two payments of £29 on 27 September. One was a duplicate and has not yet been refunded.\nM\nMaya Patel\n09:01\nThat's a relief. I was worried I'd have to dispute it with my bank.\nA\nAlex Morgan\n09:01\nI understand the concern. I've submitted a refund for the extra £29 payment. It should return to the same card within five working days.\nM\nMaya Patel\n09:01\nGreat, will I receive a confirmation?\nA\nAlex Morgan\n09:02\nYes. A confirmation email will be sent today. If the refund hasn't appeared after five working days, reply to that email and quote reference REF-2048. Is there anything else I can help with?\nM\nMaya Patel\n09:02\nNo, that's everything. Thanks for sorting it out.\nA\nAlex Morgan\n09:02\nYou're welcome, Maya. Thanks for getting in touch, and have a good day.\nEnd of conversation\n·\n11 messages\nPOLICY ROUTING\n2 matches\nApplicable evaluations\nCustomer Service Messaging\nchannel equals messaging AND queue equals Customer Service\nCross-channel monitoring sample\nchannel equals messaging\nGeneral Customer Service\n9 questions · v1 · up to 1 Jev requests\nEvaluate →\nCompliance & Identity Verification\n5 questions · v1 · up to 1 Jev requests\nEvaluate →\nManual form selection\nGeneral Customer Service\nCompliance & Identity Verification\nComplaints Handling\nRetention / Cancellation\nSales / Service Quality\nCustomer Service - AI Scoring\n\n1 form evaluation · up to 1 Jev requests\n\n✦ Evaluate selected form →\n\nProduction selection includes only published, valid forms . Draft and testing forms can be tested in the isolated sandbox.\n\nTest a draft/testing form\n\nConnect Genesys Cloud to evaluate this conversation.\n\n◎\nOne result per form\n\nEach production evaluation is saved to the automation service with its exact published form and routing provenance."
+    }
+  ],
+  "network": [
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&step=5",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-rkdEfwYT.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=automation",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=analytics",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=calibration",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=forms",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=policies",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=groups",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=settings",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=conversations",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluate",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DsjV_ENo.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-tAcYAVOn.css",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-BdAkqwDi.js",
+      "allowed": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "allowed": true
+    }
+  ],
+  "errors": []
+}

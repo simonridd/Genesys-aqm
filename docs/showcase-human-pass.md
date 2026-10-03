@@ -84,3 +84,23 @@ Validation totals, timed result and publication identity are recorded below afte
 The two reproduced baseline assertions predate this pass: public-root existing-session entry expects Overview, and disconnected-root entry expects Conversation review. Canonical main deliberately routes the untouched public root to Welcome without reading protected product credentials. Explicit live routes and the authenticated About → Open AQM path still pass. No authenticated-core behaviour was changed to resolve these incompatible old assertions.
 
 No production scale, selected digital retrieval, live notification delivery, inference correctness or total operating cost is proven by this review. Actual colleague sessions remain the next human validation step. Reusable Answer Sets remains roadmap only.
+
+### Pages publication
+
+Frontend published from tested source **`e59ad0b3be56b70d7455b4c63ee7c21c7d0e4381`**. Pages HEAD: **`b458894e4018ea3db8ba51967b0662faa733ffa6`**. [Public showcase](https://simonridd.github.io/Genesys-aqm/).
+
+`publication.json` verifies **all 12 public files byte-for-byte**, including the entry document, JS/CSS bundles and IPI logo. Remote main remains `31893cafd79068b652895767aa9a7219b47cfc23`. No Cloud Run/backend deployment occurred. All nine deployed showcase tests pass; deployed review and timed results are recorded in their dedicated evidence folders. Proof-only follow-up commits do not alter the published source/build.
+
+### Deployed timing
+
+The final Pages pitch, including four scroll positions through each chapter during explanation dwell, completed in **271.977 seconds (4:32.0)**. This meets the <5:00 target, while landing two seconds outside the preferred 4:30 ceiling. It retains the same 260-second dwell allowance as the original 5:41.5 review and uses normal sequential UI actions. Local preview measured 4:21.9. Network/navigation and scrolling account for the deployed overhead; neither result measures actual human comprehension. Zero forbidden network attempts or page errors occurred in the completed timed run.
+
+The initial deployed review encountered a static App-module download timeout at the mobile handoff. Its log is retained in `deployed-review-transient-timeout.txt`; the dedicated handoff tests passed locally and on Pages. The successful repeated review is reported separately, without treating a retried transport failure as production-capacity proof.
+
+### Final deployed review evidence and transport limitation
+
+The repeated deployed harness completed **all 87 showcase/navigation/calculator/isolation checks**, capturing 52 states (all Welcome/calculator/chapter/pilot states and desktop product views). It again hit a static App-bundle timeout when leaving the mobile tour after the long multi-viewport capture run. The partial data is retained as `deployed-review/review-data-partial.json`; it contains the two transport/lazy-import errors and no forbidden network attempts. This is not described as a clean 63-state deployed run.
+
+A separate fresh-context handoff regression passed at **all three viewports** on Pages, and `deployed-mobile-core/` completed the remaining **11 mobile handoff/product states**, with 67 permitted static requests, zero errors and zero forbidden attempts. Together the completed captures cover the requested 63 states, with the repeated long-run transport limitation disclosed. The full 63-state local review remains clean (87 checks, 495 static requests). No runtime/provider calls were made to recover the capture.
+
+The final consolidated preservation run has **109 passing browser tests**, excluding only the two baseline assertions separately reproduced on canonical main. All 35 final local showcase/first-use tests pass; the additional viewport-specific handoff tests pass locally and deployed. All eleven current showcase cases have passing coverage on Pages (the original nine-case run plus the expanded three-viewport handoff regression, which replaces its former single case).

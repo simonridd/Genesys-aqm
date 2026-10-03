@@ -1,0 +1,42 @@
+{
+  "canonicalBase": "31893cafd79068b652895767aa9a7219b47cfc23",
+  "testedSource": "e59ad0b3be56b70d7455b4c63ee7c21c7d0e4381",
+  "pagesHead": "b458894e4018ea3db8ba51967b0662faa733ffa6",
+  "all12AssetsEqual": true,
+  "localReview": {
+    "states": 63,
+    "checks": 87,
+    "requests": 495,
+    "errors": []
+  },
+  "deployedReview": {
+    "states": 52,
+    "checks": 87,
+    "transportErrors": [
+      {
+        "phase": "core-transition",
+        "width": 390,
+        "console": "Failed to load resource: net::ERR_TIMED_OUT"
+      },
+      {
+        "phase": "core-transition",
+        "width": 390,
+        "message": "Failed to fetch dynamically imported module: https://simonridd.github.io/Genesys-aqm/assets/App-BL9sZQGX.js"
+      }
+    ],
+    "forbiddenRequests": []
+  },
+  "freshMobileCore": {
+    "states": 11,
+    "errors": [],
+    "forbiddenRequests": []
+  },
+  "deployedPitchSeconds": 271.977,
+  "imposedDwellSeconds": 260,
+  "verdict": "B",
+  "rubricAverage": 4,
+  "deterministicTests": 566,
+  "consolidatedPassingBrowserTests": 109,
+  "baselineFailuresReproduced": 2,
+  "noBackendOrProductionDomainChanges": true
+}

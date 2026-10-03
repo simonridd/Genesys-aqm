@@ -97,15 +97,20 @@ test('keyboard, self-guided links, reduced motion, history, restart and refresh'
   await expect(page).toHaveURL(/page=welcome/)
   expect(denied.requests).toEqual([]); expect(denied.errors).toEqual([])
 })
-test('disconnected prototype handoff leads to sample conversations', async ({ page }) => {
-  await page.goto(`${app}?page=demo&step=5`)
-  await page.getByText('More options', { exact: true }).click()
-  await page.getByRole('button', { name: 'Explore the prototype →', exact: true }).click()
-  await expect(page).toHaveURL(/page=conversations/)
-  await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible()
-  await expect(page.locator('.demo-indicator')).toHaveCount(0)
-  await expect(page.locator('.page-content')).toContainText('Synthetic')
-})
+for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 1080 }, { width: 390, height: 844 }]) {
+  test(`disconnected prototype handoff leads to sample conversations at ${viewport.width}`, async ({ browser }) => {
+    const context = await browser.newContext({ viewport }), page = await context.newPage(), denied = await isolate(page)
+    await page.goto(`${app}?page=demo&step=5`)
+    await page.getByText('More options', { exact: true }).click()
+    await page.getByRole('button', { name: 'Explore the prototype →', exact: true }).click()
+    await expect(page).toHaveURL(/page=conversations/)
+    await expect(page.getByRole('navigation', { name: 'Primary navigation' })).toBeVisible()
+    await expect(page.locator('.demo-indicator')).toHaveCount(0)
+    await expect(page.locator('.page-content')).toContainText('Synthetic')
+    expect(denied.requests).toEqual([]); expect(denied.errors).toEqual([])
+    await context.close()
+  })
+}
 test('demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage', async ({ page }) => {
   await usabilityFixture(page)
   await page.getByRole('button', { name: 'About / product tour', exact: true }).click()

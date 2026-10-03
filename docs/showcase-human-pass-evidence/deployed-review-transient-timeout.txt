@@ -1,0 +1,13 @@
+locator.waitFor: Timeout 45000ms exceeded.
+Call log:
+[2m  - waiting for locator('.welcome,.demo-layout,.sidebar').first() to be visible[22m
+[2m    40 × locator resolved to hidden <div class="demo-layout">…</div>[22m
+
+    at capture (/Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-showcase-human-pass/docs/showcase-human-pass-evidence/review.cjs:5:100)
+    at /Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-showcase-human-pass/docs/showcase-human-pass-evidence/review.cjs:18:205 {
+  log: [
+    "  - waiting for locator('.welcome,.demo-layout,.sidebar').first() to be visible",
+    '    40 × locator resolved to hidden <div class="demo-layout">…</div>'
+  ],
+  name: 'TimeoutError'
+}

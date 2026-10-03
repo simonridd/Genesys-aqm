@@ -1,0 +1,10 @@
+
+Running 3 tests using 1 worker
+
+(node:79257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440 (1.8s)
+  ✓  2 tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920 (1.8s)
+  ✓  3 tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390 (1.8s)
+
+  3 passed (5.7s)
