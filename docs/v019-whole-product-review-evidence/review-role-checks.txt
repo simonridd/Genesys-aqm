@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+(node:80351) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/3] tests/whole-product-review.spec.ts:74:50 › role AUTHOR actual API fixture
+[2/3] tests/whole-product-review.spec.ts:74:50 › role REVIEWER actual API fixture
+[3/3] tests/whole-product-review.spec.ts:74:50 › role VIEWER actual API fixture
+  3 passed (6.3s)

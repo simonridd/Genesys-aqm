@@ -1,0 +1,88 @@
+Workspace / Groups
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Question Groups
+
+Versioned reusable templates. Forms retain independent snapshots.
+
+Import reusable group
+New reusable question group
+Saved in AQM · 5 saved groups
+Refresh saved groups
+Status
+All statuses
+Draft
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Used
+Unused
+Search
+5 results
+Name ↓
+
+Status
+
+Version
+
+Questions
+
+Used by forms
+
+Last modified
+
+Resolution standards	DRAFT	v1	1	0	10/2/2026
+Resolution & Next Steps	PUBLISHED	v1	3	0	10/1/2026
+Identity & Security Verification	PUBLISHED	v1	3	0	10/1/2026
+Customer Experience / Empathy	PUBLISHED	v1	3	0	10/1/2026
+Call Closing	PUBLISHED	v1	2	0	10/1/2026
+Local drafts & starter examples · 4 groups
+
+Resolution standards v1 saved as DRAFT to the durable library.
+
+Resolution standards · v1 · DRAFT
+Close details
+Export JSON
+Save changes
+Publish reusable question group
+
+Saved 1:00:02 PM
+
+Reusable question group name
+Reusable question group description
+View history
+Reusable questions
+
+Question weights determine the overall score. Read-only published definition.
+
+Yes threshold65%
+Resolution standards
+Group name
+Group description
+Group scoring
+Use group scoring settings
+01
+Was the resolution clear?
+Multiple choice
+
+Assess whether the resolution was explained clearly.
+
+Weight 1 · Enabled · ID question_1790942400935
+
+Clear (clear · credit 1)
+Clear resolution clarity.
+Mostly clear (mostly_clear · credit 0.75)
+Mostly clear resolution clarity.
+Partly clear (partly_clear · credit 0.5)
+Partly clear resolution clarity.
+Unclear (unclear · credit 0)
+Unclear resolution clarity.
+↑
+↓
+Read only
+Add question

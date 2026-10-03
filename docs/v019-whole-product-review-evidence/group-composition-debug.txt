@@ -1,0 +1,29 @@
+
+Running 1 test using 1 worker
+
+(node:8982) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy
+  1) tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy
+
+    TimeoutError: locator.selectOption: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('.asset-detail').getByLabel('Question type', { exact: true })
+
+
+      34 | test('Question Group containing Answer Set is used as independent form copy',async({page})=>{
+      35 |  test.setTimeout(90000);const f=await fixture(page,'AUTHOR');try{
+    > 36 |   await nav(page,'Question Groups').click();await page.getByRole('button',{name:'New reusable question group',exact:true}).click();const group=page.locator('.asset-detail');await group.getByLabel('Reusable question group name',{exact:true}).fill('Resolution standards');await group.getByRole('button',{name:'Edit',exact:true}).click();await group.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await group.getByLabel('Instructions / question',{exact:true}).fill('Assess whether the resolution was explained clearly.');await group.getByLabel('Question type',{exact:true}).selectOption('choice');await capture(page,'group-composition-editor');await group.getByRole('button',{name:'Use reusable answer set'}).click();await group.getByRole('button',{name:'Use Resolution clarity v1'}).click();await group.getByRole('button',{name:'Save changes',exact:true}).click();await group.getByRole('button',{name:'Publish reusable question group'}).click();await capture(page,'group-with-answer-set')
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+      37 |   await nav(page,'Evaluation Forms').click();await page.getByRole('button',{name:'＋ New form',exact:true}).click();const form=page.locator('.form-detail');await form.getByRole('button',{name:'Add reusable group'}).click();await capture(page,'group-picker-composition');await form.getByRole('button',{name:/Add Resolution standards/}).click();await form.getByRole('button',{name:'Save changes',exact:true}).click();await capture(page,'form-group-answer-set-composition');await expect(form).toContainText('Reusable snapshot v1');
+      38 |  }finally{await f.close()}
+      39 | })
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:36:592
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-tasks-4f8d3-ed-as-independent-form-copy/error-context.md
+
+
+  1 failed
+    tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy

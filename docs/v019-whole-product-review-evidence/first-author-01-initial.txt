@@ -1,0 +1,147 @@
+Workspace / Overview
+AUTHOR
+Jev managed securely by automation service
+OPERATIONAL HOME
+Overview
+
+Quality, coverage and work requiring attention.
+
+Updated 13:00:00 · Europe/London
+Dashboard range
+7 days
+30 days
+Refresh
+Set up automated quality monitoring
+
+Progress from your saved configuration.
+
+✓ Publish an evaluation form
+○ Create an enabled policy assigning that form →
+○ Configure and enable a daily or weekly schedule →
+✓ Wait for / inspect the first automated run
+Attention required
+Action needed
+2 errors
+1 escalated review
+1 overdue review
+1 warning
+0 failed notification deliveries (24h)
+ERROR
+Scheduled run failed
+Open run →
+ERROR
+Review escalated
+Open review →
+WARNING
+Scheduler activity is stale
+Open alert →
+Operational health
+Automation
+Attention
+Genesys
+Unverified
+Jev
+Error
+Scheduler
+Healthy
+Notifications
+Healthy
+Review SLA
+Escalated
+
+API healthy · Firestore available · Last scheduler tick 2 Oct, 12:00. Genesys and Jev reflect durable run evidence.
+
+Notifications: 0 pending · 0 failed (24h) · Last success —
+
+Quality & coverage
+Last 7 days
+Evaluations
+8 →
+Average quality
+79% →
+Pass rate
+100%
+Critical failures
+0 →
+78%
+09-30 · 1 evaluations
+79%
+10-01 · 7 evaluations
+
+Limited history · 8 evaluations in this period.
+
+Coverage
+Eligible
+20
+Sampled
+10
+Content available
+6
+Evaluated
+4
+Failed
+3
+
+Sampling coverage 50% · Evaluation coverage 20%
+
+Coverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.
+
+Explore coverage →
+Review workload
+Current state
+Open
+7 →
+Due soon
+1 →
+Overdue
+1 →
+Escalated
+1 →
+Unassigned
+1 →
+All review work →
+Automation
+Run a policy now
+
+1 completed · 0 partial · 1 failed · 0 running in the last 7 days
+
+Last automated run
+1 Oct, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+
+Latest successful scheduled execution.
+
+Upcoming scheduled work
+Daily Voice Customer Service AQM
+DAILY
+Next due 3 Oct, 02:00
+Last success 1 Oct, 03:00
+View/Edit policy →
+Daily Voice Customer Service AQM
+WEEKLY
+Next due 5 Oct, 02:00
+Last success —
+View/Edit policy →
+Recent runs
+2 Oct, 09:00
+Daily Voice Customer Service AQM
+manual
+0 evaluations · 3 failed
+failed
+1 Oct, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+15 Sept, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+Evaluation Forms →
+Policies →
+Run a policy now
+Detailed alerts & run operations

@@ -1,0 +1,32 @@
+
+Running 9 tests using 1 worker
+
+(node:78946) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/9] tests/whole-product-review.spec.ts:59:97 › whole product actual API fixture inspection 1440
+  1) tests/whole-product-review.spec.ts:59:97 › whole product actual API fixture inspection 1440 ───
+
+    Test was interrupted.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Conversation Review', exact: true })
+
+
+      60 |  test.setTimeout(180000);await page.setViewportSize(viewport);const f=await fixture(page);const w=viewport.width
+      61 |  try{
+    > 62 |   for(const name of ['Overview','Evaluations','Analytics','Calibration','Evaluation Forms','Question Groups','Answer Sets','Policies','Settings','Conversations','Conversation Review']){await nav(page,name).click();await capture(page,'connected-'+name.toLowerCase().replaceAll(' ','-')+'-'+w)}
+         |                                                                                                                                                                                                               ^
+      63 |   await nav(page,'Settings').click();for(const section of ['Access','Reviews','Privacy & retention','Notifications','Audit']){await page.getByRole('navigation',{name:'Settings sections'}).getByRole('button',{name:section,exact:true}).click();if(section==='Audit')await page.getByRole('button',{name:'Load audit history'}).click();await capture(page,'settings-'+section.toLowerCase().replace(/[^a-z]+/g,'-')+'-'+w)}
+      64 |   await nav(page,'Answer Sets').click();await page.getByRole('button',{name:'Open Answer Set Resolution clarity v1',exact:true}).click();await capture(page,'answer-set-published-'+w);await page.locator('.answer-set-detail').getByRole('button',{name:'Edit as new version'}).click();await capture(page,'answer-set-draft-'+w);await page.locator('.answer-set-detail').getByRole('button',{name:'Save changes',exact:true}).click();await page.locator('.answer-set-detail').getByRole('button',{name:'Close details'}).click();await page.getByRole('button',{name:'Open Answer Set Service quality v1'}).click();await capture(page,'answer-set-score-'+w)
+      65 |   await nav(page,'Evaluation Forms').click();await page.getByRole('button',{name:'Open form Resolution clarity form v1'}).click();const form=page.locator('.form-detail');await form.getByRole('button',{name:'Edit',exact:true}).click();await capture(page,'form-editor-'+w);await form.getByRole('button',{name:'Use reusable answer set'}).click();await capture(page,'answer-set-picker-'+w);await form.getByRole('button',{name:'Use Resolution clarity v1'}).click();await capture(page,'answer-set-attached-'+w);await form.getByRole('button',{name:'Newer version available: v2'}).click();await capture(page,'answer-set-comparison-'+w);await form.getByRole('button',{name:'Apply update to v2'}).click();await form.getByRole('button',{name:'Detach',exact:true}).click();await capture(page,'answer-set-detached-'+w);await form.getByLabel('Option 1 label').fill('Customized clarity');await form.getByRole('button',{name:'Save as reusable answer set'}).click();await capture(page,'answer-set-save-as-'+w);await form.getByRole('button',{name:'Cancel',exact:true}).click();await form.getByRole('button',{name:'Save changes',exact:true}).click()
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review.spec.ts:62:207
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-whole-ec34c-API-fixture-inspection-1440/error-context.md
+
+
+  1 interrupted
+    tests/whole-product-review.spec.ts:59:97 › whole product actual API fixture inspection 1440 ────
+  8 did not run

@@ -1,0 +1,101 @@
+Workspace / Evaluations
+AUTHOR
+Jev managed securely by automation service
+QUALITY
+Evaluations
+
+Production results with form snapshots and provider provenance.
+
+Team review workload
+History
+Server
+This browser
+Review status
+All
+NOT REVIEWED
+REVIEW REQUESTED
+IN REVIEW
+REVIEWED
+Assignment
+All
+Unassigned
+Assigned
+Assigned to me
+admin
+Alex Reviewer
+SLA state
+All states
+Due soon
+Overdue
+Escalated
+Due
+All
+Overdue
+Due today
+Due next 7 days
+No due date
+Form ID @ version
+Agent
+Queue
+Channel
+Result
+All
+Pass
+Fail
+Question failures
+From
+To
+Policy ID
+Source
+All
+Genesys Cloud
+Synthetic
+Uploaded
+Trigger
+All
+Manual
+Scheduled
+Critical failure
+All
+Yes
+No
+Refresh
+
+Temporarily unavailable
+
+Server filters scan a bounded window of up to 500 records per request. Use Next to continue the search.
+
+Search
+0 results on this page
+Evaluated ↓
+
+Conversation
+
+Agent
+
+Queue
+
+Form
+
+Source
+
+AI score
+
+Review
+
+Human score
+
+Agreement
+
+Assigned to
+
+Due
+
+Reviewer
+
+Reviewed at
+
+No production evaluations on this page.
+
+First page
+Next server page →

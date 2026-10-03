@@ -1,0 +1,118 @@
+
+Running 7 tests using 1 worker
+
+(node:8424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/7] tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1440
+  1) tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1440
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Human review', exact: true }).getByRole('button', { name: 'Start review', exact: true })
+
+
+      12 |   await action('Open original conversation evidence','click',()=>page.locator('.evaluation-detail').getByRole('button',{name:'Open conversation',exact:true}).click());await expect(page.getByText('I need help with my bill.',{exact:true})).toBeVisible();await capture(page,'connected-original-conversation-'+viewport.width)
+      13 |   await action('Return to evaluation','click',()=>page.getByRole('button',{name:'← Back to evaluations',exact:true}).click());await capture(page,'reviewer-return-'+viewport.width)
+    > 14 |   const panel=page.getByRole('region',{name:'Human review',exact:true});await action('Start independent human review','click',()=>panel.getByRole('button',{name:'Start review',exact:true}).click());
+         |                                                                                                                                                                                              ^
+      15 |   for(const [name,value]of [['Warm opening','No'],['Understanding the issue','2'],['Resolution','fully_resolved']])await action('Judge '+name,'select',()=>panel.getByLabel('Human answer: '+name,{exact:true}).selectOption(value))
+      16 |   await action('Explain independent judgment','input',()=>panel.getByLabel('Overall review note',{exact:true}).fill('Opening did not acknowledge the impact. Resolution evidence is clear.'))
+      17 |   await action('Complete review','click',()=>panel.getByRole('button',{name:'Complete review',exact:true}).click());await expect(panel.getByRole('heading',{name:'Completed calibration'})).toBeVisible();await capture(page,'reviewer-completed-'+viewport.width)
+        at fn (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:14:190)
+        at action (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:8:121)
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:14:73
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-tasks-93d4f--conversation-evidence-1440/error-context.md
+
+
+(node:8448) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/7] tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1920
+  2) tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1920
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Human review', exact: true }).getByRole('button', { name: 'Start review', exact: true })
+
+
+      12 |   await action('Open original conversation evidence','click',()=>page.locator('.evaluation-detail').getByRole('button',{name:'Open conversation',exact:true}).click());await expect(page.getByText('I need help with my bill.',{exact:true})).toBeVisible();await capture(page,'connected-original-conversation-'+viewport.width)
+      13 |   await action('Return to evaluation','click',()=>page.getByRole('button',{name:'← Back to evaluations',exact:true}).click());await capture(page,'reviewer-return-'+viewport.width)
+    > 14 |   const panel=page.getByRole('region',{name:'Human review',exact:true});await action('Start independent human review','click',()=>panel.getByRole('button',{name:'Start review',exact:true}).click());
+         |                                                                                                                                                                                              ^
+      15 |   for(const [name,value]of [['Warm opening','No'],['Understanding the issue','2'],['Resolution','fully_resolved']])await action('Judge '+name,'select',()=>panel.getByLabel('Human answer: '+name,{exact:true}).selectOption(value))
+      16 |   await action('Explain independent judgment','input',()=>panel.getByLabel('Overall review note',{exact:true}).fill('Opening did not acknowledge the impact. Resolution evidence is clear.'))
+      17 |   await action('Complete review','click',()=>panel.getByRole('button',{name:'Complete review',exact:true}).click());await expect(panel.getByRole('heading',{name:'Completed calibration'})).toBeVisible();await capture(page,'reviewer-completed-'+viewport.width)
+        at fn (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:14:190)
+        at action (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:8:121)
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:14:73
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-tasks-b50f9--conversation-evidence-1920/error-context.md
+
+
+(node:8499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/7] tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 390
+  3) tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 390
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Human review', exact: true }).getByRole('button', { name: 'Start review', exact: true })
+
+
+      12 |   await action('Open original conversation evidence','click',()=>page.locator('.evaluation-detail').getByRole('button',{name:'Open conversation',exact:true}).click());await expect(page.getByText('I need help with my bill.',{exact:true})).toBeVisible();await capture(page,'connected-original-conversation-'+viewport.width)
+      13 |   await action('Return to evaluation','click',()=>page.getByRole('button',{name:'← Back to evaluations',exact:true}).click());await capture(page,'reviewer-return-'+viewport.width)
+    > 14 |   const panel=page.getByRole('region',{name:'Human review',exact:true});await action('Start independent human review','click',()=>panel.getByRole('button',{name:'Start review',exact:true}).click());
+         |                                                                                                                                                                                              ^
+      15 |   for(const [name,value]of [['Warm opening','No'],['Understanding the issue','2'],['Resolution','fully_resolved']])await action('Judge '+name,'select',()=>panel.getByLabel('Human answer: '+name,{exact:true}).selectOption(value))
+      16 |   await action('Explain independent judgment','input',()=>panel.getByLabel('Overall review note',{exact:true}).fill('Opening did not acknowledge the impact. Resolution evidence is clear.'))
+      17 |   await action('Complete review','click',()=>panel.getByRole('button',{name:'Complete review',exact:true}).click());await expect(panel.getByRole('heading',{name:'Completed calibration'})).toBeVisible();await capture(page,'reviewer-completed-'+viewport.width)
+        at fn (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:14:190)
+        at action (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:8:121)
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:14:73
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-tasks-42650-d-conversation-evidence-390/error-context.md
+
+
+(node:8534) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/7] tests/whole-product-review-tasks.spec.ts:23:1 › quality leader finds weak question, exact version and supporting evaluations
+[5/7] tests/whole-product-review-tasks.spec.ts:31:1 › admin review SLA dirty state and save failure preserves input
+[6/7] tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy
+  4) tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: '＋ New reusable question group' })
+
+
+      34 | test('Question Group containing Answer Set is used as independent form copy',async({page})=>{
+      35 |  test.setTimeout(90000);const f=await fixture(page,'AUTHOR');try{
+    > 36 |   await nav(page,'Question Groups').click();await page.getByRole('button',{name:'＋ New reusable question group'}).click();const group=page.locator('.asset-detail');await group.getByLabel('Reusable question group name',{exact:true}).fill('Resolution standards');await group.getByRole('button',{name:'Edit',exact:true}).click();await group.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await group.getByLabel('Instructions / question',{exact:true}).fill('Assess whether the resolution was explained clearly.');await group.getByLabel('Question type',{exact:true}).selectOption('choice');await group.getByRole('button',{name:'Use reusable answer set'}).click();await group.getByRole('button',{name:'Use Resolution clarity v1'}).click();await group.getByRole('button',{name:'Save changes',exact:true}).click();await group.getByRole('button',{name:'Publish reusable question group'}).click();await capture(page,'group-with-answer-set')
+         |                                                                                                                   ^
+      37 |   await nav(page,'Evaluation Forms').click();await page.getByRole('button',{name:'＋ New form',exact:true}).click();const form=page.locator('.form-detail');await form.getByRole('button',{name:'Add reusable group'}).click();await capture(page,'group-picker-composition');await form.getByRole('button',{name:/Add Resolution standards/}).click();await form.getByRole('button',{name:'Save changes',exact:true}).click();await capture(page,'form-group-answer-set-composition');await expect(form).toContainText('Reusable snapshot v1');
+      38 |  }finally{await f.close()}
+      39 | })
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review-tasks.spec.ts:36:115
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-tasks-4f8d3-ed-as-independent-form-copy/error-context.md
+
+
+(node:8572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/7] tests/whole-product-review-tasks.spec.ts:40:1 › mobile analytics/calibration tabs and inline Answer Set dialog semantics
+  4 failed
+    tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1440
+    tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1920
+    tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 390
+    tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy
+  3 passed (55.7s)

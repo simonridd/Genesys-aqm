@@ -1,0 +1,24 @@
+Workspace / Policies
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Policies
+
+Durable server policies · exact published form versions · optional daily or weekly automation.
+
+Refresh durable policies
+Status
+All
+Enabled
+Disabled
+Schedule
+All
+Manual
+Daily
+Weekly
+Forms
+All
+Has assigned forms
+No assigned forms
+
+Saved policies unavailable: Temporarily unavailable

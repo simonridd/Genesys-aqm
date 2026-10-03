@@ -1,0 +1,2774 @@
+
+Running 1 test using 1 worker
+
+(node:84085) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] tests/whole-product-first-time-author.spec.ts:3:1 › first-time author exploration
+tests/whole-product-first-time-author.spec.ts:3:1 › first-time author exploration
+ROUTE http://127.0.0.1:4174/Genesys-aqm/?page=automation
+
+UI INITIAL IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Overview
+AUTHOR
+Jev managed securely by automation service
+OPERATIONAL HOME
+Overview
+
+Quality, coverage and work requiring attention.
+
+Updated 13:00:00 · Europe/London
+Dashboard range
+7 days
+30 days
+Refresh
+Set up automated quality monitoring
+
+Progress from your saved configuration.
+
+✓ Publish an evaluation form
+○ Create an enabled policy assigning that form →
+○ Configure and enable a daily or weekly schedule →
+✓ Wait for / inspect the first automated run
+Attention required
+Action needed
+2 errors
+1 escalated review
+1 overdue review
+1 warning
+0 failed notification deliveries (24h)
+ERROR
+Scheduled run failed
+Open run →
+ERROR
+Review escalated
+Open review →
+WARNING
+Scheduler activity is stale
+Open alert →
+Operational health
+Automation
+Attention
+Genesys
+Unverified
+Jev
+Error
+Scheduler
+Healthy
+Notifications
+Healthy
+Review SLA
+Escalated
+
+API healthy · Firestore available · Last scheduler tick 2 Oct, 12:00. Genesys and Jev reflect durable run evidence.
+
+Notifications: 0 pending · 0 failed (24h) · Last success —
+
+Quality & coverage
+Last 7 days
+Evaluations
+8 →
+Average quality
+79% →
+Pass rate
+100%
+Critical failures
+0 →
+78%
+09-30 · 1 evaluations
+79%
+10-01 · 7 evaluations
+
+Limited history · 8 evaluations in this period.
+
+Coverage
+Eligible
+20
+Sampled
+10
+Content available
+6
+Evaluated
+4
+Failed
+3
+
+Sampling coverage 50% · Evaluation coverage 20%
+
+Coverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.
+
+Explore coverage →
+Review workload
+Current state
+Open
+7 →
+Due soon
+1 →
+Overdue
+1 →
+Escalated
+1 →
+Unassigned
+1 →
+All review work →
+Automation
+Run a policy now
+
+1 completed · 0 partial · 1 failed · 0 running in the last 7 days
+
+Last automated run
+1 Oct, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+
+Latest successful scheduled execution.
+
+Upcoming scheduled work
+Daily Voice Customer Service AQM
+DAILY
+Next due 3 Oct, 02:00
+Last success 1 Oct, 03:00
+View/Edit policy →
+Daily Voice Customer Service AQM
+WEEKLY
+Next due 5 Oct, 02:00
+Last success —
+View/Edit policy →
+Recent runs
+2 Oct, 09:00
+Daily Voice Customer Service AQM
+manual
+0 evaluations · 3 failed
+failed
+1 Oct, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+15 Sept, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+Evaluation Forms →
+Policies →
+Run a policy now
+Detailed alerts & run operations
+
+UI FORMS IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Server evaluations
+
+Server avg score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 5 forms
+Saved form · DRAFT · VERSION 1
+Attached resolution form
+Close details
+Export JSON
+Duplicate as new form
+Save changes
+TEST FORM
+Move to testing
+Publish version
+
+Saved to server
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Was the resolution clear?
+Question groups
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+Resolution
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+Save group as reusable groupSelect all in group
+01
+Was the resolution clear?
+Multiple choice
+
+Assess whether the customer understood the resolution.
+
+Weight 1 · Enabled · ID clarity
+
+Clear (clear · credit 1)
+Clear resolution clarity.
+Mostly clear (mostly_clear · credit 0.75)
+Mostly clear resolution clarity.
+Partly clear (partly_clear · credit 0.5)
+Partly clear resolution clarity.
+Unclear (unclear · credit 0)
+Unclear resolution clarity.
+Add question condition
+Move question to group
+Resolution
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+View history
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history
+
+UI NEW IPI AQM
+Automated Quality Management
+MONITOR
+◌
+Overview
+QUALITY
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+CONFIGURATION
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+INTERACTIONS
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19 SHOWCASE • 2026
+Workspace / Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Server evaluations
+
+Server avg score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 6 forms
+Local draft / example · DRAFT · VERSION 1
+New evaluation form
+Close details
+Export JSON
+Duplicate as new form
+Save changes
+TEST FORM
+Move to testing
+Publish version
+
+Unsaved changes
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+question_1790942403792
+Question groups
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+General
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+Save group as reusable groupSelect all in group
+01
+Untitled question
+Yes / No
+
+Add a question to evaluate the conversation.
+
+Weight 1 · Enabled · ID question_1790942403792
+
+Add question condition
+Move question to group
+General
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+View history
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history
+
+ARIA NEW - main:
+  - text: Workspace /
+  - strong: Forms
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Evaluation Forms" [level=1]
+  - paragraph: Policies pin published versions. Drafts can be tested without entering production analytics.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Import form
+  - button "Import form"
+  - button "＋ New form"
+  - region "Saved Forms":
+    - heading "Saved in AQM · 4 saved forms" [level=2]
+    - paragraph: Production usage counts use saved policies only.
+    - button "Refresh saved forms"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Testing"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Assigned to policy"
+    - option "Unassigned"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 4 results
+  - region "Evaluation forms table":
+    - table:
+      - rowgroup:
+        - row "Form name ↓ Status Version Questions Assigned policies Server evaluations Server avg score Last modified":
+          - columnheader "Form name ↓":
+            - button "Form name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Assigned policies":
+            - button "Assigned policies"
+          - columnheader "Server evaluations":
+            - button "Server evaluations"
+          - columnheader "Server avg score":
+            - button "Server avg score"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open form Resolution clarity form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Resolution clarity form v1":
+            - button "Open form Resolution clarity form v1": Resolution clarity form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form General Customer Service v17 PUBLISHED v17 3 1 25 75% —":
+          - cell "Open form General Customer Service v17":
+            - button "Open form General Customer Service v17": General Customer Service
+          - cell "PUBLISHED"
+          - cell "v17"
+          - cell "3"
+          - cell "1"
+          - cell "25"
+          - cell "75%"
+          - cell "—"
+        - row "Open form Conditional resolution form v1 DRAFT v1 2 0 0 — —":
+          - cell "Open form Conditional resolution form v1":
+            - button "Open form Conditional resolution form v1": Conditional resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form Attached resolution form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Attached resolution form v1":
+            - button "Open form Attached resolution form v1": Attached resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+  - group: Local drafts & starter examples · 6 forms
+  - group:
+    - text: Local draft / example · DRAFT · VERSION 1
+    - heading "New evaluation form" [level=2]
+    - button "Close details"
+    - button "Export JSON"
+    - button "Duplicate as new form"
+    - button "Save changes"
+    - button "TEST FORM"
+    - button "Move to testing"
+    - button "Publish version"
+    - status: Unsaved changes
+    - text: Form name
+    - textbox "Form name": New evaluation form
+    - text: Description
+    - textbox "Description": Describe the purpose of this form.
+    - text: Pass score 70%
+    - slider "Pass score 70%": "0.7"
+    - strong: Critical questions
+    - checkbox "question_1790942403792"
+    - text: question_1790942403792
+    - heading "Question groups" [level=2]
+    - paragraph: Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+    - button "Add group"
+    - button "Add reusable group"
+    - heading "Overall scoring" [level=3]
+    - radio "Question weighted" [checked]
+    - text: Question weighted
+    - radio "Group weighted"
+    - text: Group weighted
+    - paragraph: Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+    - text: Yes threshold
+    - slider "Yes threshold 65%": "0.65"
+    - text: 65%
+    - 'region "Group: General"':
+      - heading "General" [level=3]
+      - button "Move group General up" [disabled]: ↑
+      - button "Move group General down" [disabled]: ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": General
+      - text: Group description
+      - textbox "Group description"
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - button "Save group as reusable group"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select"
+        - text: "01"
+        - strong: Untitled question
+        - text: Yes / No
+        - paragraph: Add a question to evaluate the conversation.
+        - paragraph: Weight 1 · Enabled · ID question_1790942403792
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for question_1790942403792":
+          - option "General" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable" [checked]
+        - button "Move up" [disabled]: ↑
+        - button "Move down" [disabled]: ↓
+        - button "Edit"
+      - button "Add question"
+  - button "View history"
+  - text: ISOLATED SANDBOX
+  - heading "Test form" [level=2]
+  - paragraph: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+  - text: Execution
+  - combobox "Execution":
+    - option "Legacy browser sandbox (development)"
+    - option "Durable server sandbox (recommended)" [selected]
+  - text: Source
+  - combobox "Source":
+    - option "Synthetic" [selected]
+    - option "Genesys Cloud"
+  - text: Selection
+  - combobox "Selection":
+    - option "Most recent" [selected]
+    - option "Deterministic random"
+    - option "Manual selection"
+  - text: Conversations
+  - spinbutton "Conversations": "5"
+  - paragraph:
+    - strong: 5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+  - paragraph: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+  - button "Test form"
+  - button "Refresh test history"
+
+ARIA EDIT - complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - text: MONITOR
+    - button "Overview"
+    - text: QUALITY
+    - button "Evaluations"
+    - button "Analytics"
+    - button "Calibration"
+    - text: CONFIGURATION
+    - button "Policies"
+    - button "Evaluation Forms"
+    - button "Question Groups"
+    - button "Answer Sets"
+    - button "Settings"
+    - text: INTERACTIONS
+    - button "Conversations"
+    - button "Conversation review"
+  - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19 SHOWCASE • 2026
+- main:
+  - text: Workspace /
+  - strong: Forms
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Evaluation Forms" [level=1]
+  - paragraph: Policies pin published versions. Drafts can be tested without entering production analytics.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Import form
+  - button "Import form"
+  - button "＋ New form"
+  - region "Saved Forms":
+    - heading "Saved in AQM · 4 saved forms" [level=2]
+    - paragraph: Production usage counts use saved policies only.
+    - button "Refresh saved forms"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Testing"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Assigned to policy"
+    - option "Unassigned"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 4 results
+  - region "Evaluation forms table":
+    - table:
+      - rowgroup:
+        - row "Form name ↓ Status Version Questions Assigned policies Server evaluations Server avg score Last modified":
+          - columnheader "Form name ↓":
+            - button "Form name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Assigned policies":
+            - button "Assigned policies"
+          - columnheader "Server evaluations":
+            - button "Server evaluations"
+          - columnheader "Server avg score":
+            - button "Server avg score"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open form Resolution clarity form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Resolution clarity form v1":
+            - button "Open form Resolution clarity form v1": Resolution clarity form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form General Customer Service v17 PUBLISHED v17 3 1 25 75% —":
+          - cell "Open form General Customer Service v17":
+            - button "Open form General Customer Service v17": General Customer Service
+          - cell "PUBLISHED"
+          - cell "v17"
+          - cell "3"
+          - cell "1"
+          - cell "25"
+          - cell "75%"
+          - cell "—"
+        - row "Open form Conditional resolution form v1 DRAFT v1 2 0 0 — —":
+          - cell "Open form Conditional resolution form v1":
+            - button "Open form Conditional resolution form v1": Conditional resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form Attached resolution form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Attached resolution form v1":
+            - button "Open form Attached resolution form v1": Attached resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+  - group: Local drafts & starter examples · 6 forms
+  - group:
+    - text: Local draft / example · DRAFT · VERSION 1
+    - heading "First author resolution review" [level=2]
+    - button "Close details"
+    - button "Export JSON"
+    - button "Duplicate as new form"
+    - button "Save changes"
+    - button "TEST FORM"
+    - button "Move to testing"
+    - button "Publish version"
+    - status: Unsaved changes
+    - text: Form name
+    - textbox "Form name": First author resolution review
+    - text: Description
+    - textbox "Description": Describe the purpose of this form.
+    - text: Pass score 70%
+    - slider "Pass score 70%": "0.7"
+    - strong: Critical questions
+    - checkbox "question_1790942403792"
+    - text: question_1790942403792
+    - heading "Question groups" [level=2]
+    - paragraph: Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+    - button "Add group"
+    - button "Add reusable group"
+    - heading "Overall scoring" [level=3]
+    - radio "Question weighted" [checked]
+    - text: Question weighted
+    - radio "Group weighted"
+    - text: Group weighted
+    - paragraph: Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+    - text: Yes threshold
+    - slider "Yes threshold 65%": "0.65"
+    - text: 65%
+    - 'region "Group: General"':
+      - heading "General" [level=3]
+      - button "Move group General up" [disabled]: ↑
+      - button "Move group General down" [disabled]: ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": General
+      - text: Group description
+      - textbox "Group description"
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - button "Save group as reusable group"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select"
+        - text: "01"
+        - strong: Untitled question
+        - text: Yes / No
+        - paragraph: Add a question to evaluate the conversation.
+        - paragraph: Weight 1 · Enabled · ID question_1790942403792
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for question_1790942403792":
+          - option "General" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable" [checked]
+        - button "Move up" [disabled]: ↑
+        - button "Move down" [disabled]: ↓
+        - button "Done"
+        - text: Question ID
+        - 'textbox "Question ID Stable key: lowercase letters, numbers, underscores"': question_1790942403792
+        - text: "Stable key: lowercase letters, numbers, underscores Question type"
+        - combobox "Question type":
+          - option "Yes / No · Noul" [selected]
+          - option "Multiple choice · Choice"
+          - option "Ordered rubric · Score"
+        - text: Title
+        - textbox "Title"
+        - text: Instructions / question
+        - textbox "Instructions / question"
+        - text: Weight
+        - spinbutton "Weight": "1"
+        - button "Delete question"
+        - text: Changes save locally in this browser.
+      - button "Add question"
+  - button "View history"
+  - text: ISOLATED SANDBOX
+  - heading "Test form" [level=2]
+  - paragraph: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+  - text: Execution
+  - combobox "Execution":
+    - option "Legacy browser sandbox (development)"
+    - option "Durable server sandbox (recommended)" [selected]
+  - text: Source
+  - combobox "Source":
+    - option "Synthetic" [selected]
+    - option "Genesys Cloud"
+  - text: Selection
+  - combobox "Selection":
+    - option "Most recent" [selected]
+    - option "Deterministic random"
+    - option "Manual selection"
+  - text: Conversations
+  - spinbutton "Conversations": "5"
+  - paragraph:
+    - strong: 5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+  - paragraph: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+  - button "Test form"
+  - button "Refresh test history"
+
+ARIA MULTIPLE - article:
+  - checkbox "Select Was the resolution clear?"
+  - text: "01"
+  - strong: Was the resolution clear?
+  - text: Multiple choice
+  - paragraph: Assess whether the customer understood the resolution.
+  - paragraph: Weight 1 · Enabled · ID question_1790942403792
+  - term: Option A (option_a · credit 1)
+  - definition: Describe when this fits.
+  - term: Option B (option_b · credit 0)
+  - definition: Describe when this fits.
+  - button "Add question condition"
+  - text: Move question to group
+  - combobox "Group for Was the resolution clear?":
+    - option "General" [selected]
+    - option "General (ungrouped)"
+  - button "Duplicate"
+  - checkbox "Enable Was the resolution clear?" [checked]
+  - button "Move Was the resolution clear? up" [disabled]: ↑
+  - button "Move Was the resolution clear? down" [disabled]: ↓
+  - button "Done"
+  - region "Answers":
+    - heading "ANSWERS" [level=3]
+    - button "Use reusable answer set"
+    - button "Save as reusable answer set"
+  - text: Question ID
+  - 'textbox "Question ID Stable key: lowercase letters, numbers, underscores"': question_1790942403792
+  - text: "Stable key: lowercase letters, numbers, underscores Question type"
+  - combobox "Question type":
+    - option "Yes / No · Noul"
+    - option "Multiple choice · Choice" [selected]
+    - option "Ordered rubric · Score"
+  - text: Title
+  - textbox "Title": Was the resolution clear?
+  - text: Instructions / question
+  - textbox "Instructions / question": Assess whether the customer understood the resolution.
+  - text: Weight
+  - spinbutton "Weight": "1"
+  - group "Choices":
+    - text: Choices
+    - paragraph: Credit 0–1 affects the weighted score. Leave choice credit blank to exclude it.
+    - strong: "01"
+    - text: Key
+    - textbox "Option 1 key": option_a
+    - text: Label
+    - textbox "Option 1 label": Option A
+    - text: Description
+    - textbox "Option 1 description": Describe when this fits.
+    - text: Credit
+    - spinbutton "Option 1 credit": "1"
+    - button "Move option 1 up" [disabled]: ↑
+    - button "Move option 1 down": ↓
+    - button "Remove option 1": ×
+    - strong: "02"
+    - text: Key
+    - textbox "Option 2 key": option_b
+    - text: Label
+    - textbox "Option 2 label": Option B
+    - text: Description
+    - textbox "Option 2 description": Describe when this fits.
+    - text: Credit
+    - spinbutton "Option 2 credit": "0"
+    - button "Move option 2 up": ↑
+    - button "Move option 2 down" [disabled]: ↓
+    - button "Remove option 2": ×
+    - button "＋ Add choice"
+  - button "Delete question"
+  - text: Changes save locally in this browser.
+
+ARIA ANSWER PICKER - complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - text: MONITOR
+    - button "Overview"
+    - text: QUALITY
+    - button "Evaluations"
+    - button "Analytics"
+    - button "Calibration"
+    - text: CONFIGURATION
+    - button "Policies"
+    - button "Evaluation Forms"
+    - button "Question Groups"
+    - button "Answer Sets"
+    - button "Settings"
+    - text: INTERACTIONS
+    - button "Conversations"
+    - button "Conversation review"
+  - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19 SHOWCASE • 2026
+- main:
+  - text: Workspace /
+  - strong: Forms
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Evaluation Forms" [level=1]
+  - paragraph: Policies pin published versions. Drafts can be tested without entering production analytics.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Import form
+  - button "Import form"
+  - button "＋ New form"
+  - region "Saved Forms":
+    - heading "Saved in AQM · 4 saved forms" [level=2]
+    - paragraph: Production usage counts use saved policies only.
+    - button "Refresh saved forms"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Testing"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Assigned to policy"
+    - option "Unassigned"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 4 results
+  - region "Evaluation forms table":
+    - table:
+      - rowgroup:
+        - row "Form name ↓ Status Version Questions Assigned policies Server evaluations Server avg score Last modified":
+          - columnheader "Form name ↓":
+            - button "Form name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Assigned policies":
+            - button "Assigned policies"
+          - columnheader "Server evaluations":
+            - button "Server evaluations"
+          - columnheader "Server avg score":
+            - button "Server avg score"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open form Resolution clarity form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Resolution clarity form v1":
+            - button "Open form Resolution clarity form v1": Resolution clarity form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form General Customer Service v17 PUBLISHED v17 3 1 25 75% —":
+          - cell "Open form General Customer Service v17":
+            - button "Open form General Customer Service v17": General Customer Service
+          - cell "PUBLISHED"
+          - cell "v17"
+          - cell "3"
+          - cell "1"
+          - cell "25"
+          - cell "75%"
+          - cell "—"
+        - row "Open form Conditional resolution form v1 DRAFT v1 2 0 0 — —":
+          - cell "Open form Conditional resolution form v1":
+            - button "Open form Conditional resolution form v1": Conditional resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form Attached resolution form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Attached resolution form v1":
+            - button "Open form Attached resolution form v1": Attached resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+  - group: Local drafts & starter examples · 6 forms
+  - group:
+    - text: Local draft / example · DRAFT · VERSION 1
+    - heading "First author resolution review" [level=2]
+    - button "Close details"
+    - button "Export JSON"
+    - button "Duplicate as new form"
+    - button "Save changes"
+    - button "TEST FORM"
+    - button "Move to testing"
+    - button "Publish version"
+    - status: Unsaved changes
+    - text: Form name
+    - textbox "Form name": First author resolution review
+    - text: Description
+    - textbox "Description": Describe the purpose of this form.
+    - text: Pass score 70%
+    - slider "Pass score 70%": "0.7"
+    - strong: Critical questions
+    - checkbox "Was the resolution clear?"
+    - text: Was the resolution clear?
+    - heading "Question groups" [level=2]
+    - paragraph: Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+    - button "Add group"
+    - button "Add reusable group"
+    - heading "Overall scoring" [level=3]
+    - radio "Question weighted" [checked]
+    - text: Question weighted
+    - radio "Group weighted"
+    - text: Group weighted
+    - paragraph: Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+    - text: Yes threshold
+    - slider "Yes threshold 65%": "0.65"
+    - text: 65%
+    - 'region "Group: General"':
+      - heading "General" [level=3]
+      - button "Move group General up" [disabled]: ↑
+      - button "Move group General down" [disabled]: ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": General
+      - text: Group description
+      - textbox "Group description"
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - button "Save group as reusable group"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select Was the resolution clear?"
+        - text: "01"
+        - strong: Was the resolution clear?
+        - text: Multiple choice
+        - paragraph: Assess whether the customer understood the resolution.
+        - paragraph: Weight 1 · Enabled · ID question_1790942403792
+        - term: Option A (option_a · credit 1)
+        - definition: Describe when this fits.
+        - term: Option B (option_b · credit 0)
+        - definition: Describe when this fits.
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Was the resolution clear?":
+          - option "General" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Was the resolution clear?" [checked]
+        - button "Move Was the resolution clear? up" [disabled]: ↑
+        - button "Move Was the resolution clear? down" [disabled]: ↓
+        - button "Done"
+        - region "Answers":
+          - heading "ANSWERS" [level=3]
+          - button "Use reusable answer set"
+          - button "Save as reusable answer set"
+          - dialog "Use reusable answer set":
+            - heading "Published Answer Sets" [level=4]
+            - button "Cancel"
+            - text: Find Answer Set
+            - textbox "Find Answer Set"
+            - paragraph: 2 published choice sets. Each selection copies its options.
+            - strong: Resolution clarity · v1
+            - paragraph: 4 options · Clear · Mostly clear · Partly clear · Unclear
+            - button "Use Resolution clarity v1"
+            - strong: Resolution clarity · v2
+            - paragraph: 5 options · Unclear · Partly clear · Mostly clear · Completely clear · Not applicable
+            - button "Use Resolution clarity v2"
+        - text: Question ID
+        - 'textbox "Question ID Stable key: lowercase letters, numbers, underscores"': question_1790942403792
+        - text: "Stable key: lowercase letters, numbers, underscores Question type"
+        - combobox "Question type":
+          - option "Yes / No · Noul"
+          - option "Multiple choice · Choice" [selected]
+          - option "Ordered rubric · Score"
+        - text: Title
+        - textbox "Title": Was the resolution clear?
+        - text: Instructions / question
+        - textbox "Instructions / question": Assess whether the customer understood the resolution.
+        - text: Weight
+        - spinbutton "Weight": "1"
+        - group "Choices":
+          - text: Choices
+          - paragraph: Credit 0–1 affects the weighted score. Leave choice credit blank to exclude it.
+          - strong: "01"
+          - text: Key
+          - textbox "Option 1 key": option_a
+          - text: Label
+          - textbox "Option 1 label": Option A
+          - text: Description
+          - textbox "Option 1 description": Describe when this fits.
+          - text: Credit
+          - spinbutton "Option 1 credit": "1"
+          - button "Move option 1 up" [disabled]: ↑
+          - button "Move option 1 down": ↓
+          - button "Remove option 1": ×
+          - strong: "02"
+          - text: Key
+          - textbox "Option 2 key": option_b
+          - text: Label
+          - textbox "Option 2 label": Option B
+          - text: Description
+          - textbox "Option 2 description": Describe when this fits.
+          - text: Credit
+          - spinbutton "Option 2 credit": "0"
+          - button "Move option 2 up": ↑
+          - button "Move option 2 down" [disabled]: ↓
+          - button "Remove option 2": ×
+          - button "＋ Add choice"
+        - button "Delete question"
+        - text: Changes save locally in this browser.
+      - button "Add question"
+  - button "View history"
+  - text: ISOLATED SANDBOX
+  - heading "Test form" [level=2]
+  - paragraph: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+  - text: Execution
+  - combobox "Execution":
+    - option "Legacy browser sandbox (development)"
+    - option "Durable server sandbox (recommended)" [selected]
+  - text: Source
+  - combobox "Source":
+    - option "Synthetic" [selected]
+    - option "Genesys Cloud"
+  - text: Selection
+  - combobox "Selection":
+    - option "Most recent" [selected]
+    - option "Deterministic random"
+    - option "Manual selection"
+  - text: Conversations
+  - spinbutton "Conversations": "5"
+  - paragraph:
+    - strong: 5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+  - paragraph: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+  - button "Test form"
+  - button "Refresh test history"
+
+ARIA APPLIED - article:
+  - checkbox "Select Was the resolution clear?"
+  - text: "01"
+  - strong: Was the resolution clear?
+  - text: Multiple choice
+  - paragraph: Assess whether the customer understood the resolution.
+  - paragraph: Weight 1 · Enabled · ID question_1790942403792
+  - term: Clear (clear · credit 1)
+  - definition: Clear resolution clarity.
+  - term: Mostly clear (mostly_clear · credit 0.75)
+  - definition: Mostly clear resolution clarity.
+  - term: Partly clear (partly_clear · credit 0.5)
+  - definition: Partly clear resolution clarity.
+  - term: Unclear (unclear · credit 0)
+  - definition: Unclear resolution clarity.
+  - button "Add question condition"
+  - text: Move question to group
+  - combobox "Group for Was the resolution clear?":
+    - option "General" [selected]
+    - option "General (ungrouped)"
+  - button "Duplicate"
+  - checkbox "Enable Was the resolution clear?" [checked]
+  - button "Move Was the resolution clear? up" [disabled]: ↑
+  - button "Move Was the resolution clear? down" [disabled]: ↓
+  - button "Done"
+  - region "Answers":
+    - heading "ANSWERS" [level=3]
+    - paragraph: Resolution clarity · v1 · copied snapshot
+    - paragraph: Options and type are read-only while attached. Detach to customize the copied answers.
+    - 'button "Newer version available: v2"'
+    - button "Detach"
+  - text: Question ID
+  - 'textbox "Question ID Stable key: lowercase letters, numbers, underscores"': question_1790942403792
+  - text: "Stable key: lowercase letters, numbers, underscores Question type"
+  - combobox "Question type" [disabled]:
+    - option "Yes / No · Noul"
+    - option "Multiple choice · Choice" [selected]
+    - option "Ordered rubric · Score"
+  - text: Title
+  - textbox "Title": Was the resolution clear?
+  - text: Instructions / question
+  - textbox "Instructions / question": Assess whether the customer understood the resolution.
+  - text: Weight
+  - spinbutton "Weight": "1"
+  - group "Choices":
+    - text: Choices
+    - paragraph: Credit 0–1 affects the weighted score. Leave choice credit blank to exclude it.
+    - strong: "01"
+    - text: Key
+    - textbox "Option 1 key" [disabled]: clear
+    - text: Label
+    - textbox "Option 1 label" [disabled]: Clear
+    - text: Description
+    - textbox "Option 1 description" [disabled]: Clear resolution clarity.
+    - text: Credit
+    - spinbutton "Option 1 credit" [disabled]: "1"
+    - button "Move option 1 up" [disabled]: ↑
+    - button "Move option 1 down" [disabled]: ↓
+    - button "Remove option 1" [disabled]: ×
+    - strong: "02"
+    - text: Key
+    - textbox "Option 2 key" [disabled]: mostly_clear
+    - text: Label
+    - textbox "Option 2 label" [disabled]: Mostly clear
+    - text: Description
+    - textbox "Option 2 description" [disabled]: Mostly clear resolution clarity.
+    - text: Credit
+    - spinbutton "Option 2 credit" [disabled]: "0.75"
+    - button "Move option 2 up" [disabled]: ↑
+    - button "Move option 2 down" [disabled]: ↓
+    - button "Remove option 2" [disabled]: ×
+    - strong: "03"
+    - text: Key
+    - textbox "Option 3 key" [disabled]: partly_clear
+    - text: Label
+    - textbox "Option 3 label" [disabled]: Partly clear
+    - text: Description
+    - textbox "Option 3 description" [disabled]: Partly clear resolution clarity.
+    - text: Credit
+    - spinbutton "Option 3 credit" [disabled]: "0.5"
+    - button "Move option 3 up" [disabled]: ↑
+    - button "Move option 3 down" [disabled]: ↓
+    - button "Remove option 3" [disabled]: ×
+    - strong: "04"
+    - text: Key
+    - textbox "Option 4 key" [disabled]: unclear
+    - text: Label
+    - textbox "Option 4 label" [disabled]: Unclear
+    - text: Description
+    - textbox "Option 4 description" [disabled]: Unclear resolution clarity.
+    - text: Credit
+    - spinbutton "Option 4 credit" [disabled]: "0"
+    - button "Move option 4 up" [disabled]: ↑
+    - button "Move option 4 down" [disabled]: ↓
+    - button "Remove option 4" [disabled]: ×
+    - button "＋ Add choice" [disabled]
+  - button "Delete question"
+  - text: Changes save locally in this browser.
+
+GOAL ONE REPLAY ELAPSED MS 1425
+
+GOAL ONE SAVED Workspace / Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 5 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+5 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Server evaluations
+
+Server avg score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+First author resolution review	DRAFT	v1	1	0	0	—	2 Oct 2026
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 5 forms
+Saved form · DRAFT · VERSION 1
+First author resolution review
+Close details
+Export JSON
+Duplicate as new form
+Save changes
+TEST FORM
+Move to testing
+Publish version
+
+Saved 1:00:09 PM
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Was the resolution clear?
+Question groups
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+General
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+Save group as reusable groupSelect all in group
+01
+Was the resolution clear?
+Multiple choice
+
+Assess whether the customer understood the resolution.
+
+Weight 1 · Enabled · ID question_1790942403792
+
+Clear (clear · credit 1)
+Clear resolution clarity.
+Mostly clear (mostly_clear · credit 0.75)
+Mostly clear resolution clarity.
+Partly clear (partly_clear · credit 0.5)
+Partly clear resolution clarity.
+Unclear (unclear · credit 0)
+Unclear resolution clarity.
+Add question condition
+Move question to group
+General
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+View history
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history
+
+ARIA GROUP LIBRARY - main:
+  - text: Workspace /
+  - strong: Groups
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Question Groups" [level=1]
+  - paragraph: Versioned reusable templates. Forms retain independent snapshots.
+  - text: Import reusable group
+  - button "Import reusable group"
+  - button "New reusable question group"
+  - region "Saved Question Groups":
+    - heading "Saved in AQM · 4 saved groups" [level=2]
+    - button "Refresh saved groups"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Used"
+    - option "Unused"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 4 results
+  - region "Reusable question groups table":
+    - table:
+      - rowgroup:
+        - row "Name ↓ Status Version Questions Used by forms Last modified":
+          - columnheader "Name ↓":
+            - button "Name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Used by forms":
+            - button "Used by forms"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open reusable question group Resolution & Next Steps v1 PUBLISHED v1 3 0 10/1/2026":
+          - cell "Open reusable question group Resolution & Next Steps v1":
+            - button "Open reusable question group Resolution & Next Steps v1": Resolution & Next Steps
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "3"
+          - cell "0"
+          - cell "10/1/2026"
+        - row "Open reusable question group Identity & Security Verification v1 PUBLISHED v1 3 0 10/1/2026":
+          - cell "Open reusable question group Identity & Security Verification v1":
+            - button "Open reusable question group Identity & Security Verification v1": Identity & Security Verification
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "3"
+          - cell "0"
+          - cell "10/1/2026"
+        - row "Open reusable question group Customer Experience / Empathy v1 PUBLISHED v1 3 0 10/1/2026":
+          - cell "Open reusable question group Customer Experience / Empathy v1":
+            - button "Open reusable question group Customer Experience / Empathy v1": Customer Experience / Empathy
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "3"
+          - cell "0"
+          - cell "10/1/2026"
+        - row "Open reusable question group Call Closing v1 PUBLISHED v1 2 0 10/1/2026":
+          - cell "Open reusable question group Call Closing v1":
+            - button "Open reusable question group Call Closing v1": Call Closing
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "10/1/2026"
+  - group: Local drafts & starter examples · 4 groups
+
+ARIA GROUP DETAILS - main:
+  - text: Workspace /
+  - strong: Groups
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Question Groups" [level=1]
+  - paragraph: Versioned reusable templates. Forms retain independent snapshots.
+  - text: Import reusable group
+  - button "Import reusable group"
+  - button "New reusable question group"
+  - region "Saved Question Groups":
+    - heading "Saved in AQM · 4 saved groups" [level=2]
+    - button "Refresh saved groups"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Used"
+    - option "Unused"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 4 results
+  - region "Reusable question groups table":
+    - table:
+      - rowgroup:
+        - row "Name ↓ Status Version Questions Used by forms Last modified":
+          - columnheader "Name ↓":
+            - button "Name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Used by forms":
+            - button "Used by forms"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open reusable question group Resolution & Next Steps v1 PUBLISHED v1 3 0 10/1/2026":
+          - cell "Open reusable question group Resolution & Next Steps v1":
+            - button "Open reusable question group Resolution & Next Steps v1": Resolution & Next Steps
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "3"
+          - cell "0"
+          - cell "10/1/2026"
+        - row "Open reusable question group Identity & Security Verification v1 PUBLISHED v1 3 0 10/1/2026":
+          - cell "Open reusable question group Identity & Security Verification v1":
+            - button "Open reusable question group Identity & Security Verification v1": Identity & Security Verification
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "3"
+          - cell "0"
+          - cell "10/1/2026"
+        - row "Open reusable question group Customer Experience / Empathy v1 PUBLISHED v1 3 0 10/1/2026":
+          - cell "Open reusable question group Customer Experience / Empathy v1":
+            - button "Open reusable question group Customer Experience / Empathy v1": Customer Experience / Empathy
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "3"
+          - cell "0"
+          - cell "10/1/2026"
+        - row "Open reusable question group Call Closing v1 PUBLISHED v1 2 0 10/1/2026":
+          - cell "Open reusable question group Call Closing v1":
+            - button "Open reusable question group Call Closing v1": Call Closing
+          - cell "PUBLISHED"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "10/1/2026"
+  - group: Local drafts & starter examples · 4 groups
+  - heading "Resolution & Next Steps · v1 · PUBLISHED" [level=2]
+  - button "Close details"
+  - button "Export JSON"
+  - button "Edit as new version"
+  - button "Retire reusable question group"
+  - paragraph: Published version is read-only. Create a new version to edit.
+  - text: Reusable question group name
+  - textbox "Reusable question group name": Resolution & Next Steps
+  - text: Reusable question group description
+  - textbox "Reusable question group description": Starter template derived from existing AQM form questions.
+  - button "View history"
+  - heading "Reusable questions" [level=2]
+  - paragraph: Question weights determine the overall score. Read-only published definition.
+  - text: Yes threshold
+  - slider "Yes threshold 65%" [disabled]: "0.65"
+  - text: 65%
+  - 'region "Group: Resolution & Next Steps"':
+    - heading "Resolution & Next Steps" [level=3]
+    - text: Group name
+    - textbox "Group name": Resolution & Next Steps
+    - text: Group description
+    - textbox "Group description": Starter template derived from existing AQM form questions.
+    - group "Group scoring":
+      - text: Group scoring
+      - checkbox "Use group scoring settings" [disabled]
+      - text: Use group scoring settings
+    - article:
+      - text: "01"
+      - strong: Ownership
+      - text: Yes / No
+      - paragraph: Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+      - paragraph: Weight 1 · Enabled · ID ownership
+      - checkbox "Enable Ownership" [checked] [disabled]
+      - button "Move Ownership up" [disabled]: ↑
+      - button "Move Ownership down" [disabled]: ↓
+      - button "Read only" [disabled]
+    - article:
+      - text: "02"
+      - strong: Resolution
+      - text: Multiple choice
+      - paragraph: What is the best description of the issue outcome by the end of the conversation?
+      - paragraph: Weight 1.5 · Enabled · ID resolution
+      - term: Fully resolved (fully_resolved · credit 1)
+      - definition: The customer’s issue was resolved in the conversation.
+      - term: Partially resolved (partially_resolved · credit 0.5)
+      - definition: Meaningful progress, but further action remains.
+      - term: Unresolved (unresolved · credit 0)
+      - definition: The issue remained unresolved with no meaningful progress.
+      - term: Not applicable (not_applicable · credit unscored)
+      - definition: The conversation does not present a resolvable issue.
+      - checkbox "Enable Resolution" [checked] [disabled]
+      - button "Move Resolution up" [disabled]: ↑
+      - button "Move Resolution down" [disabled]: ↓
+      - button "Read only" [disabled]
+    - article:
+      - text: "03"
+      - strong: Clear next steps
+      - text: Yes / No
+      - paragraph: Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+      - paragraph: Weight 1 · Enabled · ID next_steps
+      - checkbox "Enable Clear next steps" [checked] [disabled]
+      - button "Move Clear next steps up" [disabled]: ↑
+      - button "Move Clear next steps down" [disabled]: ↓
+      - button "Read only" [disabled]
+    - button "Add question" [disabled]
+
+ARIA GROUP PICKER - main:
+  - text: Workspace /
+  - strong: Forms
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Evaluation Forms" [level=1]
+  - paragraph: Policies pin published versions. Drafts can be tested without entering production analytics.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Import form
+  - button "Import form"
+  - button "＋ New form"
+  - region "Saved Forms":
+    - heading "Saved in AQM · 5 saved forms" [level=2]
+    - paragraph: Production usage counts use saved policies only.
+    - button "Refresh saved forms"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Testing"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Assigned to policy"
+    - option "Unassigned"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 5 results
+  - region "Evaluation forms table":
+    - table:
+      - rowgroup:
+        - row "Form name ↓ Status Version Questions Assigned policies Server evaluations Server avg score Last modified":
+          - columnheader "Form name ↓":
+            - button "Form name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Assigned policies":
+            - button "Assigned policies"
+          - columnheader "Server evaluations":
+            - button "Server evaluations"
+          - columnheader "Server avg score":
+            - button "Server avg score"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open form Resolution clarity form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Resolution clarity form v1":
+            - button "Open form Resolution clarity form v1": Resolution clarity form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form General Customer Service v17 PUBLISHED v17 3 1 25 75% —":
+          - cell "Open form General Customer Service v17":
+            - button "Open form General Customer Service v17": General Customer Service
+          - cell "PUBLISHED"
+          - cell "v17"
+          - cell "3"
+          - cell "1"
+          - cell "25"
+          - cell "75%"
+          - cell "—"
+        - row "Open form First author resolution review v1 DRAFT v1 1 0 0 — 2 Oct 2026":
+          - cell "Open form First author resolution review v1":
+            - button "Open form First author resolution review v1": First author resolution review
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "2 Oct 2026"
+        - row "Open form Conditional resolution form v1 DRAFT v1 2 0 0 — —":
+          - cell "Open form Conditional resolution form v1":
+            - button "Open form Conditional resolution form v1": Conditional resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form Attached resolution form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Attached resolution form v1":
+            - button "Open form Attached resolution form v1": Attached resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+  - group: Local drafts & starter examples · 6 forms
+  - group:
+    - text: Local draft / example · DRAFT · VERSION 1
+    - heading "First author next steps review" [level=2]
+    - button "Close details"
+    - button "Export JSON"
+    - button "Duplicate as new form"
+    - button "Save changes"
+    - button "TEST FORM"
+    - button "Move to testing"
+    - button "Publish version"
+    - status: Unsaved changes
+    - text: Form name
+    - textbox "Form name": First author next steps review
+    - text: Description
+    - textbox "Description": Describe the purpose of this form.
+    - text: Pass score 70%
+    - slider "Pass score 70%": "0.7"
+    - strong: Critical questions
+    - checkbox "question_1790942413458"
+    - text: question_1790942413458
+    - heading "Question groups" [level=2]
+    - paragraph: Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+    - button "Add group"
+    - button "Add reusable group"
+    - heading "Published reusable groups" [level=3]
+    - strong: Call Closing · v1
+    - paragraph: Starter template derived from existing AQM form questions. · 2 questions
+    - button "Add Call Closing"
+    - strong: Customer Experience / Empathy · v1
+    - paragraph: Starter template derived from existing AQM form questions. · 3 questions
+    - button "Add Customer Experience / Empathy"
+    - strong: Identity & Security Verification · v1
+    - paragraph: Starter template derived from existing AQM form questions. · 3 questions
+    - button "Add Identity & Security Verification"
+    - strong: Resolution & Next Steps · v1
+    - paragraph: Starter template derived from existing AQM form questions. · 3 questions
+    - button "Add Resolution & Next Steps"
+    - heading "Overall scoring" [level=3]
+    - radio "Question weighted" [checked]
+    - text: Question weighted
+    - radio "Group weighted"
+    - text: Group weighted
+    - paragraph: Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+    - text: Yes threshold
+    - slider "Yes threshold 65%": "0.65"
+    - text: 65%
+    - 'region "Group: General"':
+      - heading "General" [level=3]
+      - button "Move group General up" [disabled]: ↑
+      - button "Move group General down" [disabled]: ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": General
+      - text: Group description
+      - textbox "Group description"
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - button "Save group as reusable group"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select"
+        - text: "01"
+        - strong: Untitled question
+        - text: Yes / No
+        - paragraph: Add a question to evaluate the conversation.
+        - paragraph: Weight 1 · Enabled · ID question_1790942413458
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for question_1790942413458":
+          - option "General" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable" [checked]
+        - button "Move up" [disabled]: ↑
+        - button "Move down" [disabled]: ↓
+        - button "Edit"
+      - button "Add question"
+  - button "View history"
+  - text: ISOLATED SANDBOX
+  - heading "Test form" [level=2]
+  - paragraph: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+  - text: Execution
+  - combobox "Execution":
+    - option "Legacy browser sandbox (development)"
+    - option "Durable server sandbox (recommended)" [selected]
+  - text: Source
+  - combobox "Source":
+    - option "Synthetic" [selected]
+    - option "Genesys Cloud"
+  - text: Selection
+  - combobox "Selection":
+    - option "Most recent" [selected]
+    - option "Deterministic random"
+    - option "Manual selection"
+  - text: Conversations
+  - spinbutton "Conversations": "5"
+  - paragraph:
+    - strong: 5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+  - paragraph: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+  - button "Test form"
+  - button "Refresh test history"
+
+ARIA GROUP ADDED - main:
+  - text: Workspace /
+  - strong: Forms
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Evaluation Forms" [level=1]
+  - paragraph: Policies pin published versions. Drafts can be tested without entering production analytics.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Import form
+  - button "Import form"
+  - button "＋ New form"
+  - region "Saved Forms":
+    - heading "Saved in AQM · 5 saved forms" [level=2]
+    - paragraph: Production usage counts use saved policies only.
+    - button "Refresh saved forms"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Testing"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Assigned to policy"
+    - option "Unassigned"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 5 results
+  - region "Evaluation forms table":
+    - table:
+      - rowgroup:
+        - row "Form name ↓ Status Version Questions Assigned policies Server evaluations Server avg score Last modified":
+          - columnheader "Form name ↓":
+            - button "Form name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Assigned policies":
+            - button "Assigned policies"
+          - columnheader "Server evaluations":
+            - button "Server evaluations"
+          - columnheader "Server avg score":
+            - button "Server avg score"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open form Resolution clarity form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Resolution clarity form v1":
+            - button "Open form Resolution clarity form v1": Resolution clarity form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form General Customer Service v17 PUBLISHED v17 3 1 25 75% —":
+          - cell "Open form General Customer Service v17":
+            - button "Open form General Customer Service v17": General Customer Service
+          - cell "PUBLISHED"
+          - cell "v17"
+          - cell "3"
+          - cell "1"
+          - cell "25"
+          - cell "75%"
+          - cell "—"
+        - row "Open form First author resolution review v1 DRAFT v1 1 0 0 — 2 Oct 2026":
+          - cell "Open form First author resolution review v1":
+            - button "Open form First author resolution review v1": First author resolution review
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "2 Oct 2026"
+        - row "Open form Conditional resolution form v1 DRAFT v1 2 0 0 — —":
+          - cell "Open form Conditional resolution form v1":
+            - button "Open form Conditional resolution form v1": Conditional resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form Attached resolution form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Attached resolution form v1":
+            - button "Open form Attached resolution form v1": Attached resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+  - group: Local drafts & starter examples · 6 forms
+  - group:
+    - text: Local draft / example · DRAFT · VERSION 1
+    - heading "First author next steps review" [level=2]
+    - button "Close details"
+    - button "Export JSON"
+    - button "Duplicate as new form"
+    - button "Save changes"
+    - button "TEST FORM"
+    - button "Move to testing"
+    - button "Publish version"
+    - status: Unsaved changes
+    - text: Form name
+    - textbox "Form name": First author next steps review
+    - text: Description
+    - textbox "Description": Describe the purpose of this form.
+    - text: Pass score 70%
+    - slider "Pass score 70%": "0.7"
+    - strong: Critical questions
+    - checkbox "question_1790942413458"
+    - text: question_1790942413458
+    - checkbox "Ownership"
+    - text: Ownership
+    - checkbox "Resolution"
+    - text: Resolution
+    - checkbox "Clear next steps"
+    - text: Clear next steps
+    - heading "Question groups" [level=2]
+    - paragraph: Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+    - button "Add group"
+    - button "Add reusable group"
+    - heading "Overall scoring" [level=3]
+    - radio "Question weighted" [checked]
+    - text: Question weighted
+    - radio "Group weighted"
+    - text: Group weighted
+    - paragraph: Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+    - text: Yes threshold
+    - slider "Yes threshold 65%": "0.65"
+    - text: 65%
+    - 'region "Group: General"':
+      - heading "General" [level=3]
+      - button "Move group General up" [disabled]: ↑
+      - button "Move group General down": ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": General
+      - text: Group description
+      - textbox "Group description"
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - button "Save group as reusable group"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select"
+        - text: "01"
+        - strong: Untitled question
+        - text: Yes / No
+        - paragraph: Add a question to evaluate the conversation.
+        - paragraph: Weight 1 · Enabled · ID question_1790942413458
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for question_1790942413458":
+          - option "General" [selected]
+          - option "Resolution & Next Steps"
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable" [checked]
+        - button "Move up" [disabled]: ↑
+        - button "Move down" [disabled]: ↓
+        - button "Edit"
+      - button "Add question"
+    - 'region "Group: Resolution & Next Steps"':
+      - heading "Resolution & Next Steps" [level=3]
+      - button "Move group Resolution & Next Steps up": ↑
+      - button "Move group Resolution & Next Steps down" [disabled]: ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": Resolution & Next Steps
+      - text: Group description
+      - textbox "Group description": Starter template derived from existing AQM form questions.
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - paragraph: Reusable snapshot v1 · resolution_next_steps
+      - button "Detach from reusable group"
+      - button "Save as new asset version"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select Ownership"
+        - text: "01"
+        - strong: Ownership
+        - text: Yes / No
+        - paragraph: Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+        - paragraph: Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__ownership
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Ownership":
+          - option "General"
+          - option "Resolution & Next Steps" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Ownership" [checked]
+        - button "Move Ownership up" [disabled]: ↑
+        - button "Move Ownership down": ↓
+        - button "Edit"
+      - article:
+        - checkbox "Select Resolution"
+        - text: "02"
+        - strong: Resolution
+        - text: Multiple choice
+        - paragraph: What is the best description of the issue outcome by the end of the conversation?
+        - paragraph: Weight 1.5 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__resolution
+        - term: Fully resolved (fully_resolved · credit 1)
+        - definition: The customer’s issue was resolved in the conversation.
+        - term: Partially resolved (partially_resolved · credit 0.5)
+        - definition: Meaningful progress, but further action remains.
+        - term: Unresolved (unresolved · credit 0)
+        - definition: The issue remained unresolved with no meaningful progress.
+        - term: Not applicable (not_applicable · credit unscored)
+        - definition: The conversation does not present a resolvable issue.
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Resolution":
+          - option "General"
+          - option "Resolution & Next Steps" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Resolution" [checked]
+        - button "Move Resolution up": ↑
+        - button "Move Resolution down": ↓
+        - button "Edit"
+      - article:
+        - checkbox "Select Clear next steps"
+        - text: "03"
+        - strong: Clear next steps
+        - text: Yes / No
+        - paragraph: Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+        - paragraph: Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__next_steps
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Clear next steps":
+          - option "General"
+          - option "Resolution & Next Steps" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Clear next steps" [checked]
+        - button "Move Clear next steps up": ↑
+        - button "Move Clear next steps down" [disabled]: ↓
+        - button "Edit"
+      - button "Add question"
+  - button "View history"
+  - text: ISOLATED SANDBOX
+  - heading "Test form" [level=2]
+  - paragraph: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+  - text: Execution
+  - combobox "Execution":
+    - option "Legacy browser sandbox (development)"
+    - option "Durable server sandbox (recommended)" [selected]
+  - text: Source
+  - combobox "Source":
+    - option "Synthetic" [selected]
+    - option "Genesys Cloud"
+  - text: Selection
+  - combobox "Selection":
+    - option "Most recent" [selected]
+    - option "Deterministic random"
+    - option "Manual selection"
+  - text: Conversations
+  - spinbutton "Conversations": "5"
+  - paragraph:
+    - strong: 5 conversations · 4 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+  - paragraph: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+  - button "Test form"
+  - button "Refresh test history"
+
+ARIA STARTER REMOVED - main:
+  - text: Workspace /
+  - strong: Forms
+  - text: AUTHOR Jev managed securely by automation service CONFIGURATION
+  - heading "Evaluation Forms" [level=1]
+  - paragraph: Policies pin published versions. Drafts can be tested without entering production analytics.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Import form
+  - button "Import form"
+  - button "＋ New form"
+  - region "Saved Forms":
+    - heading "Saved in AQM · 5 saved forms" [level=2]
+    - paragraph: Production usage counts use saved policies only.
+    - button "Refresh saved forms"
+  - text: Status
+  - combobox "Library status":
+    - option "All statuses" [selected]
+    - option "Draft"
+    - option "Testing"
+    - option "Published"
+    - option "Retired"
+  - text: Version
+  - combobox "Library version":
+    - option "All versions" [selected]
+    - option "Latest version per family"
+  - text: Usage
+  - combobox "Library usage":
+    - option "All usage" [selected]
+    - option "Assigned to policy"
+    - option "Unassigned"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 5 results
+  - region "Evaluation forms table":
+    - table:
+      - rowgroup:
+        - row "Form name ↓ Status Version Questions Assigned policies Server evaluations Server avg score Last modified":
+          - columnheader "Form name ↓":
+            - button "Form name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Assigned policies":
+            - button "Assigned policies"
+          - columnheader "Server evaluations":
+            - button "Server evaluations"
+          - columnheader "Server avg score":
+            - button "Server avg score"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Open form Resolution clarity form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Resolution clarity form v1":
+            - button "Open form Resolution clarity form v1": Resolution clarity form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form General Customer Service v17 PUBLISHED v17 3 1 25 75% —":
+          - cell "Open form General Customer Service v17":
+            - button "Open form General Customer Service v17": General Customer Service
+          - cell "PUBLISHED"
+          - cell "v17"
+          - cell "3"
+          - cell "1"
+          - cell "25"
+          - cell "75%"
+          - cell "—"
+        - row "Open form First author resolution review v1 DRAFT v1 1 0 0 — 2 Oct 2026":
+          - cell "Open form First author resolution review v1":
+            - button "Open form First author resolution review v1": First author resolution review
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "2 Oct 2026"
+        - row "Open form Conditional resolution form v1 DRAFT v1 2 0 0 — —":
+          - cell "Open form Conditional resolution form v1":
+            - button "Open form Conditional resolution form v1": Conditional resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "2"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+        - row "Open form Attached resolution form v1 DRAFT v1 1 0 0 — —":
+          - cell "Open form Attached resolution form v1":
+            - button "Open form Attached resolution form v1": Attached resolution form
+          - cell "DRAFT"
+          - cell "v1"
+          - cell "1"
+          - cell "0"
+          - cell "0"
+          - cell "—"
+          - cell "—"
+  - group: Local drafts & starter examples · 6 forms
+  - group:
+    - text: Local draft / example · DRAFT · VERSION 1
+    - heading "First author next steps review" [level=2]
+    - button "Close details"
+    - button "Export JSON"
+    - button "Duplicate as new form"
+    - button "Save changes"
+    - button "TEST FORM"
+    - button "Move to testing"
+    - button "Publish version"
+    - status: Unsaved changes
+    - text: Form name
+    - textbox "Form name": First author next steps review
+    - text: Description
+    - textbox "Description": Describe the purpose of this form.
+    - text: Pass score 70%
+    - slider "Pass score 70%": "0.7"
+    - strong: Critical questions
+    - checkbox "question_1790942413458"
+    - text: question_1790942413458
+    - checkbox "Ownership"
+    - text: Ownership
+    - checkbox "Resolution"
+    - text: Resolution
+    - checkbox "Clear next steps"
+    - text: Clear next steps
+    - heading "Question groups" [level=2]
+    - paragraph: Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+    - button "Add group"
+    - button "Add reusable group"
+    - heading "Overall scoring" [level=3]
+    - radio "Question weighted" [checked]
+    - text: Question weighted
+    - radio "Group weighted"
+    - text: Group weighted
+    - paragraph: Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+    - text: Yes threshold
+    - slider "Yes threshold 65%": "0.65"
+    - text: 65%
+    - 'region "Group: General"':
+      - heading "General" [level=3]
+      - button "Move group General up" [disabled]: ↑
+      - button "Move group General down": ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": General
+      - text: Group description
+      - textbox "Group description"
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - button "Save group as reusable group"
+      - dialog "Delete group":
+        - paragraph: Choose what happens to 1 contained questions.
+        - button "Keep questions in General"
+        - button "Delete contained questions"
+        - button "Cancel"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select"
+        - text: "01"
+        - strong: Untitled question
+        - text: Yes / No
+        - paragraph: Add a question to evaluate the conversation.
+        - paragraph: Weight 1 · Enabled · ID question_1790942413458
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for question_1790942413458":
+          - option "General" [selected]
+          - option "Resolution & Next Steps"
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable" [checked]
+        - button "Move up" [disabled]: ↑
+        - button "Move down" [disabled]: ↓
+        - button "Edit"
+      - button "Add question"
+    - 'region "Group: Resolution & Next Steps"':
+      - heading "Resolution & Next Steps" [level=3]
+      - button "Move group Resolution & Next Steps up": ↑
+      - button "Move group Resolution & Next Steps down" [disabled]: ↓
+      - button "Duplicate group"
+      - button "Delete group"
+      - text: Group name
+      - textbox "Group name": Resolution & Next Steps
+      - text: Group description
+      - textbox "Group description": Starter template derived from existing AQM form questions.
+      - button "Add group condition"
+      - group "Group scoring":
+        - text: Group scoring
+        - checkbox "Use group scoring settings"
+        - text: Use group scoring settings
+      - paragraph: Reusable snapshot v1 · resolution_next_steps
+      - button "Detach from reusable group"
+      - button "Save as new asset version"
+      - button "Select all in group"
+      - article:
+        - checkbox "Select Ownership"
+        - text: "01"
+        - strong: Ownership
+        - text: Yes / No
+        - paragraph: Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+        - paragraph: Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__ownership
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Ownership":
+          - option "General"
+          - option "Resolution & Next Steps" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Ownership" [checked]
+        - button "Move Ownership up" [disabled]: ↑
+        - button "Move Ownership down": ↓
+        - button "Edit"
+      - article:
+        - checkbox "Select Resolution"
+        - text: "02"
+        - strong: Resolution
+        - text: Multiple choice
+        - paragraph: What is the best description of the issue outcome by the end of the conversation?
+        - paragraph: Weight 1.5 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__resolution
+        - term: Fully resolved (fully_resolved · credit 1)
+        - definition: The customer’s issue was resolved in the conversation.
+        - term: Partially resolved (partially_resolved · credit 0.5)
+        - definition: Meaningful progress, but further action remains.
+        - term: Unresolved (unresolved · credit 0)
+        - definition: The issue remained unresolved with no meaningful progress.
+        - term: Not applicable (not_applicable · credit unscored)
+        - definition: The conversation does not present a resolvable issue.
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Resolution":
+          - option "General"
+          - option "Resolution & Next Steps" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Resolution" [checked]
+        - button "Move Resolution up": ↑
+        - button "Move Resolution down": ↓
+        - button "Edit"
+      - article:
+        - checkbox "Select Clear next steps"
+        - text: "03"
+        - strong: Clear next steps
+        - text: Yes / No
+        - paragraph: Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+        - paragraph: Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__next_steps
+        - button "Add question condition"
+        - text: Move question to group
+        - combobox "Group for Clear next steps":
+          - option "General"
+          - option "Resolution & Next Steps" [selected]
+          - option "General (ungrouped)"
+        - button "Duplicate"
+        - checkbox "Enable Clear next steps" [checked]
+        - button "Move Clear next steps up": ↑
+        - button "Move Clear next steps down" [disabled]: ↓
+        - button "Edit"
+      - button "Add question"
+  - button "View history"
+  - text: ISOLATED SANDBOX
+  - heading "Test form" [level=2]
+  - paragraph: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+  - text: Execution
+  - combobox "Execution":
+    - option "Legacy browser sandbox (development)"
+    - option "Durable server sandbox (recommended)" [selected]
+  - text: Source
+  - combobox "Source":
+    - option "Synthetic" [selected]
+    - option "Genesys Cloud"
+  - text: Selection
+  - combobox "Selection":
+    - option "Most recent" [selected]
+    - option "Deterministic random"
+    - option "Manual selection"
+  - text: Conversations
+  - spinbutton "Conversations": "5"
+  - paragraph:
+    - strong: 5 conversations · 4 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+  - paragraph: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+  - button "Test form"
+  - button "Refresh test history"
+
+GOAL TWO SAVED Workspace / Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 6 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+6 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Server evaluations
+
+Server avg score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+First author resolution review	DRAFT	v1	1	0	0	—	2 Oct 2026
+First author next steps review	DRAFT	v1	3	0	0	—	2 Oct 2026
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 5 forms
+Saved form · DRAFT · VERSION 1
+First author next steps review
+Close details
+Export JSON
+Duplicate as new form
+Save changes
+TEST FORM
+Move to testing
+Publish version
+
+Saved 1:00:17 PM
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Ownership
+Resolution
+Clear next steps
+Question groups
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+Resolution & Next Steps
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+
+Reusable snapshot v1 · resolution_next_steps
+
+Detach from reusable groupSave as new asset versionSelect all in group
+01
+Ownership
+Yes / No
+
+Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+
+Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__ownership
+
+Add question condition
+Move question to group
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+02
+Resolution
+Multiple choice
+
+What is the best description of the issue outcome by the end of the conversation?
+
+Weight 1.5 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__resolution
+
+Fully resolved (fully_resolved · credit 1)
+The customer’s issue was resolved in the conversation.
+Partially resolved (partially_resolved · credit 0.5)
+Meaningful progress, but further action remains.
+Unresolved (unresolved · credit 0)
+The issue remained unresolved with no meaningful progress.
+Not applicable (not_applicable · credit unscored)
+The conversation does not present a resolvable issue.
+Add question condition
+Move question to group
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+03
+Clear next steps
+Yes / No
+
+Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+
+Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__next_steps
+
+Add question condition
+Move question to group
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+View history
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 3 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history
+
+BOTH GOALS REPLAY ELAPSED MS 2652
+
+  1 passed (6.6s)

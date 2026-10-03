@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-10-03T14:45:04.126Z",
+  "canonical": "4416ee416259c3c756374b14e26521d0b902b80b",
+  "assets": [
+    {
+      "file": "index.html",
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "status": 200,
+      "bytes": 470,
+      "sha256": "de6ad4326c305f92fdea024f5005548b0467a095ee820f8b685cb104fb369e57",
+      "localSha256": "de6ad4326c305f92fdea024f5005548b0467a095ee820f8b685cb104fb369e57",
+      "identical": true
+    },
+    {
+      "file": "assets/index-B0QOGpnI.js",
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-B0QOGpnI.js",
+      "status": 200,
+      "bytes": 223728,
+      "sha256": "6d62a0a6ff265dc2ef3655492c0334d7a9720c90a2953b14a17703b92c44131d",
+      "localSha256": "6d62a0a6ff265dc2ef3655492c0334d7a9720c90a2953b14a17703b92c44131d",
+      "identical": true
+    },
+    {
+      "file": "assets/index-Dh0z4fQh.css",
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-Dh0z4fQh.css",
+      "status": 200,
+      "bytes": 74403,
+      "sha256": "07894d86ef6952a84edca3af8fc47d4c9a6231fdc20c04032cc0bf263b35b970",
+      "localSha256": "07894d86ef6952a84edca3af8fc47d4c9a6231fdc20c04032cc0bf263b35b970",
+      "identical": true
+    },
+    {
+      "file": "assets/Welcome-4bnSAzdc.js",
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-4bnSAzdc.js",
+      "status": 200,
+      "bytes": 12955,
+      "sha256": "d181b5f96862f7e689a66414fac65a66c94a7db5be215c1036caeebf91d6cd71",
+      "localSha256": "d181b5f96862f7e689a66414fac65a66c94a7db5be215c1036caeebf91d6cd71",
+      "identical": true
+    },
+    {
+      "file": "assets/Demo-BWA9tIFc.js",
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-BWA9tIFc.js",
+      "status": 200,
+      "bytes": 20488,
+      "sha256": "b59b604d78a8f405449fda66d43a22376630b27455b85b39d196a8b6b682185f",
+      "localSha256": "b59b604d78a8f405449fda66d43a22376630b27455b85b39d196a8b6b682185f",
+      "identical": true
+    },
+    {
+      "file": "assets/reviews-DA7jf8kC.js",
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-DA7jf8kC.js",
+      "status": 200,
+      "bytes": 23423,
+      "sha256": "059afbec015b5f49497ca8d8b1b12777f99c1bddd518efb15a96289966c60225",
+      "localSha256": "059afbec015b5f49497ca8d8b1b12777f99c1bddd518efb15a96289966c60225",
+      "identical": true
+    },
+    {
+      "file": "assets/App-BAoBTKGB.js",
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/App-BAoBTKGB.js",
+      "status": 200,
+      "bytes": 414931,
+      "sha256": "d6fa696dc054ff3ea1e6208c58364fbdc05c03d9594af673e80e1ece2664a308",
+      "localSha256": "d6fa696dc054ff3ea1e6208c58364fbdc05c03d9594af673e80e1ece2664a308",
+      "identical": true
+    },
+    {
+      "file": "IPIlogo.svg",
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "status": 200,
+      "bytes": 13079,
+      "sha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+      "localSha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+      "identical": true
+    }
+  ]
+}

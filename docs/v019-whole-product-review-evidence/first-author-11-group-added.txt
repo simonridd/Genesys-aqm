@@ -1,0 +1,214 @@
+Workspace / Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 5 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+5 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Server evaluations
+
+Server avg score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+First author resolution review	DRAFT	v1	1	0	0	—	2 Oct 2026
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 6 forms
+Local draft / example · DRAFT · VERSION 1
+First author next steps review
+Close details
+Export JSON
+Duplicate as new form
+Save changes
+TEST FORM
+Move to testing
+Publish version
+
+Unsaved changes
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+question_1790942413458
+Ownership
+Resolution
+Clear next steps
+Question groups
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+General
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+Save group as reusable groupSelect all in group
+01
+Untitled question
+Yes / No
+
+Add a question to evaluate the conversation.
+
+Weight 1 · Enabled · ID question_1790942413458
+
+Add question condition
+Move question to group
+General
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+Resolution & Next Steps
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+
+Reusable snapshot v1 · resolution_next_steps
+
+Detach from reusable groupSave as new asset versionSelect all in group
+01
+Ownership
+Yes / No
+
+Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+
+Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__ownership
+
+Add question condition
+Move question to group
+General
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+02
+Resolution
+Multiple choice
+
+What is the best description of the issue outcome by the end of the conversation?
+
+Weight 1.5 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__resolution
+
+Fully resolved (fully_resolved · credit 1)
+The customer’s issue was resolved in the conversation.
+Partially resolved (partially_resolved · credit 0.5)
+Meaningful progress, but further action remains.
+Unresolved (unresolved · credit 0)
+The issue remained unresolved with no meaningful progress.
+Not applicable (not_applicable · credit unscored)
+The conversation does not present a resolvable issue.
+Add question condition
+Move question to group
+General
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+03
+Clear next steps
+Yes / No
+
+Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+
+Weight 1 · Enabled · ID group_ff48bc7418284f2e8647a6c612afb698__next_steps
+
+Add question condition
+Move question to group
+General
+Resolution & Next Steps
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+View history
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 4 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history

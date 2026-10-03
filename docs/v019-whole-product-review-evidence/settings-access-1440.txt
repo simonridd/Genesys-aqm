@@ -1,0 +1,37 @@
+Workspace / Settings
+ADMIN
+Jev managed securely by automation service
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Notifications
+Audit
+Advanced / Development
+Access
+Role administration
+
+Assignments use Genesys user IDs from the server allowlist. The configured bootstrap owner retains ADMIN access.
+
+Genesys user ID
+Assigned role
+ADMIN
+AUTHOR
+REVIEWER
+VIEWER
+Assign role
+Search
+3 results
+User ↓
+
+Role
+
+Updated
+
+viewer	VIEWER
+author	AUTHOR
+Alex Reviewer	REVIEWER

@@ -1,0 +1,17 @@
+
+Running 9 tests using 1 worker
+
+(node:8850) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/9] tests/whole-product-review.spec.ts:6:97 › whole product actual API fixture inspection 1440
+[2/9] tests/whole-product-review.spec.ts:6:97 › whole product actual API fixture inspection 1920
+[3/9] tests/whole-product-review.spec.ts:6:97 › whole product actual API fixture inspection 390
+[4/9] tests/whole-product-review.spec.ts:20:40 › overview empty and connected answer sets empty
+[5/9] tests/whole-product-review.spec.ts:20:40 › overview healthy and connected answer sets empty
+[6/9] tests/whole-product-review.spec.ts:21:50 › role AUTHOR actual API fixture
+[7/9] tests/whole-product-review.spec.ts:21:50 › role REVIEWER actual API fixture
+[8/9] tests/whole-product-review.spec.ts:21:50 › role VIEWER actual API fixture
+[9/9] tests/whole-product-review.spec.ts:22:1 › failure UX using intercepted failures over real local API
+  9 passed (28.3s)

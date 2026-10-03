@@ -1,0 +1,106 @@
+Workspace / Groups
+ADMIN
+Jev managed securely by automation service
+CONFIGURATION
+Question Groups
+
+Versioned reusable templates. Forms retain independent snapshots.
+
+Import reusable group
+New reusable question group
+Saved in AQM · 4 saved groups
+Refresh saved groups
+Status
+All statuses
+Draft
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Used
+Unused
+Search
+4 results
+Name ↓
+
+Status
+
+Version
+
+Questions
+
+Used by forms
+
+Last modified
+
+Resolution & Next Steps	PUBLISHED	v1	3	0	10/1/2026
+Identity & Security Verification	PUBLISHED	v1	3	0	10/1/2026
+Customer Experience / Empathy	PUBLISHED	v1	3	0	10/1/2026
+Call Closing	PUBLISHED	v1	2	0	10/1/2026
+Local drafts & starter examples · 4 groups
+Resolution & Next Steps · v1 · PUBLISHED
+Close details
+Export JSON
+Edit as new version
+Retire reusable question group
+
+Published version is read-only. Create a new version to edit.
+
+Reusable question group name
+Reusable question group description
+View history
+Reusable questions
+
+Question weights determine the overall score. Read-only published definition.
+
+Yes threshold65%
+Resolution & Next Steps
+Group name
+Group description
+Group scoring
+Use group scoring settings
+01
+Ownership
+Yes / No
+
+Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+
+Weight 1 · Enabled · ID ownership
+
+↑
+↓
+Read only
+02
+Resolution
+Multiple choice
+
+What is the best description of the issue outcome by the end of the conversation?
+
+Weight 1.5 · Enabled · ID resolution
+
+Fully resolved (fully_resolved · credit 1)
+The customer’s issue was resolved in the conversation.
+Partially resolved (partially_resolved · credit 0.5)
+Meaningful progress, but further action remains.
+Unresolved (unresolved · credit 0)
+The issue remained unresolved with no meaningful progress.
+Not applicable (not_applicable · credit unscored)
+The conversation does not present a resolvable issue.
+↑
+↓
+Read only
+03
+Clear next steps
+Yes / No
+
+Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+
+Weight 1 · Enabled · ID next_steps
+
+↑
+↓
+Read only
+Add question

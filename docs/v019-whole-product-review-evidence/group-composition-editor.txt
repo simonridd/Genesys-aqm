@@ -1,0 +1,119 @@
+Workspace / Groups
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Question Groups
+
+Versioned reusable templates. Forms retain independent snapshots.
+
+Import reusable group
+New reusable question group
+Saved in AQM · 4 saved groups
+Refresh saved groups
+Status
+All statuses
+Draft
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Used
+Unused
+Search
+4 results
+Name ↓
+
+Status
+
+Version
+
+Questions
+
+Used by forms
+
+Last modified
+
+Resolution & Next Steps	PUBLISHED	v1	3	0	10/1/2026
+Identity & Security Verification	PUBLISHED	v1	3	0	10/1/2026
+Customer Experience / Empathy	PUBLISHED	v1	3	0	10/1/2026
+Call Closing	PUBLISHED	v1	2	0	10/1/2026
+Local drafts & starter examples · 4 groups
+Resolution standards · v1 · DRAFT
+Close details
+Export JSON
+Save changes
+Publish reusable question group
+
+Unsaved changes
+
+Reusable question group name
+Reusable question group description
+View history
+Reusable questions
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Yes threshold65%
+Resolution standards
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+Select all in group
+01
+Was the resolution clear?
+Multiple choice
+
+Assess whether the resolution was explained clearly.
+
+Weight 1 · Enabled · ID question_1790942400935
+
+Option A (option_a · credit 1)
+Describe when this fits.
+Option B (option_b · credit 0)
+Describe when this fits.
+Add question condition
+Duplicate
+↑
+↓
+Done
+ANSWERS
+Use reusable answer set
+Save as reusable answer set
+Question ID
+Stable key: lowercase letters, numbers, underscores
+Question type
+Yes / No · Noul
+Multiple choice · Choice
+Ordered rubric · Score
+Title
+Instructions / question
+Weight
+Choices
+
+Credit 0–1 affects the weighted score. Leave choice credit blank to exclude it.
+
+01
+Key
+Label
+Description
+Credit
+↑
+↓
+×
+02
+Key
+Label
+Description
+Credit
+↑
+↓
+×
+＋ Add choice
+Delete question
+Changes save locally in this browser.
+Add question

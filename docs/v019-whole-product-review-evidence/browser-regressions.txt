@@ -1,0 +1,358 @@
+
+Running 171 tests using 1 worker
+
+(node:78186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/171] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1440
+[2/171] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1440
+[3/171] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1440
+[4/171] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 1920
+[5/171] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 1920
+[6/171] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 1920
+[7/171] tests/answer-sets.spec.ts:42:2 › connected lifecycle, local separation, audit and focus 390
+[8/171] tests/answer-sets.spec.ts:58:2 › choice attach detach save-as update and blocked condition 390
+[9/171] tests/answer-sets.spec.ts:77:2 › ordered score snapshot and option order 390
+[10/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role ADMIN
+[11/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role AUTHOR
+[12/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role REVIEWER
+[13/171] tests/answer-sets.spec.ts:82:67 › Answer Sets role VIEWER
+[14/171] tests/answer-sets.spec.ts:83:1 › dirty guards keep Answer Set edits across refresh, cancelled switch/close/navigation and unload
+[15/171] tests/answer-sets.spec.ts:84:1 › disconnected starters/custom snapshot and reconnect never upload browser state
+[16/171] tests/answer-sets.spec.ts:90:1 › Answer Set import creates a new draft with exact options and safe history
+[17/171] tests/answer-sets.spec.ts:91:1 › connected failed library reads never substitute local starters in the picker
+[18/171] tests/answer-sets.spec.ts:92:1 › stale incompatible family update is blocked without changing the snapshot
+[19/171] tests/answer-sets.spec.ts:93:1 › Answer Set changes inside a group affect only the form snapshot
+[20/171] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1440
+[21/171] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 1920
+[22/171] tests/authoring.spec.ts:9:97 › authoring productivity and portability at 390
+[23/171] tests/authoring.spec.ts:56:1 › offline draft stays browser-local
+  1) tests/authoring.spec.ts:56:1 › offline draft stays browser-local ──────────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Evaluation Forms', exact: true })
+
+
+      54 |  await page.screenshot({path:`/private/tmp/aqm-v013-${viewport.width}.png`,fullPage:true});expect(errors).toEqual([]);await context.close()
+      55 | })
+    > 56 | test('offline draft stays browser-local',async({page})=>{await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Evaluation Forms',exact:true}).click();await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.locator('.form-detail').getByLabel('Form name',{exact:true}).fill('Browser draft');await expect(page.getByText('Saved in this browser',{exact:true})).toBeVisible();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Evaluation Forms',exact:true}).click();await expect(page.getByRole('row').filter({hasText:'Browser draft'})).toBeVisible()})
+         |                                                                                                                                                                                                       ^
+      57 |
+        at /private/tmp/aqm-v019-whole-product-review/tests/authoring.spec.ts:56:199
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/authoring-offline-draft-stays-browser-local/error-context.md
+
+
+(node:78562) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/171] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1440
+[25/171] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 1920
+[26/171] tests/calibration.spec.ts:9:3 › provider-free human review, conflict, calibration and drill-down at 390
+[27/171] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1440
+[28/171] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1440
+[29/171] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1440
+[30/171] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 1920
+[31/171] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 1920
+[32/171] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 1920
+[33/171] tests/definition-authority.spec.ts:58:2 › R05 exact review, saved/local libraries, routing and transitions 390
+[34/171] tests/definition-authority.spec.ts:85:2 › shared saves, saved picker, dirty refresh and promotion 390
+[35/171] tests/definition-authority.spec.ts:114:2 › saved endpoint failures and routing loading never show local matches 390
+[36/171] tests/definition-authority.spec.ts:125:1 › exact voice criteria, missing saved pin, two saved forms and persistent working copies
+[37/171] tests/definition-authority.spec.ts:145:1 › failed shared policy refresh retains dirty policy and separate schedule drafts
+[38/171] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1440
+[39/171] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1440
+[40/171] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 1920
+[41/171] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 1920
+[42/171] tests/first-use-settings.spec.ts:35:2 › first use and connection routes at 390
+[43/171] tests/first-use-settings.spec.ts:47:2 › shared governance settings survive sections at 390
+[44/171] tests/first-use-settings.spec.ts:60:68 › coherent Settings for ADMIN
+[45/171] tests/first-use-settings.spec.ts:60:68 › coherent Settings for AUTHOR
+[46/171] tests/first-use-settings.spec.ts:60:68 › coherent Settings for REVIEWER
+[47/171] tests/first-use-settings.spec.ts:60:68 › coherent Settings for VIEWER
+[48/171] tests/first-use-settings.spec.ts:67:34 › saved setup stage 0
+[49/171] tests/first-use-settings.spec.ts:67:34 › saved setup stage 1
+[50/171] tests/first-use-settings.spec.ts:67:34 › saved setup stage 2
+[51/171] tests/first-use-settings.spec.ts:67:34 › saved setup stage 3
+[52/171] tests/first-use-settings.spec.ts:67:34 › saved setup stage 4
+[53/171] tests/first-use-settings.spec.ts:73:1 › OAuth error returns to Connection with visible error
+[54/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link default
+[55/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link invalid
+[56/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link connection
+[57/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link access
+[58/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link reviews
+[59/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link privacy
+[60/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link notifications
+[61/171] tests/first-use-settings.spec.ts:74:229 › Settings deep link audit
+[62/171] tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback success
+[63/171] tests/first-use-settings.spec.ts:77:35 › explicit fixture Connect → callback failure
+[64/171] tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 1440
+[65/171] tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 1920
+[66/171] tests/form-composition.spec.ts:13:2 › provider-free group composition and reusable snapshots at 390
+[67/171] tests/governance.spec.ts:7:164 › ADMIN governance at 1440
+[68/171] tests/governance.spec.ts:7:164 › AUTHOR governance at 1440
+[69/171] tests/governance.spec.ts:7:164 › REVIEWER governance at 1440
+[70/171] tests/governance.spec.ts:7:164 › VIEWER governance at 1440
+[71/171] tests/governance.spec.ts:7:164 › ADMIN governance at 1920
+[72/171] tests/governance.spec.ts:7:164 › AUTHOR governance at 1920
+[73/171] tests/governance.spec.ts:7:164 › REVIEWER governance at 1920
+[74/171] tests/governance.spec.ts:7:164 › VIEWER governance at 1920
+[75/171] tests/governance.spec.ts:7:164 › ADMIN governance at 390
+[76/171] tests/governance.spec.ts:7:164 › AUTHOR governance at 390
+[77/171] tests/governance.spec.ts:7:164 › REVIEWER governance at 390
+[78/171] tests/governance.spec.ts:7:164 › VIEWER governance at 390
+[79/171] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[80/171] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1440
+[81/171] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1440
+[82/171] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[83/171] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 1920
+[84/171] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 1920
+[85/171] tests/investigation-links.spec.ts:55:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[86/171] tests/investigation-links.spec.ts:75:2 › Overview review counts, workload shortcuts and detail at 390
+[87/171] tests/investigation-links.spec.ts:89:2 › Calibration disagreement drill clears stale cohort at 390
+[88/171] tests/notifications.spec.ts:6:164 › ADMIN notifications at 1440
+[89/171] tests/notifications.spec.ts:6:164 › AUTHOR notifications at 1440
+[90/171] tests/notifications.spec.ts:6:164 › REVIEWER notifications at 1440
+[91/171] tests/notifications.spec.ts:6:164 › VIEWER notifications at 1440
+[92/171] tests/notifications.spec.ts:6:164 › ADMIN notifications at 1920
+[93/171] tests/notifications.spec.ts:6:164 › AUTHOR notifications at 1920
+[94/171] tests/notifications.spec.ts:6:164 › REVIEWER notifications at 1920
+[95/171] tests/notifications.spec.ts:6:164 › VIEWER notifications at 1920
+[96/171] tests/notifications.spec.ts:6:164 › ADMIN notifications at 390
+[97/171] tests/notifications.spec.ts:6:164 › AUTHOR notifications at 390
+[98/171] tests/notifications.spec.ts:6:164 › REVIEWER notifications at 390
+[99/171] tests/notifications.spec.ts:6:164 › VIEWER notifications at 390
+[100/171] tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1440
+[101/171] tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 1920
+[102/171] tests/overview.spec.ts:55:29 › Overview healthy, range, freshness, partial failure at 390
+[103/171] tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1440
+[104/171] tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1440
+[105/171] tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1440
+[106/171] tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1440
+[107/171] tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 1920
+[108/171] tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 1920
+[109/171] tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 1920
+[110/171] tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 1920
+[111/171] tests/overview.spec.ts:70:96 › Overview ADMIN attention and drill-through at 390
+[112/171] tests/overview.spec.ts:70:96 › Overview AUTHOR attention and drill-through at 390
+[113/171] tests/overview.spec.ts:70:96 › Overview REVIEWER attention and drill-through at 390
+[114/171] tests/overview.spec.ts:70:96 › Overview VIEWER attention and drill-through at 390
+[115/171] tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts
+  2) tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('Current role')
+    Expected: "ADMIN"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+
+
+      50 |   return json({items:[]})
+      51 |  })
+    > 52 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                               ^
+      53 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}
+      54 | }
+      55 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{
+        at setup (/private/tmp/aqm-v019-whole-product-review/tests/overview.spec.ts:52:111)
+        at /private/tmp/aqm-v019-whole-product-review/tests/overview.spec.ts:89:90
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/overview-existing-connecte-aed98--Overview-before-App-mounts/error-context.md
+
+
+(node:79012) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[116/171] tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+  3) tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Conversation review', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Conversation review', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Conversation review', exact: true })
+
+
+      90 | test('OAuth return-page intent, evaluation deep link and explicit query page win',async({browser})=>{
+      91 |  for(const returned of ['settings','policies','evaluations']){const page=await browser.newPage();await setup(page,'ADMIN',false,returned);await expect(page.getByRole('heading',{name:returned[0].toUpperCase()+returned.slice(1),exact:true})).toBeVisible();await page.close()}
+    > 92 |  const page=await browser.newPage();await page.route(`${origin}/**`,r=>r.fulfill({json:{items:[]}}));await page.goto(`${app}?evaluationId=linked&page=automation`);await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await page.goto(`${app}?page=policies`);await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await page.goto(app);await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.goto(`${app}?page=automation`);await expect(page.getByText('Connect to Genesys Cloud to view operational AQM health.')).toBeVisible();await page.close()
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+      93 | })
+      94 |
+        at /private/tmp/aqm-v019-whole-product-review/tests/overview.spec.ts:92:474
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/overview-OAuth-return-page-c5f3a-and-explicit-query-page-win/error-context.md
+
+
+(node:79041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[117/171] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440
+[118/171] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1920
+[119/171] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390
+[120/171] tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate
+  4) tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('.policy-detail').getByLabel('Policy name')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('.policy-detail').getByLabel('Policy name') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByLabel('Policy name')
+        14 × locator resolved to <input readonly value="Daily Voice fixture"/>
+           - unexpected value "enabled"
+
+
+      81 | for(const role of ['VIEWER','REVIEWER'] as const)test(`${role} can inspect policies and schedule but cannot mutate`,async({page})=>{
+      82 |  const state=await fixture(page,role);await page.getByRole('button',{name:'Daily Voice fixture',exact:true}).click();const detail=page.locator('.policy-detail')
+    > 83 |  await expect(detail.getByLabel('Policy name')).toBeDisabled();await expect(detail.getByLabel('Automation',{exact:true})).toBeDisabled();await expect(detail.getByRole('button',{name:'View runs'})).toBeEnabled();for(const name of ['Save changes','Duplicate policy','Save schedule','＋ New policy'])await expect(page.getByRole('button',{name,exact:true})).toHaveCount(0);expect(state.mutations).toBe(0)
+         |                                                 ^
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+      86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v019-whole-product-review/tests/policy-authoring.spec.ts:83:49
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/policy-authoring-VIEWER-ca-ba8d2--schedule-but-cannot-mutate/error-context.md
+
+
+(node:79079) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[121/171] tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate
+  5) tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('.policy-detail').getByLabel('Policy name')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('.policy-detail').getByLabel('Policy name') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByLabel('Policy name')
+        14 × locator resolved to <input readonly value="Daily Voice fixture"/>
+           - unexpected value "enabled"
+
+
+      81 | for(const role of ['VIEWER','REVIEWER'] as const)test(`${role} can inspect policies and schedule but cannot mutate`,async({page})=>{
+      82 |  const state=await fixture(page,role);await page.getByRole('button',{name:'Daily Voice fixture',exact:true}).click();const detail=page.locator('.policy-detail')
+    > 83 |  await expect(detail.getByLabel('Policy name')).toBeDisabled();await expect(detail.getByLabel('Automation',{exact:true})).toBeDisabled();await expect(detail.getByRole('button',{name:'View runs'})).toBeEnabled();for(const name of ['Save changes','Duplicate policy','Save schedule','＋ New policy'])await expect(page.getByRole('button',{name,exact:true})).toHaveCount(0);expect(state.mutations).toBe(0)
+         |                                                 ^
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+      86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v019-whole-product-review/tests/policy-authoring.spec.ts:83:49
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/policy-authoring-REVIEWER--7576b--schedule-but-cannot-mutate/error-context.md
+
+
+(node:79096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[122/171] tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records
+  6) tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Policies', exact: true })
+
+
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+    > 86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+         |                                                                                                                                       ^
+      87 | })
+      88 | test('connected load failure does not expose local definitions or production mutation controls',async({page})=>{
+      89 |  await fixture(page);await page.route(`${origin}/api/policies**`,r=>r.fulfill({status:503,json:{error:'Durable library unavailable'}}));await page.getByRole('button',{name:'Refresh durable policies'}).click();await expect(page.getByRole('alert')).toContainText('Durable library unavailable');await expect(page.getByText('STALE LOCAL MUST NOT MERGE')).toHaveCount(0);await expect(page.getByRole('button',{name:'＋ New policy'})).toHaveCount(0);await expect(page.locator('.policy-detail')).toHaveCount(0)
+        at /private/tmp/aqm-v019-whole-product-review/tests/policy-authoring.spec.ts:86:135
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/policy-authoring-offline-s-ec345-gles-with-connected-records/error-context.md
+
+
+(node:79151) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[123/171] tests/policy-authoring.spec.ts:88:1 › connected load failure does not expose local definitions or production mutation controls
+[124/171] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1440
+[125/171] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1440
+[126/171] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 1920
+[127/171] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 1920
+[128/171] tests/review-operations.spec.ts:11:146 › ADMIN review operations at 390
+[129/171] tests/review-operations.spec.ts:11:146 › REVIEWER review operations at 390
+[130/171] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1440
+[131/171] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 1920
+[132/171] tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+[133/171] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1440
+[134/171] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1440
+[135/171] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1440
+[136/171] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 1920
+[137/171] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 1920
+[138/171] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 1920
+[139/171] tests/save-protection.spec.ts:77:2 › Groups save, replacement and leave protection at 390
+[140/171] tests/save-protection.spec.ts:100:2 › Governance exact global scope, discard, failures and guards at 390
+[141/171] tests/save-protection.spec.ts:125:2 › Form Test destructive confirmations preserve recovery at 390
+[142/171] tests/save-protection.spec.ts:142:1 › offline group is explicitly saved in this browser, and import is clean
+[143/171] tests/save-protection.spec.ts:152:1 › demo removal, broad local reset and local history clear have exact scope
+[144/171] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[145/171] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[146/171] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[147/171] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[148/171] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[149/171] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[150/171] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[151/171] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[152/171] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[153/171] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[154/171] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+[155/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions ADMIN
+[156/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions REVIEWER
+[157/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions AUTHOR
+[158/171] tests/usability.spec.ts:8:68 › evaluation mode default and permissions VIEWER
+[159/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewQueue=active
+[160/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope evaluationId=escalated
+[161/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope cohort=analytics&form=general_service%4017&question=greeting&origin=analytics
+[162/171] tests/usability.spec.ts:36:202 › reviewer respects explicit scope reviewStatus=REVIEW_REQUESTED&assignment=unassigned
+[163/171] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1440
+[164/171] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1440
+[165/171] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 1920
+[166/171] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 1920
+[167/171] tests/usability.spec.ts:44:2 › keyboard details, reviewer actions and viewport bounds 390
+[168/171] tests/usability.spec.ts:60:2 › mobile heading actions and local form/group keyboard journeys 390
+[169/171] tests/usability.spec.ts:79:1 › keyboard run, alert, audit, policy and calibration drill
+[170/171] tests/usability.spec.ts:92:1 › policy read-only reason is permission based
+[171/171] tests/usability.spec.ts:99:1 › notification editor focus and cancel return to explicit controls
+  6 failed
+    tests/authoring.spec.ts:56:1 › offline draft stays browser-local ───────────────────────────────
+    tests/overview.spec.ts:89:1 › existing connected session defaults to Overview before App mounts
+    tests/overview.spec.ts:90:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+    tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate
+    tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate
+    tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records
+  165 passed (7.0m)

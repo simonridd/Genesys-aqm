@@ -1,0 +1,54 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+
+FIVE-MINUTE CUSTOMER CASE
+
+The customer case
+Define quality
+Evaluate at scale
+Human challenge
+Manage & pilot
+
+One conversation, from agreed quality to a pilot decision.
+
+Chapter 2 of 5
+
+Define quality
+What does good mean?
+
+Quality is defined explicitly. AI doesn’t invent the scoring model.
+
+Resolution & ownership · Published version 3
+
+Acknowledged the impact
+
+Did the agent acknowledge the customer’s difficulty?
+
+Yes / No
+
+Issue resolved
+
+Was the customer’s stated issue resolved?
+
+Yes / No
+
+Clear next step
+
+Was a specific next step and realistic timeline agreed?
+
+Clear next step / Timeline not agreed
+
+Action and timeline must be agreed. Clear earns 100% credit; missing timeline earns 0%. This criterion has double weight within Resolution and is critical: a failure means the form fails.
+
+Customer care contributes one third of the score; Resolution contributes two thirds. The pass threshold is 75%.
+
+If the issue is unresolved, an additional question asks who owns the escalation. It does not apply to Jamie’s resolved access issue.
+
+Reuse agreed standards
+
+Reusable question groups and answer sets keep common standards consistent across forms. Each published form keeps its own versioned snapshot.
+
+Back
+Next
+Exit demo
+More options

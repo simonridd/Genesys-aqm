@@ -1,0 +1,91 @@
+
+Running 9 tests using 1 worker
+
+(node:79601) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/9] tests/whole-product-review.spec.ts:59:97 › whole product actual API fixture inspection 1440
+[2/9] tests/whole-product-review.spec.ts:59:97 › whole product actual API fixture inspection 1920
+[3/9] tests/whole-product-review.spec.ts:59:97 › whole product actual API fixture inspection 390
+[4/9] tests/whole-product-review.spec.ts:73:40 › overview empty and connected answer sets empty
+[5/9] tests/whole-product-review.spec.ts:73:40 › overview healthy and connected answer sets empty
+[6/9] tests/whole-product-review.spec.ts:74:50 › role AUTHOR actual API fixture
+  1) tests/whole-product-review.spec.ts:74:50 › role AUTHOR actual API fixture ─────────────────────
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Settings sections' }).getByRole('button', { name: 'Audit', exact: true })
+
+
+      72 | })
+      73 | for(const state of ['empty','healthy'])test(`overview ${state} and connected answer sets empty`,async({page})=>{const f=await fixture(page,'ADMIN',state);try{await capture(page,'overview-'+state);if(state==='empty'){await nav(page,'Answer Sets').click();await capture(page,'answer-sets-empty-connected')}}finally{await f.close()}})
+    > 74 | for(const role of ['AUTHOR','REVIEWER','VIEWER'])test(`role ${role} actual API fixture`,async({page})=>{test.setTimeout(90000);const f=await fixture(page,role);try{await capture(page,'role-'+role+'-home');await nav(page,'Evaluations').click();await capture(page,'role-'+role+'-evaluations');if(role==='REVIEWER'){await page.getByRole('button',{name:'Open evaluation escalated',exact:true}).click();await capture(page,'reviewer-priority-detail')}await nav(page,'Settings').click();for(const section of ['Connection','Access','Reviews','Privacy & retention','Notifications','Audit']){await page.getByRole('navigation',{name:'Settings sections'}).getByRole('button',{name:section,exact:true}).click();await capture(page,'role-'+role+'-settings-'+section.toLowerCase().replace(/[^a-z]+/g,'-'))}expect(f.errors).toEqual([])}finally{await f.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+      75 | test('failure UX using intercepted failures over real local API',async({page})=>{test.setTimeout(90000);const f=await fixture(page,'AUTHOR');try{
+      76 |  for(const [name,path,refresh] of [['Evaluation Forms','/api/forms','Refresh saved forms'],['Question Groups','/api/question-groups','Refresh saved groups'],['Answer Sets','/api/answer-sets','Refresh saved Answer Sets'],['Policies','/api/policies','Refresh durable policies']]){await nav(page,name).click();f.failures.set('GET '+path,{status:503,error:'Temporarily unavailable'});await page.getByRole('button',{name:refresh,exact:true}).click();await expect(page.getByRole('alert').first()).toBeVisible();await capture(page,'failure-'+name.toLowerCase().replaceAll(' ','-'));f.failures.delete('GET '+path);await page.getByRole('button',{name:refresh,exact:true}).click()}
+      77 |  await nav(page,'Answer Sets').click();await page.getByRole('button',{name:'New Answer Set',exact:true}).click();await page.getByLabel('Answer Set name',{exact:true}).fill('Conflict clarity scale');const id=await page.evaluate(()=>null);await page.route(api+'/api/answer-sets/*',r=>r.request().method()==='PUT'?r.fulfill({status:409,json:{error:'Answer Set changed in another session. Refresh before saving.'}}):r.fallback());await page.getByRole('button',{name:'Save changes',exact:true}).click();await capture(page,'failure-answer-set-conflict');page.on('dialog',d=>d.accept());await nav(page,'Evaluation Forms').click();
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review.spec.ts:74:691
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-role-AUTHOR-actual-API-fixture/error-context.md
+
+
+(node:79866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/9] tests/whole-product-review.spec.ts:74:50 › role REVIEWER actual API fixture
+  2) tests/whole-product-review.spec.ts:74:50 › role REVIEWER actual API fixture ───────────────────
+
+    Error: Review changed in another tab or by another reviewer. Refresh before saving.
+
+       at .generated/whole-product-review-api.mjs:945
+
+      943 |         if (new Set(writes.map((w) => w.review.id)).size !== writes.length) throw Error("Duplicate review write.");
+      944 |         for (const { review } of writes) if (auditContext.getStore() && !this.evaluationMap.has(review.evaluationId)) throw new StoreConflict();
+    > 945 |         for (const { review, expectedRevision } of writes) if ((this.reviewMap.get(review.id)?.revision ?? 0) !== expectedRevision || review.revision !== expectedRevision + 1) throw new ReviewConflict();
+          |                                                                                                                                                                                       ^
+      946 |         for (const { review } of writes) {
+      947 |           this.audit("humanReviews", review.id, review, this.reviewMap.get(review.id));
+      948 |           this.reviewMap.set(review.id, copy(review));
+        at MemoryStore.writeReviews (/private/tmp/aqm-v019-whole-product-review/tests/.generated/whole-product-review-api.mjs:945:183)
+        at fixture (/private/tmp/aqm-v019-whole-product-review/tests/whole-product-review.spec.ts:32:164)
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review.spec.ts:74:136
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-role-REVIEWER-actual-API-fixture/error-context.md
+
+
+(node:79883) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/9] tests/whole-product-review.spec.ts:74:50 › role VIEWER actual API fixture
+  3) tests/whole-product-review.spec.ts:74:50 › role VIEWER actual API fixture ─────────────────────
+
+    TimeoutError: locator.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Settings sections' }).getByRole('button', { name: 'Notifications', exact: true })
+
+
+      72 | })
+      73 | for(const state of ['empty','healthy'])test(`overview ${state} and connected answer sets empty`,async({page})=>{const f=await fixture(page,'ADMIN',state);try{await capture(page,'overview-'+state);if(state==='empty'){await nav(page,'Answer Sets').click();await capture(page,'answer-sets-empty-connected')}}finally{await f.close()}})
+    > 74 | for(const role of ['AUTHOR','REVIEWER','VIEWER'])test(`role ${role} actual API fixture`,async({page})=>{test.setTimeout(90000);const f=await fixture(page,role);try{await capture(page,'role-'+role+'-home');await nav(page,'Evaluations').click();await capture(page,'role-'+role+'-evaluations');if(role==='REVIEWER'){await page.getByRole('button',{name:'Open evaluation escalated',exact:true}).click();await capture(page,'reviewer-priority-detail')}await nav(page,'Settings').click();for(const section of ['Connection','Access','Reviews','Privacy & retention','Notifications','Audit']){await page.getByRole('navigation',{name:'Settings sections'}).getByRole('button',{name:section,exact:true}).click();await capture(page,'role-'+role+'-settings-'+section.toLowerCase().replace(/[^a-z]+/g,'-'))}expect(f.errors).toEqual([])}finally{await f.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+      75 | test('failure UX using intercepted failures over real local API',async({page})=>{test.setTimeout(90000);const f=await fixture(page,'AUTHOR');try{
+      76 |  for(const [name,path,refresh] of [['Evaluation Forms','/api/forms','Refresh saved forms'],['Question Groups','/api/question-groups','Refresh saved groups'],['Answer Sets','/api/answer-sets','Refresh saved Answer Sets'],['Policies','/api/policies','Refresh durable policies']]){await nav(page,name).click();f.failures.set('GET '+path,{status:503,error:'Temporarily unavailable'});await page.getByRole('button',{name:refresh,exact:true}).click();await expect(page.getByRole('alert').first()).toBeVisible();await capture(page,'failure-'+name.toLowerCase().replaceAll(' ','-'));f.failures.delete('GET '+path);await page.getByRole('button',{name:refresh,exact:true}).click()}
+      77 |  await nav(page,'Answer Sets').click();await page.getByRole('button',{name:'New Answer Set',exact:true}).click();await page.getByLabel('Answer Set name',{exact:true}).fill('Conflict clarity scale');const id=await page.evaluate(()=>null);await page.route(api+'/api/answer-sets/*',r=>r.request().method()==='PUT'?r.fulfill({status:409,json:{error:'Answer Set changed in another session. Refresh before saving.'}}):r.fallback());await page.getByRole('button',{name:'Save changes',exact:true}).click();await capture(page,'failure-answer-set-conflict');page.on('dialog',d=>d.accept());await nav(page,'Evaluation Forms').click();
+        at /private/tmp/aqm-v019-whole-product-review/tests/whole-product-review.spec.ts:74:691
+
+    Error Context: docs/v019-whole-product-review-evidence/test-artifacts/whole-product-review-role-VIEWER-actual-API-fixture/error-context.md
+
+
+(node:79924) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/9] tests/whole-product-review.spec.ts:75:1 › failure UX using intercepted failures over real local API
+  3 failed
+    tests/whole-product-review.spec.ts:74:50 › role AUTHOR actual API fixture ──────────────────────
+    tests/whole-product-review.spec.ts:74:50 › role REVIEWER actual API fixture ────────────────────
+    tests/whole-product-review.spec.ts:74:50 › role VIEWER actual API fixture ──────────────────────
+  6 passed (47.9s)

@@ -1,0 +1,107 @@
+{
+  "observations": [
+    {
+      "name": "blind-welcome-1440",
+      "at": "2026-10-03T14:07:38.270Z",
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "text": "IPI AQM\nConnect Genesys Cloud\nWorking prototype\n\nAUTOMATED QUALITY MANAGEMENT FOR GENESYS CLOUD\n\nMore conversations understood.\nLess manual scoring.\n\nJev answers specific quality questions in predefined formats. AQM turns those answers into transparent scores that people can inspect and challenge.\n\nTake the guided demo →\nExplore the prototype\n\nFive minutes · fictional data · no live requests\n\nFrom signal to understanding\nFictional preview\n\nResolution guidance needs a closer look.\n\nPREPARED AI ANSWER\nClear next step\nHUMAN JUDGMENT\nTimeline not agreed\n\nOne conversation. The same published form. A useful disagreement.\n\nSee how calibration works →\nTHE OPPORTUNITY\nManual review should inform quality.\nNot be the only way to see it.\n\nIncrease visibility across selected conversations, investigate the evidence, and use human judgment where it matters. Controlled coverage is a policy decision, not a claim of unlimited capacity.\n\nWHY THIS APPROACH\nFocused decisions. Transparent scoring. Human control.\nAsk focused questions\n\nPredefined answer formats evaluate specific criteria, with related questions batched in one request.\n\nApply agreed scoring rules\n\nWeights, critical criteria and exact form versions make the score explainable.\n\nLearn from disagreement\n\nHuman reviews preserve the original AI result and support calibration.\n\nTyped answers can still be wrong. Confidence is not measured correctness; calibrate against human judgments. Confidence reference · checked 2026-10-03.\n\nEXPLORE THE ECONOMICS\nA small model bill. An honest starting point.\n\nStructured, batched questions and very low model input cost make broader evaluation economically attractive. This is an illustrative planning estimate — model input cost only.\n\nConversations per month\n0–1,000,000,000\nSelected percentage\n0–100%\nAdvanced assumptions\nESTIMATED JEV MODEL INPUT COST · USD\n$16.80/month\n\n50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.\n\nCurrent assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.\n\nInput includes transcript and quality questions. Repeated transcript input across conditional requests counts again. Average forms and requests may be fractional planning equivalents.\n\nOfficial Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.\n\nExcluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot.\n\nMORE THAN A MODEL DEMONSTRATION\nA connected quality workflow.\nThe customer case\nWas Jamie given a clear next step?\n→\nDefine quality\nSee the agreed questions and scoring rules\n→\nEvaluate at scale\nSee Jev’s answers and AQM’s explainable score\n→\nHuman challenge\nCompare independent judgments\n→\nManage & pilot\nTurn quality insight into an owned action\n→\nPrototype status & evidence\nPlan a pilot →\nPLAN A PILOT\nStart narrow. Calibrate. Decide with evidence.\nAgree one queue or use case and an accountable quality lead.\nChoose representative conversations.\nDefine the evaluation form.\nRun AI and human comparison.\nMeasure quality insight, agreement/calibration, coverage, model cost and reviewer effort.\nDecide whether broader rollout is justified.\n\nNo booking or contact details are collected.\n\nIPI AQM · Decision intelligence powered by Jev\nConnection settings →",
+      "storage": {
+        "local": [],
+        "session": [],
+        "writes": []
+      }
+    },
+    {
+      "name": "blind-chapter-1-1440",
+      "at": "2026-10-03T14:07:39.235Z",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1",
+      "text": "IPI AQM\nInteractive demo · fictional data · no live requests\n\nFIVE-MINUTE CUSTOMER CASE\n\nThe customer case\nDefine quality\nEvaluate at scale\nHuman challenge\nManage & pilot\n\nOne conversation, from agreed quality to a pilot decision.\n\nChapter 1 of 5\n\nThe customer case\nWas Jamie given a clear next step?\n\nJamie needs account access before the next shift. Alex restores access, but the team settings are still missing.\n\nJamie Taylor with Alex Morgan\nJamie\n\nThe reset link will not work. I need access before my next shift.\n\nAlex\n\nI understand how frustrating that is. Let us try a fresh reset link.\n\nJamie\n\nThat worked. How long until my team settings return?\n\nAlex\n\nThey should return later. Try signing in again.\n\nJamie\n\nAll right, I will try. Thanks.\n\nAccess is restored. “Later” leaves Jamie without an agreed timeline.\n\nBack\nNext\nExit demo\nMore options",
+      "storage": {
+        "local": [],
+        "session": [],
+        "writes": []
+      }
+    },
+    {
+      "name": "blind-chapter-2-1440",
+      "at": "2026-10-03T14:07:39.363Z",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=2",
+      "text": "IPI AQM\nInteractive demo · fictional data · no live requests\n\nFIVE-MINUTE CUSTOMER CASE\n\nThe customer case\nDefine quality\nEvaluate at scale\nHuman challenge\nManage & pilot\n\nOne conversation, from agreed quality to a pilot decision.\n\nChapter 2 of 5\n\nDefine quality\nWhat does good mean?\n\nQuality is defined explicitly. AI doesn’t invent the scoring model.\n\nResolution & ownership · Published version 3\n\nAcknowledged the impact\n\nDid the agent acknowledge the customer’s difficulty?\n\nYes / No\n\nIssue resolved\n\nWas the customer’s stated issue resolved?\n\nYes / No\n\nClear next step\n\nWas a specific next step and realistic timeline agreed?\n\nClear next step / Timeline not agreed\n\nAction and timeline must be agreed. Clear earns 100% credit; missing timeline earns 0%. This criterion has double weight within Resolution and is critical: a failure means the form fails.\n\nCustomer care contributes one third of the score; Resolution contributes two thirds. The pass threshold is 75%.\n\nIf the issue is unresolved, an additional question asks who owns the escalation. It does not apply to Jamie’s resolved access issue.\n\nReuse agreed standards\n\nReusable question groups and answer sets keep common standards consistent across forms. Each published form keeps its own versioned snapshot.\n\nBack\nNext\nExit demo\nMore options",
+      "storage": {
+        "local": [],
+        "session": [],
+        "writes": []
+      }
+    },
+    {
+      "name": "blind-chapter-3-1440",
+      "at": "2026-10-03T14:07:39.456Z",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=3",
+      "text": "IPI AQM\nInteractive demo · fictional data · no live requests\n\nFIVE-MINUTE CUSTOMER CASE\n\nThe customer case\nDefine quality\nEvaluate at scale\nHuman challenge\nManage & pilot\n\nOne conversation, from agreed quality to a pilot decision.\n\nChapter 3 of 5\n\nEvaluate at scale\nJev answers. AQM scores.\n\nJev answers specific quality questions in predefined formats. Related questions can be batched in one AI request; AQM applies the agreed scoring rules.\n\nAcknowledged the impact\nAI answer\nYes\nCredit\n100%\nIssue resolved\nAI answer\nYes\nCredit\n100%\nClear next step\nAI answer\nClear next step\nCredit\n100%\n\nEvidence to inspect: “They should return later. Try signing in again.”\n\nAI confidence: 56%. Confidence is not measured correctness.\n\nORIGINAL AI SCORE\n100%\nPass · all three applicable answers earned full credit\n\nThe AI accepted “later” as a clear timeline. That judgment deserves a human challenge.\n\nBroader coverage becomes attractive\n\nStructured, batched questions and Jev’s very low model input cost make broader evaluation economically attractive.\n\nIn this example, a policy selects 24 of 48 eligible conversations (50%) from one customer-service queue. Each uses the same published form. Conditional questions need another request only when they apply.\n\nThe calculator on Welcome lets you change volume, selection and request assumptions. Model cost is one component of a pilot’s operating cost.\n\nBack\nNext\nExit demo\nMore options",
+      "storage": {
+        "local": [],
+        "session": [],
+        "writes": []
+      }
+    },
+    {
+      "name": "blind-chapter-4-1440",
+      "at": "2026-10-03T14:07:39.557Z",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=4",
+      "text": "IPI AQM\nInteractive demo · fictional data · no live requests\n\nFIVE-MINUTE CUSTOMER CASE\n\nThe customer case\nDefine quality\nEvaluate at scale\nHuman challenge\nManage & pilot\n\nOne conversation, from agreed quality to a pilot decision.\n\nChapter 4 of 5\n\nHuman challenge\n“Later” is not an agreed timeline.\nORIGINAL AI ANSWER\nYes, next step clear\n\nClear next step · 100% credit\n\nPREPARED HUMAN REVIEW\nNo, timeline not agreed\n\nTimeline not agreed · 0% credit\n\nORIGINAL AI SCORE · UNCHANGED\n100%\nPass\nHUMAN REVIEW SCORE\n56%\nFail · critical next-step criterion\nDIFFERENCE\n44\npercentage points\n\nThe human agrees on empathy and restored access, but gives no credit for the missing timeline. The same weighted rules produce the human score.\n\nHuman review doesn’t rewrite the AI result. It creates independent evidence for calibration.\n\nExample review completed. The original AI result is unchanged. Two answers agree; one differs. This single review does not establish AI accuracy across a population.\n\nInspect the review audit\nBack\nNext\nExit demo\nMore options",
+      "storage": {
+        "local": [],
+        "session": [],
+        "writes": []
+      }
+    },
+    {
+      "name": "blind-chapter-5-1440",
+      "at": "2026-10-03T14:07:39.641Z",
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=5",
+      "text": "IPI AQM\nInteractive demo · fictional data · no live requests\n\nFIVE-MINUTE CUSTOMER CASE\n\nThe customer case\nDefine quality\nEvaluate at scale\nHuman challenge\nManage & pilot\n\nOne conversation, from agreed quality to a pilot decision.\n\nChapter 5 of 5\n\nManage & pilot\nMANAGEMENT INSIGHT\nResolution guidance needs attention\n\n24 evaluations matched the same quality question; 5 showed weak next-step guidance. In the one completed human review, the reviewer challenged one AI judgment.\n\nInvestigate missing timelines, coach clear commitments, and refine the criterion with reviewers. These example counts illustrate a management decision, not population statistics.\n\nInspect examples\nWho owns the next action?\nScheduled evaluation\nCustomer-service queue · daily at 08:00 Europe/London.\nReview deadline\nQuality lead · due 3 October at 17:00; Jamie’s review is complete.\nAuditability\nKeep the published form, original AI result and independent human review together.\nAttention required\nA quality alert directs the lead to investigate resolution guidance and agree coaching.\nAgree a focused pilot\nAgree one queue or use case and an accountable quality lead.\nChoose representative conversations.\nDefine the evaluation form.\nRun AI and human comparison.\nMeasure quality insight, agreement/calibration, coverage, model cost and reviewer effort.\nDecide whether broader rollout is justified.\nBack\nPlan a pilot\nExit demo\nMore options",
+      "storage": {
+        "local": [],
+        "session": [],
+        "writes": []
+      }
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "method": "GET",
+      "type": "document"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-B0QOGpnI.js",
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-Dh0z4fQh.css",
+      "method": "GET",
+      "type": "stylesheet"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-4bnSAzdc.js",
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "method": "GET",
+      "type": "image"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-BWA9tIFc.js",
+      "method": "GET",
+      "type": "script"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-DA7jf8kC.js",
+      "method": "GET",
+      "type": "script"
+    }
+  ]
+}

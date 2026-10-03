@@ -1,0 +1,111 @@
+Workspace / Overview
+ADMIN
+Jev managed securely by automation service
+OPERATIONAL HOME
+Overview
+
+Quality, coverage and work requiring attention.
+
+Updated 13:00:00 · Europe/London
+Dashboard range
+7 days
+30 days
+Refresh
+Set up automated quality monitoring
+
+Progress from your saved configuration.
+
+○ Publish an evaluation form →
+○ Create an enabled policy assigning that form →
+○ Configure and enable a daily or weekly schedule →
+○ Wait for / inspect the first automated run →
+Attention required
+All clear
+
+No issues requiring attention. No overdue reviews or failed notifications.
+
+Operational health
+Automation
+Healthy
+Genesys
+Unverified
+Jev
+Unverified
+Scheduler
+Unverified
+Notifications
+Healthy
+Review SLA
+Healthy
+
+API healthy · Firestore available · Last scheduler tick —. Genesys and Jev reflect durable run evidence.
+
+Notifications: 0 pending · 0 failed (24h) · Last success —
+
+Quality & coverage
+Last 7 days
+Evaluations
+0 →
+Average quality
+— →
+Pass rate
+—
+Critical failures
+0 →
+
+No quality history in this period.
+
+Coverage
+Eligible
+0
+Sampled
+0
+Content available
+0
+Evaluated
+0
+Failed
+0
+
+Sampling coverage — · Evaluation coverage —
+
+Coverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.
+
+Explore coverage →
+Review workload
+Current state
+Open
+0 →
+Due soon
+0 →
+Overdue
+0 →
+Escalated
+0 →
+Unassigned
+0 →
+My review queue →
+All review work →
+Automation
+Run a policy now
+
+0 completed · 0 partial · 0 failed · 0 running in the last 7 days
+
+Last automated run
+
+No successful automated run recorded yet.
+
+Upcoming scheduled work
+
+No enabled schedules. Next scheduled run: —
+
+Recent runs
+
+No runs recorded yet.
+
+Evaluation Forms →
+Policies →
+Open alerts →
+Settings →
+Run a policy now
+Detailed alerts & run operations

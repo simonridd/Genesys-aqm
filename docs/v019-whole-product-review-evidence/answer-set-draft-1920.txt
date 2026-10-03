@@ -1,0 +1,85 @@
+Workspace / AnswerSets
+ADMIN
+Jev managed securely by automation service
+CONFIGURATION
+Answer Sets
+
+Define common answers once. Forms keep independent copies of every option.
+
+Import Answer Set
+New Answer Set
+SAVED IN AQM · 4 saved Answer Sets
+Refresh saved Answer Sets
+Search
+4 results
+Name ↓
+
+Type
+
+Version
+
+Status
+
+Options
+
+Used by forms
+
+Last modified
+
+Service quality	score	v1	PUBLISHED	4	0	10/3/2026
+Resolution clarity	choice	v1	PUBLISHED	4	2	10/3/2026
+Resolution clarity	choice	v2	PUBLISHED	5	0	10/2/2026
+Customer effort	score	v1	PUBLISHED	5	0	10/3/2026
+LOCAL STARTERS & DRAFTS · 3 Answer Sets
+Resolution clarity · v3 · DRAFT
+Close details
+Export JSON
+Save changes
+Publish Answer Set
+
+Unsaved changes
+
+Answer Set name
+Answer Set description
+Base type
+Choice
+Ordered score
+Base type is stable after the family is saved.
+Choices
+
+Credit 0–1 affects the weighted score. Leave choice credit blank to exclude it.
+
+01
+Key
+Label
+Description
+Credit
+↑
+↓
+×
+02
+Key
+Label
+Description
+Credit
+↑
+↓
+×
+03
+Key
+Label
+Description
+Credit
+↑
+↓
+×
+04
+Key
+Label
+Description
+Credit
+↑
+↓
+×
+＋ Add choice
+View history

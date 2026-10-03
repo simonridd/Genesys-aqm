@@ -1,0 +1,43 @@
+Workspace / Groups
+ADMIN
+Jev managed securely by automation service
+CONFIGURATION
+Question Groups
+
+Versioned reusable templates. Forms retain independent snapshots.
+
+Import reusable group
+New reusable question group
+Saved in AQM · 4 saved groups
+Refresh saved groups
+Status
+All statuses
+Draft
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Used
+Unused
+Search
+4 results
+Name ↓
+
+Status
+
+Version
+
+Questions
+
+Used by forms
+
+Last modified
+
+Resolution & Next Steps	PUBLISHED	v1	3	0	10/1/2026
+Identity & Security Verification	PUBLISHED	v1	3	0	10/1/2026
+Customer Experience / Empathy	PUBLISHED	v1	3	0	10/1/2026
+Call Closing	PUBLISHED	v1	2	0	10/1/2026
+Local drafts & starter examples · 4 groups

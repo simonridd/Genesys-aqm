@@ -1,0 +1,129 @@
+Workspace / Overview
+ADMIN
+Jev managed securely by automation service
+OPERATIONAL HOME
+Overview
+
+Quality, coverage and work requiring attention.
+
+Updated 13:00:00 · Europe/London
+Dashboard range
+7 days
+30 days
+Refresh
+Attention required
+All clear
+
+No issues requiring attention. No overdue reviews or failed notifications.
+
+Operational health
+Automation
+Healthy
+Genesys
+Verified
+Jev
+Verified
+Scheduler
+Healthy
+Notifications
+Healthy
+Review SLA
+Healthy
+
+API healthy · Firestore available · Last scheduler tick 2 Oct, 12:00. Genesys and Jev reflect durable run evidence.
+
+Notifications: 0 pending · 0 failed (24h) · Last success —
+
+Quality & coverage
+Last 7 days
+Evaluations
+1 →
+Average quality
+80% →
+Pass rate
+100%
+Critical failures
+0 →
+80%
+10-01 · 1 evaluations
+
+Limited history · 1 evaluations in this period.
+
+Coverage
+Eligible
+20
+Sampled
+10
+Content available
+6
+Evaluated
+4
+Failed
+0
+
+Sampling coverage 50% · Evaluation coverage 20%
+
+Coverage counts run observations; the same conversation may appear in multiple runs. Evaluation coverage is evaluated / eligible.
+
+Explore coverage →
+Review workload
+Current state
+Open
+0 →
+Due soon
+0 →
+Overdue
+0 →
+Escalated
+0 →
+Unassigned
+0 →
+My review queue →
+All review work →
+Automation
+Run a policy now
+
+2 completed · 0 partial · 0 failed · 0 running in the last 7 days
+
+Last automated run
+1 Oct, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+
+Latest successful scheduled execution.
+
+Upcoming scheduled work
+Daily Voice Customer Service AQM
+DAILY
+Next due 3 Oct, 02:00
+Last success 1 Oct, 03:00
+View/Edit policy →
+Daily Voice Customer Service AQM
+WEEKLY
+Next due 5 Oct, 02:00
+Last success —
+View/Edit policy →
+Recent runs
+2 Oct, 09:00
+Daily Voice Customer Service AQM
+manual
+2 evaluations
+completed
+1 Oct, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+15 Sept, 03:00
+Daily Voice Customer Service AQM
+scheduled
+2 evaluations
+completed
+Evaluation Forms →
+Policies →
+Open alerts →
+Settings →
+Run a policy now
+Detailed alerts & run operations

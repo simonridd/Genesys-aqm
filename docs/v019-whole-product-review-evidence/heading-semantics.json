@@ -1,0 +1,200 @@
+[
+  {
+    "page": "Overview",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Overview",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">OPERATIONAL HOME</div><h1>Overview</h1><p>Quality, coverage and work requiring attention.</p><small>Updated 13:00:00 · Europe/London</small></div>"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Evaluations",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Evaluations",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">QUALITY</div><h1 tabindex=\"-1\">Evaluations</h1><p>Production results with form snapshots and provider provenance.</p></div>"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Analytics",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Quality analytics",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">SERVER ANALYTICS</div><h1>Quality analytics</h1><p>Aggregated in Cloud Run from durable production evaluations. The endpoint returns complete totals or an"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Calibration",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Calibration",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">HUMAN + AI</div><h1 tabindex=\"-1\">Calibration</h1><p>Compare completed human reviews with the original AI evaluations.</p></div>"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Evaluation Forms",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Evaluation Forms",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">CONFIGURATION</div><h1 tabindex=\"-1\">Evaluation Forms</h1><p>Policies pin published versions. Drafts can be tested without entering production analytics.<"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Question Groups",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Question Groups",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">CONFIGURATION</div><h1 tabindex=\"-1\">Question Groups</h1><p>Versioned reusable templates. Forms retain independent snapshots.</p></div>"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Answer Sets",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Answer Sets",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">CONFIGURATION</div><h1 tabindex=\"-1\">Answer Sets</h1><p>Define common answers once. Forms keep independent copies of every option.</p></div>"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Policies",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Policies",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">CONFIGURATION</div><h1 tabindex=\"-1\">Policies</h1><p>Durable server policies · exact published form versions · optional daily or weekly automation.</p></d"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Settings",
+    "h1": [
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      },
+      {
+        "text": "Settings",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><h1>Settings</h1><p>Connect Genesys Cloud and manage your organization's AQM settings.</p></div>"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Conversations",
+    "h1": [
+      {
+        "text": "Conversations",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">SYNTHETIC CONVERSATION LIBRARY</div><h1>Conversations</h1><p>Fictional scenarios across queues, channels and service outcomes.</p></div>"
+      },
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      }
+    ],
+    "primaryCurrent": 0
+  },
+  {
+    "page": "Conversation review",
+    "h1": [
+      {
+        "text": "Conversation review",
+        "visible": true,
+        "hiddenAncestor": false,
+        "parent": "<div><div class=\"eyebrow\">AUTOMATED QUALITY MANAGEMENT</div><h1>Conversation review</h1><p>Inspect the selected conversation, policy matches, and applicable forms.</p></div>"
+      },
+      {
+        "text": "Completed interactions",
+        "visible": false,
+        "hiddenAncestor": true,
+        "parent": "<div><div class=\"eyebrow\">REAL ORGANIZATIONAL DATA</div><h1>Completed interactions</h1><p>Browse a small, recent window. Transcripts are loaded only when you open an interaction.</"
+      }
+    ],
+    "primaryCurrent": 0
+  }
+]

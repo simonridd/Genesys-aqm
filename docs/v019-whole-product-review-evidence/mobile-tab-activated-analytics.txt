@@ -1,0 +1,68 @@
+Workspace / Analytics
+AUTHOR
+Jev managed securely by automation service
+This browser
+Server analytics
+SERVER ANALYTICS
+Quality analytics
+
+Aggregated in Cloud Run from durable production evaluations. The endpoint returns complete totals or an explicit size error.
+
+From
+To
+Source
+All
+Genesys Cloud
+Synthetic
+Policy ID
+Form ID @ version
+Agent
+Queue
+Channel
+Trigger
+All
+Manual
+Scheduled
+
+Complete scan: 27 production/test records inspected, 3 runs inspected. Form tests are excluded from quality.
+
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+
+Run observations: a conversation can appear in more than one run. Agent, queue, form and channel quality filters do not change these run denominators.
+
+candidate
+60
+eligible
+30
+sampled
+15
+evaluable
+9
+evaluated
+6
+successful
+4
+failed
+3
+samplingCoverage
+0.5
+evaluationCoverage
+0.2
+sampleCompletion
+0.6666666666666666
+transcriptAvailability
+0.6
+
+Eligible to sampled gap: 15. Sampled without transcript: 6. Transcript-ready without a completed evaluation: 3.
+
+Coverage by queue
+
+Queue observations are present on 0 of 3 loaded runs. Older runs may not carry this breakdown.
+
+Coverage by agent

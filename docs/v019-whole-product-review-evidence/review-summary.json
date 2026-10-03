@@ -1,0 +1,65 @@
+{
+  "canonicalSHA": "4416ee416259c3c756374b14e26521d0b902b80b",
+  "pitchVerdict": "B READY WITH MINOR POLISH",
+  "productVerdict": "C SUBSTANTIAL UX PASS STILL NEEDED",
+  "scores": {
+    "Human effectiveness": 3,
+    "Value proposition": 4,
+    "Information quality": 3,
+    "Ease of use": 3,
+    "Visual quality": 4,
+    "Trust / credibility": 3,
+    "User-facing cleanliness": 2,
+    "Navigation / information architecture": 3,
+    "Workflow coherence": 2,
+    "First-time learnability": 3,
+    "Authoring usability": 2,
+    "Reviewer usability": 2,
+    "Operational usefulness": 3,
+    "Responsive/mobile quality": 2,
+    "Accessibility pragmatics": 3,
+    "Showcase -> product continuity": 4
+  },
+  "unweightedAverage": 2.875,
+  "answerSetVerdict": "FOCUSED UX PASS",
+  "answerSetScores": {
+    "Concept clarity": 3,
+    "Discoverability": 3,
+    "Creation UX": 3,
+    "Reuse UX": 4,
+    "Versioning UX": 3,
+    "Safety/error clarity": 2,
+    "Forms integration": 3,
+    "Groups integration": 3,
+    "Mobile": 2,
+    "Terminology cleanliness": 2
+  },
+  "answerSetAverage": 2.8,
+  "nextTranche": "Reviewer continuity and completion safety",
+  "unit": {
+    "passed": 597,
+    "files": 61
+  },
+  "existingBrowser": {
+    "passed": 165,
+    "failed": 6,
+    "baselineExpectations": 5,
+    "harnessFailures": 1
+  },
+  "uniqueReviewFixtureChecks": 19,
+  "public": {
+    "pageCaptures": 24,
+    "journeyBoundsChecks": 48,
+    "calculatorObservations": 24,
+    "staticRequestsInMatrix": 40,
+    "providerRequests": 0,
+    "showcaseStorageOperations": 0,
+    "pitchSeconds": 272.137,
+    "explicitDwellSeconds": 260
+  },
+  "limitations": [
+    "Agent simulations, not human comprehension measures",
+    "Fictional API data, not integration/scale validation",
+    "Chromium emulated viewports, not WCAG or cross-browser certification"
+  ]
+}

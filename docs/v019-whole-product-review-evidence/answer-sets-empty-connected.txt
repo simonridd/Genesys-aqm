@@ -1,0 +1,31 @@
+Workspace / AnswerSets
+ADMIN
+Jev managed securely by automation service
+CONFIGURATION
+Answer Sets
+
+Define common answers once. Forms keep independent copies of every option.
+
+Import Answer Set
+New Answer Set
+SAVED IN AQM · 0 saved Answer Sets
+Refresh saved Answer Sets
+Search
+0 results
+Name ↓
+
+Type
+
+Version
+
+Status
+
+Options
+
+Used by forms
+
+Last modified
+
+No records match these filters.
+
+LOCAL STARTERS & DRAFTS · 3 Answer Sets

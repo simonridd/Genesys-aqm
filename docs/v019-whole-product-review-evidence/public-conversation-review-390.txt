@@ -1,0 +1,118 @@
+IPI AQM
+Automated Quality Management
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+⚙
+Settings
+☷
+Conversations
+◈
+Conversation review
+About / product tour
+Workspace / Evaluate
+Connect Genesys Cloud
+Conversation source
+Fictional sample data · no credentials
+Synthetic
+Genesys Cloud
+AUTOMATED QUALITY MANAGEMENT
+Conversation review
+
+Inspect the selected conversation, policy matches, and applicable forms.
+
+← Back to conversations
+Browse 19 samples →
+CURRENT CONVERSATION
+Delayed delivery
+SYNTHETIC SAMPLE
+Change conversation
+↑ Upload JSON
+SR
+CONVERSATION TRANSCRIPT
+Sam Rivera with Jordan Lee
+29 Sept 2026 · messaging · conv-delivery-002
+Pending
+QUEUE
+Orders
+TOPIC
+Delayed delivery
+DIRECTION
+inbound
+MESSAGES
+7
+29 Sept 2026
+S
+Sam Rivera
+10:18
+My order was due yesterday and the tracking hasn't moved. I need it for an event tomorrow.
+J
+Jordan Lee
+10:18
+Hello Sam, I'm Jordan. Let me see where it is.
+J
+Jordan Lee
+10:18
+The carrier scan is still showing the regional depot. I can't promise it will arrive tomorrow.
+S
+Sam Rivera
+10:19
+That's disappointing. Is there anything else you can do?
+J
+Jordan Lee
+10:19
+I can open a carrier trace now and email you an update when they respond. If it doesn't arrive, we can discuss a replacement or refund.
+S
+Sam Rivera
+10:19
+Okay, please send the update.
+J
+Jordan Lee
+10:20
+The trace is open under TR-5932. I'll email you when the carrier responds. Thanks for contacting us.
+End of conversation
+·
+7 messages
+POLICY ROUTING
+1 matches
+Applicable evaluations
+Cross-channel monitoring sample
+channel equals messaging
+General Customer Service
+9 questions · v1 · up to 1 Jev requests
+Evaluate →
+Manual form selection
+General Customer Service
+Compliance & Identity Verification
+Complaints Handling
+Retention / Cancellation
+Sales / Service Quality
+Customer Service - AI Scoring
+
+1 form evaluation · up to 1 Jev requests
+
+✦ Evaluate selected form →
+
+Production selection includes only published, valid forms . Draft and testing forms can be tested in the isolated sandbox.
+
+Test a draft/testing form
+
+Connect Genesys Cloud to evaluate this conversation.
+
+◎
+One result per form
+
+Each production evaluation is saved to the automation service with its exact published form and routing provenance.

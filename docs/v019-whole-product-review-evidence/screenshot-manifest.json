@@ -1,0 +1,1432 @@
+[
+  {
+    "file": "analytics-affected-queue.png",
+    "bytes": 106767,
+    "sha256": "8a68cb636dbc0a43c1663d30b2b99a47d2aaf07e5d9a20104337aeb9f7a2ec77",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 940
+  },
+  {
+    "file": "analytics-questions.png",
+    "bytes": 127556,
+    "sha256": "16d15f1e75573110728015fe2784c43ca94bb55ac273fa720e324086c027ab44",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1105
+  },
+  {
+    "file": "analytics-supporting-evaluations.png",
+    "bytes": 414048,
+    "sha256": "7904870670a13c0c4df1a5eb041bb7e915c8bb4f8f39f376c331d92dc25233f6",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3005
+  },
+  {
+    "file": "analytics-task-start.png",
+    "bytes": 177869,
+    "sha256": "6dc35b5d6c7573de2f7f12aaaad373604ef34059c676c552d3ecbb8276386939",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1416
+  },
+  {
+    "file": "analytics-worst-question.png",
+    "bytes": 127740,
+    "sha256": "59687d4509b87519eb0111b968bb0e8c69fd1bb4c7d3c6b7c788eadd3078691a",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1105
+  },
+  {
+    "file": "answer-set-attached-1440.png",
+    "bytes": 422521,
+    "sha256": "3c98b155304d27734a59df6b3855c7256a01da19555319a8c66dd22a9ee7a047",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 4189
+  },
+  {
+    "file": "answer-set-attached-1920.png",
+    "bytes": 435584,
+    "sha256": "f54828d7bbc4ff1f40ad1d601861651ffd765d905e5827522d8f3b3ad196e86b",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 4177
+  },
+  {
+    "file": "answer-set-attached-390.png",
+    "bytes": 360464,
+    "sha256": "13156990ed9832167667863dfca0e978e423757fd7be9bf91a71dd5a43ff683c",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 6163
+  },
+  {
+    "file": "answer-set-comparison-1440.png",
+    "bytes": 473003,
+    "sha256": "e8370015f758011ff92da0e961e0eeeea46f7c3c6da516d9b09eca70af974d45",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 4563
+  },
+  {
+    "file": "answer-set-comparison-1920.png",
+    "bytes": 487291,
+    "sha256": "623fff7b5326109116f6cd0f4f13477b5013a7079ead472e1b0f9f44b9a91ab4",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 4532
+  },
+  {
+    "file": "answer-set-comparison-390.png",
+    "bytes": 409799,
+    "sha256": "502aaf067abb9fd17c339b40f55345bf05a9d2e60d0a5efe551c30b5dc35a7d8",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 6801
+  },
+  {
+    "file": "answer-set-detached-1440.png",
+    "bytes": 431633,
+    "sha256": "69ce9a0e81cdba256886c444b8b2f1e1ea3c4c3fa6764b770a784f12460fceb3",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 4280
+  },
+  {
+    "file": "answer-set-detached-1920.png",
+    "bytes": 446833,
+    "sha256": "4b82c5e623c54c9917c0848cfd64cb5a3dd63c0a97c95b9f07c31800247e16cf",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 4268
+  },
+  {
+    "file": "answer-set-detached-390.png",
+    "bytes": 373183,
+    "sha256": "3ea2d36ef5078f7503aa222ef38065f42361a7f4c593eb0a83f3fd503e780fd0",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 6433
+  },
+  {
+    "file": "answer-set-draft-1440.png",
+    "bytes": 195220,
+    "sha256": "b1eb4ba738e53f9e3ac254350fc0f2122d36011e91f5e1382541ab400fcd3ffb",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1706
+  },
+  {
+    "file": "answer-set-draft-1920.png",
+    "bytes": 203431,
+    "sha256": "8d8ae9d7795c809cef7b1469c93d651e8a677198e39ecb92ddf7507be2d26e34",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1706
+  },
+  {
+    "file": "answer-set-draft-390.png",
+    "bytes": 148200,
+    "sha256": "b714c64a20344b159e26b794f77b897eab46008332957b7974db7017ce887ba0",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2769
+  },
+  {
+    "file": "answer-set-picker-1440.png",
+    "bytes": 445997,
+    "sha256": "f4fa2b90598ea385d2c52055fd2d085231d681c7e8d12fdfb435d10074b0489b",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 4526
+  },
+  {
+    "file": "answer-set-picker-1920.png",
+    "bytes": 461116,
+    "sha256": "57300ff55f7f49eb76e5765c808826616c0f7be83c892e8dbdd61cfb4bfe58c7",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 4514
+  },
+  {
+    "file": "answer-set-picker-390.png",
+    "bytes": 383975,
+    "sha256": "322a0b21e378682e3bae170c5ae18f9c67e0fe9c0473b83cb4d600db9579e837",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 6569
+  },
+  {
+    "file": "answer-set-published-1440.png",
+    "bytes": 195552,
+    "sha256": "eacad827fd0b04b39a26bd79d64610963ca4d8a07475b6f7f493c9c932b45d12",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1692
+  },
+  {
+    "file": "answer-set-published-1920.png",
+    "bytes": 203972,
+    "sha256": "9d501df9a88f0230b081f3b98102822d68f32e7f8a02a66c054c9cca5945f92a",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1692
+  },
+  {
+    "file": "answer-set-published-390.png",
+    "bytes": 149001,
+    "sha256": "e2bc98df2415fb4409007865be23d3af013f414ae500ac73797c82f22b90b5ef",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2759
+  },
+  {
+    "file": "answer-set-save-as-1440.png",
+    "bytes": 460823,
+    "sha256": "be337ee46e28afc8e419892eeed8529ab4aa0b0cdeea9d5339786aadc2ade559",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 4564
+  },
+  {
+    "file": "answer-set-save-as-1920.png",
+    "bytes": 475870,
+    "sha256": "ab3f5ec4d4e2178e432fd487107c5411990199ccb7e6be0434dffbb81cd0052b",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 4552
+  },
+  {
+    "file": "answer-set-save-as-390.png",
+    "bytes": 400370,
+    "sha256": "312a1e571ffa9afd3c15579b09a1ca6fb13251796b02aacba3a7b2c94e3f8b5c",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 6859
+  },
+  {
+    "file": "answer-set-score-1440.png",
+    "bytes": 206130,
+    "sha256": "1d5624cd78572d5a06733ef92d3c72a1e1376a9199450b1ad21ae4c827d570c8",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1755
+  },
+  {
+    "file": "answer-set-score-1920.png",
+    "bytes": 214829,
+    "sha256": "2f7b5f9301e3ab767c93ae1678be86783a84f0803ce42bc0d2fd4bf62cc9b8a5",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1755
+  },
+  {
+    "file": "answer-set-score-390.png",
+    "bytes": 160899,
+    "sha256": "adf524320d359ba0e4229d601f41488480cd71542786d00242d31e7bfa0bf973",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 3090
+  },
+  {
+    "file": "answer-sets-empty-connected.png",
+    "bytes": 89226,
+    "sha256": "78d761919ee474a8b648fba789e9616551cfbfd054d90364e26a396bd293cc0f",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 750
+  },
+  {
+    "file": "connected-analytics-1440.png",
+    "bytes": 187772,
+    "sha256": "a14a2a64d169e1a384ca916736a2bd0877d791540557b75bbef605a12d3bc520",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1330
+  },
+  {
+    "file": "connected-analytics-1920.png",
+    "bytes": 196135,
+    "sha256": "775df39778241bbe8ed0eb2504f509afa8fafcc6ec8edc88756f2b72174e79cf",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1295
+  },
+  {
+    "file": "connected-analytics-390.png",
+    "bytes": 149681,
+    "sha256": "8946f36719318ee7b1b20dfe8a6ff64cd254837fc7dab434f6c1eda095a458b1",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2607
+  },
+  {
+    "file": "connected-answer-sets-1440.png",
+    "bytes": 119502,
+    "sha256": "14842355aa0494b8afb9041ae9b6828759b38029d27885109ca912ffd54dbf56",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 918
+  },
+  {
+    "file": "connected-answer-sets-1920.png",
+    "bytes": 127600,
+    "sha256": "7d3da529b94fa28477088b84aa794d6d479bcb3db7682b7eb28feabf6d46cb78",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1080
+  },
+  {
+    "file": "connected-answer-sets-390.png",
+    "bytes": 70632,
+    "sha256": "ebfb44e87eee17f383a49816aed03e29489e85912fb4b501ee6c88fb25c8b827",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1153
+  },
+  {
+    "file": "connected-calibration-1440.png",
+    "bytes": 133103,
+    "sha256": "6034700739c46103adc8d1b8c9b5bb9a6dddba4bd2aea04d01fde8b36adad55a",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 913
+  },
+  {
+    "file": "connected-calibration-1920.png",
+    "bytes": 141573,
+    "sha256": "cee8a6566f9b0f7f650cbb61bbe692fb2348b486ccacab3de36409211a323549",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1080
+  },
+  {
+    "file": "connected-calibration-390.png",
+    "bytes": 92215,
+    "sha256": "ba14e62bff19d8a77d4f95b7a70a51cdfd364797318cda2d151756b86887c7af",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1565
+  },
+  {
+    "file": "connected-conversation-review-1440.png",
+    "bytes": 238621,
+    "sha256": "e3919a1b2b4555a31c9919d7287004e9644a358f2293d74e91362f9893c9ea81",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1411
+  },
+  {
+    "file": "connected-conversation-review-1920.png",
+    "bytes": 245404,
+    "sha256": "e669f98aa8d736b37257b7be0b597739eea0158491052584b3a2b0f1d2c6930b",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1411
+  },
+  {
+    "file": "connected-conversation-review-390.png",
+    "bytes": 173778,
+    "sha256": "a1e07db4a1ee0ceda0aaa3a144c7bcc63586605020886de06adbeda00e9a189c",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2151
+  },
+  {
+    "file": "connected-conversations-1440.png",
+    "bytes": 294986,
+    "sha256": "0425d154209a1d9e41a4117106ba099674ca12e85d799a4db46897d8e6302588",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1877
+  },
+  {
+    "file": "connected-conversations-1920.png",
+    "bytes": 291731,
+    "sha256": "f60494fb73b482b976e7c6c8c6c1e9688c0f1f62b3126d194767eb330510a45d",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1864
+  },
+  {
+    "file": "connected-conversations-390.png",
+    "bytes": 138166,
+    "sha256": "d17362f738c399e4203b1b9ed1efbd00bfdb635216e304a487c568e0c746d690",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2138
+  },
+  {
+    "file": "connected-evaluation-forms-1440.png",
+    "bytes": 337853,
+    "sha256": "f2edee0b9ae12d9b5a1812f7f6ee0593cee2b9eb3d49a8b3c7aa5a5e1a2d28f3",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 3186
+  },
+  {
+    "file": "connected-evaluation-forms-1920.png",
+    "bytes": 348875,
+    "sha256": "f1a5b5a1cc3b6e0d0bf1a86f171cf5ac5b2535094db774b0838b751c1b325b53",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 3174
+  },
+  {
+    "file": "connected-evaluation-forms-390.png",
+    "bytes": 276567,
+    "sha256": "efbcdae57da85346232cc892ee0e6463ebb43839e408b6d48b7489f59869be73",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 4391
+  },
+  {
+    "file": "connected-evaluations-1440.png",
+    "bytes": 418011,
+    "sha256": "228cdecdaa18fe9c8b77eff0282bbb4313a12d9a1c014b0c85d6b57efd13d1b2",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 2772
+  },
+  {
+    "file": "connected-evaluations-1920.png",
+    "bytes": 479848,
+    "sha256": "f1c81007b1f8f07bf22d11b9374b3dfbd41df492f090bc9da0e5c63adf421f89",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 2772
+  },
+  {
+    "file": "connected-evaluations-390.png",
+    "bytes": 192239,
+    "sha256": "b550e0bb1122c6a29140c1d11f2ac6ce4c5756cf68dd683713c29171ac67e81e",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 3683
+  },
+  {
+    "file": "connected-original-conversation-1440.png",
+    "bytes": 208685,
+    "sha256": "0daeb3a3e48c923796a45947dd4af3f4e15585d26a800479c5d109fc4a93b3a5",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1117
+  },
+  {
+    "file": "connected-original-conversation-1920.png",
+    "bytes": 218547,
+    "sha256": "7f05d419af4eeaa8f4927dd8496daf9326ace27d6ac0ccadb9121ef5cd3f6b3d",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1117
+  },
+  {
+    "file": "connected-original-conversation-390.png",
+    "bytes": 167251,
+    "sha256": "7b7f7b9cead772bb5ac1a7d8f9532526e2015a165c7da8a1dcca97e7389670ec",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2262
+  },
+  {
+    "file": "connected-overview-1440.png",
+    "bytes": 299693,
+    "sha256": "66c476204de38551eed1387e982999fdeb5b4969f12216fc873704909af7b319",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 2835
+  },
+  {
+    "file": "connected-overview-1920.png",
+    "bytes": 311234,
+    "sha256": "3b943f7174bf5a59938643637b886a04d7b0abd6d4667f1ee7e06447f78263f5",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 2835
+  },
+  {
+    "file": "connected-overview-390.png",
+    "bytes": 250904,
+    "sha256": "298a4625c2d1ef6a30911078b57313b4e4fa6e027383e5a67ea7c2efb9848328",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 4134
+  },
+  {
+    "file": "connected-policies-1440.png",
+    "bytes": 71039,
+    "sha256": "bc9b4ccab86ce725602f9b72e2fc6e2f5a6d6b8dbfab9c6099b32befcfd7084a",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 900
+  },
+  {
+    "file": "connected-policies-1920.png",
+    "bytes": 78171,
+    "sha256": "5b8416647d9a39d24704f0204c77b8c5dac91c21bb6ab3acca5f179f5ee1f95c",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1080
+  },
+  {
+    "file": "connected-policies-390.png",
+    "bytes": 35026,
+    "sha256": "3efec190457305566c5609410f6dab5c18e988b0d1cd72fdb477cf909b5f0727",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 844
+  },
+  {
+    "file": "connected-question-groups-1440.png",
+    "bytes": 125047,
+    "sha256": "90cbfa8b01b8d54ae424cdd1a265124ea4f7601c1e45d50013af63d608bdffc2",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1017
+  },
+  {
+    "file": "connected-question-groups-1920.png",
+    "bytes": 133019,
+    "sha256": "7d23a903df0fd6ce8971651f1d10b11927d53305bdf711ced6551b7ea5fd4023",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1080
+  },
+  {
+    "file": "connected-question-groups-390.png",
+    "bytes": 77406,
+    "sha256": "723dddd04898da5c8363f7f6215877f7e497cc1e5d42521764547cfd15011e57",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1387
+  },
+  {
+    "file": "connected-settings-1440.png",
+    "bytes": 136335,
+    "sha256": "00c0f3dbbc408a5f0d287e286876abfe61a9295b1a8f21afe6fe6af41db40d02",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1137
+  },
+  {
+    "file": "connected-settings-1920.png",
+    "bytes": 143384,
+    "sha256": "8456b5d557df51d6f927ed8521f8cbf460c2e20b1be2e4b37b1e0db50c71a209",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1137
+  },
+  {
+    "file": "connected-settings-390.png",
+    "bytes": 98505,
+    "sha256": "efa533803333d5791b857a4c2aaba1b8874d0c08b966b30b2eba03fcd2320899",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1519
+  },
+  {
+    "file": "evaluation-detail-1440.png",
+    "bytes": 671365,
+    "sha256": "23f10ca09c37a55bcae84cbcfb0fe70a6c5c78ff10f17ba3c141eb36a799031d",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 5310
+  },
+  {
+    "file": "evaluation-detail-1920.png",
+    "bytes": 740033,
+    "sha256": "552942dbf3fc118de59dc69c5112898817cc558eae98752703bc5a82d05c589f",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 5310
+  },
+  {
+    "file": "evaluation-detail-390.png",
+    "bytes": 430370,
+    "sha256": "7c83aa640d4766f83f4dfbd541af69633957363f7f82c1d90150817d61ba753c",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 7410
+  },
+  {
+    "file": "failure-answer-set-conflict.png",
+    "bytes": 166429,
+    "sha256": "e80ec644dd1798c7da54e1acd88c585438ced9989e9e48e372f5eca1c6d35c94",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1538
+  },
+  {
+    "file": "failure-answer-sets.png",
+    "bytes": 114740,
+    "sha256": "1ea846ca4c29025f88e99a8d0d39fc718451bc0f30d51a7773f546467892f338",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 936
+  },
+  {
+    "file": "failure-evaluation-forms.png",
+    "bytes": 334843,
+    "sha256": "812bc07cc56e66d672a67acbf20af0fc37383aa77f0fc2813e3f25602ed8628f",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3276
+  },
+  {
+    "file": "failure-evaluation-list.png",
+    "bytes": 115685,
+    "sha256": "bf1c8e9c10b9aa8c065d4c6a34df7677544483407456ee2a89ddbd3ea2ae881b",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1166
+  },
+  {
+    "file": "failure-invalid-import.png",
+    "bytes": 325062,
+    "sha256": "6cdf57002591bdbc02b87651872bfa43436c79da026d15bfbb3fe68bff3e6864",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3278
+  },
+  {
+    "file": "failure-policies.png",
+    "bytes": 65096,
+    "sha256": "a93083ad61547ed9523b52a5cf75288f174d168c815ec8f01eaa4f6048874528",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 720
+  },
+  {
+    "file": "failure-question-groups.png",
+    "bytes": 124493,
+    "sha256": "ef9c1a28c69f2e26d8b2bf2d6acd90c9558a4f21b90564cad26afe5d02c0ed28",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1118
+  },
+  {
+    "file": "failure-settings-save.png",
+    "bytes": 100940,
+    "sha256": "baa7eefb262d24f2f850b81711e334eaf75c92a17e6a7d1f715e7aad82e1cf50",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1020
+  },
+  {
+    "file": "first-author-02-forms.png",
+    "bytes": 321740,
+    "sha256": "25c01cc9d3fa60e6a78dff53d4bd755a9f13411335bc1d286cb908fd564609b1",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3224
+  },
+  {
+    "file": "first-author-04-question-editor.png",
+    "bytes": 313041,
+    "sha256": "245e8c06b0a66f2c0124f90015517f2a0503ccffaf711935d0ba802a68b475b1",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3381
+  },
+  {
+    "file": "first-author-06-answer-picker.png",
+    "bytes": 401640,
+    "sha256": "d599fe5c0a942f98ce147fb35ee7210d6f2ab630ccb04ce698b45b1abfc4f9a0",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 4280
+  },
+  {
+    "file": "first-author-07-form-saved.png",
+    "bytes": 326166,
+    "sha256": "95a8090b35a5ed17d1728643f40e728f43529c8d5ed70d6374b089f5176476f1",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3287
+  },
+  {
+    "file": "first-author-09-group-details.png",
+    "bytes": 275769,
+    "sha256": "d9e886788b099956f9e3843bc368c6e9d3ac0a41ef4baa2c3f7c17920b7d252e",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 2353
+  },
+  {
+    "file": "first-author-10-group-picker.png",
+    "bytes": 365797,
+    "sha256": "6a5925437d6df94f7ca7fdfc0a49120389d15ecf92a43b1fce0fe4d1b883a748",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3670
+  },
+  {
+    "file": "first-author-11-group-added.png",
+    "bytes": 472065,
+    "sha256": "278a3a27648c62bafa9f40c289bcfdb0ce1d6f43a4b627d8ddcb89c395e67d45",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 4353
+  },
+  {
+    "file": "first-author-12-delete-starter-confirmation.png",
+    "bytes": 485112,
+    "sha256": "a3b4f7321f3854cc0b8e16ef4ef05b3a10cf4dbc9b9a02e85fdb19091e0d07e5",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 4517
+  },
+  {
+    "file": "first-author-13-second-form-saved.png",
+    "bytes": 422604,
+    "sha256": "ffef3ac4746c6690f66ae7e9ef233e5608591125119c1862e7d4757d3ce579fb",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3795
+  },
+  {
+    "file": "form-editor-1440.png",
+    "bytes": 411023,
+    "sha256": "70233e5e0643960976e2390373414cf1229069cee361dd624948f72ef17c88a6",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 4139
+  },
+  {
+    "file": "form-editor-1920.png",
+    "bytes": 424800,
+    "sha256": "8f74d5f30286866068af5fb87b3c2d4daf5c8f8b97ae3fb294ade1a456e9b162",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 4127
+  },
+  {
+    "file": "form-editor-390.png",
+    "bytes": 352680,
+    "sha256": "4a8e12a2e1b8c6a4c77db9e6efb2af2831469d4932f1f027ad94f3e3035270b2",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 6128
+  },
+  {
+    "file": "form-group-answer-set-composition.png",
+    "bytes": 394418,
+    "sha256": "35977a4442c4a7f474c44da05adb4365c7a4e145eb553fc0707c6ce293ba8f1d",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3869
+  },
+  {
+    "file": "group-composition-editor.png",
+    "bytes": 277695,
+    "sha256": "1b0f55f7b79e7db271069c897bde9e98c4c758d280c9267860655f8a5f880fba",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 2956
+  },
+  {
+    "file": "group-picker-composition.png",
+    "bytes": 369168,
+    "sha256": "3a32b581333e94911447d3d2d1bc35d50b9f101e376b663ccb96a42bd47189a4",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 3738
+  },
+  {
+    "file": "group-with-answer-set.png",
+    "bytes": 237222,
+    "sha256": "53a988831ee1d3d0d9bd53ff100aad3a8a9cc017bca8e0a8980bc363b72ee492",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 2247
+  },
+  {
+    "file": "mobile-tab-activated-analytics.png",
+    "bytes": 143168,
+    "sha256": "0b766c97e3e20abfa88cf5f21e4d7ea52d99e9da46d68b053470f15a4a2e26e8",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2920
+  },
+  {
+    "file": "mobile-tabs-analytics.png",
+    "bytes": 149912,
+    "sha256": "ffc2ee9ff91f834e413d139d3f1a91ab7978faf6c45c224cbd9fae7dd20f2913",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 2607
+  },
+  {
+    "file": "overview-empty.png",
+    "bytes": 246375,
+    "sha256": "8ff85753619f2c9370e5710763922511e03f63c6fe3d924c360d0f1abc874cd7",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 2649
+  },
+  {
+    "file": "overview-healthy.png",
+    "bytes": 266648,
+    "sha256": "2049bfc6308846ae6e405574f914a4846e78bdbd36d8febd5d50e0f27ff3d79e",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 2665
+  },
+  {
+    "file": "policy-detail-1440.png",
+    "bytes": 235293,
+    "sha256": "c441787da67adde2680e93ae3940c654fcba2c8707483fe870a3b5f2c562b23d",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 2321
+  },
+  {
+    "file": "policy-detail-1920.png",
+    "bytes": 242346,
+    "sha256": "8d83f28995c614011b585d8bfdee3910e92873e4717cb08ca2bfcb59c2fc402b",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 2293
+  },
+  {
+    "file": "policy-detail-390.png",
+    "bytes": 180984,
+    "sha256": "f4a307b5e7381162a3e7eec204e40a59306a8e4cb95e3cd00cca4577b01cf5ed",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 3406
+  },
+  {
+    "file": "public-calculator-1440.png",
+    "bytes": 141799,
+    "sha256": "e1f32168d4490ba8169215ff9f8938ef114bcd9a99d5168afd22c2f1240062a0"
+  },
+  {
+    "file": "public-calculator-1920.png",
+    "bytes": 150430,
+    "sha256": "062d1982c9d0b1a1b7441a9dae25b65c316dd0a24239d902243120f1ca26d0ac"
+  },
+  {
+    "file": "public-calculator-390.png",
+    "bytes": 52738,
+    "sha256": "8a57f92424da8aa765b1185da30212d21abbac0e05ec66577e81ba0f2090d263"
+  },
+  {
+    "file": "public-chapter-1-1440.png",
+    "bytes": 112457,
+    "sha256": "b59a3f4dabb260945e2955fcd408b52f3a97776648988b86d82ba030546e4143"
+  },
+  {
+    "file": "public-chapter-1-1920.png",
+    "bytes": 115340,
+    "sha256": "656daaca6fdb08a4943ba09022e003f94488ff4771daea68465c04527fe31bca"
+  },
+  {
+    "file": "public-chapter-1-390.png",
+    "bytes": 83196,
+    "sha256": "7f66a8dd03131c8953d9ae35c977d295151a363a7dd2f5980dace110454e9f2d"
+  },
+  {
+    "file": "public-chapter-2-1440.png",
+    "bytes": 148278,
+    "sha256": "27540cf706b22c4b9aaebce5fc90cb0709db073967a8e775283f3ee2fc4ab672"
+  },
+  {
+    "file": "public-chapter-2-1920.png",
+    "bytes": 148610,
+    "sha256": "d0bace437a38b347486562da832ddc08a647662fa0443886bdf4973fc8939b92"
+  },
+  {
+    "file": "public-chapter-2-390.png",
+    "bytes": 122482,
+    "sha256": "b4c7ae4735f468b7abd47670e8e89b0bfc96d7a49fc0e64820be8067ac18ad2a"
+  },
+  {
+    "file": "public-chapter-3-1440.png",
+    "bytes": 160017,
+    "sha256": "54a963a568a79389b091b0e2b3debb9485cebfa67fbfd45f9b1e363a26d8d18a"
+  },
+  {
+    "file": "public-chapter-3-1920.png",
+    "bytes": 166582,
+    "sha256": "7e9c0a3e01db192d3b7e4153336f12808bf9a6b3a52ebf0db5feda30b30fcc44"
+  },
+  {
+    "file": "public-chapter-3-390.png",
+    "bytes": 137238,
+    "sha256": "605cf045b8fff79c3c8b669ca3e7b8a5526f907ccf2c84ab6690c119a0015850"
+  },
+  {
+    "file": "public-chapter-4-1440.png",
+    "bytes": 127444,
+    "sha256": "faeb13c3fd39bb5fe36c6cc9cc524dc7825cca158d7569db1d8ecfb80070a273"
+  },
+  {
+    "file": "public-chapter-4-1920.png",
+    "bytes": 127817,
+    "sha256": "7b8482949a74e85188f85105f6116cd6d2294da74aa62f93f320ea8e992f4f0c"
+  },
+  {
+    "file": "public-chapter-4-390.png",
+    "bytes": 106680,
+    "sha256": "2df16fb8f085d81a462900b73154b231260da5b84c0a5c5e2207a2be0912be69"
+  },
+  {
+    "file": "public-chapter-5-1440.png",
+    "bytes": 173633,
+    "sha256": "ae67522ea9df8d7958a1f6b133c0d8023b83161e5f6698eb8aec3c8618d7562a"
+  },
+  {
+    "file": "public-chapter-5-1920.png",
+    "bytes": 172548,
+    "sha256": "bd7cdbaf382d1ab093c60a2d84be60cb72872e90bad215e610fceb72edfba565"
+  },
+  {
+    "file": "public-chapter-5-390.png",
+    "bytes": 142502,
+    "sha256": "c6b7a9b064c663a27f659759ec0f398cb7ec1e4f59472b761dc83d4e1c0cbd74"
+  },
+  {
+    "file": "public-conversation-review-1440.png",
+    "bytes": 236556,
+    "sha256": "748446e338d1111b28a4dc32868128ace9017cc7d2578eea0004ea1b8314d7de"
+  },
+  {
+    "file": "public-conversation-review-1920.png",
+    "bytes": 241449,
+    "sha256": "4a45f70f3ebc01122b80647bf130ac2621267d2f2e1586259d34629bd04986d6"
+  },
+  {
+    "file": "public-conversation-review-390.png",
+    "bytes": 173852,
+    "sha256": "996e4273c75cc349ac3ab6aa373e07c811f1e0ca1aab29c4e6e587db2eba3ad2"
+  },
+  {
+    "file": "public-sample-handoff-1440.png",
+    "bytes": 292896,
+    "sha256": "bc8cf5d5420038a2fb7582039ce9beb608675a193a7a716312d523d6d7aea1e0"
+  },
+  {
+    "file": "public-sample-handoff-1920.png",
+    "bytes": 289618,
+    "sha256": "5d8ffeef27f7fde8f1a71f869a98a5c5f5a1d11f5e0ecee22e724503928d9258"
+  },
+  {
+    "file": "public-sample-handoff-390.png",
+    "bytes": 135100,
+    "sha256": "6088f93825d3896ebae5b5a47fc50a5c8541e71f905edd0e23df2c92e992fa14"
+  },
+  {
+    "file": "public-welcome-1440.png",
+    "bytes": 453602,
+    "sha256": "3f09f0c840eceb431010ea13a28d6577015246a5aa7c449468e2f09fdceeca89"
+  },
+  {
+    "file": "public-welcome-1920.png",
+    "bytes": 468615,
+    "sha256": "9c73d45a2bf5091f408878b39786876470887dab72cc00d7bccda12cf357147d"
+  },
+  {
+    "file": "public-welcome-390.png",
+    "bytes": 411232,
+    "sha256": "cdcf3d65d416b2a2ad75a5808668b84bee2c46ebbcf18f032460971b0a422b57"
+  },
+  {
+    "file": "question-group-detail-1440.png",
+    "bytes": 290078,
+    "sha256": "1a9dd0bcdb7ea67477f5dd108a00353b363dd2b64c4096e42c6207911bea5b21",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 2353
+  },
+  {
+    "file": "question-group-detail-1920.png",
+    "bytes": 300208,
+    "sha256": "86b54855f821718e231420282f4199cb5003af529c4199237b1bd8032dd63f97",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 2353
+  },
+  {
+    "file": "question-group-detail-390.png",
+    "bytes": 229848,
+    "sha256": "5df345edb979853b3e2474a34c7ac4c30984be87af1d5093a7d0f3871811a5c1",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 3301
+  },
+  {
+    "file": "regression-blocked-update-1440.png",
+    "bytes": 129986,
+    "sha256": "1d9037371f8072fdbaf8a1d821160c39a870fd3311157586127dd1f6d2ff24cc"
+  },
+  {
+    "file": "regression-blocked-update-1920.png",
+    "bytes": 155031,
+    "sha256": "fe9254b87e2d65ae5ea0b4ef667f863024610c81708a4ee5da21b0a038a8753c"
+  },
+  {
+    "file": "regression-blocked-update-390.png",
+    "bytes": 62148,
+    "sha256": "0a152be39325e768467704a13497f23463eb7fa161d3000928d12f0b2cf93e6b"
+  },
+  {
+    "file": "review-unsaved-after-evidence-queue.png",
+    "bytes": 185105,
+    "sha256": "b928c7d7ad08f9b533733cc77cfe8c8db8493a6c8640d3baf0cfc90ab1ca0cda",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1435
+  },
+  {
+    "file": "review-unsaved-after-reopen.png",
+    "bytes": 434049,
+    "sha256": "ca39b09f2ff3c317954ab467383154fa5db0f813d88f71051914a1b7f05f5b21",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 4071
+  },
+  {
+    "file": "review-unsaved-before-evidence.png",
+    "bytes": 441860,
+    "sha256": "abbc0ecf48de7d741768c3fc738d0751671134acbc858566012fcc8b11f83664",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 4107
+  },
+  {
+    "file": "reviewer-completed-1440.png",
+    "bytes": 453621,
+    "sha256": "59716deb8430e162de5b3f823661205b0e4f46b9e163f2ff6fa897bd0bbda66f",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 3854
+  },
+  {
+    "file": "reviewer-completed-1920.png",
+    "bytes": 457984,
+    "sha256": "a78b1f8db8cc50c95fcb51586cfc06a925d7f10d6c88884b769eaba6fed49412",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 3781
+  },
+  {
+    "file": "reviewer-completed-390.png",
+    "bytes": 336550,
+    "sha256": "13c42eb15af3b7655405bfa5db656f45e3f91e8d9c4e795850c3eda533301156",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 5230
+  },
+  {
+    "file": "reviewer-completed-stale-queue-1440.png",
+    "bytes": 198494,
+    "sha256": "09c0b84e00ebb9137c513934e193dfa40287caf66c3a8c6d863d79e20763b612",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1408
+  },
+  {
+    "file": "reviewer-completed-stale-queue-1920.png",
+    "bytes": 196609,
+    "sha256": "2b3e46ecf50a3ea3fc446316e53398cc9b0c1063d2f7f5fce1dcbb5d22059f57",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1335
+  },
+  {
+    "file": "reviewer-completed-stale-queue-390.png",
+    "bytes": 97524,
+    "sha256": "89ef1e172dd4d6a9dfd23103f2bf321dc10933af7dd3f3a3096ccc26bd9f84ea",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1732
+  },
+  {
+    "file": "reviewer-detail-1440.png",
+    "bytes": 445213,
+    "sha256": "0c9e74eebddcd8a2ca0d4c3525269914ab1e67cd210539eb5c39937b7d5d184c",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 3773
+  },
+  {
+    "file": "reviewer-detail-1920.png",
+    "bytes": 449391,
+    "sha256": "806333ca3ebc178efb2eba824fc7cd07d8ab46a903ddbe1bbc171db0feb9c4be",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 3697
+  },
+  {
+    "file": "reviewer-detail-390.png",
+    "bytes": 325524,
+    "sha256": "f9757364ab29b34b6c9c9ebe92af0928a4ccf2274d8d6bcc7ade199bdc7a5bbc",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 5167
+  },
+  {
+    "file": "reviewer-queue-1440.png",
+    "bytes": 204038,
+    "sha256": "b0d6bdc4f9a188ae93b0dcfa80ac6b6f203d7e6af423df7beeb40d2f5289dbb8",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1435
+  },
+  {
+    "file": "reviewer-queue-1920.png",
+    "bytes": 202962,
+    "sha256": "1b0d31173cc17aaaebb801c6dbe125d72a83573edf007d7861bb2d8fa9d50e06",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "pageHeight": 1360
+  },
+  {
+    "file": "reviewer-queue-390.png",
+    "bytes": 99229,
+    "sha256": "56e2999b4a1bbae2cb9e60b84a6a4624c2c23e90fa9fdcf8d2a15b0c635e5ce5",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1759
+  },
+  {
+    "file": "role-REVIEWER-evaluations.png",
+    "bytes": 185808,
+    "sha256": "7b8ed6f271fe20f60cdfdb340e82a070478327ca5b8a507742c4361cb1100085",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 1435
+  },
+  {
+    "file": "settings-access-1440.png",
+    "bytes": 108616,
+    "sha256": "7635dffe0e50772fd920152242acf03dca43fd1232d2902cded4b7d2853c7831",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1020
+  },
+  {
+    "file": "settings-audit-1440.png",
+    "bytes": 104557,
+    "sha256": "3a414b6474e2d70c7fbc0ddb4ebff2f4fa27a2a1673df5e1f4cb70df6281701b",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1099
+  },
+  {
+    "file": "settings-audit-390.png",
+    "bytes": 67300,
+    "sha256": "ca660362201da3624e5a39ef6611f7bd8ab15f176cb9cefd0f27cd6dd1aadc81",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1613
+  },
+  {
+    "file": "settings-notifications-1440.png",
+    "bytes": 144584,
+    "sha256": "613e63a8db564035f4b6ef3902891a15720086713ca2fbfc689778d4ded4b0a6",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1390
+  },
+  {
+    "file": "settings-notifications-390.png",
+    "bytes": 96994,
+    "sha256": "7419057d13448a6b5f2b0e4f79644b85a232c0d57859d3420eeee3a8040f39f9",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1748
+  },
+  {
+    "file": "settings-privacy-retention-1440.png",
+    "bytes": 223160,
+    "sha256": "73557e6de9bb43e38a266782f34277e8f46e5be39617f4124e9dd8b33b3aa518",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 1691
+  },
+  {
+    "file": "settings-reviews-1440.png",
+    "bytes": 101441,
+    "sha256": "5c8c5fc2b6e478342e204dbe90715c7c1da05936ae0fb5ad87af7353ebe91d8f",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "pageHeight": 919
+  },
+  {
+    "file": "settings-reviews-390.png",
+    "bytes": 67078,
+    "sha256": "042cf1c0055a142aaf46487cc914897bc3f59609a79171f842aeaa428b74ce8e",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageHeight": 1327
+  },
+  {
+    "file": "settings-reviews-saved.png",
+    "bytes": 94974,
+    "sha256": "66de10b139ab19b62aa3693626e302324c1b2f8134df30c33a0ed04434df8403",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "pageHeight": 960
+  }
+]

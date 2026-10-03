@@ -1,0 +1,57 @@
+Workspace / Calibration
+AUTHOR
+Jev managed securely by automation service
+HUMAN + AI
+Calibration
+
+Compare completed human reviews with the original AI evaluations.
+
+Calibration source
+Real Genesys only
+Synthetic only
+All sources
+Uploaded only
+Unknown provenance
+Calibration form @ version
+Calibration agent
+Calibration queue
+Calibration from
+Calibration to
+
+Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs.
+
+Evaluations reviewed
+2
+Questions reviewed
+6
+Exact agreement
+33%
+Mean absolute score gap
+16.0 pp
+Unresolved reviews
+7
+2 in progress
+Form / version
+Groups
+Questions
+Question types
+Confidence vs disagreement
+Confidence vs disagreement
+
+Noul uses the probability of the AI’s selected Yes/No answer. Choice and Score use provider confidence when supplied. Missing confidence has its own band. These counts describe this reviewed sample.
+
+Search
+5 results
+Confidence band ↓
+
+Questions
+
+Exact agreement
+
+Disagreements
+
+Unavailable	0	—	0
+90%+	2	0%	2
+80–89%	2	100%	0
+60–79%	2	0%	2
+< 60%	0	—	0

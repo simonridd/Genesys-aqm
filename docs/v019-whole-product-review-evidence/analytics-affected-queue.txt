@@ -1,0 +1,51 @@
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+This browser
+Server analytics
+SERVER ANALYTICS
+Quality analytics
+
+Aggregated in Cloud Run from durable production evaluations. The endpoint returns complete totals or an explicit size error.
+
+From
+To
+Source
+All
+Genesys Cloud
+Synthetic
+Policy ID
+Form ID @ version
+Agent
+Queue
+Channel
+Trigger
+All
+Manual
+Scheduled
+
+Complete scan: 27 production/test records inspected, 3 runs inspected. Form tests are excluded from quality.
+
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+
+Select a queue to drill down.
+
+Search
+1 results
+Dimension ↓
+
+Evaluations
+
+Average score
+
+Pass rate
+
+Critical failures
+
+Customer care	25	75%	92%	2

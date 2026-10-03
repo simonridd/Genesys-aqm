@@ -1,0 +1,143 @@
+Workspace / Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Policies pin published versions. Drafts can be tested without entering production analytics.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Server evaluations
+
+Server avg score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 5 forms
+Saved form · DRAFT · VERSION 1
+Attached resolution form
+Close details
+Export JSON
+Duplicate as new form
+Save changes
+TEST FORM
+Move to testing
+Publish version
+
+Saved to server
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Was the resolution clear?
+Question groups
+
+Question weights determine the overall score. One form evaluation · up to 1 Jev requests.
+
+Add group
+Add reusable group
+Overall scoring
+Question weighted
+Group weighted
+
+Question weighted combines applicable question credits. Group weighted combines group scores using their relative weights; configure a weight for every scoring group.
+
+Yes threshold65%
+Resolution
+↑
+↓
+Duplicate group
+Delete group
+Group name
+Group description
+Add group condition
+Group scoring
+Use group scoring settings
+Save group as reusable groupSelect all in group
+01
+Was the resolution clear?
+Multiple choice
+
+Assess whether the customer understood the resolution.
+
+Weight 1 · Enabled · ID clarity
+
+Clear (clear · credit 1)
+Clear resolution clarity.
+Mostly clear (mostly_clear · credit 0.75)
+Mostly clear resolution clarity.
+Partly clear (partly_clear · credit 0.5)
+Partly clear resolution clarity.
+Unclear (unclear · credit 0)
+Unclear resolution clarity.
+Add question condition
+Move question to group
+Resolution
+General (ungrouped)
+Duplicate
+↑
+↓
+Edit
+Add question
+View history
+ISOLATED SANDBOX
+Test form
+
+Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+
+Execution
+Legacy browser sandbox (development)
+Durable server sandbox (recommended)
+Source
+Synthetic
+Genesys Cloud
+Selection
+Most recent
+Deterministic random
+Manual selection
+Conversations
+
+5 conversations · 1 questions · 1 form · 5 evaluation assignments · up to 5 Jev requests
+
+The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20.
+
+Test formRefresh test history

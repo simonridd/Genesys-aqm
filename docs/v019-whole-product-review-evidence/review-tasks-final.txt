@@ -1,0 +1,17 @@
+
+Running 9 tests using 1 worker
+
+(node:21054) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/9] tests/whole-product-review-draft.spec.ts:4:1 › review draft when visiting original conversation evidence
+[2/9] tests/whole-product-review-semantics.spec.ts:4:1 › visible heading and navigation semantics across all major pages
+[3/9] tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1440
+[4/9] tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 1920
+[5/9] tests/whole-product-review-tasks.spec.ts:6:97 › priority reviewer completion and conversation evidence 390
+[6/9] tests/whole-product-review-tasks.spec.ts:23:1 › quality leader finds weak question, exact version and supporting evaluations
+[7/9] tests/whole-product-review-tasks.spec.ts:31:1 › admin review SLA dirty state and save failure preserves input
+[8/9] tests/whole-product-review-tasks.spec.ts:34:1 › Question Group containing Answer Set is used as independent form copy
+[9/9] tests/whole-product-review-tasks.spec.ts:40:1 › mobile analytics/calibration tabs and inline Answer Set dialog semantics
+  9 passed (19.7s)

@@ -1,0 +1,6 @@
+{
+  "route": "Connected workspace → About / product tour → Open AQM → Overview",
+  "url": "http://127.0.0.1:4174/Genesys-aqm/?page=automation",
+  "role": "ADMIN",
+  "productionRequestsSent": false
+}

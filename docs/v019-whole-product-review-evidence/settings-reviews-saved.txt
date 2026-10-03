@@ -1,0 +1,31 @@
+Workspace / Settings
+ADMIN
+Jev managed securely by automation service
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Notifications
+Audit
+Advanced / Development
+Reviews
+Pending settings
+
+Unsaved settings: Reviews
+
+Save all settings
+Discard changes
+Review reminders
+
+Only reviews with an explicit due date are monitored.
+
+Due soon hours
+Hours before due time
+No escalation
+Escalation hours
+Hours after due time
+Refresh review SLA state
