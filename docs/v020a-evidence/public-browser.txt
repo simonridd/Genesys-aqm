@@ -1,0 +1,28 @@
+
+Running 20 tests using 1 worker
+
+(node:77101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/20] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/20] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 1440
+[3/20] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 1440
+[4/20] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 1440
+[5/20] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 1440
+[6/20] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[7/20] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 1920
+[8/20] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 1920
+[9/20] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 1920
+[10/20] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 1920
+[11/20] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[12/20] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 390
+[13/20] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 390
+[14/20] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 390
+[15/20] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 390
+[16/20] tests/answer-set-discovery.spec.ts:25:1 › connected picker excludes browser starters and shows precise no-match copy
+[17/20] tests/answer-set-discovery.spec.ts:26:1 › disconnected Yes/No discovers local set; reconnect never uploads form or library
+[18/20] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+[19/20] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+[20/20] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+  20 passed (32.8s)

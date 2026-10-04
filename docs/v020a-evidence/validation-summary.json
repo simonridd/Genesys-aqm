@@ -38,5 +38,31 @@
     ]
   ],
   "keyboardAtAllThreeViewports": true,
-  "backendDeployment": false
+  "backendDeployment": false,
+  "publicReplay": {
+    "passed": 20,
+    "failed": 0,
+    "overlaps": "Same 20 locally qualified discovery cases; not added to unique counts"
+  },
+  "deployment": {
+    "sourceSha": "1cedb8d36c678e80ad56403662c52fdd16e950df",
+    "pagesHead": "95750f8c239e4d393b2191840e81079a76e881ef",
+    "publicFilesMatched": 12,
+    "cloudRun": "aqm-api-v019-e92f2d6",
+    "trafficPercent": 100
+  },
+  "preservation": {
+    "matchingCollections": 24,
+    "totalCollections": 25,
+    "allProductionDomainCollectionsUnchanged": true,
+    "changedCollections": [
+      "operationalHealth"
+    ],
+    "allRuntimeConfigurationUnchanged": true,
+    "runtimeMovement": "Natural hourly health/Scheduler timestamps",
+    "productionAuthoringMutations": 0,
+    "liveGenesysCalls": 0,
+    "liveJevCalls": 0,
+    "notificationSends": 0
+  }
 }

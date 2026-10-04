@@ -1,0 +1,69 @@
+{
+  "sourceSha": "1cedb8d36c678e80ad56403662c52fdd16e950df",
+  "totalCollections": 25,
+  "matchingCollections": 24,
+  "changedCollections": {
+    "operationalHealth": {
+      "before": {
+        "count": 2,
+        "sha256": "913df596f6476e57517f729c50fc2d1b697235223dac143dc53640d1ebeb6339",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-04T09:00:08.617110Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-04T09:00:08.224885Z",
+            "lastSuccessfulTickAt": "2026-10-04T09:00:08.120Z"
+          }
+        ]
+      },
+      "after": {
+        "count": 2,
+        "sha256": "4295a3e87e2b92ec6cda7f343873f50881862a93bbc3b045b7ac94d0ab3ca3fb",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-04T10:00:09.540357Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-04T10:00:09.187171Z",
+            "lastSuccessfulTickAt": "2026-10-04T10:00:09.060Z"
+          }
+        ]
+      }
+    }
+  },
+  "domainCollectionsUnchanged": true,
+  "runtimeComparison": {
+    "revision": true,
+    "image": true,
+    "runtimeConfigSha256": true,
+    "serviceIamSha256": true,
+    "schedulerConfigSha256": true,
+    "secrets": true
+  },
+  "allRuntimeConfigurationUnchanged": true,
+  "beforeRevision": "aqm-api-v019-e92f2d6",
+  "afterRevision": "aqm-api-v019-e92f2d6",
+  "schedulerRuntimeUnchanged": false,
+  "schedulerBefore": {
+    "lastAttemptTime": "2026-10-04T09:00:04.935253Z",
+    "scheduleTime": "2026-10-04T10:00:04.028877Z",
+    "status": {}
+  },
+  "schedulerAfter": {
+    "lastAttemptTime": "2026-10-04T10:00:04.849307Z",
+    "scheduleTime": "2026-10-04T11:00:04.028877Z",
+    "status": {}
+  },
+  "liveProviderCalls": {
+    "Jev": 0,
+    "Genesys": 0,
+    "notifications": 0
+  },
+  "productionReviewMutations": 0,
+  "productionAuthoringMutations": 0,
+  "productionDomainMutations": 0,
+  "runtimeMovement": "Operational health timestamps advanced from the 09:00 UTC tick to the 10:00 UTC tick; Scheduler lastAttemptTime and next scheduleTime advanced. Configuration hashes match."
+}

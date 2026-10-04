@@ -17,7 +17,7 @@ result={
     'schedulerRuntimeUnchanged':b['schedulerRuntime']==a['schedulerRuntime'],
     'schedulerBefore':b['schedulerRuntime'],'schedulerAfter':a['schedulerRuntime'],
     'liveProviderCalls':{'Jev':0,'Genesys':0,'notifications':0},
-    'productionReviewMutations':0,
+    'productionReviewMutations':0, 'productionAuthoringMutations':0, 'productionDomainMutations':0,
 }
 (root/'preservation.json').write_text(json.dumps(result,indent=2)+'\n')
 print('Matching collections:',result['matchingCollections'],'/',len(before))

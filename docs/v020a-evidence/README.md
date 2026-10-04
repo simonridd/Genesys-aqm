@@ -12,6 +12,7 @@
 - `browser-results.json`: focused discovery/authority/keyboard qualification.
 - `regression-browser.json`: V0.19A continuity, B authoring, C quality, D navigation, E reviewer focus.
 - `build.txt`, `committed-build.json`, `pages.json`: build, immutable archive proof and public/Git-tree byte equality.
+- `public/`: public picker/preview/keyboard screenshots and bounds at all three viewports.
 - `public-browser.json`: same discovery cases replayed against the public frontend with fictional authenticated APIs.
 - `before/after-collections.json`, `before/after-runtime.json`, `preservation.json`: hashes/counts and configuration only; no secret values or document content.
 - `failure-classification.md` and `initial-*`: transparent initial fixture diagnostics.
