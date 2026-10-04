@@ -1,0 +1,46 @@
+[WebServer] (node:85812) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:85824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390 (4.7s)
+  ✓  2 tests/evaluation-availability.spec.ts:152:60 › Overview investigation failure and exact retry 390 (1.6s)
+  ✓  3 tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900 (6.1s)
+  ✓  4 tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844 (6.1s)
+  ✓  5 tests/investigation-history.spec.ts:171:1 › Overview characterization: range is not URL durable and its drill still replaces (1.8s)
+  ✓  6 tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win (6.9s)
+  ✘  7 tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390 (6.3s)
+
+
+  1) tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.operational-table').last().locator('tbody tr').first()
+    Expected substring: "conversation-escalated"
+    Received string:    "ESCALATEDOverdue by 3 daysStart reviewFixture Agent · voiceFixture AgentCustomer careGeneral Customer Service v1778%Ready to review9/29/2026, 1:00:00 PMESCALATEDOverdue by 3 days"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.operational-table').last().locator('tbody tr').first() with timeout 5000ms
+      - waiting for locator('.operational-table').last().locator('tbody tr').first()
+        14 × locator resolved to <tr class="selectable">…</tr>
+           - unexpected value "ESCALATEDOverdue by 3 daysStart reviewFixture Agent · voiceFixture AgentCustomer careGeneral Customer Service v1778%Ready to review9/29/2026, 1:00:00 PMESCALATEDOverdue by 3 days"
+
+
+      51 |  await workload.getByRole('button',{name:'My review queue',exact:true}).click()
+      52 |  const table=page.locator('.operational-table').last()
+    > 53 |  await expect(table.locator('tbody tr')).toHaveCount(5);await expect(table.locator('tbody tr').first()).toContainText('conversation-escalated');expect(await table.locator('tbody tr').evaluateAll(rows=>rows.map(r=>r.querySelector('button[aria-label^="Open evaluation"]')?.getAttribute('aria-label')?.replace('Open evaluation ','')))).toEqual(['escalated','overdue','soon','progress','requested'])
+         |                                                                                                         ^
+      54 |  await expect(table.getByText('DUE SOON',{exact:true}).first()).toBeVisible();await expect(table.getByText('OVERDUE',{exact:true}).first()).toBeVisible();await expect(table.getByText('ESCALATED',{exact:true}).first()).toBeVisible();await expect(table.getByText('Due in 6 hours').first()).toBeVisible()
+      55 |  await page.screenshot({path:`/private/tmp/aqm-v016-queue-${viewport.width}.png`,fullPage:true})
+      56 |  await page.getByRole('button',{name:'All evaluations',exact:true}).click()
+        at /private/tmp/aqm-v020e-overview-first-scan/tests/review-sla.spec.ts:53:105
+
+    Error Context: test-results/review-sla-review-SLA-sett-7332f-lerts-and-completion-at-390/error-context.md
+
+  1 failed
+    tests/review-sla.spec.ts:13:97 › review SLA settings, queue, bulk due, alerts and completion at 390
+  6 passed (34.9s)

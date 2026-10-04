@@ -1,0 +1,13 @@
+{
+  "trace": [
+    "Attention action",
+    "Overview",
+    "Quality action",
+    "Overview",
+    "Review action",
+    "Overview",
+    "Coverage details",
+    "Automation action"
+  ],
+  "method": "Tab traversal and Enter; native disclosure and manual operations; no pointer"
+}

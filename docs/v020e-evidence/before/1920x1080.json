@@ -1,0 +1,172 @@
+{
+  "signals": [],
+  "h1Top": 130,
+  "headings": [
+    {
+      "text": "Attention required",
+      "x": 398,
+      "y": 266.59375,
+      "width": 156.984375,
+      "height": 22,
+      "bottom": 288.59375
+    },
+    {
+      "text": "Quality & coverage",
+      "x": 395,
+      "y": 818.59375,
+      "width": 161.671875,
+      "height": 22,
+      "bottom": 840.59375
+    },
+    {
+      "text": "Coverage",
+      "x": 395,
+      "y": 1088.78125,
+      "width": 1372,
+      "height": 22,
+      "bottom": 1110.78125
+    },
+    {
+      "text": "Review workload",
+      "x": 395,
+      "y": 1617.5,
+      "width": 145.71875,
+      "height": 22,
+      "bottom": 1639.5
+    },
+    {
+      "text": "Operational health",
+      "x": 395,
+      "y": 1857.6875,
+      "width": 1372,
+      "height": 22,
+      "bottom": 1879.6875
+    },
+    {
+      "text": "Automation",
+      "x": 395,
+      "y": 2188.0625,
+      "width": 100.65625,
+      "height": 22,
+      "bottom": 2210.0625
+    },
+    {
+      "text": "Last automated run",
+      "x": 395,
+      "y": 2270.0625,
+      "width": 1372,
+      "height": 22,
+      "bottom": 2292.0625
+    },
+    {
+      "text": "Upcoming scheduled work",
+      "x": 395,
+      "y": 2410.78125,
+      "width": 1372,
+      "height": 22,
+      "bottom": 2432.78125
+    },
+    {
+      "text": "Recent runs",
+      "x": 395,
+      "y": 2663.5,
+      "width": 1372,
+      "height": 22,
+      "bottom": 2685.5
+    },
+    {
+      "text": "Operational alerts 0",
+      "x": 0,
+      "y": 3243.5,
+      "width": 179.828125,
+      "height": 22,
+      "bottom": 3265.5
+    },
+    {
+      "text": "Monitoring runs",
+      "x": 395,
+      "y": 3730.21875,
+      "width": 1372,
+      "height": 22,
+      "bottom": 3752.21875
+    }
+  ],
+  "panels": [
+    {
+      "name": "Attention required",
+      "x": 368,
+      "y": 239.59375,
+      "width": 1426,
+      "height": 530,
+      "bottom": 769.59375
+    },
+    {
+      "name": "Quality and coverage",
+      "x": 368,
+      "y": 791.59375,
+      "width": 1426,
+      "height": 776.90625,
+      "bottom": 1568.5
+    },
+    {
+      "name": "Review workload health",
+      "x": 368,
+      "y": 1590.5,
+      "width": 1426,
+      "height": 218.1875,
+      "bottom": 1808.6875
+    },
+    {
+      "name": "Health summary",
+      "x": 368,
+      "y": 1830.6875,
+      "width": 1426,
+      "height": 308.375,
+      "bottom": 2139.0625
+    },
+    {
+      "name": "Upcoming automation",
+      "x": 368,
+      "y": 2161.0625,
+      "width": 1426,
+      "height": 453.4375,
+      "bottom": 2614.5
+    },
+    {
+      "name": "Recent runs",
+      "x": 368,
+      "y": 2636.5,
+      "width": 1426,
+      "height": 268,
+      "bottom": 2904.5
+    },
+    {
+      "name": "Operational alerts",
+      "x": 395,
+      "y": 3200.5,
+      "width": 1372,
+      "height": 505.71875,
+      "bottom": 3706.21875
+    }
+  ],
+  "documentHeight": 3288,
+  "scrollY": 0,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "overflow": false,
+  "requests": {
+    "/api/overview": 3,
+    "/api/policies": 4,
+    "/api/schedules": 3,
+    "/api/runs": 3,
+    "/api/session": 1,
+    "/api/governance": 1,
+    "/api/answer-sets": 1,
+    "/api/forms": 1,
+    "/api/question-groups": 1,
+    "/api/alerts": 2,
+    "/api/monitoring-health": 2
+  }
+}

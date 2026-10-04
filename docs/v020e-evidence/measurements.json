@@ -1,0 +1,110 @@
+{
+  "base": "b295506795114eca85b9d7eb3a6e7c3aa969bbd5",
+  "fixture": "tests/overviewFirstScanFixture.ts",
+  "metrics": [
+    {
+      "viewport": "1440x900",
+      "h1Top": 130,
+      "pageHeight": {
+        "before": 3288,
+        "after": 2517,
+        "reductionPercent": 23.4
+      },
+      "requestCountsUnchanged": true,
+      "distancesFromOverviewH1": {
+        "Review work": {
+          "beforeTop": 1617.5,
+          "afterTop": 690.59375,
+          "beforePx": 1487.5,
+          "afterPx": 560.59375,
+          "reductionPercent": 62.3
+        },
+        "Automation health": {
+          "beforeTop": 1857.6875,
+          "afterTop": 690.59375,
+          "beforePx": 1727.6875,
+          "afterPx": 560.59375,
+          "reductionPercent": 67.6
+        }
+      }
+    },
+    {
+      "viewport": "1920x1080",
+      "h1Top": 130,
+      "pageHeight": {
+        "before": 3288,
+        "after": 2517,
+        "reductionPercent": 23.4
+      },
+      "requestCountsUnchanged": true,
+      "distancesFromOverviewH1": {
+        "Review work": {
+          "beforeTop": 1617.5,
+          "afterTop": 690.59375,
+          "beforePx": 1487.5,
+          "afterPx": 560.59375,
+          "reductionPercent": 62.3
+        },
+        "Automation health": {
+          "beforeTop": 1857.6875,
+          "afterTop": 690.59375,
+          "beforePx": 1727.6875,
+          "afterPx": 560.59375,
+          "reductionPercent": 67.6
+        }
+      }
+    },
+    {
+      "viewport": "390x844",
+      "h1Top": 434.515625,
+      "pageHeight": {
+        "before": 4998,
+        "after": 4558,
+        "reductionPercent": 8.8
+      },
+      "requestCountsUnchanged": true,
+      "distancesFromOverviewH1": {
+        "Review work": {
+          "beforeTop": 2598.71875,
+          "afterTop": 1887.78125,
+          "beforePx": 2164.203125,
+          "afterPx": 1453.265625,
+          "reductionPercent": 32.8
+        },
+        "Automation health": {
+          "beforeTop": 2998.71875,
+          "afterTop": 2224.53125,
+          "beforePx": 2564.203125,
+          "afterPx": 1790.015625,
+          "reductionPercent": 30.2
+        }
+      }
+    },
+    {
+      "viewport": "1440x720",
+      "h1Top": 130,
+      "pageHeight": {
+        "before": 3288,
+        "after": 2517,
+        "reductionPercent": 23.4
+      },
+      "requestCountsUnchanged": true,
+      "distancesFromOverviewH1": {
+        "Review work": {
+          "beforeTop": 1617.5,
+          "afterTop": 690.59375,
+          "beforePx": 1487.5,
+          "afterPx": 560.59375,
+          "reductionPercent": 62.3
+        },
+        "Automation health": {
+          "beforeTop": 1857.6875,
+          "afterTop": 690.59375,
+          "beforePx": 1727.6875,
+          "afterPx": 560.59375,
+          "reductionPercent": 67.6
+        }
+      }
+    }
+  ]
+}

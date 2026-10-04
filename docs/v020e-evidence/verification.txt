@@ -1,0 +1,147 @@
+GENESYS AQM V0.20E — Overview first-scan hierarchy
+
+Base: b295506795114eca85b9d7eb3a6e7c3aa969bbd5 (fetched origin/main)
+Branch: codex/aqm-v020e-overview-first-scan
+Worktree: /private/tmp/aqm-v020e-overview-first-scan
+
+Implemented
+Attention required remains first. At a glance follows with Quality, Coverage,
+Review work and Automation health in that DOM and visual order. Quality and
+Coverage show the Dashboard range; review and health say Current state.
+The five review counts and their existing actions live in this region. Existing
+Automation/Genesys/Jev/Scheduler/Notifications/Review SLA meanings are retained.
+Automation and review labels were extracted into pure presentation helpers.
+Numeric drill buttons now include their metric labels in accessible names.
+
+Quality trend follows the summaries, including empty-history and low-history
+copy. Coverage details is a native details/summary, closed by default, with
+real stage counts in its summary. Its existing funnel, failed attempts,
+Candidates evidence, observational caveat and Explore coverage action remain.
+System details remains closed and retains API, Firestore, last scheduler tick,
+durable provider evidence, notification pending/failed/last-success evidence.
+Automation, Recent runs, SetupChecklist and lower operation disclosures remain.
+There are no duplicate top-level Review workload or Operational health panels.
+
+Attention compaction was justified by baseline geometry: its five alert rows
+made Attention 530px tall at 1440x900 and placed Quality's heading at y=818.59.
+Attention now shows the first two ranked alerts plus View all active alerts.
+Error/warning totals, critical evaluation action, escalated/overdue actions and
+failed notification counts remain visible. New desktop Attention height: 346px.
+
+Measurement method
+Identical explicit fictional OverviewSnapshot fixture on exact canonical UI and
+new UI. Values: quality 79%, 8 evaluations, 4 evaluated conversations, 75% pass,
+2 critical occurrences; coverage 20 eligible / 10 sampled / 6 content available /
+4 evaluated / 2 failed attempts; reviews 7 open / 1 due soon / 1 overdue /
+1 escalated / 1 unassigned; Automation Attention, Jev Error, Scheduler Healthy,
+Genesys Unverified, notification failed deliveries, Review SLA Escalated.
+Quality trend: two fixture days, four evaluations each at 78% and 80%.
+Five ranked active alerts, with both linked reviews/runs and unlinked warnings.
+
+Canonical capture preceded source edits. A second exact-base archive capture
+used the identical final fixture to confirm geometry and request counts.
+Distances are heading top minus the Overview H1 top, using boundingClientRect
+at scrollY=0. Baseline and new H1: y=130 desktop, y=434.52 mobile.
+Native closed detail contents are excluded from rendered document height.
+Full and initial screenshots and bounding boxes are in before/ and after/.
+
+Viewport       Measure                         Before px  After px  Reduction
+1440x900       H1 to Review work                 1487.50    560.59    62.3%
+1440x900       H1 to Automation health           1727.69    560.59    67.6%
+390x844        H1 to Review work                 2164.20   1453.27    32.8%
+390x844        H1 to Automation health           2564.20   1790.02    30.2%
+1440x900       Document height                      3288      2517    23.4%
+390x844        Document height                      4998      4558     8.8%
+
+Absolute heading coordinates:
+1440x900: Review workload 1617.50 -> Review work 690.59;
+          Operational health 1857.69 -> Automation health 690.59.
+390x844:  Review workload 2598.72 -> Review work 1887.78;
+          Operational health 2998.72 -> Automation health 2224.53.
+
+1440x900 first viewport: all four summary headings at y=690.59, h=20.
+Primary signal boxes:
+Quality:            x=327,  y=762.59, w=92.28,  h=39.19 (79%)
+Coverage:           x=596,  y=765.59, w=58.38,  h=33    (20%)
+Review work:        x=865,  y=762.59, w=48.88,  h=39.19 (7 open)
+Automation health:  x=1134, y=765.59, w=113.77, h=33    (Attention)
+Attention status is visible. Trend starts at y=1112.12, after the summaries.
+
+1920x1080: entire At-a-glance region x=368, y=607.59, w=1426,
+h=455.53, bottom=1063.13 is visible. No extra spacing added for this viewport.
+1440x720: four headings are visible; primary signals finish near y=802 and
+require a short scroll. Fonts/padding were not reduced to force this viewport.
+390x844: readable single-column summaries, before trend/funnel, no horizontal
+scrolling. Existing mobile navigation/header contribute 434.52px before H1.
+1440 -> 390 -> 1440 preserves exactly four summaries and Dashboard range.
+
+Goal replay
+Only goal text: "Tell me what needs attention, how quality and coverage look,
+how much review work is open, and whether the automation is healthy."
+Answers found: critical/review/system attention; 79% quality and 8 evaluations;
+20/10/6/4 coverage and 20% evaluation coverage; 7 open reviews with the four
+other current counts; Automation Attention with mixed underlying states.
+Desktop 1440: scroll positions 0 then 136 for full supporting card contents.
+Desktop 1920: all five answers at scrollY=0.
+Mobile: scroll positions 257, 910, 1014, 1611, 1717.
+All: zero clicks, zero wrong turns, zero disclosures opened.
+Primary desktop signals require no scroll at 1440x900. Full card reading used
+one short scroll. This is a scripted visible-label replay, not an independently
+recruited or timed 30-second human study. Exact traces: goal-*.json.
+
+Verification
+Build passes; 69 deterministic test files / 677 tests pass.
+57 focused Overview, quality-actionability, investigation and reviewer browser
+checks passed across the initial run and targeted corrections/rechecks.
+Five additional V0.20B/C/D smoke checks passed: mobile Calibration disagreement
+journey, Overview critical investigation 503 and exact retry, Analytics history
+1440/390 Back/Forward, and unchanged Overview history characterization.
+The final six geometry/request-count/keyboard checks pass after adding explicit
+before/after request-count equality and activating actions with keyboard only.
+ADMIN, REVIEWER, VIEWER and AUTHOR checked; My review queue permissions unchanged.
+Overview -> My review queue opens mobile priority cards and focused review.
+Linked review, linked run, unlinked alert management and run rows checked.
+
+Independent analytics unavailable leaves Review work/Health usable. Independent
+reviews unavailable leaves Quality/Coverage usable and shows no false counts.
+Successful empty analytics shows 0 evaluations, zero coverage stage counts and
+No quality history; it does not say Unavailable. Complete healthy state shows
+All clear and normal Healthy statuses. Failed refresh retains the last good
+snapshot and existing stale message. Low history warning and trend remain.
+Coverage and System details preserve their evidence on expansion.
+
+Keyboard-only Tab/Enter opens Attention investigation, returns to Overview,
+opens Explore quality, returns, opens review work, returns, expands Coverage
+details and opens manual Automation. No trap; DOM order matches reading order.
+
+Overview request counts are identical to exact base at all four sizes:
+3 overview requests across the original StrictMode fixture entry and one
+explicit fixture Refresh; 4 policies, 3 schedules, 3 runs, 1 session,
+1 governance, 1 forms, 1 answer-sets, 1 question-groups, 2 alerts and 2 existing
+monitoring-health requests. No per-card calls. Opening disclosures issues no
+requests. A range change issues exactly one Overview request, retaining the
+existing separate configuration/operations behavior. No polling added.
+
+Existing test maintenance and limitation
+Two old Overview navigation tests failed on exact base because they assumed
+bare-root entry bypasses the welcome wrapper. Test setup now enters the
+workspace without prescribing an App page; bare-root expects Welcome and
+explicit page=evaluate checks Conversation review. Application routing did
+not change. Both corrected checks pass.
+An additional legacy review-sla.spec.ts mobile test fails on conversation-ID
+text expected in the former review table. The exact canonical base fails at
+the same assertion (line 53). It is documented, not counted as a passing check;
+the requested current mobile priority-card/focused-review smoke passes.
+Logs: base-navigation-characterization.txt, base-review-sla-characterization.txt,
+overview-browser-initial-run.txt, regression-smokes-initial-run.txt,
+final-acceptance.txt, empty-contract.txt, deterministic-tests.txt and build.txt.
+
+Scope
+Only Overview presentation, its pure label helper, tests and evidence changed.
+GET /api/overview, OverviewSnapshot, aggregation, calculations, alerts, health
+semantics, range state/history, schedules, notifications and backend contracts
+are unchanged. V0.20D's Overview range/history boundary is deliberately retained.
+No F3/F9/F10 expansion, new KPI, combined health score or new causal claim.
+No environment-builder-v2 work, PR, merge, tag, deployment, Cloud Run operation,
+live Genesys/Jev request, notification or production domain mutation performed.
+The expected backend aqm-api-v019-e92f2d6 was not redeployed or otherwise changed.

@@ -76,7 +76,7 @@ for(const viewport of sizes){
  })
  test(`Overview review counts, workload shortcuts and detail at ${viewport.width}`,async({browser})=>{
   const context=await browser.newContext({viewport}),page=await context.newPage(),state=await setup(page,'automation')
-  const work=()=>page.getByRole('region',{name:'Review workload health'}),home=()=>nav(page,'Overview')
+  const work=()=>page.getByRole('region',{name:'Review work summary'}),home=()=>nav(page,'Overview')
   for(const [label,count,scope] of [['Open',7,'Active reviews'],['Unassigned',1,'Review requested'],['Due soon',1,'Due soon'],['Overdue',1,'Overdue'],['Escalated',1,'Escalated']] as const){
    await work().locator('.overview-metric').filter({has:page.getByText(label,{exact:true})}).getByRole('button').click();await expect(rows(page)).toHaveCount(count);await expect(page.getByRole('region',{name:'Investigation scope'})).toContainText(scope)
    await page.screenshot({path:`${evidence}/overview-${label.toLowerCase().replace(' ','-')}-${viewport.width}.png`,fullPage:true});await home()

@@ -1,0 +1,95 @@
+[WebServer] (node:85509) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 57 tests using 1 worker
+
+(node:85533) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440 (4.1s)
+  ✓   2 tests/investigation-links.spec.ts:77:2 › Overview review counts, workload shortcuts and detail at 1440 (5.3s)
+  ✓   3 tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1440 (1.9s)
+  ✓   4 tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920 (4.2s)
+  ✓   5 tests/investigation-links.spec.ts:77:2 › Overview review counts, workload shortcuts and detail at 1920 (5.3s)
+  ✓   6 tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1920 (1.9s)
+  ✓   7 tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390 (4.1s)
+  ✓   8 tests/investigation-links.spec.ts:77:2 › Overview review counts, workload shortcuts and detail at 390 (5.3s)
+  ✓   9 tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390 (1.9s)
+  ✓  10 tests/overview-first-scan.spec.ts:9:121 › goal-only first scan 1440x900 (1.2s)
+  ✓  11 tests/overview-first-scan.spec.ts:9:121 › goal-only first scan 1920x1080 (1.1s)
+  ✓  12 tests/overview-first-scan.spec.ts:9:121 › goal-only first scan 390x844 (1.2s)
+  ✓  13 tests/overview-first-scan.spec.ts:9:121 › goal-only first scan 1440x720 (1.2s)
+  ✓  14 tests/overview-first-scan.spec.ts:26:1 › independent unavailable analytics, unavailable reviews, zero data, healthy state and stale refresh (1.5s)
+  ✓  15 tests/overview-first-scan.spec.ts:39:1 › coverage/system detail retains evidence, trend and range with no new snapshot calls (1.2s)
+  ✓  16 tests/overview-first-scan.spec.ts:50:1 › 1440 → 390 → 1440 preserves four summaries and range (1.1s)
+  ✓  17 tests/overview-first-scan.spec.ts:55:1 › all review metrics and quality investigation retain exact query semantics (1.9s)
+  ✓  18 tests/overview-first-scan.spec.ts:62:67 › shared summary evidence and permitted actions ADMIN (1.1s)
+  ✓  19 tests/overview-first-scan.spec.ts:62:67 › shared summary evidence and permitted actions REVIEWER (1.1s)
+  ✓  20 tests/overview-first-scan.spec.ts:62:67 › shared summary evidence and permitted actions VIEWER (1.1s)
+  ✓  21 tests/overview-first-scan.spec.ts:62:67 › shared summary evidence and permitted actions AUTHOR (1.1s)
+  ✓  22 tests/overview-first-scan.spec.ts:66:31 › keyboard Overview actions and disclosures 1440 (1.1s)
+  ✓  23 tests/overview-first-scan.spec.ts:66:31 › keyboard Overview actions and disclosures 390 (1.2s)
+  ✓  24 tests/overview-geometry.spec.ts:6:117 › geometry 1440x900 (1.2s)
+  ✓  25 tests/overview-geometry.spec.ts:6:117 › geometry 1920x1080 (1.2s)
+  ✓  26 tests/overview-geometry.spec.ts:6:117 › geometry 390x844 (1.2s)
+  ✓  27 tests/overview-geometry.spec.ts:6:117 › geometry 1440x720 (1.2s)
+  ✓  28 tests/overview-regression-smoke.spec.ts:3:1 › Overview My review queue still opens mobile priority cards and focused review (1.5s)
+  ✓  29 tests/overview.spec.ts:56:29 › Overview healthy, range, freshness, partial failure at 1440 (1.6s)
+  ✓  30 tests/overview.spec.ts:56:29 › Overview healthy, range, freshness, partial failure at 1920 (1.5s)
+  ✓  31 tests/overview.spec.ts:56:29 › Overview healthy, range, freshness, partial failure at 390 (1.5s)
+  ✓  32 tests/overview.spec.ts:71:96 › Overview ADMIN attention and drill-through at 1440 (2.2s)
+  ✓  33 tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1440 (2.2s)
+  ✓  34 tests/overview.spec.ts:71:96 › Overview REVIEWER attention and drill-through at 1440 (2.4s)
+  ✓  35 tests/overview.spec.ts:71:96 › Overview VIEWER attention and drill-through at 1440 (2.3s)
+  ✓  36 tests/overview.spec.ts:71:96 › Overview ADMIN attention and drill-through at 1920 (2.2s)
+  ✓  37 tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 1920 (2.3s)
+  ✓  38 tests/overview.spec.ts:71:96 › Overview REVIEWER attention and drill-through at 1920 (2.4s)
+  ✓  39 tests/overview.spec.ts:71:96 › Overview VIEWER attention and drill-through at 1920 (2.2s)
+  ✓  40 tests/overview.spec.ts:71:96 › Overview ADMIN attention and drill-through at 390 (2.3s)
+  ✓  41 tests/overview.spec.ts:71:96 › Overview AUTHOR attention and drill-through at 390 (2.3s)
+  ✓  42 tests/overview.spec.ts:71:96 › Overview REVIEWER attention and drill-through at 390 (2.4s)
+  ✓  43 tests/overview.spec.ts:71:96 › Overview VIEWER attention and drill-through at 390 (2.2s)
+  ✓  44 tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts (941ms)
+  ✘  45 tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win (10.0s)
+(node:85650) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  46 tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 1440 (4.8s)
+  ✓  47 tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1440 (3.0s)
+  ✓  48 tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 1920 (4.8s)
+  ✓  49 tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1920 (3.0s)
+  ✓  50 tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 390 (4.3s)
+  ✓  51 tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 390 (2.9s)
+  ✓  52 tests/quality-actionability.spec.ts:37:1 › safe errors, retry, empty scope, unavailable names and sparse history (2.2s)
+  ✓  53 tests/quality-actionability.spec.ts:40:1 › goal-only route from Overview uses visible quality evidence (2.2s)
+  ✓  54 tests/quality-actionability.spec.ts:48:1 › Overview Analytics entry replaces stale quality filters (1.4s)
+  ✓  55 tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 1440 (2.5s)
+  ✓  56 tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 1920 (2.5s)
+  ✓  57 tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 390 (2.4s)
+
+
+  1) tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: 'Conversation review', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { name: 'Conversation review', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Conversation review', exact: true })
+
+
+      91 | test('OAuth return-page intent, evaluation deep link and explicit query page win',async({browser})=>{
+      92 |  for(const returned of ['settings','policies','evaluations']){const page=await browser.newPage();await setup(page,'ADMIN',false,returned);await expect(page.getByRole('heading',{name:returned[0].toUpperCase()+returned.slice(1),exact:true})).toBeVisible();await page.close()}
+    > 93 |  const page=await browser.newPage();await page.route(`${origin}/**`,r=>r.fulfill({json:{items:[]}}));await page.goto(`${app}?evaluationId=linked&page=automation`);await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await page.goto(`${app}?page=policies`);await expect(page.getByRole('heading',{name:'Policies',exact:true})).toBeVisible();await page.goto(app);await expect(page.getByRole('region',{name:'Welcome to IPI AQM'})).toBeVisible();await page.goto(`${app}?page=conversations`);await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.goto(`${app}?page=automation`);await expect(page.getByText('Connect to Genesys Cloud to view operational AQM health.')).toBeVisible();await page.close()
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^
+      94 | })
+      95 |
+        at /private/tmp/aqm-v020e-overview-first-scan/tests/overview.spec.ts:93:600
+
+    Error Context: test-results/overview-OAuth-return-page-c5f3a-and-explicit-query-page-win/error-context.md
+
+  1 failed
+    tests/overview.spec.ts:91:1 › OAuth return-page intent, evaluation deep link and explicit query page win
+  56 passed (2.3m)

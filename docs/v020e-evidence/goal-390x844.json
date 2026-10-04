@@ -1,0 +1,34 @@
+{
+  "goal": "Tell me what needs attention, how quality and coverage look, how much review work is open, and whether the automation is healthy.",
+  "trace": [
+    {
+      "region": "Attention required",
+      "scrollY": 257,
+      "answers": "Attention required\nAction needed\nQUALITY ATTENTION · Last 7 days\n\n2 critical failure occurrences in evaluated conversations\n\nInspect critical evaluations →\nREVIEW & SYSTEM ATTENTION\n2 errors\n1 escalated review\n1 overdue review\n3 warnings\n1 failed notification delivery (24h)\nError\nReview escalated\nOpen review →\nError\nScheduled run failed\nOpen run →\nView all active alerts →"
+    },
+    {
+      "region": "Quality summary",
+      "scrollY": 910,
+      "answers": "Quality\n\nLast 7 days\n\nAverage quality\n79% →\nEvaluated conversations\n4\nEvaluations\n8 →\nPass rate\n75%\nCritical failure occurrences\n2 →\nExplore quality →"
+    },
+    {
+      "region": "Coverage summary",
+      "scrollY": 1014,
+      "answers": "Coverage\n\nLast 7 days\n\nEvaluation coverage\n20%\nEligible\n20\nSampled\n10\nContent available\n6\nEvaluated\n4\nFailed evaluation attempts\n2\nSampling coverage\n50%\nExplore coverage →"
+    },
+    {
+      "region": "Review work summary",
+      "scrollY": 1611,
+      "answers": "Review work\n\nCurrent state\n\nOpen\n7 →\nDue soon\n1 →\nOverdue\n1 →\nEscalated\n1 →\nUnassigned\n1 →\nMy review queue →\nAll review work →"
+    },
+    {
+      "region": "Automation health summary",
+      "scrollY": 1717,
+      "answers": "Automation health\n\nCurrent state\n\nAutomation\nAttention\nGenesys\nUnverified\nJev\nError\nScheduler\nHealthy\nNotifications\nFailed deliveries\nReview SLA\nEscalated\nSystem details"
+    }
+  ],
+  "clicks": 0,
+  "wrongTurns": 0,
+  "disclosuresOpened": 0,
+  "method": "Scripted goal replay from visible headings and evidence; no independent human participant or timed usability claim"
+}

@@ -1,0 +1,10 @@
+[WebServer] (node:86407) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:86408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/overview-first-scan.spec.ts:27:1 › independent unavailable analytics, unavailable reviews, zero data, healthy state and stale refresh (1.6s)
+
+  1 passed (2.5s)
