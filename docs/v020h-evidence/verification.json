@@ -1,0 +1,65 @@
+{
+  "sourceSha": "cf860d9bf008950446e12291489708b419b84ee5",
+  "pagesHead": "84caf3b8a2d363ae651c1cf91d7d4e9c7983aa6e",
+  "pagesTreeSha": "2c30d50d25c9922572d4c1afc605ebe4b50f0be4",
+  "publicFilesEqual": 12,
+  "buildInputsEqual": 208,
+  "unchangedBackendRevision": "aqm-api-v019-e92f2d6",
+  "changedProductSourceFiles": [
+    "src/showcase/CostCalculator.tsx",
+    "src/showcase/economics.test.ts",
+    "src/showcase/economics.ts"
+  ],
+  "authenticatedProductSourceUnchanged": true,
+  "backendApiEnvironmentBuilderUnchanged": true,
+  "deterministicTests": 714,
+  "focusedEstimatorHelperTests": 23,
+  "browserReports": {
+    "baseline-browser": {
+      "startTime": "2026-10-04T16:55:50.644Z",
+      "duration": 3732.2839999999997,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browser": {
+      "startTime": "2026-10-04T17:00:58.080Z",
+      "duration": 12648.427,
+      "expected": 5,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "showcase-smoke": {
+      "startTime": "2026-10-04T17:01:11.325Z",
+      "duration": 23509.557,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "public-browser": {
+      "startTime": "2026-10-04T17:04:38.295Z",
+      "duration": 4689.244,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "publicEqualsLocal": true,
+  "all25CollectionCountsUnchanged": true,
+  "exactCollectionHashesMatching": 24,
+  "healthTimestampOnlyDifferenceProven": true,
+  "inventoryUnchanged": true,
+  "runtimeIamSecretsSchedulerConfigUnchanged": true,
+  "productionDomainMutations": 0,
+  "liveGenesysCalls": 0,
+  "liveJevCalls": 0,
+  "notifications": 0,
+  "prCreated": false,
+  "merged": false,
+  "tagged": false,
+  "closure": "F10 scoped ambiguity resolved; ChatGPT decides F1-F10 closure and review/merge/release."
+}

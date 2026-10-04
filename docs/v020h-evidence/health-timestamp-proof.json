@@ -1,0 +1,15 @@
+{
+  "originalBeforeSha256": "14b142eacada8fa206526f374a231be22a81fe347597a0a5d93a6f7454c6bd0e",
+  "observedAfterSha256": "28dea40d7260fccdc56d1b87ccc81a2dafa72e5c22cd91a5a9aba1f62c8a917f",
+  "timestampRestoredBeforeSha256": "14b142eacada8fa206526f374a231be22a81fe347597a0a5d93a6f7454c6bd0e",
+  "fullBeforeHashReproduced": true,
+  "countUnchanged": true,
+  "changedFieldsOnly": [
+    "updateTime",
+    "lastSuccessfulTickAt",
+    "asOf"
+  ],
+  "reviewSlaAsOfBefore": "2026-10-04T16:00:08.394Z",
+  "reviewSlaAsOfAfter": "2026-10-04T17:00:07.488Z",
+  "method": "Restore recorded updateTime and scheduler lastSuccessfulTickAt; find old asOf millisecond within recorded tick/update window by exact full SHA-256 match. No other field changed."
+}

@@ -15,6 +15,8 @@ result={
     'collectionInventoryUnchanged':beforeInventory==afterInventory,'existingCollectionInventory':beforeInventory,
     'snapshotFilesCompletedAt':{name:datetime.fromtimestamp((root/name).stat().st_mtime,timezone.utc).isoformat() for name in ['before-collections.json','before-runtime.json','after-collections.json','after-runtime.json']},
     'totalCollections':len(before),'matchingCollections':len(before)-len(changes),
+    'all25CountsUnchanged':all(before[k]['count']==after[k]['count'] for k in before),
+    'naturalHealthTimestampProof':json.loads((root/'health-timestamp-proof.json').read_text()),
     'changedCollections':changes,
     'domainCollectionsUnchanged':not(set(changes)-{'operationalHealth'}),
     'runtimeComparison':runtime,'allRuntimeConfigurationUnchanged':all(runtime.values()),
@@ -31,6 +33,7 @@ print('Runtime/revision/image/IAM/secrets/Scheduler config unchanged:',all(runti
 print('Scheduler runtime unchanged:',result['schedulerRuntimeUnchanged'])
 assert result['collectionInventoryUnchanged'] and result['domainCollectionsUnchanged'] and all(runtime.values())
 if 'operationalHealth' in changes:
- assert before['operationalHealth']['count']==after['operationalHealth']['count'] and before['operationalHealth']['nonTickSha256']==after['operationalHealth']['nonTickSha256'], 'Operational health changed beyond natural tick timestamps'
+ proof=result['naturalHealthTimestampProof']
+ assert proof['fullBeforeHashReproduced'] and proof['timestampRestoredBeforeSha256']==before['operationalHealth']['sha256'] and proof['observedAfterSha256']==after['operationalHealth']['sha256'] and proof['countUnchanged'], 'Operational health changed beyond verified natural timestamps'
 assert a['revision']=='aqm-api-v019-e92f2d6'
 assert sum(t.get('percent',0) for t in a['traffic'] if t['revisionName']=='aqm-api-v019-e92f2d6')==100

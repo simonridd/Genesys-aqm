@@ -1,0 +1,106 @@
+{
+  "sourceSha": "cf860d9bf008950446e12291489708b419b84ee5",
+  "collectionInventoryUnchanged": true,
+  "existingCollectionInventory": [
+    "evaluationForms",
+    "evaluationRecords",
+    "evaluationSlots",
+    "formTestRuns",
+    "operationalHealth",
+    "policies",
+    "policyRuns",
+    "questionGroupAssets",
+    "scheduleExecutionClaims",
+    "schedules"
+  ],
+  "snapshotFilesCompletedAt": {
+    "before-collections.json": "2026-10-04T16:54:17.889849+00:00",
+    "before-runtime.json": "2026-10-04T16:54:28.445914+00:00",
+    "after-collections.json": "2026-10-04T17:05:06.647509+00:00",
+    "after-runtime.json": "2026-10-04T17:05:14.407359+00:00"
+  },
+  "totalCollections": 25,
+  "matchingCollections": 24,
+  "all25CountsUnchanged": true,
+  "naturalHealthTimestampProof": {
+    "originalBeforeSha256": "14b142eacada8fa206526f374a231be22a81fe347597a0a5d93a6f7454c6bd0e",
+    "observedAfterSha256": "28dea40d7260fccdc56d1b87ccc81a2dafa72e5c22cd91a5a9aba1f62c8a917f",
+    "timestampRestoredBeforeSha256": "14b142eacada8fa206526f374a231be22a81fe347597a0a5d93a6f7454c6bd0e",
+    "fullBeforeHashReproduced": true,
+    "countUnchanged": true,
+    "changedFieldsOnly": [
+      "updateTime",
+      "lastSuccessfulTickAt",
+      "asOf"
+    ],
+    "reviewSlaAsOfBefore": "2026-10-04T16:00:08.394Z",
+    "reviewSlaAsOfAfter": "2026-10-04T17:00:07.488Z",
+    "method": "Restore recorded updateTime and scheduler lastSuccessfulTickAt; find old asOf millisecond within recorded tick/update window by exact full SHA-256 match. No other field changed."
+  },
+  "changedCollections": {
+    "operationalHealth": {
+      "before": {
+        "count": 2,
+        "sha256": "14b142eacada8fa206526f374a231be22a81fe347597a0a5d93a6f7454c6bd0e",
+        "nonTickSha256": "8af82ccad748ffbe862aeee1a0a731a6ee4bcb2b87333832ce9dd53d11158cae",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-04T16:00:08.636565Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-04T16:00:08.335012Z",
+            "lastSuccessfulTickAt": "2026-10-04T16:00:08.199Z"
+          }
+        ]
+      },
+      "after": {
+        "count": 2,
+        "sha256": "28dea40d7260fccdc56d1b87ccc81a2dafa72e5c22cd91a5a9aba1f62c8a917f",
+        "nonTickSha256": "c61e03beb58ab03907c573672ec331af84258eb22ede2cc8895b2df01df6a12c",
+        "timestamps": [
+          {
+            "updatedAt": "2026-10-04T17:00:07.748398Z",
+            "lastSuccessfulTickAt": null
+          },
+          {
+            "updatedAt": "2026-10-04T17:00:07.417318Z",
+            "lastSuccessfulTickAt": "2026-10-04T17:00:07.282Z"
+          }
+        ]
+      }
+    }
+  },
+  "domainCollectionsUnchanged": true,
+  "runtimeComparison": {
+    "revision": true,
+    "image": true,
+    "traffic": true,
+    "runtimeConfigSha256": true,
+    "serviceIamSha256": true,
+    "schedulerConfigSha256": true,
+    "secrets": true
+  },
+  "allRuntimeConfigurationUnchanged": true,
+  "beforeRevision": "aqm-api-v019-e92f2d6",
+  "afterRevision": "aqm-api-v019-e92f2d6",
+  "schedulerRuntimeUnchanged": false,
+  "schedulerBefore": {
+    "lastAttemptTime": "2026-10-04T16:00:04.876286Z",
+    "scheduleTime": "2026-10-04T17:00:04.028877Z",
+    "status": {}
+  },
+  "schedulerAfter": {
+    "lastAttemptTime": "2026-10-04T17:00:04.767259Z",
+    "scheduleTime": "2026-10-04T18:00:04.028877Z",
+    "status": {}
+  },
+  "liveProviderCalls": {
+    "Jev": 0,
+    "Genesys": 0,
+    "notifications": 0
+  },
+  "productionReviewMutations": 0,
+  "productionAuthoringMutations": 0,
+  "productionDomainMutations": 0
+}

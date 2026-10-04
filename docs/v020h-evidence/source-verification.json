@@ -1,0 +1,8 @@
+{
+  "sourceSha": "cf860d9bf008950446e12291489708b419b84ee5",
+  "baseSha": "c40bd3e09672995bc2d126e5b6b7433926599ad8",
+  "buildInputCount": 208,
+  "allBuildInputsEqualCommittedArchive": true,
+  "unexpectedSourceDifferences": [],
+  "domainAndServerChanges": []
+}
