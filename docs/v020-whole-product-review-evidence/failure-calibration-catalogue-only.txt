@@ -1,0 +1,87 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+Configuration
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Calibration
+ADMIN
+Jev available through AQM
+HUMAN + AI
+Calibration
+
+Find human / AI disagreements and their supporting evaluations.
+
+Genesys Cloud · 2026-09-24 – 2026-10-02
+
+All form versions
+
+All agents · All queues
+Change filters
+
+Form choices unavailable — retry
+
+Retry form choices
+Technical details
+Where humans and AI differ
+
+Highest disagreement rate in this scope
+
+Understanding the issue
+
+General Customer Service v17
+
+2 of 2 comparable reviewed answers disagreed
+100.0% disagreement
+
+Inspect question →
+Open disagreements →
+Evaluations reviewed
+2
+Questions reviewed
+6
+Exact agreement
+33%
+Mean absolute score gap
+16.0 pp
+Unresolved reviews
+3
+2 in progress · outside completed comparisons
+Form / version
+Groups
+Questions
+Question types
+Confidence vs disagreement
+Search
+1 results
+Dimension ↓
+	
+Reviews
+	
+Questions
+	
+Exact agreement
+	
+Disagreements
+	
+Mean score gap
+
+General Customer Service v17	2	6	33%	4	16.0 pp
+
+Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

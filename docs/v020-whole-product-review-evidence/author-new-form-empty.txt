@@ -1,0 +1,107 @@
+IPI AQM
+Automated Quality Management
+Configuration
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+◇
+Policies
+Monitor / Quality
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Evaluation Forms
+AUTHOR
+Jev available through AQM
+CONFIGURATION
+Evaluation Forms
+
+Build the complete quality evaluation: questions, scoring and pass rules.
+
+Reuse Question Groups for related questions and Answer Sets for common answers.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+	
+Status
+	
+Version
+	
+Questions
+	
+Assigned policies
+	
+Evaluations
+	
+Average score
+	
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 6 forms
+New draft · DRAFT · VERSION 1
+New evaluation form
+Close details
+Save changes
+Publish version
+More actions
+
+Unsaved changes
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Question groups
+
+Question weights determine the overall score.
+
+Add group
+Scoring rules · Question weighted · Yes threshold 65%
+General
+0 questions
+Group settings
+
+No questions yet. Start with a question or a reusable group.
+
+Add question
+Add reusable group
+View history
+Test this form

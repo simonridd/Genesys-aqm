@@ -1,0 +1,145 @@
+IPI AQM
+Automated Quality Management
+Configuration
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+◇
+Policies
+Monitor / Quality
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Policies
+AUTHOR
+Jev available through AQM
+CONFIGURATION
+Policies
+
+Choose which conversations are evaluated and which published forms apply.
+
+Saved AQM policies
+
+Refresh policies
+＋ New policy
+Status
+All
+Enabled
+Disabled
+Schedule
+All
+Manual
+Daily
+Weekly
+Forms
+All
+Has assigned forms
+No assigned forms
+Search
+1 results
+Name ↓
+	
+Status
+	
+Version
+	
+Criteria
+	
+Assigned forms
+	
+Sampling
+	
+Schedule
+	
+Last modified
+
+Daily Voice Customer Service AQM	Enabled	v1	channel equals voice	General Customer Service v17	50%	Weekly on Monday at 02:00 Europe/London	—
+SAVED POLICY · v1
+Daily Voice Customer Service AQM
+Close details
+View runs
+Duplicate policy
+Save changes
+
+Unsaved changes
+
+Policy name
+Description
+Enabled (requires Save changes)
+Interaction criteria
+
+Match ALL conditions in any one group. Groups are joined with OR.
+
+Match ALL
+Remove OR group
+channel
+queue
+agent
+direction
+topic
+tag
+equals
+×
+Add condition
+Add OR group
+Sampling
+Sampling strategy
+All eligible
+Percentage
+Fixed count
+Percentage
+0 selects none; 100 selects all.
+Sample seed (optional)
+Published evaluation forms
+
+Each assignment uses this exact published version. Publishing a newer version does not change this policy automatically.
+
+General Customer Service · v17 · 3 questions · Weighted
+Readiness
+POLICY
+Enabled
+FORMS
+1 published form assigned
+SAMPLING
+50%
+SCHEDULE (SAVED)
+Weekly on Monday at 02:00 Europe/London
+NEXT RUN
+05/10/2026, 02:00:00
+Schedule
+
+Daily evaluates the previous day; weekly evaluates the previous Monday–Sunday. Policy and schedule save separately.
+
+Schedule
+Manual
+Daily
+Weekly
+Weekday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+Local time
+Timezone
+Schedule enabled
+Save schedule
+
+Schedule saved in AQM
+
+Next due: 05/10/2026, 02:00:00 · Last attempted: — · Last successful: —
+
+Advanced details
+View history

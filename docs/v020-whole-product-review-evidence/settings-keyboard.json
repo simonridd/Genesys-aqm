@@ -1,0 +1,418 @@
+[
+  {
+    "target": "Take the guided demo →",
+    "tabs": 3,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 3,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Exit demo",
+    "tabs": 4,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 7,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open disagreements →",
+    "tabs": 19,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Alex Morgan · voice",
+    "tabs": 49,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open conversation",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "← Back to evaluation",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Explore quality →",
+    "tabs": 20,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Inspect evaluations →",
+    "tabs": 5,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Alex Morgan · voice",
+    "tabs": 48,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open conversation",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "← Back to evaluation",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Start review",
+    "tabs": 6,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Start review",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nYes\nNo",
+    "tabs": 0,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nPoor\nNeeds improvement\nGood\nExcellent",
+    "tabs": 0,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 3,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open conversation evidence",
+    "tabs": 17,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "← Back to human review",
+    "tabs": 12,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nYes\nNo",
+    "tabs": 3,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open conversation evidence",
+    "tabs": 21,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "← Back to human review",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Start review",
+    "tabs": 14,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Start review",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nYes\nNo",
+    "tabs": 29,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nPoor\nNeeds improvement\nGood\nExcellent",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open conversation evidence",
+    "tabs": 17,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "← Back to human review",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Start review",
+    "tabs": 16,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Start review",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nYes\nNo",
+    "tabs": 0,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nPoor\nNeeds improvement\nGood\nExcellent",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Select an answer\nFully resolved\nPartially resolved\nUnresolved\nNot applicable",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Complete review",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "＋ New form",
+    "tabs": 30,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 5,
+    "focus": {
+      "outline": "rgb(54, 69, 79) none 3px",
+      "boxShadow": "rgb(79, 54, 69) 0px 0px 0px 3px"
+    }
+  },
+  {
+    "target": "Add question",
+    "tabs": 7,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(54, 69, 79) none 3px",
+      "boxShadow": "rgb(79, 54, 69) 0px 0px 0px 3px"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(54, 69, 79) none 3px",
+      "boxShadow": "rgb(79, 54, 69) 0px 0px 0px 3px"
+    }
+  },
+  {
+    "target": "Use reusable Answer Set",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Preview Resolution clarity v2 format change",
+    "tabs": 4,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Change to Multiple choice and use Resolution clarity v2",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Done",
+    "tabs": 9,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Save changes",
+    "tabs": 37,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Privacy & retention",
+    "tabs": 19,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Notifications",
+    "tabs": 24,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  }
+]

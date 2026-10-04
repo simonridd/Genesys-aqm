@@ -1,0 +1,33 @@
+{
+  "canonical_input": "fadb73dac800cede26389fe883602967cf5b8784",
+  "source_or_existing_test_edits": 0,
+  "browser_failures": [
+    {
+      "test": "reviewer-continuity.spec.ts:212 later server page",
+      "initial": "Timeout selecting first review after Next page",
+      "classification": "HARNESS DEFECT",
+      "reproduction": "Unmodified canonical rerun passed; original snapshot had visible Continue review on page two. Helper polls any prior identity/card, then falls back to absent mobile card if requested identity is not yet rendered.",
+      "product_proof": "Fresh evidence return/completion and reviewer-focus.spec.ts:146 later-cursor task passed."
+    },
+    {
+      "test": "role-navigation.spec.ts:65 Coverage deep link after full reload",
+      "initial": "No coverage-funnel",
+      "classification": "HARNESS DEFECT",
+      "reproduction": "Unmodified canonical rerun fails identically. Snapshot says browser-local analytics; temporary fictional OAuth state not restored by a URL without code/state after page.goto. No saved monitoring runs exist in that browser store.",
+      "product_proof": "Prior exact Questions cohort and return pass; fresh authenticated Coverage, current coverage-interpretation and navigation view smoke pass."
+    },
+    {
+      "test": "role-navigation.spec.ts:76 contextual evidence labels",
+      "initial": "Expected Conversation review, received Conversation detail",
+      "classification": "STALE EXPECTATION",
+      "reproduction": "Unmodified canonical rerun fails identically; later expected Back to review is also superseded by Back to human review.",
+      "product_proof": "Fresh mobile review/evidence return/completion and current reviewer-focus/continuity keyboard task pass."
+    }
+  ],
+  "deterministic_initial_failure": {
+    "classification": "ENVIRONMENT / INFRASTRUCTURE",
+    "symptom": "EPERM listen 127.0.0.1 under restricted execution; 15 files / 58 tests failed, 656 passed, 58 errors",
+    "resolution": "Same exact archive Node 22 run with loopback permission: 72 files / 714 tests pass, no test changes."
+  },
+  "not_run": "Giant known-stale historical navigation-tasks/policy-authoring/review-sla suites; not repaired or counted as new defects."
+}

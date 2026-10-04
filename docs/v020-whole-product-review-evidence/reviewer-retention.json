@@ -1,0 +1,24 @@
+{
+  "answers": [
+    "Yes",
+    "1",
+    ""
+  ],
+  "note": "Greeting acknowledged the billing concern.",
+  "overall": "Two answers entered; evidence detour before completing.",
+  "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+  "nav": [
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "time": 1791135571241
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluate&reviewQueue=mine&assignment=mine",
+      "time": 1791135571547
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "time": 1791135571566
+    }
+  ]
+}

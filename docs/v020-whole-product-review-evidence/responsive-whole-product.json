@@ -1,0 +1,602 @@
+[
+  {
+    "surface": "Overview",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=automation&source=genesys-cloud&from=2026-09-24&calibrationTab=forms&to=2026-10-02",
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 1080,
+    "headings": [
+      "Completed interactions",
+      "Overview"
+    ],
+    "primary": [
+      {
+        "name": "Refresh",
+        "x": 1722.546875,
+        "y": 181.59375,
+        "right": 1794
+      }
+    ]
+  },
+  {
+    "surface": "Analytics",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&source=genesys-cloud&from=2026-09-24&calibrationTab=forms&to=2026-10-02&analyticsTab=overview",
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 1420,
+    "headings": [
+      "Completed interactions",
+      "Quality analytics",
+      "What stands out",
+      "Quality by day",
+      "Score distribution"
+    ],
+    "primary": [
+      {
+        "name": "Sample / browser data",
+        "x": 284,
+        "y": 86,
+        "right": 448.296875
+      },
+      {
+        "name": "Saved AQM analytics",
+        "x": 454.296875,
+        "y": 86,
+        "right": 610.53125
+      },
+      {
+        "name": "Change filters",
+        "x": 1668.15625,
+        "y": 317.09375,
+        "right": 1775
+      },
+      {
+        "name": "Overview",
+        "x": 368,
+        "y": 403.59375,
+        "right": 488.40625
+      },
+      {
+        "name": "Agents",
+        "x": 496.40625,
+        "y": 403.59375,
+        "right": 598.765625
+      },
+      {
+        "name": "Queues",
+        "x": 606.765625,
+        "y": 403.59375,
+        "right": 712.921875
+      },
+      {
+        "name": "Forms",
+        "x": 720.921875,
+        "y": 403.59375,
+        "right": 816.96875
+      },
+      {
+        "name": "Groups",
+        "x": 824.96875,
+        "y": 403.59375,
+        "right": 928.578125
+      }
+    ]
+  },
+  {
+    "surface": "Calibration",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=calibration&source=genesys-cloud&from=2026-09-24&calibrationTab=forms&to=2026-10-02&analyticsTab=overview",
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 1115,
+    "headings": [
+      "Completed interactions",
+      "Calibration",
+      "Where humans and AI differ"
+    ],
+    "primary": [
+      {
+        "name": "Change filters",
+        "x": 1686.15625,
+        "y": 248.09375,
+        "right": 1793
+      },
+      {
+        "name": "Inspect question →",
+        "x": 369,
+        "y": 531.59375,
+        "right": 503.890625
+      },
+      {
+        "name": "Open disagreements →",
+        "x": 513.890625,
+        "y": 531.59375,
+        "right": 677.40625
+      },
+      {
+        "name": "Form / version",
+        "x": 368,
+        "y": 755.59375,
+        "right": 525.875
+      },
+      {
+        "name": "Groups",
+        "x": 533.875,
+        "y": 755.59375,
+        "right": 637.484375
+      },
+      {
+        "name": "Questions",
+        "x": 645.484375,
+        "y": 755.59375,
+        "right": 771.9375
+      },
+      {
+        "name": "Question types",
+        "x": 779.9375,
+        "y": 755.59375,
+        "right": 945.859375
+      },
+      {
+        "name": "Confidence vs disagreement",
+        "x": 953.859375,
+        "y": 755.59375,
+        "right": 1225.84375
+      }
+    ]
+  },
+  {
+    "surface": "Evaluation Forms",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms&source=genesys-cloud&from=2026-09-24&calibrationTab=forms&to=2026-10-02&analyticsTab=overview",
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 2226,
+    "headings": [
+      "Completed interactions",
+      "Evaluation Forms",
+      "Saved in AQM · 4 saved forms",
+      "Attached resolution form",
+      "Question groups",
+      "Test form"
+    ],
+    "primary": [
+      {
+        "name": "Table",
+        "x": 1435.921875,
+        "y": -866.609375,
+        "right": 1504.703125
+      },
+      {
+        "name": "Cards",
+        "x": 1504.703125,
+        "y": -866.609375,
+        "right": 1577.484375
+      },
+      {
+        "name": "＋ New form",
+        "x": 1693.375,
+        "y": -867.109375,
+        "right": 1794
+      },
+      {
+        "name": "Refresh saved forms",
+        "x": 368,
+        "y": -716.703125,
+        "right": 510.84375
+      },
+      {
+        "name": "Form name ↓",
+        "x": 370,
+        "y": -449.703125,
+        "right": 687.09375
+      },
+      {
+        "name": "Status ",
+        "x": 689.09375,
+        "y": -449.703125,
+        "right": 831.6875
+      },
+      {
+        "name": "Version ",
+        "x": 833.6875,
+        "y": -449.703125,
+        "right": 945.84375
+      },
+      {
+        "name": "Questions ",
+        "x": 947.84375,
+        "y": -449.703125,
+        "right": 1084.375
+      }
+    ]
+  },
+  {
+    "surface": "Policies",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=policies&source=genesys-cloud&from=2026-09-24&calibrationTab=forms&to=2026-10-02&analyticsTab=overview",
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 1080,
+    "headings": [
+      "Completed interactions",
+      "Policies"
+    ],
+    "primary": [
+      {
+        "name": "Refresh policies",
+        "x": 1676.328125,
+        "y": 187.390625,
+        "right": 1794
+      }
+    ]
+  },
+  {
+    "surface": "Settings",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=connection",
+    "width": 1920,
+    "height": 1080,
+    "documentWidth": 1920,
+    "documentHeight": 1137,
+    "headings": [
+      "Completed interactions",
+      "Settings",
+      "Connection",
+      "Genesys Cloud",
+      "Browser Jev evaluation key",
+      "Notifications"
+    ],
+    "primary": [
+      {
+        "name": "Connection",
+        "x": 523,
+        "y": 218.59375,
+        "right": 614.96875
+      },
+      {
+        "name": "Access",
+        "x": 622.96875,
+        "y": 218.59375,
+        "right": 690.984375
+      },
+      {
+        "name": "Reviews",
+        "x": 698.984375,
+        "y": 218.59375,
+        "right": 772.8125
+      },
+      {
+        "name": "Privacy & retention",
+        "x": 780.8125,
+        "y": 218.59375,
+        "right": 915.703125
+      },
+      {
+        "name": "Notifications",
+        "x": 923.703125,
+        "y": 218.59375,
+        "right": 1023.75
+      },
+      {
+        "name": "Audit",
+        "x": 1031.75,
+        "y": 218.59375,
+        "right": 1089.578125
+      },
+      {
+        "name": "Advanced / Development",
+        "x": 1097.578125,
+        "y": 218.59375,
+        "right": 1264.046875
+      },
+      {
+        "name": "Verify connection",
+        "x": 548,
+        "y": 871.671875,
+        "right": 680.640625
+      }
+    ]
+  },
+  {
+    "surface": "Overview",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=automation",
+    "width": 1440,
+    "height": 720,
+    "documentWidth": 1440,
+    "documentHeight": 720,
+    "headings": [
+      "Completed interactions",
+      "Overview"
+    ],
+    "primary": [
+      {
+        "name": "Refresh",
+        "x": 1326.546875,
+        "y": 181.59375,
+        "right": 1398
+      }
+    ]
+  },
+  {
+    "surface": "Analytics",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=overview",
+    "width": 1440,
+    "height": 720,
+    "documentWidth": 1440,
+    "documentHeight": 1601,
+    "headings": [
+      "Completed interactions",
+      "Quality analytics",
+      "What stands out",
+      "Quality by day",
+      "Score distribution"
+    ],
+    "primary": [
+      {
+        "name": "Sample / browser data",
+        "x": 284,
+        "y": 86,
+        "right": 448.296875
+      },
+      {
+        "name": "Saved AQM analytics",
+        "x": 454.296875,
+        "y": 86,
+        "right": 610.53125
+      },
+      {
+        "name": "Change filters",
+        "x": 1272.15625,
+        "y": 317.09375,
+        "right": 1379
+      },
+      {
+        "name": "Overview",
+        "x": 284,
+        "y": 403.59375,
+        "right": 404.40625
+      },
+      {
+        "name": "Agents",
+        "x": 412.40625,
+        "y": 403.59375,
+        "right": 514.765625
+      },
+      {
+        "name": "Queues",
+        "x": 522.765625,
+        "y": 403.59375,
+        "right": 628.921875
+      },
+      {
+        "name": "Forms",
+        "x": 636.921875,
+        "y": 403.59375,
+        "right": 732.96875
+      },
+      {
+        "name": "Groups",
+        "x": 740.96875,
+        "y": 403.59375,
+        "right": 844.578125
+      }
+    ]
+  },
+  {
+    "surface": "Calibration",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=calibration&analyticsTab=overview",
+    "width": 1440,
+    "height": 720,
+    "documentWidth": 1440,
+    "documentHeight": 1127,
+    "headings": [
+      "Completed interactions",
+      "Calibration",
+      "Where humans and AI differ"
+    ],
+    "primary": [
+      {
+        "name": "Change filters",
+        "x": 1290.15625,
+        "y": 248.09375,
+        "right": 1397
+      },
+      {
+        "name": "Inspect question →",
+        "x": 285,
+        "y": 531.59375,
+        "right": 419.890625
+      },
+      {
+        "name": "Open disagreements →",
+        "x": 429.890625,
+        "y": 531.59375,
+        "right": 593.40625
+      },
+      {
+        "name": "Form / version",
+        "x": 284,
+        "y": 755.59375,
+        "right": 441.875
+      },
+      {
+        "name": "Groups",
+        "x": 449.875,
+        "y": 755.59375,
+        "right": 553.484375
+      },
+      {
+        "name": "Questions",
+        "x": 561.484375,
+        "y": 755.59375,
+        "right": 687.9375
+      },
+      {
+        "name": "Question types",
+        "x": 695.9375,
+        "y": 755.59375,
+        "right": 861.859375
+      },
+      {
+        "name": "Confidence vs disagreement",
+        "x": 869.859375,
+        "y": 755.59375,
+        "right": 1141.84375
+      }
+    ]
+  },
+  {
+    "surface": "Evaluation Forms",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms&analyticsTab=overview",
+    "width": 1440,
+    "height": 720,
+    "documentWidth": 1440,
+    "documentHeight": 2226,
+    "headings": [
+      "Completed interactions",
+      "Evaluation Forms",
+      "Saved in AQM · 4 saved forms",
+      "Attached resolution form",
+      "Question groups",
+      "Test form"
+    ],
+    "primary": [
+      {
+        "name": "Table",
+        "x": 1039.921875,
+        "y": -866.609375,
+        "right": 1108.703125
+      },
+      {
+        "name": "Cards",
+        "x": 1108.703125,
+        "y": -866.609375,
+        "right": 1181.484375
+      },
+      {
+        "name": "＋ New form",
+        "x": 1297.375,
+        "y": -867.109375,
+        "right": 1398
+      },
+      {
+        "name": "Refresh saved forms",
+        "x": 284,
+        "y": -716.703125,
+        "right": 426.84375
+      },
+      {
+        "name": "Form name ↓",
+        "x": 286,
+        "y": -449.703125,
+        "right": 533.1875
+      },
+      {
+        "name": "Status ",
+        "x": 535.1875,
+        "y": -449.703125,
+        "right": 646.09375
+      },
+      {
+        "name": "Version ",
+        "x": 648.09375,
+        "y": -449.703125,
+        "right": 735.234375
+      },
+      {
+        "name": "Questions ",
+        "x": 737.234375,
+        "y": -449.703125,
+        "right": 843.421875
+      }
+    ]
+  },
+  {
+    "surface": "Policies",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=policies&analyticsTab=overview",
+    "width": 1440,
+    "height": 720,
+    "documentWidth": 1440,
+    "documentHeight": 720,
+    "headings": [
+      "Completed interactions",
+      "Policies"
+    ],
+    "primary": [
+      {
+        "name": "Refresh policies",
+        "x": 1280.328125,
+        "y": 187.390625,
+        "right": 1398
+      }
+    ]
+  },
+  {
+    "surface": "Settings",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=connection",
+    "width": 1440,
+    "height": 720,
+    "documentWidth": 1440,
+    "documentHeight": 1137,
+    "headings": [
+      "Completed interactions",
+      "Settings",
+      "Connection",
+      "Genesys Cloud",
+      "Browser Jev evaluation key",
+      "Notifications"
+    ],
+    "primary": [
+      {
+        "name": "Connection",
+        "x": 284,
+        "y": 218.59375,
+        "right": 375.96875
+      },
+      {
+        "name": "Access",
+        "x": 383.96875,
+        "y": 218.59375,
+        "right": 451.984375
+      },
+      {
+        "name": "Reviews",
+        "x": 459.984375,
+        "y": 218.59375,
+        "right": 533.8125
+      },
+      {
+        "name": "Privacy & retention",
+        "x": 541.8125,
+        "y": 218.59375,
+        "right": 676.703125
+      },
+      {
+        "name": "Notifications",
+        "x": 684.703125,
+        "y": 218.59375,
+        "right": 784.75
+      },
+      {
+        "name": "Audit",
+        "x": 792.75,
+        "y": 218.59375,
+        "right": 850.578125
+      },
+      {
+        "name": "Advanced / Development",
+        "x": 858.578125,
+        "y": 218.59375,
+        "right": 1025.046875
+      },
+      {
+        "name": "Verify connection",
+        "x": 309,
+        "y": 871.671875,
+        "right": 441.640625
+      }
+    ]
+  }
+]

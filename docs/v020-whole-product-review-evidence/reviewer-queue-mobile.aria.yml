@@ -1,0 +1,77 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Quality / Review
+      - button "Evaluations"
+      - button "Calibration"
+      - button "Analytics"
+      - button "Overview"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: REVIEWER Jev available through AQM
+  - heading "Evaluations" [level=1]
+  - group "Evaluation mode":
+    - button "My reviews" [pressed]
+    - button "All evaluations"
+    - button "More filters"
+  - region "My review summary":
+    - text: Assigned open
+    - strong: "5"
+    - text: Due soon
+    - strong: "1"
+    - text: Overdue
+    - strong: "1"
+    - text: Escalated
+    - strong: "1"
+    - button "Available unassigned reviews (1) →"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 5 results on this page
+  - list "My review tasks":
+    - listitem:
+      - article "General Customer Service v17 · Alex Morgan · Customer care":
+        - text: ESCALATED Overdue by 4 days
+        - heading "General Customer Service v17" [level=2]
+        - paragraph: Alex Morgan · Customer care
+        - paragraph: voice · Ready to review · AI 78% · Pass
+        - button "Start review"
+    - listitem:
+      - article "General Customer Service v17 · Alex Morgan · Customer care":
+        - text: OVERDUE Overdue by 6 hours
+        - heading "General Customer Service v17" [level=2]
+        - paragraph: Alex Morgan · Customer care
+        - paragraph: voice · Ready to review · AI 78% · Pass
+        - button "Start review"
+    - listitem:
+      - article "General Customer Service v17 · Alex Morgan · Customer care":
+        - text: DUE SOON Due in 6 hours
+        - heading "General Customer Service v17" [level=2]
+        - paragraph: Alex Morgan · Customer care
+        - paragraph: voice · Ready to review · AI 78% · Pass
+        - button "Start review"
+    - listitem:
+      - article "General Customer Service v17 · Alex Morgan · Customer care":
+        - text: Due in 3 days
+        - heading "General Customer Service v17" [level=2]
+        - paragraph: Alex Morgan · Customer care
+        - paragraph: voice · In progress · AI 78% · Pass
+        - button "Continue review"
+    - listitem:
+      - article "General Customer Service v17 · Alex Morgan · Customer care":
+        - text: Due in 3 days
+        - heading "General Customer Service v17" [level=2]
+        - paragraph: Alex Morgan · Customer care
+        - paragraph: voice · Ready to review · AI 78% · Pass
+        - button "Start review"
+  - button "First page" [disabled]
+  - button "Next page →" [disabled]

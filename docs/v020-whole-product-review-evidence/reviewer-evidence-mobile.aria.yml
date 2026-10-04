@@ -1,0 +1,75 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Quality / Review
+      - button "Evaluations"
+      - button "Calibration"
+      - button "Analytics"
+      - button "Overview"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Conversation detail
+  - text: REVIEWER Jev available through AQM
+  - strong: Conversation source
+  - text: Real organizational data · Genesys Cloud
+  - button "Synthetic"
+  - button "Genesys Cloud"
+  - text: AUTOMATED QUALITY MANAGEMENT
+  - heading "Conversation detail" [level=1]
+  - paragraph: Inspect the conversation and its context, or run an AI evaluation. Human review independently answers the evaluation form.
+  - button "← Back to human review"
+  - button "Browse real interactions →"
+  - region "Conversation transcript":
+    - text: MP CONVERSATION TRANSCRIPT
+    - heading "Maya Patel with Alex Morgan" [level=2]
+    - text: 28 Sept 2026 at 13:00 · voice Completed Direction
+    - strong: inbound
+    - text: Queue
+    - strong: Customer care
+    - text: Topic
+    - strong: Billing
+    - text: Messages
+    - strong: "2"
+    - text: 28 Sept 2026 M
+    - strong: Maya Patel
+    - time: 13:00
+    - text: I need help with my bill. A
+    - strong: Alex Morgan
+    - time: 13:00
+    - text: I can check that for you.
+    - group: Conversation details
+    - text: End of conversation · 2 messages
+  - text: CURRENT CONVERSATION
+  - heading "Genesys Cloud interaction" [level=2]
+  - text: REAL GENESYS DATA
+  - button "Change conversation"
+  - button "↑ Upload JSON"
+  - button "Upload conversation JSON"
+  - paragraph: Retrieved from Genesys · 10/2/2026, 1:01:16 PM
+  - button "Refresh from Genesys"
+  - text: POLICY ROUTING 1 saved policy matched
+  - heading "Applicable evaluations" [level=2]
+  - strong: Daily Voice Customer Service AQM
+  - text: channel equals voice
+  - button "General Customer Service 3 questions · v17 · up to 1 AI request (Jev) Evaluate →" [disabled]:
+    - strong: General Customer Service
+    - text: 3 questions · v17 · up to 1 AI request (Jev) Evaluate →
+  - text: Manual form selection
+  - combobox "Manual form selection":
+    - option "General Customer Service" [selected]
+  - paragraph: 1 form evaluation · up to 1 AI request
+  - button "✦ Evaluate selected form →" [disabled]
+  - paragraph: Only published, valid evaluation forms can be used. Draft and testing forms can be tested in the isolated sandbox.
+  - button "Test a draft/testing form"
+  - paragraph: Jev available through AQM. The selected published form and version are authoritative. The evaluation is saved in AQM.
+  - text: ◎
+  - strong: One result per form
+  - paragraph: Each evaluation is saved in AQM with the exact published form version and evaluation provenance.

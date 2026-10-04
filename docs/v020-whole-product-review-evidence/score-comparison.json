@@ -1,0 +1,103 @@
+{
+  "previous_mean": 3.5,
+  "current_mean": 4.0,
+  "method": "Unweighted 16 categories; ordinal agent judgments, no statistical inference; mean does not override blockers.",
+  "categories": [
+    {
+      "category": "Human effectiveness",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "Value proposition",
+      "previous": 4,
+      "current": 5,
+      "delta": 1
+    },
+    {
+      "category": "Information quality",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "Ease of use",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Visual quality",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "Trust / credibility",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "User-facing cleanliness",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Navigation / IA",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Workflow coherence",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "First-time learnability",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Authoring usability",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Reviewer usability",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Operational usefulness",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "Responsive/mobile quality",
+      "previous": 3,
+      "current": 4,
+      "delta": 1
+    },
+    {
+      "category": "Accessibility pragmatics",
+      "previous": 4,
+      "current": 4,
+      "delta": 0
+    },
+    {
+      "category": "Showcase \u2192 product continuity",
+      "previous": 3,
+      "current": 3,
+      "delta": 0
+    }
+  ]
+}

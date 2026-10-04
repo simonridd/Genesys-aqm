@@ -1,0 +1,64 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Evaluations"
+      - button "Analytics"
+      - button "Calibration"
+    - group: Configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Settings
+  - text: ADMIN Jev available through AQM
+  - heading "Settings" [level=1]
+  - paragraph: Connect Genesys Cloud and manage your organization's AQM settings.
+  - navigation "Settings sections":
+    - button "Connection"
+    - button "Access"
+    - button "Reviews"
+    - button "Privacy & retention"
+    - button "Notifications"
+    - button "Audit"
+    - button "Advanced / Development"
+  - heading "Privacy & retention" [level=2]
+  - region "Governance":
+    - region "Save all settings":
+      - status: All settings saved
+      - button "Save all settings" [disabled]
+    - heading "Privacy & data inventory" [level=3]
+    - paragraph: "Stored server-side: EvaluationRecords, form snapshots, PolicyRuns, HumanReviews, alerts, role assignments, audit events and configuration."
+    - paragraph: "Not stored server-side: raw voice transcripts, raw email bodies, raw message transcripts, Genesys OAuth tokens, signed media URLs or raw EML/ZIP."
+    - paragraph: "Browser only: normalized conversation content, with the configured cache lifetime. Search results have an independent short lifetime."
+    - paragraph: Browser sandbox evaluation history is separate. Clear or reset it using the existing browser controls.
+    - text: Browser conversation cache hours
+    - spinbutton "Browser conversation cache hours": "24"
+    - paragraph: "0 disables persistent conversation content. Default: 24 hours."
+    - heading "Server retention" [level=2]
+    - paragraph: Blank means retain indefinitely. Saving settings never deletes data. Evaluation purges also remove their dependent reviews. Active alerts are retained.
+    - text: Evaluation retention days
+    - spinbutton "Evaluation retention days"
+    - text: Review retention days
+    - spinbutton "Review retention days"
+    - text: Policy run retention days
+    - spinbutton "Policy run retention days"
+    - text: Resolved alert retention days
+    - spinbutton "Resolved alert retention days"
+    - text: Audit retention days
+    - spinbutton "Audit retention days"
+    - text: Notification delivery retention days
+    - spinbutton "Notification delivery retention days"
+    - heading "Retention preview & purge" [level=2]
+    - paragraph: Preview uses saved settings. Each window scans at most 300 records. Counts below apply to this window; continue for more records.
+    - button "Preview retention"
+  - heading "Cached Genesys data" [level=2]
+  - paragraph: Local to this browser. Search snapshots last 15 minutes; completed conversation content uses the lifetime configured in Privacy & retention (24 hours by default). An active Genesys session is required to view cached data. Disconnect clears that identity's cache.
+  - paragraph: 0 cached searches · 0 cached transcripts
+  - button "Clear cached Genesys searches and content"

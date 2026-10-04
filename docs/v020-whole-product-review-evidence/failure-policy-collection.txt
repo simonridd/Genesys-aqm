@@ -1,0 +1,56 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+Configuration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Policies
+ADMIN
+Jev available through AQM
+CONFIGURATION
+Policies
+
+Choose which conversations are evaluated and which published forms apply.
+
+Saved AQM policies
+
+Refresh policies
+Status
+All
+Enabled
+Disabled
+Schedule
+All
+Manual
+Daily
+Weekly
+Forms
+All
+Has assigned forms
+No assigned forms
+
+Saved policies unavailable: Fictional policy collection unavailable

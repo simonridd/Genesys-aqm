@@ -1,0 +1,284 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Evaluations"
+      - button "Analytics"
+      - button "Calibration"
+    - group: Configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: ADMIN Jev available through AQM QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Find saved evaluations, inspect the AI result and follow human review progress.
+  - group "Evaluation mode":
+    - button "My reviews"
+    - button "All evaluations" [pressed]
+  - paragraph: Search checks up to 500 evaluations at a time. Use Next to continue.
+  - group: Team review workload
+  - text: History
+  - combobox "History":
+    - option "Saved in AQM" [selected]
+    - option "Saved in this browser"
+  - text: Review status
+  - combobox "Review status":
+    - option "All" [selected]
+    - option "Not reviewed"
+    - option "Review requested"
+    - option "In progress"
+    - option "Completed"
+  - text: Assignment
+  - combobox "Assignment":
+    - option "All" [selected]
+    - option "Unassigned"
+    - option "Assigned"
+    - option "Assigned to me"
+    - option "Morgan Quality Lead"
+    - option "Alex Reviewer"
+  - text: SLA state
+  - combobox "SLA state":
+    - option "All states" [selected]
+    - option "Due soon"
+    - option "Overdue"
+    - option "Escalated"
+  - text: Due
+  - combobox "Due":
+    - option "All" [selected]
+    - option "Overdue"
+    - option "Due today"
+    - option "Due next 7 days"
+    - option "No due date"
+  - text: Agent
+  - textbox "Agent"
+  - text: Queue
+  - textbox "Queue"
+  - text: Channel
+  - textbox "Channel"
+  - text: Result
+  - combobox "Result":
+    - option "All" [selected]
+    - option "Pass"
+    - option "Fail"
+  - text: From
+  - textbox "From"
+  - text: To
+  - textbox "To"
+  - text: Source
+  - combobox "Source":
+    - option "All" [selected]
+    - option "Genesys Cloud"
+    - option "Synthetic"
+    - option "Uploaded"
+  - text: Trigger
+  - combobox "Trigger":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Scheduled"
+  - text: Critical failure
+  - combobox "Critical failure":
+    - option "All" [selected]
+    - option "Yes"
+    - option "No"
+  - button "Refresh"
+  - group: Advanced filters
+  - group: Calibration sample
+  - group: Bulk assignment
+  - paragraph: Loaded 01:02:27 PM
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 8 results on this page
+  - region "All evaluations table":
+    - table:
+      - rowgroup:
+        - row "Evaluated ↓ Select Evaluation Agent Queue Form Source AI score Human review Human score Agreement Assigned to Due Reviewer Reviewed at":
+          - columnheader "Evaluated ↓":
+            - button "Evaluated ↓"
+          - columnheader "Select":
+            - button "Select"
+          - columnheader "Evaluation":
+            - button "Evaluation"
+          - columnheader "Agent":
+            - button "Agent"
+          - columnheader "Queue":
+            - button "Queue"
+          - columnheader "Form":
+            - button "Form"
+          - columnheader "Source":
+            - button "Source"
+          - columnheader "AI score":
+            - button "AI score"
+          - columnheader "Human review":
+            - button "Human review"
+          - columnheader "Human score":
+            - button "Human score"
+          - columnheader "Agreement":
+            - button "Agreement"
+          - columnheader "Assigned to":
+            - button "Assigned to"
+          - columnheader "Due":
+            - button "Due"
+          - columnheader "Reviewer":
+            - button "Reviewer"
+          - columnheader "Reviewed at":
+            - button "Reviewed at"
+      - rowgroup:
+        - 'row "10/1/2026, 11:00:00 AM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 10/1/2026, 11:00:00 AM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 80% Not reviewed — — Unassigned No due date — —"':
+          - cell "10/1/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 10/1/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 10/1/2026, 11:00:00 AM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "80%"
+          - cell "Not reviewed"
+          - cell "—"
+          - cell "—"
+          - cell "Unassigned"
+          - cell "No due date"
+          - cell "—"
+          - cell "—"
+        - 'row "9/15/2026, 11:00:00 AM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 9/15/2026, 11:00:00 AM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 40% Not reviewed — — Unassigned No due date — —"':
+          - cell "9/15/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 9/15/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 9/15/2026, 11:00:00 AM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "40%"
+          - cell "Not reviewed"
+          - cell "—"
+          - cell "—"
+          - cell "Unassigned"
+          - cell "No due date"
+          - cell "—"
+          - cell "—"
+        - 'row "9/1/2026, 1:00:00 AM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 9/1/2026, 1:00:00 AM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 78% Not reviewed — — Unassigned No due date — —"':
+          - cell "9/1/2026, 1:00:00 AM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 9/1/2026, 1:00:00 AM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 9/1/2026, 1:00:00 AM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Not reviewed"
+          - cell "—"
+          - cell "—"
+          - cell "Unassigned"
+          - cell "No due date"
+          - cell "—"
+          - cell "—"
+        - 'row "8/1/2026, 1:00:00 PM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 78% Review requested — 0/3 Reviewer name unavailable 9/28/2026, 1:00:00 PM ESCALATED Overdue by 4 days — —"':
+          - cell "8/1/2026, 1:00:00 PM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Review requested"
+          - cell "—"
+          - cell "0/3"
+          - cell "Reviewer name unavailable"
+          - cell "9/28/2026, 1:00:00 PM ESCALATED Overdue by 4 days"
+          - cell "—"
+          - cell "—"
+        - 'row "8/1/2026, 1:00:00 PM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 78% Review requested — 0/3 Reviewer name unavailable 10/2/2026, 7:00:00 AM OVERDUE Overdue by 6 hours — —"':
+          - cell "8/1/2026, 1:00:00 PM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Review requested"
+          - cell "—"
+          - cell "0/3"
+          - cell "Reviewer name unavailable"
+          - cell "10/2/2026, 7:00:00 AM OVERDUE Overdue by 6 hours"
+          - cell "—"
+          - cell "—"
+        - 'row "8/1/2026, 1:00:00 PM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 78% Review requested — 0/3 Reviewer name unavailable 10/2/2026, 7:00:00 PM DUE SOON Due in 6 hours — —"':
+          - cell "8/1/2026, 1:00:00 PM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Review requested"
+          - cell "—"
+          - cell "0/3"
+          - cell "Reviewer name unavailable"
+          - cell "10/2/2026, 7:00:00 PM DUE SOON Due in 6 hours"
+          - cell "—"
+          - cell "—"
+        - 'row "8/1/2026, 1:00:00 PM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 78% Review requested — 0/3 Unassigned 10/5/2026, 1:00:00 PM Due in 3 days — —"':
+          - cell "8/1/2026, 1:00:00 PM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 1:00:00 PM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Review requested"
+          - cell "—"
+          - cell "0/3"
+          - cell "Unassigned"
+          - cell "10/5/2026, 1:00:00 PM Due in 3 days"
+          - cell "—"
+          - cell "—"
+        - 'row "8/1/2026, 11:00:00 AM Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 11:00:00 AM Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 Genesys Cloud 20% Not reviewed — — Unassigned No due date — —"':
+          - cell "8/1/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Alex Morgan · voice · General Customer Service v17 · 8/1/2026, 11:00:00 AM"'
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "20%"
+          - cell "Not reviewed"
+          - cell "—"
+          - cell "—"
+          - cell "Unassigned"
+          - cell "No due date"
+          - cell "—"
+          - cell "—"
+  - button "First page" [disabled]
+  - button "Next page →"

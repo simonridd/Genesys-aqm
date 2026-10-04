@@ -1,0 +1,34 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+
+Chapter 5 of 5
+
+Manage & pilot
+MANAGEMENT INSIGHT
+Resolution guidance needs attention
+
+24 evaluations matched the same quality question; 5 showed weak next-step guidance. In the one completed human review, the reviewer challenged one AI judgment.
+
+Investigate missing timelines, coach clear commitments, and refine the criterion with reviewers. These example counts illustrate a management decision, not population statistics.
+
+Inspect examples
+Who owns the next action?
+Scheduled evaluation
+Customer-service queue · daily at 08:00 Europe/London.
+Review deadline
+Quality lead · due 3 October at 17:00; Jamie’s review is complete.
+Auditability
+Keep the published form, original AI result and independent human review together.
+Attention required
+A quality alert directs the lead to investigate resolution guidance and agree coaching.
+Agree a focused pilot
+Agree one queue or use case and an accountable quality lead.
+Choose representative conversations.
+Define the evaluation form.
+Run AI and human comparison.
+Measure quality insight, agreement/calibration, coverage, model cost and reviewer effort.
+Decide whether broader rollout is justified.
+Back
+Plan a pilot
+Exit demo
+More options

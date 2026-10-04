@@ -1,0 +1,273 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v22.13.0/bin/node",
+      "/Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-v020-fresh-whole-product-review/node_modules/.bin/playwright",
+      "test",
+      "--config=docs/v020-whole-product-review-evidence/failure-reproduction.config.ts",
+      "reviewer-continuity.spec.ts:212",
+      "role-navigation.spec.ts:65",
+      "role-navigation.spec.ts:76"
+    ],
+    "configFile": "/Users/simonridd/Documents/ChatGPT/Genesys-aqm/.worktrees/aqm-v020-fresh-whole-product-review/docs/v020-whole-product-review-evidence/failure-reproduction.config.ts",
+    "rootDir": "/private/tmp/aqm-v020-clean/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/aqm-v020-current-test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/private/tmp/aqm-v020-clean/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "answer-set-discovery.spec.ts",
+          "calibration-discovery.spec.ts",
+          "evaluation-availability.spec.ts",
+          "investigation-history.spec.ts",
+          "overview-first-scan.spec.ts",
+          "user-language.spec.ts",
+          "coverage-interpretation.spec.ts",
+          "calculator-rounding.spec.ts",
+          "reviewer-focus.spec.ts",
+          "reviewer-continuity.spec.ts",
+          "quality-actionability.spec.ts",
+          "authoring-simplification.spec.ts",
+          "role-navigation.spec.ts",
+          "navigation-guards.spec.ts",
+          "showcase.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/v020-whole-product-review-evidence/failure-reproduction-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "reviewer-continuity.spec.ts",
+      "file": "reviewer-continuity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "later server page survives evidence return and completion background reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1624,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:17:26.073Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-9a360c815f31e4409c9c",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 212,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "role-navigation.spec.ts",
+      "file": "role-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "mobile Questions exact drill returns to same view and cohort; Coverage deep link",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7528,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.coverage-funnel')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.coverage-funnel') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.coverage-funnel')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.coverage-funnel')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.coverage-funnel') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.coverage-funnel')\u001b[22m\n\n    at /private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts:66:1019",
+                    "location": {
+                      "file": "/private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts",
+                      "column": 1019,
+                      "line": 66
+                    },
+                    "snippet": "  64 | })\n  65 | test('mobile Questions exact drill returns to same view and cohort; Coverage deep link',async({page})=>{\n> 66 |  await page.setViewportSize({width:390,height:844});const state=await qualityFixture(page,'analytics');await chooseView(page,'Questions');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'});await row.getByRole('button',{name:'Inspect evaluations →'}).click();await expect(page.getByRole('button',{name:/^Open evaluation /})).toHaveCount(8);const q=Object.fromEntries(new URL(page.url()).searchParams);expect(q).toMatchObject({form:'general_service@17',question:'understanding',origin:'analytics','analytics.tab':'questions'});await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('questions');await capture(page,'mobile-question-return');await page.goto(`${app}?page=analytics&analyticsTab=coverage`);await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('coverage');await expect(page.locator('.coverage-funnel')).toBeVisible();expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^\n  67 | })\n  68 | test('browser sample Analytics has seven discoverable views and selected URL',async({page})=>{\n  69 |  await page.setViewportSize({width:390,height:844});await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(app).origin?r.continue():r.abort());await page.goto(`${app}?page=analytics&analyticsTab=coverage`);const select=page.getByRole('combobox',{name:'View',exact:true});await expect(select).toHaveValue('coverage');await expect(select.locator('option')).toHaveCount(7);await chooseView(page,'Questions');expect(new URL(page.url()).searchParams.get('analyticsTab')).toBe('questions');await capture(page,'sample-analytics-mobile')"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts",
+                        "column": 1019,
+                        "line": 66
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.coverage-funnel')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('.coverage-funnel') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.coverage-funnel')\u001b[22m\n\n\n  64 | })\n  65 | test('mobile Questions exact drill returns to same view and cohort; Coverage deep link',async({page})=>{\n> 66 |  await page.setViewportSize({width:390,height:844});const state=await qualityFixture(page,'analytics');await chooseView(page,'Questions');const row=page.locator('.operational-table tbody tr').filter({hasText:'Clear next step'}).filter({hasText:'Customer Service v17'});await row.getByRole('button',{name:'Inspect evaluations →'}).click();await expect(page.getByRole('button',{name:/^Open evaluation /})).toHaveCount(8);const q=Object.fromEntries(new URL(page.url()).searchParams);expect(q).toMatchObject({form:'general_service@17',question:'understanding',origin:'analytics','analytics.tab':'questions'});await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('questions');await capture(page,'mobile-question-return');await page.goto(`${app}?page=analytics&analyticsTab=coverage`);await expect(page.getByRole('combobox',{name:'View',exact:true})).toHaveValue('coverage');await expect(page.locator('.coverage-funnel')).toBeVisible();expect(state.errors).toEqual([]);expect(state.writes).toEqual([]);expect(state.blocked).toEqual([])\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^\n  67 | })\n  68 | test('browser sample Analytics has seven discoverable views and selected URL',async({page})=>{\n  69 |  await page.setViewportSize({width:390,height:844});await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(app).origin?r.continue():r.abort());await page.goto(`${app}?page=analytics&analyticsTab=coverage`);const select=page.getByRole('combobox',{name:'View',exact:true});await expect(select).toHaveValue('coverage');await expect(select.locator('option')).toHaveCount(7);await chooseView(page,'Questions');expect(new URL(page.url()).searchParams.get('analyticsTab')).toBe('questions');await capture(page,'sample-analytics-mobile')\n    at /private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts:66:1019"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:17:28.001Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v020-current-test-results/role-navigation-mobile-Que-8941f-d-cohort-Coverage-deep-link/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts",
+                    "column": 1019,
+                    "line": 66
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-17817254823ee4c1324b",
+          "file": "role-navigation.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "review contextual evidence and default My Reviews remain coherent on mobile",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6022,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('navigation', { name: 'Breadcrumb' })\nExpected substring: \u001b[32m\"Conversation \u001b[7mreview\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mWorkspace / \u001b[27mConversation \u001b[7mdetail\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('navigation', { name: 'Breadcrumb' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Breadcrumb' })\u001b[22m\n\u001b[2m    - locator resolved to <nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">…</nav>\u001b[22m\n\u001b[2m    - unexpected value \"Workspace / Evaluations\"\u001b[22m\n\u001b[2m    13 × locator resolved to <nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">…</nav>\u001b[22m\n\u001b[2m       - unexpected value \"Workspace / Conversation detail\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('navigation', { name: 'Breadcrumb' })\nExpected substring: \u001b[32m\"Conversation \u001b[7mreview\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mWorkspace / \u001b[27mConversation \u001b[7mdetail\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('navigation', { name: 'Breadcrumb' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Breadcrumb' })\u001b[22m\n\u001b[2m    - locator resolved to <nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">…</nav>\u001b[22m\n\u001b[2m    - unexpected value \"Workspace / Evaluations\"\u001b[22m\n\u001b[2m    13 × locator resolved to <nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">…</nav>\u001b[22m\n\u001b[2m       - unexpected value \"Workspace / Conversation detail\"\u001b[22m\n\n    at /private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts:77:455",
+                    "location": {
+                      "file": "/private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts",
+                      "column": 455,
+                      "line": 77
+                    },
+                    "snippet": "  75 | })\n  76 | test('review contextual evidence and default My Reviews remain coherent on mobile',async({page})=>{\n> 77 |  await page.setViewportSize({width:390,height:844});const state=await continuityFixture(page,'page=evaluations');await expect(page.getByRole('button',{name:'My reviews',exact:true})).toHaveAttribute('aria-pressed','true');await page.getByRole('button',{name:'Continue review',exact:true}).first().click();await page.getByRole('button',{name:'Open conversation evidence',exact:true}).click();await expect(page.getByRole('navigation',{name:'Breadcrumb'})).toContainText('Conversation review');await expect(nav(page).locator('[aria-current=\"page\"]')).toHaveCount(0);await capture(page,'contextual-conversation-review');await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(nav(page).locator('[aria-current=\"page\"]')).toContainText('Evaluations');expect(state.errors).toEqual([]);expect(state.forbidden).toEqual([])\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^\n  78 | })\n  79 |\n  80 | test('unresolved access stays neutral and read-only; role arrival preserves route',async({page})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts",
+                        "column": 455,
+                        "line": 77
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('navigation', { name: 'Breadcrumb' })\nExpected substring: \u001b[32m\"Conversation \u001b[7mreview\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mWorkspace / \u001b[27mConversation \u001b[7mdetail\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" getByRole('navigation', { name: 'Breadcrumb' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('navigation', { name: 'Breadcrumb' })\u001b[22m\n\u001b[2m    - locator resolved to <nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">…</nav>\u001b[22m\n\u001b[2m    - unexpected value \"Workspace / Evaluations\"\u001b[22m\n\u001b[2m    13 × locator resolved to <nav class=\"breadcrumbs\" aria-label=\"Breadcrumb\">…</nav>\u001b[22m\n\u001b[2m       - unexpected value \"Workspace / Conversation detail\"\u001b[22m\n\n\n  75 | })\n  76 | test('review contextual evidence and default My Reviews remain coherent on mobile',async({page})=>{\n> 77 |  await page.setViewportSize({width:390,height:844});const state=await continuityFixture(page,'page=evaluations');await expect(page.getByRole('button',{name:'My reviews',exact:true})).toHaveAttribute('aria-pressed','true');await page.getByRole('button',{name:'Continue review',exact:true}).first().click();await page.getByRole('button',{name:'Open conversation evidence',exact:true}).click();await expect(page.getByRole('navigation',{name:'Breadcrumb'})).toContainText('Conversation review');await expect(nav(page).locator('[aria-current=\"page\"]')).toHaveCount(0);await capture(page,'contextual-conversation-review');await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(nav(page).locator('[aria-current=\"page\"]')).toContainText('Evaluations');expect(state.errors).toEqual([]);expect(state.forbidden).toEqual([])\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^\n  78 | })\n  79 |\n  80 | test('unresolved access stays neutral and read-only; role arrival preserves route',async({page})=>{\n    at /private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts:77:455"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:17:36.081Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v020-current-test-results/role-navigation-review-con-52398-s-remain-coherent-on-mobile/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v020-clean/tests/role-navigation.spec.ts",
+                    "column": 455,
+                    "line": 77
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-33ab4dafe4318f3e1b2c",
+          "file": "role-navigation.spec.ts",
+          "line": 76,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-04T18:17:25.480Z",
+    "duration": 16750.293,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

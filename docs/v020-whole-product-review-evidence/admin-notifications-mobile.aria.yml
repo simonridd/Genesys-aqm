@@ -1,0 +1,105 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Evaluations"
+      - button "Analytics"
+      - button "Calibration"
+    - group: Configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Settings
+  - text: ADMIN Jev available through AQM
+  - heading "Settings" [level=1]
+  - paragraph: Connect Genesys Cloud and manage your organization's AQM settings.
+  - navigation "Settings sections":
+    - button "Connection"
+    - button "Access"
+    - button "Reviews"
+    - button "Privacy & retention"
+    - button "Notifications"
+    - button "Audit"
+    - button "Advanced / Development"
+  - heading "Notifications" [level=2]
+  - region "Governance"
+  - region "Notifications":
+    - heading "Notifications" [level=2]
+    - button "Refresh notifications"
+    - paragraph: Route new operational alerts to email or HTTPS webhooks. Delivery runs after each scheduler tick; existing alerts are not backfilled.
+    - heading "Destinations" [level=3]
+    - button "New destination"
+    - text: Search
+    - textbox "Search table":
+      - /placeholder: Search visible fields
+    - text: 0 results
+    - region "Notification destinations table":
+      - table:
+        - rowgroup:
+          - row "Name ↓ Type Status Last delivery Actions":
+            - columnheader "Name ↓":
+              - button "Name ↓"
+            - columnheader "Type":
+              - button "Type"
+            - columnheader "Status":
+              - button "Status"
+            - columnheader "Last delivery":
+              - button "Last delivery"
+            - columnheader "Actions":
+              - button "Actions"
+        - rowgroup
+    - paragraph: No notification destinations configured.
+    - heading "Rules" [level=3]
+    - button "New rule" [disabled]
+    - text: Search
+    - textbox "Search table":
+      - /placeholder: Search visible fields
+    - text: 0 results
+    - region "Notification rules table":
+      - table:
+        - rowgroup:
+          - row "Name ↓ Severity Alert types Destinations Status Actions":
+            - columnheader "Name ↓":
+              - button "Name ↓"
+            - columnheader "Severity":
+              - button "Severity"
+            - columnheader "Alert types":
+              - button "Alert types"
+            - columnheader "Destinations":
+              - button "Destinations"
+            - columnheader "Status":
+              - button "Status"
+            - columnheader "Actions":
+              - button "Actions"
+        - rowgroup
+    - paragraph: No notification rules configured.
+    - heading "Delivery history" [level=3]
+    - text: Search
+    - textbox "Search table":
+      - /placeholder: Search visible fields
+    - text: 0 results on this page
+    - region "Notification delivery history table":
+      - table:
+        - rowgroup:
+          - row "Destination ↓ Event State Attempts Updated Error code":
+            - columnheader "Destination ↓":
+              - button "Destination ↓"
+            - columnheader "Event":
+              - button "Event"
+            - columnheader "State":
+              - button "State"
+            - columnheader "Attempts":
+              - button "Attempts"
+            - columnheader "Updated":
+              - button "Updated"
+            - columnheader "Error code":
+              - button "Error code"
+        - rowgroup
+    - paragraph: No notification deliveries yet.

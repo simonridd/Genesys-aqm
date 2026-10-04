@@ -1,0 +1,38 @@
+- banner:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Interactive demo · fictional data · no live requests
+- main:
+  - paragraph: Chapter 2 of 5
+  - heading "Define quality" [level=1]
+  - heading "What does good mean?" [level=2]
+  - paragraph: Quality is defined explicitly. AI doesn’t invent the scoring model.
+  - paragraph: Resolution & ownership · Published version 3
+  - article:
+    - heading "Acknowledged the impact" [level=3]
+    - paragraph: Did the agent acknowledge the customer’s difficulty?
+    - paragraph:
+      - strong: Yes / No
+  - article:
+    - heading "Issue resolved" [level=3]
+    - paragraph: Was the customer’s stated issue resolved?
+    - paragraph:
+      - strong: Yes / No
+  - article:
+    - heading "Clear next step" [level=3]
+    - paragraph: Was a specific next step and realistic timeline agreed?
+    - paragraph:
+      - strong: Clear next step / Timeline not agreed
+    - paragraph:
+      - text: Action
+      - emphasis: and
+      - text: "timeline must be agreed. Clear earns 100% credit; missing timeline earns 0%. This criterion has double weight within Resolution and is critical: a failure means the form fails."
+  - paragraph: Customer care contributes one third of the score; Resolution contributes two thirds. The pass threshold is 75%.
+  - paragraph: If the issue is unresolved, an additional question asks who owns the escalation. It does not apply to Jamie’s resolved access issue.
+  - heading "Reuse agreed standards" [level=2]
+  - paragraph: Reusable question groups and answer sets keep common standards consistent across forms. Each published form keeps its own versioned snapshot.
+  - navigation "Tour controls":
+    - button "Back"
+    - button "Next"
+    - button "Exit demo"
+  - group: More options

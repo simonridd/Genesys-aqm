@@ -1,0 +1,15 @@
+[
+  {
+    "step": "return",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&analyticsTab=overview&evaluationSource=server&form=general_service%4017&question=understanding&source=genesys-cloud&cohort=analytics&from=2026-09-25&to=2026-10-02&evaluation.scopeLabels=%7B%22form%22%3A%7B%22value%22%3A%22general_service%4017%22%2C%22label%22%3A%22General+Customer+Service+v17%22%7D%2C%22question%22%3A%7B%22value%22%3A%22understanding%22%2C%22label%22%3A%22Understanding+the+issue%22%7D%7D&origin=analytics&analytics.from=2026-09-25&analytics.to=2026-10-02&analytics.source=genesys-cloud&analytics.tab=overview&evaluationId=recent",
+    "scope": "Investigating:\nRemove\nForm: General Customer Service v17 ×\nRemove\nQuestion: Understanding the issue ×\nRemove\nSource: Genesys Cloud ×\nRemove\nAnalytics cohort ×\nRemove\nFrom: 2026-09-25 ×\nRemove\nTo: 2026-10-02 ×\nClear investigation filters"
+  },
+  {
+    "step": "browser-back",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=overview&from=2026-09-25&to=2026-10-02&source=genesys-cloud"
+  },
+  {
+    "step": "browser-forward",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=overview&from=2026-09-25&to=2026-10-02&source=genesys-cloud"
+  }
+]

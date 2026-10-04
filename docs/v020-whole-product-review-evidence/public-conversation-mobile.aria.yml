@@ -1,0 +1,107 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Interactions
+      - button "Conversations"
+    - group: Monitor / Quality
+    - group: Configuration
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Conversation detail
+  - text: Connect Genesys Cloud
+  - strong: Conversation source
+  - text: Fictional sample data · no credentials
+  - button "Synthetic"
+  - button "Genesys Cloud"
+  - text: AUTOMATED QUALITY MANAGEMENT
+  - heading "Conversation detail" [level=1]
+  - paragraph: Inspect the conversation and its context, or run an AI evaluation. Human review independently answers the evaluation form.
+  - button "← Back to conversations"
+  - button "Browse 19 samples →"
+  - region "Conversation transcript":
+    - text: MP CONVERSATION TRANSCRIPT
+    - heading "Maya Patel with Alex Morgan" [level=2]
+    - text: 29 Sept 2026 at 09:00 · messaging Closed Queue
+    - strong: Customer Service
+    - text: Topic
+    - strong: Billing
+    - text: Direction
+    - strong: inbound
+    - text: Messages
+    - strong: "11"
+    - text: 29 Sept 2026 M
+    - strong: Maya Patel
+    - time: 09:00
+    - text: Hi, I think I've been charged twice for my September plan. Could you take a look? A
+    - strong: Alex Morgan
+    - time: 09:00
+    - text: Hi Maya, you're through to Alex. I'm sorry to hear about the duplicate charge. I'll help you check it. A
+    - strong: Alex Morgan
+    - time: 09:00
+    - text: Before we discuss your account, could you confirm the last four digits of the phone number on it? M
+    - strong: Maya Patel
+    - time: 09:00
+    - text: Sure, 4821. A
+    - strong: Alex Morgan
+    - time: 09:01
+    - text: Thank you, that's verified. I can see two payments of £29 on 27 September. One was a duplicate and has not yet been refunded. M
+    - strong: Maya Patel
+    - time: 09:01
+    - text: That's a relief. I was worried I'd have to dispute it with my bank. A
+    - strong: Alex Morgan
+    - time: 09:01
+    - text: I understand the concern. I've submitted a refund for the extra £29 payment. It should return to the same card within five working days. M
+    - strong: Maya Patel
+    - time: 09:01
+    - text: Great, will I receive a confirmation? A
+    - strong: Alex Morgan
+    - time: 09:02
+    - text: Yes. A confirmation email will be sent today. If the refund hasn't appeared after five working days, reply to that email and quote reference REF-2048. Is there anything else I can help with? M
+    - strong: Maya Patel
+    - time: 09:02
+    - text: No, that's everything. Thanks for sorting it out. A
+    - strong: Alex Morgan
+    - time: 09:02
+    - text: You're welcome, Maya. Thanks for getting in touch, and have a good day.
+    - group: Conversation details
+    - text: End of conversation · 11 messages
+  - text: CURRENT CONVERSATION
+  - heading "Duplicate payment" [level=2]
+  - text: SYNTHETIC SAMPLE
+  - button "Change conversation"
+  - button "↑ Upload JSON"
+  - button "Upload conversation JSON"
+  - text: POLICY ROUTING 2 matches
+  - heading "Applicable evaluations" [level=2]
+  - strong: Customer Service Messaging
+  - text: channel equals messaging AND queue equals Customer Service
+  - strong: Cross-channel monitoring sample
+  - text: channel equals messaging
+  - button "General Customer Service 9 questions · v1 · up to 1 AI request (Jev) Evaluate →":
+    - strong: General Customer Service
+    - text: 9 questions · v1 · up to 1 AI request (Jev) Evaluate →
+  - button "Compliance & Identity Verification 5 questions · v1 · up to 1 AI request (Jev) Evaluate →":
+    - strong: Compliance & Identity Verification
+    - text: 5 questions · v1 · up to 1 AI request (Jev) Evaluate →
+  - text: Manual form selection
+  - combobox "Manual form selection":
+    - option "General Customer Service" [selected]
+    - option "Compliance & Identity Verification"
+    - option "Complaints Handling"
+    - option "Retention / Cancellation"
+    - option "Sales / Service Quality"
+    - option "Customer Service - AI Scoring"
+  - paragraph: 1 form evaluation · up to 1 AI request
+  - button "✦ Evaluate selected form →"
+  - paragraph: Only published, valid evaluation forms can be used. Draft and testing forms can be tested in the isolated sandbox.
+  - button "Test a draft/testing form"
+  - paragraph: Connect Genesys Cloud to evaluate this conversation.
+  - text: ◎
+  - strong: One result per form
+  - paragraph: Each evaluation is saved in AQM with the exact published form version and evaluation provenance.

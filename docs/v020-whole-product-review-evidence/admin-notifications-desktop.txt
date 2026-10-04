@@ -1,0 +1,92 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+Configuration
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Settings
+ADMIN
+Jev available through AQM
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Notifications
+Audit
+Advanced / Development
+Notifications
+Notifications
+Refresh notifications
+
+Route new operational alerts to email or HTTPS webhooks. Delivery runs after each scheduler tick; existing alerts are not backfilled.
+
+Destinations
+New destination
+Search
+0 results
+Name ↓
+	
+Type
+	
+Status
+	
+Last delivery
+	
+Actions
+
+No notification destinations configured.
+
+Rules
+New rule
+Search
+0 results
+Name ↓
+	
+Severity
+	
+Alert types
+	
+Destinations
+	
+Status
+	
+Actions
+
+No notification rules configured.
+
+Delivery history
+Search
+0 results on this page
+Destination ↓
+	
+Event
+	
+State
+	
+Attempts
+	
+Updated
+	
+Error code
+
+No notification deliveries yet.

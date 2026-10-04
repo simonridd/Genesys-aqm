@@ -1,0 +1,92 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Quality / Review
+      - button "Evaluations"
+      - button "Calibration"
+      - button "Analytics"
+      - button "Overview"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: REVIEWER Jev available through AQM
+  - region "Review workspace":
+    - button "Back to My Reviews"
+    - text: MY REVIEW
+    - heading "General Customer Service v17" [level=1]
+    - paragraph: Alex Morgan · Customer care · voice
+    - text: Completed Completed
+    - button "Open conversation evidence"
+    - region "Human review":
+      - text: HUMAN REVIEW
+      - heading "Completed calibration" [level=2]
+      - paragraph: Completed · Assigned to you
+      - text: REAL GENESYS DATA AI SCORE
+      - strong: 78%
+      - text: HUMAN SCORE
+      - strong: 38%
+      - text: EXACT AGREEMENT
+      - strong: 2 / 3
+      - text: ABSOLUTE SCORE GAP
+      - strong: 40.6 pp
+      - region "Group comparison":
+        - heading "Group comparison" [level=3]
+        - strong: Customer care
+        - paragraph: "AI group score: 78%"
+        - paragraph: "Human group score: 38%"
+        - paragraph: "Difference: -40.6 pp"
+      - status: Review completed. It has been removed from My Reviews. The original AI result is preserved.
+      - button "Close and continue My Reviews"
+      - group "Comparison filter":
+        - button "All"
+        - button "Agreements"
+        - button "Disagreements"
+      - article:
+        - text: Customer care
+        - heading "Warm opening" [level=3]
+        - text: Agreement
+        - paragraph: Did the agent greet the customer and offer help at the start of the conversation?
+        - text: HUMAN REVIEW
+        - strong: "Yes"
+        - paragraph: Human credit 100%
+        - paragraph: A warm greeting is visible.
+        - text: AI RESULT
+        - strong: "Yes"
+        - paragraph: Credit 100% · Yes probability 95%
+        - text: Selected-answer confidence 95%
+      - article:
+        - text: Customer care
+        - heading "Understanding the issue" [level=3]
+        - text: Agreement
+        - paragraph: How effectively did the agent establish and acknowledge the customer’s actual issue?
+        - text: HUMAN REVIEW
+        - strong: Needs improvement
+        - paragraph: Human credit 33%
+        - text: AI RESULT
+        - strong: 1.00 / 3
+        - paragraph: Credit 33% · Confidence 75%
+        - text: "Exact value distance: 0.00 bands"
+      - article:
+        - text: Customer care
+        - heading "Resolution" [level=3]
+        - text: Disagreement
+        - paragraph: What is the best description of the issue outcome by the end of the conversation?
+        - text: HUMAN REVIEW
+        - strong: Unresolved
+        - paragraph: Human credit 0%
+        - text: AI RESULT
+        - strong: Fully resolved
+        - paragraph: Credit 100% · Confidence 85%
+      - heading "Reviewer note" [level=3]
+      - paragraph: Mobile draft pending evidence.
+      - group: Review history (3 events)
+    - group: AI evaluation result
+    - group: Evaluation provenance

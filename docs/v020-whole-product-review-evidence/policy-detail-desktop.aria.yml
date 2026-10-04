@@ -1,0 +1,165 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Configuration
+      - button "Evaluation Forms"
+      - button "Question Groups"
+      - button "Answer Sets"
+      - button "Policies"
+    - group: Monitor / Quality
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Policies
+  - text: AUTHOR Jev available through AQM CONFIGURATION
+  - heading "Policies" [level=1]
+  - paragraph: Choose which conversations are evaluated and which published forms apply.
+  - paragraph: Saved AQM policies
+  - button "Refresh policies"
+  - button "＋ New policy"
+  - text: Status
+  - combobox "Policy status":
+    - option "All" [selected]
+    - option "Enabled"
+    - option "Disabled"
+  - text: Schedule
+  - combobox "Policy schedule filter":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Daily"
+    - option "Weekly"
+  - text: Forms
+  - combobox "Policy forms filter":
+    - option "All" [selected]
+    - option "Has assigned forms"
+    - option "No assigned forms"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 1 results
+  - region "Policies table":
+    - table:
+      - rowgroup:
+        - row "Name ↓ Status Version Criteria Assigned forms Sampling Schedule Last modified":
+          - columnheader "Name ↓":
+            - button "Name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Criteria":
+            - button "Criteria"
+          - columnheader "Assigned forms":
+            - button "Assigned forms"
+          - columnheader "Sampling":
+            - button "Sampling"
+          - columnheader "Schedule":
+            - button "Schedule"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Daily Voice Customer Service AQM Enabled v1 channel equals voice General Customer Service v17 50% Weekly on Monday at 02:00 Europe/London —":
+          - cell "Daily Voice Customer Service AQM":
+            - button "Daily Voice Customer Service AQM"
+          - cell "Enabled"
+          - cell "v1"
+          - cell "channel equals voice"
+          - cell "General Customer Service v17"
+          - cell "50%"
+          - cell "Weekly on Monday at 02:00 Europe/London"
+          - cell "—"
+  - text: SAVED POLICY · v1
+  - heading "Daily Voice Customer Service AQM" [level=2]
+  - button "Close details"
+  - button "View runs"
+  - button "Duplicate policy" [disabled]
+  - button "Save changes"
+  - status: Unsaved changes
+  - group:
+    - text: Policy name
+    - textbox "Policy name": Daily Voice Customer Service AQM
+    - text: Description
+    - textbox "Description": Unsaved fictional policy description for navigation check.
+  - group:
+    - checkbox "Enabled (requires Save changes)" [checked]
+    - text: Enabled (requires Save changes)
+    - heading "Interaction criteria" [level=3]
+    - paragraph: Match ALL conditions in any one group. Groups are joined with OR.
+    - strong: Match ALL
+    - button "Remove OR group"
+    - combobox "Condition field":
+      - option "channel" [selected]
+      - option "queue"
+      - option "agent"
+      - option "direction"
+      - option "topic"
+      - option "tag"
+    - combobox "Condition operator":
+      - option "equals" [selected]
+    - textbox "Criteria value": voice
+    - button "Remove condition": ×
+    - button "Add condition"
+    - button "Add OR group"
+    - heading "Sampling" [level=3]
+    - text: Sampling strategy
+    - combobox "Sampling strategy":
+      - option "All eligible"
+      - option "Percentage" [selected]
+      - option "Fixed count"
+    - text: Percentage
+    - spinbutton "Percentage 0 selects none; 100 selects all.": "50"
+    - text: 0 selects none; 100 selects all. Sample seed (optional)
+    - textbox "Sample seed (optional)"
+    - heading "Published evaluation forms" [level=3]
+    - paragraph: Each assignment uses this exact published version. Publishing a newer version does not change this policy automatically.
+    - checkbox "General Customer Service · v17 · 3 questions · Weighted" [checked]
+    - text: General Customer Service · v17 · 3 questions · Weighted
+  - heading "Readiness" [level=3]
+  - text: Policy
+  - strong: Enabled
+  - text: Forms
+  - strong: 1 published form assigned
+  - text: Sampling
+  - strong: 50%
+  - text: Schedule (saved)
+  - strong: Weekly on Monday at 02:00 Europe/London
+  - text: Next run
+  - strong: 05/10/2026, 02:00:00
+  - heading "Schedule" [level=3]
+  - paragraph: Daily evaluates the previous day; weekly evaluates the previous Monday–Sunday. Policy and schedule save separately.
+  - group:
+    - text: Schedule
+    - combobox "Schedule":
+      - option "Manual"
+      - option "Daily"
+      - option "Weekly" [selected]
+    - text: Weekday
+    - combobox "Weekday":
+      - option "Monday" [selected]
+      - option "Tuesday"
+      - option "Wednesday"
+      - option "Thursday"
+      - option "Friday"
+      - option "Saturday"
+      - option "Sunday"
+    - text: Local time
+    - textbox "Local time": 02:00
+    - text: Timezone
+    - textbox "Timezone": Europe/London
+    - checkbox "Schedule enabled" [checked]
+    - text: Schedule enabled
+    - button "Save schedule" [disabled]
+  - status: Schedule saved in AQM
+  - paragraph: "Next due: 05/10/2026, 02:00:00 · Last attempted: — · Last successful: —"
+  - group: Advanced details
+  - button "View history"

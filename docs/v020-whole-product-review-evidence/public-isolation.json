@@ -1,0 +1,47 @@
+{
+  "requests": [
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "method": "GET",
+      "time": "2026-10-04T17:57:11.346Z"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-Diko5R5L.js",
+      "method": "GET",
+      "time": "2026-10-04T17:57:11.395Z"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DqpPVd_V.css",
+      "method": "GET",
+      "time": "2026-10-04T17:57:11.396Z"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-BxM_1Sn1.js",
+      "method": "GET",
+      "time": "2026-10-04T17:57:11.440Z"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "method": "GET",
+      "time": "2026-10-04T17:57:11.464Z"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-CM0a6kX4.js",
+      "method": "GET",
+      "time": "2026-10-04T17:57:12.254Z"
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-DClfUy9e.js",
+      "method": "GET",
+      "time": "2026-10-04T17:57:12.255Z"
+    }
+  ],
+  "writes": [],
+  "current": {
+    "local": [],
+    "session": [],
+    "indexedDB": []
+  },
+  "aqmCalls": 0,
+  "providerCalls": 0
+}

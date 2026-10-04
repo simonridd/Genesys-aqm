@@ -1,0 +1,43 @@
+- banner:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Interactive demo · fictional data · no live requests
+- main:
+  - paragraph: Chapter 3 of 5
+  - heading "Evaluate at scale" [level=1]
+  - region "Prepared evaluation":
+    - heading "Jev answers. AQM scores." [level=2]
+    - paragraph: Jev answers specific quality questions in predefined formats. Related questions can be batched in one AI request; AQM applies the agreed scoring rules.
+    - article:
+      - heading "Acknowledged the impact" [level=3]
+      - term: AI answer
+      - definition: "Yes"
+      - term: Credit
+      - definition: 100%
+    - article:
+      - heading "Issue resolved" [level=3]
+      - term: AI answer
+      - definition: "Yes"
+      - term: Credit
+      - definition: 100%
+    - article:
+      - heading "Clear next step" [level=3]
+      - term: AI answer
+      - definition: Clear next step
+      - term: Credit
+      - definition: 100%
+      - paragraph: "Evidence to inspect: “They should return later. Try signing in again.”"
+      - paragraph: "AI confidence: 56%. Confidence is not measured correctness."
+    - text: ORIGINAL AI SCORE
+    - strong: 100%
+    - text: Pass · all three applicable answers earned full credit
+    - paragraph: The AI accepted “later” as a clear timeline. That judgment deserves a human challenge.
+  - heading "Broader coverage becomes attractive" [level=2]
+  - paragraph: Structured, batched questions and Jev’s very low model input cost make broader evaluation economically attractive.
+  - paragraph: In this example, a policy selects 24 of 48 eligible conversations (50%) from one customer-service queue. Each uses the same published form. Conditional questions need another request only when they apply.
+  - paragraph: The calculator on Welcome lets you change volume, selection and request assumptions. Model cost is one component of a pilot’s operating cost.
+  - navigation "Tour controls":
+    - button "Back"
+    - button "Next"
+    - button "Exit demo"
+  - group: More options

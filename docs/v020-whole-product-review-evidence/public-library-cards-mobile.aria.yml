@@ -1,0 +1,137 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Interactions
+      - button "Conversations"
+    - group: Monitor / Quality
+    - group: Configuration
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Conversations
+  - text: Connect Genesys Cloud
+  - strong: Conversation source
+  - text: Fictional sample data · no credentials
+  - button "Synthetic"
+  - button "Genesys Cloud"
+  - text: SYNTHETIC CONVERSATION LIBRARY
+  - heading "Conversations" [level=1]
+  - paragraph: Fictional scenarios across queues, channels and service outcomes.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Queue
+  - combobox "Queue":
+    - option "All queues" [selected]
+    - option "Customer Service"
+    - option "Orders"
+    - option "Billing"
+    - option "Complaints"
+    - option "Retention"
+    - option "Technical Support"
+    - option "Sales"
+  - text: Channel
+  - combobox "Channel":
+    - option "All channels" [selected]
+    - option "messaging"
+    - option "voice"
+  - button "Customer Service · messaging Good Duplicate payment A duplicate charge is refunded with a clear timeline. Alex Morgan · 11 messages · Billing Open transcript →":
+    - text: Customer Service · messaging Good
+    - heading "Duplicate payment" [level=2]
+    - paragraph: A duplicate charge is refunded with a clear timeline.
+    - text: Alex Morgan · 11 messages · Billing Open transcript →
+  - button "Orders · messaging Mixed Delayed delivery A delayed parcel needs follow-up. Jordan Lee · 7 messages · Delayed delivery Open transcript →":
+    - text: Orders · messaging Mixed
+    - heading "Delayed delivery" [level=2]
+    - paragraph: A delayed parcel needs follow-up.
+    - text: Jordan Lee · 7 messages · Delayed delivery Open transcript →
+  - button "Customer Service · messaging Excellent Excellent general service An agent owns a damaged-item replacement from start to finish. Priya Shah · 11 messages · Delivery Open transcript →":
+    - text: Customer Service · messaging Excellent
+    - heading "Excellent general service" [level=2]
+    - paragraph: An agent owns a damaged-item replacement from start to finish.
+    - text: Priya Shah · 11 messages · Delivery Open transcript →
+  - button "Customer Service · messaging Mixed Mediocre service Correct information, but little ownership or clarity. Jordan Lee · 12 messages · Delivery Open transcript →":
+    - text: Customer Service · messaging Mixed
+    - heading "Mediocre service" [level=2]
+    - paragraph: Correct information, but little ownership or clarity.
+    - text: Jordan Lee · 12 messages · Delivery Open transcript →
+  - button "Customer Service · messaging Poor Clearly poor service The agent dismisses an incorrect charge and ends the chat. Casey Brown · 10 messages · Billing Open transcript →":
+    - text: Customer Service · messaging Poor
+    - heading "Clearly poor service" [level=2]
+    - paragraph: The agent dismisses an incorrect charge and ends the chat.
+    - text: Casey Brown · 10 messages · Billing Open transcript →
+  - button "Billing · voice Mixed Billing dispute A disputed fee receives a clear investigation path. Alex Morgan · 10 messages · Billing Open transcript →":
+    - text: Billing · voice Mixed
+    - heading "Billing dispute" [level=2]
+    - paragraph: A disputed fee receives a clear investigation path.
+    - text: Alex Morgan · 10 messages · Billing Open transcript →
+  - button "Complaints · voice Good Formal complaint The agent acknowledges impact and records a complaint. Sam Rivera · 11 messages · Complaint Open transcript →":
+    - text: Complaints · voice Good
+    - heading "Formal complaint" [level=2]
+    - paragraph: The agent acknowledges impact and records a complaint.
+    - text: Sam Rivera · 11 messages · Complaint Open transcript →
+  - button "Retention · messaging Good Respectful cancellation A clear cancellation without pressure. Priya Shah · 10 messages · Cancellation Open transcript →":
+    - text: Retention · messaging Good
+    - heading "Respectful cancellation" [level=2]
+    - paragraph: A clear cancellation without pressure.
+    - text: Priya Shah · 10 messages · Cancellation Open transcript →
+  - button "Retention · voice Mixed Retention attempt A relevant offer, but the agent pushes after refusal. Jordan Lee · 10 messages · Cancellation Open transcript →":
+    - text: Retention · voice Mixed
+    - heading "Retention attempt" [level=2]
+    - paragraph: A relevant offer, but the agent pushes after refusal.
+    - text: Jordan Lee · 10 messages · Cancellation Open transcript →
+  - button "Customer Service · messaging Excellent Verification success Secure checks precede account disclosure. Alex Morgan · 11 messages · Security Open transcript →":
+    - text: Customer Service · messaging Excellent
+    - heading "Verification success" [level=2]
+    - paragraph: Secure checks precede account disclosure.
+    - text: Alex Morgan · 11 messages · Security Open transcript →
+  - button "Customer Service · messaging Poor Verification failure Account information is revealed after a failed check. Casey Brown · 10 messages · Security Open transcript →":
+    - text: Customer Service · messaging Poor
+    - heading "Verification failure" [level=2]
+    - paragraph: Account information is revealed after a failed check.
+    - text: Casey Brown · 10 messages · Security Open transcript →
+  - button "Customer Service · voice Good Repeat contact The agent uses prior case history to avoid repetition. Sam Rivera · 10 messages · Delivery Open transcript →":
+    - text: Customer Service · voice Good
+    - heading "Repeat contact" [level=2]
+    - paragraph: The agent uses prior case history to avoid repetition.
+    - text: Sam Rivera · 10 messages · Delivery Open transcript →
+  - button "Technical Support · voice Mixed Transfer and escalation A warm handoff follows a technical diagnosis. Taylor Quinn · 10 messages · Technical Open transcript →":
+    - text: Technical Support · voice Mixed
+    - heading "Transfer and escalation" [level=2]
+    - paragraph: A warm handoff follows a technical diagnosis.
+    - text: Taylor Quinn · 10 messages · Technical Open transcript →
+  - button "Billing · voice Excellent Vulnerable customer The agent adapts pace and offers accessible follow-up. Priya Shah · 11 messages · Billing Open transcript →":
+    - text: Billing · voice Excellent
+    - heading "Vulnerable customer" [level=2]
+    - paragraph: The agent adapts pace and offers accessible follow-up.
+    - text: Priya Shah · 11 messages · Billing Open transcript →
+  - button "Technical Support · messaging Mixed Incomplete resolution Good investigation, but no concrete next step. Jordan Lee · 12 messages · Technical Open transcript →":
+    - text: Technical Support · messaging Mixed
+    - heading "Incomplete resolution" [level=2]
+    - paragraph: Good investigation, but no concrete next step.
+    - text: Jordan Lee · 12 messages · Technical Open transcript →
+  - button "Customer Service · messaging Mixed Empathy, process gap Warm support with account disclosure before verification. Sam Rivera · 12 messages · Billing Open transcript →":
+    - text: Customer Service · messaging Mixed
+    - heading "Empathy, process gap" [level=2]
+    - paragraph: Warm support with account disclosure before verification.
+    - text: Sam Rivera · 12 messages · Billing Open transcript →
+  - button "Customer Service · messaging Mixed Correct but cold Technically correct answers delivered curtly. Casey Brown · 12 messages · Returns Open transcript →":
+    - text: Customer Service · messaging Mixed
+    - heading "Correct but cold" [level=2]
+    - paragraph: Technically correct answers delivered curtly.
+    - text: Casey Brown · 12 messages · Returns Open transcript →
+  - button "Customer Service · voice Mixed Compliant but unresolved Careful identity checks but no ownership of the issue. Taylor Quinn · 12 messages · Billing Open transcript →":
+    - text: Customer Service · voice Mixed
+    - heading "Compliant but unresolved" [level=2]
+    - paragraph: Careful identity checks but no ownership of the issue.
+    - text: Taylor Quinn · 12 messages · Billing Open transcript →
+  - button "Sales · voice Excellent Needs-led sales A recommendation linked to stated needs and clear terms. Alex Morgan · 12 messages · Sales Open transcript →":
+    - text: Sales · voice Excellent
+    - heading "Needs-led sales" [level=2]
+    - paragraph: A recommendation linked to stated needs and clear terms.
+    - text: Alex Morgan · 12 messages · Sales Open transcript →

@@ -1,0 +1,110 @@
+IPI AQM
+Connect Genesys Cloud
+Working prototype
+
+AUTOMATED QUALITY MANAGEMENT FOR GENESYS CLOUD
+
+More conversations understood.
+Less manual scoring.
+
+Jev answers specific quality questions in predefined formats. AQM turns those answers into transparent scores that people can inspect and challenge.
+
+Take the guided demo →
+Explore the prototype
+
+Five minutes · fictional data · no live requests
+
+From signal to understanding
+Fictional preview
+
+Resolution guidance needs a closer look.
+
+PREPARED AI ANSWER
+Clear next step
+HUMAN JUDGMENT
+Timeline not agreed
+
+One conversation. The same published form. A useful disagreement.
+
+See how calibration works →
+THE OPPORTUNITY
+Manual review should inform quality.
+Not be the only way to see it.
+
+Increase visibility across selected conversations, investigate the evidence, and use human judgment where it matters. Controlled coverage is a policy decision, not a claim of unlimited capacity.
+
+WHY THIS APPROACH
+Focused decisions. Transparent scoring. Human control.
+Ask focused questions
+
+Predefined answer formats evaluate specific criteria, with related questions batched in one request.
+
+Apply agreed scoring rules
+
+Weights, critical criteria and exact form versions make the score explainable.
+
+Learn from disagreement
+
+Human reviews preserve the original AI result and support calibration.
+
+Typed answers can still be wrong. Confidence is not measured correctness; calibrate against human judgments. Confidence reference · checked 2026-10-03.
+
+EXPLORE THE ECONOMICS
+A small model bill. An honest starting point.
+
+Structured, batched questions and very low model input cost make broader evaluation economically attractive. This is an illustrative planning estimate — model input cost only.
+
+Conversations per month
+0–1,000,000,000
+Selected percentage
+0–100%
+Advanced assumptions
+Average forms per selected conversation
+0–100
+Average AI requests per form
+0–100
+Average input tokens per AI request
+Illustrative medium-length transcript plus quality questions. 0–64,000
+ESTIMATED JEV MODEL INPUT COST · USD
+Check inputs
+
+Conversations per month must be between 0 and 1,000,000,000. Enter a value for this field.
+
+Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again. Average forms and requests may be fractional planning equivalents.
+
+Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.
+
+Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot.
+
+MORE THAN A MODEL DEMONSTRATION
+A connected quality workflow.
+The customer case
+Was Jamie given a clear next step?
+→
+Define quality
+See the agreed questions and scoring rules
+→
+Evaluate at scale
+See Jev’s answers and AQM’s explainable score
+→
+Human challenge
+Compare independent judgments
+→
+Manage & pilot
+Turn quality insight into an owned action
+→
+Prototype status & evidence
+Plan a pilot →
+PLAN A PILOT
+Start narrow. Calibrate. Decide with evidence.
+Agree one queue or use case and an accountable quality lead.
+Choose representative conversations.
+Define the evaluation form.
+Run AI and human comparison.
+Measure quality insight, agreement/calibration, coverage, model cost and reviewer effort.
+Decide whether broader rollout is justified.
+
+No booking or contact details are collected.
+
+IPI AQM · Decision intelligence powered by Jev
+Connection settings →

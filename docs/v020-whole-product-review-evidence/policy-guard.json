@@ -1,0 +1,6 @@
+[
+  {
+    "type": "confirm",
+    "message": "Unsaved policy or schedule changes. Leave without saving?"
+  }
+]

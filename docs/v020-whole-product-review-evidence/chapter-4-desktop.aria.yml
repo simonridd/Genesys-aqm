@@ -1,0 +1,46 @@
+- banner:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Interactive demo · fictional data · no live requests
+- complementary "Guided product story":
+  - paragraph: FIVE-MINUTE CUSTOMER CASE
+  - list:
+    - listitem:
+      - button "The customer case"
+    - listitem:
+      - button "Define quality"
+    - listitem:
+      - button "Evaluate at scale"
+    - listitem:
+      - button "Human challenge"
+    - listitem:
+      - button "Manage & pilot"
+  - paragraph: One conversation, from agreed quality to a pilot decision.
+- main:
+  - paragraph: Chapter 4 of 5
+  - heading "Human challenge" [level=1]
+  - progressbar "Tour progress"
+  - region "Independent human review":
+    - heading "“Later” is not an agreed timeline." [level=2]
+    - text: ORIGINAL AI ANSWER
+    - strong: Yes, next step clear
+    - paragraph: Clear next step · 100% credit
+    - text: PREPARED HUMAN REVIEW
+    - strong: No, timeline not agreed
+    - paragraph: Timeline not agreed · 0% credit
+    - text: ORIGINAL AI SCORE · UNCHANGED
+    - strong: 100%
+    - text: Pass HUMAN REVIEW SCORE
+    - strong: 56%
+    - text: Fail · critical next-step criterion DIFFERENCE
+    - strong: "44"
+    - text: percentage points
+    - paragraph: The human agrees on empathy and restored access, but gives no credit for the missing timeline. The same weighted rules produce the human score.
+    - paragraph: Human review doesn’t rewrite the AI result. It creates independent evidence for calibration.
+    - paragraph: Example review completed. The original AI result is unchanged. Two answers agree; one differs. This single review does not establish AI accuracy across a population.
+    - group: Inspect the review audit
+  - navigation "Tour controls":
+    - button "Back"
+    - button "Next"
+    - button "Exit demo"
+  - group: More options

@@ -1,0 +1,123 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Quality / Review
+      - button "Evaluations"
+      - button "Calibration"
+      - button "Analytics"
+      - button "Overview"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: REVIEWER Jev available through AQM QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Choose a review, inspect the evidence and record your judgment.
+  - group "Evaluation mode":
+    - button "My reviews" [pressed]
+    - button "All evaluations"
+    - button "More filters"
+  - paragraph: Reviews needing attention appear first.
+  - region "My review summary":
+    - heading "My reviews" [level=2]
+    - text: Assigned open
+    - strong: "5"
+    - text: Due soon
+    - strong: "1"
+    - text: Overdue
+    - strong: "1"
+    - text: Escalated
+    - strong: "1"
+    - button "Available unassigned reviews (1) →"
+  - paragraph: Loaded 01:00:26 PM
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 5 results on this page
+  - region "My reviews table":
+    - table:
+      - rowgroup:
+        - row "Queue priority Review action Evaluation Agent Queue Form AI score Human review Due":
+          - columnheader "Queue priority"
+          - columnheader "Review action"
+          - columnheader "Evaluation"
+          - columnheader "Agent"
+          - columnheader "Queue"
+          - columnheader "Form"
+          - columnheader "AI score"
+          - columnheader "Human review"
+          - columnheader "Due"
+      - rowgroup:
+        - row "ESCALATED Overdue by 4 days Start review Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 78% Ready to review 9/28/2026, 1:00:00 PM ESCALATED Overdue by 4 days":
+          - cell "ESCALATED Overdue by 4 days"
+          - cell "Start review":
+            - button "Start review"
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "78%"
+          - cell "Ready to review"
+          - cell "9/28/2026, 1:00:00 PM ESCALATED Overdue by 4 days"
+        - row "OVERDUE Overdue by 6 hours Start review Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 78% Ready to review 10/2/2026, 7:00:00 AM OVERDUE Overdue by 6 hours":
+          - cell "OVERDUE Overdue by 6 hours"
+          - cell "Start review":
+            - button "Start review"
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "78%"
+          - cell "Ready to review"
+          - cell "10/2/2026, 7:00:00 AM OVERDUE Overdue by 6 hours"
+        - row "DUE SOON Due in 6 hours Start review Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 78% Ready to review 10/2/2026, 7:00:00 PM DUE SOON Due in 6 hours":
+          - cell "DUE SOON Due in 6 hours"
+          - cell "Start review":
+            - button "Start review"
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "78%"
+          - cell "Ready to review"
+          - cell "10/2/2026, 7:00:00 PM DUE SOON Due in 6 hours"
+        - row "Due in 3 days Continue review Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 78% In progress 10/5/2026, 1:00:00 PM Due in 3 days":
+          - cell "Due in 3 days"
+          - cell "Continue review":
+            - button "Continue review"
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "78%"
+          - cell "In progress"
+          - cell "10/5/2026, 1:00:00 PM Due in 3 days"
+        - row "Due in 3 days Start review Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care Alex Morgan Customer care General Customer Service v17 78% Ready to review 10/5/2026, 1:00:00 PM Due in 3 days":
+          - cell "Due in 3 days"
+          - cell "Start review":
+            - button "Start review"
+          - cell "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care":
+            - button "Open evaluation for Alex Morgan · voice · General Customer Service v17 · Customer care": Alex Morgan · voice
+          - cell "Alex Morgan"
+          - cell "Customer care"
+          - cell "General Customer Service v17"
+          - cell "78%"
+          - cell "Ready to review"
+          - cell "10/5/2026, 1:00:00 PM Due in 3 days"
+  - button "First page" [disabled]
+  - button "Next page →" [disabled]

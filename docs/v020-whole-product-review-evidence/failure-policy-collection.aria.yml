@@ -1,0 +1,50 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Evaluations"
+      - button "Analytics"
+      - button "Calibration"
+    - group:
+      - text: Configuration
+      - button "Policies"
+      - button "Evaluation Forms"
+      - button "Question Groups"
+      - button "Answer Sets"
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Policies
+  - text: ADMIN Jev available through AQM CONFIGURATION
+  - heading "Policies" [level=1]
+  - paragraph: Choose which conversations are evaluated and which published forms apply.
+  - paragraph: Saved AQM policies
+  - button "Refresh policies"
+  - text: Status
+  - combobox "Policy status":
+    - option "All" [selected]
+    - option "Enabled"
+    - option "Disabled"
+  - text: Schedule
+  - combobox "Policy schedule filter":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Daily"
+    - option "Weekly"
+  - text: Forms
+  - combobox "Policy forms filter":
+    - option "All" [selected]
+    - option "Has assigned forms"
+    - option "No assigned forms"
+  - alert: "Saved policies unavailable: Fictional policy collection unavailable"

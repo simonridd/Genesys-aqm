@@ -1,0 +1,120 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Analytics"
+      - button "Evaluations"
+      - button "Calibration"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Calibration
+  - text: VIEWER Jev available through AQM HUMAN + AI
+  - heading "Calibration" [level=1]
+  - paragraph: Find human / AI disagreements and their supporting evaluations.
+  - region "Calibration scope":
+    - strong: Genesys Cloud · 2026-09-25 – 2026-10-02
+    - paragraph: General Customer Service v17
+    - text: All agents · All queues
+    - button "Change filters"
+  - status: Loading calibration…
+  - region "Where humans and AI differ":
+    - heading "Where humans and AI differ" [level=2]
+    - paragraph: Updating comparisons for this scope…
+  - text: Evaluations reviewed
+  - strong: "2"
+  - text: Questions reviewed
+  - strong: "6"
+  - text: Exact agreement
+  - strong: 33%
+  - text: Mean absolute score gap
+  - strong: 16.0 pp
+  - text: Unresolved reviews
+  - strong: "3"
+  - text: 2 in progress · outside completed comparisons
+  - group "Calibration breakdown":
+    - button "Form / version"
+    - button "Groups"
+    - button "Questions" [pressed]
+    - button "Question types"
+    - button "Confidence vs disagreement"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 3 results
+  - region "Calibration questions table":
+    - table:
+      - rowgroup:
+        - 'row "Question ↓ Form / version Reviews Comparable answers Exact agreement Disagreements AI credit Human credit Mean credit gap Confidence: agree Confidence: disagree"':
+          - columnheader "Question ↓":
+            - button "Question ↓"
+          - columnheader "Form / version":
+            - button "Form / version"
+          - columnheader "Reviews":
+            - button "Reviews"
+          - columnheader "Comparable answers":
+            - button "Comparable answers"
+          - columnheader "Exact agreement":
+            - button "Exact agreement"
+          - columnheader "Disagreements":
+            - button "Disagreements"
+          - columnheader "AI credit":
+            - button "AI credit"
+          - columnheader "Human credit":
+            - button "Human credit"
+          - columnheader "Mean credit gap":
+            - button "Mean credit gap"
+          - 'columnheader "Confidence: agree"':
+            - 'button "Confidence: agree"'
+          - 'columnheader "Confidence: disagree"':
+            - 'button "Confidence: disagree"'
+      - rowgroup:
+        - row "Warm opening General Customer Service v17 2 2 0% 2 100% 0% 100.0 pp — 95%":
+          - cell "Warm opening"
+          - cell "General Customer Service v17"
+          - cell "2"
+          - cell "2"
+          - cell "0%"
+          - cell "2"
+          - cell "100%"
+          - cell "0%"
+          - cell "100.0 pp"
+          - cell "—"
+          - cell "95%"
+        - row "Understanding the issue General Customer Service v17 2 2 0% 2 33% 67% 33.9 pp — 75%":
+          - cell "Understanding the issue"
+          - cell "General Customer Service v17"
+          - cell "2"
+          - cell "2"
+          - cell "0%"
+          - cell "2"
+          - cell "33%"
+          - cell "67%"
+          - cell "33.9 pp"
+          - cell "—"
+          - cell "75%"
+        - row "Resolution General Customer Service v17 2 2 100% 0 100% 100% 0.0 pp 85% —":
+          - cell "Resolution"
+          - cell "General Customer Service v17"
+          - cell "2"
+          - cell "2"
+          - cell "100%"
+          - cell "0"
+          - cell "100%"
+          - cell "100%"
+          - cell "0.0 pp"
+          - cell "85%"
+          - cell "—"
+  - paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

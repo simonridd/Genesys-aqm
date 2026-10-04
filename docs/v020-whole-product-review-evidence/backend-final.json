@@ -1,0 +1,15 @@
+{
+  "verified_at": "2026-10-04",
+  "project": "genesys-aqm-2026",
+  "region": "europe-west2",
+  "service": "aqm-api",
+  "latest_ready_revision": "aqm-api-v019-e92f2d6",
+  "traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "aqm-api-v019-e92f2d6"
+    }
+  ],
+  "operation": "read-only gcloud run services describe"
+}

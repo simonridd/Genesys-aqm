@@ -1,0 +1,17 @@
+{
+  "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+  "role": "REVIEWER",
+  "answers": [
+    "Yes",
+    "1",
+    ""
+  ],
+  "note": "A warm greeting is visible.",
+  "overall": "Mobile draft pending evidence.",
+  "dialogs": [
+    {
+      "type": "beforeunload",
+      "message": ""
+    }
+  ]
+}

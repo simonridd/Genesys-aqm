@@ -1,0 +1,90 @@
+[
+  {
+    "target": "Take the guided demo →",
+    "tabs": 3,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Next",
+    "tabs": 3,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Exit demo",
+    "tabs": 4,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "",
+    "tabs": 7,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open disagreements →",
+    "tabs": 19,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Alex Morgan · voice",
+    "tabs": 49,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "Open conversation",
+    "tabs": 2,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  },
+  {
+    "target": "← Back to evaluation",
+    "tabs": 1,
+    "focus": {
+      "outline": "rgb(79, 54, 69) solid 3px",
+      "boxShadow": "none"
+    }
+  }
+]

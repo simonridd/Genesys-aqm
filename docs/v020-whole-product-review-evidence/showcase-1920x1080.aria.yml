@@ -1,0 +1,53 @@
+- banner:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Interactive demo · fictional data · no live requests
+- complementary "Guided product story":
+  - paragraph: FIVE-MINUTE CUSTOMER CASE
+  - list:
+    - listitem:
+      - button "The customer case"
+    - listitem:
+      - button "Define quality"
+    - listitem:
+      - button "Evaluate at scale"
+    - listitem:
+      - button "Human challenge"
+    - listitem:
+      - button "Manage & pilot"
+  - paragraph: One conversation, from agreed quality to a pilot decision.
+- main:
+  - paragraph: Chapter 5 of 5
+  - heading "Manage & pilot" [level=1]
+  - progressbar "Tour progress"
+  - text: MANAGEMENT INSIGHT
+  - heading "Resolution guidance needs attention" [level=2]
+  - paragraph:
+    - strong: 24 evaluations
+    - text: matched the same quality question;
+    - strong: 5 showed weak next-step guidance
+    - text: . In the one completed human review, the reviewer challenged one AI judgment.
+  - paragraph: Investigate missing timelines, coach clear commitments, and refine the criterion with reviewers. These example counts illustrate a management decision, not population statistics.
+  - group: Inspect examples
+  - heading "Who owns the next action?" [level=2]
+  - term: Scheduled evaluation
+  - definition: Customer-service queue · daily at 08:00 Europe/London.
+  - term: Review deadline
+  - definition: Quality lead · due 3 October at 17:00; Jamie’s review is complete.
+  - term: Auditability
+  - definition: Keep the published form, original AI result and independent human review together.
+  - term: Attention required
+  - definition: A quality alert directs the lead to investigate resolution guidance and agree coaching.
+  - heading "Agree a focused pilot" [level=2]
+  - list:
+    - listitem: Agree one queue or use case and an accountable quality lead.
+    - listitem: Choose representative conversations.
+    - listitem: Define the evaluation form.
+    - listitem: Run AI and human comparison.
+    - listitem: Measure quality insight, agreement/calibration, coverage, model cost and reviewer effort.
+    - listitem: Decide whether broader rollout is justified.
+  - navigation "Tour controls":
+    - button "Back"
+    - button "Plan a pilot"
+    - button "Exit demo"
+  - group: More options

@@ -1,0 +1,117 @@
+IPI AQM
+Automated Quality Management
+Quality / Review
+◷
+Evaluations
+◎
+Calibration
+▥
+Analytics
+◌
+Overview
+Reference configuration
+Interactions
+⚙
+Settings
+About / product tour
+Workspace / Evaluations
+REVIEWER
+Jev available through AQM
+Back to My Reviews
+MY REVIEW
+General Customer Service v17
+
+Alex Morgan · Customer care · voice
+
+In progress
+ESCALATED
+Overdue by 4 days
+Open conversation evidence
+HUMAN REVIEW
+Review this evaluation
+
+In progress · Assigned to you
+
+REAL GENESYS DATA
+
+Unsaved review changes · Kept temporarily while you inspect this session.
+
+Discard my unsaved answers
+
+1 of 3 questions answered
+
+Save progress
+Complete review
+
+Review started.
+
+Customer care
+Warm opening
+Unanswered
+
+Did the agent greet the customer and offer help at the start of the conversation?
+
+Human answer
+Select an answer
+Yes
+No
+
+Human credit —
+
+Question note
+AI RESULT
+Yes
+
+Credit 100% · Yes probability 95%
+
+Selected-answer confidence 95%
+Customer care
+Understanding the issue
+One-band difference
+
+How effectively did the agent establish and acknowledge the customer’s actual issue?
+
+Human answer
+Select an answer
+Poor
+Needs improvement
+Good
+Excellent
+
+Human credit 67%
+
+Question note
+AI RESULT
+1.00 / 3
+
+Credit 33% · Confidence 75%
+
+Exact value distance: 1.00 bands
+Customer care
+Resolution
+Unanswered
+
+What is the best description of the issue outcome by the end of the conversation?
+
+Human answer
+Select an answer
+Fully resolved
+Partially resolved
+Unresolved
+Not applicable
+
+Human credit —
+
+Question note
+AI RESULT
+Fully resolved
+
+Credit 100% · Confidence 85%
+
+Overall review note
+Save progress
+Complete review
+Review comparison
+Review history (2 events)
+AI evaluation result
+Evaluation provenance

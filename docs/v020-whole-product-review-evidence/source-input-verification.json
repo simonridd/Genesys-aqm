@@ -1,0 +1,1075 @@
+{
+  "base": "fadb73dac800cede26389fe883602967cf5b8784",
+  "inputs": 267,
+  "all_match": true,
+  "rows": [
+    {
+      "path": "package-lock.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "package.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "playwright.config.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "public/.nojekyll",
+      "matches_canonical": true
+    },
+    {
+      "path": "public/IPIlogo.svg",
+      "matches_canonical": true
+    },
+    {
+      "path": "public/samples/billing-conversation.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "public/samples/delivery-conversation.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/AlertsPanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/AnswerSetQuestionTools.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/AnswerSetsPage.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/App.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/AutomationPanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/CalibrationPage.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/ConditionBuilder.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/CoverageFunnel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/EvaluationProvenance.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/EvaluationsPage.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/FormTestPanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/GovernancePanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/GroupResultsPanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/GroupedFormEditor.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/LibraryFilters.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/NotificationsPanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/OperationalTable.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/OptionEditor.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/OverviewSummary.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/OverviewView.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/PoliciesPage.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/QuestionEditor.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/QuestionGroupsPage.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/ResponsiveViewSwitcher.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/ReviewOperations.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/ReviewPanel.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/ReviewScoreSummary.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/ServerAnalytics.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/SetupChecklist.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/Transcript.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/WorkspaceNavigation.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/analyticsPresentation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/analyticsPresentation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/authoringPresentation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/authoringPresentation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/brandTokens.css",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/calibrationPresentation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/calibrationPresentation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/coverageInterpretation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/analytics.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/answerSetDiscovery.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/answerSets.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/answerSets.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/authoring.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/authoring.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/cachedSource.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/calibration.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/conversationCache.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/conversationCache.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/conversations.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/definitionAuthority.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/definitionAuthority.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/demoHistory.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/evaluations.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/formComposition.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/formComposition.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/formLifecycle.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/formLifecycle.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/formTestIsolation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/forms.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesys.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysAuth.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysAuth.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysDigital.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysDigital.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysEmail.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysEmail.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysForm.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysForm.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysMedia.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/genesysMedia.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/governance.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/groupAssets.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/groupAssets.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/groupScoring.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/investigationNavigation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/logic.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/manualClient.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/manualClient.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/navigation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/navigation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/notifications.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/operationalAlerts.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/overview.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/policies.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/policyAuthoring.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/policyAuthoring.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/policyClient.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/policyClient.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/policyRuns.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/portability.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/providerFailure.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/publicConfig.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/publicConfig.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/reviewSla.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/reviewSla.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/reviews.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/reviews.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/saveProtection.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/scorecard.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/seedAnswerSets.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/seedGroupAssets.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/setupGuidance.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/setupGuidance.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/sources.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/sources.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/types.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/v02.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/v03.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/v04.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/domain/validation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/evaluationAvailability.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/evaluationAvailability.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/calibrationDiscoveryFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/evaluationFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/genesys-detail.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/genesys-transcript.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/investigationFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/overviewFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/fixtures/reviewFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/main.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/navigationPresentation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/navigationPresentation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/overviewPresentation.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/overviewPresentation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/provider/jev.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/provider/jev.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/samples/billing-conversation.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/samples/delivery-conversation.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/alertStore.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/alerts.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/alerts.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/analytics.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/analytics.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/answerSets.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/api.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/api.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/audit.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/authoring.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/bulkReviewDue.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/conditionalExecution.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/digitalProof.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/digitalProof.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/formPublication.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/formTests.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/formTests.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/governance.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/governance.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/groupAssets.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/investigationLinks.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/main.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/manualEvaluations.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/manualEvaluations.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/notificationApi.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/notificationProviders.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/notificationTransport.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/notifications.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/notifications.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/overview.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/overview.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/policyAuthoring.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/policyAuthoring.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/providers.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/providers.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/releaseProof.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviewOperations.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviewOperations.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviewSla.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviewSla.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviewSlaApi.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviews.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/reviews.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/runner.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/runner.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/schedules.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/schedules.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/seedGroupAssets.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/seedGroupAssets.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/store.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/server/store.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/CostCalculator.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/Demo.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/Root.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/Welcome.tsx",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/claims.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/economics.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/economics.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/fixtures.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/routing.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/showcase.css",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/showcase/showcase.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/styles.css",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/useDetailFocus.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/useReviewDrafts.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/useReviewDrafts.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/useSavedConfiguration.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/userLanguage.test.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "src/userLanguage.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/answer-set-discovery.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/answer-sets.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/answerSetsApi.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/authoring-baseline.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/authoring-simplification.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/authoring.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/authoringSimplificationFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/automation.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/calculator-rounding.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/calibration-discovery.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/calibration.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/calibrationDiscoveryFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/control-plane-cache.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/coverage-interpretation.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/coverageInterpretationFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/definition-authority.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/digital-policy.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/email.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/evaluation-availability.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/first-use-settings.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/form-composition.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/form-publication.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/governance.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/governanceFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/group-scoring-alerts.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/investigation-history.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/investigation-links.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/messaging.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/navigation-baseline.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/navigation-guards.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/navigation-tasks.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/notifications.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/operational-table.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/operations.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/overview-first-scan.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/overview-geometry.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/overview-regression-smoke.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/overview.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/overviewFirstScanFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/overviewFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/policy-authoring.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/quality-actionability.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/qualityActionabilityFixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/review-operations.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/review-sla.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-cards.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-continuity-fixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-continuity.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-effectiveness.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-focus-baseline.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-focus.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-recheck-api.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/reviewer-recheck-fixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/role-navigation.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/save-protection.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/showcase.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/usability-fixture.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/usability.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/user-language.spec.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tests/workspace-navigation.ts",
+      "matches_canonical": true
+    },
+    {
+      "path": "tsconfig.json",
+      "matches_canonical": true
+    },
+    {
+      "path": "vite.config.ts",
+      "matches_canonical": true
+    }
+  ]
+}

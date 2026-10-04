@@ -1,0 +1,201 @@
+IPI AQM
+Automated Quality Management
+Configuration
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+◇
+Policies
+Monitor / Quality
+Interactions
+⚙
+Settings
+About / product tour
+Workspace / Evaluation Forms
+AUTHOR
+Jev available through AQM
+CONFIGURATION
+Evaluation Forms
+
+Build the complete quality evaluation: questions, scoring and pass rules.
+
+Reuse Question Groups for related questions and Answer Sets for common answers.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+	
+Status
+	
+Version
+	
+Questions
+	
+Assigned policies
+	
+Evaluations
+	
+Average score
+	
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 6 forms
+New draft · DRAFT · VERSION 1
+Clear resolution pilot
+Close details
+Save changes
+Publish version
+More actions
+
+Unsaved changes
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Question groups
+
+Question weights determine the overall score.
+
+Add group
+Add reusable group
+Scoring rules · Question weighted · Yes threshold 65%
+General
+1 question
+Group settings
+01
+Resolution clarity
+
+Yes / No · Weight 1 · Enabled
+
+Did the agent explain the resolution and agree the next step clearly?
+
+Yes / No
+
+Done
+Edit: Resolution clarity
+Question
+Title
+Instructions / question
+Answer format
+Yes / No
+Multiple choice
+Ordered scale
+Answers
+Use reusable Answer Set
+Published Answer Sets
+Cancel
+Find Answer Set
+
+4 published Answer Sets.
+
+Customer effort · v1
+
+Ordered scale · 5 levels
+
+Very low · Low · Moderate · High · Very high
+
+Customer effort uses Ordered scale. Your question currently uses Yes / No.
+
+Preview Customer effort v1 format change
+Resolution clarity · v2
+
+Multiple choice · 5 answers
+
+Unclear · Partly clear · Mostly clear · Completely clear · Not applicable
+
+Resolution clarity uses Multiple choice. Your question currently uses Yes / No.
+
+Preview Resolution clarity v2 format change
+Change answer format
+
+This changes the answer format from Yes / No to Multiple choice and replaces this question’s current answers with Resolution clarity v2.
+
+The question wording, instructions, weight and position are kept.
+
+Current answers: Yes · No
+
+New answers, in order:
+
+Unclear · 0%
+
+Unclear resolution clarity.
+
+Partly clear · 50%
+
+Partly clear resolution clarity.
+
+Mostly clear · 75%
+
+Mostly clear resolution clarity.
+
+Completely clear · 90%
+
+Clear resolution clarity.
+
+Not applicable · Not scored
+
+Outside this question
+
+Change to Multiple choice and use Resolution clarity v2
+Cancel format change
+Resolution clarity · v1
+
+Multiple choice · 4 answers
+
+Clear · Mostly clear · Partly clear · Unclear
+
+Resolution clarity uses Multiple choice. Your question currently uses Yes / No.
+
+Preview Resolution clarity v1 format change
+Service quality · v1
+
+Ordered scale · 4 levels
+
+Excellent · Good · Adequate · Poor
+
+Service quality uses Ordered scale. Your question currently uses Yes / No.
+
+Preview Service quality v1 format change
+Scoring
+Weight
+Enabled
+Applicability
+Add question condition
+Advanced details
+Organize question
+Delete question
+Done
+Add question
+View history
+Test this form

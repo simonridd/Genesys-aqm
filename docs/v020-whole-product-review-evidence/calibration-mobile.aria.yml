@@ -1,0 +1,140 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Analytics"
+      - button "Evaluations"
+      - button "Calibration"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Calibration
+  - text: VIEWER Jev available through AQM HUMAN + AI
+  - heading "Calibration" [level=1]
+  - paragraph: Find human / AI disagreements and their supporting evaluations.
+  - region "Calibration scope":
+    - strong: Genesys Cloud · 2026-09-25 – 2026-10-02
+    - paragraph: General Customer Service v17
+    - text: All agents · All queues
+    - button "Change filters"
+  - region "Where humans and AI differ":
+    - heading "Where humans and AI differ" [level=2]
+    - paragraph: Highest disagreement rate in this scope
+    - heading "Understanding the issue" [level=3]
+    - paragraph: General Customer Service v17
+    - paragraph:
+      - strong: 2 of 2 comparable reviewed answers disagreed
+      - text: 100.0% disagreement
+    - button "Inspect question →"
+    - button "Open disagreements →"
+  - text: Evaluations reviewed
+  - strong: "2"
+  - text: Questions reviewed
+  - strong: "6"
+  - text: Exact agreement
+  - strong: 33%
+  - text: Mean absolute score gap
+  - strong: 16.0 pp
+  - text: Unresolved reviews
+  - strong: "3"
+  - text: 2 in progress · outside completed comparisons View
+  - combobox "View":
+    - option "Form / version"
+    - option "Groups"
+    - option "Questions" [selected]
+    - option "Question types"
+    - option "Confidence vs disagreement"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 3 results
+  - list "Calibration question comparisons":
+    - listitem:
+      - article:
+        - heading "Open calibration Warm opening · General Customer Service v17" [level=3]:
+          - button "Open calibration Warm opening · General Customer Service v17": Warm opening
+        - paragraph: General Customer Service v17
+        - term: Reviews
+        - definition: "2"
+        - term: Comparable answers
+        - definition: "2"
+        - term: Exact agreement
+        - definition: 0%
+        - term: Disagreements
+        - definition: "2"
+        - term: AI credit
+        - definition: 100%
+        - term: Human credit
+        - definition: 0%
+        - term: Mean credit gap
+        - definition: 100.0 pp
+        - term: "Confidence: agree"
+        - definition: —
+        - term: "Confidence: disagree"
+        - definition: 95%
+    - listitem:
+      - article:
+        - heading "Open calibration Understanding the issue · General Customer Service v17" [level=3]:
+          - button "Open calibration Understanding the issue · General Customer Service v17": Understanding the issue
+        - paragraph: General Customer Service v17
+        - term: Reviews
+        - definition: "2"
+        - term: Comparable answers
+        - definition: "2"
+        - term: Exact agreement
+        - definition: 0%
+        - term: Disagreements
+        - definition: "2"
+        - term: AI credit
+        - definition: 33%
+        - term: Human credit
+        - definition: 67%
+        - term: Mean credit gap
+        - definition: 33.9 pp
+        - term: "Confidence: agree"
+        - definition: —
+        - term: "Confidence: disagree"
+        - definition: 75%
+    - listitem:
+      - article:
+        - heading "Open calibration Resolution · General Customer Service v17" [level=3]:
+          - button "Open calibration Resolution · General Customer Service v17": Resolution
+        - paragraph: General Customer Service v17
+        - term: Reviews
+        - definition: "2"
+        - term: Comparable answers
+        - definition: "2"
+        - term: Exact agreement
+        - definition: 100%
+        - term: Disagreements
+        - definition: "0"
+        - term: AI credit
+        - definition: 100%
+        - term: Human credit
+        - definition: 100%
+        - term: Mean credit gap
+        - definition: 0.0 pp
+        - term: "Confidence: agree"
+        - definition: 85%
+        - term: "Confidence: disagree"
+        - definition: —
+  - region "Question calibration drill-down":
+    - text: General Customer Service v17
+    - heading "Understanding the issue" [level=2]
+    - paragraph: 2 completed reviews · 2 comparable answers · 0 agree / 2 disagree
+    - button "Close question"
+    - paragraph: "AI credit: 33% · Human credit: 67% · Mean credit gap: 33.9 pp"
+    - button "Open reviewed evaluations"
+    - button "Open disagreements"
+    - button "Open reviewed evaluation 1 →"
+    - button "Open reviewed evaluation 2 →"
+    - group: Advanced details
+  - paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

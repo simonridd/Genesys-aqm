@@ -1,0 +1,34 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Analytics"
+      - button "Evaluations"
+      - button "Calibration"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Calibration
+  - text: VIEWER Jev available through AQM HUMAN + AI
+  - heading "Calibration" [level=1]
+  - paragraph: Find human / AI disagreements and their supporting evaluations.
+  - region "Calibration scope":
+    - strong: Genesys Cloud · 2026-09-25 – 2026-10-02
+    - paragraph: All form versions
+    - text: All agents · All queues
+    - button "Change filters"
+  - status: Loading form choices…
+  - status: Loading calibration…
+  - paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

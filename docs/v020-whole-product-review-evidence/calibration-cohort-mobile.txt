@@ -1,0 +1,137 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+▥
+Analytics
+◷
+Evaluations
+◎
+Calibration
+Reference configuration
+Interactions
+⚙
+Settings
+About / product tour
+Workspace / Evaluations
+VIEWER
+Jev available through AQM
+Back to Calibration
+QUALITY
+Evaluations
+
+Find saved evaluations, inspect the AI result and follow human review progress.
+
+Investigating:
+Remove
+Form: General Customer Service v17 ×
+Remove
+Reviewed question: Understanding the issue ×
+Remove
+Comparison: disagreements ×
+Remove
+Human review: Completed ×
+Remove
+Source: Genesys Cloud ×
+Remove
+From: 2026-09-25 ×
+Remove
+To: 2026-10-02 ×
+Clear investigation filters
+
+Search checks up to 500 evaluations at a time. Use Next to continue.
+
+Team review workload
+History
+Saved in AQM
+Saved in this browser
+Review status
+All
+Not reviewed
+Review requested
+In progress
+Completed
+Assignment
+All
+Unassigned
+Assigned
+Assigned to me
+admin
+Alex Reviewer
+SLA state
+All states
+Due soon
+Overdue
+Escalated
+Due
+All
+Overdue
+Due today
+Due next 7 days
+No due date
+Agent
+Queue
+Channel
+Result
+All
+Pass
+Fail
+From
+To
+Source
+All
+Genesys Cloud
+Synthetic
+Uploaded
+Trigger
+All
+Manual
+Scheduled
+Critical failure
+All
+Yes
+No
+Refresh
+Advanced filters
+
+Loaded 01:03:00 PM
+
+Search
+2 results on this page
+Evaluated ↓
+	
+Evaluation
+	
+Agent
+	
+Queue
+	
+Form
+	
+Source
+	
+AI score
+	
+Human review
+	
+Human score
+	
+Agreement
+	
+Assigned to
+	
+Due
+	
+Reviewer
+	
+Reviewed at
+
+10/1/2026, 9:00:00 AM	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	Genesys Cloud	78%	Completed	62%	1/3	Owner	9/28/2026, 1:00:00 PM
+Completed
+	Owner	10/2/2026, 1:00:00 PM
+10/1/2026, 9:00:00 AM	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	Genesys Cloud	78%	Completed	62%	1/3	Unassigned	9/28/2026, 1:00:00 PM
+Completed
+	Owner	10/2/2026, 1:00:00 PM
+First page
+Next page →

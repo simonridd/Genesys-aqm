@@ -1,0 +1,47 @@
+{
+  "canonical_input": "fadb73dac800cede26389fe883602967cf5b8784",
+  "deterministic": {
+    "files": 72,
+    "passed": 714,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 2.29
+  },
+  "build": "PASS (tsc -b and Vite)",
+  "typecheck_server": "PASS",
+  "lint": "No current lint script; not claimed",
+  "fresh_browser": {
+    "startTime": "2026-10-04T18:04:37.350Z",
+    "duration": 23577.273,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "current_browser": {
+    "startTime": "2026-10-04T18:05:16.288Z",
+    "duration": 554509.628,
+    "expected": 234,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "unmodified_failure_reproduction": {
+    "startTime": "2026-10-04T18:17:25.480Z",
+    "duration": 16750.293,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "public_equality": "12/12 clean built files = Pages tree = live response bytes",
+  "node": "v22.13.0",
+  "source_input_verification": "267 source/config/existing-test inputs match canonical Git blobs",
+  "safety": {
+    "production_mutations": 0,
+    "deployments": 0,
+    "real_provider_calls": 0,
+    "jev_calls": 0,
+    "notifications": 0
+  }
+}

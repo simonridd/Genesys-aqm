@@ -1,0 +1,163 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Evaluations"
+      - button "Analytics"
+      - button "Calibration"
+    - group:
+      - text: Configuration
+      - button "Policies"
+      - button "Evaluation Forms"
+      - button "Question Groups"
+      - button "Answer Sets"
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Overview
+  - text: ADMIN Jev available through AQM OPERATIONAL HOME
+  - heading "Overview" [level=1]
+  - paragraph: Quality, coverage and work requiring attention.
+  - text: Updated 13:00:00 · Europe/London Dashboard range
+  - combobox "Dashboard range":
+    - option "7 days" [selected]
+    - option "30 days"
+  - button "Refresh"
+  - region "Attention required":
+    - heading "Attention required" [level=2]
+    - text: Action needed REVIEW & SYSTEM ATTENTION
+    - button "2 errors"
+    - button "1 escalated review"
+    - button "1 overdue review"
+    - button "1 warning"
+    - text: 0 failed notification deliveries (24h)
+    - button "Error Scheduled run failed Open run →":
+      - text: Error
+      - strong: Scheduled run failed
+      - text: Open run →
+    - button "Error Review escalated Open review →":
+      - text: Error
+      - strong: Review escalated
+      - text: Open review →
+    - button "View all active alerts →"
+  - region "At a glance":
+    - heading "At a glance" [level=2]
+    - region "Quality summary":
+      - heading "Quality" [level=3]
+      - paragraph: Last 7 days
+      - text: Average quality
+      - 'button "Average quality: 79%"': 79% →
+      - text: Evaluated conversations
+      - strong: "8"
+      - text: Evaluations
+      - 'button "Evaluations: 8"': 8 →
+      - text: Pass rate
+      - strong: 100%
+      - text: Critical failure occurrences
+      - 'button "Critical failure occurrences: 0"': 0 →
+      - button "Explore quality →"
+    - region "Coverage summary":
+      - heading "Coverage" [level=3]
+      - paragraph: Last 7 days
+      - text: Evaluation coverage
+      - strong: 20%
+      - text: Eligible
+      - strong: "20"
+      - text: Sampled
+      - strong: "10"
+      - text: Content available
+      - strong: "6"
+      - text: Evaluated
+      - strong: "4"
+      - text: Failed evaluation attempts
+      - strong: "3"
+      - text: Sampling coverage
+      - strong: 50%
+      - button "Explore coverage →"
+    - region "Review work summary":
+      - heading "Review work" [level=3]
+      - paragraph: Current state
+      - text: Open
+      - 'button "Open: 7"': 7 →
+      - text: Due soon
+      - 'button "Due soon: 1"': 1 →
+      - text: Overdue
+      - 'button "Overdue: 1"': 1 →
+      - text: Escalated
+      - 'button "Escalated: 1"': 1 →
+      - text: Unassigned
+      - 'button "Unassigned: 1"': 1 →
+      - button "My review queue →"
+      - button "All review work →"
+    - region "Automation health summary":
+      - heading "Automation health" [level=3]
+      - paragraph: Current state
+      - text: Automation
+      - strong: Attention
+      - text: Genesys
+      - strong: Unverified
+      - text: Jev
+      - strong: Error
+      - text: Scheduler
+      - strong: Healthy
+      - text: Notifications
+      - strong: Healthy
+      - text: Review SLA
+      - strong: Escalated
+      - group: System details
+  - region "Quality detail":
+    - heading "Quality trend" [level=2]
+    - paragraph: Last 7 days
+    - text: 78% 09-30 · 1 evaluations 79% 10-01 · 7 evaluations
+    - paragraph: Limited history in this period. · 8 evaluations
+    - group:
+      - strong: Coverage details
+      - text: 20 eligible · 10 sampled · 6 content available · 4 evaluated
+  - region "Upcoming automation":
+    - heading "Automation" [level=2]
+    - button "Run a policy now"
+    - paragraph: 1 completed · 0 partial · 1 failed · 0 running in the last 7 days
+    - heading "Last automated run" [level=3]
+    - button "1 Oct, 03:00 Daily Voice Customer Service AQM Scheduled 2 evaluations Completed":
+      - text: 1 Oct, 03:00
+      - strong: Daily Voice Customer Service AQM
+      - text: Scheduled 2 evaluations Completed
+    - paragraph: Latest successful scheduled execution.
+    - heading "Upcoming scheduled work" [level=3]
+    - strong: Daily Voice Customer Service AQM
+    - text: DAILY Next due 3 Oct, 02:00 Last success 1 Oct, 03:00
+    - button "View/Edit policy →"
+    - strong: Daily Voice Customer Service AQM
+    - text: WEEKLY Next due 5 Oct, 02:00 Last success —
+    - button "View/Edit policy →"
+  - region "Recent runs":
+    - heading "Recent runs" [level=2]
+    - button "2 Oct, 09:00 Daily Voice Customer Service AQM Manual 0 evaluations · 3 failed Failed":
+      - text: 2 Oct, 09:00
+      - strong: Daily Voice Customer Service AQM
+      - text: Manual 0 evaluations · 3 failed Failed
+    - button "1 Oct, 03:00 Daily Voice Customer Service AQM Scheduled 2 evaluations Completed":
+      - text: 1 Oct, 03:00
+      - strong: Daily Voice Customer Service AQM
+      - text: Scheduled 2 evaluations Completed
+    - button "15 Sept, 03:00 Daily Voice Customer Service AQM Scheduled 2 evaluations Completed":
+      - text: 15 Sept, 03:00
+      - strong: Daily Voice Customer Service AQM
+      - text: Scheduled 2 evaluations Completed
+  - button "Evaluation Forms →"
+  - button "Policies →"
+  - button "Open alerts →"
+  - button "Settings →"
+  - group: Run a policy now
+  - group: Detailed alerts & run operations

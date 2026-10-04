@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-04T18:22:02.127470+00:00",
+  "canonical_base": "fadb73dac800cede26389fe883602967cf5b8784",
+  "review_branch": "codex/aqm-v020-fresh-whole-product-review",
+  "lock_commit": "003f4d79a0909c4eaf8b5809e24c3d15468b81b6",
+  "lock_sha256": "77ec87707f750868d0996b255378da96d15b2609c2d239337ea405e564b5f380",
+  "changed_paths_checked": 293,
+  "permitted_roots": [
+    "docs/v020-whole-product-review.md",
+    "docs/v020-whole-product-review-evidence/"
+  ],
+  "product_source_changes": 0,
+  "existing_test_changes": 0,
+  "production_config_changes": 0,
+  "dependency_changes": 0,
+  "roadmap_changes": 0,
+  "review_only_never_merge": true,
+  "final_commit_diff_rechecked_in_handoff": true
+}

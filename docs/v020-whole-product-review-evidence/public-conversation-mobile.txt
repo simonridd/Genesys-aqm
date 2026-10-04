@@ -1,0 +1,125 @@
+IPI AQM
+Automated Quality Management
+Interactions
+☷
+Conversations
+Monitor / Quality
+Configuration
+⚙
+Settings
+About / product tour
+Workspace / Conversation detail
+Connect Genesys Cloud
+Conversation source
+Fictional sample data · no credentials
+Synthetic
+Genesys Cloud
+AUTOMATED QUALITY MANAGEMENT
+Conversation detail
+
+Inspect the conversation and its context, or run an AI evaluation. Human review independently answers the evaluation form.
+
+← Back to conversations
+Browse 19 samples →
+MP
+CONVERSATION TRANSCRIPT
+Maya Patel with Alex Morgan
+29 Sept 2026 at 09:00 · messaging
+Closed
+QUEUE
+Customer Service
+TOPIC
+Billing
+DIRECTION
+inbound
+MESSAGES
+11
+29 Sept 2026
+M
+Maya Patel
+09:00
+Hi, I think I've been charged twice for my September plan. Could you take a look?
+A
+Alex Morgan
+09:00
+Hi Maya, you're through to Alex. I'm sorry to hear about the duplicate charge. I'll help you check it.
+A
+Alex Morgan
+09:00
+Before we discuss your account, could you confirm the last four digits of the phone number on it?
+M
+Maya Patel
+09:00
+Sure, 4821.
+A
+Alex Morgan
+09:01
+Thank you, that's verified. I can see two payments of £29 on 27 September. One was a duplicate and has not yet been refunded.
+M
+Maya Patel
+09:01
+That's a relief. I was worried I'd have to dispute it with my bank.
+A
+Alex Morgan
+09:01
+I understand the concern. I've submitted a refund for the extra £29 payment. It should return to the same card within five working days.
+M
+Maya Patel
+09:01
+Great, will I receive a confirmation?
+A
+Alex Morgan
+09:02
+Yes. A confirmation email will be sent today. If the refund hasn't appeared after five working days, reply to that email and quote reference REF-2048. Is there anything else I can help with?
+M
+Maya Patel
+09:02
+No, that's everything. Thanks for sorting it out.
+A
+Alex Morgan
+09:02
+You're welcome, Maya. Thanks for getting in touch, and have a good day.
+Conversation details
+End of conversation
+·
+11 messages
+CURRENT CONVERSATION
+Duplicate payment
+SYNTHETIC SAMPLE
+Change conversation
+↑ Upload JSON
+POLICY ROUTING
+2 matches
+Applicable evaluations
+Customer Service Messaging
+channel equals messaging AND queue equals Customer Service
+Cross-channel monitoring sample
+channel equals messaging
+General Customer Service
+9 questions · v1 · up to 1 AI request (Jev)
+Evaluate →
+Compliance & Identity Verification
+5 questions · v1 · up to 1 AI request (Jev)
+Evaluate →
+Manual form selection
+General Customer Service
+Compliance & Identity Verification
+Complaints Handling
+Retention / Cancellation
+Sales / Service Quality
+Customer Service - AI Scoring
+
+1 form evaluation · up to 1 AI request
+
+✦ Evaluate selected form →
+
+Only published, valid evaluation forms can be used. Draft and testing forms can be tested in the isolated sandbox.
+
+Test a draft/testing form
+
+Connect Genesys Cloud to evaluate this conversation.
+
+◎
+One result per form
+
+Each evaluation is saved in AQM with the exact published form version and evaluation provenance.

@@ -1,0 +1,60 @@
+IPI AQM
+Automated Quality Management
+Configuration
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+◇
+Policies
+Monitor / Quality
+Interactions
+⚙
+Settings
+About / product tour
+Workspace / Policies
+AUTHOR
+Jev available through AQM
+CONFIGURATION
+Policies
+
+Choose which conversations are evaluated and which published forms apply.
+
+Saved AQM policies
+
+Refresh policies
+＋ New policy
+Status
+All
+Enabled
+Disabled
+Schedule
+All
+Manual
+Daily
+Weekly
+Forms
+All
+Has assigned forms
+No assigned forms
+Search
+1 results
+Name ↓
+	
+Status
+	
+Version
+	
+Criteria
+	
+Assigned forms
+	
+Sampling
+	
+Schedule
+	
+Last modified
+
+Daily Voice Customer Service AQM	Enabled	v1	channel equals voice	General Customer Service v17	50%	Weekly on Monday at 02:00 Europe/London	—

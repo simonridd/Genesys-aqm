@@ -1,0 +1,188 @@
+IPI AQM
+Automated Quality Management
+Interactions
+☷
+Conversations
+Monitor / Quality
+Configuration
+⚙
+Settings
+About / product tour
+Workspace / Conversations
+Connect Genesys Cloud
+Conversation source
+Fictional sample data · no credentials
+Synthetic
+Genesys Cloud
+SYNTHETIC CONVERSATION LIBRARY
+Conversations
+
+Fictional scenarios across queues, channels and service outcomes.
+
+Table
+Cards
+Queue
+All queues
+Customer Service
+Orders
+Billing
+Complaints
+Retention
+Technical Support
+Sales
+Channel
+All channels
+messaging
+voice
+Customer Service · messaging
+Good
+Duplicate payment
+
+A duplicate charge is refunded with a clear timeline.
+
+Alex Morgan · 11 messages · Billing
+Open transcript →
+Orders · messaging
+Mixed
+Delayed delivery
+
+A delayed parcel needs follow-up.
+
+Jordan Lee · 7 messages · Delayed delivery
+Open transcript →
+Customer Service · messaging
+Excellent
+Excellent general service
+
+An agent owns a damaged-item replacement from start to finish.
+
+Priya Shah · 11 messages · Delivery
+Open transcript →
+Customer Service · messaging
+Mixed
+Mediocre service
+
+Correct information, but little ownership or clarity.
+
+Jordan Lee · 12 messages · Delivery
+Open transcript →
+Customer Service · messaging
+Poor
+Clearly poor service
+
+The agent dismisses an incorrect charge and ends the chat.
+
+Casey Brown · 10 messages · Billing
+Open transcript →
+Billing · voice
+Mixed
+Billing dispute
+
+A disputed fee receives a clear investigation path.
+
+Alex Morgan · 10 messages · Billing
+Open transcript →
+Complaints · voice
+Good
+Formal complaint
+
+The agent acknowledges impact and records a complaint.
+
+Sam Rivera · 11 messages · Complaint
+Open transcript →
+Retention · messaging
+Good
+Respectful cancellation
+
+A clear cancellation without pressure.
+
+Priya Shah · 10 messages · Cancellation
+Open transcript →
+Retention · voice
+Mixed
+Retention attempt
+
+A relevant offer, but the agent pushes after refusal.
+
+Jordan Lee · 10 messages · Cancellation
+Open transcript →
+Customer Service · messaging
+Excellent
+Verification success
+
+Secure checks precede account disclosure.
+
+Alex Morgan · 11 messages · Security
+Open transcript →
+Customer Service · messaging
+Poor
+Verification failure
+
+Account information is revealed after a failed check.
+
+Casey Brown · 10 messages · Security
+Open transcript →
+Customer Service · voice
+Good
+Repeat contact
+
+The agent uses prior case history to avoid repetition.
+
+Sam Rivera · 10 messages · Delivery
+Open transcript →
+Technical Support · voice
+Mixed
+Transfer and escalation
+
+A warm handoff follows a technical diagnosis.
+
+Taylor Quinn · 10 messages · Technical
+Open transcript →
+Billing · voice
+Excellent
+Vulnerable customer
+
+The agent adapts pace and offers accessible follow-up.
+
+Priya Shah · 11 messages · Billing
+Open transcript →
+Technical Support · messaging
+Mixed
+Incomplete resolution
+
+Good investigation, but no concrete next step.
+
+Jordan Lee · 12 messages · Technical
+Open transcript →
+Customer Service · messaging
+Mixed
+Empathy, process gap
+
+Warm support with account disclosure before verification.
+
+Sam Rivera · 12 messages · Billing
+Open transcript →
+Customer Service · messaging
+Mixed
+Correct but cold
+
+Technically correct answers delivered curtly.
+
+Casey Brown · 12 messages · Returns
+Open transcript →
+Customer Service · voice
+Mixed
+Compliant but unresolved
+
+Careful identity checks but no ownership of the issue.
+
+Taylor Quinn · 12 messages · Billing
+Open transcript →
+Sales · voice
+Excellent
+Needs-led sales
+
+A recommendation linked to stated needs and clear terms.
+
+Alex Morgan · 12 messages · Sales
+Open transcript →

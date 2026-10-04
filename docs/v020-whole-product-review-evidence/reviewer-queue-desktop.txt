@@ -1,0 +1,84 @@
+IPI AQM
+Automated Quality Management
+Quality / Review
+◷
+Evaluations
+◎
+Calibration
+▥
+Analytics
+◌
+Overview
+Reference configuration
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Evaluations
+REVIEWER
+Jev available through AQM
+QUALITY
+Evaluations
+
+Choose a review, inspect the evidence and record your judgment.
+
+My reviews
+All evaluations
+More filters
+
+Reviews needing attention appear first.
+
+My reviews
+ASSIGNED OPEN
+5
+DUE SOON
+1
+OVERDUE
+1
+ESCALATED
+1
+Available unassigned reviews (1) →
+
+Loaded 01:00:26 PM
+
+Search
+5 results on this page
+Queue priority	Review action	Evaluation	Agent	Queue	Form	AI score	Human review	Due
+
+ESCALATED
+Overdue by 4 days
+	Start review	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	78%	Ready to review	9/28/2026, 1:00:00 PM
+ESCALATED
+Overdue by 4 days
+
+
+OVERDUE
+Overdue by 6 hours
+	Start review	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	78%	Ready to review	10/2/2026, 7:00:00 AM
+OVERDUE
+Overdue by 6 hours
+
+
+DUE SOON
+Due in 6 hours
+	Start review	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	78%	Ready to review	10/2/2026, 7:00:00 PM
+DUE SOON
+Due in 6 hours
+
+
+Due in 3 days
+	Continue review	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	78%	In progress	10/5/2026, 1:00:00 PM
+Due in 3 days
+
+
+Due in 3 days
+	Start review	Alex Morgan · voice	Alex Morgan	Customer care	General Customer Service v17	78%	Ready to review	10/5/2026, 1:00:00 PM
+Due in 3 days
+First page
+Next page →

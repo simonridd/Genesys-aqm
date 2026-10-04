@@ -1,0 +1,76 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Configuration
+      - button "Evaluation Forms"
+      - button "Question Groups"
+      - button "Answer Sets"
+      - button "Policies"
+    - group: Monitor / Quality
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Policies
+  - text: AUTHOR Jev available through AQM CONFIGURATION
+  - heading "Policies" [level=1]
+  - paragraph: Choose which conversations are evaluated and which published forms apply.
+  - paragraph: Saved AQM policies
+  - button "Refresh policies"
+  - button "＋ New policy"
+  - text: Status
+  - combobox "Policy status":
+    - option "All" [selected]
+    - option "Enabled"
+    - option "Disabled"
+  - text: Schedule
+  - combobox "Policy schedule filter":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Daily"
+    - option "Weekly"
+  - text: Forms
+  - combobox "Policy forms filter":
+    - option "All" [selected]
+    - option "Has assigned forms"
+    - option "No assigned forms"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 1 results
+  - region "Policies table":
+    - table:
+      - rowgroup:
+        - row "Name ↓ Status Version Criteria Assigned forms Sampling Schedule Last modified":
+          - columnheader "Name ↓":
+            - button "Name ↓"
+          - columnheader "Status":
+            - button "Status"
+          - columnheader "Version":
+            - button "Version"
+          - columnheader "Criteria":
+            - button "Criteria"
+          - columnheader "Assigned forms":
+            - button "Assigned forms"
+          - columnheader "Sampling":
+            - button "Sampling"
+          - columnheader "Schedule":
+            - button "Schedule"
+          - columnheader "Last modified":
+            - button "Last modified"
+      - rowgroup:
+        - row "Daily Voice Customer Service AQM Enabled v1 channel equals voice General Customer Service v17 50% Weekly on Monday at 02:00 Europe/London —":
+          - cell "Daily Voice Customer Service AQM":
+            - button "Daily Voice Customer Service AQM"
+          - cell "Enabled"
+          - cell "v1"
+          - cell "channel equals voice"
+          - cell "General Customer Service v17"
+          - cell "50%"
+          - cell "Weekly on Monday at 02:00 Europe/London"
+          - cell "—"

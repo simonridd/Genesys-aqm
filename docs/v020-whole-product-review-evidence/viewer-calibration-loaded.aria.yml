@@ -1,0 +1,88 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Analytics"
+      - button "Evaluations"
+      - button "Calibration"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Calibration
+  - text: VIEWER Jev available through AQM HUMAN + AI
+  - heading "Calibration" [level=1]
+  - paragraph: Find human / AI disagreements and their supporting evaluations.
+  - region "Calibration scope":
+    - strong: Genesys Cloud · 2026-09-25 – 2026-10-02
+    - paragraph: All form versions
+    - text: All agents · All queues
+    - button "Change filters"
+  - region "Where humans and AI differ":
+    - heading "Where humans and AI differ" [level=2]
+    - paragraph: Highest disagreement rate in this scope
+    - heading "Understanding the issue" [level=3]
+    - paragraph: General Customer Service v17
+    - paragraph:
+      - strong: 2 of 2 comparable reviewed answers disagreed
+      - text: 100.0% disagreement
+    - button "Inspect question →"
+    - button "Open disagreements →"
+  - text: Evaluations reviewed
+  - strong: "2"
+  - text: Questions reviewed
+  - strong: "6"
+  - text: Exact agreement
+  - strong: 33%
+  - text: Mean absolute score gap
+  - strong: 16.0 pp
+  - text: Unresolved reviews
+  - strong: "3"
+  - text: 2 in progress · outside completed comparisons
+  - group "Calibration breakdown":
+    - button "Form / version" [pressed]
+    - button "Groups"
+    - button "Questions"
+    - button "Question types"
+    - button "Confidence vs disagreement"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 1 results
+  - region "Calibration forms table":
+    - table:
+      - rowgroup:
+        - row "Dimension ↓ Reviews Questions Exact agreement Disagreements Mean score gap":
+          - columnheader "Dimension ↓":
+            - button "Dimension ↓"
+          - columnheader "Reviews":
+            - button "Reviews"
+          - columnheader "Questions":
+            - button "Questions"
+          - columnheader "Exact agreement":
+            - button "Exact agreement"
+          - columnheader "Disagreements":
+            - button "Disagreements"
+          - columnheader "Mean score gap":
+            - button "Mean score gap"
+      - rowgroup:
+        - row "Open calibration General Customer Service v17 2 6 33% 4 16.0 pp":
+          - cell "Open calibration General Customer Service v17":
+            - button "Open calibration General Customer Service v17": General Customer Service v17
+          - cell "2"
+          - cell "6"
+          - cell "33%"
+          - cell "4"
+          - cell "16.0 pp"
+  - paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

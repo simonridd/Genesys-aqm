@@ -1,0 +1,75 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+Configuration
+◇
+Policies
+▤
+Evaluation Forms
+▦
+Question Groups
+☷
+Answer Sets
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Settings
+ADMIN
+Jev available through AQM
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Notifications
+Audit
+Advanced / Development
+Connection
+
+Connect Genesys Cloud to browse real interactions and use saved AQM configuration.
+
+G
+REAL ORGANIZATIONAL DATA
+Genesys Cloud
+Connected
+Genesys Cloud sign-in
+
+Authentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.
+
+Region
+EU (Ireland)
+EU (Frankfurt)
+US East
+US West
+Australia
+Japan
+OAuth Client ID
+
+Redirect URI: https://simonridd.github.io/Genesys-aqm/
+
+Region: EU (Ireland) · Session expires 2:00:00 PM
+
+Verify connection
+Disconnect
+
+Connected to Genesys Cloud · User admin.
+
+Open Overview

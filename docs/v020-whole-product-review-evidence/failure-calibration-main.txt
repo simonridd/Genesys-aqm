@@ -1,0 +1,48 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+Configuration
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Calibration
+ADMIN
+Jev available through AQM
+HUMAN + AI
+Calibration
+
+Find human / AI disagreements and their supporting evaluations.
+
+Genesys Cloud · All dates
+
+All form versions
+
+All agents · All queues
+Change filters
+
+Form choices unavailable — retry
+
+Retry form choices
+Technical details
+
+Calibration could not be loaded.
+
+Retry calibration
+Technical details
+
+Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

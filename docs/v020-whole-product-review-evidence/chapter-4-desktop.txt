@@ -1,0 +1,48 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+
+FIVE-MINUTE CUSTOMER CASE
+
+The customer case
+Define quality
+Evaluate at scale
+Human challenge
+Manage & pilot
+
+One conversation, from agreed quality to a pilot decision.
+
+Chapter 4 of 5
+
+Human challenge
+“Later” is not an agreed timeline.
+ORIGINAL AI ANSWER
+Yes, next step clear
+
+Clear next step · 100% credit
+
+PREPARED HUMAN REVIEW
+No, timeline not agreed
+
+Timeline not agreed · 0% credit
+
+ORIGINAL AI SCORE · UNCHANGED
+100%
+Pass
+HUMAN REVIEW SCORE
+56%
+Fail · critical next-step criterion
+DIFFERENCE
+44
+percentage points
+
+The human agrees on empathy and restored access, but gives no credit for the missing timeline. The same weighted rules produce the human score.
+
+Human review doesn’t rewrite the AI result. It creates independent evidence for calibration.
+
+Example review completed. The original AI result is unchanged. Two answers agree; one differs. This single review does not establish AI accuracy across a population.
+
+Inspect the review audit
+Back
+Next
+Exit demo
+More options

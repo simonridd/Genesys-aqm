@@ -1,0 +1,120 @@
+IPI AQM
+Automated Quality Management
+Quality / Review
+◷
+Evaluations
+◎
+Calibration
+▥
+Analytics
+◌
+Overview
+Reference configuration
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Evaluations
+REVIEWER
+Jev available through AQM
+Back to My Reviews
+MY REVIEW
+General Customer Service v17
+
+Alex Morgan · Customer care · voice
+
+Completed
+Completed
+Open conversation evidence
+HUMAN REVIEW
+Completed calibration
+
+Completed · Assigned to you
+
+REAL GENESYS DATA
+AI SCORE
+78%
+HUMAN SCORE
+38%
+EXACT AGREEMENT
+2 / 3
+ABSOLUTE SCORE GAP
+40.6 pp
+Group comparison
+Customer care
+
+AI group score: 78%
+
+Human group score: 38%
+
+Difference: -40.6 pp
+
+Review completed. It has been removed from My Reviews. The original AI result is preserved.
+
+Close and continue My Reviews
+All
+Agreements
+Disagreements
+Customer care
+Warm opening
+Agreement
+
+Did the agent greet the customer and offer help at the start of the conversation?
+
+HUMAN REVIEW
+Yes
+
+Human credit 100%
+
+AI RESULT
+Yes
+
+Credit 100% · Yes probability 95%
+
+Selected-answer confidence 95%
+Customer care
+Understanding the issue
+Agreement
+
+How effectively did the agent establish and acknowledge the customer’s actual issue?
+
+HUMAN REVIEW
+Needs improvement
+
+Human credit 33%
+
+AI RESULT
+1.00 / 3
+
+Credit 33% · Confidence 75%
+
+Exact value distance: 0.00 bands
+Customer care
+Resolution
+Disagreement
+
+What is the best description of the issue outcome by the end of the conversation?
+
+HUMAN REVIEW
+Unresolved
+
+Human credit 0%
+
+AI RESULT
+Fully resolved
+
+Credit 100% · Confidence 85%
+
+Reviewer note
+
+The short transcript does not establish full resolution; original AI result retained.
+
+Review history (3 events)
+AI evaluation result
+Evaluation provenance

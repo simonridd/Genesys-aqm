@@ -1,0 +1,303 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Interactions
+      - button "Conversations"
+    - group: Monitor / Quality
+    - group: Configuration
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Conversations
+  - text: Connect Genesys Cloud
+  - strong: Conversation source
+  - text: Fictional sample data · no credentials
+  - button "Synthetic"
+  - button "Genesys Cloud"
+  - text: SYNTHETIC CONVERSATION LIBRARY
+  - heading "Conversations" [level=1]
+  - paragraph: Fictional scenarios across queues, channels and service outcomes.
+  - group "View":
+    - button "Table"
+    - button "Cards"
+  - text: Queue
+  - combobox "Queue":
+    - option "All queues" [selected]
+    - option "Customer Service"
+    - option "Orders"
+    - option "Billing"
+    - option "Complaints"
+    - option "Retention"
+    - option "Technical Support"
+    - option "Sales"
+  - text: Channel
+  - combobox "Channel":
+    - option "All channels" [selected]
+    - option "messaging"
+    - option "voice"
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 19 results
+  - region "Sample conversations table":
+    - table:
+      - rowgroup:
+        - row "Timestamp ↓ Conversation ID Source Channel Agent Queue Direction Topic Transcript Evaluations":
+          - columnheader "Timestamp ↓":
+            - button "Timestamp ↓"
+          - columnheader "Conversation ID":
+            - button "Conversation ID"
+          - columnheader "Source":
+            - button "Source"
+          - columnheader "Channel":
+            - button "Channel"
+          - columnheader "Agent":
+            - button "Agent"
+          - columnheader "Queue":
+            - button "Queue"
+          - columnheader "Direction":
+            - button "Direction"
+          - columnheader "Topic":
+            - button "Topic"
+          - columnheader "Transcript":
+            - button "Transcript"
+          - columnheader "Evaluations":
+            - button "Evaluations"
+      - rowgroup:
+        - row "29 Sept 2026 Open conversation conv-delivery-002 Synthetic messaging Jordan Lee Orders inbound Delayed delivery Available 0":
+          - cell "29 Sept 2026"
+          - cell "Open conversation conv-delivery-002":
+            - button "Open conversation conv-delivery-002": conv-delivery-002
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Jordan Lee"
+          - cell "Orders"
+          - cell "inbound"
+          - cell "Delayed delivery"
+          - cell "Available"
+          - cell "0"
+        - row "29 Sept 2026 Open conversation conv-billing-001 Synthetic messaging Alex Morgan Customer Service inbound Billing Available 0":
+          - cell "29 Sept 2026"
+          - cell "Open conversation conv-billing-001":
+            - button "Open conversation conv-billing-001": conv-billing-001
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Alex Morgan"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Billing"
+          - cell "Available"
+          - cell "0"
+        - row "17 Sept 2026 Open conversation syn-sales-service Synthetic voice Alex Morgan Sales inbound Sales Available 0":
+          - cell "17 Sept 2026"
+          - cell "Open conversation syn-sales-service":
+            - button "Open conversation syn-sales-service": syn-sales-service
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Alex Morgan"
+          - cell "Sales"
+          - cell "inbound"
+          - cell "Sales"
+          - cell "Available"
+          - cell "0"
+        - row "16 Sept 2026 Open conversation syn-compliant-unresolved Synthetic voice Taylor Quinn Customer Service inbound Billing Available 0":
+          - cell "16 Sept 2026"
+          - cell "Open conversation syn-compliant-unresolved":
+            - button "Open conversation syn-compliant-unresolved": syn-compliant-unresolved
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Taylor Quinn"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Billing"
+          - cell "Available"
+          - cell "0"
+        - row "15 Sept 2026 Open conversation syn-correct-poor-experience Synthetic messaging Casey Brown Customer Service inbound Returns Available 0":
+          - cell "15 Sept 2026"
+          - cell "Open conversation syn-correct-poor-experience":
+            - button "Open conversation syn-correct-poor-experience": syn-correct-poor-experience
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Casey Brown"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Returns"
+          - cell "Available"
+          - cell "0"
+        - row "14 Sept 2026 Open conversation syn-empathy-process-gap Synthetic messaging Sam Rivera Customer Service inbound Billing Available 0":
+          - cell "14 Sept 2026"
+          - cell "Open conversation syn-empathy-process-gap":
+            - button "Open conversation syn-empathy-process-gap": syn-empathy-process-gap
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Sam Rivera"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Billing"
+          - cell "Available"
+          - cell "0"
+        - row "13 Sept 2026 Open conversation syn-incomplete-resolution Synthetic messaging Jordan Lee Technical Support inbound Technical Available 0":
+          - cell "13 Sept 2026"
+          - cell "Open conversation syn-incomplete-resolution":
+            - button "Open conversation syn-incomplete-resolution": syn-incomplete-resolution
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Jordan Lee"
+          - cell "Technical Support"
+          - cell "inbound"
+          - cell "Technical"
+          - cell "Available"
+          - cell "0"
+        - row "12 Sept 2026 Open conversation syn-vulnerable-customer Synthetic voice Priya Shah Billing inbound Billing Available 0":
+          - cell "12 Sept 2026"
+          - cell "Open conversation syn-vulnerable-customer":
+            - button "Open conversation syn-vulnerable-customer": syn-vulnerable-customer
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Priya Shah"
+          - cell "Billing"
+          - cell "inbound"
+          - cell "Billing"
+          - cell "Available"
+          - cell "0"
+        - row "11 Sept 2026 Open conversation syn-transfer Synthetic voice Taylor Quinn Technical Support inbound Technical Available 0":
+          - cell "11 Sept 2026"
+          - cell "Open conversation syn-transfer":
+            - button "Open conversation syn-transfer": syn-transfer
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Taylor Quinn"
+          - cell "Technical Support"
+          - cell "inbound"
+          - cell "Technical"
+          - cell "Available"
+          - cell "0"
+        - row "10 Sept 2026 Open conversation syn-repeat-contact Synthetic voice Sam Rivera Customer Service inbound Delivery Available 0":
+          - cell "10 Sept 2026"
+          - cell "Open conversation syn-repeat-contact":
+            - button "Open conversation syn-repeat-contact": syn-repeat-contact
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Sam Rivera"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Delivery"
+          - cell "Available"
+          - cell "0"
+        - row "9 Sept 2026 Open conversation syn-verification-failure Synthetic messaging Casey Brown Customer Service inbound Security Available 0":
+          - cell "9 Sept 2026"
+          - cell "Open conversation syn-verification-failure":
+            - button "Open conversation syn-verification-failure": syn-verification-failure
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Casey Brown"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Security"
+          - cell "Available"
+          - cell "0"
+        - row "8 Sept 2026 Open conversation syn-verification-success Synthetic messaging Alex Morgan Customer Service inbound Security Available 0":
+          - cell "8 Sept 2026"
+          - cell "Open conversation syn-verification-success":
+            - button "Open conversation syn-verification-success": syn-verification-success
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Alex Morgan"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Security"
+          - cell "Available"
+          - cell "0"
+        - row "7 Sept 2026 Open conversation syn-retention-attempt Synthetic voice Jordan Lee Retention inbound Cancellation Available 0":
+          - cell "7 Sept 2026"
+          - cell "Open conversation syn-retention-attempt":
+            - button "Open conversation syn-retention-attempt": syn-retention-attempt
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Jordan Lee"
+          - cell "Retention"
+          - cell "inbound"
+          - cell "Cancellation"
+          - cell "Available"
+          - cell "0"
+        - row "6 Sept 2026 Open conversation syn-cancellation Synthetic messaging Priya Shah Retention inbound Cancellation Available 0":
+          - cell "6 Sept 2026"
+          - cell "Open conversation syn-cancellation":
+            - button "Open conversation syn-cancellation": syn-cancellation
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Priya Shah"
+          - cell "Retention"
+          - cell "inbound"
+          - cell "Cancellation"
+          - cell "Available"
+          - cell "0"
+        - row "5 Sept 2026 Open conversation syn-complaint Synthetic voice Sam Rivera Complaints inbound Complaint Available 0":
+          - cell "5 Sept 2026"
+          - cell "Open conversation syn-complaint":
+            - button "Open conversation syn-complaint": syn-complaint
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Sam Rivera"
+          - cell "Complaints"
+          - cell "inbound"
+          - cell "Complaint"
+          - cell "Available"
+          - cell "0"
+        - row "4 Sept 2026 Open conversation syn-billing-dispute Synthetic voice Alex Morgan Billing inbound Billing Available 0":
+          - cell "4 Sept 2026"
+          - cell "Open conversation syn-billing-dispute":
+            - button "Open conversation syn-billing-dispute": syn-billing-dispute
+          - cell "Synthetic"
+          - cell "voice"
+          - cell "Alex Morgan"
+          - cell "Billing"
+          - cell "inbound"
+          - cell "Billing"
+          - cell "Available"
+          - cell "0"
+        - row "3 Sept 2026 Open conversation syn-poor-service Synthetic messaging Casey Brown Customer Service inbound Billing Available 0":
+          - cell "3 Sept 2026"
+          - cell "Open conversation syn-poor-service":
+            - button "Open conversation syn-poor-service": syn-poor-service
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Casey Brown"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Billing"
+          - cell "Available"
+          - cell "0"
+        - row "2 Sept 2026 Open conversation syn-mediocre-service Synthetic messaging Jordan Lee Customer Service inbound Delivery Available 0":
+          - cell "2 Sept 2026"
+          - cell "Open conversation syn-mediocre-service":
+            - button "Open conversation syn-mediocre-service": syn-mediocre-service
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Jordan Lee"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Delivery"
+          - cell "Available"
+          - cell "0"
+        - row "1 Sept 2026 Open conversation syn-excellent-service Synthetic messaging Priya Shah Customer Service inbound Delivery Available 0":
+          - cell "1 Sept 2026"
+          - cell "Open conversation syn-excellent-service":
+            - button "Open conversation syn-excellent-service": syn-excellent-service
+          - cell "Synthetic"
+          - cell "messaging"
+          - cell "Priya Shah"
+          - cell "Customer Service"
+          - cell "inbound"
+          - cell "Delivery"
+          - cell "Available"
+          - cell "0"

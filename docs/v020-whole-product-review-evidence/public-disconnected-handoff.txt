@@ -1,0 +1,83 @@
+IPI AQM
+Automated Quality Management
+Interactions
+☷
+Conversations
+Monitor / Quality
+Configuration
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Conversations
+Connect Genesys Cloud
+Conversation source
+Fictional sample data · no credentials
+Synthetic
+Genesys Cloud
+SYNTHETIC CONVERSATION LIBRARY
+Conversations
+
+Fictional scenarios across queues, channels and service outcomes.
+
+Table
+Cards
+Queue
+All queues
+Customer Service
+Orders
+Billing
+Complaints
+Retention
+Technical Support
+Sales
+Channel
+All channels
+messaging
+voice
+Search
+19 results
+Timestamp ↓
+	
+Conversation ID
+	
+Source
+	
+Channel
+	
+Agent
+	
+Queue
+	
+Direction
+	
+Topic
+	
+Transcript
+	
+Evaluations
+
+29 Sept 2026	conv-delivery-002	Synthetic	messaging	Jordan Lee	Orders	inbound	Delayed delivery	Available	0
+29 Sept 2026	conv-billing-001	Synthetic	messaging	Alex Morgan	Customer Service	inbound	Billing	Available	0
+17 Sept 2026	syn-sales-service	Synthetic	voice	Alex Morgan	Sales	inbound	Sales	Available	0
+16 Sept 2026	syn-compliant-unresolved	Synthetic	voice	Taylor Quinn	Customer Service	inbound	Billing	Available	0
+15 Sept 2026	syn-correct-poor-experience	Synthetic	messaging	Casey Brown	Customer Service	inbound	Returns	Available	0
+14 Sept 2026	syn-empathy-process-gap	Synthetic	messaging	Sam Rivera	Customer Service	inbound	Billing	Available	0
+13 Sept 2026	syn-incomplete-resolution	Synthetic	messaging	Jordan Lee	Technical Support	inbound	Technical	Available	0
+12 Sept 2026	syn-vulnerable-customer	Synthetic	voice	Priya Shah	Billing	inbound	Billing	Available	0
+11 Sept 2026	syn-transfer	Synthetic	voice	Taylor Quinn	Technical Support	inbound	Technical	Available	0
+10 Sept 2026	syn-repeat-contact	Synthetic	voice	Sam Rivera	Customer Service	inbound	Delivery	Available	0
+9 Sept 2026	syn-verification-failure	Synthetic	messaging	Casey Brown	Customer Service	inbound	Security	Available	0
+8 Sept 2026	syn-verification-success	Synthetic	messaging	Alex Morgan	Customer Service	inbound	Security	Available	0
+7 Sept 2026	syn-retention-attempt	Synthetic	voice	Jordan Lee	Retention	inbound	Cancellation	Available	0
+6 Sept 2026	syn-cancellation	Synthetic	messaging	Priya Shah	Retention	inbound	Cancellation	Available	0
+5 Sept 2026	syn-complaint	Synthetic	voice	Sam Rivera	Complaints	inbound	Complaint	Available	0
+4 Sept 2026	syn-billing-dispute	Synthetic	voice	Alex Morgan	Billing	inbound	Billing	Available	0
+3 Sept 2026	syn-poor-service	Synthetic	messaging	Casey Brown	Customer Service	inbound	Billing	Available	0
+2 Sept 2026	syn-mediocre-service	Synthetic	messaging	Jordan Lee	Customer Service	inbound	Delivery	Available	0
+1 Sept 2026	syn-excellent-service	Synthetic	messaging	Priya Shah	Customer Service	inbound	Delivery	Available	0

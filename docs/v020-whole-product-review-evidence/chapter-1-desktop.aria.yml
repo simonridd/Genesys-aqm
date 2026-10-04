@@ -1,0 +1,42 @@
+- banner:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Interactive demo · fictional data · no live requests
+- complementary "Guided product story":
+  - paragraph: FIVE-MINUTE CUSTOMER CASE
+  - list:
+    - listitem:
+      - button "The customer case"
+    - listitem:
+      - button "Define quality"
+    - listitem:
+      - button "Evaluate at scale"
+    - listitem:
+      - button "Human challenge"
+    - listitem:
+      - button "Manage & pilot"
+  - paragraph: One conversation, from agreed quality to a pilot decision.
+- main:
+  - paragraph: Chapter 1 of 5
+  - heading "The customer case" [level=1]
+  - progressbar "Tour progress"
+  - heading "Was Jamie given a clear next step?" [level=2]
+  - paragraph: Jamie needs account access before the next shift. Alex restores access, but the team settings are still missing.
+  - region "Conversation transcript":
+    - heading "Jamie Taylor with Alex Morgan" [level=2]
+    - strong: Jamie
+    - paragraph: The reset link will not work. I need access before my next shift.
+    - strong: Alex
+    - paragraph: I understand how frustrating that is. Let us try a fresh reset link.
+    - strong: Jamie
+    - paragraph: That worked. How long until my team settings return?
+    - strong: Alex
+    - paragraph: They should return later. Try signing in again.
+    - strong: Jamie
+    - paragraph: All right, I will try. Thanks.
+  - paragraph: Access is restored. “Later” leaves Jamie without an agreed timeline.
+  - navigation "Tour controls":
+    - button "Back" [disabled]
+    - button "Next"
+    - button "Exit demo"
+  - group: More options

@@ -1,0 +1,62 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Evaluations"
+      - button "Analytics"
+      - button "Calibration"
+    - group: Configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Settings
+  - text: ADMIN Jev available through AQM
+  - heading "Settings" [level=1]
+  - paragraph: Connect Genesys Cloud and manage your organization's AQM settings.
+  - navigation "Settings sections":
+    - button "Connection"
+    - button "Access"
+    - button "Reviews"
+    - button "Privacy & retention"
+    - button "Notifications"
+    - button "Audit"
+    - button "Advanced / Development"
+  - heading "Connection" [level=2]
+  - region "Governance"
+  - paragraph: Connect Genesys Cloud to browse real interactions and use saved AQM configuration.
+  - text: G REAL ORGANIZATIONAL DATA
+  - heading "Genesys Cloud" [level=2]
+  - text: Connected
+  - strong: Genesys Cloud sign-in
+  - paragraph: Authentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.
+  - text: Region
+  - combobox "Region":
+    - option "EU (Ireland)" [selected]
+    - option "EU (Frankfurt)"
+    - option "US East"
+    - option "US West"
+    - option "Australia"
+    - option "Japan"
+  - text: OAuth Client ID
+  - textbox "OAuth Client ID":
+    - /placeholder: Genesys OAuth client ID
+    - text: e05784c9-2421-4c2b-a3af-79fafb25aea8
+  - paragraph:
+    - text: "Redirect URI:"
+    - code: https://simonridd.github.io/Genesys-aqm/
+  - paragraph: "Region: EU (Ireland) · Session expires 2:00:00 PM"
+  - button "Verify connection"
+  - button "Disconnect"
+  - status: Connected to Genesys Cloud · User admin.
+  - button "Open Overview"

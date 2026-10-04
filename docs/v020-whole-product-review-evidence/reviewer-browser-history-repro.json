@@ -1,0 +1,41 @@
+{
+  "steps": [
+    {
+      "step": "before",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "length": 2
+    },
+    {
+      "step": "back",
+      "url": "about:blank",
+      "text": ""
+    },
+    {
+      "step": "forward",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "text": "IPI AQM\nAutomated Quality Management\nInteractions\n☷\nConversations\nMonitor / Quality\n▥\nAnalytics\n◌\nOverview\n◷\nEvaluations\n◎\nCalibration\nConfiguration\n⚙\nSettings\nAbout / product tour\n✦\nDecision intelligence powered by Jev\n\nTyped AI decisions, shaped into clear quality signals.\n\nV0.19D SHOWCASE • 2026\nWorkspace / Evaluations\nConnect Genesys Cloud\nQUALITY\nEvaluations\n\nChoose a review, inspect the evidence and record your judgment.\n\nMy reviews\nAll evaluations\nMore filters\n\nConnect to Genesys Cloud in Settings to view saved evaluations.\n\nMy reviews"
+    }
+  ],
+  "nav": [
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "time": 1791135571241
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluate&reviewQueue=mine&assignment=mine",
+      "time": 1791135571547
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "time": 1791135571566
+    },
+    {
+      "url": "about:blank",
+      "time": 1791135587300
+    },
+    {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "time": 1791135587823
+    }
+  ]
+}

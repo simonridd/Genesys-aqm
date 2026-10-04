@@ -1,0 +1,81 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Analytics"
+      - button "Evaluations"
+      - button "Calibration"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Analytics
+  - text: VIEWER Jev available through AQM
+  - button "Sample / browser data"
+  - button "Saved AQM analytics"
+  - text: QUALITY ANALYTICS
+  - heading "Quality analytics" [level=1]
+  - paragraph: Understand quality, coverage and where to investigate.
+  - region "Selected quality cohort":
+    - strong: 25 September 2026 – 2 October 2026
+    - paragraph: Genesys Cloud · All policies · All published forms
+    - text: 8 evaluations · 8 evaluated conversations
+    - button "Change filters"
+  - group "Analytics views":
+    - button "Overview"
+    - button "Agents"
+    - button "Queues"
+    - button "Forms"
+    - button "Groups"
+    - button "Questions"
+    - button "Coverage" [pressed]
+  - region "Coverage scope":
+    - heading "Coverage scope" [level=2]
+    - paragraph: 25 September 2026 – 2 October 2026 · Genesys Cloud · All policies
+    - paragraph: Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.
+    - paragraph: Date, source and policy filter monitoring runs. Form, queue, agent, channel and trigger quality filters do not change overall coverage denominators.
+    - paragraph: 40 interactions considered (Candidates) · 20 met policy criteria
+    - list "Coverage funnel":
+      - listitem:
+        - strong: Eligible
+        - text: 20 Met policy criteria
+      - listitem:
+        - strong: Sampled
+        - text: 10 50% · Sampling coverage · of eligible
+      - listitem:
+        - strong: Content available
+        - text: 6 60% · Content availability · of sampled
+      - listitem:
+        - strong: Evaluated
+        - text: 4 66.7% · Sample completion · of available
+    - paragraph:
+      - strong: "Evaluation coverage: 20%"
+      - text: · Evaluated / eligible
+    - paragraph:
+      - text: "Failed evaluation attempts:"
+      - strong: "3"
+    - paragraph: Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+    - paragraph: Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    - heading "Policy selection" [level=3]
+    - paragraph: 10 eligible interactions were not selected by the sampling policy.
+    - paragraph: The sampling policy selected 10 of 20 eligible interactions (50%).
+    - paragraph: Sampling can deliberately select only part of the eligible population.
+    - heading "Coverage after sampling" [level=3]
+    - paragraph: 4 sampled interactions had no usable conversation content.
+    - paragraph: 2 interactions had content available but did not reach a completed evaluation.
+  - paragraph: Content available is not recorded by queue or agent. Breakdowns include only runs carrying that evidence; older runs may not include it. Viewing evaluated quality narrows evaluations without changing historical coverage.
+  - heading "Coverage by queue" [level=2]
+  - paragraph: 0 runs carry queue coverage evidence.
+  - heading "Coverage by agent" [level=2]
+  - group: Data scope & technical details

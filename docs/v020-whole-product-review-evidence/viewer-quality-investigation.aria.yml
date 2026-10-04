@@ -1,0 +1,91 @@
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Monitor / Quality
+      - button "Overview"
+      - button "Analytics"
+      - button "Evaluations"
+      - button "Calibration"
+    - group: Reference configuration
+    - group: Interactions
+    - button "Settings"
+    - button "About / product tour"
+  - text: ✦
+  - strong: Decision intelligence powered by Jev
+  - paragraph: Typed AI decisions, shaped into clear quality signals.
+  - text: V0.19D SHOWCASE • 2026
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Analytics
+  - text: VIEWER Jev available through AQM
+  - button "Sample / browser data"
+  - button "Saved AQM analytics"
+  - text: QUALITY ANALYTICS
+  - heading "Quality analytics" [level=1]
+  - paragraph: Understand quality, coverage and where to investigate.
+  - region "Selected quality cohort":
+    - strong: 25 September 2026 – 2 October 2026
+    - paragraph: Genesys Cloud · All policies · All published forms
+    - text: 8 evaluations · 8 evaluated conversations
+    - button "Change filters"
+  - group "Analytics views":
+    - button "Overview" [pressed]
+    - button "Agents"
+    - button "Queues"
+    - button "Forms"
+    - button "Groups"
+    - button "Questions"
+    - button "Coverage"
+  - text: Average quality
+  - strong: 78.5%
+  - text: Evaluated conversations
+  - strong: "8"
+  - text: 8 evaluations Pass rate
+  - strong: 100%
+  - text: Evaluations with critical failure
+  - strong: 0%
+  - text: 0 failure occurrences Review state
+  - strong: 1 Awaiting review
+  - text: 2 In progress · 2 Reviewed
+  - region "What stands out":
+    - heading "What stands out" [level=2]
+    - article:
+      - text: Lowest average question in this cohort
+      - strong: General Customer Service v17 · Understanding the issue
+      - paragraph: 33.1% average · 8 applicable answers
+      - button "Inspect evaluations →"
+    - article:
+      - text: Lowest average queue among queues with evaluated conversations
+      - strong: Customer care
+      - paragraph: 78.5% average · 8 evaluations
+      - button "Inspect evaluations →"
+    - article:
+      - text: Lowest average group in this cohort
+      - strong: General Customer Service v17 · Customer care
+      - paragraph: 78.3% AI average · 8 applicable evaluations
+      - button "View group comparison →"
+    - paragraph: Comparisons describe this selected cohort. Sample sizes vary; rankings do not establish statistical significance or a cause.
+  - heading "Quality by day" [level=2]
+  - paragraph: Limited history in this period.
+  - time: 2026-09-30
+  - strong: 78.3%
+  - text: 1 evaluations
+  - time: 2026-10-01
+  - strong: 78.5%
+  - text: 7 evaluations
+  - heading "Score distribution" [level=2]
+  - strong: 0–20%
+  - text: "0"
+  - strong: 20–40%
+  - text: "0"
+  - strong: 40–60%
+  - text: "0"
+  - strong: 60–80%
+  - text: "7"
+  - strong: 80–100%
+  - text: "1"
+  - group: Data scope & technical details

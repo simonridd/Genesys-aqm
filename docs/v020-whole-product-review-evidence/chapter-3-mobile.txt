@@ -1,0 +1,48 @@
+IPI AQM
+Interactive demo · fictional data · no live requests
+
+Chapter 3 of 5
+
+Evaluate at scale
+Jev answers. AQM scores.
+
+Jev answers specific quality questions in predefined formats. Related questions can be batched in one AI request; AQM applies the agreed scoring rules.
+
+Acknowledged the impact
+AI answer
+Yes
+Credit
+100%
+Issue resolved
+AI answer
+Yes
+Credit
+100%
+Clear next step
+AI answer
+Clear next step
+Credit
+100%
+
+Evidence to inspect: “They should return later. Try signing in again.”
+
+AI confidence: 56%. Confidence is not measured correctness.
+
+ORIGINAL AI SCORE
+100%
+Pass · all three applicable answers earned full credit
+
+The AI accepted “later” as a clear timeline. That judgment deserves a human challenge.
+
+Broader coverage becomes attractive
+
+Structured, batched questions and Jev’s very low model input cost make broader evaluation economically attractive.
+
+In this example, a policy selects 24 of 48 eligible conversations (50%) from one customer-service queue. Each uses the same published form. Conditional questions need another request only when they apply.
+
+The calculator on Welcome lets you change volume, selection and request assumptions. Model cost is one component of a pilot’s operating cost.
+
+Back
+Next
+Exit demo
+More options
