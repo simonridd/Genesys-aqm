@@ -1,0 +1,766 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/private/tmp/aqm-v020d-investigation-history/node_modules/.bin/playwright",
+      "test",
+      "tests/investigation-history.spec.ts",
+      "--config",
+      "docs/v020d-evidence/playwright.config.ts"
+    ],
+    "configFile": "/private/tmp/aqm-v020d-investigation-history/docs/v020d-evidence/playwright.config.ts",
+    "rootDir": "/private/tmp/aqm-v020d-investigation-history/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/aqm-v020d-investigation-history/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/private/tmp/aqm-v020d-investigation-history/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/aqm-v020d-investigation-history/docs/v020d-evidence/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --host 127.0.0.1 --port 4174",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "investigation-history.spec.ts",
+      "file": "investigation-history.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Questions exact filters, one push, Back/Forward and repeat 1440x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5883,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:20:53.640Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-2cd64be6fdc5b786bb16",
+          "file": "investigation-history.spec.ts",
+          "line": 60,
+          "column": 121
+        },
+        {
+          "title": "Questions exact filters, one push, Back/Forward and repeat 1920x1080",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:20:59.686Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-7f1cc26ca20a828ee7e0",
+          "file": "investigation-history.spec.ts",
+          "line": 60,
+          "column": 121
+        },
+        {
+          "title": "Questions exact filters, one push, Back/Forward and repeat 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5868,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:05.389Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-000579b811e3acddc417",
+          "file": "investigation-history.spec.ts",
+          "line": 60,
+          "column": 121
+        },
+        {
+          "title": "Questions exact filters, one push, Back/Forward and repeat 1440x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5777,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:11.261Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-b5cc00280a797c0e30b1",
+          "file": "investigation-history.spec.ts",
+          "line": 60,
+          "column": 121
+        },
+        {
+          "title": "v18 stays v18 rather than v17 or All published forms",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30027,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts",
+                        "column": 75,
+                        "line": 51
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.quality-analytics .operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })\u001b[22m\n\n\n  49 |  await page.getByRole('button',{name:'Change filters',exact:true}).click()\n  50 | }\n> 51 | async function drill(page:Page,button:Locator,before:number){await button.click();await expect(rows(page).first()).toBeVisible();expect(await length(page)).toBe(before+1);return page.url()}\n     |                                                                           ^\n  52 | async function roundTrip(page:Page,sourceUrl:string,drillUrl:string,view:string,version=17,repeats=1){\n  53 |  const size=await length(page)\n  54 |  for(let i=0;i<repeats;i++){\n    at drill (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:51:75)\n    at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:79:16"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:17.042Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v020d-investigation-history/test-results/investigation-history-v18--5c38a--v17-or-All-published-forms/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-6c5178d338ec9b323e36",
+          "file": "investigation-history.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "Queues investigation uses the same history path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3156,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:47.529Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-61b51aba17c194bfc30b",
+          "file": "investigation-history.spec.ts",
+          "line": 82,
+          "column": 50
+        },
+        {
+          "title": "Groups investigation uses the same history path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3003,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:50.778Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-0aeebb628688dd3e9659",
+          "file": "investigation-history.spec.ts",
+          "line": 82,
+          "column": 50
+        },
+        {
+          "title": "Overview investigation uses the same history path",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3150,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:53.789Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-b6d8c3b33aa803d6b15c",
+          "file": "investigation-history.spec.ts",
+          "line": 82,
+          "column": 50
+        },
+        {
+          "title": "reload preserves browser stack; fictional reconnect does not fabricate a source",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3984,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:21:56.953Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-a5915581c92a06988f9a",
+          "file": "investigation-history.spec.ts",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "Analytics and Evaluations failure retain restored scope and exact retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3510,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:22:00.944Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-e432385df1abec4f2b99",
+          "file": "investigation-history.spec.ts",
+          "line": 98,
+          "column": 1
+        },
+        {
+          "title": "explicit Back to Analytics reconstructs clean safe context from a deep link",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7777,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&\u001b[7mqueue=Claims&agent=Sam&\u001b[27msource=genesys-cloud&form=general_service%4017&\u001b[7mpolicy=daily_voice\u001b[27m&channel=voice&mode=scheduled\"\u001b[39m\nReceived: \u001b[31m\"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud\u001b[7m&policy=daily_voice\u001b[27m&form=general_service%4017&\u001b[7magent=Sam&queue=Claims\u001b[27m&channel=voice&mode=scheduled\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&\u001b[7mqueue=Claims&agent=Sam&\u001b[27msource=genesys-cloud&form=general_service%4017&\u001b[7mpolicy=daily_voice\u001b[27m&channel=voice&mode=scheduled\"\u001b[39m\nReceived: \u001b[31m\"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud\u001b[7m&policy=daily_voice\u001b[27m&form=general_service%4017&\u001b[7magent=Sam&queue=Claims\u001b[27m&channel=voice&mode=scheduled\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled\"\u001b[22m\n\n    at assertSource (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:44:21)\n    at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:114:79",
+                    "location": {
+                      "file": "/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts",
+                      "column": 21,
+                      "line": 44
+                    },
+                    "snippet": "  42 |  await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible()\n  43 |  await expect.poll(()=>selectedView(page)).toBe(view)\n> 44 |  await expect(page).toHaveURL(url)\n     |                     ^\n  45 |  await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText(`Customer Service v${version}`)\n  46 |  for(const key of transient)expect(query(page.url())[key]).toBeUndefined()\n  47 |  await page.getByRole('button',{name:'Change filters',exact:true}).click()"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts",
+                        "column": 21,
+                        "line": 44
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected: \u001b[32m\"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&\u001b[7mqueue=Claims&agent=Sam&\u001b[27msource=genesys-cloud&form=general_service%4017&\u001b[7mpolicy=daily_voice\u001b[27m&channel=voice&mode=scheduled\"\u001b[39m\nReceived: \u001b[31m\"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud\u001b[7m&policy=daily_voice\u001b[27m&form=general_service%4017&\u001b[7magent=Sam&queue=Claims\u001b[27m&channel=voice&mode=scheduled\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 5000ms\u001b[22m\n\u001b[2m    14 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m       - unexpected value \"http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled\"\u001b[22m\n\n\n  42 |  await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible()\n  43 |  await expect.poll(()=>selectedView(page)).toBe(view)\n> 44 |  await expect(page).toHaveURL(url)\n     |                     ^\n  45 |  await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText(`Customer Service v${version}`)\n  46 |  for(const key of transient)expect(query(page.url())[key]).toBeUndefined()\n  47 |  await page.getByRole('button',{name:'Change filters',exact:true}).click()\n    at assertSource (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:44:21)\n    at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:114:79"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:22:04.460Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v020d-investigation-history/test-results/investigation-history-expl-3e01b-fe-context-from-a-deep-link/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts",
+                    "column": 21,
+                    "line": 44
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-3eca6add34d50bb4bf08",
+          "file": "investigation-history.spec.ts",
+          "line": 112,
+          "column": 1
+        },
+        {
+          "title": "direct external Evaluation entry has no fabricated Analytics history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:22:12.624Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-d79f3ed14717543d2ae9",
+          "file": "investigation-history.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "Calibration disagreement Back/Forward restores exact version, question, view and cohort",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3945,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:22:13.995Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-e23b4878fc37a2ce366b",
+          "file": "investigation-history.spec.ts",
+          "line": 127,
+          "column": 1
+        },
+        {
+          "title": "keyboard-only Questions history and usable restored view 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30027,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts",
+                        "column": 87,
+                        "line": 15
+                      },
+                      "message": "Error: locator.evaluate: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.quality-analytics .operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })\u001b[22m\n\n\n  13 | const query=(url:string)=>Object.fromEntries(new URL(url).searchParams)\n  14 | const length=(page:Page)=>page.evaluate(()=>history.length)\n> 15 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(node=>node===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard target unreachable')}\n     |                                                                                       ^\n  16 | async function source(page:Page,version=17,view='Questions',keyboard=false){\n  17 |  await navigateWorkspace(page,'About / product tour')\n  18 |  await page.getByRole('button',{name:'Open AQM',exact:true}).first().click()\n    at tabTo (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:15:87)\n    at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:141:8"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:22:17.947Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v020d-investigation-history/test-results/investigation-history-keyb-1395f-d-usable-restored-view-1440/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-521f3577f1424e952c13",
+          "file": "investigation-history.spec.ts",
+          "line": 137,
+          "column": 31
+        },
+        {
+          "title": "keyboard-only Questions history and usable restored view 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30032,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts",
+                        "column": 87,
+                        "line": 15
+                      },
+                      "message": "Error: locator.evaluate: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.analytics-tabs').getByRole('button', { name: 'Questions', exact: true })\u001b[22m\n\n\n  13 | const query=(url:string)=>Object.fromEntries(new URL(url).searchParams)\n  14 | const length=(page:Page)=>page.evaluate(()=>history.length)\n> 15 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(node=>node===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard target unreachable')}\n     |                                                                                       ^\n  16 | async function source(page:Page,version=17,view='Questions',keyboard=false){\n  17 |  await navigateWorkspace(page,'About / product tour')\n  18 |  await page.getByRole('button',{name:'Open AQM',exact:true}).first().click()\n    at tabTo (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:15:87)\n    at source (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:35:266)\n    at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:140:10"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:22:48.353Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v020d-investigation-history/test-results/investigation-history-keyb-1f127-nd-usable-restored-view-390/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-07980e5ea87cee44d008",
+          "file": "investigation-history.spec.ts",
+          "line": 137,
+          "column": 31
+        },
+        {
+          "title": "session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1511,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:23:18.840Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-5c2fa04fbdd9c8e2d927",
+          "file": "investigation-history.spec.ts",
+          "line": 146,
+          "column": 1
+        },
+        {
+          "title": "Overview characterization: range is not URL durable and its drill still replaces",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1676,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T12:23:20.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "945b5152686a6da48d73-fa08958fa6781db356ab",
+          "file": "investigation-history.spec.ts",
+          "line": 157,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-04T12:20:52.464Z",
+    "duration": 149689.886,
+    "expected": 13,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

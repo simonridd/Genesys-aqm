@@ -1,0 +1,33 @@
+{
+  "rubric": {
+    "1": "Seriously ineffective",
+    "2": "Major friction",
+    "3": "Acceptable prototype",
+    "4": "Strong internal product",
+    "5": "Unusually polished/intuitive"
+  },
+  "scores": {
+    "Investigation navigation": 4,
+    "Browser-history predictability": 4,
+    "Workflow coherence": 4,
+    "Mobile investigation continuity": 4
+  },
+  "scope": "Analytics cross-workspace investigations and affected Calibration/guard/review contracts only",
+  "evidence": [
+    "questions-1440x900.json",
+    "questions-1920x1080.json",
+    "questions-390x844.json",
+    "questions-1440x720.json",
+    "rapid.json",
+    "reload.json",
+    "calibration.json",
+    "errors.json",
+    "review-draft.json",
+    "keyboard-390.json",
+    "final-browser.json",
+    "regression-smoke.json"
+  ],
+  "rationale": "One meaningful entry per investigation, exact authoritative URL/view/cohort restoration, preserved drafts and recovery, responsive selector and keyboard continuation. Existing Overview/sidebar boundaries and inherited long mobile navigation/table layouts prevent a 5 claim.",
+  "wholeProductMean": null,
+  "assessor": "Agent assessment using unchanged 1\u20135 rubric; no independent recruited participant."
+}

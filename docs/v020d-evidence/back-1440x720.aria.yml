@@ -1,0 +1,84 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Analytics
+  - text: ADMIN Jev managed securely by automation service
+  - button "Sample / browser data"
+  - button "Saved AQM analytics"
+  - text: QUALITY ANALYTICS
+  - heading "Quality analytics" [level=1]
+  - paragraph: Understand quality, coverage and where to investigate.
+  - region "Selected quality cohort":
+    - strong: 1–30 September 2026
+    - paragraph: Genesys Cloud · Daily Voice Customer Service AQM · Customer Service v17 · Claims · Sam · voice · Scheduled
+    - text: 3 evaluations · 3 evaluated conversations
+    - button "Change filters"
+  - group "Analytics views":
+    - button "Overview"
+    - button "Agents"
+    - button "Queues"
+    - button "Forms"
+    - button "Groups"
+    - button "Questions" [pressed]
+    - button "Coverage"
+  - paragraph: Each question is kept separate by exact form version. Inspect evaluations to see applicable answers.
+  - group: About confidence & uncertainty
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 3 results
+  - region "Quality analytics questions table":
+    - table:
+      - rowgroup:
+        - row "Question ↓ Form version Applicable answers Average quality Critical failure occurrences Uncertainty Average confidence Investigate":
+          - columnheader "Question ↓":
+            - button "Question ↓"
+          - columnheader "Form version":
+            - button "Form version"
+          - columnheader "Applicable answers":
+            - button "Applicable answers"
+          - columnheader "Average quality":
+            - button "Average quality"
+          - columnheader "Critical failure occurrences":
+            - button "Critical failure occurrences"
+          - columnheader "Uncertainty":
+            - button "Uncertainty"
+          - columnheader "Average confidence":
+            - button "Average confidence"
+          - columnheader "Investigate":
+            - button "Investigate"
+      - rowgroup:
+        - row "Investigate Warm opening Customer Service v17 3 66.7% 1 0% — Inspect evaluations →":
+          - cell "Investigate Warm opening":
+            - button "Investigate Warm opening": Warm opening
+          - cell "Customer Service v17"
+          - cell "3"
+          - cell "66.7%"
+          - cell "1"
+          - cell "0%"
+          - cell "—"
+          - cell "Inspect evaluations →":
+            - button "Inspect evaluations →"
+        - row "Investigate Resolution Customer Service v17 3 100% 0 0% 85% Inspect evaluations →":
+          - cell "Investigate Resolution":
+            - button "Investigate Resolution": Resolution
+          - cell "Customer Service v17"
+          - cell "3"
+          - cell "100%"
+          - cell "0"
+          - cell "0%"
+          - cell "85%"
+          - cell "Inspect evaluations →":
+            - button "Inspect evaluations →"
+        - row "Investigate Clear next step Customer Service v17 3 33.3% 0 0% 75% Inspect evaluations →":
+          - cell "Investigate Clear next step":
+            - button "Investigate Clear next step": Clear next step
+          - cell "Customer Service v17"
+          - cell "3"
+          - cell "33.3%"
+          - cell "0"
+          - cell "0%"
+          - cell "75%"
+          - cell "Inspect evaluations →":
+            - button "Inspect evaluations →"
+  - group: Data scope & technical details

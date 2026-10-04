@@ -1,0 +1,21 @@
+[WebServer] (node:80841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 10 tests using 1 worker
+
+(node:80843) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/10] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[3/10] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[4/10] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440
+[5/10] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920
+[6/10] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390
+[7/10] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[8/10] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[9/10] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[10/10] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+  10 passed (30.0s)

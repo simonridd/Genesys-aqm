@@ -1,0 +1,12 @@
+[WebServer] (node:79828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:79829) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] docs/v020d-evidence/canonical-reproduction.spec.ts:5:1 › canonical F7: Questions drill replaces source and Back lands on Welcome
+  1 passed (3.1s)

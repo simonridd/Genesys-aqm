@@ -1,0 +1,58 @@
+{
+  "canonicalBase": "8f4137d35591d355185e25a3e89888e0de6d8d80",
+  "deterministic": {
+    "numTotalTests": 70,
+    "numPassedTests": 70,
+    "numFailedTests": 0
+  },
+  "historyRecoveryGuards": {
+    "startTime": "2026-10-04T12:24:43.538Z",
+    "duration": 107767.009,
+    "expected": 46,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "regressionSmoke": {
+    "startTime": "2026-10-04T12:27:45.895Z",
+    "duration": 30036.905000000002,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "viewports": [
+    "1440x900",
+    "1920x1080",
+    "390x844",
+    "1440x720"
+  ],
+  "limitations": [
+    "Scripted Chromium emulation and fictional API fixtures; no recruited participant or physical-device study.",
+    "Overview range/state and sidebar routing unchanged; no whole-product score."
+  ],
+  "testedSourceSha": "62fc855402cd5962f3e4208b7b2cfe38b64ec3d1",
+  "pagesHead": "c73724d49851948b95224caecef5e723a8dd4de1",
+  "publicBrowser": {
+    "startTime": "2026-10-04T12:30:59.315Z",
+    "duration": 67218.67,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "publicFilesMatching": 12,
+  "completePagesTreeMatching": true,
+  "matchingProductionCollections": 25,
+  "allRuntimeConfigurationUnchanged": true,
+  "operationalHealthMovement": false,
+  "schedulerRuntimeMovement": false,
+  "productionDomainMutations": 0,
+  "providerCalls": {
+    "Genesys": 0,
+    "Jev": 0,
+    "notifications": 0
+  },
+  "backendRevision": "aqm-api-v019-e92f2d6",
+  "frontendInputsMatchTestedSource": true
+}

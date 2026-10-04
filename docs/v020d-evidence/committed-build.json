@@ -1,0 +1,33 @@
+{
+  "sourceSha": "62fc855402cd5962f3e4208b7b2cfe38b64ec3d1",
+  "releasePath": "/private/tmp/aqm-v020d-committed-62fc855-qr37v6yc",
+  "frontendInputs": [
+    "src",
+    "public",
+    "index.html",
+    "package.json",
+    "package-lock.json",
+    "vite.config.ts",
+    "tsconfig.json",
+    ".env.production"
+  ],
+  "archiveInputsMatchCommit": true,
+  "archiveBuildMatchesTestedBuild": true,
+  "fileCount": 12,
+  "files": {
+    "index.html": "d779585d1ff5789d9dc80fcd4905e2964ad2a38fd118b563ecc8ebf291b7ed2f",
+    "IPIlogo.svg": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples/billing-conversation.json": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+    "samples/delivery-conversation.json": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+    "assets/App-B-OdFSUD.js": "9046463fae4a645cac9546c5a0b1c77783c18f43c7627c3ba90cab09023f007b",
+    "assets/Welcome-0lI2Vye9.js": "8be025ed955a52c1a9462792fdac5d227ff61c1c79046f64a72f6590c4b2d254",
+    "assets/Demo-BzbtaFH6.js": "e9241d7f059ee5f8a5dc4696fd240675b216986bbe23022e6dce42fb7ceec0b3",
+    "assets/index-CqpGc8zo.css": "b40877b73c6f46efb37d99c22a86a7f80eca6029e18b6854491c418db056d71b",
+    "assets/reviews-DClfUy9e.js": "a1d60dbc38d1e8095ac7b6242675e99b1640239646cf81b73d7e0eddb866804f",
+    "assets/genesysEmail-BJj4UQKD.js": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2",
+    "assets/index-BGC1W7LC.js": "42f867dd69f2d6f7ea6160f42e67e9b1591b551f192215f01d7882a1d96d7e18"
+  },
+  "backendSourceChanged": false,
+  "sharedDomainChange": "Frontend navigation/presentation only; evaluation query contract, review contracts and backend unchanged"
+}

@@ -1,0 +1,57 @@
+[WebServer] (node:80620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 46 tests using 1 worker
+
+(node:80623) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/46] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 390
+[2/46] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1440
+[3/46] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1920
+[4/46] tests/evaluation-availability.spec.ts:64:1 › successful empty is a data result
+[5/46] tests/evaluation-availability.spec.ts:65:1 › refresh failure preserves search, rows and loaded time; retry replaces atomically
+[6/46] tests/evaluation-availability.spec.ts:74:1 › scope change suspends old rows while loading and failed; retry keeps the exact new scope
+[7/46] tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success
+[8/46] tests/evaluation-availability.spec.ts:96:44 › request race B then A
+[9/46] tests/evaluation-availability.spec.ts:96:44 › request race A then B
+[10/46] tests/evaluation-availability.spec.ts:105:1 › detail failure isolates list and prevents writable review until details retry succeeds
+[11/46] tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific
+[12/46] tests/evaluation-availability.spec.ts:123:1 › workload unavailable leaves the list usable
+[13/46] tests/evaluation-availability.spec.ts:124:31 › permission failure 401
+[14/46] tests/evaluation-availability.spec.ts:124:31 › permission failure 403
+[15/46] tests/evaluation-availability.spec.ts:125:1 › network failure is unavailable; malformed successful response is not an empty cohort
+[16/46] tests/evaluation-availability.spec.ts:129:1 › disconnected server does not render false empty; browser local history works and server stays truthful
+[17/46] tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards
+[18/46] tests/evaluation-availability.spec.ts:148:1 › successful My Reviews empty has its own copy
+[19/46] tests/evaluation-availability.spec.ts:152:60 › Overview investigation failure and exact retry 390
+[20/46] tests/evaluation-availability.spec.ts:152:60 › Analytics investigation failure and exact retry 390
+[21/46] tests/evaluation-availability.spec.ts:152:60 › Calibration investigation failure and exact retry 390
+[22/46] tests/evaluation-availability.spec.ts:175:1 › server failure cannot poison actual browser-local records
+[23/46] tests/evaluation-availability.spec.ts:182:1 › failed authoritative detail cannot enter writable focused reviewer task
+[24/46] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[25/46] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[26/46] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[27/46] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[28/46] tests/investigation-history.spec.ts:78:1 › v18 stays v18 rather than v17 or All published forms
+[29/46] tests/investigation-history.spec.ts:83:1 › rapid Back/Forward while Analytics refetches never grows history or reuses stale Evaluation scope
+[30/46] tests/investigation-history.spec.ts:96:50 › Queues investigation uses the same history path
+[31/46] tests/investigation-history.spec.ts:96:50 › Groups investigation uses the same history path
+[32/46] tests/investigation-history.spec.ts:96:50 › Overview investigation uses the same history path
+[33/46] tests/investigation-history.spec.ts:104:1 › reload preserves browser stack; fictional reconnect does not fabricate a source
+[34/46] tests/investigation-history.spec.ts:112:1 › Analytics and Evaluations failure retain restored scope and exact retry
+[35/46] tests/investigation-history.spec.ts:126:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+[36/46] tests/investigation-history.spec.ts:134:1 › direct external Evaluation entry has no fabricated Analytics history
+[37/46] tests/investigation-history.spec.ts:141:1 › Calibration disagreement Back/Forward restores exact version, question, view and cohort
+[38/46] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 1440
+[39/46] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 390
+[40/46] tests/investigation-history.spec.ts:160:1 › session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return
+[41/46] tests/investigation-history.spec.ts:171:1 › Overview characterization: range is not URL durable and its drill still replaces
+[42/46] tests/navigation-guards.spec.ts:5:74 › dirty forms: primary, secondary, utility and About keep guard
+[43/46] tests/navigation-guards.spec.ts:5:74 › dirty groups: primary, secondary, utility and About keep guard
+[44/46] tests/navigation-guards.spec.ts:5:74 › dirty answerSets: primary, secondary, utility and About keep guard
+[45/46] tests/navigation-guards.spec.ts:5:74 › dirty policies: primary, secondary, utility and About keep guard
+[46/46] tests/navigation-guards.spec.ts:5:74 › dirty settings: primary, secondary, utility and About keep guard
+  46 passed (1.8m)

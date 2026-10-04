@@ -1,0 +1,15 @@
+[WebServer] (node:80543) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 4 tests using 1 worker
+
+(node:80545) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/investigation-history.spec.ts:78:1 › v18 stays v18 rather than v17 or All published forms
+[2/4] tests/investigation-history.spec.ts:113:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+[3/4] tests/investigation-history.spec.ts:138:31 › keyboard-only Questions history and usable restored view 1440
+[4/4] tests/investigation-history.spec.ts:138:31 › keyboard-only Questions history and usable restored view 390
+  4 passed (13.5s)

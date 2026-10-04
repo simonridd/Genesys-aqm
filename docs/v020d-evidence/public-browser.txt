@@ -1,0 +1,26 @@
+
+Running 18 tests using 1 worker
+
+(node:81891) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/18] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[2/18] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[3/18] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[4/18] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[5/18] tests/investigation-history.spec.ts:78:1 › v18 stays v18 rather than v17 or All published forms
+[6/18] tests/investigation-history.spec.ts:83:1 › rapid Back/Forward while Analytics refetches never grows history or reuses stale Evaluation scope
+[7/18] tests/investigation-history.spec.ts:96:50 › Queues investigation uses the same history path
+[8/18] tests/investigation-history.spec.ts:96:50 › Groups investigation uses the same history path
+[9/18] tests/investigation-history.spec.ts:96:50 › Overview investigation uses the same history path
+[10/18] tests/investigation-history.spec.ts:104:1 › reload preserves browser stack; fictional reconnect does not fabricate a source
+[11/18] tests/investigation-history.spec.ts:112:1 › Analytics and Evaluations failure retain restored scope and exact retry
+[12/18] tests/investigation-history.spec.ts:126:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+[13/18] tests/investigation-history.spec.ts:134:1 › direct external Evaluation entry has no fabricated Analytics history
+[14/18] tests/investigation-history.spec.ts:141:1 › Calibration disagreement Back/Forward restores exact version, question, view and cohort
+[15/18] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 1440
+[16/18] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 390
+[17/18] tests/investigation-history.spec.ts:160:1 › session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return
+[18/18] tests/investigation-history.spec.ts:171:1 › Overview characterization: range is not URL durable and its drill still replaces
+  18 passed (1.1m)

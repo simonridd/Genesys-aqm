@@ -86,3 +86,7 @@ Implemented and qualified: historical human form/version selection from complete
 ## V0.20C — Evaluation availability & recovery
 
 Implemented and qualified: authoritative server list state distinguishes loading, successful empty, unavailable and retained-page recovery. Exact scope retries, refresh timestamps, atomic pagination, race guards and isolated detail/action errors protect investigation and reviewer trust. 105 deterministic, 23 recovery browser, 38 focused regression and one reviewer-card check pass. Frontend only; backend and review contracts unchanged. All 12 Pages files/tree match the tested commit; 23 public recovery checks and production preservation pass. See [implementation and evidence](v020c-evaluation-availability.md).
+
+## V0.20D — Investigation browser history
+
+Implemented and qualified: Analytics investigation drills push one guarded Evaluation destination, preserving the final source URL for exact Back/Forward restoration of Questions, queue/group views, critical cohorts and form versions. Filter edits remain replace-only; Calibration push behavior, explicit safe return URLs, authoring guards, reviewer drafts and Evaluation recovery remain intact. Overview's non-durable dashboard context remains outside this tranche. Frontend only. See [implementation and evidence](v020d-investigation-history.md).

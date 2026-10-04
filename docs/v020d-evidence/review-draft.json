@@ -1,0 +1,7 @@
+{
+  "source": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&form=general_service%4017&source=genesys-cloud",
+  "investigation": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&analyticsTab=questions&evaluationSource=server&form=general_service%4017&question=greeting&source=genesys-cloud&cohort=analytics&evaluation.scopeLabels=%7B%22form%22%3A%7B%22value%22%3A%22general_service%4017%22%2C%22label%22%3A%22General+Customer+Service+v17%22%7D%2C%22question%22%3A%7B%22value%22%3A%22greeting%22%2C%22label%22%3A%22Warm+opening%22%7D%7D&origin=analytics&analytics.source=genesys-cloud&analytics.form=general_service%4017&analytics.tab=questions&evaluationId=review-a",
+  "draftPreserved": true,
+  "evidenceReturnPreserved": true,
+  "extraWrites": 0
+}

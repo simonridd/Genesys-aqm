@@ -1,0 +1,195 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: ADMIN Jev managed securely by automation service QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Production results with form snapshots and provider provenance.
+  - group "Evaluation mode":
+    - button "My reviews"
+    - button "All evaluations" [pressed]
+  - button "Back to Analytics"
+  - region "Investigation scope":
+    - strong: "Investigating:"
+    - 'button "Remove Form: Customer Service v17"'
+    - 'button "Remove Question: Clear next step"'
+    - 'button "Remove Source: Genesys Cloud"'
+    - 'button "Remove Agent: Sam"'
+    - 'button "Remove Queue: Claims"'
+    - 'button "Remove Channel: voice"'
+    - button "Remove Analytics cohort"
+    - 'button "Remove From: 2026-09-01"'
+    - 'button "Remove To: 2026-09-30"'
+    - 'button "Remove Policy: daily_voice"'
+    - 'button "Remove Trigger: Scheduled"'
+    - button "Clear investigation filters"
+  - paragraph: Server filters scan a bounded window of up to 500 records per request. Use Next to continue the search.
+  - group: Team review workload
+  - text: History
+  - combobox "History":
+    - option "Server" [selected]
+    - option "This browser"
+  - text: Review status
+  - combobox "Review status":
+    - option "All" [selected]
+    - option "NOT REVIEWED"
+    - option "REVIEW REQUESTED"
+    - option "IN REVIEW"
+    - option "REVIEWED"
+  - text: Assignment
+  - combobox "Assignment":
+    - option "All" [selected]
+    - option "Unassigned"
+    - option "Assigned"
+    - option "Assigned to me"
+  - text: SLA state
+  - combobox "SLA state":
+    - option "All states" [selected]
+    - option "Due soon"
+    - option "Overdue"
+    - option "Escalated"
+  - text: Due
+  - combobox "Due":
+    - option "All" [selected]
+    - option "Overdue"
+    - option "Due today"
+    - option "Due next 7 days"
+    - option "No due date"
+  - text: Form ID @ version
+  - textbox "Form ID @ version": general_service@17
+  - text: Agent
+  - textbox "Agent": Sam
+  - text: Queue
+  - textbox "Queue": Claims
+  - text: Channel
+  - textbox "Channel": voice
+  - text: Result
+  - combobox "Result":
+    - option "All" [selected]
+    - option "Pass"
+    - option "Fail"
+  - text: Answered question
+  - textbox "Answered question":
+    - /placeholder: Question ID
+    - text: understanding
+  - text: From
+  - textbox "From": 2026-09-01
+  - text: To
+  - textbox "To": 2026-09-30
+  - text: Policy ID
+  - textbox "Policy ID": daily_voice
+  - text: Source
+  - combobox "Source":
+    - option "All"
+    - option "Genesys Cloud" [selected]
+    - option "Synthetic"
+    - option "Uploaded"
+  - text: Trigger
+  - combobox "Trigger":
+    - option "All"
+    - option "Manual"
+    - option "Scheduled" [selected]
+  - text: Critical failure
+  - combobox "Critical failure":
+    - option "All" [selected]
+    - option "Yes"
+    - option "No"
+  - button "Refresh"
+  - group: Calibration sample
+  - group: Bulk assignment
+  - paragraph: Loaded 01:00:02 PM
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 3 results on this page
+  - region "All evaluations table":
+    - table:
+      - rowgroup:
+        - row "Evaluated ↓ Select Conversation Agent Queue Form Source AI score Review Human score Agreement Assigned to Due Reviewer Reviewed at":
+          - columnheader "Evaluated ↓":
+            - button "Evaluated ↓"
+          - columnheader "Select":
+            - button "Select"
+          - columnheader "Conversation":
+            - button "Conversation"
+          - columnheader "Agent":
+            - button "Agent"
+          - columnheader "Queue":
+            - button "Queue"
+          - columnheader "Form":
+            - button "Form"
+          - columnheader "Source":
+            - button "Source"
+          - columnheader "AI score":
+            - button "AI score"
+          - columnheader "Review":
+            - button "Review"
+          - columnheader "Human score":
+            - button "Human score"
+          - columnheader "Agreement":
+            - button "Agreement"
+          - columnheader "Assigned to":
+            - button "Assigned to"
+          - columnheader "Due":
+            - button "Due"
+          - columnheader "Reviewer":
+            - button "Reviewer"
+          - columnheader "Reviewed at":
+            - button "Reviewed at"
+      - rowgroup:
+        - row "9/10/2026, 11:00:00 AM Select evaluation quality-0 Open evaluation quality-0 Sam Claims Customer Service v17 genesys-cloud 50% REVIEWED 62% 1/3 Unassigned Completed admin 10/2/2026, 1:00:00 PM":
+          - cell "9/10/2026, 11:00:00 AM"
+          - cell "Select evaluation quality-0":
+            - checkbox "Select evaluation quality-0" [disabled]
+          - cell "Open evaluation quality-0":
+            - button "Open evaluation quality-0": fictional-0
+          - cell "Sam"
+          - cell "Claims"
+          - cell "Customer Service v17"
+          - cell "genesys-cloud"
+          - cell "50%"
+          - cell "REVIEWED"
+          - cell "62%"
+          - cell "1/3"
+          - cell "Unassigned"
+          - cell "Completed"
+          - cell "admin"
+          - cell "10/2/2026, 1:00:00 PM"
+        - row "9/10/2026, 11:00:00 AM Select evaluation quality-2 Open evaluation quality-2 Sam Claims Customer Service v17 genesys-cloud 50% REVIEW_REQUESTED — 0/3 Unassigned 10/2/2026, 7:00:00 AM OVERDUE Overdue by 6 hours — —":
+          - cell "9/10/2026, 11:00:00 AM"
+          - cell "Select evaluation quality-2":
+            - checkbox "Select evaluation quality-2"
+          - cell "Open evaluation quality-2":
+            - button "Open evaluation quality-2": fictional-2
+          - cell "Sam"
+          - cell "Claims"
+          - cell "Customer Service v17"
+          - cell "genesys-cloud"
+          - cell "50%"
+          - cell "REVIEW_REQUESTED"
+          - cell "—"
+          - cell "0/3"
+          - cell "Unassigned"
+          - cell "10/2/2026, 7:00:00 AM OVERDUE Overdue by 6 hours"
+          - cell "—"
+          - cell "—"
+        - row "9/10/2026, 11:00:00 AM Select evaluation quality-4 Open evaluation quality-4 Sam Claims Customer Service v17 genesys-cloud 50% NOT_REVIEWED — — Unassigned No due date — —":
+          - cell "9/10/2026, 11:00:00 AM"
+          - cell "Select evaluation quality-4":
+            - checkbox "Select evaluation quality-4"
+          - cell "Open evaluation quality-4":
+            - button "Open evaluation quality-4": fictional-4
+          - cell "Sam"
+          - cell "Claims"
+          - cell "Customer Service v17"
+          - cell "genesys-cloud"
+          - cell "50%"
+          - cell "NOT_REVIEWED"
+          - cell "—"
+          - cell "—"
+          - cell "Unassigned"
+          - cell "No due date"
+          - cell "—"
+          - cell "—"
+  - button "First page" [disabled]
+  - button "Next server page →" [disabled]

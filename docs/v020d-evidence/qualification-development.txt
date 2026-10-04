@@ -1,0 +1,143 @@
+[WebServer] (node:80235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 17 tests using 1 worker
+
+(node:80238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/investigation-history.spec.ts:60:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[2/17] tests/investigation-history.spec.ts:60:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[3/17] tests/investigation-history.spec.ts:60:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[4/17] tests/investigation-history.spec.ts:60:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[5/17] tests/investigation-history.spec.ts:77:1 › v18 stays v18 rather than v17 or All published forms
+  1) tests/investigation-history.spec.ts:77:1 › v18 stays v18 rather than v17 or All published forms 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.quality-analytics .operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      49 |  await page.getByRole('button',{name:'Change filters',exact:true}).click()
+      50 | }
+    > 51 | async function drill(page:Page,button:Locator,before:number){await button.click();await expect(rows(page).first()).toBeVisible();expect(await length(page)).toBe(before+1);return page.url()}
+         |                                                                           ^
+      52 | async function roundTrip(page:Page,sourceUrl:string,drillUrl:string,view:string,version=17,repeats=1){
+      53 |  const size=await length(page)
+      54 |  for(let i=0;i<repeats;i++){
+        at drill (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:51:75)
+        at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:79:16
+
+    Error Context: test-results/investigation-history-v18--5c38a--v17-or-All-published-forms/error-context.md
+
+
+(node:80338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/17] tests/investigation-history.spec.ts:82:50 › Queues investigation uses the same history path
+[7/17] tests/investigation-history.spec.ts:82:50 › Groups investigation uses the same history path
+[8/17] tests/investigation-history.spec.ts:82:50 › Overview investigation uses the same history path
+[9/17] tests/investigation-history.spec.ts:90:1 › reload preserves browser stack; fictional reconnect does not fabricate a source
+[10/17] tests/investigation-history.spec.ts:98:1 › Analytics and Evaluations failure retain restored scope and exact retry
+[11/17] tests/investigation-history.spec.ts:112:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+  2) tests/investigation-history.spec.ts:112:1 › explicit Back to Analytics reconstructs clean safe context from a deep link 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&queue=Claims&agent=Sam&source=genesys-cloud&form=general_service%4017&policy=daily_voice&channel=voice&mode=scheduled"
+    Received: "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&from=2026-09-01&to=2026-09-30&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled"
+
+
+      42 |  await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible()
+      43 |  await expect.poll(()=>selectedView(page)).toBe(view)
+    > 44 |  await expect(page).toHaveURL(url)
+         |                     ^
+      45 |  await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText(`Customer Service v${version}`)
+      46 |  for(const key of transient)expect(query(page.url())[key]).toBeUndefined()
+      47 |  await page.getByRole('button',{name:'Change filters',exact:true}).click()
+        at assertSource (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:44:21)
+        at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:114:79
+
+    Error Context: test-results/investigation-history-expl-3e01b-fe-context-from-a-deep-link/error-context.md
+
+
+(node:80353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/17] tests/investigation-history.spec.ts:120:1 › direct external Evaluation entry has no fabricated Analytics history
+[13/17] tests/investigation-history.spec.ts:127:1 › Calibration disagreement Back/Forward restores exact version, question, view and cohort
+[14/17] tests/investigation-history.spec.ts:137:31 › keyboard-only Questions history and usable restored view 1440
+  3) tests/investigation-history.spec.ts:137:31 › keyboard-only Questions history and usable restored view 1440 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.evaluate: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.quality-analytics .operational-table tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      13 | const query=(url:string)=>Object.fromEntries(new URL(url).searchParams)
+      14 | const length=(page:Page)=>page.evaluate(()=>history.length)
+    > 15 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(node=>node===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard target unreachable')}
+         |                                                                                       ^
+      16 | async function source(page:Page,version=17,view='Questions',keyboard=false){
+      17 |  await navigateWorkspace(page,'About / product tour')
+      18 |  await page.getByRole('button',{name:'Open AQM',exact:true}).first().click()
+        at tabTo (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:15:87)
+        at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:141:8
+
+    Error Context: test-results/investigation-history-keyb-1395f-d-usable-restored-view-1440/error-context.md
+
+
+(node:80405) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/17] tests/investigation-history.spec.ts:137:31 › keyboard-only Questions history and usable restored view 390
+  4) tests/investigation-history.spec.ts:137:31 › keyboard-only Questions history and usable restored view 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.evaluate: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.analytics-tabs').getByRole('button', { name: 'Questions', exact: true })
+
+
+      13 | const query=(url:string)=>Object.fromEntries(new URL(url).searchParams)
+      14 | const length=(page:Page)=>page.evaluate(()=>history.length)
+    > 15 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(node=>node===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard target unreachable')}
+         |                                                                                       ^
+      16 | async function source(page:Page,version=17,view='Questions',keyboard=false){
+      17 |  await navigateWorkspace(page,'About / product tour')
+      18 |  await page.getByRole('button',{name:'Open AQM',exact:true}).first().click()
+        at tabTo (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:15:87)
+        at source (/private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:35:266)
+        at /private/tmp/aqm-v020d-investigation-history/tests/investigation-history.spec.ts:140:10
+
+    Error Context: test-results/investigation-history-keyb-1f127-nd-usable-restored-view-390/error-context.md
+
+
+(node:80455) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[16/17] tests/investigation-history.spec.ts:146:1 › session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return
+[17/17] tests/investigation-history.spec.ts:157:1 › Overview characterization: range is not URL durable and its drill still replaces
+  4 failed
+    tests/investigation-history.spec.ts:77:1 › v18 stays v18 rather than v17 or All published forms 
+    tests/investigation-history.spec.ts:112:1 › explicit Back to Analytics reconstructs clean safe context from a deep link 
+    tests/investigation-history.spec.ts:137:31 › keyboard-only Questions history and usable restored view 1440 
+    tests/investigation-history.spec.ts:137:31 › keyboard-only Questions history and usable restored view 390 
+  13 passed (2.5m)
