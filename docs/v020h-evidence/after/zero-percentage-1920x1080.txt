@@ -1,0 +1,28 @@
+EXPLORE THE ECONOMICS
+A small model bill. An honest starting point.
+
+Structured, batched questions and very low model input cost make broader evaluation economically attractive. This is an illustrative planning estimate — model input cost only.
+
+Conversations per month
+0–1,000,000,000
+Selected percentage
+0–100%
+Advanced assumptions
+Average forms per selected conversation
+0–100
+Average AI requests per form
+0–100
+Average input tokens per AI request
+Illustrative medium-length transcript plus quality questions. 0–64,000
+ESTIMATED JEV MODEL INPUT COST · USD
+$0.00/month
+
+0 conversations/month selected · 0 form evaluations · 0 AI requests · 0M input tokens/month.
+
+Current assumptions: 100 conversations/month · 0% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request. Selected conversations are rounded down to whole conversations each month. Cost uses that count.
+
+Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again. Average forms and requests may be fractional planning equivalents.
+
+Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.
+
+Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot.

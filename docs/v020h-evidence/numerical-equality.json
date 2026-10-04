@@ -1,0 +1,137 @@
+{
+  "estimatorPresetBoundsByteIdentical": true,
+  "default": {
+    "selected": 50000,
+    "evaluations": 50000,
+    "requests": 50000,
+    "tokens": 400000000,
+    "cost": 16.8
+  },
+  "tiny": {
+    "selected": 0,
+    "evaluations": 0,
+    "requests": 0,
+    "tokens": 0,
+    "cost": 0
+  },
+  "captures": [
+    {
+      "scenario": "default",
+      "viewport": "1440x900",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$16.80/month",
+      "metrics": "50,000 conversations/month selected \u00b7 50,000 form evaluations \u00b7 50,000 AI requests \u00b7 400M input tokens/month."
+    },
+    {
+      "scenario": "tiny",
+      "viewport": "1440x900",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$0.00/month",
+      "metrics": "0 conversations/month selected \u00b7 0 form evaluations \u00b7 0 AI requests \u00b7 0M input tokens/month."
+    },
+    {
+      "scenario": "default",
+      "viewport": "1920x1080",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$16.80/month",
+      "metrics": "50,000 conversations/month selected \u00b7 50,000 form evaluations \u00b7 50,000 AI requests \u00b7 400M input tokens/month."
+    },
+    {
+      "scenario": "tiny",
+      "viewport": "1920x1080",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$0.00/month",
+      "metrics": "0 conversations/month selected \u00b7 0 form evaluations \u00b7 0 AI requests \u00b7 0M input tokens/month."
+    },
+    {
+      "scenario": "default",
+      "viewport": "390x844",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$16.80/month",
+      "metrics": "50,000 conversations/month selected \u00b7 50,000 form evaluations \u00b7 50,000 AI requests \u00b7 400M input tokens/month."
+    },
+    {
+      "scenario": "tiny",
+      "viewport": "390x844",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$0.00/month",
+      "metrics": "0 conversations/month selected \u00b7 0 form evaluations \u00b7 0 AI requests \u00b7 0M input tokens/month."
+    },
+    {
+      "scenario": "default",
+      "viewport": "1440x720",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$16.80/month",
+      "metrics": "50,000 conversations/month selected \u00b7 50,000 form evaluations \u00b7 50,000 AI requests \u00b7 400M input tokens/month."
+    },
+    {
+      "scenario": "tiny",
+      "viewport": "1440x720",
+      "identicalFields": [
+        "inputs",
+        "cost",
+        "metrics"
+      ],
+      "cost": "$0.00/month",
+      "metrics": "0 conversations/month selected \u00b7 0 form evaluations \u00b7 0 AI requests \u00b7 0M input tokens/month."
+    }
+  ],
+  "defaultResultGeometry": [
+    {
+      "viewport": "1440x900",
+      "beforeHeight": 512.96875,
+      "afterHeight": 536.765625,
+      "increase": 23.796875,
+      "overflow": false
+    },
+    {
+      "viewport": "1920x1080",
+      "beforeHeight": 512.96875,
+      "afterHeight": 536.765625,
+      "increase": 23.796875,
+      "overflow": false
+    },
+    {
+      "viewport": "390x844",
+      "beforeHeight": 689.140625,
+      "afterHeight": 760.53125,
+      "increase": 71.390625,
+      "overflow": false
+    },
+    {
+      "viewport": "1440x720",
+      "beforeHeight": 512.96875,
+      "afterHeight": 536.765625,
+      "increase": 23.796875,
+      "overflow": false
+    }
+  ]
+}

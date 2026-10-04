@@ -12,3 +12,22 @@ export function estimateCost(input: CostInputs) {
   const requests = evaluations * input.requests
   return { selected, evaluations, requests, cost: requests * input.tokens / 1_000_000 * claims.price.value }
 }
+
+// Explanatory context only; estimateCost().selected remains the cost authority.
+export function selectionPlanningContext(input: Pick<CostInputs, 'volume' | 'percentage'>) {
+  const rawSelected = input.volume * input.percentage / 100
+  const selectedWhole = Math.floor(rawSelected)
+  return {
+    rawSelected,
+    selectedWhole,
+    roundingApplied: rawSelected > selectedWhole,
+    belowOneWholeConversation: input.volume > 0 && input.percentage > 0 && rawSelected > 0 && selectedWhole === 0,
+  }
+}
+
+export function formatPlanningSelection(rawSelected: number) {
+  if (rawSelected > 0 && rawSelected < .01) return '<0.01'
+  const readable = rawSelected.toLocaleString('en-US', { maximumSignificantDigits: 6 })
+  // Do not let display rounding turn a fraction below one into a whole conversation.
+  return rawSelected < 1 && Number(readable) >= 1 ? '<1' : readable
+}

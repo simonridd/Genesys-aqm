@@ -1,0 +1,22 @@
+- region "Illustrative cost calculator":
+  - text: EXPLORE THE ECONOMICS
+  - heading "A small model bill. An honest starting point." [level=2]
+  - paragraph: Structured, batched questions and very low model input cost make broader evaluation economically attractive. This is an illustrative planning estimate — model input cost only.
+  - text: Conversations per month
+  - spinbutton "Conversations per month": "100000"
+  - text: 0–1,000,000,000 Selected percentage
+  - spinbutton "Selected percentage": "50"
+  - text: 0–100%
+  - group: Advanced assumptions
+  - text: ESTIMATED JEV MODEL INPUT COST · USD
+  - strong: $16.80/month
+  - paragraph: 50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.
+  - paragraph: "Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request."
+  - paragraph: Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again. Average forms and requests may be fractional planning equivalents.
+  - paragraph:
+    - link "Official Jev 1.13 pricing":
+      - /url: https://docs.typesafe.ai/models
+    - text: ": $0.042/M input tokens; output free. Checked 2026-10-03; rates may change."
+  - paragraph:
+    - strong: "Excluded:"
+    - text: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot.

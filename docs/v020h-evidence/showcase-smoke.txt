@@ -1,0 +1,19 @@
+
+Running 11 tests using 1 worker
+
+(node:94205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/11] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1440
+[2/11] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 1920
+[3/11] tests/showcase.spec.ts:20:3 › welcome and complete isolated story at 390
+[4/11] tests/showcase.spec.ts:73:1 › keyboard, self-guided links, reduced motion, history, restart and refresh
+[5/11] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1440
+[6/11] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 1920
+[7/11] tests/showcase.spec.ts:101:3 › disconnected prototype handoff leads to sample conversations at 390
+[8/11] tests/showcase.spec.ts:114:1 › demo entered with an established real-session-shaped OAuth fixture never touches protected services or storage
+[9/11] tests/showcase.spec.ts:134:1 › failed lazy demo load stays closed instead of mounting live services
+[10/11] tests/showcase.spec.ts:148:1 › explicit Open AQM tears down demo and retains the authenticated product path
+[11/11] tests/showcase.spec.ts:160:1 › semantic theme contrast, focus and no obscured tour controls
+  11 passed (23.5s)

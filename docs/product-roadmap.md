@@ -102,3 +102,7 @@ Implemented and qualified: Conversation detail leads with messages and human met
 ## V0.20G — Coverage interpretation
 
 Implemented shared Policy selection and Coverage after sampling headings, with deliberate sampling explained independently of content/completion gaps and failed attempt units. Funnel metrics/denominators remain unchanged; Overview's compact first scan and closed details, Analytics drills/history, and run detail are preserved. Qualified with 691 deterministic tests, 28 Coverage browser checks and 17 focused regressions across desktop/mobile. Frontend-only Pages publication; backend remains aqm-api-v019-e92f2d6. See [qualification and evidence](v020g-coverage-interpretation.md).
+
+## V0.20H — Calculator whole-conversation assumption
+
+Resolved F10's scoped calculator ambiguity: visible monthly whole-conversation floor/cost assumption and a contextual explanation for positive selection below one conversation. Estimator, defaults, fractional form/request averages, positive sub-cent cost copy, bounds, pricing and exclusions remain unchanged. Focused deterministic, browser, mobile, keyboard, resize and showcase smoke proof; frontend-only Pages publication with read-only production preservation. No whole-product perfection or release claim. See [V0.20H evidence](v020h-calculator-rounding.md). Next: ChatGPT review/merge and F1–F10 closure decision; fresh review or V0.20 tag/release remains a separate decision.

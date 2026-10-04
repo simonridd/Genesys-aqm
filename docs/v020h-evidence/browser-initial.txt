@@ -1,0 +1,146 @@
+
+Running 5 tests using 1 worker
+
+(node:93451) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/5] tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1440x900
+  1) tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1440x900 ─────────────────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.cost-result')
+    Expected substring: "Selected conversations are rounded down to whole conversations each month."
+    Received string:    "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.cost-result') with timeout 5000ms
+      - waiting for locator('.cost-result')
+        14 × locator resolved to <div aria-live="polite" class="panel cost-result">…</div>
+           - unexpected value "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+
+
+      50 |     await expect(result.locator('p').first()).toHaveText(`${format(scenario.selected)} conversations/month selected · ${format(scenario.evaluations)} form evaluations · ${format(scenario.ai)} AI requests · ${format(scenario.millions)}M input tokens/month.`)
+      51 |     if (!baseline) {
+    > 52 |       await expect(result).toContainText('Selected conversations are rounded down to whole conversations each month.')
+         |                            ^
+      53 |       await expect(result).toContainText('Average forms and requests may be fractional planning equivalents.')
+      54 |       if (scenario.name === 'tiny') {
+      55 |         await expect(result).toContainText('Before whole-conversation rounding: 0.01 conversations/month.')
+        at /private/tmp/aqm-v020h-calculator-rounding/tests/calculator-rounding.spec.ts:52:28
+
+    Error Context: test-results/calculator-rounding-calculator-scenario-matrix-1440x900/error-context.md
+
+
+(node:93470) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/5] tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1920x1080
+  2) tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1920x1080 ────────────────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.cost-result')
+    Expected substring: "Selected conversations are rounded down to whole conversations each month."
+    Received string:    "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.cost-result') with timeout 5000ms
+      - waiting for locator('.cost-result')
+        14 × locator resolved to <div aria-live="polite" class="panel cost-result">…</div>
+           - unexpected value "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+
+
+      50 |     await expect(result.locator('p').first()).toHaveText(`${format(scenario.selected)} conversations/month selected · ${format(scenario.evaluations)} form evaluations · ${format(scenario.ai)} AI requests · ${format(scenario.millions)}M input tokens/month.`)
+      51 |     if (!baseline) {
+    > 52 |       await expect(result).toContainText('Selected conversations are rounded down to whole conversations each month.')
+         |                            ^
+      53 |       await expect(result).toContainText('Average forms and requests may be fractional planning equivalents.')
+      54 |       if (scenario.name === 'tiny') {
+      55 |         await expect(result).toContainText('Before whole-conversation rounding: 0.01 conversations/month.')
+        at /private/tmp/aqm-v020h-calculator-rounding/tests/calculator-rounding.spec.ts:52:28
+
+    Error Context: test-results/calculator-rounding-calculator-scenario-matrix-1920x1080/error-context.md
+
+
+(node:93493) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/5] tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 390x844
+  3) tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 390x844 ──────────────────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.cost-result')
+    Expected substring: "Selected conversations are rounded down to whole conversations each month."
+    Received string:    "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.cost-result') with timeout 5000ms
+      - waiting for locator('.cost-result')
+        14 × locator resolved to <div aria-live="polite" class="panel cost-result">…</div>
+           - unexpected value "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+
+
+      50 |     await expect(result.locator('p').first()).toHaveText(`${format(scenario.selected)} conversations/month selected · ${format(scenario.evaluations)} form evaluations · ${format(scenario.ai)} AI requests · ${format(scenario.millions)}M input tokens/month.`)
+      51 |     if (!baseline) {
+    > 52 |       await expect(result).toContainText('Selected conversations are rounded down to whole conversations each month.')
+         |                            ^
+      53 |       await expect(result).toContainText('Average forms and requests may be fractional planning equivalents.')
+      54 |       if (scenario.name === 'tiny') {
+      55 |         await expect(result).toContainText('Before whole-conversation rounding: 0.01 conversations/month.')
+        at /private/tmp/aqm-v020h-calculator-rounding/tests/calculator-rounding.spec.ts:52:28
+
+    Error Context: test-results/calculator-rounding-calculator-scenario-matrix-390x844/error-context.md
+
+
+(node:93499) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/5] tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1440x720
+  4) tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1440x720 ─────────────────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('.cost-result')
+    Expected substring: "Selected conversations are rounded down to whole conversations each month."
+    Received string:    "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" locator('.cost-result') with timeout 5000ms
+      - waiting for locator('.cost-result')
+        14 × locator resolved to <div aria-live="polite" class="panel cost-result">…</div>
+           - unexpected value "ESTIMATED JEV MODEL INPUT COST · USD$16.80/month50,000 conversations/month selected · 50,000 form evaluations · 50,000 AI requests · 400M input tokens/month.Current assumptions: 100,000 conversations/month · 50% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request.Selection percentage applies to monthly conversation volume. Selected conversations are rounded down to whole conversations each month; cost uses that whole-conversation count. Average forms and requests may be fractional planning equivalents.Input includes transcript and quality questions. Repeated transcript input across conditional requests counts again.Official Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.Excluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot."
+
+
+      50 |     await expect(result.locator('p').first()).toHaveText(`${format(scenario.selected)} conversations/month selected · ${format(scenario.evaluations)} form evaluations · ${format(scenario.ai)} AI requests · ${format(scenario.millions)}M input tokens/month.`)
+      51 |     if (!baseline) {
+    > 52 |       await expect(result).toContainText('Selected conversations are rounded down to whole conversations each month.')
+         |                            ^
+      53 |       await expect(result).toContainText('Average forms and requests may be fractional planning equivalents.')
+      54 |       if (scenario.name === 'tiny') {
+      55 |         await expect(result).toContainText('Before whole-conversation rounding: 0.01 conversations/month.')
+        at /private/tmp/aqm-v020h-calculator-rounding/tests/calculator-rounding.spec.ts:52:28
+
+    Error Context: test-results/calculator-rounding-calculator-scenario-matrix-1440x720/error-context.md
+
+
+(node:93507) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/5] tests/calculator-rounding.spec.ts:66:32 › keyboard and resize preserve tiny scenario and focus
+  4 failed
+    tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1440x900 ──────────────────
+    tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1920x1080 ─────────────────
+    tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 390x844 ───────────────────
+    tests/calculator-rounding.spec.ts:39:31 › calculator scenario matrix 1440x720 ──────────────────
+  1 passed (24.6s)

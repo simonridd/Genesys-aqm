@@ -1,0 +1,8 @@
+{
+  "rubric": {"1":"seriously ineffective","2":"major friction","3":"acceptable prototype","4":"strong internal product","5":"unusually polished/intuitive"},
+  "scores": {"Calculator clarity":4,"Information quality":4,"Trust / credibility":4,"Mobile comprehension":4},
+  "basis":"Visible whole-conversation floor and cost count; readable 0.01 context; zero and positive sub-cent distinction; unchanged exclusions and math; browser/ARIA/mobile/keyboard qualification.",
+  "limits":"Scripted assessment, not recruited human or physical screen-reader study; inherited long mobile page.",
+  "wholeProductMeanCalculated":false,
+  "closure":"F10 scoped ambiguity only"
+}

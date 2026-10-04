@@ -1,0 +1,34 @@
+{
+  "inputs": [
+    {
+      "label": "Conversations per month",
+      "value": "100"
+    },
+    {
+      "label": "Selected percentage",
+      "value": "0"
+    },
+    {
+      "label": "Average forms per selected conversation",
+      "value": "1"
+    },
+    {
+      "label": "Average AI requests per form",
+      "value": "1"
+    },
+    {
+      "label": "Average input tokens per AI request",
+      "value": "8000"
+    }
+  ],
+  "cost": "$0.00/month",
+  "metrics": "0 conversations/month selected · 0 form evaluations · 0 AI requests · 0M input tokens/month.",
+  "explanation": "ESTIMATED JEV MODEL INPUT COST · USD\n$0.00/month\n\n0 conversations/month selected · 0 form evaluations · 0 AI requests · 0M input tokens/month.\n\nCurrent assumptions: 100 conversations/month · 0% selected · 1 form(s) per conversation · 1 AI request(s) per form · 8,000 input tokens per request. Selected conversations are rounded down to whole conversations each month. Cost uses that count.\n\nInput includes transcript and quality questions. Repeated transcript input across conditional requests counts again. Average forms and requests may be fractional planning equivalents.\n\nOfficial Jev 1.13 pricing: $0.042/M input tokens; output free. Checked 2026-10-03; rates may change.\n\nExcluded: transcription, Genesys licensing/retrieval, hosting, storage and network costs, retries, taxes and human review. Validate capacity during the pilot.",
+  "geometry": {
+    "x": 664.4375,
+    "y": 19.671875,
+    "width": 695.5625,
+    "height": 679
+  },
+  "overflow": false
+}

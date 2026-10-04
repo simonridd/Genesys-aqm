@@ -1,0 +1,13 @@
+
+Running 5 tests using 1 worker
+
+(node:94179) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/5] tests/calculator-rounding.spec.ts:42:31 › calculator scenario matrix 1440x900
+[2/5] tests/calculator-rounding.spec.ts:42:31 › calculator scenario matrix 1920x1080
+[3/5] tests/calculator-rounding.spec.ts:42:31 › calculator scenario matrix 390x844
+[4/5] tests/calculator-rounding.spec.ts:42:31 › calculator scenario matrix 1440x720
+[5/5] tests/calculator-rounding.spec.ts:77:32 › keyboard and resize preserve tiny scenario and focus
+  5 passed (12.6s)
