@@ -1,0 +1,127 @@
+- text: HUMAN + AI
+- heading "Calibration" [level=1]
+- paragraph: Find human / AI disagreements and their supporting evaluations.
+- region "Calibration scope":
+  - strong: Genesys Cloud · All dates
+  - paragraph: Customer Service v17
+  - text: All agents · All queues
+  - button "Change filters"
+- region "Where humans and AI differ":
+  - heading "Where humans and AI differ" [level=2]
+  - paragraph: Highest disagreement rate in this scope
+  - heading "Clear next step" [level=3]
+  - paragraph: Customer Service v17
+  - paragraph:
+    - strong: 5 of 8 comparable reviewed answers disagreed
+    - text: 62.5% disagreement
+  - button "Inspect question →"
+  - button "Open disagreements →"
+- text: Evaluations reviewed
+- strong: "8"
+- text: Questions reviewed
+- strong: "24"
+- text: Exact agreement
+- strong: 75%
+- text: Mean absolute score gap
+- strong: 7.5 pp
+- text: Unresolved reviews
+- strong: "0"
+- text: 0 in progress · outside completed comparisons View
+- combobox "View":
+  - option "Form / version"
+  - option "Groups"
+  - option "Questions" [selected]
+  - option "Question types"
+  - option "Confidence vs disagreement"
+- text: Search
+- textbox "Search table":
+  - /placeholder: Search visible fields
+- text: 3 results
+- list "Calibration question comparisons":
+  - listitem:
+    - article:
+      - heading "Open calibration Warm opening · Customer Service v17" [level=3]:
+        - button "Open calibration Warm opening · Customer Service v17": Warm opening
+      - paragraph: Customer Service v17
+      - term: Reviews
+      - definition: "8"
+      - term: Comparable answers
+      - definition: "8"
+      - term: Exact agreement
+      - definition: 88%
+      - term: Disagreements
+      - definition: "1"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 88%
+      - term: Mean credit gap
+      - definition: 12.5 pp
+      - term: "Confidence: agree"
+      - definition: 95%
+      - term: "Confidence: disagree"
+      - definition: 95%
+  - listitem:
+    - article:
+      - heading "Open calibration Resolution · Customer Service v17" [level=3]:
+        - button "Open calibration Resolution · Customer Service v17": Resolution
+      - paragraph: Customer Service v17
+      - term: Reviews
+      - definition: "8"
+      - term: Comparable answers
+      - definition: "8"
+      - term: Exact agreement
+      - definition: 100%
+      - term: Disagreements
+      - definition: "0"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 100%
+      - term: Mean credit gap
+      - definition: 0.0 pp
+      - term: "Confidence: agree"
+      - definition: 85%
+      - term: "Confidence: disagree"
+      - definition: —
+  - listitem:
+    - article:
+      - heading "Open calibration Clear next step · Customer Service v17" [level=3]:
+        - button "Open calibration Clear next step · Customer Service v17": Clear next step
+      - paragraph: Customer Service v17
+      - term: Reviews
+      - definition: "8"
+      - term: Comparable answers
+      - definition: "8"
+      - term: Exact agreement
+      - definition: 38%
+      - term: Disagreements
+      - definition: "5"
+      - term: AI credit
+      - definition: 33%
+      - term: Human credit
+      - definition: 54%
+      - term: Mean credit gap
+      - definition: 21.2 pp
+      - term: "Confidence: agree"
+      - definition: 75%
+      - term: "Confidence: disagree"
+      - definition: 75%
+- region "Question calibration drill-down":
+  - text: Customer Service v17
+  - heading "Clear next step" [level=2]
+  - paragraph: 8 completed reviews · 8 comparable answers · 3 agree / 5 disagree
+  - button "Close question"
+  - paragraph: "AI credit: 33% · Human credit: 54% · Mean credit gap: 21.2 pp"
+  - button "Open reviewed evaluations"
+  - button "Open disagreements"
+  - button "Open reviewed evaluation 1 →"
+  - button "Open reviewed evaluation 2 →"
+  - button "Open reviewed evaluation 3 →"
+  - button "Open reviewed evaluation 4 →"
+  - button "Open reviewed evaluation 5 →"
+  - button "Open reviewed evaluation 6 →"
+  - button "Open reviewed evaluation 7 →"
+  - button "Open reviewed evaluation 8 →"
+  - group: Advanced details
+- paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

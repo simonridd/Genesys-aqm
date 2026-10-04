@@ -1,0 +1,29 @@
+{
+  "revision": "aqm-api-v019-e92f2d6",
+  "image": "europe-west2-docker.pkg.dev/genesys-aqm-2026/cloud-run-source-deploy/aqm-api@sha256:e4f28e1006efb39fe9443bc16cd4f076496fd27ec30b9dce201adceb84095d7b",
+  "runtimeConfigSha256": "cf5a4abaff5af645d36b08557588e574371c109172e2ef4d37727ba1caccfe38",
+  "serviceIamSha256": "6187129af33242d154f8f5704fda99101ee5aafaeaa1130f22b765cc395b7dbd",
+  "schedulerConfigSha256": "026ab92f279ec1eb6776545614f1ef28a9566364b9cb1e06d9523c6e92febb50",
+  "schedulerRuntime": {
+    "lastAttemptTime": "2026-10-04T10:00:04.849307Z",
+    "scheduleTime": "2026-10-04T11:00:04.028877Z",
+    "status": {}
+  },
+  "secrets": {
+    "aqm-genesys-client-id": {
+      "metadata": "7bad6f40f5b28d8e84f3f2723d02673f1fd56da06fc04630a435f473790019a7",
+      "versions": "336fb0761a10df22b1be08a00c3a4691cc58ca31e318f9dc0358ff29191b669b",
+      "iam": "c99eea07104615ea843dccc661edeae20d0d43181a99a66f224cd1c00395dc1a"
+    },
+    "aqm-genesys-client-secret": {
+      "metadata": "8b6d4298a173a1791c01dab654b1d4934cf4d374d5f03545e6bfb5bd90d554d1",
+      "versions": "f9f7cc0791abddaa68b1fe07069f342ce920693f925877ee8f32dddd95cbc500",
+      "iam": "386508c1418eb05e85ebe679f85b967251e655b2226744bb0060556a2d7cb4f6"
+    },
+    "aqm-jev-api-key": {
+      "metadata": "172920ff1f7154fd0afa8566d32c196d884f25b00962b2c414b8a02e3d929849",
+      "versions": "1d2462fac8269c7056844bbd61660cc2841a2667285676a2cacf97ddb3df5cb5",
+      "iam": "949e291e3a79db2c426550b9b269f29f5f37fcd08a731c69ec1fba3613d9920a"
+    }
+  }
+}

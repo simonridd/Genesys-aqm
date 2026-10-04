@@ -47,5 +47,23 @@
     "Scripted fictional authenticated replay; no recruited human or physical-device study.",
     "47 focused deterministic checks; giant historical suite not run."
   ],
-  "backendRevision": "aqm-api-v019-e92f2d6"
+  "backendRevision": "aqm-api-v019-e92f2d6",
+  "testedSourceSha": "e8ac8aee0d3296a60b93745099f4cb02a63864f3",
+  "publicBrowser": {
+    "startTime": "2026-10-04T10:52:09.699Z",
+    "duration": 49543.142,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "pagesHead": "d413ffa7dad2f771cb305b248ce5a0ad7f4fd478",
+  "publicFilesMatching": 12,
+  "completePagesTreeMatching": true,
+  "matchingProductionCollections": 25,
+  "allRuntimeConfigurationUnchanged": true,
+  "operationalHealthMovement": false,
+  "schedulerRuntimeMovement": false,
+  "trafficRevision": "aqm-api-v019-e92f2d6",
+  "trafficPercent": 100
 }

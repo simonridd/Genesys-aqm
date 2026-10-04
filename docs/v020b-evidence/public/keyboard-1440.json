@@ -1,0 +1,8 @@
+{
+  "keyboardOnly": true,
+  "filters": true,
+  "nativeView": false,
+  "questionFocus": true,
+  "returnFocus": true,
+  "noTrap": true
+}

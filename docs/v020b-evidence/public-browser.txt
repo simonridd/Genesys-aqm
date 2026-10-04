@@ -1,0 +1,20 @@
+
+Running 12 tests using 1 worker
+
+(node:32648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/12] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440
+[2/12] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1440
+[3/12] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920
+[4/12] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1920
+[5/12] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390
+[6/12] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 390
+[7/12] tests/calibration-discovery.spec.ts:45:1 › catalogue cohort request, source/date/agent/queue refresh and unavailable selection reset
+[8/12] tests/calibration-discovery.spec.ts:59:1 › catalogue failure leaves filtered data usable, retry is isolated, main failure and no comparisons are safe
+[9/12] tests/calibration-discovery.spec.ts:67:1 › Back/Forward preserve form, view and exact question; deep link reload
+[10/12] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 1440
+[11/12] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 390
+[12/12] tests/calibration-discovery.spec.ts:83:1 › valid deep-linked version absent from fresh catalogue retains returned human authority
+  12 passed (49.5s)
