@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm
+
+
+ Test Files  72 passed (72)
+      Tests  714 passed (714)
+   Start at  19:49:37
+   Duration  2.12s (import 42%, tests 34%, transform 22%, worker 2%)
+
+    Isolate  72 workers spawned · ~87ms startup each (spawn + environment, per file)
+             at least ~542ms faster with isolate: false — reuses workers across files instead of one per file
+

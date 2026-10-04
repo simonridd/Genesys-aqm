@@ -536,3 +536,13 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
 
 .conversation-detail-page .conversation-identity h2 {white-space:normal;overflow:visible;text-overflow:clip}
 @media(max-width:900px){.conversation-detail-page .right-column{grid-row:auto}.conversation-detail-page .left-column{grid-row:1}}
+
+/* Temporary showcase continuation, in the ordinary library reading order. */
+.showcase-handoff {padding:20px;margin-bottom:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:24px;border-left:4px solid var(--aqm-accent)}
+.showcase-handoff h2 {font-size:18px;margin-bottom:10px}
+.showcase-handoff h3 {font-size:18px;margin-bottom:8px}
+.showcase-handoff p {font-size:13px;line-height:1.5;margin-bottom:12px}
+.showcase-handoff .handoff-boundary {font-size:11px;color:var(--aqm-muted);margin:12px 0 0}
+.showcase-handoff .primary-button {max-width:100%;white-space:normal;text-align:left}
+.sample-summary {display:block;font-size:12px;line-height:1.5;margin-top:6px;color:var(--aqm-muted);max-width:280px}
+@media(max-width:600px){.showcase-handoff{grid-template-columns:minmax(0,1fr);padding:16px;gap:12px}.showcase-handoff p{margin-bottom:10px}.showcase-handoff .field-note{font-size:12px}}

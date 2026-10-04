@@ -1,0 +1,12 @@
+
+Running 4 tests using 1 worker
+
+(node:23054) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x900
+[2/4] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x900
+[3/4] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 390x844
+[4/4] tests/showcase-continuity.spec.ts:20:63 › demo handoff 390x844
+  4 passed (6.6s)

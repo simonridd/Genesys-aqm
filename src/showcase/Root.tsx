@@ -28,15 +28,15 @@ export function Root() {
     window.addEventListener('popstate', navigate)
     return () => window.removeEventListener('popstate', navigate)
   }, [connected])
-  const navigate = (page: string, step?: number) => {
+  const navigate = (page: string, step?: number, showcaseEntry = false) => {
     const url = new URL(location.href)
-    url.search = new URLSearchParams({ page, ...(page === 'settings' ? { settingsSection: 'connection' } : {}), ...(page === 'demo' ? { tour: 'quality', step: String(step ?? 1) } : {}) }).toString()
+    url.search = new URLSearchParams({ page, ...(showcaseEntry ? { entry: 'showcase' } : {}), ...(page === 'settings' ? { settingsSection: 'connection' } : {}), ...(page === 'demo' ? { tour: 'quality', step: String(step ?? 1) } : {}) }).toString()
     url.hash = ''
     window.history.pushState(null, '', url)
     setEntry(entryRoute(url.searchParams, connected))
     window.scrollTo(0, 0)
   }
   return <Suspense fallback={<main className="page-content" role="status">Loading IPI AQM…</main>}>
-    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} connected={connected} onConnect={() => navigate('settings')} onLive={() => navigate(connected ? 'automation' : 'conversations')} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={navigate} onDemo={step => navigate('demo', step)}/> : <Live reviewDrafts={reviewDrafts} onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>}
+    {entry === 'demo' ? <DemoBoundary onExit={() => navigate('welcome')}><Demo onExit={pilot => { navigate('welcome'); if (pilot) history.replaceState(null, '', `${location.pathname}${location.search}#pilot`) }} connected={connected} onConnect={() => navigate('settings')} onLive={() => navigate(connected ? 'automation' : 'conversations', undefined, !connected)} /></DemoBoundary> : entry === 'welcome' ? <Welcome connected={connected} onLive={page => navigate(page, undefined, !connected && page === 'conversations')} onDemo={step => navigate('demo', step)}/> : <Live reviewDrafts={reviewDrafts} onConnectionChange={setConnected} onAbout={value => { setConnected(value); navigate('welcome') }}/>}
   </Suspense>
 }

@@ -1,0 +1,78 @@
+
+Running 17 tests using 1 worker
+
+(node:23235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x900
+[2/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x900
+[3/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1920x1080
+[4/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1920x1080
+[5/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 390x844
+[6/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 390x844
+[7/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x720
+[8/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x720
+[9/17] tests/showcase-continuity.spec.ts:48:32 › direct library, alternate sample, cards and preference 1440
+  1) tests/showcase-continuity.spec.ts:48:32 › direct library, alternate sample, cards and preference 1440 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Queue', { exact: true })
+
+
+      57 |   await page.getByLabel('Search table',{exact:true}).fill('next step');await expect(page.locator('tbody')).toContainText('Incomplete resolution');expect(await page.locator('tbody').innerText()).not.toMatch(/syn-|conv-/)
+      58 |   await page.getByLabel('Search table',{exact:true}).fill('Theo Martin');await expect(page.locator('tbody tr')).toHaveCount(1);await expect(page.getByRole('button',{name:'Open Incomplete resolution for Theo Martin',exact:true})).toBeVisible();await capture(page,`table-goal-${width}`)
+    > 59 |   await page.getByLabel('Queue',{exact:true}).selectOption('Technical Support');await page.getByLabel('Channel',{exact:true}).selectOption('messaging');await expect(page.locator('tbody tr')).toHaveCount(1)
+         |                                               ^
+      60 |   const original=new URL(page.url()).searchParams.toString();await page.setViewportSize({width:1440,height:900});await page.setViewportSize({width:390,height:844});await page.setViewportSize({width:1440,height:900});expect(new URL(page.url()).searchParams.toString()).toBe(original);await expect(page.locator('tbody tr')).toHaveCount(1);await expect(page.getByRole('table')).toBeVisible()
+      61 |   await page.getByRole('button',{name:'Open Incomplete resolution for Theo Martin',exact:true}).click();await expect(page).not.toHaveURL(/entry=showcase/);await page.getByRole('button',{name:'← Back to conversations',exact:true}).click();await expect(page.locator('.showcase-handoff')).toHaveCount(0)
+      62 |   await page.getByRole('button',{name:'About / product tour',exact:true}).click();await expect(page).toHaveURL(/page=welcome/);await page.goBack();await expect(page.getByRole('heading',{name:'Conversations',exact:true})).toBeVisible();await expect(page.locator('.showcase-handoff')).toHaveCount(0)
+        at /Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/tests/showcase-continuity.spec.ts:59:47
+
+    Error Context: test-results/showcase-continuity-direct-8de83-e-cards-and-preference-1440/error-context.md
+
+
+(node:23454) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/17] tests/showcase-continuity.spec.ts:48:32 › direct library, alternate sample, cards and preference 390
+  2) tests/showcase-continuity.spec.ts:48:32 › direct library, alternate sample, cards and preference 390 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByLabel('Queue', { exact: true })
+
+
+      57 |   await page.getByRole('button',{name:'Table',exact:true}).click();await page.goto(app+'?page=demo&step=5');await page.getByText('More options',{exact:true}).click();await page.getByRole('button',{name:'Explore the prototype →',exact:true}).click();await expect(page.getByRole('table')).toBeVisible()
+      58 |   await page.getByLabel('Search table',{exact:true}).fill('next step');await expect(page.locator('tbody')).toContainText('Incomplete resolution');expect(await page.locator('tbody').innerText()).not.toMatch(/syn-|conv-/)
+    > 59 |   await page.getByLabel('Search table',{exact:true}).fill('Theo Martin');await expect(page.locator('tbody tr')).toHaveCount(1);await expect(page.getByRole('button',{name:'Open Incomplete resolution for Theo Martin',exact:true})).toBeVisible();await capture(page,`table-goal-${width}`)
+         |                                               ^
+      60 |   await page.getByRole('combobox',{name:/^Queue/}).selectOption('Technical Support');await page.getByRole('combobox',{name:/^Channel/}).selectOption('messaging');await expect(page.locator('tbody tr')).toHaveCount(1)
+      61 |   const original=new URL(page.url()).searchParams.toString();await page.setViewportSize({width:1440,height:900});await page.setViewportSize({width:390,height:844});await page.setViewportSize({width:1440,height:900});expect(new URL(page.url()).searchParams.toString()).toBe(original);await expect(page.locator('tbody tr')).toHaveCount(1);await expect(page.getByRole('table')).toBeVisible()
+      62 |   await page.getByRole('button',{name:'Open Incomplete resolution for Theo Martin',exact:true}).click();await expect(page).not.toHaveURL(/entry=showcase/);await page.getByRole('button',{name:'← Back to conversations',exact:true}).click();await expect(page.locator('.showcase-handoff')).toHaveCount(0)
+        at /Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/tests/showcase-continuity.spec.ts:59:47
+
+    Error Context: test-results/showcase-continuity-direct-4a5a0-le-cards-and-preference-390/error-context.md
+
+
+(node:23542) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/17] tests/showcase-continuity.spec.ts:65:40 › keyboard welcome to sample and back
+[12/17] tests/showcase-continuity.spec.ts:65:40 › keyboard demo to sample and back
+[13/17] tests/showcase-continuity.spec.ts:72:70 › authenticated-shaped welcome Open AQM 1440
+[14/17] tests/showcase-continuity.spec.ts:72:70 › authenticated-shaped demo Open AQM 1440
+[15/17] tests/showcase-continuity.spec.ts:72:70 › authenticated-shaped welcome Open AQM 390
+[16/17] tests/showcase-continuity.spec.ts:72:70 › authenticated-shaped demo Open AQM 390
+[17/17] tests/showcase-continuity.spec.ts:79:2 › context consumed when leaving for another workspace page
+  2 failed
+    tests/showcase-continuity.spec.ts:48:32 › direct library, alternate sample, cards and preference 1440 
+    tests/showcase-continuity.spec.ts:48:32 › direct library, alternate sample, cards and preference 390 
+  15 passed (2.5m)

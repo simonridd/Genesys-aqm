@@ -1,0 +1,13 @@
+{
+  "syntheticCardsRenderingByteIdentical": true,
+  "realConversationBrowserByteIdentical": true,
+  "sampleTranscriptsChanged": false,
+  "showcaseChaptersChanged": false,
+  "newPreferenceKeys": 0,
+  "persistentOnboardingKeys": 0,
+  "sourceFilesChanged": [
+    "src/App.tsx",
+    "src/showcase/Root.tsx",
+    "src/styles.css"
+  ]
+}

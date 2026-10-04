@@ -1,0 +1,25 @@
+
+Running 17 tests using 1 worker
+
+(node:23617) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x900
+[2/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x900
+[3/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1920x1080
+[4/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1920x1080
+[5/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 390x844
+[6/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 390x844
+[7/17] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x720
+[8/17] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x720
+[9/17] tests/showcase-continuity.spec.ts:49:32 › direct library, alternate sample, cards and preference 1440
+[10/17] tests/showcase-continuity.spec.ts:49:32 › direct library, alternate sample, cards and preference 390
+[11/17] tests/showcase-continuity.spec.ts:66:40 › keyboard welcome to sample and back
+[12/17] tests/showcase-continuity.spec.ts:66:40 › keyboard demo to sample and back
+[13/17] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped welcome Open AQM 1440
+[14/17] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped demo Open AQM 1440
+[15/17] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped welcome Open AQM 390
+[16/17] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped demo Open AQM 390
+[17/17] tests/showcase-continuity.spec.ts:80:2 › context consumed when leaving for another workspace page
+  17 passed (37.6s)

@@ -1,0 +1,17 @@
+{
+  "rubric": "1 seriously ineffective; 2 major friction; 3 acceptable prototype; 4 strong internal product; 5 unusually polished/intuitive",
+  "scores": {
+    "Showcase \u2192 product continuity": 4,
+    "First-use learnability": 4,
+    "User-facing cleanliness": 4,
+    "Mobile handoff": 4
+  },
+  "wholeProductMeanCalculated": false,
+  "goalTask": {
+    "primaryActionsAfterEntry": 1,
+    "wrongTurns": 0,
+    "technicalDisclosures": 0,
+    "credentialOrProviderActions": 0,
+    "qualification": "scripted browser task, not recruited user study"
+  }
+}

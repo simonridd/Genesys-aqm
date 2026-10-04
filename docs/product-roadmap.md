@@ -106,3 +106,7 @@ Implemented shared Policy selection and Coverage after sampling headings, with d
 ## V0.20H — Calculator whole-conversation assumption
 
 Resolved F10's scoped calculator ambiguity: visible monthly whole-conversation floor/cost assumption and a contextual explanation for positive selection below one conversation. Estimator, defaults, fractional form/request averages, positive sub-cent cost copy, bounds, pricing and exclusions remain unchanged. Focused deterministic, browser, mobile, keyboard, resize and showcase smoke proof; frontend-only Pages publication with read-only production preservation. No whole-product perfection or release claim. See [V0.20H evidence](v020h-calculator-rounding.md). Next: ChatGPT review/merge and F1–F10 closure decision; fresh review or V0.20 tag/release remains a separate decision.
+
+## V0.21A — Showcase-to-product continuity
+
+Qualified: both disconnected Explore actions carry a temporary contextual bridge to the existing Incomplete resolution sample, connecting the missing-next-step theme to Theo/Jordan's transcript. Synthetic Table now leads with scenario title/summary, customer and quality; direct Conversations stays ordinary, Cards/preferences persist, and any sample selection consumes the handoff. Workspace footer is release-neutral INTERNAL PILOT • 2026. Frontend only; V0.20 tag and backend unchanged. See [V0.21A qualification and evidence](v021a-showcase-product-continuity.md). Next: ChatGPT review/merge.

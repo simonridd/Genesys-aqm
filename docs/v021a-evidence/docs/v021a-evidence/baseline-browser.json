@@ -1,0 +1,223 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "docs/v021a-evidence/browser.config.ts"
+    ],
+    "configFile": "/Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/docs/v021a-evidence/browser.config.ts",
+    "rootDir": "/Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/simonridd/.codex/worktrees/aqm-v021a-showcase-product-continuity/Genesys-aqm/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "showcase-continuity.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/v021a-evidence/baseline-browser.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "showcase-continuity.spec.ts",
+      "file": "showcase-continuity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "welcome handoff 1440x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:46:15.314Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "20d3ff3201ad46a1ff21-3e852c0fd8cdb146af81",
+          "file": "showcase-continuity.spec.ts",
+          "line": 20,
+          "column": 63
+        },
+        {
+          "title": "demo handoff 1440x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1837,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:46:16.791Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "20d3ff3201ad46a1ff21-46e9425ab63daecf566f",
+          "file": "showcase-continuity.spec.ts",
+          "line": 20,
+          "column": 63
+        },
+        {
+          "title": "welcome handoff 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1272,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:46:18.637Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "20d3ff3201ad46a1ff21-9d052c339c6cf9ea0aa8",
+          "file": "showcase-continuity.spec.ts",
+          "line": 20,
+          "column": 63
+        },
+        {
+          "title": "demo handoff 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1788,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T18:46:19.914Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "20d3ff3201ad46a1ff21-87e62d64646f4789a1b7",
+          "file": "showcase-continuity.spec.ts",
+          "line": 20,
+          "column": 63
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-04T18:46:15.126Z",
+    "duration": 6600.808,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
