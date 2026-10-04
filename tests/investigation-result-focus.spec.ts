@@ -53,7 +53,7 @@ for(const origin of ['analytics','calibration'])for(const size of [{width:1440,h
   }
   await capture(page,`${origin}-destination-${size.width}x${size.height}`)
   const data={base:'77f4f0870378e342b633cfd4821476941ec1bd70',sourceUrl,url,scope,ids,requests,entryFocus,tabs,keyboardActions:baseline?tabs:2}
-  if(!baseline&&[1440,390].includes(size.width)&&size.height!==720){const before=JSON.parse(readFileSync(`docs/v021b-evidence/before/${origin}-${size.width}x${size.height}.json`,'utf8'));for(const key of ['sourceUrl','url','scope','ids','requests']){const value=data[key as keyof typeof data];if(process.env.AQM_BROWSER_URL&&['sourceUrl','url'].includes(key))expect(new URL(value as string).search).toBe(new URL(before[key]).search);else expect(value).toEqual(before[key])}}
+  if(!baseline&&[1440,390].includes(size.width)&&size.height!==720){const before=JSON.parse(readFileSync(`${process.env.AQM_FOCUS_COMPARISON??'docs/v021b-evidence/before'}/${origin}-${size.width}x${size.height}.json`,'utf8'));for(const key of ['sourceUrl','url','scope','ids','requests']){const value=data[key as keyof typeof data];if(process.env.AQM_BROWSER_URL&&['sourceUrl','url'].includes(key))expect(new URL(value as string).search).toBe(new URL(before[key]).search);else expect(value).toEqual(before[key])}}
   writeFileSync(`${output}/${origin}-${size.width}x${size.height}.json`,JSON.stringify(data,null,2))
   if(!baseline){
    await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible()
@@ -71,7 +71,8 @@ for(const origin of ['analytics','calibration'])for(const size of [{width:1440,h
   expect(await page.evaluate(()=>history.length)).toBe(historyBefore+1)
   expect(await rows(page).evaluateAll(ns=>ns.map(n=>n.getAttribute('data-evaluation-id')))).toEqual(ids)
   if(!baseline){for(const width of [1440,390,1440]){await page.setViewportSize({width,height:width===390?844:900});await expect(page).toHaveURL(url);expect(await rows(page).evaluateAll(ns=>ns.map(n=>n.getAttribute('data-evaluation-id')))).toEqual(ids);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)}}
-  expect(s.f.errors).toEqual([])
+  expect(s.f.errors).toEqual([]);expect(s.f.blocked).toEqual([]);if('writes' in s.f)expect(s.f.writes).toEqual([])
+  writeFileSync(`${output}/${origin}-network-${size.width}x${size.height}.json`,JSON.stringify({errors:s.f.errors,blocked:s.f.blocked,writes:'writes' in s.f?s.f.writes:[],methods:s.requests.map(r=>r.split(' ')[0])},null,2))
  }finally{await s.close()}
 })
 if(!baseline){

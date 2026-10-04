@@ -1,0 +1,45 @@
+{
+  "base": "77f4f0870378e342b633cfd4821476941ec1bd70",
+  "sourceUrl": "http://127.0.0.1:4177/Genesys-aqm/?page=calibration&form=general_service%4017&source=genesys-cloud&from=2026-09-01&to=2026-09-30&agent=Fixture+Agent&queue=Customer+care&calibrationTab=questions&calibrationQuestion=general_service%4017%3Aunderstanding",
+  "url": "http://127.0.0.1:4177/Genesys-aqm/?page=evaluations&calibrationTab=questions&calibrationQuestion=general_service%4017%3Aunderstanding&evaluationSource=server&form=general_service%4017&reviewQuestion=understanding&comparison=disagreements&reviewStatus=REVIEWED&source=genesys-cloud&agent=Fixture+Agent&queue=Customer+care&from=2026-09-01&to=2026-09-30&evaluation.scopeLabels=%7B%22form%22%3A%7B%22value%22%3A%22general_service%4017%22%2C%22label%22%3A%22Customer+Service+v17%22%7D%2C%22reviewQuestion%22%3A%7B%22value%22%3A%22understanding%22%2C%22label%22%3A%22Clear+next+step%22%7D%7D&origin=calibration&calibration.source=genesys-cloud&calibration.form=general_service%4017&calibration.from=2026-09-01&calibration.to=2026-09-30&calibration.agent=Fixture+Agent&calibration.queue=Customer+care&calibration.tab=questions&calibration.question=general_service%4017%3Aunderstanding",
+  "scope": "Investigating:\nRemove\nForm: Customer Service v17 ×\nRemove\nReviewed question: Clear next step ×\nRemove\nComparison: disagreements ×\nRemove\nHuman review: Completed ×\nRemove\nSource: Genesys Cloud ×\nRemove\nAgent: Fixture Agent ×\nRemove\nQueue: Customer care ×\nRemove\nFrom: 2026-09-01 ×\nRemove\nTo: 2026-09-30 ×\nClear investigation filters",
+  "ids": [
+    "general_service-v17-0",
+    "general_service-v17-1",
+    "general_service-v17-2",
+    "general_service-v17-3",
+    "general_service-v17-4"
+  ],
+  "requests": [
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/overview?range=7",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/schedules?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/runs?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/session",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/session",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&form=general_service%4017&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Customer+care&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z"
+  ],
+  "entryFocus": {
+    "tag": "BODY",
+    "text": "IPI AQMAutomated Quality ManagementMonitor / Quality◌Overview◷Evaluations▥Analytics◎CalibrationConfiguration◇Policies▤Evaluation Forms▦Question Groups☷Answer SetsInteractions☷Conversations⚙SettingsAbout / product tour✦Decision intelligence powered by JevTyped AI decisions, shaped into clear quality signals.INTERNAL PILOT • 2026Workspace / EvaluationsADMINJev available through AQMREAL ORGANIZATIONAL DATACompleted interactionsBrowse a small, recent window. Transcripts are loaded only when you open an interaction.TableCardsConnection settingsFromToQueue IDAgent IDChannelAnyMessagingChatEmailVoiceDirectionAnyInboundOutboundSearch completed interactions0 shown · page 1 · 0 reported by Genesys. Only completed interactions appear.Search0 results on this pageTimestamp ↓Conversation ID Source Channel Agent Queue Direction Topic Transcript Search completed interactions to see results.← PreviousNext →Back to CalibrationQUALITYEvaluationsFind saved evaluations, inspect the AI result and follow human review progress.My reviewsAll evaluationsInvestigating:Remove Form: Customer Service v17 ×Remove Reviewed question: Clear next step ×Remove Comparison: disagreements ×Remove Human review: Completed ×Remove Source: Genesys Cloud ×Remove Agent: Fixture Agent ×Remove Queue: Customer care ×Remove From: 2026-09-01 ×Remove To: 2026-09-30 ×Clear investigation filtersSearch checks up to 500 evaluations at a time. Use Next to continue.Team review workloadReview workloadOpen reviews across the server, including unassigned work.My review queueUnassigned requested reviews (0)Complete server summary · 10/3/2026, 11:00:00 AMownerAssigned open0Requested0In review0Due soon0Overdue0Escalated0HistorySaved in AQMSaved in this browserReview statusAllNot reviewedReview requestedIn progressCompletedAssignmentAllUnassignedAssignedAssigned to meownerSLA stateAll statesDue soonOverdueEscalatedDueAllOverdueDue todayDue next 7 daysNo due dateAgentQueueChannelResultAllPassFailFromToSourceAllGenesys CloudSyntheticUploadedTriggerAllManualScheduledCritical failureAllYesNoRefreshAdvanced filtersFor troubleshooting or exact historical links.Exact form referenceExact question referenceExact policy reference      Calibration sampleSelect a calibration sampleMark existing, unreviewed evaluations. Source: Genesys Cloud; uses form, agent, queue and date filters above.Sample sizeSelectionMost recentDeterministic sampleAssign sample toLeave unassignedowner · ADMINSample due dateRequest sampleBulk assignmentBulk assignment0 selected · maximum 20 · requested, in-progress or unreviewed evaluations; due dates require an active reviewBulk assign toSelect reviewerowner · ADMINBulk due dateAssign 0 reviewsSet due dateClear due dateClear selectionLoaded 08:46:27 PMSearch5 results on this pageEvaluated ↓Select Evaluation Agent Queue Form Source AI score Human review Human score Agreement Assigned to Due Reviewer Reviewed at 9/10/2026, 11:00:00 AMFixture Agent · voiceFixture AgentCustomer careCustomer Service v17Genesys Cloud78%Completed62%1/3UnassignedCompletedReviewer name unavailable10/3/2026, 11:00:00 AM9/10/2026, 11:00:00 AMFixture Agent · voiceFixture AgentCustomer careCustomer Service v17Genesys Cloud78%Completed89%2/3UnassignedCompletedReviewer name unavailable10/3/2026, 11:00:00 AM9/10/2026, 11:00:00 AMFixture Agent · voiceFixture AgentCustomer careCustomer Service v17Genesys Cloud78%Completed89%2/3UnassignedCompletedReviewer name unavailable10/3/2026, 11:00:00 AM9/10/2026, 11:00:00 AMFixture Agent · voiceFixture AgentCustomer careCustomer Service v17Genesys Cloud78%Completed89%2/3UnassignedCompletedReviewer name unavailable10/3/2026, 11:00:00 AM9/10/2026, 11:00:00 AMFixture Agent · voiceFixture AgentCustomer careCustomer Service v17Genesys Cloud78%Completed89%2/3UnassignedCompletedReviewer name unavailable10/3/2026, 11:00:00 AMFirst pageNext page →\n"
+  },
+  "tabs": 56,
+  "keyboardActions": 56
+}

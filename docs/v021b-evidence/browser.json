@@ -49,7 +49,7 @@
       [
         "json",
         {
-          "outputFile": "docs/v021b-evidence/browser.json"
+          "outputFile": "/private/tmp/aqm-v021b-investigation-result-focus/docs/v021b-evidence/browser.json"
         }
       ]
     ],
@@ -88,12 +88,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4049,
+                  "duration": 4069,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:31.283Z",
+                  "startTime": "2026-10-04T19:47:28.881Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -122,12 +122,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3773,
+                  "duration": 3814,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:35.425Z",
+                  "startTime": "2026-10-04T19:47:33.040Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -156,12 +156,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3967,
+                  "duration": 3907,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:39.211Z",
+                  "startTime": "2026-10-04T19:47:36.863Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -190,12 +190,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3952,
+                  "duration": 4082,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:43.188Z",
+                  "startTime": "2026-10-04T19:47:40.774Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -224,12 +224,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3629,
+                  "duration": 3722,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:47.149Z",
+                  "startTime": "2026-10-04T19:47:44.860Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -258,12 +258,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3472,
+                  "duration": 3501,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:50.785Z",
+                  "startTime": "2026-10-04T19:47:48.586Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -292,12 +292,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3577,
+                  "duration": 3666,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:54.264Z",
+                  "startTime": "2026-10-04T19:47:52.092Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -326,12 +326,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3606,
+                  "duration": 3634,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:38:57.850Z",
+                  "startTime": "2026-10-04T19:47:55.762Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -360,12 +360,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 3255,
+                  "duration": 3335,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:01.462Z",
+                  "startTime": "2026-10-04T19:47:59.401Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -375,7 +375,7 @@
           ],
           "id": "3d500308320526525429-ced5dce3d6f71617b5da",
           "file": "investigation-result-focus.spec.ts",
-          "line": 78,
+          "line": 79,
           "column": 49
         },
         {
@@ -394,12 +394,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2902,
+                  "duration": 3009,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:04.725Z",
+                  "startTime": "2026-10-04T19:48:02.740Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -409,7 +409,7 @@
           ],
           "id": "3d500308320526525429-61bef5671a0160f8e3b6",
           "file": "investigation-result-focus.spec.ts",
-          "line": 78,
+          "line": 79,
           "column": 49
         },
         {
@@ -428,12 +428,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2665,
+                  "duration": 2775,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:07.631Z",
+                  "startTime": "2026-10-04T19:48:05.753Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -443,7 +443,7 @@
           ],
           "id": "3d500308320526525429-2331e750f722f5abac28",
           "file": "investigation-result-focus.spec.ts",
-          "line": 99,
+          "line": 100,
           "column": 40
         },
         {
@@ -462,12 +462,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2842,
+                  "duration": 2857,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:10.301Z",
+                  "startTime": "2026-10-04T19:48:08.532Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -477,7 +477,7 @@
           ],
           "id": "3d500308320526525429-56d66a6200b1b0b5e069",
           "file": "investigation-result-focus.spec.ts",
-          "line": 99,
+          "line": 100,
           "column": 40
         },
         {
@@ -496,12 +496,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1264,
+                  "duration": 1288,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:13.147Z",
+                  "startTime": "2026-10-04T19:48:11.393Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -511,7 +511,7 @@
           ],
           "id": "3d500308320526525429-1374d66e54d5ee1733f0",
           "file": "investigation-result-focus.spec.ts",
-          "line": 111,
+          "line": 112,
           "column": 175
         },
         {
@@ -530,12 +530,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1263,
+                  "duration": 1265,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:14.415Z",
+                  "startTime": "2026-10-04T19:48:12.686Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -545,7 +545,7 @@
           ],
           "id": "3d500308320526525429-df9fe489a8bb40f7feb1",
           "file": "investigation-result-focus.spec.ts",
-          "line": 111,
+          "line": 112,
           "column": 175
         },
         {
@@ -564,12 +564,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1258,
+                  "duration": 1250,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:15.683Z",
+                  "startTime": "2026-10-04T19:48:13.956Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -579,7 +579,7 @@
           ],
           "id": "3d500308320526525429-9f1333e4112dcb3520f2",
           "file": "investigation-result-focus.spec.ts",
-          "line": 111,
+          "line": 112,
           "column": 175
         },
         {
@@ -598,12 +598,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1242,
+                  "duration": 1248,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:16.945Z",
+                  "startTime": "2026-10-04T19:48:15.211Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -613,7 +613,7 @@
           ],
           "id": "3d500308320526525429-c9171cf6a6b9587428bf",
           "file": "investigation-result-focus.spec.ts",
-          "line": 111,
+          "line": 112,
           "column": 175
         },
         {
@@ -632,12 +632,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 1659,
+                  "duration": 1609,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-10-04T19:39:18.191Z",
+                  "startTime": "2026-10-04T19:48:16.463Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -647,7 +647,7 @@
           ],
           "id": "3d500308320526525429-14deefecdc0c8b22ca41",
           "file": "investigation-result-focus.spec.ts",
-          "line": 117,
+          "line": 118,
           "column": 14
         }
       ]
@@ -655,8 +655,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-04T19:38:30.522Z",
-    "duration": 49329.382,
+    "startTime": "2026-10-04T19:47:28.296Z",
+    "duration": 49802.161,
     "expected": 17,
     "skipped": 0,
     "unexpected": 0,

@@ -1,0 +1,22 @@
+{
+  "testedSource": "fd12a0ae52b7d416c2365e619740c604fd44b8f8",
+  "buildInputCount": 208,
+  "finalBuildInputsEqualTestedCommittedSource": true,
+  "remote": {
+    "refs/heads/gh-pages": "6bbc7b9a0dbfdb76898d348288328923e6c79139",
+    "refs/heads/main": "77f4f0870378e342b633cfd4821476941ec1bd70",
+    "refs/tags/v0.20.0": "eac819eec24bbfa53295568638fbdfe46bbc3d66",
+    "refs/tags/v0.20.0^{}": "fadb73dac800cede26389fe883602967cf5b8784"
+  },
+  "localTagObject": "eac819eec24bbfa53295568638fbdfe46bbc3d66",
+  "localTagPeeled": "fadb73dac800cede26389fe883602967cf5b8784",
+  "implementationChanges": [
+    "src/EvaluationsPage.tsx"
+  ],
+  "scores": {
+    "keyboardInvestigationEfficiency": 4,
+    "focusPredictability": 4,
+    "investigationComprehension": 4,
+    "mobileEvidenceAccess": 4
+  }
+}

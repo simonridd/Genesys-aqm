@@ -1,0 +1,26 @@
+{
+  "publicComparisonRef": "origin/main@77f4f0870378e342b633cfd4821476941ec1bd70",
+  "scope": "User explicitly requested docs/v021b-evidence, 25 collection counts/hashes and runtime/IAM/secret/Scheduler preservation plus pushing this branch.",
+  "secretPayloadsPresent": false,
+  "secretMetadataContentsPresent": false,
+  "secretVersionListsPresent": false,
+  "iamPrincipalsOrBindingsPresent": false,
+  "productionDocumentContentsPresent": false,
+  "allPreservationHashValuesAreSha256": true,
+  "all25CountsAlreadyPublicAndUnchanged": true,
+  "rawCollectionHashesAlreadyPublicAndUnchanged": 24,
+  "newRawHashCollections": [
+    "operationalHealth"
+  ],
+  "allRuntimeConfigImageRevisionTrafficAndSecretHashesAlreadyPublicAndUnchanged": {
+    "revision": true,
+    "image": true,
+    "traffic": true,
+    "runtimeConfigSha256": true,
+    "serviceIamSha256": true,
+    "schedulerConfigSha256": true,
+    "secrets": true
+  },
+  "onlyNewRuntimeValues": "Natural Scheduler operational timestamps; no configuration or secret/IAM data",
+  "collectionInventoryAlreadyPublicAndIdentical": true
+}

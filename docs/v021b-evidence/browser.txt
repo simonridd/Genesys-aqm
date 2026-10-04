@@ -1,7 +1,7 @@
 
 Running 17 tests using 1 worker
 
-(node:54725) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:67119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
 
 
@@ -13,13 +13,13 @@ Running 17 tests using 1 worker
 [6/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844
 [7/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1920x1080
 [8/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x720
-[9/17] tests/investigation-result-focus.spec.ts:78:49 › analytics filter, refresh, pagination and rendered order never re-focus
-[10/17] tests/investigation-result-focus.spec.ts:78:49 › calibration filter, refresh, pagination and rendered order never re-focus
-[11/17] tests/investigation-result-focus.spec.ts:99:40 › investigation initial empty and retry authority
-[12/17] tests/investigation-result-focus.spec.ts:99:40 › investigation initial failure and retry authority
-[13/17] tests/investigation-result-focus.spec.ts:111:175 › ordinary entry control page=evaluations
-[14/17] tests/investigation-result-focus.spec.ts:111:175 › ordinary entry control page=evaluations&origin=analytics
-[15/17] tests/investigation-result-focus.spec.ts:111:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017
-[16/17] tests/investigation-result-focus.spec.ts:111:175 › ordinary entry control page=evaluations&entry=showcase
-[17/17] tests/investigation-result-focus.spec.ts:117:14 › dirty Human review evidence return owns focus, including Forward with evaluationId
-  17 passed (49.3s)
+[9/17] tests/investigation-result-focus.spec.ts:79:49 › analytics filter, refresh, pagination and rendered order never re-focus
+[10/17] tests/investigation-result-focus.spec.ts:79:49 › calibration filter, refresh, pagination and rendered order never re-focus
+[11/17] tests/investigation-result-focus.spec.ts:100:40 › investigation initial empty and retry authority
+[12/17] tests/investigation-result-focus.spec.ts:100:40 › investigation initial failure and retry authority
+[13/17] tests/investigation-result-focus.spec.ts:112:175 › ordinary entry control page=evaluations
+[14/17] tests/investigation-result-focus.spec.ts:112:175 › ordinary entry control page=evaluations&origin=analytics
+[15/17] tests/investigation-result-focus.spec.ts:112:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017
+[16/17] tests/investigation-result-focus.spec.ts:112:175 › ordinary entry control page=evaluations&entry=showcase
+[17/17] tests/investigation-result-focus.spec.ts:118:14 › dirty Human review evidence return owns focus, including Forward with evaluationId
+  17 passed (49.8s)

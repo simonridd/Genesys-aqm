@@ -1,0 +1,12 @@
+
+Running 4 tests using 1 worker
+
+(node:67064) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900
+[2/4] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844
+[3/4] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900
+[4/4] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844
+  4 passed (15.2s)

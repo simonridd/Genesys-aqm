@@ -1,0 +1,45 @@
+{
+  "base": "77f4f0870378e342b633cfd4821476941ec1bd70",
+  "sourceUrl": "https://simonridd.github.io/Genesys-aqm/?page=calibration&form=general_service%4017&source=genesys-cloud&from=2026-09-01&to=2026-09-30&agent=Fixture+Agent&queue=Customer+care&calibrationTab=questions&calibrationQuestion=general_service%4017%3Aunderstanding",
+  "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&calibrationTab=questions&calibrationQuestion=general_service%4017%3Aunderstanding&evaluationSource=server&form=general_service%4017&reviewQuestion=understanding&comparison=disagreements&reviewStatus=REVIEWED&source=genesys-cloud&agent=Fixture+Agent&queue=Customer+care&from=2026-09-01&to=2026-09-30&evaluation.scopeLabels=%7B%22form%22%3A%7B%22value%22%3A%22general_service%4017%22%2C%22label%22%3A%22Customer+Service+v17%22%7D%2C%22reviewQuestion%22%3A%7B%22value%22%3A%22understanding%22%2C%22label%22%3A%22Clear+next+step%22%7D%7D&origin=calibration&calibration.source=genesys-cloud&calibration.form=general_service%4017&calibration.from=2026-09-01&calibration.to=2026-09-30&calibration.agent=Fixture+Agent&calibration.queue=Customer+care&calibration.tab=questions&calibration.question=general_service%4017%3Aunderstanding",
+  "scope": "Investigating:\nRemove\nForm: Customer Service v17 ×\nRemove\nReviewed question: Clear next step ×\nRemove\nComparison: disagreements ×\nRemove\nHuman review: Completed ×\nRemove\nSource: Genesys Cloud ×\nRemove\nAgent: Fixture Agent ×\nRemove\nQueue: Customer care ×\nRemove\nFrom: 2026-09-01 ×\nRemove\nTo: 2026-09-30 ×\nClear investigation filters",
+  "ids": [
+    "general_service-v17-0",
+    "general_service-v17-1",
+    "general_service-v17-2",
+    "general_service-v17-3",
+    "general_service-v17-4"
+  ],
+  "requests": [
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/overview?range=7",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/schedules?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/runs?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/session",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/session",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&form=general_service%4017&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+    "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Customer+care&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z"
+  ],
+  "entryFocus": {
+    "tag": "H2",
+    "text": "Matching evaluations"
+  },
+  "tabs": 1,
+  "keyboardActions": 2
+}

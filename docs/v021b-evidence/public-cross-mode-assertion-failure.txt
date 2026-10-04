@@ -1,0 +1,212 @@
+
+Running 4 tests using 1 worker
+
+(node:56541) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900
+  1) tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900 ───
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 11
+    + Received  +  0
+
+    @@ -7,27 +7,16 @@
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/overview?range=7",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/schedules?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/runs?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/analytics?from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&source=genesys-cloud&agent=Sam&queue=Claims",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/analytics?from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+      ]
+
+      54 |   await capture(page,`${origin}-destination-${size.width}x${size.height}`)
+      55 |   const data={base:'77f4f0870378e342b633cfd4821476941ec1bd70',sourceUrl,url,scope,ids,requests,entryFocus,tabs,keyboardActions:baseline?tabs:2}
+    > 56 |   if(!baseline&&[1440,390].includes(size.width)&&size.height!==720){const before=JSON.parse(readFileSync(`docs/v021b-evidence/before/${origin}-${size.width}x${size.height}.json`,'utf8'));for(const key of ['sourceUrl','url','scope','ids','requests']){const value=data[key as keyof typeof data];if(process.env.AQM_BROWSER_URL&&['sourceUrl','url'].includes(key))expect(new URL(value as string).search).toBe(new URL(before[key]).search);else expect(value).toEqual(before[key])}}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      57 |   writeFileSync(`${output}/${origin}-${size.width}x${size.height}.json`,JSON.stringify(data,null,2))
+      58 |   if(!baseline){
+      59 |    await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:56:453
+
+    Error Context: test-results/investigation-result-focus-2a0ca-t-keyboard-history-1440x900/error-context.md
+
+
+(node:56547) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/4] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844
+  2) tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844 ────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 11
+    + Received  +  0
+
+    @@ -7,27 +7,16 @@
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/overview?range=7",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/schedules?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/runs?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/analytics?from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&source=genesys-cloud&agent=Sam&queue=Claims",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/analytics?from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&source=genesys-cloud&policy=daily_voice&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&mode=scheduled",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+      ]
+
+      54 |   await capture(page,`${origin}-destination-${size.width}x${size.height}`)
+      55 |   const data={base:'77f4f0870378e342b633cfd4821476941ec1bd70',sourceUrl,url,scope,ids,requests,entryFocus,tabs,keyboardActions:baseline?tabs:2}
+    > 56 |   if(!baseline&&[1440,390].includes(size.width)&&size.height!==720){const before=JSON.parse(readFileSync(`docs/v021b-evidence/before/${origin}-${size.width}x${size.height}.json`,'utf8'));for(const key of ['sourceUrl','url','scope','ids','requests']){const value=data[key as keyof typeof data];if(process.env.AQM_BROWSER_URL&&['sourceUrl','url'].includes(key))expect(new URL(value as string).search).toBe(new URL(before[key]).search);else expect(value).toEqual(before[key])}}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      57 |   writeFileSync(`${output}/${origin}-${size.width}x${size.height}.json`,JSON.stringify(data,null,2))
+      58 |   if(!baseline){
+      59 |    await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:56:453
+
+    Error Context: test-results/investigation-result-focus-febd9-ct-keyboard-history-390x844/error-context.md
+
+
+(node:56554) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900
+  3) tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900 ─
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 5
+    + Received  + 0
+
+    @@ -9,23 +9,18 @@
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/session",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&form=general_service%4017&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Customer+care&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+      ]
+
+      54 |   await capture(page,`${origin}-destination-${size.width}x${size.height}`)
+      55 |   const data={base:'77f4f0870378e342b633cfd4821476941ec1bd70',sourceUrl,url,scope,ids,requests,entryFocus,tabs,keyboardActions:baseline?tabs:2}
+    > 56 |   if(!baseline&&[1440,390].includes(size.width)&&size.height!==720){const before=JSON.parse(readFileSync(`docs/v021b-evidence/before/${origin}-${size.width}x${size.height}.json`,'utf8'));for(const key of ['sourceUrl','url','scope','ids','requests']){const value=data[key as keyof typeof data];if(process.env.AQM_BROWSER_URL&&['sourceUrl','url'].includes(key))expect(new URL(value as string).search).toBe(new URL(before[key]).search);else expect(value).toEqual(before[key])}}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      57 |   writeFileSync(`${output}/${origin}-${size.width}x${size.height}.json`,JSON.stringify(data,null,2))
+      58 |   if(!baseline){
+      59 |    await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:56:453
+
+    Error Context: test-results/investigation-result-focus-8f1e6-t-keyboard-history-1440x900/error-context.md
+
+
+(node:56560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/4] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844
+  4) tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844 ──
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 5
+    + Received  + 0
+
+    @@ -9,23 +9,18 @@
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/alerts?limit=50&status=ACTIVE&severity=",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/monitoring-health",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/session",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/answer-sets?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/forms?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/policies?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/question-groups?limit=100",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&form=general_service%4017&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/calibration?source=genesys-cloud&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z&agent=Fixture+Agent&queue=Customer+care",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+    -   "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/review-workload",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/reviewers?limit=50",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/governance",
+        "GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Customer+care&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+      ]
+
+      54 |   await capture(page,`${origin}-destination-${size.width}x${size.height}`)
+      55 |   const data={base:'77f4f0870378e342b633cfd4821476941ec1bd70',sourceUrl,url,scope,ids,requests,entryFocus,tabs,keyboardActions:baseline?tabs:2}
+    > 56 |   if(!baseline&&[1440,390].includes(size.width)&&size.height!==720){const before=JSON.parse(readFileSync(`docs/v021b-evidence/before/${origin}-${size.width}x${size.height}.json`,'utf8'));for(const key of ['sourceUrl','url','scope','ids','requests']){const value=data[key as keyof typeof data];if(process.env.AQM_BROWSER_URL&&['sourceUrl','url'].includes(key))expect(new URL(value as string).search).toBe(new URL(before[key]).search);else expect(value).toEqual(before[key])}}
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      57 |   writeFileSync(`${output}/${origin}-${size.width}x${size.height}.json`,JSON.stringify(data,null,2))
+      58 |   if(!baseline){
+      59 |    await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:56:453
+
+    Error Context: test-results/investigation-result-focus-a637e-ct-keyboard-history-390x844/error-context.md
+
+
+  4 failed
+    tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900 ────
+    tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844 ─────
+    tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900 ──
+    tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844 ───
