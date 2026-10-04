@@ -94,3 +94,7 @@ Implemented and qualified: Analytics investigation drills push one guarded Evalu
 ## V0.20E — Overview first-scan hierarchy
 
 Implemented: Attention remains first; Quality, Coverage, Review Work and Automation Health are surfaced in one first-scan region. Trend and full coverage details move below. Backend metrics/contracts are unchanged. See [implementation and evidence](v020e-overview-first-scan.md).
+
+## V0.20F — User-facing language & technical detail hierarchy
+
+Implemented and qualified: Conversation detail leads with messages and human metadata; Policies use saved/local product language and readable exact-version assignments; Evaluations/Human review use human status labels and ordinary filters. Closed native disclosures retain exact references, IDs and evaluation provenance. Frontend only; contracts, review safety and definition authority remain unchanged. Local/public fixture checks, complete Pages byte/tree equality and read-only production preservation pass. See [implementation and evidence](v020f-user-language.md).

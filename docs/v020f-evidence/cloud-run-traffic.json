@@ -1,0 +1,11 @@
+{
+  "revision": "aqm-api-v019-e92f2d6",
+  "image": "europe-west2-docker.pkg.dev/genesys-aqm-2026/cloud-run-source-deploy/aqm-api@sha256:e4f28e1006efb39fe9443bc16cd4f076496fd27ec30b9dce201adceb84095d7b",
+  "traffic": [
+    {
+      "latestRevision": true,
+      "percent": 100,
+      "revisionName": "aqm-api-v019-e92f2d6"
+    }
+  ]
+}

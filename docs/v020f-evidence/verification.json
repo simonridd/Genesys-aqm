@@ -1,0 +1,85 @@
+{
+  "baseSha": "c128bca90b68df3cbf4f64462587e51b7a59b681",
+  "testedSourceSha": "4d5c90cb33dfc70bdbfd6c28c0d5f6753878e476",
+  "build": "pass",
+  "deterministicTests": 681,
+  "broadBrowser": {
+    "passed": 121,
+    "failed": 1,
+    "failure": "Answer Set keyboard fixture raced asynchronous save; explicit completion wait added"
+  },
+  "finalBrowserRecheck": {
+    "passed": 13,
+    "failed": 0
+  },
+  "distinctQualifiedBrowserCases": 123,
+  "publicChecks": {
+    "passed": 5,
+    "failed": 0,
+    "flaky": 0,
+    "skipped": 0
+  },
+  "viewports": [
+    "1440x900",
+    "1920x1080",
+    "390x844",
+    "1440x720"
+  ],
+  "responsiveStatePreservation": "1440 -> 390 -> 1440 passed",
+  "keyboard": "native disclosures, evidence return and reviewer/Analytics/Calibration regressions passed",
+  "knownDebt": [
+    "Legacy mobile SLA assertion fails on exact base/current; unchanged",
+    "Legacy policy tests reproduce base assumptions; product behavior not altered to satisfy them"
+  ],
+  "scopedScores": {
+    "cleanliness": 4,
+    "learnability": 4,
+    "comprehension": 4,
+    "traceability": 4
+  },
+  "pages": "12/12 public bytes and complete tree equal immutable committed build",
+  "productionPreservation": {
+    "sourceSha": "4d5c90cb33dfc70bdbfd6c28c0d5f6753878e476",
+    "totalCollections": 25,
+    "matchingCollections": 25,
+    "changedCollections": {},
+    "domainCollectionsUnchanged": true,
+    "runtimeComparison": {
+      "revision": true,
+      "image": true,
+      "traffic": true,
+      "runtimeConfigSha256": true,
+      "serviceIamSha256": true,
+      "schedulerConfigSha256": true,
+      "secrets": true
+    },
+    "allRuntimeConfigurationUnchanged": true,
+    "beforeRevision": "aqm-api-v019-e92f2d6",
+    "afterRevision": "aqm-api-v019-e92f2d6",
+    "schedulerRuntimeUnchanged": true,
+    "schedulerBefore": {
+      "lastAttemptTime": "2026-10-04T14:00:04.848782Z",
+      "scheduleTime": "2026-10-04T15:00:04.028877Z",
+      "status": {}
+    },
+    "schedulerAfter": {
+      "lastAttemptTime": "2026-10-04T14:00:04.848782Z",
+      "scheduleTime": "2026-10-04T15:00:04.028877Z",
+      "status": {}
+    },
+    "liveProviderCalls": {
+      "Jev": 0,
+      "Genesys": 0,
+      "notifications": 0
+    },
+    "productionReviewMutations": 0,
+    "productionAuthoringMutations": 0,
+    "productionDomainMutations": 0,
+    "collectionInventoryUnchanged": true,
+    "existingCollectionCount": 10,
+    "snapshotWrittenAtUtc": {
+      "before": "2026-10-04T14:26:49.469994+00:00",
+      "after": "2026-10-04T14:57:20.169077+00:00"
+    }
+  }
+}

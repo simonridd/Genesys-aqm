@@ -1,0 +1,13 @@
+
+Running 5 tests using 1 worker
+
+(node:61101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/5] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x900
+[2/5] tests/user-language.spec.ts:19:25 › routine language and technical evidence 390x844
+[3/5] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 1440
+[4/5] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 390
+[5/5] tests/user-language.spec.ts:142:1 › manual AI evaluation uses product copy and retains result provenance
+  5 passed (15.8s)
