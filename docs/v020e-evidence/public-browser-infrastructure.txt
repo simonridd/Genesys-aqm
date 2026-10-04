@@ -1,0 +1,1 @@
+Initial sandbox invocation could not launch Chromium: macOS bootstrap_check_in MachPortRendezvousServer permission denied. All 11 entries failed at browser launch before product checks executed. Re-run with browser launch/network permissions; no product source change. Full launch log retained at /private/tmp/aqm-v020e-public-sandbox-launch.txt.

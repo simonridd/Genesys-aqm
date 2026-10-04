@@ -90,3 +90,7 @@ Implemented and qualified: authoritative server list state distinguishes loading
 ## V0.20D — Investigation browser history
 
 Implemented and qualified: Analytics investigation drills push one guarded Evaluation destination, preserving the final source URL for exact Back/Forward restoration of Questions, queue/group views, critical cohorts and form versions. Filter edits remain replace-only; Calibration push behavior, explicit safe return URLs, authoring guards, reviewer drafts and Evaluation recovery remain intact. Overview's non-durable dashboard context remains outside this tranche. Frontend only. See [implementation and evidence](v020d-investigation-history.md).
+
+## V0.20E — Overview first-scan hierarchy
+
+Implemented: Attention remains first; Quality, Coverage, Review Work and Automation Health are surfaced in one first-scan region. Trend and full coverage details move below. Backend metrics/contracts are unchanged. See [implementation and evidence](v020e-overview-first-scan.md).

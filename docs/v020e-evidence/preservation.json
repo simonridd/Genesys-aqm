@@ -1,0 +1,38 @@
+{
+  "sourceSha": "03a8afb1e792ac8c1ac1b05773639b30f0fb6ab9",
+  "totalCollections": 25,
+  "matchingCollections": 25,
+  "changedCollections": {},
+  "domainCollectionsUnchanged": true,
+  "runtimeComparison": {
+    "revision": true,
+    "image": true,
+    "traffic": true,
+    "runtimeConfigSha256": true,
+    "serviceIamSha256": true,
+    "schedulerConfigSha256": true,
+    "secrets": true
+  },
+  "allRuntimeConfigurationUnchanged": true,
+  "beforeRevision": "aqm-api-v019-e92f2d6",
+  "afterRevision": "aqm-api-v019-e92f2d6",
+  "schedulerRuntimeUnchanged": true,
+  "schedulerBefore": {
+    "lastAttemptTime": "2026-10-04T13:00:04.828982Z",
+    "scheduleTime": "2026-10-04T14:00:04.028877Z",
+    "status": {}
+  },
+  "schedulerAfter": {
+    "lastAttemptTime": "2026-10-04T13:00:04.828982Z",
+    "scheduleTime": "2026-10-04T14:00:04.028877Z",
+    "status": {}
+  },
+  "liveProviderCalls": {
+    "Jev": 0,
+    "Genesys": 0,
+    "notifications": 0
+  },
+  "productionReviewMutations": 0,
+  "productionAuthoringMutations": 0,
+  "productionDomainMutations": 0
+}

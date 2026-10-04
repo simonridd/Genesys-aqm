@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Open: 7",
+    "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&evaluationSource=server&reviewQueue=active"
+  },
+  {
+    "name": "Due soon: 1",
+    "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&evaluationSource=server&dueState=DUE_SOON"
+  },
+  {
+    "name": "Overdue: 1",
+    "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&evaluationSource=server&due=overdue&dueState=OVERDUE"
+  },
+  {
+    "name": "Escalated: 1",
+    "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&evaluationSource=server&dueState=ESCALATED"
+  },
+  {
+    "name": "Unassigned: 1",
+    "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&evaluationSource=server&reviewStatus=REVIEW_REQUESTED&assignment=unassigned"
+  },
+  {
+    "name": "My review queue →",
+    "url": "https://simonridd.github.io/Genesys-aqm/?page=evaluations&evaluationSource=server&assignment=mine&reviewQueue=mine"
+  }
+]

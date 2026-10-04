@@ -1,0 +1,19 @@
+{
+  "verifiedAt": "2026-10-04T13:31:40.064873+00:00",
+  "canonicalBase": "b295506795114eca85b9d7eb3a6e7c3aa969bbd5",
+  "fetchedOriginMain": "b295506795114eca85b9d7eb3a6e7c3aa969bbd5",
+  "qualifiedSourceSha": "03a8afb1e792ac8c1ac1b05773639b30f0fb6ab9",
+  "existingBranch": "codex/aqm-v020e-overview-first-scan",
+  "branchContainsQualifiedSource": true,
+  "behindAhead": "0\t1",
+  "workingTreeInitiallyClean": true,
+  "frontendInputsUnchanged": true,
+  "backendSourceUnchangedFromCanonicalBase": true,
+  "fullLocalQualificationReused": true,
+  "productionSnapshotsSavedAt": {
+    "before-collections.json": "2026-10-04T13:25:12.447819+00:00",
+    "before-runtime.json": "2026-10-04T13:25:17.027813+00:00",
+    "after-collections.json": "2026-10-04T13:30:50.576070+00:00",
+    "after-runtime.json": "2026-10-04T13:30:54.118631+00:00"
+  }
+}

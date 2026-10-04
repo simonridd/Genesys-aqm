@@ -1,0 +1,13 @@
+{
+  "status": {
+    "traffic": [
+      {
+        "latestRevision": true,
+        "percent": 100,
+        "revisionName": "aqm-api-v019-e92f2d6"
+      }
+    ]
+  },
+  "verifiedRevision": "aqm-api-v019-e92f2d6",
+  "backendDeploymentPerformed": false
+}
