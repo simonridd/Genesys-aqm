@@ -1,0 +1,243 @@
+Workspace / Evaluations
+ADMIN
+Jev managed securely by automation service
+QUALITY
+Evaluations
+
+Production results with form snapshots and provider provenance.
+
+My reviews
+All evaluations
+Back to Analytics
+Investigating:
+Remove
+Form: General Customer Service v18 ×
+Remove
+Question: Understanding the issue ×
+Remove
+Analytics cohort ×
+Clear investigation filters
+Team review workload
+History
+Server
+This browser
+Review status
+All
+NOT REVIEWED
+REVIEW REQUESTED
+IN REVIEW
+REVIEWED
+Assignment
+All
+Unassigned
+Assigned
+Assigned to me
+Morgan Quality Lead
+Alex Reviewer
+SLA state
+All states
+Due soon
+Overdue
+Escalated
+Due
+All
+Overdue
+Due today
+Due next 7 days
+No due date
+Form ID @ version
+Agent
+Queue
+Channel
+Result
+All
+Pass
+Fail
+Answered question
+From
+To
+Policy ID
+Source
+All
+Genesys Cloud
+Synthetic
+Uploaded
+Trigger
+All
+Manual
+Scheduled
+Critical failure
+All
+Yes
+No
+Refresh
+
+Server filters scan a bounded window of up to 500 records per request. Use Next to continue the search.
+
+Calibration sample
+Bulk assignment
+Search
+1 results on this page
+Evaluated ↓
+
+Select
+
+Conversation
+
+Agent
+
+Queue
+
+Form
+
+Source
+
+AI score
+
+Review
+
+Human score
+
+Agreement
+
+Assigned to
+
+Due
+
+Reviewer
+
+Reviewed at
+
+01/09/2026, 01:00:00		22222222-2222-4222-8222-000000000010	Alex Morgan	Customer care	General Customer Service v18	genesys-cloud	78%	NOT_REVIEWED	—	—	Unassigned
+No due date
+	—	—
+First page
+Next server page →
+EVALUATION DETAIL
+General Customer Service v18
+Close details
+Score
+78%
+Result
+Pass
+Critical failures
+0
+Review
+NOT_REVIEWED
+Context
+
+Conversation 22222222-2222-4222-8222-000000000010 · Alex Morgan · Customer care · voice · Unspecified
+
+Policy Daily Voice Customer Service AQM · Run — · genesys-cloud
+
+Open conversation
+Groups · Question weighted
+Customer care · 78%
+
+No group threshold
+
+Warm opening · Yes · 100%
+
+Understanding the issue · 1.00 / 3 · 33%
+
+Resolution · Fully resolved · 100%
+
+HUMAN REVIEW
+Review this evaluation
+
+General Customer Service v18 · NOT REVIEWED
+
+REAL GENESYS DATA
+
+Assigned to: Unassigned
+
+Due: No due date
+No due date
+
+Review assignment
+Assigned reviewer
+Select reviewer
+Morgan Quality Lead · ADMIN
+Alex Reviewer · REVIEWER
+Due date
+Optional · your local time
+Assign
+Take over review
+AI SCORE
+78%
+HUMAN PROGRESS PREVIEW
+—
+EXACT AGREEMENT
+0 / 3
+ABSOLUTE SCORE GAP
+—
+Group comparison · human progress preview
+Customer care
+
+AI group score: 78%
+
+Human group score: —
+
+Difference: —
+
+Use the evaluated form snapshot. Partial scores are previews; completed reviews contribute to Calibration. AI scores stay in Quality.
+
+Review evaluation
+Mark for review
+All
+Agreements
+Disagreements
+Customer care · YES / NO
+Warm opening
+Unanswered
+
+Did the agent greet the customer and offer help at the start of the conversation?
+
+AI RESULT
+Yes
+
+Credit 100% · Yes probability 95%
+
+Selected-answer confidence 95%
+HUMAN REVIEW
+Not answered
+
+Human credit —
+
+Customer care · SCORE
+Understanding the issue
+Unanswered
+
+How effectively did the agent establish and acknowledge the customer’s actual issue?
+
+AI RESULT
+1.00 / 3
+
+Credit 33% · Confidence 75%
+
+HUMAN REVIEW
+Not answered
+
+Human credit —
+
+Customer care · CHOICE
+Resolution
+Unanswered
+
+What is the best description of the issue outcome by the end of the conversation?
+
+AI RESULT
+Fully resolved
+
+Credit 100% · Confidence 85%
+
+HUMAN REVIEW
+Not answered
+
+Human credit —
+
+Actual Jev requests: Not recorded (legacy)
+
+Provenance
+
+ID v18 · typesafe fixture-jev · 01/09/2026, 01:00:00 · scheduled · form v18 · run —

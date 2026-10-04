@@ -1,0 +1,73 @@
+Workspace / Question Groups
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Question Groups
+
+Reuse a set of related questions across multiple evaluation forms.
+
+Import reusable group
+New reusable question group
+Saved in AQM · 4 saved groups
+Refresh saved groups
+Status
+All statuses
+Draft
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Used
+Unused
+Search
+4 results
+Name ↓
+
+Version
+
+Status
+
+Questions
+
+Used by forms
+
+Last modified
+
+Resolution & Next Steps	v1	PUBLISHED	3	2	01/10/2026
+Identity & Security Verification	v1	PUBLISHED	3	0	01/10/2026
+Customer Experience / Empathy	v1	PUBLISHED	3	0	01/10/2026
+Call Closing	v1	PUBLISHED	2	0	01/10/2026
+Local drafts & starter examples · 4 groups
+New reusable group · v1 · DRAFT
+Close details
+Export JSON
+Save changes
+Publish reusable question group
+
+Unsaved changes
+
+Reusable question group name
+Reusable question group description
+View history
+Reusable questions
+
+Question weights determine the overall score.
+
+Scoring rules · Question weighted · Yes threshold 65%
+New reusable group
+1 question
+Group settings
+01
+Untitled question
+
+Yes / No · Weight 1 · Enabled
+
+Add a question to evaluate the conversation.
+
+Yes / No
+
+Edit
+Add question

@@ -1,0 +1,53 @@
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+All available dates
+
+All sources · All policies · All published forms
+
+26 evaluations · 26 evaluated conversations
+Change filters
+View
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+
+Each question is kept separate by exact form version. Inspect evaluations to see applicable answers.
+
+About confidence & uncertainty
+Search
+6 results
+Question ↓
+
+Form version
+
+Applicable answers
+
+Average quality
+
+Critical failure occurrences
+
+Uncertainty
+
+Average confidence
+
+Investigate
+
+Warm opening	General Customer Service v17	24	100%	2	0%	—	Inspect evaluations →
+Warm opening	General Customer Service v18	1	100%	0	0%	—	Inspect evaluations →
+Understanding the issue	General Customer Service v18	1	33.1%	0	0%	75%	Inspect evaluations →
+Understanding the issue	General Customer Service v17	25	33.1%	0	0%	75%	Inspect evaluations →
+Resolution	General Customer Service v17	25	100%	0	0%	85%	Inspect evaluations →
+Resolution	General Customer Service v18	1	100%	0	0%	85%	Inspect evaluations →
+Data scope & technical details

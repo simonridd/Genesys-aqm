@@ -1,0 +1,97 @@
+{
+  "method": "Reconstructed meaningful action sequence from observed UI task replay; each field fill one action; excludes keystrokes, waits, screenshots, viewport changes and scrolling. Not a recruited-human time/effort measure.",
+  "tasks": [
+    {
+      "task": "Pitch -> pilot",
+      "count": 6,
+      "actions": [
+        "Take guided demo",
+        "Next chapter 2",
+        "Next chapter 3",
+        "Next chapter 4",
+        "Next chapter 5",
+        "Plan pilot"
+      ]
+    },
+    {
+      "task": "Reviewer from My Reviews",
+      "count": 10,
+      "actions": [
+        "Open assigned review row",
+        "Start review",
+        "Answer warm opening",
+        "Answer understanding",
+        "Question note",
+        "Overall note",
+        "Open conversation",
+        "Back to review",
+        "Answer resolution",
+        "Complete review"
+      ]
+    },
+    {
+      "task": "Author form + scale from Forms",
+      "count": 13,
+      "actions": [
+        "New form",
+        "Name form",
+        "Add question",
+        "Question title",
+        "Instructions",
+        "Ordered scale",
+        "Open reusable picker",
+        "Cancel incompatible picker",
+        "Multiple choice",
+        "Open reusable picker",
+        "Attach Resolution clarity v1",
+        "Done",
+        "Save changes"
+      ]
+    },
+    {
+      "task": "Author group across two forms",
+      "count": 8,
+      "actions": [
+        "Add reusable group first form",
+        "Select Resolution & Next Steps",
+        "Save first form",
+        "New form",
+        "Name another form",
+        "Add reusable group",
+        "Select same three-question group",
+        "Save second form"
+      ]
+    },
+    {
+      "task": "Quality leader lowest question -> evidence from Overview",
+      "count": 4,
+      "actions": [
+        "Analytics",
+        "Inspect lowest question evaluations",
+        "Open evaluation",
+        "Open conversation"
+      ]
+    },
+    {
+      "task": "Viewer Analytics -> defining form from Overview",
+      "count": 7,
+      "actions": [
+        "Analytics",
+        "Questions",
+        "Inspect supporting evaluations",
+        "Open evaluation",
+        "Expand Reference configuration",
+        "Evaluation Forms",
+        "Open exact defining form"
+      ]
+    },
+    {
+      "task": "Admin attention -> policy from Overview",
+      "count": 2,
+      "actions": [
+        "Change to 30 days",
+        "View/Edit relevant upcoming policy"
+      ]
+    }
+  ]
+}

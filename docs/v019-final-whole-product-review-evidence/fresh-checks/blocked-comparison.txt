@@ -1,0 +1,48 @@
+Resolution clarity · update to v2
+Cancel
+
+Review the answers below. Nothing changes until you update this question.
+
+CURRENT · v1
+NEW · v2
+Changes
+Unclear
+0%
+Position 4
+Unclear
+0%
+Position 1
+ORDER CHANGED
+Mostly clear
+75%
+Position 2
+Mostly clear
+75%
+Position 2
+Unchanged
+Clear
+100%
+Position 1
+Completely clear
+90%
+Position 3
+RENAMED · CREDIT CHANGED · ORDER CHANGED
+—
+Not applicable
+Not scored
+Position 4
+ADDED
+Partly clear
+50%
+Position 3
+—
+REMOVED
+
+Resulting order: Unclear → Mostly clear → Completely clear → Not applicable
+
+CAN’T UPDATE YET
+
+Resolution clarity v2 removes “Partly clear”. The condition on “Clarify partial resolution” uses an answer that will no longer be available. Change or remove that condition first, then try the update again.
+
+Advanced details
+Update this question to v2

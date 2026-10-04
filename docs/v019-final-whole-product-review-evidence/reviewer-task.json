@@ -1,0 +1,348 @@
+{
+  "retained": {
+    "answers": [
+      "Yes",
+      "2",
+      ""
+    ],
+    "questionNote": "Opening was clear; inspect the actual greeting.",
+    "overall": "Independent fictional review; evidence detour in progress.",
+    "copy": [
+      "Unsaved review changes · Kept temporarily while you inspect this session.",
+      "Discard my unsaved answers",
+      "HUMAN PROGRESS PREVIEW",
+      "Group comparison · human progress preview",
+      "Save progress"
+    ]
+  },
+  "aiUnchanged": true,
+  "review": {
+    "id": "escalated",
+    "evaluationId": "escalated",
+    "conversationId": "22222222-2222-4222-8222-000000000004",
+    "formId": "general_service",
+    "formVersion": 17,
+    "formSnapshot": {
+      "id": "general_service",
+      "name": "General Customer Service",
+      "description": "Opening, understanding, ownership, resolution and close.",
+      "version": 17,
+      "enabled": true,
+      "questions": [
+        {
+          "id": "greeting",
+          "title": "Warm opening",
+          "instructions": "Did the agent greet the customer and offer help at the start of the conversation?",
+          "type": "noul",
+          "options": [],
+          "weight": 1,
+          "enabled": true,
+          "section": "Customer care"
+        },
+        {
+          "id": "understanding",
+          "title": "Understanding the issue",
+          "instructions": "How effectively did the agent establish and acknowledge the customer’s actual issue?",
+          "type": "score",
+          "weight": 1.2,
+          "enabled": true,
+          "options": [
+            {
+              "key": "poor",
+              "label": "Poor",
+              "description": "Absent or counterproductive behaviour.",
+              "credit": 0
+            },
+            {
+              "key": "needs_improvement",
+              "label": "Needs improvement",
+              "description": "Some appropriate behaviour, with clear gaps.",
+              "credit": 0.33
+            },
+            {
+              "key": "good",
+              "label": "Good",
+              "description": "Appropriate and effective behaviour with minor gaps.",
+              "credit": 0.67
+            },
+            {
+              "key": "excellent",
+              "label": "Excellent",
+              "description": "Consistently clear, effective and considerate behaviour.",
+              "credit": 1
+            }
+          ],
+          "section": "Customer care"
+        },
+        {
+          "id": "resolution",
+          "title": "Resolution",
+          "instructions": "What is the best description of the issue outcome by the end of the conversation?",
+          "type": "choice",
+          "weight": 1.5,
+          "enabled": true,
+          "options": [
+            {
+              "key": "fully_resolved",
+              "label": "Fully resolved",
+              "description": "The customer’s issue was resolved in the conversation.",
+              "credit": 1
+            },
+            {
+              "key": "partially_resolved",
+              "label": "Partially resolved",
+              "description": "Meaningful progress, but further action remains.",
+              "credit": 0.5
+            },
+            {
+              "key": "unresolved",
+              "label": "Unresolved",
+              "description": "The issue remained unresolved with no meaningful progress.",
+              "credit": 0
+            },
+            {
+              "key": "not_applicable",
+              "label": "Not applicable",
+              "description": "The conversation does not present a resolvable issue."
+            }
+          ],
+          "section": "Customer care"
+        }
+      ],
+      "scoring": {
+        "yesThreshold": 0.65,
+        "passScore": 0.7,
+        "criticalQuestionIds": []
+      }
+    },
+    "source": "genesys-cloud",
+    "createdAt": "2026-10-02T12:00:00.000Z",
+    "updatedAt": "2026-10-02T12:00:00.000Z",
+    "completedAt": "2026-10-02T12:00:00.000Z",
+    "status": "REVIEWED",
+    "revision": 4,
+    "assignment": {
+      "assignee": {
+        "userId": "reviewer",
+        "displayName": "Alex Reviewer"
+      },
+      "assignedAt": "2026-10-02T12:00:00.000Z",
+      "assignedBy": {
+        "userId": "admin",
+        "displayName": "Owner"
+      },
+      "dueAt": "2026-09-28T12:00:00Z"
+    },
+    "reviewer": {
+      "userId": "reviewer",
+      "displayName": "Alex Reviewer"
+    },
+    "notes": "Independent fictional review; evidence detour in progress.",
+    "questions": [
+      {
+        "questionId": "greeting",
+        "title": "Warm opening",
+        "type": "noul",
+        "section": "Customer care",
+        "ai": {
+          "id": "greeting",
+          "title": "Warm opening",
+          "type": "noul",
+          "rawValue": 0.95,
+          "outcome": "Yes",
+          "probability": 0.95,
+          "credit": 1,
+          "weight": 1,
+          "weightedContribution": 1
+        },
+        "human": {
+          "value": "Yes",
+          "outcome": "Yes",
+          "credit": 1,
+          "note": "Opening was clear; inspect the actual greeting."
+        },
+        "comparison": {
+          "exact": true,
+          "valueDistance": null,
+          "creditDifference": 0,
+          "band": "exact"
+        },
+        "selectedOutcomeConfidence": 0.95
+      },
+      {
+        "questionId": "understanding",
+        "title": "Understanding the issue",
+        "type": "score",
+        "section": "Customer care",
+        "ai": {
+          "id": "understanding",
+          "title": "Understanding the issue",
+          "type": "score",
+          "rawValue": 1,
+          "outcome": "1.00 / 3",
+          "confidence": 0.75,
+          "probabilities": {
+            "0": 0.1,
+            "1": 0.8,
+            "2": 0.1,
+            "3": 0
+          },
+          "credit": 0.331,
+          "weight": 1.2,
+          "weightedContribution": 0.3972
+        },
+        "human": {
+          "value": 2,
+          "outcome": "Good",
+          "credit": 0.67,
+          "note": ""
+        },
+        "comparison": {
+          "exact": false,
+          "valueDistance": 1,
+          "creditDifference": 0.339,
+          "band": "one-band"
+        },
+        "selectedOutcomeConfidence": 0.75
+      },
+      {
+        "questionId": "resolution",
+        "title": "Resolution",
+        "type": "choice",
+        "section": "Customer care",
+        "ai": {
+          "id": "resolution",
+          "title": "Resolution",
+          "type": "choice",
+          "rawValue": "fully_resolved",
+          "outcome": "Fully resolved",
+          "probability": 0.85,
+          "confidence": 0.85,
+          "probabilities": {
+            "fully_resolved": 0.85,
+            "partially_resolved": 0.1,
+            "unresolved": 0.04,
+            "not_applicable": 0.01
+          },
+          "credit": 1,
+          "weight": 1.5,
+          "weightedContribution": 1.5
+        },
+        "human": {
+          "value": "partially_resolved",
+          "outcome": "Partially resolved",
+          "credit": 0.5,
+          "note": ""
+        },
+        "comparison": {
+          "exact": false,
+          "valueDistance": null,
+          "creditDifference": -0.5,
+          "band": "different"
+        },
+        "selectedOutcomeConfidence": 0.85
+      }
+    ],
+    "humanOverallScore": 0.6902702702702703,
+    "scoringMode": "QUESTION_WEIGHTED",
+    "humanGroupResults": [
+      {
+        "groupId": "legacy_0",
+        "name": "Customer care",
+        "status": "APPLICABLE",
+        "applicable": true,
+        "countedWeight": 3.7,
+        "overallScore": 0.6902702702702703,
+        "critical": false,
+        "passed": null,
+        "questionIds": [
+          "greeting",
+          "understanding",
+          "resolution"
+        ],
+        "answered": 3,
+        "skipped": 0
+      }
+    ],
+    "humanPassed": false,
+    "humanCriticalGroupFailures": [],
+    "groupComparison": [
+      {
+        "groupId": "legacy_0",
+        "name": "Customer care",
+        "aiScore": 0.783027027027027,
+        "humanScore": 0.6902702702702703,
+        "difference": -0.09275675675675665
+      }
+    ],
+    "comparison": {
+      "aiOverallScore": 0.783027027027027,
+      "humanOverallScore": 0.6902702702702703,
+      "absoluteScoreDifference": 0.09275675675675665,
+      "answered": 3,
+      "agreements": 1,
+      "disagreements": 2,
+      "total": 3
+    },
+    "events": [
+      {
+        "kind": "review_requested",
+        "at": "2026-10-02T12:00:00.000Z",
+        "actor": {
+          "userId": "admin",
+          "displayName": "Owner"
+        },
+        "revision": 1
+      },
+      {
+        "kind": "review_started",
+        "at": "2026-10-02T12:00:00.000Z",
+        "actor": {
+          "userId": "reviewer",
+          "displayName": "Alex Reviewer"
+        },
+        "revision": 3
+      },
+      {
+        "kind": "review_completed",
+        "at": "2026-10-02T12:00:00.000Z",
+        "actor": {
+          "userId": "reviewer",
+          "displayName": "Alex Reviewer"
+        },
+        "revision": 4
+      }
+    ]
+  },
+  "completed": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+    "text": "Workspace / Evaluations\nREVIEWER\nJev managed securely by automation service\nQUALITY\nEvaluations\n\nProduction results with form snapshots and provider provenance.\n\nMy reviews\nAll evaluations\nMy reviews\nASSIGNED OPEN\n4\nDUE SOON\n1\nOVERDUE\n1\nESCALATED\n0\nAvailable unassigned reviews (1) →\nReview status\nAll\nNOT REVIEWED\nREVIEW REQUESTED\nIN REVIEW\nREVIEWED\nSLA state\nAll states\nDue soon\nOverdue\nEscalated\nDue\nAll\nOverdue\nDue today\nDue next 7 days\nNo due date\nRefresh\nMore filters\n\nMy queue is prioritized across the server active review set (maximum 2,000).\n\nSearch\n4 results on this page\nQueue priority\tConversation\tAgent\tQueue\tForm\tAI score\tReview\tDue\tAction\n\nOVERDUE\nOverdue by 6 hours\n\t22222222-2222-4222-8222-000000000005\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tREVIEW_REQUESTED\t02/10/2026, 07:00:00\nOVERDUE\nOverdue by 6 hours\n\tStart review\n\nDUE SOON\nDue in 6 hours\n\t22222222-2222-4222-8222-000000000006\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tREVIEW_REQUESTED\t02/10/2026, 19:00:00\nDUE SOON\nDue in 6 hours\n\tStart review\n\nDue in 3 days\n\t22222222-2222-4222-8222-000000000023\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tIN_REVIEW\t05/10/2026, 13:00:00\nDue in 3 days\n\tContinue review\n\nDue in 3 days\n\t22222222-2222-4222-8222-000000000025\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tREVIEW_REQUESTED\t05/10/2026, 13:00:00\nDue in 3 days\n\tStart review\nFirst page\nNext server page →\nEVALUATION DETAIL\nGeneral Customer Service v17\nClose details\nScore\n78%\nResult\nPass\nCritical failures\n0\nReview\nREVIEWED\nContext\n\nConversation 22222222-2222-4222-8222-000000000004 · Alex Morgan · Customer care · voice · Unspecified\n\nPolicy Manual · Run — · genesys-cloud\n\nOpen conversation\nGroups · Question weighted\nCustomer care · 78%\n\nNo group threshold\n\nWarm opening · Yes · 100%\n\nUnderstanding the issue · 1.00 / 3 · 33%\n\nResolution · Fully resolved · 100%\n\nHUMAN REVIEW\nCompleted calibration\n\nGeneral Customer Service v17 · REVIEWED\n\nREAL GENESYS DATA\n\nAssigned to: Alex Reviewer\n\nDue: 28/09/2026, 13:00:00\nCompleted\n\nAI SCORE\n78%\nHUMAN SCORE\n69%\nEXACT AGREEMENT\n1 / 3\nABSOLUTE SCORE GAP\n9.3 pp\nGroup comparison\nCustomer care\n\nAI group score: 78%\n\nHuman group score: 69%\n\nDifference: -9.3 pp\n\nUse the evaluated form snapshot. Partial scores are previews; completed reviews contribute to Calibration. AI scores stay in Quality.\n\nReviewer: Alex Reviewer · 02/10/2026, 13:00:00 · revision 4\n\nReview completed. It has been removed from My Reviews. The original AI result is preserved.\n\nClose and continue My Reviews\nAll\nAgreements\nDisagreements\nCustomer care · YES / NO\nWarm opening\nAgreement\n\nDid the agent greet the customer and offer help at the start of the conversation?\n\nAI RESULT\nYes\n\nCredit 100% · Yes probability 95%\n\nSelected-answer confidence 95%\nHUMAN REVIEW\nYes\n\nHuman credit 100%\n\nOpening was clear; inspect the actual greeting.\n\nCustomer care · SCORE\nUnderstanding the issue\nOne-band difference\n\nHow effectively did the agent establish and acknowledge the customer’s actual issue?\n\nAI RESULT\n1.00 / 3\n\nCredit 33% · Confidence 75%\n\nExact value distance: 1.00 bands\nHUMAN REVIEW\nGood\n\nHuman credit 67%\n\nCustomer care · CHOICE\nResolution\nDisagreement\n\nWhat is the best description of the issue outcome by the end of the conversation?\n\nAI RESULT\nFully resolved\n\nCredit 100% · Confidence 85%\n\nHUMAN REVIEW\nPartially resolved\n\nHuman credit 50%\n\nReviewer note\n\nIndependent fictional review; evidence detour in progress.\n\nReview history (3 events)\n\nActual Jev requests: Not recorded (legacy)\n\nProvenance\n\nID escalated · typesafe fixture-jev · 01/08/2026, 13:00:00 · manual · form v17 · run —",
+    "controls": [
+      "My reviews",
+      "All evaluations",
+      "Available unassigned reviews (1) →",
+      "All\nNOT REVIEWED\nREVIEW REQUESTED\nIN REVIEW\nREVIEWED",
+      "All states\nDue soon\nOverdue\nEscalated",
+      "All\nOverdue\nDue today\nDue next 7 days\nNo due date",
+      "Refresh",
+      "More filters",
+      "22222222-2222-4222-8222-000000000005",
+      "Start review",
+      "22222222-2222-4222-8222-000000000006",
+      "Start review",
+      "22222222-2222-4222-8222-000000000023",
+      "Continue review",
+      "22222222-2222-4222-8222-000000000025",
+      "Start review",
+      "First page",
+      "Next server page →",
+      "Close details",
+      "Open conversation",
+      "Close and continue My Reviews",
+      "All",
+      "Agreements",
+      "Disagreements"
+    ],
+    "height": 3826
+  }
+}

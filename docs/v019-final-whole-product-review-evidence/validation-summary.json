@@ -1,0 +1,105 @@
+{
+  "canonicalCommit": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "deterministic": {
+    "files": 65,
+    "passed": 621,
+    "failed": 0,
+    "evidence": "deterministic-tests.log"
+  },
+  "existingBrowserRegressions": {
+    "passed": 225,
+    "failed": 63,
+    "skipped": 2,
+    "classifications": {
+      "STALE BASELINE EXPECTATION": 62,
+      "HARNESS DEFECT": 1
+    },
+    "evidence": "existing-regressions.json"
+  },
+  "existingViteDependentRerun": {
+    "passed": 1,
+    "failed": 1,
+    "failureClassification": "STALE BASELINE EXPECTATION: artificial pre-mounted in-memory session setup",
+    "evidence": "legacy-module-rerun.json",
+    "overlap": "2 tests already included in original 290, not additional unique tests"
+  },
+  "freshPlaywrightChecks": {
+    "initial": {
+      "passed": 8,
+      "failed": 3,
+      "failedClassification": "HARNESS DEFECT: ambiguous tbody selector included hidden mounted interaction table"
+    },
+    "correctedAffectedRerun": {
+      "passed": 3,
+      "failed": 0
+    },
+    "uniqueFinalPassed": 11,
+    "knownProductCharacterizations": [
+      "F5 scale-format discovery detour",
+      "F7 Browser Back mismatch"
+    ],
+    "evidence": [
+      "fresh-checks-initial.json",
+      "fresh-checks-corrected.json"
+    ],
+    "overlap": "3 rerun cases already in the 11; do not sum as 14"
+  },
+  "publicDeployment": {
+    "assets": 12,
+    "matched": 12,
+    "pitchElapsedSeconds": 271.998,
+    "dwellSeconds": 260,
+    "navigationOverheadSeconds": 11.998,
+    "apiGenesysJevNotificationCalls": 0,
+    "welcomeDemoStorageWrites": 0,
+    "evidence": [
+      "public/assets-proof.json",
+      "public/paced-public.json",
+      "public/blind-public.json"
+    ]
+  },
+  "authenticatedFixture": {
+    "manualContexts": 12,
+    "actualExternalProviderTraffic": 0,
+    "unknownExternalAttempts": 0,
+    "pageErrors": 0,
+    "guard": "browser routes fulfill local/fictional API contracts; unknown external URLs abort; server Genesys/Jev providers throw",
+    "evidence": "authenticated-final-boundary.json"
+  },
+  "keyboardAccessibility": {
+    "personaTasksCompleted": 4,
+    "additionalNativeSelectSubnavProbes": 3,
+    "viewports": [
+      "1440x900",
+      "1920x1080",
+      "390x844",
+      "1440x720",
+      "1440 -> 390 -> 1440 representative state retention"
+    ],
+    "formalCertification": false,
+    "evidence": [
+      "keyboard-observations.json",
+      "semantics.json",
+      "responsive-observations.json"
+    ]
+  },
+  "build": {
+    "status": "PASS",
+    "command": "VITE_AQM_API_ORIGIN=https://aqm-api-bd54ukouga-nw.a.run.app npm run build",
+    "verification": "TypeScript + Vite completed; all 12 output files byte-identical to public deployment"
+  },
+  "backend": {
+    "status": {
+      "latestReadyRevisionName": "aqm-api-v019-e92f2d6",
+      "traffic": [
+        {
+          "latestRevision": true,
+          "percent": 100,
+          "revisionName": "aqm-api-v019-e92f2d6"
+        }
+      ],
+      "url": "https://aqm-api-bd54ukouga-nw.a.run.app"
+    }
+  },
+  "noMisleadingGrandTotal": true
+}

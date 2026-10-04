@@ -1,0 +1,566 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.fresh-checks.config.ts"
+    ],
+    "configFile": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/playwright.fresh-checks.config.ts",
+    "rootDir": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "final-whole-product-review.spec.ts"
+        ],
+        "timeout": 45000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/v019-final-whole-product-review-evidence/fresh-checks.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "final-whole-product-review.spec.ts",
+      "file": "final-whole-product-review.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "fresh review continuity and completion 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3010,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: not \u001b[32m\"000000000004\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: not \u001b[32m\"000000000004\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n\n    at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:8:1727",
+                    "location": {
+                      "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                      "column": 1727,
+                      "line": 8
+                    },
+                    "snippet": "   6 | async function settle(p:Page){await p.waitForLoadState('networkidle');await p.clock.runFor(700);await p.waitForLoadState('networkidle')}\n   7 | async function nav(p:Page,name:string){const b=p.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({hasText:new RegExp(name+'$')}),d=b.locator('xpath=ancestor::details');if(await d.count()&&await d.getAttribute('open')===null)await d.locator('summary').click();await b.click();await settle(p)}\n>  8 | for(const width of [1440,390])test(`fresh review continuity and completion ${width}`,async({page})=>{await page.setViewportSize({width,height:width===390?844:900});const f=await fixture(page,'REVIEWER','attention','evaluations');try{const before=JSON.stringify(await f.store.evaluation('escalated'));await page.getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('button',{name:'Start review',exact:true}).last()).toBeVisible();await page.getByRole('button',{name:'Start review',exact:true}).last().click();await expect(page.getByLabel('Human answer: Warm opening')).toBeVisible();await page.getByLabel('Human answer: Warm opening').selectOption('Yes');await page.getByLabel('Human answer: Understanding the issue').selectOption('2');await page.getByLabel('Question note: Warm opening').fill('Fresh question note');await page.getByLabel('Overall review note').fill('Fresh overall note');await page.getByRole('button',{name:'Open conversation',exact:true}).click();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(page.getByLabel('Human answer: Warm opening')).toHaveValue('Yes');await expect(page.getByLabel('Human answer: Understanding the issue')).toHaveValue('2');await expect(page.getByLabel('Question note: Warm opening')).toHaveValue('Fresh question note');await expect(page.getByLabel('Overall review note')).toHaveValue('Fresh overall note');await page.getByLabel('Human answer: Resolution').selectOption('partially_resolved');await page.getByRole('button',{name:'Complete review',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Review completed.'})).toBeVisible();await expect(page.locator('tbody')).not.toContainText('000000000004');await expect(page.locator('main')).toContainText('HUMAN SCORE');expect(JSON.stringify(await f.store.evaluation('escalated'))).toBe(before);expect((await f.store.review('escalated'))?.status).toBe('REVIEWED');expect(f.blocked).toEqual([]);expect(f.errors).toEqual([])}finally{await f.close()}})\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\n   9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})\n  10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})\n  11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                        "column": 1727,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: not \u001b[32m\"000000000004\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n\n\n   6 | async function settle(p:Page){await p.waitForLoadState('networkidle');await p.clock.runFor(700);await p.waitForLoadState('networkidle')}\n   7 | async function nav(p:Page,name:string){const b=p.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({hasText:new RegExp(name+'$')}),d=b.locator('xpath=ancestor::details');if(await d.count()&&await d.getAttribute('open')===null)await d.locator('summary').click();await b.click();await settle(p)}\n>  8 | for(const width of [1440,390])test(`fresh review continuity and completion ${width}`,async({page})=>{await page.setViewportSize({width,height:width===390?844:900});const f=await fixture(page,'REVIEWER','attention','evaluations');try{const before=JSON.stringify(await f.store.evaluation('escalated'));await page.getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('button',{name:'Start review',exact:true}).last()).toBeVisible();await page.getByRole('button',{name:'Start review',exact:true}).last().click();await expect(page.getByLabel('Human answer: Warm opening')).toBeVisible();await page.getByLabel('Human answer: Warm opening').selectOption('Yes');await page.getByLabel('Human answer: Understanding the issue').selectOption('2');await page.getByLabel('Question note: Warm opening').fill('Fresh question note');await page.getByLabel('Overall review note').fill('Fresh overall note');await page.getByRole('button',{name:'Open conversation',exact:true}).click();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(page.getByLabel('Human answer: Warm opening')).toHaveValue('Yes');await expect(page.getByLabel('Human answer: Understanding the issue')).toHaveValue('2');await expect(page.getByLabel('Question note: Warm opening')).toHaveValue('Fresh question note');await expect(page.getByLabel('Overall review note')).toHaveValue('Fresh overall note');await page.getByLabel('Human answer: Resolution').selectOption('partially_resolved');await page.getByRole('button',{name:'Complete review',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Review completed.'})).toBeVisible();await expect(page.locator('tbody')).not.toContainText('000000000004');await expect(page.locator('main')).toContainText('HUMAN SCORE');expect(JSON.stringify(await f.store.evaluation('escalated'))).toBe(before);expect((await f.store.review('escalated'))?.status).toBe('REVIEWED');expect(f.blocked).toEqual([]);expect(f.errors).toEqual([])}finally{await f.close()}})\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\n   9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})\n  10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})\n  11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})\n    at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:8:1727"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:14.671Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-e81b0-tinuity-and-completion-1440/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-e81b0-tinuity-and-completion-1440/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                    "column": 1727,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-17df29ea4b4aeb5b3dda",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 8,
+          "column": 31
+        },
+        {
+          "title": "fresh review continuity and completion 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1520,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: not \u001b[32m\"000000000004\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: not \u001b[32m\"000000000004\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n\n    at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:8:1727",
+                    "location": {
+                      "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                      "column": 1727,
+                      "line": 8
+                    },
+                    "snippet": "   6 | async function settle(p:Page){await p.waitForLoadState('networkidle');await p.clock.runFor(700);await p.waitForLoadState('networkidle')}\n   7 | async function nav(p:Page,name:string){const b=p.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({hasText:new RegExp(name+'$')}),d=b.locator('xpath=ancestor::details');if(await d.count()&&await d.getAttribute('open')===null)await d.locator('summary').click();await b.click();await settle(p)}\n>  8 | for(const width of [1440,390])test(`fresh review continuity and completion ${width}`,async({page})=>{await page.setViewportSize({width,height:width===390?844:900});const f=await fixture(page,'REVIEWER','attention','evaluations');try{const before=JSON.stringify(await f.store.evaluation('escalated'));await page.getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('button',{name:'Start review',exact:true}).last()).toBeVisible();await page.getByRole('button',{name:'Start review',exact:true}).last().click();await expect(page.getByLabel('Human answer: Warm opening')).toBeVisible();await page.getByLabel('Human answer: Warm opening').selectOption('Yes');await page.getByLabel('Human answer: Understanding the issue').selectOption('2');await page.getByLabel('Question note: Warm opening').fill('Fresh question note');await page.getByLabel('Overall review note').fill('Fresh overall note');await page.getByRole('button',{name:'Open conversation',exact:true}).click();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(page.getByLabel('Human answer: Warm opening')).toHaveValue('Yes');await expect(page.getByLabel('Human answer: Understanding the issue')).toHaveValue('2');await expect(page.getByLabel('Question note: Warm opening')).toHaveValue('Fresh question note');await expect(page.getByLabel('Overall review note')).toHaveValue('Fresh overall note');await page.getByLabel('Human answer: Resolution').selectOption('partially_resolved');await page.getByRole('button',{name:'Complete review',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Review completed.'})).toBeVisible();await expect(page.locator('tbody')).not.toContainText('000000000004');await expect(page.locator('main')).toContainText('HUMAN SCORE');expect(JSON.stringify(await f.store.evaluation('escalated'))).toBe(before);expect((await f.store.review('escalated'))?.status).toBe('REVIEWED');expect(f.blocked).toEqual([]);expect(f.errors).toEqual([])}finally{await f.close()}})\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\n   9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})\n  10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})\n  11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                        "column": 1727,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: not \u001b[32m\"000000000004\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"not toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n\n\n   6 | async function settle(p:Page){await p.waitForLoadState('networkidle');await p.clock.runFor(700);await p.waitForLoadState('networkidle')}\n   7 | async function nav(p:Page,name:string){const b=p.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({hasText:new RegExp(name+'$')}),d=b.locator('xpath=ancestor::details');if(await d.count()&&await d.getAttribute('open')===null)await d.locator('summary').click();await b.click();await settle(p)}\n>  8 | for(const width of [1440,390])test(`fresh review continuity and completion ${width}`,async({page})=>{await page.setViewportSize({width,height:width===390?844:900});const f=await fixture(page,'REVIEWER','attention','evaluations');try{const before=JSON.stringify(await f.store.evaluation('escalated'));await page.getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('button',{name:'Start review',exact:true}).last()).toBeVisible();await page.getByRole('button',{name:'Start review',exact:true}).last().click();await expect(page.getByLabel('Human answer: Warm opening')).toBeVisible();await page.getByLabel('Human answer: Warm opening').selectOption('Yes');await page.getByLabel('Human answer: Understanding the issue').selectOption('2');await page.getByLabel('Question note: Warm opening').fill('Fresh question note');await page.getByLabel('Overall review note').fill('Fresh overall note');await page.getByRole('button',{name:'Open conversation',exact:true}).click();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(page.getByLabel('Human answer: Warm opening')).toHaveValue('Yes');await expect(page.getByLabel('Human answer: Understanding the issue')).toHaveValue('2');await expect(page.getByLabel('Question note: Warm opening')).toHaveValue('Fresh question note');await expect(page.getByLabel('Overall review note')).toHaveValue('Fresh overall note');await page.getByLabel('Human answer: Resolution').selectOption('partially_resolved');await page.getByRole('button',{name:'Complete review',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Review completed.'})).toBeVisible();await expect(page.locator('tbody')).not.toContainText('000000000004');await expect(page.locator('main')).toContainText('HUMAN SCORE');expect(JSON.stringify(await f.store.evaluation('escalated'))).toBe(before);expect((await f.store.review('escalated'))?.status).toBe('REVIEWED');expect(f.blocked).toEqual([]);expect(f.errors).toEqual([])}finally{await f.close()}})\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\n   9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})\n  10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})\n  11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})\n    at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:8:1727"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:18.273Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-3aa24-ntinuity-and-completion-390/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-3aa24-ntinuity-and-completion-390/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                    "column": 1727,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-a631db6907d1c49ae259",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 8,
+          "column": 31
+        },
+        {
+          "title": "fresh blind scale-format detour is retained",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1473,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:20.359Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-739c65a1b30fc18c6ac3",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "fresh removed-answer comparison explains dependent question repair before update",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1392,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:21.999Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-a1040009ece981edc6c9",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "fresh lowest-question cohort and explicit return retain exact version and tab",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1134,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: \u001b[32m\"v18\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody></tbody> aka getByRole('region', { name: 'All evaluations table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: \u001b[32m\"v18\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody></tbody> aka getByRole('region', { name: 'All evaluations table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n\n    at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:11:565",
+                    "location": {
+                      "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                      "column": 565,
+                      "line": 11
+                    },
+                    "snippet": "   9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})\n  10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})\n> 11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^\n  12 | for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'])test(`fresh 390px role primary task and utilities ${role}`,async({page})=>{await page.setViewportSize({width:390,height:844});const f=await fixture(page,role,'attention',role==='AUTHOR'?'forms':role==='REVIEWER'?'evaluations':'automation');try{const n=page.getByRole('navigation',{name:'Primary navigation'});const primary=n.locator('details[open] button').first();for(const control of [primary,n.getByRole('button',{name:'Settings',exact:true}),n.getByRole('button',{name:'About / product tour',exact:true})]){await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();expect(b).not.toBeNull();expect(b!.x).toBeGreaterThanOrEqual(0);expect(b!.x+b!.width).toBeLessThanOrEqual(390);expect(b!.height).toBeGreaterThanOrEqual(24)}expect(f.blocked).toEqual([])}finally{await f.close()}})\n  13 | test('fresh partial overview preserves available sections',async({page})=>{const f=await fixture(page,'ADMIN','attention','forms');try{(f.store as any).healthSnapshot=async()=>{throw Error('Fictional partial operational-health failure')};await nav(page,'Overview');await expect(page.locator('main')).toContainText('Unavailable');await expect(page.locator('main')).toContainText('Average quality');await expect(page.locator('main')).toContainText('Review workload');expect(f.blocked).toEqual([])}finally{await f.close()}})\n  14 | test('fresh browser Back mismatch is retained as characterization',async({page})=>{const f=await fixture(page,'VIEWER','attention','automation');try{await nav(page,'About / product tour');await page.getByRole('button',{name:'Open AQM',exact:true}).first().click();await nav(page,'Analytics');await page.getByRole('button',{name:'Questions',exact:true}).click();await page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'}).getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await page.goBack();await settle(page);writeFileSync(out+'/browser-back.json',JSON.stringify({url:page.url(),expectedTask:'Analytics Questions',classification:'PRODUCT DEFECT: task transitions replace current history'}));expect(page.url()).not.toContain('analyticsTab=questions');expect(f.blocked).toEqual([])}finally{await f.close()}})"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                        "column": 565,
+                        "line": 11
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('tbody')\nExpected substring: \u001b[32m\"v18\"\u001b[39m\nError: strict mode violation: locator('tbody') resolved to 2 elements:\n    1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')\n    2) <tbody></tbody> aka getByRole('region', { name: 'All evaluations table' }).locator('tbody')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('tbody') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('tbody')\u001b[22m\n\n\n   9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})\n  10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})\n> 11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^\n  12 | for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'])test(`fresh 390px role primary task and utilities ${role}`,async({page})=>{await page.setViewportSize({width:390,height:844});const f=await fixture(page,role,'attention',role==='AUTHOR'?'forms':role==='REVIEWER'?'evaluations':'automation');try{const n=page.getByRole('navigation',{name:'Primary navigation'});const primary=n.locator('details[open] button').first();for(const control of [primary,n.getByRole('button',{name:'Settings',exact:true}),n.getByRole('button',{name:'About / product tour',exact:true})]){await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();expect(b).not.toBeNull();expect(b!.x).toBeGreaterThanOrEqual(0);expect(b!.x+b!.width).toBeLessThanOrEqual(390);expect(b!.height).toBeGreaterThanOrEqual(24)}expect(f.blocked).toEqual([])}finally{await f.close()}})\n  13 | test('fresh partial overview preserves available sections',async({page})=>{const f=await fixture(page,'ADMIN','attention','forms');try{(f.store as any).healthSnapshot=async()=>{throw Error('Fictional partial operational-health failure')};await nav(page,'Overview');await expect(page.locator('main')).toContainText('Unavailable');await expect(page.locator('main')).toContainText('Average quality');await expect(page.locator('main')).toContainText('Review workload');expect(f.blocked).toEqual([])}finally{await f.close()}})\n  14 | test('fresh browser Back mismatch is retained as characterization',async({page})=>{const f=await fixture(page,'VIEWER','attention','automation');try{await nav(page,'About / product tour');await page.getByRole('button',{name:'Open AQM',exact:true}).first().click();await nav(page,'Analytics');await page.getByRole('button',{name:'Questions',exact:true}).click();await page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'}).getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await page.goBack();await settle(page);writeFileSync(out+'/browser-back.json',JSON.stringify({url:page.url(),expectedTask:'Analytics Questions',classification:'PRODUCT DEFECT: task transitions replace current history'}));expect(page.url()).not.toContain('analyticsTab=questions');expect(f.blocked).toEqual([])}finally{await f.close()}})\n    at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:11:565"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:23.397Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-90cfb-etain-exact-version-and-tab/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-90cfb-etain-exact-version-and-tab/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts",
+                    "column": 565,
+                    "line": 11
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-ea425abc006e58954211",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "fresh 390px role primary task and utilities ADMIN",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:24.931Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-af1dbd4564858be37827",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 12,
+          "column": 58
+        },
+        {
+          "title": "fresh 390px role primary task and utilities AUTHOR",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1129,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:26.298Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-6eed272dbb1b8bdaf569",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 12,
+          "column": 58
+        },
+        {
+          "title": "fresh 390px role primary task and utilities REVIEWER",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1133,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:27.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-f357c79888d8d0856edf",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 12,
+          "column": 58
+        },
+        {
+          "title": "fresh 390px role primary task and utilities VIEWER",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1110,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:28.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-1959b5c56b1b74256fa9",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 12,
+          "column": 58
+        },
+        {
+          "title": "fresh partial overview preserves available sections",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:29.694Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-e29a736bb4b26b6dca41",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "fresh browser Back mismatch is retained as characterization",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 45000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T07:24:30.845Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "221f9156f176325dd13e-d1e5006c5beda9a04272",
+          "file": "final-whole-product-review.spec.ts",
+          "line": 14,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-04T07:24:13.985Z",
+    "duration": 18304.173,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

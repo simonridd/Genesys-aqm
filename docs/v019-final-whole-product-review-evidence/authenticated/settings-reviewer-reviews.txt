@@ -1,0 +1,18 @@
+Workspace / Settings
+REVIEWER
+Jev managed securely by automation service
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Advanced / Development
+Reviews
+Review reminders
+
+Only reviews with an explicit due date are monitored.
+
+Due soon: 24 hours before due date. Escalation: 48 hours overdue. Contact an administrator to change reminders.

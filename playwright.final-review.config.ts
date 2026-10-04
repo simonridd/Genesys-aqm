@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test'
+export default defineConfig({testDir:'./tests',testIgnore:'**/final-whole-product-review.spec.ts',workers:1,retries:0,timeout:30000,use:{headless:true,channel:'chrome',launchOptions:{args:['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1, EXCLUDE localhost']},trace:'retain-on-failure'},outputDir:'docs/v019-final-whole-product-review-evidence/existing-regression-artifacts',reporter:[['line'],['json',{outputFile:'docs/v019-final-whole-product-review-evidence/existing-regressions.json'}]]})

@@ -1,0 +1,54 @@
+Workspace / Calibration
+ADMIN
+Jev managed securely by automation service
+HUMAN + AI
+Calibration
+
+Compare completed human reviews with the original AI evaluations.
+
+Calibration source
+Real Genesys only
+Synthetic only
+All sources
+Uploaded only
+Unknown provenance
+Calibration form @ version
+Calibration agent
+Calibration queue
+Calibration from
+Calibration to
+
+Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs.
+
+Evaluations reviewed
+2
+Questions reviewed
+6
+Exact agreement
+33%
+Mean absolute score gap
+16.0 pp
+Unresolved reviews
+7
+2 in progress
+View
+Form / version
+Groups
+Questions
+Question types
+Confidence vs disagreement
+Search
+1 results
+Dimension ↓
+
+Reviews
+
+Questions
+
+Exact agreement
+
+Disagreements
+
+Mean score gap
+
+General Customer Service v17	2	6	33%	4	16.0 pp

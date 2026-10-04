@@ -1,0 +1,230 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: definition-authority.spec.ts >> shared saves, saved picker, dirty refresh and promotion 1440
+- Location: tests/definition-authority.spec.ts:87:2
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img "IPI" [ref=e6]
+      - generic [ref=e7]:
+        - strong [ref=e8]: IPI AQM
+        - text: Automated Quality Management
+    - navigation "Primary navigation" [ref=e9]:
+      - group [ref=e10]:
+        - generic "Monitor / Quality" [ref=e11] [cursor=pointer]
+        - generic [ref=e12]:
+          - button "Overview" [ref=e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e14]: ◌
+          - button "Evaluations" [ref=e16] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e17]: ◷
+          - button "Analytics" [ref=e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e20]: ▥
+          - button "Calibration" [ref=e22] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e23]: ◎
+      - group [ref=e25]:
+        - generic "Configuration" [ref=e26] [cursor=pointer]
+        - generic [ref=e27]:
+          - button "Policies" [ref=e28] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e29]: ◇
+          - button "Evaluation Forms" [ref=e31] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e32]: ▤
+          - button "Question Groups" [ref=e34] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e35]: ▦
+          - button "Answer Sets" [ref=e37] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e38]: ☷
+      - group [ref=e40]:
+        - generic "Interactions" [ref=e41] [cursor=pointer]
+      - generic [ref=e42]:
+        - button "Settings" [ref=e43] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e44]: ⚙
+        - button "About / product tour" [ref=e46] [cursor=pointer]
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]: ✦
+        - strong [ref=e50]: Decision intelligence powered by Jev
+        - paragraph [ref=e51]: Typed AI decisions, shaped into clear quality signals.
+      - generic [ref=e52]: V0.19D SHOWCASE • 2026
+  - main [ref=e53]:
+    - generic [ref=e54]:
+      - navigation "Breadcrumb" [ref=e55]:
+        - text: Workspace /
+        - strong [ref=e56]: Policies
+      - generic [ref=e57]:
+        - generic "Current role" [ref=e58]: ADMIN
+        - text: Jev managed securely by automation service
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63]: CONFIGURATION
+          - heading "Policies" [level=1] [ref=e64]
+          - paragraph [ref=e65]: Choose which conversations are evaluated and which published forms apply.
+        - generic [ref=e66]:
+          - button "Refresh durable policies" [ref=e67] [cursor=pointer]
+          - button "＋ New policy" [ref=e68] [cursor=pointer]
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - text: Status
+          - combobox "Policy status" [ref=e71]:
+            - option "All" [selected]
+            - option "Enabled"
+            - option "Disabled"
+        - generic [ref=e72]:
+          - text: Schedule
+          - combobox "Policy schedule filter" [ref=e73]:
+            - option "All" [selected]
+            - option "Manual"
+            - option "Daily"
+            - option "Weekly"
+        - generic [ref=e74]:
+          - text: Forms
+          - combobox "Policy forms filter" [ref=e75]:
+            - option "All" [selected]
+            - option "Has assigned forms"
+            - option "No assigned forms"
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - text: Search
+            - textbox "Search table" [ref=e79]:
+              - /placeholder: Search visible fields
+          - generic [ref=e80]: 1 results
+        - region "Policies table" [ref=e81]:
+          - table [ref=e82]:
+            - rowgroup [ref=e83]:
+              - row [ref=e84]:
+                - columnheader [ref=e85]:
+                  - button "Name ↓" [ref=e86] [cursor=pointer]
+                - columnheader [ref=e87]:
+                  - button "Status" [ref=e88] [cursor=pointer]
+                - columnheader [ref=e89]:
+                  - button "Version" [ref=e90] [cursor=pointer]
+                - columnheader [ref=e91]:
+                  - button "Criteria" [ref=e92] [cursor=pointer]
+                - columnheader [ref=e93]:
+                  - button "Assigned forms" [ref=e94] [cursor=pointer]
+                - columnheader [ref=e95]:
+                  - button "Sampling" [ref=e96] [cursor=pointer]
+                - columnheader [ref=e97]:
+                  - button "Schedule" [ref=e98] [cursor=pointer]
+                - columnheader [ref=e99]:
+                  - button "Last modified" [ref=e100] [cursor=pointer]
+            - rowgroup [ref=e101]:
+              - row [ref=e102] [cursor=pointer]:
+                - cell [ref=e103]:
+                  - button "Updated saved routing" [ref=e104]
+                - cell "Enabled" [ref=e105]
+                - cell "v2" [ref=e106]
+                - cell "channel equals messaging" [ref=e107]
+                - cell "Saved production form v1" [ref=e108]
+                - cell "All eligible" [ref=e109]
+                - cell "Manual" [ref=e110]
+                - cell "—" [ref=e111]
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: DURABLE POLICY · v2
+              - heading "Updated saved routing" [level=2] [ref=e117]
+            - generic [ref=e118]:
+              - button "Close details" [ref=e119] [cursor=pointer]
+              - button "View runs" [ref=e120] [cursor=pointer]
+              - button "Duplicate policy" [ref=e121] [cursor=pointer]
+              - button "Save changes" [disabled] [ref=e122]
+          - status [ref=e123]: Saved —
+          - group [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - text: Policy name
+                - textbox "Policy name" [ref=e127]: Updated saved routing
+              - generic [ref=e128]:
+                - text: Description
+                - textbox "Description" [ref=e129]: General quality and identity checks for messaging.
+          - group [ref=e130]:
+            - generic [ref=e131]:
+              - checkbox "Enabled (requires Save changes)" [checked] [ref=e132]
+              - text: Enabled (requires Save changes)
+            - heading "Interaction criteria" [level=3] [ref=e133]
+            - paragraph [ref=e134]: Match ALL conditions in any one group. Groups are joined with OR.
+            - generic [ref=e136]:
+              - generic [ref=e137]:
+                - strong [ref=e138]: Match ALL
+                - button "Remove OR group" [ref=e139] [cursor=pointer]
+              - generic [ref=e140]:
+                - combobox "Condition field" [ref=e141]:
+                  - option "channel" [selected]
+                  - option "queue"
+                  - option "agent"
+                  - option "direction"
+                  - option "topic"
+                  - option "tag"
+                - combobox "Condition operator" [ref=e142]:
+                  - option "equals" [selected]
+                - textbox "Criteria value" [ref=e143]: messaging
+                - button "Remove condition" [ref=e144] [cursor=pointer]: ×
+              - button "Add condition" [ref=e145] [cursor=pointer]
+            - button "Add OR group" [ref=e146] [cursor=pointer]
+            - heading "Sampling" [level=3] [ref=e147]
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - text: Sampling strategy
+                - combobox "Sampling strategy" [ref=e150]:
+                  - option "All eligible" [selected]
+                  - option "Percentage"
+                  - option "Fixed count"
+              - generic [ref=e151]:
+                - text: Sample seed (optional)
+                - textbox "Sample seed (optional)" [ref=e152]
+            - heading "Published evaluation forms" [level=3] [ref=e153]
+            - paragraph [ref=e154]: Assignments pin the exact form ID and version. New versions do not replace these pins.
+            - generic [ref=e156]:
+              - checkbox "Saved production form · v1 · 9 questions · weighted · saved-form" [checked] [ref=e157]
+              - text: Saved production form · v1 · 9 questions · weighted · saved-form
+        - generic [ref=e158]:
+          - heading "Readiness" [level=3] [ref=e159]
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: Policy
+              - strong [ref=e163]: Enabled
+            - generic [ref=e164]:
+              - generic [ref=e165]: Forms
+              - strong [ref=e166]: 1 published form assigned
+            - generic [ref=e167]:
+              - generic [ref=e168]: Sampling
+              - strong [ref=e169]: All eligible
+            - generic [ref=e170]:
+              - generic [ref=e171]: Schedule (saved)
+              - strong [ref=e172]: Manual
+            - generic [ref=e173]:
+              - generic [ref=e174]: Next run
+              - strong [ref=e175]: —
+        - generic [ref=e176]:
+          - heading "Automation" [level=3] [ref=e177]
+          - paragraph [ref=e178]: Daily evaluates the previous day; weekly evaluates the previous Monday–Sunday. Policy and schedule save separately.
+          - group [ref=e179]:
+            - generic [ref=e181]:
+              - text: Automation
+              - combobox "Automation" [ref=e182]:
+                - option "Manual" [selected]
+                - option "Daily"
+                - option "Weekly"
+            - button "Save schedule" [disabled] [ref=e183]
+          - status [ref=e184]: Schedule matches server
+          - paragraph [ref=e185]: "Next due: — · Last attempted: — · Last successful: —"
+        - button "View history" [ref=e187] [cursor=pointer]
+```

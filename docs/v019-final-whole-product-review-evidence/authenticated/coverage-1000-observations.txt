@@ -1,0 +1,70 @@
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+25 September 2026 – 2 October 2026
+
+Genesys Cloud · All policies · All published forms
+
+0 evaluations · 0 evaluated conversations
+Change filters
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+Coverage scope
+
+25 September 2026 – 2 October 2026 · Genesys Cloud · All policies
+
+Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.
+
+Date, source and policy filter monitoring runs. Form, queue, agent, channel and trigger quality filters do not change overall coverage denominators.
+
+1200 interactions considered (Candidates) · 1000 met policy criteria
+
+Eligible
+1000
+Met policy criteria
+Sampled
+500
+50% · Sampling coverage · of eligible
+Content available
+300
+60% · Content availability · of sampled
+Evaluated
+200
+66.7% · Sample completion · of available
+
+Evaluation coverage: 20% · Evaluated / eligible
+
+Failed evaluation attempts: 10
+
+Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+
+Where coverage was lost
+
+500 eligible interactions were not selected by the sampling policy.
+
+200 sampled interactions had no usable conversation content.
+
+100 interactions had content available but did not reach a completed evaluation.
+
+Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.
+
+Content available is not recorded by queue or agent. Breakdowns include only runs carrying that evidence; older runs may not include it. Viewing evaluated quality narrows evaluations without changing historical coverage.
+
+Coverage by queue
+
+0 runs carry queue coverage evidence.
+
+Coverage by agent
+Data scope & technical details

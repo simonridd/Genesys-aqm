@@ -1,0 +1,227 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: group-scoring-alerts.spec.ts >> group authoring, review and alert lifecycle at 390
+- Location: tests/group-scoring-alerts.spec.ts:14:97
+
+# Error details
+
+```
+Test timeout of 90000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img "IPI" [ref=e6]
+      - generic [ref=e7]:
+        - strong [ref=e8]: IPI AQM
+        - text: Automated Quality Management
+    - navigation "Primary navigation" [ref=e9]:
+      - group [ref=e10]:
+        - generic "Monitor / Quality" [ref=e11] [cursor=pointer]
+        - generic [ref=e12]:
+          - button "Overview" [ref=e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e14]: ◌
+          - button "Evaluations" [ref=e16] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e17]: ◷
+          - button "Analytics" [ref=e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e20]: ▥
+          - button "Calibration" [ref=e22] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e23]: ◎
+      - group [ref=e25]:
+        - generic "Configuration" [ref=e26] [cursor=pointer]
+        - generic [ref=e27]:
+          - button "Policies" [ref=e28] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e29]: ◇
+          - button "Evaluation Forms" [ref=e31] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e32]: ▤
+          - button "Question Groups" [ref=e34] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e35]: ▦
+          - button "Answer Sets" [ref=e37] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e38]: ☷
+      - group [ref=e40]:
+        - generic "Interactions" [ref=e41] [cursor=pointer]
+      - generic [ref=e42]:
+        - button "Settings" [ref=e43] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e44]: ⚙
+        - button "About / product tour" [ref=e46] [cursor=pointer]
+  - main [ref=e47]:
+    - generic [ref=e48]:
+      - navigation "Breadcrumb" [ref=e49]:
+        - text: Workspace /
+        - strong [ref=e50]: Evaluation Forms
+      - generic [ref=e51]:
+        - generic "Current role" [ref=e52]: ADMIN
+        - text: Jev managed securely by automation service
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: CONFIGURATION
+          - heading "Evaluation Forms" [level=1] [ref=e58]
+          - paragraph [ref=e59]: "Build the complete quality evaluation: questions, scoring and pass rules."
+          - paragraph [ref=e60]: Reuse Question Groups for related questions and Answer Sets for common answers.
+        - generic [ref=e61]:
+          - group "View" [ref=e62]:
+            - button "Table" [ref=e63] [cursor=pointer]
+            - button "Cards" [ref=e64] [cursor=pointer]
+          - generic [ref=e65]:
+            - text: Import form
+            - button "Import form" [ref=e66]
+          - button "＋ New form" [ref=e67] [cursor=pointer]
+      - region "Saved Forms" [ref=e68]:
+        - heading "Saved in AQM · 1 saved form" [level=2] [ref=e69]
+        - paragraph [ref=e70]: Production usage counts use saved policies only.
+        - button "Refresh saved forms" [ref=e71] [cursor=pointer]
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - text: Status
+          - combobox "Library status" [ref=e74]:
+            - option "All statuses" [selected]
+            - option "Draft"
+            - option "Testing"
+            - option "Published"
+            - option "Retired"
+        - generic [ref=e75]:
+          - text: Version
+          - combobox "Library version" [ref=e76]:
+            - option "All versions" [selected]
+            - option "Latest version per family"
+        - generic [ref=e77]:
+          - text: Usage
+          - combobox "Library usage" [ref=e78]:
+            - option "All usage" [selected]
+            - option "Assigned to policy"
+            - option "Unassigned"
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - text: Search
+            - textbox "Search table" [ref=e82]:
+              - /placeholder: Search visible fields
+          - generic [ref=e83]: 1 results
+        - region "Evaluation forms table" [ref=e84]:
+          - table [ref=e85]:
+            - rowgroup [ref=e86]:
+              - row [ref=e87]:
+                - columnheader [ref=e88]:
+                  - button "Form name ↓" [ref=e89] [cursor=pointer]
+                - columnheader [ref=e90]:
+                  - button "Status" [ref=e91] [cursor=pointer]
+                - columnheader [ref=e92]:
+                  - button "Version" [ref=e93] [cursor=pointer]
+                - columnheader [ref=e94]:
+                  - button "Questions" [ref=e95] [cursor=pointer]
+                - columnheader [ref=e96]:
+                  - button "Assigned policies" [ref=e97] [cursor=pointer]
+                - columnheader [ref=e98]:
+                  - button "Evaluations" [ref=e99] [cursor=pointer]
+                - columnheader [ref=e100]:
+                  - button "Average score" [ref=e101] [cursor=pointer]
+                - columnheader [ref=e102]:
+                  - button "Last modified" [ref=e103] [cursor=pointer]
+            - rowgroup [ref=e104]:
+              - row [ref=e105] [cursor=pointer]:
+                - cell [ref=e106]:
+                  - button "Open form Weighted care v1" [ref=e107]: Weighted care
+                - cell "DRAFT" [ref=e108]
+                - cell "v1" [ref=e109]
+                - cell "2" [ref=e110]
+                - cell "0" [ref=e111]
+                - cell "0" [ref=e112]
+                - cell "—" [ref=e113]
+                - cell "—" [ref=e114]
+      - group [ref=e115]:
+        - generic "Local drafts & starter examples · 6 forms" [ref=e116] [cursor=pointer]
+      - generic [ref=e117]:
+        - group [ref=e118]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e121]:
+                - generic [ref=e122]:
+                  - text: Saved form ·
+                  - generic [ref=e123]: DRAFT · VERSION 1
+                - heading "Weighted care" [active] [level=2] [ref=e124]
+              - generic [ref=e125]:
+                - button "Close details" [ref=e126] [cursor=pointer]
+                - button "Save changes" [ref=e127] [cursor=pointer]
+                - button "Publish version" [ref=e128] [cursor=pointer]
+                - group [ref=e129]:
+                  - generic "More actions" [ref=e130] [cursor=pointer]
+            - status [ref=e131]: Saved in AQM
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - text: Form name
+                - textbox "Form name" [ref=e134]: Weighted care
+              - generic [ref=e135]:
+                - text: Description
+                - textbox "Description" [ref=e136]: Opening, understanding, ownership, resolution and close.
+              - generic [ref=e137]:
+                - text: Pass score
+                - generic [ref=e138]: 70%
+                - slider "Pass score 70%" [ref=e139]: "0.7"
+            - group [ref=e140]:
+              - generic "Critical questions" [ref=e141] [cursor=pointer]
+          - generic [ref=e142]:
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - heading "Question groups" [level=2] [ref=e145]
+                - paragraph [ref=e146]: Question weights determine the overall score.
+              - generic [ref=e147]:
+                - button "Add group" [ref=e148] [cursor=pointer]
+                - button "Add reusable group" [ref=e149] [cursor=pointer]
+            - group [ref=e150]:
+              - generic "Scoring rules · Question weighted · Yes threshold 65%" [ref=e151] [cursor=pointer]
+            - 'region "Group: Opening" [ref=e152]':
+              - generic [ref=e153]:
+                - generic [ref=e154]:
+                  - heading "Opening" [level=3] [ref=e155]
+                  - generic [ref=e156]: 1 question
+                - group [ref=e157]:
+                  - generic "Group settings" [ref=e158] [cursor=pointer]
+              - article [ref=e160]:
+                - generic [ref=e161]:
+                  - generic [ref=e162]: "01"
+                  - generic [ref=e163]:
+                    - strong [ref=e164]: Warm opening
+                    - paragraph [ref=e165]: Yes / No · Weight 1 · Enabled
+                    - paragraph [ref=e166]: Did the agent greet the customer and offer help at the start of the conversation?
+                    - paragraph [ref=e167]: Yes / No
+                  - button "Edit" [ref=e168] [cursor=pointer]
+              - button "Add question" [ref=e170] [cursor=pointer]
+            - 'region "Group: Compliance" [ref=e171]':
+              - generic [ref=e172]:
+                - generic [ref=e173]:
+                  - heading "Compliance" [level=3] [ref=e174]
+                  - generic [ref=e175]: 1 question
+                - group [ref=e176]:
+                  - generic "Group settings" [ref=e177] [cursor=pointer]
+              - article [ref=e179]:
+                - generic [ref=e180]:
+                  - generic [ref=e181]: "02"
+                  - generic [ref=e182]:
+                    - strong [ref=e183]: Ownership
+                    - paragraph [ref=e184]: Yes / No · Weight 1 · Enabled
+                    - paragraph [ref=e185]: Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+                    - paragraph [ref=e186]: Yes / No
+                  - button "Edit" [ref=e187] [cursor=pointer]
+              - button "Add question" [ref=e189] [cursor=pointer]
+        - button "View history" [ref=e191] [cursor=pointer]
+        - group [ref=e192]:
+          - generic "Test this form" [ref=e193] [cursor=pointer]
+          - option "Legacy browser sandbox (development)"
+          - option "Durable server sandbox (recommended)" [selected]
+          - option "Synthetic" [selected]
+          - option "Genesys Cloud"
+          - option "Most recent" [selected]
+          - option "Deterministic random"
+          - option "Manual selection"
+```

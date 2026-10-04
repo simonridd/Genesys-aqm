@@ -1,0 +1,57 @@
+Workspace / Conversations
+ADMIN
+Jev managed securely by automation service
+Conversation source
+Real organizational data · Genesys Cloud
+Synthetic
+Genesys Cloud
+REAL ORGANIZATIONAL DATA
+Completed interactions
+
+Browse a small, recent window. Transcripts are loaded only when you open an interaction.
+
+Table
+Cards
+Connection settings
+From
+To
+Queue ID
+Agent ID
+Channel
+Any
+Messaging
+Chat
+Email
+Voice
+Direction
+Any
+Inbound
+Outbound
+Search completed interactions
+
+0 shown · page 1 · 0 reported by Genesys. Only completed interactions appear.
+
+Search
+0 results on this page
+Timestamp ↓
+
+Conversation ID
+
+Source
+
+Channel
+
+Agent
+
+Queue
+
+Direction
+
+Topic
+
+Transcript
+
+Search completed interactions to see results.
+
+← Previous
+Next →

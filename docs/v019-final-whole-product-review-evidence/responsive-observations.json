@@ -1,0 +1,979 @@
+[
+  {
+    "role": "ADMIN",
+    "viewport": {
+      "width": 1440,
+      "height": 720
+    },
+    "nav": {
+      "height": 658,
+      "scrollHeight": 658,
+      "scrollTop": 0,
+      "overflow": "visible",
+      "items": [
+        {
+          "text": "Monitor / Quality",
+          "box": {
+            "x": 15,
+            "y": 128,
+            "width": 212,
+            "height": 37,
+            "top": 128,
+            "right": 227,
+            "bottom": 165,
+            "left": 15
+          }
+        },
+        {
+          "text": "◌Overview",
+          "box": {
+            "x": 15,
+            "y": 165,
+            "width": 212,
+            "height": 46,
+            "top": 165,
+            "right": 227,
+            "bottom": 211,
+            "left": 15
+          }
+        },
+        {
+          "text": "◷Evaluations",
+          "box": {
+            "x": 15,
+            "y": 215,
+            "width": 212,
+            "height": 44,
+            "top": 215,
+            "right": 227,
+            "bottom": 259,
+            "left": 15
+          }
+        },
+        {
+          "text": "▥Analytics",
+          "box": {
+            "x": 15,
+            "y": 263,
+            "width": 212,
+            "height": 44,
+            "top": 263,
+            "right": 227,
+            "bottom": 307,
+            "left": 15
+          }
+        },
+        {
+          "text": "◎Calibration",
+          "box": {
+            "x": 15,
+            "y": 311,
+            "width": 212,
+            "height": 44,
+            "top": 311,
+            "right": 227,
+            "bottom": 355,
+            "left": 15
+          }
+        },
+        {
+          "text": "Configuration",
+          "box": {
+            "x": 15,
+            "y": 363,
+            "width": 212,
+            "height": 37,
+            "top": 363,
+            "right": 227,
+            "bottom": 400,
+            "left": 15
+          }
+        },
+        {
+          "text": "◇Policies",
+          "box": {
+            "x": 15,
+            "y": 400,
+            "width": 212,
+            "height": 44,
+            "top": 400,
+            "right": 227,
+            "bottom": 444,
+            "left": 15
+          }
+        },
+        {
+          "text": "▤Evaluation Forms",
+          "box": {
+            "x": 15,
+            "y": 448,
+            "width": 212,
+            "height": 44,
+            "top": 448,
+            "right": 227,
+            "bottom": 492,
+            "left": 15
+          }
+        },
+        {
+          "text": "▦Question Groups",
+          "box": {
+            "x": 15,
+            "y": 496,
+            "width": 212,
+            "height": 44,
+            "top": 496,
+            "right": 227,
+            "bottom": 540,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Answer Sets",
+          "box": {
+            "x": 15,
+            "y": 544,
+            "width": 212,
+            "height": 45,
+            "top": 544,
+            "right": 227,
+            "bottom": 589,
+            "left": 15
+          }
+        },
+        {
+          "text": "Interactions",
+          "box": {
+            "x": 15,
+            "y": 597,
+            "width": 212,
+            "height": 37,
+            "top": 597,
+            "right": 227,
+            "bottom": 634,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Conversations",
+          "box": {
+            "x": 15,
+            "y": 634,
+            "width": 212,
+            "height": 45,
+            "top": 634,
+            "right": 227,
+            "bottom": 679,
+            "left": 15
+          }
+        },
+        {
+          "text": "⚙Settings",
+          "box": {
+            "x": 15,
+            "y": 702,
+            "width": 212,
+            "height": 44,
+            "top": 702,
+            "right": 227,
+            "bottom": 746,
+            "left": 15
+          }
+        },
+        {
+          "text": "About / product tour",
+          "box": {
+            "x": 15,
+            "y": 746,
+            "width": 212,
+            "height": 40,
+            "top": 746,
+            "right": 227,
+            "bottom": 786,
+            "left": 15
+          }
+        }
+      ]
+    }
+  },
+  {
+    "role": "AUTHOR",
+    "viewport": {
+      "width": 1440,
+      "height": 720
+    },
+    "nav": {
+      "height": 423,
+      "scrollHeight": 423,
+      "scrollTop": 0,
+      "overflow": "visible",
+      "items": [
+        {
+          "text": "Configuration",
+          "box": {
+            "x": 15,
+            "y": 128,
+            "width": 212,
+            "height": 37,
+            "top": 128,
+            "right": 227,
+            "bottom": 165,
+            "left": 15
+          }
+        },
+        {
+          "text": "▤Evaluation Forms",
+          "box": {
+            "x": 15,
+            "y": 165,
+            "width": 212,
+            "height": 44,
+            "top": 165,
+            "right": 227,
+            "bottom": 209,
+            "left": 15
+          }
+        },
+        {
+          "text": "▦Question Groups",
+          "box": {
+            "x": 15,
+            "y": 213,
+            "width": 212,
+            "height": 44,
+            "top": 213,
+            "right": 227,
+            "bottom": 257,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Answer Sets",
+          "box": {
+            "x": 15,
+            "y": 261,
+            "width": 212,
+            "height": 45,
+            "top": 261,
+            "right": 227,
+            "bottom": 306,
+            "left": 15
+          }
+        },
+        {
+          "text": "◇Policies",
+          "box": {
+            "x": 15,
+            "y": 310,
+            "width": 212,
+            "height": 44,
+            "top": 310,
+            "right": 227,
+            "bottom": 354,
+            "left": 15
+          }
+        },
+        {
+          "text": "Monitor / Quality",
+          "box": {
+            "x": 15,
+            "y": 362,
+            "width": 212,
+            "height": 37,
+            "top": 362,
+            "right": 227,
+            "bottom": 399,
+            "left": 15
+          }
+        },
+        {
+          "text": "◌Overview",
+          "box": {
+            "x": 15,
+            "y": 399,
+            "width": 212,
+            "height": 46,
+            "top": 399,
+            "right": 227,
+            "bottom": 445,
+            "left": 15
+          }
+        },
+        {
+          "text": "◷Evaluations",
+          "box": {
+            "x": 15,
+            "y": 449,
+            "width": 212,
+            "height": 44,
+            "top": 449,
+            "right": 227,
+            "bottom": 493,
+            "left": 15
+          }
+        },
+        {
+          "text": "▥Analytics",
+          "box": {
+            "x": 15,
+            "y": 497,
+            "width": 212,
+            "height": 44,
+            "top": 497,
+            "right": 227,
+            "bottom": 541,
+            "left": 15
+          }
+        },
+        {
+          "text": "◎Calibration",
+          "box": {
+            "x": 15,
+            "y": 545,
+            "width": 212,
+            "height": 44,
+            "top": 545,
+            "right": 227,
+            "bottom": 589,
+            "left": 15
+          }
+        },
+        {
+          "text": "Interactions",
+          "box": {
+            "x": 15,
+            "y": 407,
+            "width": 212,
+            "height": 37,
+            "top": 407,
+            "right": 227,
+            "bottom": 444,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Conversations",
+          "box": {
+            "x": 15,
+            "y": 444,
+            "width": 212,
+            "height": 45,
+            "top": 444,
+            "right": 227,
+            "bottom": 489,
+            "left": 15
+          }
+        },
+        {
+          "text": "⚙Settings",
+          "box": {
+            "x": 15,
+            "y": 467,
+            "width": 212,
+            "height": 44,
+            "top": 467,
+            "right": 227,
+            "bottom": 511,
+            "left": 15
+          }
+        },
+        {
+          "text": "About / product tour",
+          "box": {
+            "x": 15,
+            "y": 511,
+            "width": 212,
+            "height": 40,
+            "top": 511,
+            "right": 227,
+            "bottom": 551,
+            "left": 15
+          }
+        }
+      ]
+    }
+  },
+  {
+    "role": "REVIEWER",
+    "viewport": {
+      "width": 1440,
+      "height": 720
+    },
+    "nav": {
+      "height": 424,
+      "scrollHeight": 424,
+      "scrollTop": 0,
+      "overflow": "visible",
+      "items": [
+        {
+          "text": "Quality / Review",
+          "box": {
+            "x": 15,
+            "y": 128,
+            "width": 212,
+            "height": 37,
+            "top": 128,
+            "right": 227,
+            "bottom": 165,
+            "left": 15
+          }
+        },
+        {
+          "text": "◷Evaluations",
+          "box": {
+            "x": 15,
+            "y": 165,
+            "width": 212,
+            "height": 44,
+            "top": 165,
+            "right": 227,
+            "bottom": 209,
+            "left": 15
+          }
+        },
+        {
+          "text": "◎Calibration",
+          "box": {
+            "x": 15,
+            "y": 213,
+            "width": 212,
+            "height": 44,
+            "top": 213,
+            "right": 227,
+            "bottom": 257,
+            "left": 15
+          }
+        },
+        {
+          "text": "▥Analytics",
+          "box": {
+            "x": 15,
+            "y": 261,
+            "width": 212,
+            "height": 44,
+            "top": 261,
+            "right": 227,
+            "bottom": 305,
+            "left": 15
+          }
+        },
+        {
+          "text": "◌Overview",
+          "box": {
+            "x": 15,
+            "y": 309,
+            "width": 212,
+            "height": 46,
+            "top": 309,
+            "right": 227,
+            "bottom": 355,
+            "left": 15
+          }
+        },
+        {
+          "text": "Reference configuration",
+          "box": {
+            "x": 15,
+            "y": 363,
+            "width": 212,
+            "height": 37,
+            "top": 363,
+            "right": 227,
+            "bottom": 400,
+            "left": 15
+          }
+        },
+        {
+          "text": "▤Evaluation Forms",
+          "box": {
+            "x": 15,
+            "y": 400,
+            "width": 212,
+            "height": 44,
+            "top": 400,
+            "right": 227,
+            "bottom": 444,
+            "left": 15
+          }
+        },
+        {
+          "text": "▦Question Groups",
+          "box": {
+            "x": 15,
+            "y": 448,
+            "width": 212,
+            "height": 44,
+            "top": 448,
+            "right": 227,
+            "bottom": 492,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Answer Sets",
+          "box": {
+            "x": 15,
+            "y": 496,
+            "width": 212,
+            "height": 45,
+            "top": 496,
+            "right": 227,
+            "bottom": 541,
+            "left": 15
+          }
+        },
+        {
+          "text": "◇Policies",
+          "box": {
+            "x": 15,
+            "y": 545,
+            "width": 212,
+            "height": 44,
+            "top": 545,
+            "right": 227,
+            "bottom": 589,
+            "left": 15
+          }
+        },
+        {
+          "text": "Interactions",
+          "box": {
+            "x": 15,
+            "y": 408,
+            "width": 212,
+            "height": 37,
+            "top": 408,
+            "right": 227,
+            "bottom": 445,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Conversations",
+          "box": {
+            "x": 15,
+            "y": 445,
+            "width": 212,
+            "height": 45,
+            "top": 445,
+            "right": 227,
+            "bottom": 490,
+            "left": 15
+          }
+        },
+        {
+          "text": "⚙Settings",
+          "box": {
+            "x": 15,
+            "y": 468,
+            "width": 212,
+            "height": 44,
+            "top": 468,
+            "right": 227,
+            "bottom": 512,
+            "left": 15
+          }
+        },
+        {
+          "text": "About / product tour",
+          "box": {
+            "x": 15,
+            "y": 512,
+            "width": 212,
+            "height": 40,
+            "top": 512,
+            "right": 227,
+            "bottom": 552,
+            "left": 15
+          }
+        }
+      ]
+    }
+  },
+  {
+    "role": "VIEWER",
+    "viewport": {
+      "width": 1440,
+      "height": 720
+    },
+    "nav": {
+      "height": 613,
+      "scrollHeight": 613,
+      "scrollTop": 0,
+      "overflow": "visible",
+      "items": [
+        {
+          "text": "Monitor / Quality",
+          "box": {
+            "x": 15,
+            "y": 128,
+            "width": 212,
+            "height": 37,
+            "top": 128,
+            "right": 227,
+            "bottom": 165,
+            "left": 15
+          }
+        },
+        {
+          "text": "◌Overview",
+          "box": {
+            "x": 15,
+            "y": 165,
+            "width": 212,
+            "height": 46,
+            "top": 165,
+            "right": 227,
+            "bottom": 211,
+            "left": 15
+          }
+        },
+        {
+          "text": "▥Analytics",
+          "box": {
+            "x": 15,
+            "y": 215,
+            "width": 212,
+            "height": 44,
+            "top": 215,
+            "right": 227,
+            "bottom": 259,
+            "left": 15
+          }
+        },
+        {
+          "text": "◷Evaluations",
+          "box": {
+            "x": 15,
+            "y": 263,
+            "width": 212,
+            "height": 44,
+            "top": 263,
+            "right": 227,
+            "bottom": 307,
+            "left": 15
+          }
+        },
+        {
+          "text": "◎Calibration",
+          "box": {
+            "x": 15,
+            "y": 311,
+            "width": 212,
+            "height": 44,
+            "top": 311,
+            "right": 227,
+            "bottom": 355,
+            "left": 15
+          }
+        },
+        {
+          "text": "Reference configuration",
+          "box": {
+            "x": 15,
+            "y": 363,
+            "width": 212,
+            "height": 37,
+            "top": 363,
+            "right": 227,
+            "bottom": 400,
+            "left": 15
+          }
+        },
+        {
+          "text": "▤Evaluation Forms",
+          "box": {
+            "x": 15,
+            "y": 400,
+            "width": 212,
+            "height": 44,
+            "top": 400,
+            "right": 227,
+            "bottom": 444,
+            "left": 15
+          }
+        },
+        {
+          "text": "▦Question Groups",
+          "box": {
+            "x": 15,
+            "y": 448,
+            "width": 212,
+            "height": 44,
+            "top": 448,
+            "right": 227,
+            "bottom": 492,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Answer Sets",
+          "box": {
+            "x": 15,
+            "y": 496,
+            "width": 212,
+            "height": 45,
+            "top": 496,
+            "right": 227,
+            "bottom": 541,
+            "left": 15
+          }
+        },
+        {
+          "text": "◇Policies",
+          "box": {
+            "x": 15,
+            "y": 545,
+            "width": 212,
+            "height": 44,
+            "top": 545,
+            "right": 227,
+            "bottom": 589,
+            "left": 15
+          }
+        },
+        {
+          "text": "Interactions",
+          "box": {
+            "x": 15,
+            "y": 597,
+            "width": 212,
+            "height": 37,
+            "top": 597,
+            "right": 227,
+            "bottom": 634,
+            "left": 15
+          }
+        },
+        {
+          "text": "☷Conversations",
+          "box": {
+            "x": 15,
+            "y": 634,
+            "width": 212,
+            "height": 45,
+            "top": 634,
+            "right": 227,
+            "bottom": 679,
+            "left": 15
+          }
+        },
+        {
+          "text": "⚙Settings",
+          "box": {
+            "x": 15,
+            "y": 657,
+            "width": 212,
+            "height": 44,
+            "top": 657,
+            "right": 227,
+            "bottom": 701,
+            "left": 15
+          }
+        },
+        {
+          "text": "About / product tour",
+          "box": {
+            "x": 15,
+            "y": 701,
+            "width": 212,
+            "height": 40,
+            "top": 701,
+            "right": 227,
+            "bottom": 741,
+            "left": 15
+          }
+        }
+      ]
+    }
+  },
+  {
+    "label": "forms",
+    "width": 1440,
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms",
+    "h1": [
+      "Evaluation Forms"
+    ],
+    "state": [
+      "2026-10-01T13:00",
+      "2026-10-02T13:00",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "All",
+      "all",
+      "All",
+      "",
+      "Attached resolution form",
+      "Opening, understanding, ownership, resolution and close.",
+      "0.7",
+      "on",
+      "on",
+      "on",
+      "0.65",
+      "Resolution",
+      "",
+      "on",
+      "server",
+      "synthetic",
+      "recent",
+      "5"
+    ]
+  },
+  {
+    "label": "forms",
+    "width": 390,
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms",
+    "h1": [
+      "Evaluation Forms"
+    ],
+    "state": [
+      "2026-10-01T13:00",
+      "2026-10-02T13:00",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "All",
+      "all",
+      "All",
+      "",
+      "Attached resolution form",
+      "Opening, understanding, ownership, resolution and close.",
+      "0.7",
+      "on",
+      "on",
+      "on",
+      "0.65",
+      "Resolution",
+      "",
+      "on",
+      "server",
+      "synthetic",
+      "recent",
+      "5"
+    ]
+  },
+  {
+    "label": "forms",
+    "width": 1440,
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms",
+    "h1": [
+      "Evaluation Forms"
+    ],
+    "state": [
+      "2026-10-01T13:00",
+      "2026-10-02T13:00",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "All",
+      "all",
+      "All",
+      "",
+      "Attached resolution form",
+      "Opening, understanding, ownership, resolution and close.",
+      "0.7",
+      "on",
+      "on",
+      "on",
+      "0.65",
+      "Resolution",
+      "",
+      "on",
+      "server",
+      "synthetic",
+      "recent",
+      "5"
+    ]
+  },
+  {
+    "label": "analytics",
+    "width": 1440,
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=overview",
+    "h1": [
+      "Quality analytics"
+    ],
+    "state": [
+      "2026-10-01T13:00",
+      "2026-10-02T13:00",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "overview"
+    ]
+  },
+  {
+    "label": "analytics",
+    "width": 390,
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=overview",
+    "h1": [
+      "Quality analytics"
+    ],
+    "state": [
+      "2026-10-01T13:00",
+      "2026-10-02T13:00",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "overview"
+    ]
+  },
+  {
+    "label": "analytics",
+    "width": 1440,
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=overview",
+    "h1": [
+      "Quality analytics"
+    ],
+    "state": [
+      "2026-10-01T13:00",
+      "2026-10-02T13:00",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "overview"
+    ]
+  }
+]

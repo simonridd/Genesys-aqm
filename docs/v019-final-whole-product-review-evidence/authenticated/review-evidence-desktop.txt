@@ -1,0 +1,89 @@
+Workspace / Conversation review
+REVIEWER
+Jev managed securely by automation service
+Conversation source
+Real organizational data · Genesys Cloud
+Synthetic
+Genesys Cloud
+AUTOMATED QUALITY MANAGEMENT
+Conversation review
+
+Inspect the selected conversation, policy matches, and applicable forms.
+
+← Back to review
+Browse real interactions →
+CURRENT CONVERSATION
+Genesys Cloud interaction
+REAL GENESYS DATA
+Change conversation
+↑ Upload JSON
+MP
+CONVERSATION TRANSCRIPT
+Maya Patel with Alex Morgan
+28 Sept 2026 · voice · 22222222-2222-4222-8222-000000000004
+Completed
+SOURCE
+genesys-cloud
+CONVERSATIONEND
+2026-09-28T12:05:00Z
+DIRECTION
+inbound
+AGENT
+44444444-4444-4444-8444-444444444444
+QUEUE
+Customer care
+QUEUEID
+55555555-5555-4555-8555-555555555555
+TOPIC
+Billing
+WRAPUPCODE
+Billing
+DURATIONSECONDS
+300
+SESSIONID
+33333333-3333-4333-8333-333333333333
+TRANSCRIPTSTATUS
+Available
+MESSAGES
+2
+28 Sept 2026
+M
+Maya Patel
+13:00
+I need help with my bill.
+A
+Alex Morgan
+13:00
+I can check that for you.
+End of conversation
+·
+2 messages
+
+Retrieved from Genesys · 02/10/2026, 13:03:56
+
+Refresh from Genesys
+POLICY ROUTING
+1 saved policy matched
+Applicable evaluations
+Daily Voice Customer Service AQM
+channel equals voice
+General Customer Service
+3 questions · v17 · up to 1 Jev requests
+Evaluate →
+Manual form selection
+General Customer Service
+
+1 form evaluation · up to 1 Jev requests
+
+✦ Evaluate selected form →
+
+Production selection includes only published, valid forms . Draft and testing forms can be tested in the isolated sandbox.
+
+Test a draft/testing form
+
+Jev managed securely by automation service. The exact published server form is authoritative.
+
+◎
+One result per form
+
+Each production evaluation is saved to the automation service with its exact published form and routing provenance.

@@ -1,0 +1,284 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: governance.spec.ts >> AUTHOR governance at 1920
+- Location: tests/governance.spec.ts:7:164
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img "IPI" [ref=e6]
+      - generic [ref=e7]:
+        - strong [ref=e8]: IPI AQM
+        - text: Automated Quality Management
+    - navigation "Primary navigation" [ref=e9]:
+      - group [ref=e10]:
+        - generic "Configuration" [ref=e11] [cursor=pointer]
+        - generic [ref=e12]:
+          - button "Evaluation Forms" [ref=e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e14]: ▤
+          - button "Question Groups" [ref=e16] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e17]: ▦
+          - button "Answer Sets" [ref=e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e20]: ☷
+          - button "Policies" [ref=e22] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e23]: ◇
+      - group [ref=e25]:
+        - generic "Monitor / Quality" [ref=e26] [cursor=pointer]
+      - group [ref=e27]:
+        - generic "Interactions" [ref=e28] [cursor=pointer]
+      - generic [ref=e29]:
+        - button "Settings" [ref=e30] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e31]: ⚙
+        - button "About / product tour" [ref=e33] [cursor=pointer]
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: ✦
+        - strong [ref=e37]: Decision intelligence powered by Jev
+        - paragraph [ref=e38]: Typed AI decisions, shaped into clear quality signals.
+      - generic [ref=e39]: V0.19D SHOWCASE • 2026
+  - main [ref=e40]:
+    - generic [ref=e41]:
+      - navigation "Breadcrumb" [ref=e42]:
+        - text: Workspace /
+        - strong [ref=e43]: Evaluation Forms
+      - generic [ref=e44]:
+        - generic "Current role" [ref=e45]: AUTHOR
+        - text: Jev managed securely by automation service
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: CONFIGURATION
+          - heading "Evaluation Forms" [level=1] [ref=e51]
+          - paragraph [ref=e52]: "Build the complete quality evaluation: questions, scoring and pass rules."
+          - paragraph [ref=e53]: Reuse Question Groups for related questions and Answer Sets for common answers.
+        - generic [ref=e54]:
+          - group "View" [ref=e55]:
+            - button "Table" [ref=e56] [cursor=pointer]
+            - button "Cards" [ref=e57] [cursor=pointer]
+          - generic [ref=e58]:
+            - text: Import form
+            - button "Import form" [ref=e59]
+          - button "＋ New form" [ref=e60] [cursor=pointer]
+      - region "Saved Forms" [ref=e61]:
+        - heading "Saved in AQM · 1 saved form" [level=2] [ref=e62]
+        - paragraph [ref=e63]: Production usage counts use saved policies only.
+        - button "Refresh saved forms" [ref=e64] [cursor=pointer]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - text: Status
+          - combobox "Library status" [ref=e67]:
+            - option "All statuses" [selected]
+            - option "Draft"
+            - option "Testing"
+            - option "Published"
+            - option "Retired"
+        - generic [ref=e68]:
+          - text: Version
+          - combobox "Library version" [ref=e69]:
+            - option "All versions" [selected]
+            - option "Latest version per family"
+        - generic [ref=e70]:
+          - text: Usage
+          - combobox "Library usage" [ref=e71]:
+            - option "All usage" [selected]
+            - option "Assigned to policy"
+            - option "Unassigned"
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - text: Search
+            - textbox "Search table" [ref=e75]:
+              - /placeholder: Search visible fields
+          - generic [ref=e76]: 1 results
+        - region "Evaluation forms table" [ref=e77]:
+          - table [ref=e78]:
+            - rowgroup [ref=e79]:
+              - row [ref=e80]:
+                - columnheader [ref=e81]:
+                  - button "Form name ↓" [ref=e82] [cursor=pointer]
+                - columnheader [ref=e83]:
+                  - button "Status" [ref=e84] [cursor=pointer]
+                - columnheader [ref=e85]:
+                  - button "Version" [ref=e86] [cursor=pointer]
+                - columnheader [ref=e87]:
+                  - button "Questions" [ref=e88] [cursor=pointer]
+                - columnheader [ref=e89]:
+                  - button "Assigned policies" [ref=e90] [cursor=pointer]
+                - columnheader [ref=e91]:
+                  - button "Evaluations" [ref=e92] [cursor=pointer]
+                - columnheader [ref=e93]:
+                  - button "Average score" [ref=e94] [cursor=pointer]
+                - columnheader [ref=e95]:
+                  - button "Last modified" [ref=e96] [cursor=pointer]
+            - rowgroup [ref=e97]:
+              - row [ref=e98] [cursor=pointer]:
+                - cell [ref=e99]:
+                  - button "Open form Governance draft fixture v1" [ref=e100]: Governance draft fixture
+                - cell "DRAFT" [ref=e101]
+                - cell "v1" [ref=e102]
+                - cell "9" [ref=e103]
+                - cell "0" [ref=e104]
+                - cell "0" [ref=e105]
+                - cell "—" [ref=e106]
+                - cell "—" [ref=e107]
+      - group [ref=e108]:
+        - generic "Local drafts & starter examples · 6 forms" [ref=e109] [cursor=pointer]
+      - generic [ref=e110]:
+        - group [ref=e111]:
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - text: Saved form ·
+                  - generic [ref=e116]: DRAFT · VERSION 1
+                - heading "Governance draft fixture" [level=2] [ref=e117]
+              - generic [ref=e118]:
+                - button "Close details" [ref=e119] [cursor=pointer]
+                - button "Save changes" [ref=e120] [cursor=pointer]
+                - button "Publish version" [ref=e121] [cursor=pointer]
+                - group [ref=e122]:
+                  - generic "More actions" [ref=e123] [cursor=pointer]
+            - status [ref=e124]: Saved in AQM
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - text: Form name
+                - textbox "Form name" [ref=e127]: Governance draft fixture
+              - generic [ref=e128]:
+                - text: Description
+                - textbox "Description" [ref=e129]: Opening, understanding, ownership, resolution and close.
+              - generic [ref=e130]:
+                - text: Pass score
+                - generic [ref=e131]: 70%
+                - slider "Pass score 70%" [ref=e132]: "0.7"
+            - group [ref=e133]:
+              - generic "Critical questions" [ref=e134] [cursor=pointer]
+            - alert [ref=e135]: "Forbidden: your role does not permit this action."
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - heading "Question groups" [level=2] [ref=e139]
+                - paragraph [ref=e140]: Question weights determine the overall score.
+              - generic [ref=e141]:
+                - button "Add group" [ref=e142] [cursor=pointer]
+                - button "Add reusable group" [ref=e143] [cursor=pointer]
+            - group [ref=e144]:
+              - generic "Scoring rules · Question weighted · Yes threshold 65%" [ref=e145] [cursor=pointer]
+            - 'region "Group: General" [ref=e146]':
+              - generic [ref=e147]:
+                - generic [ref=e148]:
+                  - heading "General" [level=3] [ref=e149]
+                  - generic [ref=e150]: 9 questions
+                - group [ref=e151]:
+                  - generic "Group settings" [ref=e152] [cursor=pointer]
+              - generic [ref=e153]:
+                - article [ref=e154]:
+                  - generic [ref=e155]:
+                    - generic [ref=e156]: "01"
+                    - generic [ref=e157]:
+                      - strong [ref=e158]: Warm opening
+                      - paragraph [ref=e159]: Yes / No · Weight 1 · Enabled
+                      - paragraph [ref=e160]: Did the agent greet the customer and offer help at the start of the conversation?
+                      - paragraph [ref=e161]: Yes / No
+                    - button "Edit" [ref=e162] [cursor=pointer]
+                - article [ref=e163]:
+                  - generic [ref=e164]:
+                    - generic [ref=e165]: "02"
+                    - generic [ref=e166]:
+                      - strong [ref=e167]: Understanding the issue
+                      - paragraph [ref=e168]: Ordered scale · Weight 1.2 · Enabled
+                      - paragraph [ref=e169]: How effectively did the agent establish and acknowledge the customer’s actual issue?
+                      - paragraph [ref=e170]: 4 levels · Poor → Excellent
+                    - button "Edit" [ref=e171] [cursor=pointer]
+                - article [ref=e172]:
+                  - generic [ref=e173]:
+                    - generic [ref=e174]: "03"
+                    - generic [ref=e175]:
+                      - strong [ref=e176]: Accurate information
+                      - paragraph [ref=e177]: Yes / No · Weight 1.5 · Enabled
+                      - paragraph [ref=e178]: Were the agent’s statements consistent with the facts available in the conversation, without an apparent factual error?
+                      - paragraph [ref=e179]: Yes / No
+                    - button "Edit" [ref=e180] [cursor=pointer]
+                - article [ref=e181]:
+                  - generic [ref=e182]:
+                    - generic [ref=e183]: "04"
+                    - generic [ref=e184]:
+                      - strong [ref=e185]: Empathy
+                      - paragraph [ref=e186]: Ordered scale · Weight 1 · Enabled
+                      - paragraph [ref=e187]: How well did the agent recognize the customer’s situation and respond with appropriate empathy?
+                      - paragraph [ref=e188]: 4 levels · Poor → Excellent
+                    - button "Edit" [ref=e189] [cursor=pointer]
+                - article [ref=e190]:
+                  - generic [ref=e191]:
+                    - generic [ref=e192]: "05"
+                    - generic [ref=e193]:
+                      - strong [ref=e194]: Ownership
+                      - paragraph [ref=e195]: Yes / No · Weight 1 · Enabled
+                      - paragraph [ref=e196]: Did the agent take responsibility for progressing the customer’s issue rather than simply deflecting it?
+                      - paragraph [ref=e197]: Yes / No
+                    - button "Edit" [ref=e198] [cursor=pointer]
+                - article [ref=e199]:
+                  - generic [ref=e200]:
+                    - generic [ref=e201]: "06"
+                    - generic [ref=e202]:
+                      - strong [ref=e203]: Resolution
+                      - paragraph [ref=e204]: Multiple choice · Weight 1.5 · Enabled
+                      - paragraph [ref=e205]: What is the best description of the issue outcome by the end of the conversation?
+                      - paragraph [ref=e206]: Fully resolved · Partially resolved · Unresolved · Not applicable
+                    - button "Edit" [ref=e207] [cursor=pointer]
+                - article [ref=e208]:
+                  - generic [ref=e209]:
+                    - generic [ref=e210]: "07"
+                    - generic [ref=e211]:
+                      - strong [ref=e212]: Clear next steps
+                      - paragraph [ref=e213]: Yes / No · Weight 1 · Enabled
+                      - paragraph [ref=e214]: Where further action was needed, did the agent state clear next steps? If no further action was needed, answer yes.
+                      - paragraph [ref=e215]: Yes / No
+                    - button "Edit" [ref=e216] [cursor=pointer]
+                - article [ref=e217]:
+                  - generic [ref=e218]:
+                    - generic [ref=e219]: "08"
+                    - generic [ref=e220]:
+                      - strong [ref=e221]: Professionalism
+                      - paragraph [ref=e222]: Ordered scale · Weight 1 · Enabled
+                      - paragraph [ref=e223]: How consistently professional, clear and courteous was the agent’s communication?
+                      - paragraph [ref=e224]: 4 levels · Poor → Excellent
+                    - button "Edit" [ref=e225] [cursor=pointer]
+                - article [ref=e226]:
+                  - generic [ref=e227]:
+                    - generic [ref=e228]: "09"
+                    - generic [ref=e229]:
+                      - strong [ref=e230]: Appropriate close
+                      - paragraph [ref=e231]: Yes / No · Weight 1 · Enabled
+                      - paragraph [ref=e232]: Did the agent close the conversation politely and make clear that the exchange was ending?
+                      - paragraph [ref=e233]: Yes / No
+                    - button "Edit" [ref=e234] [cursor=pointer]
+              - button "Add question" [ref=e236] [cursor=pointer]
+        - generic [ref=e237]:
+          - button "View history" [ref=e238] [cursor=pointer]
+          - paragraph [ref=e239]: Recorded changes for this version
+          - paragraph [ref=e240]: 10/1/2026, 1:00:00 PM · Fixture operator · form publish
+        - group [ref=e241]:
+          - generic "Test this form" [ref=e242] [cursor=pointer]
+          - option "Legacy browser sandbox (development)"
+          - option "Durable server sandbox (recommended)" [selected]
+          - option "Synthetic" [selected]
+          - option "Genesys Cloud"
+          - option "Most recent" [selected]
+          - option "Deterministic random"
+          - option "Manual selection"
+```

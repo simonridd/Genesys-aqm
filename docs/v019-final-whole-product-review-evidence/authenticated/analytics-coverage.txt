@@ -1,0 +1,70 @@
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+All available dates
+
+All sources · All policies · All published forms
+
+26 evaluations · 26 evaluated conversations
+Change filters
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+Coverage scope
+
+All available dates · All sources · All policies
+
+Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.
+
+Date, source and policy filter monitoring runs. Form, queue, agent, channel and trigger quality filters do not change overall coverage denominators.
+
+60 interactions considered (Candidates) · 30 met policy criteria
+
+Eligible
+30
+Met policy criteria
+Sampled
+15
+50% · Sampling coverage · of eligible
+Content available
+9
+60% · Content availability · of sampled
+Evaluated
+6
+66.7% · Sample completion · of available
+
+Evaluation coverage: 20% · Evaluated / eligible
+
+Failed evaluation attempts: 3
+
+Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+
+Where coverage was lost
+
+15 eligible interactions were not selected by the sampling policy.
+
+6 sampled interactions had no usable conversation content.
+
+3 interactions had content available but did not reach a completed evaluation.
+
+Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.
+
+Content available is not recorded by queue or agent. Breakdowns include only runs carrying that evidence; older runs may not include it. Viewing evaluated quality narrows evaluations without changing historical coverage.
+
+Coverage by queue
+
+0 runs carry queue coverage evidence.
+
+Coverage by agent
+Data scope & technical details

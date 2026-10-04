@@ -1,0 +1,120 @@
+Workspace / Evaluation Forms
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Build the complete quality evaluation: questions, scoring and pass rules.
+
+Reuse Question Groups for related questions and Answer Sets for common answers.
+
+Table
+Cards
+Import form
+＋ New form
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Evaluations
+
+Average score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	2 Oct 2026
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 5 forms
+Saved form · DRAFT · VERSION 1
+Resolution clarity form
+Close details
+Save changes
+Publish version
+More actions
+
+Saved in AQM · 13:00:05
+
+Form name
+Description
+Pass score
+70%
+Critical questions
+Question groups
+
+Question weights determine the overall score.
+
+Add group
+Add reusable group
+Scoring rules · Question weighted · Yes threshold 65%
+Resolution
+1 question
+Group settings
+01
+Was the resolution clear?
+
+Multiple choice · Weight 1 · Enabled
+
+Assess whether the customer understood the resolution.
+
+Clear · Mostly clear · Partly clear · Unclear
+
+Using Resolution clarity v1
+
+Done
+Edit: Was the resolution clear?
+Question
+Title
+Instructions / question
+Answer format
+Yes / No
+Multiple choice
+Ordered scale
+Answers
+
+Using Resolution clarity v1
+
+This question keeps its own copy of the published answers. Detach if you want to customize them here.
+
+Newer version available: v2
+Detach and customize
+View answers · Clear · Mostly clear · Partly clear · Unclear
+Scoring
+Weight
+Enabled
+Applicability
+Add question condition
+Advanced details
+Organize question
+Delete question
+Done
+Add question
+View history
+Test this form

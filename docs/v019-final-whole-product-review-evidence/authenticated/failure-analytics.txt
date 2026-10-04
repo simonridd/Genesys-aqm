@@ -1,0 +1,20 @@
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+All available dates
+
+All sources · All policies · All published forms
+
+Change filters
+
+Quality analytics could not be loaded.
+
+Retry
+Technical details

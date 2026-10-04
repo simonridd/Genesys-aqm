@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+(node:5960) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/3] tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 1440
+[2/3] tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 390
+[3/3] tests/final-whole-product-review.spec.ts:11:1 › fresh lowest-question cohort and explicit return retain exact version and tab
+  3 passed (5.1s)

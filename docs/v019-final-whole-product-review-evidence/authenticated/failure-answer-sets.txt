@@ -1,0 +1,38 @@
+Workspace / Answer Sets
+ADMIN
+Jev managed securely by automation service
+CONFIGURATION
+Answer Sets
+
+Reuse the same choices or rating scale across multiple questions.
+
+Published forms keep their own versioned copy.
+
+Import Answer Set
+New Answer Set
+SAVED IN AQM · 4 saved Answer Sets
+Refresh saved Answer Sets
+
+Saved Answer Sets unavailable: Fictional upstream storage timeout: internal-fixture-503
+
+Search
+4 results
+Name ↓
+
+Answer format
+
+Version
+
+Status
+
+Answers
+
+Used by forms
+
+Last modified
+
+Service quality	Ordered scale	v1	PUBLISHED	4	0	03/10/2026
+Resolution clarity	Multiple choice	v1	PUBLISHED	4	2	03/10/2026
+Resolution clarity	Multiple choice	v2	PUBLISHED	5	0	02/10/2026
+Customer effort	Ordered scale	v1	PUBLISHED	5	0	03/10/2026
+LOCAL STARTERS & DRAFTS · 3 Answer Sets

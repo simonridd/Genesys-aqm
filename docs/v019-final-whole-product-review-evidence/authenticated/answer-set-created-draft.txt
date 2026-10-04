@@ -1,0 +1,75 @@
+Workspace / Answer Sets
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Answer Sets
+
+Reuse the same choices or rating scale across multiple questions.
+
+Published forms keep their own versioned copy.
+
+Import Answer Set
+New Answer Set
+SAVED IN AQM · 5 saved Answer Sets
+Refresh saved Answer Sets
+Search
+5 results
+Name ↓
+
+Answer format
+
+Version
+
+Status
+
+Answers
+
+Used by forms
+
+Last modified
+
+Service quality	Ordered scale	v1	PUBLISHED	4	0	03/10/2026
+Resolution clarity	Multiple choice	v1	PUBLISHED	4	3	03/10/2026
+Resolution clarity	Multiple choice	v2	PUBLISHED	5	0	02/10/2026
+Fictional escalation clarity	Multiple choice	v1	DRAFT	2	0	02/10/2026
+Customer effort	Ordered scale	v1	PUBLISHED	5	0	03/10/2026
+LOCAL STARTERS & DRAFTS · 3 Answer Sets
+
+Fictional escalation clarity v1 saved as DRAFT in AQM.
+
+Fictional escalation clarity · v1 · DRAFT
+Close details
+Export JSON
+Save changes
+Publish Answer Set
+
+Saved in AQM
+
+Answer Set name
+Answer Set description
+Answer format
+Multiple choice
+Ordered scale
+Answer format cannot change after the first version is saved.
+Choices
+
+Credit is the percentage awarded for this answer. Leave blank for Not scored.
+
+01
+Label
+Description
+Credit (%)
+↑
+↓
+×
+Advanced details · answer 1
+02
+Label
+Description
+Credit (%)
+↑
+↓
+×
+Advanced details · answer 2
+＋ Add choice
+View history

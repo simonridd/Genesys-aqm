@@ -1,0 +1,140 @@
+
+Running 11 tests using 1 worker
+
+(node:5704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/11] tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 1440
+  1) tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 1440 ───
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('tbody')
+    Expected substring: not "000000000004"
+    Error: strict mode violation: locator('tbody') resolved to 2 elements:
+        1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')
+        2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')
+
+    Call log:
+      - Expect "not toContainText" locator('tbody') with timeout 5000ms
+      - waiting for locator('tbody')
+
+
+       6 | async function settle(p:Page){await p.waitForLoadState('networkidle');await p.clock.runFor(700);await p.waitForLoadState('networkidle')}
+       7 | async function nav(p:Page,name:string){const b=p.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({hasText:new RegExp(name+'$')}),d=b.locator('xpath=ancestor::details');if(await d.count()&&await d.getAttribute('open')===null)await d.locator('summary').click();await b.click();await settle(p)}
+    >  8 | for(const width of [1440,390])test(`fresh review continuity and completion ${width}`,async({page})=>{await page.setViewportSize({width,height:width===390?844:900});const f=await fixture(page,'REVIEWER','attention','evaluations');try{const before=JSON.stringify(await f.store.evaluation('escalated'));await page.getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('button',{name:'Start review',exact:true}).last()).toBeVisible();await page.getByRole('button',{name:'Start review',exact:true}).last().click();await expect(page.getByLabel('Human answer: Warm opening')).toBeVisible();await page.getByLabel('Human answer: Warm opening').selectOption('Yes');await page.getByLabel('Human answer: Understanding the issue').selectOption('2');await page.getByLabel('Question note: Warm opening').fill('Fresh question note');await page.getByLabel('Overall review note').fill('Fresh overall note');await page.getByRole('button',{name:'Open conversation',exact:true}).click();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(page.getByLabel('Human answer: Warm opening')).toHaveValue('Yes');await expect(page.getByLabel('Human answer: Understanding the issue')).toHaveValue('2');await expect(page.getByLabel('Question note: Warm opening')).toHaveValue('Fresh question note');await expect(page.getByLabel('Overall review note')).toHaveValue('Fresh overall note');await page.getByLabel('Human answer: Resolution').selectOption('partially_resolved');await page.getByRole('button',{name:'Complete review',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Review completed.'})).toBeVisible();await expect(page.locator('tbody')).not.toContainText('000000000004');await expect(page.locator('main')).toContainText('HUMAN SCORE');expect(JSON.stringify(await f.store.evaluation('escalated'))).toBe(before);expect((await f.store.review('escalated'))?.status).toBe('REVIEWED');expect(f.blocked).toEqual([]);expect(f.errors).toEqual([])}finally{await f.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
+       9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})
+      10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})
+      11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})
+        at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:8:1727
+
+    Error Context: docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-e81b0-tinuity-and-completion-1440/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-e81b0-tinuity-and-completion-1440/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-e81b0-tinuity-and-completion-1440/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:5719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/11] tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 390
+  2) tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 390 ────
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('tbody')
+    Expected substring: not "000000000004"
+    Error: strict mode violation: locator('tbody') resolved to 2 elements:
+        1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')
+        2) <tbody>…</tbody> aka getByRole('region', { name: 'My reviews table' }).locator('tbody')
+
+    Call log:
+      - Expect "not toContainText" locator('tbody') with timeout 5000ms
+      - waiting for locator('tbody')
+
+
+       6 | async function settle(p:Page){await p.waitForLoadState('networkidle');await p.clock.runFor(700);await p.waitForLoadState('networkidle')}
+       7 | async function nav(p:Page,name:string){const b=p.getByRole('navigation',{name:'Primary navigation'}).locator('button').filter({hasText:new RegExp(name+'$')}),d=b.locator('xpath=ancestor::details');if(await d.count()&&await d.getAttribute('open')===null)await d.locator('summary').click();await b.click();await settle(p)}
+    >  8 | for(const width of [1440,390])test(`fresh review continuity and completion ${width}`,async({page})=>{await page.setViewportSize({width,height:width===390?844:900});const f=await fixture(page,'REVIEWER','attention','evaluations');try{const before=JSON.stringify(await f.store.evaluation('escalated'));await page.getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('button',{name:'Start review',exact:true}).last()).toBeVisible();await page.getByRole('button',{name:'Start review',exact:true}).last().click();await expect(page.getByLabel('Human answer: Warm opening')).toBeVisible();await page.getByLabel('Human answer: Warm opening').selectOption('Yes');await page.getByLabel('Human answer: Understanding the issue').selectOption('2');await page.getByLabel('Question note: Warm opening').fill('Fresh question note');await page.getByLabel('Overall review note').fill('Fresh overall note');await page.getByRole('button',{name:'Open conversation',exact:true}).click();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(page.getByLabel('Human answer: Warm opening')).toHaveValue('Yes');await expect(page.getByLabel('Human answer: Understanding the issue')).toHaveValue('2');await expect(page.getByLabel('Question note: Warm opening')).toHaveValue('Fresh question note');await expect(page.getByLabel('Overall review note')).toHaveValue('Fresh overall note');await page.getByLabel('Human answer: Resolution').selectOption('partially_resolved');await page.getByRole('button',{name:'Complete review',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Review completed.'})).toBeVisible();await expect(page.locator('tbody')).not.toContainText('000000000004');await expect(page.locator('main')).toContainText('HUMAN SCORE');expect(JSON.stringify(await f.store.evaluation('escalated'))).toBe(before);expect((await f.store.review('escalated'))?.status).toBe('REVIEWED');expect(f.blocked).toEqual([]);expect(f.errors).toEqual([])}finally{await f.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
+       9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})
+      10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})
+      11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})
+        at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:8:1727
+
+    Error Context: docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-3aa24-ntinuity-and-completion-390/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-3aa24-ntinuity-and-completion-390/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-3aa24-ntinuity-and-completion-390/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:5733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/11] tests/final-whole-product-review.spec.ts:9:1 › fresh blind scale-format detour is retained
+[4/11] tests/final-whole-product-review.spec.ts:10:1 › fresh removed-answer comparison explains dependent question repair before update
+[5/11] tests/final-whole-product-review.spec.ts:11:1 › fresh lowest-question cohort and explicit return retain exact version and tab
+  3) tests/final-whole-product-review.spec.ts:11:1 › fresh lowest-question cohort and explicit return retain exact version and tab 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('tbody')
+    Expected substring: "v18"
+    Error: strict mode violation: locator('tbody') resolved to 2 elements:
+        1) <tbody></tbody> aka getByLabel('Completed interactions table').locator('tbody')
+        2) <tbody></tbody> aka getByRole('region', { name: 'All evaluations table' }).locator('tbody')
+
+    Call log:
+      - Expect "toContainText" locator('tbody') with timeout 5000ms
+      - waiting for locator('tbody')
+
+
+       9 | test('fresh blind scale-format detour is retained',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{await page.getByRole('button',{name:'＋ New form',exact:true}).click();await page.getByLabel('Form name',{exact:true}).fill('Review fictional resolution');await page.getByRole('button',{name:'Add question',exact:true}).click();await page.getByLabel('Title',{exact:true}).fill('Was the resolution clear?');await page.getByLabel('Instructions / question',{exact:true}).fill('Assess clarity of the resolution.');await page.getByLabel('Answer format').selectOption('score');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await expect(page.getByRole('dialog')).not.toContainText('Resolution clarity');await page.getByRole('button',{name:'Cancel',exact:true}).click();await page.getByLabel('Answer format').selectOption('choice');await page.getByRole('button',{name:'Use reusable Answer Set',exact:true}).click();await page.getByRole('button',{name:'Use Resolution clarity v1',exact:true}).click();await page.getByRole('button',{name:'Save changes',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'Saved in AQM'})).toBeVisible();expect(f.blocked).toEqual([])}finally{await f.close()}})
+      10 | test('fresh removed-answer comparison explains dependent question repair before update',async({page})=>{const f=await fixture(page,'AUTHOR','attention','forms');try{const sets=(f.store as any).answerSetMap as Map<string,any>,v2=[...sets.values()].find(s=>s.name==='Resolution clarity'&&s.version===2);sets.set(v2.id,{...v2,options:v2.options.filter((o:any)=>o.key!=='partly_clear')});await nav(page,'Answer Sets');await page.getByRole('button',{name:'Refresh saved Answer Sets',exact:true}).click();await settle(page);await nav(page,'Evaluation Forms');await page.getByText('Conditional resolution form',{exact:true}).first().click();await page.getByRole('button',{name:'Edit',exact:true}).first().click();await page.getByRole('button',{name:'Newer version available: v2',exact:true}).click();const d=page.getByRole('dialog');await expect(d).toContainText('REMOVED');await expect(d).toContainText('Clarify partial resolution');await expect(d).toContainText('Partly clear');await expect(d.getByRole('button',{name:'Update this question to v2'})).toBeDisabled();writeFileSync(out+'/blocked-comparison.txt',await d.innerText());expect(f.blocked).toEqual([])}finally{await f.close()}})
+    > 11 | test('fresh lowest-question cohort and explicit return retain exact version and tab',async({page})=>{const f=await fixture(page,'VIEWER','attention','analytics');try{await page.getByRole('button',{name:'Questions',exact:true}).click();const row=page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'});await row.getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await expect(page).toHaveURL(/form=general_service%4018/);await expect(page).toHaveURL(/question=understanding/);await expect(page.locator('tbody')).toContainText('v18');await page.getByRole('button',{name:'Back to Analytics',exact:true}).click();await expect(page).toHaveURL(/analyticsTab=questions/);expect(f.blocked).toEqual([])}finally{await f.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+      12 | for(const role of ['ADMIN','AUTHOR','REVIEWER','VIEWER'])test(`fresh 390px role primary task and utilities ${role}`,async({page})=>{await page.setViewportSize({width:390,height:844});const f=await fixture(page,role,'attention',role==='AUTHOR'?'forms':role==='REVIEWER'?'evaluations':'automation');try{const n=page.getByRole('navigation',{name:'Primary navigation'});const primary=n.locator('details[open] button').first();for(const control of [primary,n.getByRole('button',{name:'Settings',exact:true}),n.getByRole('button',{name:'About / product tour',exact:true})]){await control.scrollIntoViewIfNeeded();const b=await control.boundingBox();expect(b).not.toBeNull();expect(b!.x).toBeGreaterThanOrEqual(0);expect(b!.x+b!.width).toBeLessThanOrEqual(390);expect(b!.height).toBeGreaterThanOrEqual(24)}expect(f.blocked).toEqual([])}finally{await f.close()}})
+      13 | test('fresh partial overview preserves available sections',async({page})=>{const f=await fixture(page,'ADMIN','attention','forms');try{(f.store as any).healthSnapshot=async()=>{throw Error('Fictional partial operational-health failure')};await nav(page,'Overview');await expect(page.locator('main')).toContainText('Unavailable');await expect(page.locator('main')).toContainText('Average quality');await expect(page.locator('main')).toContainText('Review workload');expect(f.blocked).toEqual([])}finally{await f.close()}})
+      14 | test('fresh browser Back mismatch is retained as characterization',async({page})=>{const f=await fixture(page,'VIEWER','attention','automation');try{await nav(page,'About / product tour');await page.getByRole('button',{name:'Open AQM',exact:true}).first().click();await nav(page,'Analytics');await page.getByRole('button',{name:'Questions',exact:true}).click();await page.getByRole('row').filter({hasText:'Understanding the issue'}).filter({hasText:'v18'}).getByRole('button',{name:'Inspect evaluations →',exact:true}).click();await page.goBack();await settle(page);writeFileSync(out+'/browser-back.json',JSON.stringify({url:page.url(),expectedTask:'Analytics Questions',classification:'PRODUCT DEFECT: task transitions replace current history'}));expect(page.url()).not.toContain('analyticsTab=questions');expect(f.blocked).toEqual([])}finally{await f.close()}})
+        at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/final-whole-product-review.spec.ts:11:565
+
+    Error Context: docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-90cfb-etain-exact-version-and-tab/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-90cfb-etain-exact-version-and-tab/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/v019-final-whole-product-review-evidence/fresh-check-artifacts/final-whole-product-review-90cfb-etain-exact-version-and-tab/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:5767) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/11] tests/final-whole-product-review.spec.ts:12:58 › fresh 390px role primary task and utilities ADMIN
+[7/11] tests/final-whole-product-review.spec.ts:12:58 › fresh 390px role primary task and utilities AUTHOR
+[8/11] tests/final-whole-product-review.spec.ts:12:58 › fresh 390px role primary task and utilities REVIEWER
+[9/11] tests/final-whole-product-review.spec.ts:12:58 › fresh 390px role primary task and utilities VIEWER
+[10/11] tests/final-whole-product-review.spec.ts:13:1 › fresh partial overview preserves available sections
+[11/11] tests/final-whole-product-review.spec.ts:14:1 › fresh browser Back mismatch is retained as characterization
+  3 failed
+    tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 1440 ────
+    tests/final-whole-product-review.spec.ts:8:31 › fresh review continuity and completion 390 ─────
+    tests/final-whole-product-review.spec.ts:11:1 › fresh lowest-question cohort and explicit return retain exact version and tab 
+  8 passed (18.3s)

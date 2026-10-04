@@ -1,0 +1,24 @@
+Workspace / Policies
+ADMIN
+Jev managed securely by automation service
+CONFIGURATION
+Policies
+
+Choose which conversations are evaluated and which published forms apply.
+
+Refresh durable policies
+Status
+All
+Enabled
+Disabled
+Schedule
+All
+Manual
+Daily
+Weekly
+Forms
+All
+Has assigned forms
+No assigned forms
+
+Saved policies unavailable: Fictional upstream storage timeout: internal-fixture-503

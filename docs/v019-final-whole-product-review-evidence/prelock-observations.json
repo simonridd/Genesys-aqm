@@ -1,0 +1,947 @@
+{
+  "historyCheck": {
+    "original": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions",
+    "back": "http://127.0.0.1:4174/Genesys-aqm/?page=welcome",
+    "forward": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&analyticsTab=questions&evaluationSource=server&form=general_service%4018&question=understanding&cohort=analytics&origin=analytics&analytics.tab=questions",
+    "returned": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions"
+  },
+  "partialOverview": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=automation",
+    "text": "Workspace / Overview\nADMIN\nJev managed securely by automation service\nOPERATIONAL HOME\nOverview\n\nQuality, coverage and work requiring attention.\n\nUpdated 13:00:00 · Europe/London\nDashboard range\n7 days\n30 days\nRefresh\nAttention required\nAction needed\nREVIEW & SYSTEM ATTENTION\n2 errors\n1 escalated review\n1 overdue review\n1 warning\n0 failed notification deliveries (24h)\nError\nScheduled run failed\nOpen run →\nError\nReview escalated\nOpen review →\nWarning\nScheduler activity is stale\nOpen alert →\nQuality & coverage\nLast 7 days\nAverage quality\n79% →\nEvaluated conversations\n8\nEvaluations\n8 →\nPass rate\n100%\nCritical failure occurrences\n0 →\n78%\n09-30 · 1 evaluations\n79%\n10-01 · 7 evaluations\n\nLimited history in this period. · 8 evaluations\n\nCoverage\n\nGenesys Cloud · Last 7 days · All policies. Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.\n\n40 interactions considered (Candidates) · 20 met policy criteria\n\nEligible\n20\nMet policy criteria\nSampled\n10\n50% · Sampling coverage · of eligible\nContent available\n6\n60% · Content availability · of sampled\nEvaluated\n4\n66.7% · Sample completion · of available\n\nEvaluation coverage: 20% · Evaluated / eligible\n\nFailed evaluation attempts: 3\n\nCoverage totals count observations across monitoring runs. The same conversation may appear in more than one run.\n\nExplore coverage →\nReview workload\nCurrent state\nOpen\n7 →\nDue soon\n1 →\nOverdue\n1 →\nEscalated\n1 →\nUnassigned\n1 →\nMy review queue →\nAll review work →\nOperational health\nAutomation\nUnavailable\nGenesys\nUnavailable\nJev\nUnavailable\nScheduler\nUnavailable\nNotifications\nHealthy\nReview SLA\nEscalated\nSystem details\nAutomation\nRun a policy now\n\n1 completed · 0 partial · 1 failed · 0 running in the last 7 days\n\nLast automated run\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted\n\nLatest successful scheduled execution.\n\nUpcoming scheduled work\nDaily Voice Customer Service AQM\nDAILY\nNext due 3 Oct, 02:00\nLast success 1 Oct, 03:00\nView/Edit policy →\nDaily Voice Customer Service AQM\nWEEKLY\nNext due 5 Oct, 02:00\nLast success —\nView/Edit policy →\nRecent runs\nUnavailable · Refresh to try again.\nTechnical details\nEvaluation Forms →\nPolicies →\nOpen alerts →\nSettings →\nRun a policy now\nDetailed alerts & run operations",
+    "controls": [
+      "7 days\n30 days",
+      "Refresh",
+      "2 errors",
+      "1 escalated review",
+      "1 overdue review",
+      "1 warning",
+      "Error\nScheduled run failed\nOpen run →",
+      "Error\nReview escalated\nOpen review →",
+      "Warning\nScheduler activity is stale\nOpen alert →",
+      "79% →",
+      "8 →",
+      "0 →",
+      "Explore coverage →",
+      "7 →",
+      "1 →",
+      "1 →",
+      "1 →",
+      "1 →",
+      "My review queue →",
+      "All review work →",
+      "Run a policy now",
+      "1 Oct, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted",
+      "View/Edit policy →",
+      "View/Edit policy →",
+      "Evaluation Forms →",
+      "Policies →",
+      "Open alerts →",
+      "Settings →",
+      "Server policySelect policyDaily Voice Customer Service AQM · v1",
+      "",
+      "Alert statusActiveOpenAcknowledgedResolvedAll",
+      "Alert severityAllINFOWARNINGERROR",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Open alert Scheduler activity is stale",
+      "",
+      "",
+      "Open alert Scheduled run failed",
+      "",
+      "",
+      "Open alert Review escalated",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Open run Daily Voice Customer Service AQM started 02/10/2026, 09:00:00",
+      "Open run Daily Voice Customer Service AQM started 01/10/2026, 03:00:00",
+      "Open run Daily Voice Customer Service AQM started 15/09/2026, 03:00:00"
+    ],
+    "height": 2986
+  },
+  "coverage1000": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=coverage&from=2026-09-25&to=2026-10-02&source=genesys-cloud",
+    "text": "Workspace / Analytics\nADMIN\nJev managed securely by automation service\nSample / browser data\nSaved AQM analytics\nQUALITY ANALYTICS\nQuality analytics\n\nUnderstand quality, coverage and where to investigate.\n\n25 September 2026 – 2 October 2026\n\nGenesys Cloud · All policies · All published forms\n\n0 evaluations · 0 evaluated conversations\nChange filters\nOverview\nAgents\nQueues\nForms\nGroups\nQuestions\nCoverage\nCoverage scope\n\n25 September 2026 – 2 October 2026 · Genesys Cloud · All policies\n\nQuality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.\n\nDate, source and policy filter monitoring runs. Form, queue, agent, channel and trigger quality filters do not change overall coverage denominators.\n\n1200 interactions considered (Candidates) · 1000 met policy criteria\n\nEligible\n1000\nMet policy criteria\nSampled\n500\n50% · Sampling coverage · of eligible\nContent available\n300\n60% · Content availability · of sampled\nEvaluated\n200\n66.7% · Sample completion · of available\n\nEvaluation coverage: 20% · Evaluated / eligible\n\nFailed evaluation attempts: 10\n\nCoverage totals count observations across monitoring runs. The same conversation may appear in more than one run.\n\nWhere coverage was lost\n\n500 eligible interactions were not selected by the sampling policy.\n\n200 sampled interactions had no usable conversation content.\n\n100 interactions had content available but did not reach a completed evaluation.\n\nSampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.\n\nContent available is not recorded by queue or agent. Breakdowns include only runs carrying that evidence; older runs may not include it. Viewing evaluated quality narrows evaluations without changing historical coverage.\n\nCoverage by queue\n\n0 runs carry queue coverage evidence.\n\nCoverage by agent\nData scope & technical details",
+    "controls": [
+      "Sample / browser data",
+      "Saved AQM analytics",
+      "Change filters",
+      "Overview",
+      "Agents",
+      "Queues",
+      "Forms",
+      "Groups",
+      "Questions",
+      "Coverage"
+    ],
+    "height": 1459
+  },
+  "versionCompare": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms",
+    "text": "Workspace / Evaluation Forms\nAUTHOR\nJev managed securely by automation service\nCONFIGURATION\nEvaluation Forms\n\nBuild the complete quality evaluation: questions, scoring and pass rules.\n\nReuse Question Groups for related questions and Answer Sets for common answers.\n\nTable\nCards\nImport form\n＋ New form\nSaved in AQM · 6 saved forms\n\nProduction usage counts use saved policies only.\n\nRefresh saved forms\nStatus\nAll statuses\nDraft\nTesting\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nAssigned to policy\nUnassigned\nSearch\n6 results\nForm name ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nAssigned policies\n\t\nEvaluations\n\t\nAverage score\n\t\nLast modified\n\nResolution clarity form\tDRAFT\tv1\t1\t0\t0\t—\t—\nGeneral Customer Service\tPUBLISHED\tv17\t3\t1\t25\t75%\t—\nFresh reused standards\tDRAFT\tv1\t3\t0\t0\t—\t2 Oct 2026\nFresh resolution quality\tDRAFT\tv1\t4\t0\t0\t—\t2 Oct 2026\nConditional resolution form\tDRAFT\tv1\t2\t0\t0\t—\t—\nAttached resolution form\tDRAFT\tv1\t1\t0\t0\t—\t—\nLocal drafts & starter examples · 5 forms\nSaved form · DRAFT · VERSION 1\nAttached resolution form\nClose details\nSave changes\nPublish version\nMore actions\n\nSaved in AQM\n\nForm name\nDescription\nPass score\n70%\nCritical questions\nQuestion groups\n\nQuestion weights determine the overall score.\n\nAdd group\nAdd reusable group\nScoring rules · Question weighted · Yes threshold 65%\nResolution\n1 question\nGroup settings\n01\nWas the resolution clear?\n\nMultiple choice · Weight 1 · Enabled\n\nAssess whether the customer understood the resolution.\n\nClear · Mostly clear · Partly clear · Unclear\n\nUsing Resolution clarity v1\n\nDone\nEdit: Was the resolution clear?\nQuestion\nTitle\nInstructions / question\nAnswer format\nYes / No\nMultiple choice\nOrdered scale\nAnswers\n\nUsing Resolution clarity v1\n\nThis question keeps its own copy of the published answers. Detach if you want to customize them here.\n\nNewer version available: v2\nDetach and customize\nResolution clarity · update to v2\nCancel\n\nReview the answers below. Nothing changes until you update this question.\n\nCURRENT · v1\nNEW · v2\nChanges\nUnclear\n0%\nPosition 4\nUnclear\n0%\nPosition 1\nORDER CHANGED\nPartly clear\n50%\nPosition 3\nPartly clear\n50%\nPosition 2\nORDER CHANGED\nMostly clear\n75%\nPosition 2\nMostly clear\n75%\nPosition 3\nORDER CHANGED\nClear\n100%\nPosition 1\nCompletely clear\n90%\nPosition 4\nRENAMED · CREDIT CHANGED · ORDER CHANGED\n—\nNot applicable\nNot scored\nPosition 5\nADDED\n\nResulting order: Unclear → Partly clear → Mostly clear → Completely clear → Not applicable\n\nNo dependent condition will break.\n\nAdvanced details\nUpdate this question to v2\nView answers · Clear · Mostly clear · Partly clear · Unclear\nScoring\nWeight\nEnabled\nApplicability\nAdd question condition\nAdvanced details\nOrganize question\nDelete question\nDone\nAdd question\nView history\nTest this form",
+    "controls": [
+      "Table",
+      "Cards",
+      "＋ New form",
+      "Refresh saved forms",
+      "All statuses\nDraft\nTesting\nPublished\nRetired",
+      "All versions\nLatest version per family",
+      "All usage\nAssigned to policy\nUnassigned",
+      "Form name ↓",
+      "Status",
+      "Version",
+      "Questions",
+      "Assigned policies",
+      "Evaluations",
+      "Average score",
+      "Last modified",
+      "Resolution clarity form",
+      "General Customer Service",
+      "Fresh reused standards",
+      "Fresh resolution quality",
+      "Conditional resolution form",
+      "Attached resolution form",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Close details",
+      "Save changes",
+      "Publish version",
+      "",
+      "",
+      "",
+      "Add group",
+      "Add reusable group",
+      "Move group Resolution up",
+      "Move group Resolution down",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Done",
+      "Yes / No\nMultiple choice\nOrdered scale",
+      "Newer version available: v2",
+      "Detach and customize",
+      "Cancel",
+      "Update this question to v2",
+      "Add question condition",
+      "",
+      "Move Was the resolution clear? up",
+      "Move Was the resolution clear? down",
+      "Group for Was the resolution clear?",
+      "Delete question",
+      "Done",
+      "Add question",
+      "View history",
+      "ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)",
+      "SourceSyntheticGenesys Cloud",
+      "SelectionMost recentDeterministic randomManual selection",
+      "",
+      ""
+    ],
+    "height": 3930
+  },
+  "blockedUpdate": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=forms",
+    "text": "Workspace / Evaluation Forms\nAUTHOR\nJev managed securely by automation service\nCONFIGURATION\nEvaluation Forms\n\nBuild the complete quality evaluation: questions, scoring and pass rules.\n\nReuse Question Groups for related questions and Answer Sets for common answers.\n\nTable\nCards\nImport form\n＋ New form\nSaved in AQM · 4 saved forms\n\nProduction usage counts use saved policies only.\n\nRefresh saved forms\nStatus\nAll statuses\nDraft\nTesting\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nAssigned to policy\nUnassigned\nSearch\n4 results\nForm name ↓\n\t\nStatus\n\t\nVersion\n\t\nQuestions\n\t\nAssigned policies\n\t\nEvaluations\n\t\nAverage score\n\t\nLast modified\n\nResolution clarity form\tDRAFT\tv1\t1\t0\t0\t—\t—\nGeneral Customer Service\tPUBLISHED\tv17\t3\t1\t25\t75%\t—\nConditional resolution form\tDRAFT\tv1\t2\t0\t0\t—\t—\nAttached resolution form\tDRAFT\tv1\t1\t0\t0\t—\t—\nLocal drafts & starter examples · 5 forms\nSaved form · DRAFT · VERSION 1\nConditional resolution form\nClose details\nSave changes\nPublish version\nMore actions\n\nSaved in AQM\n\nForm name\nDescription\nPass score\n70%\nCritical questions\nQuestion groups\n\nQuestion weights determine the overall score.\n\nAdd group\nAdd reusable group\nScoring rules · Question weighted · Yes threshold 65%\nResolution\n2 questions\nGroup settings\n01\nWas the resolution clear?\n\nMultiple choice · Weight 1 · Enabled\n\nAssess whether the customer understood the resolution.\n\nClear · Mostly clear · Partly clear · Unclear\n\nUsing Resolution clarity v1\n\nDone\nEdit: Was the resolution clear?\nQuestion\nTitle\nInstructions / question\nAnswer format\nYes / No\nMultiple choice\nOrdered scale\nAnswers\n\nUsing Resolution clarity v1\n\nThis question keeps its own copy of the published answers. Detach if you want to customize them here.\n\nNewer version available: v2\nDetach and customize\nResolution clarity · update to v2\nCancel\n\nReview the answers below. Nothing changes until you update this question.\n\nCURRENT · v1\nNEW · v2\nChanges\nUnclear\n0%\nPosition 4\nUnclear\n0%\nPosition 1\nORDER CHANGED\nMostly clear\n75%\nPosition 2\nMostly clear\n75%\nPosition 2\nUnchanged\nClear\n100%\nPosition 1\nCompletely clear\n90%\nPosition 3\nRENAMED · CREDIT CHANGED · ORDER CHANGED\n—\nNot applicable\nNot scored\nPosition 4\nADDED\nPartly clear\n50%\nPosition 3\n—\nREMOVED\n\nResulting order: Unclear → Mostly clear → Completely clear → Not applicable\n\nCAN’T UPDATE YET\n\nResolution clarity v2 removes “Partly clear”. The condition on “Clarify partial resolution” uses an answer that will no longer be available. Change or remove that condition first, then try the update again.\n\nAdvanced details\nUpdate this question to v2\nView answers · Clear · Mostly clear · Partly clear · Unclear\nScoring\nWeight\nEnabled\nApplicability\nAdd question condition\nAdvanced details\nOrganize question\nDelete question\nDone\n02\nClarify partial resolution\n\nYes / No · Weight 1 · Enabled\n\nAssess whether the customer understood the resolution.\n\nYes / No\n\nConditional\nEdit\nAdd question\nView history\nTest this form",
+    "controls": [
+      "Table",
+      "Cards",
+      "＋ New form",
+      "Refresh saved forms",
+      "All statuses\nDraft\nTesting\nPublished\nRetired",
+      "All versions\nLatest version per family",
+      "All usage\nAssigned to policy\nUnassigned",
+      "Form name ↓",
+      "Status",
+      "Version",
+      "Questions",
+      "Assigned policies",
+      "Evaluations",
+      "Average score",
+      "Last modified",
+      "Resolution clarity form",
+      "General Customer Service",
+      "Conditional resolution form",
+      "Attached resolution form",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Close details",
+      "Save changes",
+      "Publish version",
+      "",
+      "",
+      "",
+      "Add group",
+      "Add reusable group",
+      "Move group Resolution up",
+      "Move group Resolution down",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Done",
+      "Yes / No\nMultiple choice\nOrdered scale",
+      "Newer version available: v2",
+      "Detach and customize",
+      "Cancel",
+      "Update this question to v2",
+      "Add question condition",
+      "",
+      "Move Was the resolution clear? up",
+      "Move Was the resolution clear? down",
+      "Group for Was the resolution clear?",
+      "Delete question",
+      "Done",
+      "Edit",
+      "Add question",
+      "View history",
+      "ExecutionLegacy browser sandbox (development)Durable server sandbox (recommended)",
+      "SourceSyntheticGenesys Cloud",
+      "SelectionMost recentDeterministic randomManual selection",
+      "",
+      ""
+    ],
+    "height": 4039
+  },
+  "authHandoff": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=automation",
+    "text": "Workspace / Overview\nADMIN\nJev managed securely by automation service\nOPERATIONAL HOME\nOverview\n\nQuality, coverage and work requiring attention.\n\nUpdated 13:00:00 · Europe/London\nDashboard range\n7 days\n30 days\nRefresh\nAttention required\nAction needed\nREVIEW & SYSTEM ATTENTION\n2 errors\n1 escalated review\n1 overdue review\n1 warning\n0 failed notification deliveries (24h)\nError\nReview escalated\nOpen review →\nError\nScheduled run failed\nOpen run →\nWarning\nScheduler activity is stale\nOpen alert →\nQuality & coverage\nLast 7 days\nAverage quality\n79% →\nEvaluated conversations\n8\nEvaluations\n8 →\nPass rate\n100%\nCritical failure occurrences\n0 →\n78%\n09-30 · 1 evaluations\n79%\n10-01 · 7 evaluations\n\nLimited history in this period. · 8 evaluations\n\nCoverage\n\nGenesys Cloud · Last 7 days · All policies. Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.\n\n40 interactions considered (Candidates) · 20 met policy criteria\n\nEligible\n20\nMet policy criteria\nSampled\n10\n50% · Sampling coverage · of eligible\nContent available\n6\n60% · Content availability · of sampled\nEvaluated\n4\n66.7% · Sample completion · of available\n\nEvaluation coverage: 20% · Evaluated / eligible\n\nFailed evaluation attempts: 3\n\nCoverage totals count observations across monitoring runs. The same conversation may appear in more than one run.\n\nExplore coverage →\nReview workload\nCurrent state\nOpen\n7 →\nDue soon\n1 →\nOverdue\n1 →\nEscalated\n1 →\nUnassigned\n1 →\nMy review queue →\nAll review work →\nOperational health\nAutomation\nAttention\nGenesys\nUnverified\nJev\nError\nScheduler\nHealthy\nNotifications\nHealthy\nReview SLA\nEscalated\nSystem details\nAutomation\nRun a policy now\n\n1 completed · 0 partial · 1 failed · 0 running in the last 7 days\n\nLast automated run\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted\n\nLatest successful scheduled execution.\n\nUpcoming scheduled work\nDaily Voice Customer Service AQM\nDAILY\nNext due 3 Oct, 02:00\nLast success 1 Oct, 03:00\nView/Edit policy →\nDaily Voice Customer Service AQM\nWEEKLY\nNext due 5 Oct, 02:00\nLast success —\nView/Edit policy →\nRecent runs\n2 Oct, 09:00\nDaily Voice Customer Service AQM\nManual\n0 evaluations · 3 failed\nFailed\n1 Oct, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted\n15 Sept, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted\nEvaluation Forms →\nPolicies →\nOpen alerts →\nSettings →\nRun a policy now\nDetailed alerts & run operations",
+    "controls": [
+      "7 days\n30 days",
+      "Refresh",
+      "2 errors",
+      "1 escalated review",
+      "1 overdue review",
+      "1 warning",
+      "Error\nReview escalated\nOpen review →",
+      "Error\nScheduled run failed\nOpen run →",
+      "Warning\nScheduler activity is stale\nOpen alert →",
+      "79% →",
+      "8 →",
+      "0 →",
+      "Explore coverage →",
+      "7 →",
+      "1 →",
+      "1 →",
+      "1 →",
+      "1 →",
+      "My review queue →",
+      "All review work →",
+      "Run a policy now",
+      "1 Oct, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted",
+      "View/Edit policy →",
+      "View/Edit policy →",
+      "2 Oct, 09:00\nDaily Voice Customer Service AQM\nManual\n0 evaluations · 3 failed\nFailed",
+      "1 Oct, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted",
+      "15 Sept, 03:00\nDaily Voice Customer Service AQM\nScheduled\n2 evaluations\nCompleted",
+      "Evaluation Forms →",
+      "Policies →",
+      "Open alerts →",
+      "Settings →",
+      "Server policySelect policyDaily Voice Customer Service AQM · v1",
+      "",
+      "Alert statusActiveOpenAcknowledgedResolvedAll",
+      "Alert severityAllINFOWARNINGERROR",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Open alert Scheduler activity is stale",
+      "",
+      "",
+      "Open alert Review escalated",
+      "",
+      "",
+      "Open alert Scheduled run failed",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Open run Daily Voice Customer Service AQM started 02/10/2026, 09:00:00",
+      "Open run Daily Voice Customer Service AQM started 01/10/2026, 03:00:00",
+      "Open run Daily Voice Customer Service AQM started 15/09/2026, 03:00:00"
+    ],
+    "height": 3080
+  },
+  "groupSetIntegration": {
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=groups",
+    "text": "Workspace / Question Groups\nAUTHOR\nJev managed securely by automation service\nCONFIGURATION\nQuestion Groups\n\nReuse a set of related questions across multiple evaluation forms.\n\nImport reusable group\nNew reusable question group\nSaved in AQM · 5 saved groups\nRefresh saved groups\nStatus\nAll statuses\nDraft\nPublished\nRetired\nVersion\nAll versions\nLatest version per family\nUsage\nAll usage\nUsed\nUnused\nSearch\n5 results\nName ↓\n\t\nVersion\n\t\nStatus\n\t\nQuestions\n\t\nUsed by forms\n\t\nLast modified\n\nResolution & Next Steps\tv1\tPUBLISHED\t3\t2\t01/10/2026\nIdentity & Security Verification\tv1\tPUBLISHED\t3\t0\t01/10/2026\nFresh clarity group\tv1\tDRAFT\t1\t0\t02/10/2026\nCustomer Experience / Empathy\tv1\tPUBLISHED\t3\t0\t01/10/2026\nCall Closing\tv1\tPUBLISHED\t2\t0\t01/10/2026\nLocal drafts & starter examples · 4 groups\n\nFresh clarity group v1 saved as DRAFT in AQM.\n\nFresh clarity group · v1 · DRAFT\nClose details\nExport JSON\nSave changes\nPublish reusable question group\n\nSaved in AQM · 13:18:52\n\nReusable question group name\nReusable question group description\nView history\nReusable questions\n\nQuestion weights determine the overall score.\n\nScoring rules · Question weighted · Yes threshold 65%\nFresh clarity group\n1 question\nGroup settings\n01\nWas the resolution clear?\n\nMultiple choice · Weight 1 · Enabled\n\nAssess clarity.\n\nClear · Mostly clear · Partly clear · Unclear\n\nUsing Resolution clarity v1\n\nDone\nEdit: Was the resolution clear?\nQuestion\nTitle\nInstructions / question\nAnswer format\nYes / No\nMultiple choice\nOrdered scale\nAnswers\n\nUsing Resolution clarity v1\n\nThis question keeps its own copy of the published answers. Detach if you want to customize them here.\n\nNewer version available: v2\nDetach and customize\nView answers · Clear · Mostly clear · Partly clear · Unclear\nScoring\nWeight\nEnabled\nApplicability\nAdd question condition\nAdvanced details\nOrganize question\nDelete question\nDone\nAdd question",
+    "controls": [
+      "New reusable question group",
+      "Refresh saved groups",
+      "All statuses\nDraft\nPublished\nRetired",
+      "All versions\nLatest version per family",
+      "All usage\nUsed\nUnused",
+      "Name ↓",
+      "Version",
+      "Status",
+      "Questions",
+      "Used by forms",
+      "Last modified",
+      "Resolution & Next Steps",
+      "Identity & Security Verification",
+      "Fresh clarity group",
+      "Customer Experience / Empathy",
+      "Call Closing",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "Close details",
+      "Export JSON",
+      "Save changes",
+      "Publish reusable question group",
+      "View history",
+      "",
+      "",
+      "Done",
+      "Yes / No\nMultiple choice\nOrdered scale",
+      "Newer version available: v2",
+      "Detach and customize",
+      "Add question condition",
+      "",
+      "Move Was the resolution clear? up",
+      "Move Was the resolution clear? down",
+      "Delete question",
+      "Done",
+      "Add question"
+    ],
+    "height": 2855
+  },
+  "reviewChecks": {
+    "retained": {
+      "answers": [
+        "Yes",
+        "2",
+        ""
+      ],
+      "questionNote": "Opening was clear; inspect the actual greeting.",
+      "overall": "Independent fictional review; evidence detour in progress.",
+      "copy": [
+        "Unsaved review changes · Kept temporarily while you inspect this session.",
+        "Discard my unsaved answers",
+        "HUMAN PROGRESS PREVIEW",
+        "Group comparison · human progress preview",
+        "Save progress"
+      ]
+    },
+    "aiUnchanged": true,
+    "review": {
+      "id": "escalated",
+      "evaluationId": "escalated",
+      "conversationId": "22222222-2222-4222-8222-000000000004",
+      "formId": "general_service",
+      "formVersion": 17,
+      "formSnapshot": {
+        "id": "general_service",
+        "name": "General Customer Service",
+        "description": "Opening, understanding, ownership, resolution and close.",
+        "version": 17,
+        "enabled": true,
+        "questions": [
+          {
+            "id": "greeting",
+            "title": "Warm opening",
+            "instructions": "Did the agent greet the customer and offer help at the start of the conversation?",
+            "type": "noul",
+            "options": [],
+            "weight": 1,
+            "enabled": true,
+            "section": "Customer care"
+          },
+          {
+            "id": "understanding",
+            "title": "Understanding the issue",
+            "instructions": "How effectively did the agent establish and acknowledge the customer’s actual issue?",
+            "type": "score",
+            "weight": 1.2,
+            "enabled": true,
+            "options": [
+              {
+                "key": "poor",
+                "label": "Poor",
+                "description": "Absent or counterproductive behaviour.",
+                "credit": 0
+              },
+              {
+                "key": "needs_improvement",
+                "label": "Needs improvement",
+                "description": "Some appropriate behaviour, with clear gaps.",
+                "credit": 0.33
+              },
+              {
+                "key": "good",
+                "label": "Good",
+                "description": "Appropriate and effective behaviour with minor gaps.",
+                "credit": 0.67
+              },
+              {
+                "key": "excellent",
+                "label": "Excellent",
+                "description": "Consistently clear, effective and considerate behaviour.",
+                "credit": 1
+              }
+            ],
+            "section": "Customer care"
+          },
+          {
+            "id": "resolution",
+            "title": "Resolution",
+            "instructions": "What is the best description of the issue outcome by the end of the conversation?",
+            "type": "choice",
+            "weight": 1.5,
+            "enabled": true,
+            "options": [
+              {
+                "key": "fully_resolved",
+                "label": "Fully resolved",
+                "description": "The customer’s issue was resolved in the conversation.",
+                "credit": 1
+              },
+              {
+                "key": "partially_resolved",
+                "label": "Partially resolved",
+                "description": "Meaningful progress, but further action remains.",
+                "credit": 0.5
+              },
+              {
+                "key": "unresolved",
+                "label": "Unresolved",
+                "description": "The issue remained unresolved with no meaningful progress.",
+                "credit": 0
+              },
+              {
+                "key": "not_applicable",
+                "label": "Not applicable",
+                "description": "The conversation does not present a resolvable issue."
+              }
+            ],
+            "section": "Customer care"
+          }
+        ],
+        "scoring": {
+          "yesThreshold": 0.65,
+          "passScore": 0.7,
+          "criticalQuestionIds": []
+        }
+      },
+      "source": "genesys-cloud",
+      "createdAt": "2026-10-02T12:00:00.000Z",
+      "updatedAt": "2026-10-02T12:00:00.000Z",
+      "completedAt": "2026-10-02T12:00:00.000Z",
+      "status": "REVIEWED",
+      "revision": 4,
+      "assignment": {
+        "assignee": {
+          "userId": "reviewer",
+          "displayName": "Alex Reviewer"
+        },
+        "assignedAt": "2026-10-02T12:00:00.000Z",
+        "assignedBy": {
+          "userId": "admin",
+          "displayName": "Owner"
+        },
+        "dueAt": "2026-09-28T12:00:00Z"
+      },
+      "reviewer": {
+        "userId": "reviewer",
+        "displayName": "Alex Reviewer"
+      },
+      "notes": "Independent fictional review; evidence detour in progress.",
+      "questions": [
+        {
+          "questionId": "greeting",
+          "title": "Warm opening",
+          "type": "noul",
+          "section": "Customer care",
+          "ai": {
+            "id": "greeting",
+            "title": "Warm opening",
+            "type": "noul",
+            "rawValue": 0.95,
+            "outcome": "Yes",
+            "probability": 0.95,
+            "credit": 1,
+            "weight": 1,
+            "weightedContribution": 1
+          },
+          "human": {
+            "value": "Yes",
+            "outcome": "Yes",
+            "credit": 1,
+            "note": "Opening was clear; inspect the actual greeting."
+          },
+          "comparison": {
+            "exact": true,
+            "valueDistance": null,
+            "creditDifference": 0,
+            "band": "exact"
+          },
+          "selectedOutcomeConfidence": 0.95
+        },
+        {
+          "questionId": "understanding",
+          "title": "Understanding the issue",
+          "type": "score",
+          "section": "Customer care",
+          "ai": {
+            "id": "understanding",
+            "title": "Understanding the issue",
+            "type": "score",
+            "rawValue": 1,
+            "outcome": "1.00 / 3",
+            "confidence": 0.75,
+            "probabilities": {
+              "0": 0.1,
+              "1": 0.8,
+              "2": 0.1,
+              "3": 0
+            },
+            "credit": 0.331,
+            "weight": 1.2,
+            "weightedContribution": 0.3972
+          },
+          "human": {
+            "value": 2,
+            "outcome": "Good",
+            "credit": 0.67,
+            "note": ""
+          },
+          "comparison": {
+            "exact": false,
+            "valueDistance": 1,
+            "creditDifference": 0.339,
+            "band": "one-band"
+          },
+          "selectedOutcomeConfidence": 0.75
+        },
+        {
+          "questionId": "resolution",
+          "title": "Resolution",
+          "type": "choice",
+          "section": "Customer care",
+          "ai": {
+            "id": "resolution",
+            "title": "Resolution",
+            "type": "choice",
+            "rawValue": "fully_resolved",
+            "outcome": "Fully resolved",
+            "probability": 0.85,
+            "confidence": 0.85,
+            "probabilities": {
+              "fully_resolved": 0.85,
+              "partially_resolved": 0.1,
+              "unresolved": 0.04,
+              "not_applicable": 0.01
+            },
+            "credit": 1,
+            "weight": 1.5,
+            "weightedContribution": 1.5
+          },
+          "human": {
+            "value": "partially_resolved",
+            "outcome": "Partially resolved",
+            "credit": 0.5,
+            "note": ""
+          },
+          "comparison": {
+            "exact": false,
+            "valueDistance": null,
+            "creditDifference": -0.5,
+            "band": "different"
+          },
+          "selectedOutcomeConfidence": 0.85
+        }
+      ],
+      "humanOverallScore": 0.6902702702702703,
+      "scoringMode": "QUESTION_WEIGHTED",
+      "humanGroupResults": [
+        {
+          "groupId": "legacy_0",
+          "name": "Customer care",
+          "status": "APPLICABLE",
+          "applicable": true,
+          "countedWeight": 3.7,
+          "overallScore": 0.6902702702702703,
+          "critical": false,
+          "passed": null,
+          "questionIds": [
+            "greeting",
+            "understanding",
+            "resolution"
+          ],
+          "answered": 3,
+          "skipped": 0
+        }
+      ],
+      "humanPassed": false,
+      "humanCriticalGroupFailures": [],
+      "groupComparison": [
+        {
+          "groupId": "legacy_0",
+          "name": "Customer care",
+          "aiScore": 0.783027027027027,
+          "humanScore": 0.6902702702702703,
+          "difference": -0.09275675675675665
+        }
+      ],
+      "comparison": {
+        "aiOverallScore": 0.783027027027027,
+        "humanOverallScore": 0.6902702702702703,
+        "absoluteScoreDifference": 0.09275675675675665,
+        "answered": 3,
+        "agreements": 1,
+        "disagreements": 2,
+        "total": 3
+      },
+      "events": [
+        {
+          "kind": "review_requested",
+          "at": "2026-10-02T12:00:00.000Z",
+          "actor": {
+            "userId": "admin",
+            "displayName": "Owner"
+          },
+          "revision": 1
+        },
+        {
+          "kind": "review_started",
+          "at": "2026-10-02T12:00:00.000Z",
+          "actor": {
+            "userId": "reviewer",
+            "displayName": "Alex Reviewer"
+          },
+          "revision": 3
+        },
+        {
+          "kind": "review_completed",
+          "at": "2026-10-02T12:00:00.000Z",
+          "actor": {
+            "userId": "reviewer",
+            "displayName": "Alex Reviewer"
+          },
+          "revision": 4
+        }
+      ]
+    },
+    "completed": {
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=escalated",
+      "text": "Workspace / Evaluations\nREVIEWER\nJev managed securely by automation service\nQUALITY\nEvaluations\n\nProduction results with form snapshots and provider provenance.\n\nMy reviews\nAll evaluations\nMy reviews\nASSIGNED OPEN\n4\nDUE SOON\n1\nOVERDUE\n1\nESCALATED\n0\nAvailable unassigned reviews (1) →\nReview status\nAll\nNOT REVIEWED\nREVIEW REQUESTED\nIN REVIEW\nREVIEWED\nSLA state\nAll states\nDue soon\nOverdue\nEscalated\nDue\nAll\nOverdue\nDue today\nDue next 7 days\nNo due date\nRefresh\nMore filters\n\nMy queue is prioritized across the server active review set (maximum 2,000).\n\nSearch\n4 results on this page\nQueue priority\tConversation\tAgent\tQueue\tForm\tAI score\tReview\tDue\tAction\n\nOVERDUE\nOverdue by 6 hours\n\t22222222-2222-4222-8222-000000000005\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tREVIEW_REQUESTED\t02/10/2026, 07:00:00\nOVERDUE\nOverdue by 6 hours\n\tStart review\n\nDUE SOON\nDue in 6 hours\n\t22222222-2222-4222-8222-000000000006\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tREVIEW_REQUESTED\t02/10/2026, 19:00:00\nDUE SOON\nDue in 6 hours\n\tStart review\n\nDue in 3 days\n\t22222222-2222-4222-8222-000000000023\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tIN_REVIEW\t05/10/2026, 13:00:00\nDue in 3 days\n\tContinue review\n\nDue in 3 days\n\t22222222-2222-4222-8222-000000000025\tAlex Morgan\tCustomer care\tGeneral Customer Service v17\t78%\tREVIEW_REQUESTED\t05/10/2026, 13:00:00\nDue in 3 days\n\tStart review\nFirst page\nNext server page →\nEVALUATION DETAIL\nGeneral Customer Service v17\nClose details\nScore\n78%\nResult\nPass\nCritical failures\n0\nReview\nREVIEWED\nContext\n\nConversation 22222222-2222-4222-8222-000000000004 · Alex Morgan · Customer care · voice · Unspecified\n\nPolicy Manual · Run — · genesys-cloud\n\nOpen conversation\nGroups · Question weighted\nCustomer care · 78%\n\nNo group threshold\n\nWarm opening · Yes · 100%\n\nUnderstanding the issue · 1.00 / 3 · 33%\n\nResolution · Fully resolved · 100%\n\nHUMAN REVIEW\nCompleted calibration\n\nGeneral Customer Service v17 · REVIEWED\n\nREAL GENESYS DATA\n\nAssigned to: Alex Reviewer\n\nDue: 28/09/2026, 13:00:00\nCompleted\n\nAI SCORE\n78%\nHUMAN SCORE\n69%\nEXACT AGREEMENT\n1 / 3\nABSOLUTE SCORE GAP\n9.3 pp\nGroup comparison\nCustomer care\n\nAI group score: 78%\n\nHuman group score: 69%\n\nDifference: -9.3 pp\n\nUse the evaluated form snapshot. Partial scores are previews; completed reviews contribute to Calibration. AI scores stay in Quality.\n\nReviewer: Alex Reviewer · 02/10/2026, 13:00:00 · revision 4\n\nReview completed. It has been removed from My Reviews. The original AI result is preserved.\n\nClose and continue My Reviews\nAll\nAgreements\nDisagreements\nCustomer care · YES / NO\nWarm opening\nAgreement\n\nDid the agent greet the customer and offer help at the start of the conversation?\n\nAI RESULT\nYes\n\nCredit 100% · Yes probability 95%\n\nSelected-answer confidence 95%\nHUMAN REVIEW\nYes\n\nHuman credit 100%\n\nOpening was clear; inspect the actual greeting.\n\nCustomer care · SCORE\nUnderstanding the issue\nOne-band difference\n\nHow effectively did the agent establish and acknowledge the customer’s actual issue?\n\nAI RESULT\n1.00 / 3\n\nCredit 33% · Confidence 75%\n\nExact value distance: 1.00 bands\nHUMAN REVIEW\nGood\n\nHuman credit 67%\n\nCustomer care · CHOICE\nResolution\nDisagreement\n\nWhat is the best description of the issue outcome by the end of the conversation?\n\nAI RESULT\nFully resolved\n\nCredit 100% · Confidence 85%\n\nHUMAN REVIEW\nPartially resolved\n\nHuman credit 50%\n\nReviewer note\n\nIndependent fictional review; evidence detour in progress.\n\nReview history (3 events)\n\nActual Jev requests: Not recorded (legacy)\n\nProvenance\n\nID escalated · typesafe fixture-jev · 01/08/2026, 13:00:00 · manual · form v17 · run —",
+      "controls": [
+        "My reviews",
+        "All evaluations",
+        "Available unassigned reviews (1) →",
+        "All\nNOT REVIEWED\nREVIEW REQUESTED\nIN REVIEW\nREVIEWED",
+        "All states\nDue soon\nOverdue\nEscalated",
+        "All\nOverdue\nDue today\nDue next 7 days\nNo due date",
+        "Refresh",
+        "More filters",
+        "22222222-2222-4222-8222-000000000005",
+        "Start review",
+        "22222222-2222-4222-8222-000000000006",
+        "Start review",
+        "22222222-2222-4222-8222-000000000023",
+        "Continue review",
+        "22222222-2222-4222-8222-000000000025",
+        "Start review",
+        "First page",
+        "Next server page →",
+        "Close details",
+        "Open conversation",
+        "Close and continue My Reviews",
+        "All",
+        "Agreements",
+        "Disagreements"
+      ],
+      "height": 3826
+    }
+  },
+  "reviewActionBefore": {
+    "x": 1025.375,
+    "y": 1387.40625,
+    "width": 78.5,
+    "height": 46
+  },
+  "reviewActionAfter": {
+    "x": 281.375,
+    "y": 399.40625,
+    "width": 78.5,
+    "height": 46
+  },
+  "semantics": [
+    {
+      "label": "admin-overview",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=automation",
+      "h1": 2,
+      "current": [
+        {
+          "text": "◌Overview",
+          "value": "page"
+        },
+        {
+          "text": "Overview",
+          "value": "page"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Monitor / Quality",
+          "open": true
+        },
+        {
+          "label": "Configuration",
+          "open": true
+        },
+        {
+          "label": "Interactions",
+          "open": true
+        }
+      ],
+      "pressed": [],
+      "sort": [
+        {
+          "text": "Timestamp ↓",
+          "sort": "descending"
+        },
+        {
+          "text": "Severity ↓",
+          "sort": "descending"
+        },
+        {
+          "text": "Started ↓",
+          "sort": "descending"
+        }
+      ],
+      "announcements": []
+    },
+    {
+      "label": "author-policy",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=policies",
+      "h1": 2,
+      "current": [
+        {
+          "text": "◇Policies",
+          "value": "page"
+        },
+        {
+          "text": "Policies",
+          "value": "page"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Configuration",
+          "open": true
+        },
+        {
+          "label": "Monitor / Quality",
+          "open": false
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "pressed": [],
+      "sort": [
+        {
+          "text": "Timestamp ↓",
+          "sort": "descending"
+        },
+        {
+          "text": "Name ↓",
+          "sort": "descending"
+        }
+      ],
+      "announcements": [
+        {
+          "role": "status",
+          "text": "Saved — to server"
+        },
+        {
+          "role": "status",
+          "text": "Schedule matches server"
+        }
+      ]
+    },
+    {
+      "label": "reviewer",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&reviewQueue=mine&assignment=mine&evaluationId=overdue",
+      "h1": 2,
+      "current": [
+        {
+          "text": "◷Evaluations",
+          "value": "page"
+        },
+        {
+          "text": "Evaluations",
+          "value": "page"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Quality / Review",
+          "open": true
+        },
+        {
+          "label": "Reference configuration",
+          "open": false
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "pressed": [
+        {
+          "text": "My reviews",
+          "pressed": "true"
+        },
+        {
+          "text": "All evaluations",
+          "pressed": "false"
+        }
+      ],
+      "sort": [
+        {
+          "text": "Timestamp ↓",
+          "sort": "descending"
+        }
+      ],
+      "announcements": [
+        {
+          "role": "status",
+          "text": "Review completed. It has been removed from My Reviews. The original AI result is preserved."
+        }
+      ]
+    },
+    {
+      "label": "viewer-analytics",
+      "url": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=coverage",
+      "h1": 2,
+      "current": [
+        {
+          "text": "▥Analytics",
+          "value": "page"
+        },
+        {
+          "text": "Analytics",
+          "value": "page"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Monitor / Quality",
+          "open": true
+        },
+        {
+          "label": "Reference configuration",
+          "open": true
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "pressed": [
+        {
+          "text": "Overview",
+          "pressed": "false"
+        },
+        {
+          "text": "Agents",
+          "pressed": "false"
+        },
+        {
+          "text": "Queues",
+          "pressed": "false"
+        },
+        {
+          "text": "Forms",
+          "pressed": "false"
+        },
+        {
+          "text": "Groups",
+          "pressed": "false"
+        },
+        {
+          "text": "Questions",
+          "pressed": "false"
+        },
+        {
+          "text": "Coverage",
+          "pressed": "true"
+        }
+      ],
+      "sort": [
+        {
+          "text": "Timestamp ↓",
+          "sort": "descending"
+        }
+      ],
+      "announcements": []
+    }
+  ]
+}

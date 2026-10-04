@@ -1,0 +1,78 @@
+Workspace / Evaluations
+REVIEWER
+Jev managed securely by automation service
+QUALITY
+Evaluations
+
+Production results with form snapshots and provider provenance.
+
+My reviews
+All evaluations
+My reviews
+ASSIGNED OPEN
+5
+DUE SOON
+1
+OVERDUE
+1
+ESCALATED
+1
+Available unassigned reviews (1) →
+Review status
+All
+NOT REVIEWED
+REVIEW REQUESTED
+IN REVIEW
+REVIEWED
+SLA state
+All states
+Due soon
+Overdue
+Escalated
+Due
+All
+Overdue
+Due today
+Due next 7 days
+No due date
+Refresh
+More filters
+
+My queue is prioritized across the server active review set (maximum 2,000).
+
+Search
+5 results on this page
+Queue priority	Conversation	Agent	Queue	Form	AI score	Review	Due	Action
+
+ESCALATED
+Overdue by 4 days
+	22222222-2222-4222-8222-000000000004	Alex Morgan	Customer care	General Customer Service v17	78%	REVIEW_REQUESTED	28/09/2026, 13:00:00
+ESCALATED
+Overdue by 4 days
+	Start review
+
+OVERDUE
+Overdue by 6 hours
+	22222222-2222-4222-8222-000000000005	Alex Morgan	Customer care	General Customer Service v17	78%	REVIEW_REQUESTED	02/10/2026, 07:00:00
+OVERDUE
+Overdue by 6 hours
+	Start review
+
+DUE SOON
+Due in 6 hours
+	22222222-2222-4222-8222-000000000006	Alex Morgan	Customer care	General Customer Service v17	78%	REVIEW_REQUESTED	02/10/2026, 19:00:00
+DUE SOON
+Due in 6 hours
+	Start review
+
+Due in 3 days
+	22222222-2222-4222-8222-000000000023	Alex Morgan	Customer care	General Customer Service v17	78%	IN_REVIEW	05/10/2026, 13:00:00
+Due in 3 days
+	Continue review
+
+Due in 3 days
+	22222222-2222-4222-8222-000000000025	Alex Morgan	Customer care	General Customer Service v17	78%	REVIEW_REQUESTED	05/10/2026, 13:00:00
+Due in 3 days
+	Start review
+First page
+Next server page →

@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Access",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=access",
+    "text": "Workspace / Settings\nADMIN\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nAccess\nRole administration\n\nAssignments use Genesys user IDs from the server allowlist. The configured bootstrap owner retains ADMIN access.\n\nGenesys user ID\nAssigned role\nADMIN\nAUTHOR\nREVIEWER\nVIEWER\nAssign role\nSearch\n3 results\nUser ↓\n\t\nRole\n\t\nUpdated\n\nviewer\tVIEWER\t\nauthor\tAUTHOR\t\nAlex Reviewer\tREVIEWER\t",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Audit",
+      "Advanced / Development",
+      "ADMIN\nAUTHOR\nREVIEWER\nVIEWER",
+      "Assign role",
+      "User ↓",
+      "Role",
+      "Updated"
+    ],
+    "height": 1020
+  },
+  {
+    "name": "Reviews",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=reviews",
+    "text": "Workspace / Settings\nADMIN\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nReviews\n\nAll settings saved\n\nSave all settings\nReview reminders\n\nOnly reviews with an explicit due date are monitored.\n\nDue soon hours\nHours before due time\nNo escalation\nEscalation hours\nHours after due time\nRefresh review SLA state",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Audit",
+      "Advanced / Development",
+      "Save all settings",
+      "Refresh review SLA state"
+    ],
+    "height": 919
+  },
+  {
+    "name": "Privacy & retention",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=privacy",
+    "text": "Workspace / Settings\nADMIN\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nPrivacy & retention\n\nAll settings saved\n\nSave all settings\nPrivacy & data inventory\n\nStored server-side: EvaluationRecords, form snapshots, PolicyRuns, HumanReviews, alerts, role assignments, audit events and configuration.\n\nNot stored server-side: raw voice transcripts, raw email bodies, raw message transcripts, Genesys OAuth tokens, signed media URLs or raw EML/ZIP.\n\nBrowser only: normalized conversation content, with the configured cache lifetime. Search results have an independent short lifetime.\n\nBrowser sandbox evaluation history is separate. Clear or reset it using the existing browser controls.\n\nBrowser conversation cache hours\n\n0 disables persistent conversation content. Default: 24 hours.\n\nServer retention\n\nBlank means retain indefinitely. Saving settings never deletes data. Evaluation purges also remove their dependent reviews. Active alerts are retained.\n\nEvaluation retention days\nReview retention days\nPolicy run retention days\nResolved alert retention days\nAudit retention days\nNotification delivery retention days\nRetention preview & purge\n\nPreview uses saved settings. Each window scans at most 300 records. Counts below apply to this window; continue for more records.\n\nPreview retention\nCached Genesys data\n\nLocal to this browser. Search snapshots last 15 minutes; completed conversation content uses the lifetime configured in Privacy & retention (24 hours by default). An active Genesys session is required to view cached data. Disconnect clears that identity's cache.\n\n0 cached searches · 1 cached transcripts · Oldest 02/10/2026, 13:01:52 · Newest 02/10/2026, 13:01:52\n\nClear cached Genesys searches and content",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Audit",
+      "Advanced / Development",
+      "Save all settings",
+      "Preview retention",
+      "Clear cached Genesys searches and content"
+    ],
+    "height": 1727
+  },
+  {
+    "name": "Notifications",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=notifications",
+    "text": "Workspace / Settings\nADMIN\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nNotifications\nNotifications\nRefresh notifications\n\nRoute new operational alerts to email or HTTPS webhooks. Delivery runs after each scheduler tick; existing alerts are not backfilled.\n\nDestinations\nNew destination\nSearch\n0 results\nName ↓\n\t\nType\n\t\nStatus\n\t\nLast delivery\n\t\nActions\n\nNo notification destinations configured.\n\nRules\nNew rule\nSearch\n0 results\nName ↓\n\t\nSeverity\n\t\nAlert types\n\t\nDestinations\n\t\nStatus\n\t\nActions\n\nNo notification rules configured.\n\nDelivery history\nSearch\n0 results on this page\nDestination ↓\n\t\nEvent\n\t\nState\n\t\nAttempts\n\t\nUpdated\n\t\nError code\n\nNo notification deliveries yet.",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Audit",
+      "Advanced / Development",
+      "Refresh notifications",
+      "New destination",
+      "Name ↓",
+      "Type",
+      "Status",
+      "Last delivery",
+      "Actions",
+      "New rule",
+      "Name ↓",
+      "Severity",
+      "Alert types",
+      "Destinations",
+      "Status",
+      "Actions",
+      "Destination ↓",
+      "Event",
+      "State",
+      "Attempts",
+      "Updated",
+      "Error code"
+    ],
+    "height": 1390
+  },
+  {
+    "name": "Audit",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=audit",
+    "text": "Workspace / Settings\nADMIN\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nAudit\nAudit history\nAudit from\nAudit to\nActor user ID\nResource type\nAudit action\nLoad audit history\nSearch\n0 results on this page\nTime ↓\n\t\nActor\n\t\nAction\n\t\nResource\n\t\nSummary\n\nNo records match these filters.",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Audit",
+      "Advanced / Development",
+      "Load audit history",
+      "Time ↓",
+      "Actor",
+      "Action",
+      "Resource",
+      "Summary"
+    ],
+    "height": 1099
+  },
+  {
+    "name": "Advanced / Development",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=advanced",
+    "text": "Workspace / Settings\nADMIN\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAudit\nAdvanced / Development\nAdvanced / Development\nLegacy browser sandbox (local development)\n← Back to conversation review\nBrowser-local data\n\nRemove only prepared synthetic demo evaluations, or reset local forms, policies and evaluation and policy-run history. Saved AQM server data is unaffected. Save or copy any local work you need before resetting.\n\nRemove prepared demo evaluationsReset local forms, policies and history",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Audit",
+      "Advanced / Development",
+      "",
+      "",
+      "← Back to conversation review",
+      "Remove prepared demo evaluations",
+      "Reset local forms, policies and history"
+    ],
+    "height": 900
+  },
+  {
+    "role": "AUTHOR",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=reviews",
+    "text": "Workspace / Settings\nAUTHOR\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nNotifications\nAdvanced / Development\nReviews\nReview reminders\n\nOnly reviews with an explicit due date are monitored.\n\nDue soon: 24 hours before due date. Escalation: 48 hours overdue. Contact an administrator to change reminders.",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Notifications",
+      "Advanced / Development"
+    ],
+    "height": 900
+  },
+  {
+    "role": "REVIEWER",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=reviews",
+    "text": "Workspace / Settings\nREVIEWER\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nAdvanced / Development\nReviews\nReview reminders\n\nOnly reviews with an explicit due date are monitored.\n\nDue soon: 24 hours before due date. Escalation: 48 hours overdue. Contact an administrator to change reminders.",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Advanced / Development"
+    ],
+    "height": 900
+  },
+  {
+    "role": "VIEWER",
+    "url": "http://127.0.0.1:4174/Genesys-aqm/?page=settings&settingsSection=reviews",
+    "text": "Workspace / Settings\nVIEWER\nJev managed securely by automation service\nSettings\n\nConnect Genesys Cloud and manage your organization's AQM settings.\n\nConnection\nAccess\nReviews\nPrivacy & retention\nAdvanced / Development\nReviews\nReview reminders\n\nOnly reviews with an explicit due date are monitored.\n\nDue soon: 24 hours before due date. Escalation: 48 hours overdue. Contact an administrator to change reminders.",
+    "controls": [
+      "Connection",
+      "Access",
+      "Reviews",
+      "Privacy & retention",
+      "Advanced / Development"
+    ],
+    "height": 900
+  }
+]

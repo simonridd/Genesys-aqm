@@ -1,0 +1,50 @@
+[WebServer] (node:19862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 2 tests using 1 worker
+
+(node:19863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] tests/operational-table.spec.ts:3:1 › real identity controls, nested event counts, pointer opening and header sort semantics
+[2/2] tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts
+  1) tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByLabel('Current role')
+    Expected: "ADMIN"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+
+
+      51 |   return json({items:[]})
+      52 |  })
+    > 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                               ^
+      54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}
+      55 | }
+      56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{
+        at setup (/Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/overview.spec.ts:53:111)
+        at /Users/simonridd/.codex/worktrees/aqm-v019-final-whole-product-review/Genesys-aqm/tests/overview.spec.ts:90:90
+
+    Error Context: docs/v019-final-whole-product-review-evidence/legacy-module-rerun-artifacts/overview-existing-connecte-aed98--Overview-before-App-mounts/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/v019-final-whole-product-review-evidence/legacy-module-rerun-artifacts/overview-existing-connecte-aed98--Overview-before-App-mounts/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/v019-final-whole-product-review-evidence/legacy-module-rerun-artifacts/overview-existing-connecte-aed98--Overview-before-App-mounts/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  1 failed
+    tests/overview.spec.ts:90:1 › existing connected session defaults to Overview before App mounts 
+  1 passed (7.1s)

@@ -1,0 +1,101 @@
+Workspace / Evaluation Forms
+VIEWER
+Jev managed securely by automation service
+CONFIGURATION
+Evaluation Forms
+
+Build the complete quality evaluation: questions, scoring and pass rules.
+
+Reuse Question Groups for related questions and Answer Sets for common answers.
+
+Table
+Cards
+Saved in AQM · 4 saved forms
+
+Production usage counts use saved policies only.
+
+Refresh saved forms
+Status
+All statuses
+Draft
+Testing
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Assigned to policy
+Unassigned
+Search
+4 results
+Form name ↓
+
+Status
+
+Version
+
+Questions
+
+Assigned policies
+
+Evaluations
+
+Average score
+
+Last modified
+
+Resolution clarity form	DRAFT	v1	1	0	0	—	—
+General Customer Service	PUBLISHED	v17	3	1	25	75%	—
+Conditional resolution form	DRAFT	v1	2	0	0	—	—
+Attached resolution form	DRAFT	v1	1	0	0	—	—
+Local drafts & starter examples · 5 forms
+Saved form · PUBLISHED · VERSION 17
+General Customer Service
+Close details
+More actions
+
+You have read-only access. Your role can view this definition but cannot change it.
+
+Opening, understanding, ownership, resolution and close. · Pass score 70%
+
+Critical questions
+Question groups
+
+Question weights determine the overall score.
+
+Scoring rules · Question weighted · Yes threshold 65%
+Customer care
+3 questions
+View group details
+01
+Warm opening
+
+Yes / No · Weight 1 · Enabled
+
+Did the agent greet the customer and offer help at the start of the conversation?
+
+Yes / No
+
+View details
+02
+Understanding the issue
+
+Ordered scale · Weight 1.2 · Enabled
+
+How effectively did the agent establish and acknowledge the customer’s actual issue?
+
+4 levels · Poor → Excellent
+
+View details
+03
+Resolution
+
+Multiple choice · Weight 1.5 · Enabled
+
+What is the best description of the issue outcome by the end of the conversation?
+
+Fully resolved · Partially resolved · Unresolved · Not applicable
+
+View details

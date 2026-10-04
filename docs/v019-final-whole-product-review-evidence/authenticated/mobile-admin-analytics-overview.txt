@@ -1,0 +1,96 @@
+Workspace / Analytics
+ADMIN
+Jev managed securely by automation service
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+All available dates
+
+All sources · All policies · All published forms
+
+26 evaluations · 26 evaluated conversations
+Change filters
+View
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+Average quality
+74.7%
+Evaluated conversations
+26
+26 evaluations
+Pass rate
+92.3%
+Evaluations with critical failure
+7.7%
+2 failure occurrences
+Review state
+5 Awaiting review
+2 In progress · 2 Reviewed
+What stands out
+Quality attention
+2 critical failure occurrences recorded
+
+Across 26 evaluations · 7.7% of evaluations have a critical failure
+
+Inspect critical evaluations →
+Lowest average question in this cohort
+General Customer Service v18 · Understanding the issue
+
+33.1% average · 1 applicable answers
+
+Inspect evaluations →
+Lowest average queue among queues with evaluated conversations
+Customer care
+
+74.5% average · 25 evaluations
+
+Inspect evaluations →
+Lowest average group in this cohort
+General Customer Service v17 · Customer care
+
+78.3% AI average · 25 applicable evaluations
+
+View group comparison →
+
+Comparisons describe this selected cohort. Sample sizes vary; rankings do not establish statistical significance or a cause.
+
+Quality by day
+2026-08-01
+66.6%
+5 evaluations
+2026-08-31
+78.3%
+1 evaluations
+2026-09-01
+78.3%
+11 evaluations
+2026-09-15
+40%
+1 evaluations
+2026-09-30
+78.3%
+1 evaluations
+2026-10-01
+78.5%
+7 evaluations
+Score distribution
+0–20%
+0
+20–40%
+1
+40–60%
+1
+60–80%
+23
+80–100%
+1
+Data scope & technical details

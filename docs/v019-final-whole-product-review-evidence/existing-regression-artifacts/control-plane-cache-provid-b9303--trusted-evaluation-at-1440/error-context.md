@@ -1,0 +1,189 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: control-plane-cache.spec.ts >> provider-free navigation, IndexedDB cache and trusted evaluation at 1440
+- Location: tests/control-plane-cache.spec.ts:11:2
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img "IPI" [ref=e6]
+      - generic [ref=e7]:
+        - strong [ref=e8]: IPI AQM
+        - text: Automated Quality Management
+    - navigation "Primary navigation" [ref=e9]:
+      - group [ref=e10]:
+        - generic "Monitor / Quality" [ref=e11] [cursor=pointer]
+        - generic [ref=e12]:
+          - button "Overview" [ref=e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e14]: ◌
+          - button "Evaluations" [ref=e16] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e17]: ◷
+          - button "Analytics" [ref=e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e20]: ▥
+          - button "Calibration" [ref=e22] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e23]: ◎
+      - group [ref=e25]:
+        - generic "Configuration" [ref=e26] [cursor=pointer]
+      - group [ref=e27]:
+        - generic "Interactions" [ref=e28] [cursor=pointer]
+        - button "Conversations" [ref=e30] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e31]: ☷
+      - generic [ref=e33]:
+        - button "Settings" [ref=e34] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e35]: ⚙
+        - button "About / product tour" [ref=e37] [cursor=pointer]
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]: ✦
+        - strong [ref=e41]: Decision intelligence powered by Jev
+        - paragraph [ref=e42]: Typed AI decisions, shaped into clear quality signals.
+      - generic [ref=e43]: V0.19D SHOWCASE • 2026
+  - main [ref=e44]:
+    - generic [ref=e45]:
+      - navigation "Breadcrumb" [ref=e46]:
+        - text: Workspace /
+        - strong [ref=e47]: Conversation review
+      - generic [ref=e48]:
+        - generic "Current role" [ref=e49]: ADMIN
+        - text: Jev managed securely by automation service
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - strong [ref=e53]: Conversation source
+        - generic [ref=e54]: Real organizational data · Genesys Cloud
+      - generic [ref=e55]:
+        - button "Synthetic" [ref=e56] [cursor=pointer]
+        - button "Genesys Cloud" [ref=e57] [cursor=pointer]
+    - generic [ref=e58]:
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]: AUTOMATED QUALITY MANAGEMENT
+          - heading "Conversation review" [active] [level=1] [ref=e62]
+          - paragraph [ref=e63]: Inspect the selected conversation, policy matches, and applicable forms.
+        - generic [ref=e64]:
+          - button "← Back to evaluation" [ref=e65] [cursor=pointer]
+          - button "Browse real interactions →" [ref=e66] [cursor=pointer]
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]:
+                - text: CURRENT CONVERSATION
+                - heading "Genesys Cloud interaction" [level=2] [ref=e72]
+              - generic [ref=e73]: REAL GENESYS DATA
+            - generic [ref=e74]:
+              - button "Change conversation" [ref=e75] [cursor=pointer]
+              - button "↑ Upload JSON" [ref=e76] [cursor=pointer]
+              - button "Upload conversation JSON" [ref=e77]
+          - region "Conversation transcript" [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: TC
+              - generic [ref=e81]:
+                - text: CONVERSATION TRANSCRIPT
+                - heading "Test Customer with Test Agent" [level=2] [ref=e82]:
+                  - text: Test Customer
+                  - generic [ref=e83]: with Test Agent
+                - generic [ref=e84]: 28 Sept 2026 · voice · 22222222-2222-4222-8222-222222222222
+              - generic [ref=e85]: Completed
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - generic [ref=e88]: source
+                - strong [ref=e89]: genesys-cloud
+              - generic [ref=e90]:
+                - generic [ref=e91]: conversationEnd
+                - strong [ref=e92]: 2026-09-28T12:05:00Z
+              - generic [ref=e93]:
+                - generic [ref=e94]: direction
+                - strong [ref=e95]: inbound
+              - generic [ref=e96]:
+                - generic [ref=e97]: agent
+                - strong [ref=e98]: 44444444-4444-4444-8444-444444444444
+              - generic [ref=e99]:
+                - generic [ref=e100]: queue
+                - strong [ref=e101]: Fixture Queue
+              - generic [ref=e102]:
+                - generic [ref=e103]: queueId
+                - strong [ref=e104]: 55555555-5555-4555-8555-555555555555
+              - generic [ref=e105]:
+                - generic [ref=e106]: topic
+                - strong [ref=e107]: Billing
+              - generic [ref=e108]:
+                - generic [ref=e109]: wrapUpCode
+                - strong [ref=e110]: Billing
+              - generic [ref=e111]:
+                - generic [ref=e112]: durationSeconds
+                - strong [ref=e113]: "300"
+              - generic [ref=e114]:
+                - generic [ref=e115]: sessionId
+                - strong [ref=e116]: 33333333-3333-4333-8333-333333333333
+              - generic [ref=e117]:
+                - generic [ref=e118]: transcriptStatus
+                - strong [ref=e119]: Available
+              - generic [ref=e120]:
+                - generic [ref=e121]: Messages
+                - strong [ref=e122]: "2"
+            - generic [ref=e123]:
+              - generic [ref=e124]: 28 Sept 2026
+              - generic [ref=e125]:
+                - generic [ref=e126]: T
+                - generic [ref=e127]:
+                  - generic [ref=e128]:
+                    - strong [ref=e129]: Test Customer
+                    - time [ref=e130]: 13:00
+                  - generic [ref=e131]: I need help with my bill.
+              - generic [ref=e132]:
+                - generic [ref=e133]: T
+                - generic [ref=e134]:
+                  - generic [ref=e135]:
+                    - strong [ref=e136]: Test Agent
+                    - time [ref=e137]: 13:00
+                  - generic [ref=e138]: I can check that for you.
+            - generic [ref=e139]:
+              - text: End of conversation
+              - generic [ref=e141]: ·
+              - text: 2 messages
+          - generic [ref=e142]:
+            - paragraph [ref=e143]: Loaded from local browser cache · 10/4/2026, 8:23:41 AM
+            - button "Refresh from Genesys" [ref=e144] [cursor=pointer]
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - generic [ref=e147]:
+              - generic [ref=e148]: POLICY ROUTING
+              - generic [ref=e149]: 0 saved policies matched
+            - heading "Applicable evaluations" [level=2] [ref=e150]
+            - paragraph [ref=e151]: No saved policy matched. You can still choose a published saved form manually.
+            - generic [ref=e152]:
+              - generic [ref=e153]:
+                - text: Manual form selection
+                - combobox "Manual form selection" [ref=e154]:
+                  - option "General Customer Service" [selected]
+                  - option "Compliance & Identity Verification"
+                  - option "Complaints Handling"
+                  - option "Retention / Cancellation"
+                  - option "Sales / Service Quality"
+                  - option "Customer Service - AI Scoring"
+              - paragraph [ref=e155]: 1 form evaluation · up to 1 Jev requests
+              - button "✦ Evaluate selected form →" [ref=e156] [cursor=pointer]
+            - paragraph [ref=e157]: Production selection includes only published, valid forms . Draft and testing forms can be tested in the isolated sandbox.
+            - button "Test a draft/testing form" [ref=e158] [cursor=pointer]
+            - paragraph [ref=e159]: Jev managed securely by automation service. The exact published server form is authoritative.
+          - generic [ref=e160]:
+            - generic [ref=e161]: ◎
+            - generic [ref=e162]:
+              - strong [ref=e163]: One result per form
+              - paragraph [ref=e164]: Each production evaluation is saved to the automation service with its exact published form and routing provenance.
+```

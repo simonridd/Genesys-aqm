@@ -1,0 +1,13 @@
+{
+  "status": {
+    "latestReadyRevisionName": "aqm-api-v019-e92f2d6",
+    "traffic": [
+      {
+        "latestRevision": true,
+        "percent": 100,
+        "revisionName": "aqm-api-v019-e92f2d6"
+      }
+    ],
+    "url": "https://aqm-api-bd54ukouga-nw.a.run.app"
+  }
+}

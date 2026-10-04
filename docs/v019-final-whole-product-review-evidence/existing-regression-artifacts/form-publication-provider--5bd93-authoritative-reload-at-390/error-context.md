@@ -1,0 +1,499 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: form-publication.spec.ts >> provider-free recreated form publication and authoritative reload at 390
+- Location: tests/form-publication.spec.ts:11:3
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img "IPI" [ref=e6]
+      - generic [ref=e7]:
+        - strong [ref=e8]: IPI AQM
+        - text: Automated Quality Management
+    - navigation "Primary navigation" [ref=e9]:
+      - group [ref=e10]:
+        - generic "Monitor / Quality" [ref=e11] [cursor=pointer]
+        - generic [ref=e12]:
+          - button "Overview" [ref=e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e14]: ◌
+          - button "Evaluations" [ref=e16] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e17]: ◷
+          - button "Analytics" [ref=e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e20]: ▥
+          - button "Calibration" [ref=e22] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e23]: ◎
+      - group [ref=e25]:
+        - generic "Configuration" [ref=e26] [cursor=pointer]
+        - generic [ref=e27]:
+          - button "Policies" [ref=e28] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e29]: ◇
+          - button "Evaluation Forms" [ref=e31] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e32]: ▤
+          - button "Question Groups" [ref=e34] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e35]: ▦
+          - button "Answer Sets" [ref=e37] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e38]: ☷
+      - group [ref=e40]:
+        - generic "Interactions" [ref=e41] [cursor=pointer]
+      - generic [ref=e42]:
+        - button "Settings" [ref=e43] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e44]: ⚙
+        - button "About / product tour" [ref=e46] [cursor=pointer]
+  - main [ref=e47]:
+    - generic [ref=e48]:
+      - navigation "Breadcrumb" [ref=e49]:
+        - text: Workspace /
+        - strong [ref=e50]: Evaluation Forms
+      - generic [ref=e51]:
+        - generic "Current role" [ref=e52]: ADMIN
+        - text: Jev managed securely by automation service
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: CONFIGURATION
+          - heading "Evaluation Forms" [level=1] [ref=e58]
+          - paragraph [ref=e59]: "Build the complete quality evaluation: questions, scoring and pass rules."
+          - paragraph [ref=e60]: Reuse Question Groups for related questions and Answer Sets for common answers.
+        - generic [ref=e61]:
+          - group "View" [ref=e62]:
+            - button "Table" [ref=e63] [cursor=pointer]
+            - button "Cards" [ref=e64] [cursor=pointer]
+          - generic [ref=e65]:
+            - text: Import form
+            - button "Import form" [ref=e66]
+          - button "＋ New form" [ref=e67] [cursor=pointer]
+      - region "Saved Forms" [ref=e68]:
+        - heading "Saved in AQM · 6 saved forms" [level=2] [ref=e69]
+        - paragraph [ref=e70]: Production usage counts use saved policies only.
+        - button "Refresh saved forms" [ref=e71] [cursor=pointer]
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - text: Status
+          - combobox "Library status" [ref=e74]:
+            - option "All statuses" [selected]
+            - option "Draft"
+            - option "Testing"
+            - option "Published"
+            - option "Retired"
+        - generic [ref=e75]:
+          - text: Version
+          - combobox "Library version" [ref=e76]:
+            - option "All versions" [selected]
+            - option "Latest version per family"
+        - generic [ref=e77]:
+          - text: Usage
+          - combobox "Library usage" [ref=e78]:
+            - option "All usage" [selected]
+            - option "Assigned to policy"
+            - option "Unassigned"
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - text: Search
+            - textbox "Search table" [ref=e82]:
+              - /placeholder: Search visible fields
+          - generic [ref=e83]: 6 results
+        - region "Evaluation forms table" [ref=e84]:
+          - table [ref=e85]:
+            - rowgroup [ref=e86]:
+              - row [ref=e87]:
+                - columnheader [ref=e88]:
+                  - button "Form name ↓" [ref=e89] [cursor=pointer]
+                - columnheader [ref=e90]:
+                  - button "Status" [ref=e91] [cursor=pointer]
+                - columnheader [ref=e92]:
+                  - button "Version" [ref=e93] [cursor=pointer]
+                - columnheader [ref=e94]:
+                  - button "Questions" [ref=e95] [cursor=pointer]
+                - columnheader [ref=e96]:
+                  - button "Assigned policies" [ref=e97] [cursor=pointer]
+                - columnheader [ref=e98]:
+                  - button "Evaluations" [ref=e99] [cursor=pointer]
+                - columnheader [ref=e100]:
+                  - button "Average score" [ref=e101] [cursor=pointer]
+                - columnheader [ref=e102]:
+                  - button "Last modified" [ref=e103] [cursor=pointer]
+            - rowgroup [ref=e104]:
+              - row [ref=e105] [cursor=pointer]:
+                - cell [ref=e106]:
+                  - button "Open form Sales / Service Quality v1" [ref=e107]: Sales / Service Quality
+                - cell "PUBLISHED" [ref=e108]
+                - cell "v1" [ref=e109]
+                - cell "5" [ref=e110]
+                - cell "0" [ref=e111]
+                - cell "0" [ref=e112]
+                - cell "—" [ref=e113]
+                - cell "—" [ref=e114]
+              - row [ref=e115] [cursor=pointer]:
+                - cell [ref=e116]:
+                  - button "Open form Retention / Cancellation v1" [ref=e117]: Retention / Cancellation
+                - cell "PUBLISHED" [ref=e118]
+                - cell "v1" [ref=e119]
+                - cell "5" [ref=e120]
+                - cell "0" [ref=e121]
+                - cell "0" [ref=e122]
+                - cell "—" [ref=e123]
+                - cell "—" [ref=e124]
+              - row [ref=e125] [cursor=pointer]:
+                - cell [ref=e126]:
+                  - button "Open form General Customer Service v1" [ref=e127]: General Customer Service
+                - cell "PUBLISHED" [ref=e128]
+                - cell "v1" [ref=e129]
+                - cell "9" [ref=e130]
+                - cell "0" [ref=e131]
+                - cell "0" [ref=e132]
+                - cell "—" [ref=e133]
+                - cell "—" [ref=e134]
+              - row [ref=e135] [cursor=pointer]:
+                - cell [ref=e136]:
+                  - button "Open form Customer Service - AI Scoring v1 v1" [ref=e137]: Customer Service - AI Scoring v1
+                - cell "TESTING" [ref=e138]
+                - cell "v1" [ref=e139]
+                - cell "9" [ref=e140]
+                - cell "0" [ref=e141]
+                - cell "0" [ref=e142]
+                - cell "—" [ref=e143]
+                - cell "4 Oct 2026" [ref=e144]
+              - row [ref=e145] [cursor=pointer]:
+                - cell [ref=e146]:
+                  - button "Open form Compliance & Identity Verification v1" [ref=e147]: Compliance & Identity Verification
+                - cell "PUBLISHED" [ref=e148]
+                - cell "v1" [ref=e149]
+                - cell "5" [ref=e150]
+                - cell "0" [ref=e151]
+                - cell "0" [ref=e152]
+                - cell "—" [ref=e153]
+                - cell "—" [ref=e154]
+              - row [ref=e155] [cursor=pointer]:
+                - cell [ref=e156]:
+                  - button "Open form Complaints Handling v1" [ref=e157]: Complaints Handling
+                - cell "PUBLISHED" [ref=e158]
+                - cell "v1" [ref=e159]
+                - cell "5" [ref=e160]
+                - cell "0" [ref=e161]
+                - cell "0" [ref=e162]
+                - cell "—" [ref=e163]
+                - cell "—" [ref=e164]
+      - group [ref=e165]:
+        - generic "Local drafts & starter examples · 0 forms" [ref=e166] [cursor=pointer]
+      - generic [ref=e167]:
+        - group [ref=e168]:
+          - generic [ref=e169]:
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - generic [ref=e172]:
+                  - text: Saved form ·
+                  - generic [ref=e173]: TESTING · VERSION 1
+                - heading "Customer Service - AI Scoring v1" [level=2] [ref=e174]
+              - generic [ref=e175]:
+                - button "Close details" [ref=e176] [cursor=pointer]
+                - button "Save changes" [ref=e177] [cursor=pointer]
+                - button "Publish version" [ref=e178] [cursor=pointer]
+                - group [ref=e179]:
+                  - generic "More actions" [ref=e180] [cursor=pointer]
+                  - generic [ref=e181]:
+                    - button "Export JSON" [ref=e182] [cursor=pointer]
+                    - button "Duplicate as new form" [ref=e183] [cursor=pointer]
+                    - button "TEST FORM" [ref=e184] [cursor=pointer]
+                    - button "Back to draft" [ref=e185] [cursor=pointer]
+            - status [ref=e186]: Saved in AQM
+            - generic [ref=e187]:
+              - generic [ref=e188]:
+                - text: Form name
+                - textbox "Form name" [ref=e189]: Customer Service - AI Scoring v1
+              - generic [ref=e190]:
+                - text: Description
+                - textbox "Description" [ref=e191]: Persisted legacy form configuration
+              - generic [ref=e192]:
+                - text: Pass score
+                - generic [ref=e193]: 70%
+                - slider "Pass score 70%" [ref=e194]: "0.7"
+            - group [ref=e195]:
+              - generic "Advanced details" [ref=e196] [cursor=pointer]
+            - group [ref=e197]:
+              - generic "Critical questions" [ref=e198] [cursor=pointer]
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - heading "Question groups" [level=2] [ref=e202]
+                - paragraph [ref=e203]: Question weights determine the overall score.
+              - generic [ref=e204]:
+                - button "Add group" [ref=e205] [cursor=pointer]
+                - button "Add reusable group" [ref=e206] [cursor=pointer]
+            - group [ref=e207]:
+              - generic "Scoring rules · Question weighted · Yes threshold 65%" [ref=e208] [cursor=pointer]
+            - 'region "Group: Opening" [ref=e209]':
+              - generic [ref=e210]:
+                - generic [ref=e211]:
+                  - heading "Opening" [level=3] [ref=e212]
+                  - generic [ref=e213]: 6 questions
+                - group [ref=e214]:
+                  - generic "Group settings" [ref=e215] [cursor=pointer]
+              - generic [ref=e216]:
+                - article [ref=e217]:
+                  - generic [ref=e218]:
+                    - generic [ref=e219]: "01"
+                    - generic [ref=e220]:
+                      - strong [ref=e221]: Did the agent give the appropriate greeting to the customer?
+                      - paragraph [ref=e222]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e223]: Persisted wording from the existing form record.
+                      - paragraph [ref=e224]: Yes · No
+                    - button "Edit" [ref=e225] [cursor=pointer]
+                - article [ref=e226]:
+                  - generic [ref=e227]:
+                    - generic [ref=e228]: "02"
+                    - generic [ref=e229]:
+                      - strong [ref=e230]: Agent gives their name to the customer
+                      - paragraph [ref=e231]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e232]: The agent provides their name.
+                      - paragraph [ref=e233]: Yes · No
+                    - button "Edit" [ref=e234] [cursor=pointer]
+                - article [ref=e235]:
+                  - generic [ref=e236]:
+                    - generic [ref=e237]: "03"
+                    - generic [ref=e238]:
+                      - strong [ref=e239]: Did the agent inform the customer DPA validation is required?
+                      - paragraph [ref=e240]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e241]: The agent explains that data protection checks must be completed before discussing account details.
+                      - paragraph [ref=e242]: Yes · No · Not applicable
+                    - button "Edit" [ref=e243] [cursor=pointer]
+                - article [ref=e244]:
+                  - generic [ref=e245]:
+                    - generic [ref=e246]: "04"
+                    - generic [ref=e247]:
+                      - strong [ref=e248]: Agent asks for the first line of the customer’s address
+                      - paragraph [ref=e249]: Multiple choice · Weight 1 · Disabled
+                      - paragraph [ref=e250]: Verify against account details only when this check is required.
+                      - paragraph [ref=e251]: Yes · No
+                    - button "Edit" [ref=e252] [cursor=pointer]
+                - article [ref=e253]:
+                  - generic [ref=e254]:
+                    - generic [ref=e255]: "05"
+                    - generic [ref=e256]:
+                      - strong [ref=e257]: Agent asks for the mother’s maiden name on the account
+                      - paragraph [ref=e258]: Multiple choice · Weight 1 · Disabled
+                      - paragraph [ref=e259]: Verify against account details only when this check is required.
+                      - paragraph [ref=e260]: Yes · No
+                    - button "Edit" [ref=e261] [cursor=pointer]
+                - article [ref=e262]:
+                  - generic [ref=e263]:
+                    - generic [ref=e264]: "06"
+                    - generic [ref=e265]:
+                      - strong [ref=e266]: Agent asks for the last four digits of the account number
+                      - paragraph [ref=e267]: Multiple choice · Weight 1 · Disabled
+                      - paragraph [ref=e268]: Verify against account details only when this check is required.
+                      - paragraph [ref=e269]: Yes · No
+                    - button "Edit" [ref=e270] [cursor=pointer]
+              - button "Add question" [ref=e272] [cursor=pointer]
+            - 'region "Group: Assisting The Customer" [ref=e273]':
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - heading "Assisting The Customer" [level=3] [ref=e276]
+                  - generic [ref=e277]: 3 questions
+                - group [ref=e278]:
+                  - generic "Group settings" [ref=e279] [cursor=pointer]
+              - generic [ref=e280]:
+                - article [ref=e281]:
+                  - generic [ref=e282]:
+                    - generic [ref=e283]: "07"
+                    - generic [ref=e284]:
+                      - strong [ref=e285]: Did the agent apologise for the issue, inconvenience or cost associated with the problem?
+                      - paragraph [ref=e286]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e287]: The agent offers an apology and shows understanding of the customer’s issue or cost.
+                      - paragraph [ref=e288]: Yes · No · Not applicable
+                    - button "Edit" [ref=e289] [cursor=pointer]
+                - article [ref=e290]:
+                  - generic [ref=e291]:
+                    - generic [ref=e292]: "08"
+                    - generic [ref=e293]:
+                      - strong [ref=e294]: The agent took ownership of the problem
+                      - paragraph [ref=e295]: Ordered scale · Weight 1 · Disabled
+                      - paragraph [ref=e296]: Five is excellent; one needs development.
+                      - paragraph [ref=e297]: 5 levels · 1 → 5
+                    - button "Edit" [ref=e298] [cursor=pointer]
+                - article [ref=e299]:
+                  - generic [ref=e300]:
+                    - generic [ref=e301]: "09"
+                    - generic [ref=e302]:
+                      - strong [ref=e303]: The agent provided the most appropriate solution
+                      - paragraph [ref=e304]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e305]: The customer is satisfied that this was the most appropriate solution.
+                      - paragraph [ref=e306]: Yes · No · Not applicable
+                    - button "Edit" [ref=e307] [cursor=pointer]
+              - button "Add question" [ref=e309] [cursor=pointer]
+            - 'region "Group: Call Handling Skills" [ref=e310]':
+              - generic [ref=e311]:
+                - generic [ref=e312]:
+                  - heading "Call Handling Skills" [level=3] [ref=e313]
+                  - generic [ref=e314]: 3 questions
+                - group [ref=e315]:
+                  - generic "Group settings" [ref=e316] [cursor=pointer]
+              - generic [ref=e317]:
+                - article [ref=e318]:
+                  - generic [ref=e319]:
+                    - generic [ref=e320]: "10"
+                    - generic [ref=e321]:
+                      - strong [ref=e322]: Agent followed the correct procedure for placing a customer on hold
+                      - paragraph [ref=e323]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e324]: When a hold is needed, the agent informs the customer and thanks them on return.
+                      - paragraph [ref=e325]: Yes · No · Not applicable
+                    - button "Edit" [ref=e326] [cursor=pointer]
+                - article [ref=e327]:
+                  - generic [ref=e328]:
+                    - generic [ref=e329]: "11"
+                    - generic [ref=e330]:
+                      - strong [ref=e331]: The agent displayed the correct level of knowledge to assist the customer
+                      - paragraph [ref=e332]: Ordered scale · Weight 1 · Disabled
+                      - paragraph [ref=e333]: Five is excellent; one needs development. Add comments when reviewed manually.
+                      - paragraph [ref=e334]: 5 levels · 1 → 5
+                    - button "Edit" [ref=e335] [cursor=pointer]
+                - article [ref=e336]:
+                  - generic [ref=e337]:
+                    - generic [ref=e338]: "12"
+                    - generic [ref=e339]:
+                      - strong [ref=e340]: The agent simplified processes and policies for the customer
+                      - paragraph [ref=e341]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e342]: The agent avoids jargon and explains clearly.
+                      - paragraph [ref=e343]: Yes · No
+                    - button "Edit" [ref=e344] [cursor=pointer]
+              - button "Add question" [ref=e346] [cursor=pointer]
+            - 'region "Group: Compliance & Closure" [ref=e347]':
+              - generic [ref=e348]:
+                - generic [ref=e349]:
+                  - heading "Compliance & Closure" [level=3] [ref=e350]
+                  - generic [ref=e351]: 5 questions
+                - group [ref=e352]:
+                  - generic "Group settings" [ref=e353] [cursor=pointer]
+              - generic [ref=e354]:
+                - article [ref=e355]:
+                  - generic [ref=e356]:
+                    - generic [ref=e357]: "13"
+                    - generic [ref=e358]:
+                      - strong [ref=e359]: The agent set up a follow-up appointment if necessary
+                      - paragraph [ref=e360]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e361]: The agent organises a follow-up where required.
+                      - paragraph [ref=e362]: Yes · No · Not applicable
+                    - button "Edit" [ref=e363] [cursor=pointer]
+                - article [ref=e364]:
+                  - generic [ref=e365]:
+                    - generic [ref=e366]: "14"
+                    - generic [ref=e367]:
+                      - strong [ref=e368]: The agent followed the call closure script
+                      - paragraph [ref=e369]: Ordered scale · Weight 1 · Disabled
+                      - paragraph [ref=e370]: The source form uses a 1–5 scale; exact script criteria need confirmation.
+                      - paragraph [ref=e371]: 5 levels · 1 → 5
+                    - button "Edit" [ref=e372] [cursor=pointer]
+                - article [ref=e373]:
+                  - generic [ref=e374]:
+                    - generic [ref=e375]: "15"
+                    - generic [ref=e376]:
+                      - strong [ref=e377]: The agent asked whether the customer needed anything else
+                      - paragraph [ref=e378]: Multiple choice · Weight 1 · Enabled
+                      - paragraph [ref=e379]: Ask if further assistance is needed before finishing the call.
+                      - paragraph [ref=e380]: Yes · No · Not applicable
+                    - button "Edit" [ref=e381] [cursor=pointer]
+                - article [ref=e382]:
+                  - generic [ref=e383]:
+                    - generic [ref=e384]: "16"
+                    - generic [ref=e385]:
+                      - strong [ref=e386]: Did the agent recommend our products and services?
+                      - paragraph [ref=e387]: Multiple choice · Weight 1 · Disabled
+                      - paragraph [ref=e388]: The source question has a visibility condition that AQM does not yet enforce. Review that condition before enabling.
+                      - paragraph [ref=e389]: Yes · No · Not applicable
+                    - button "Edit" [ref=e390] [cursor=pointer]
+                - article [ref=e391]:
+                  - generic [ref=e392]:
+                    - generic [ref=e393]: "17"
+                    - generic [ref=e394]:
+                      - strong [ref=e395]: What was the call about? (Select all that apply)
+                      - paragraph [ref=e396]: Multiple choice · Weight 0 · Disabled
+                      - paragraph [ref=e397]: Reference only. The source is a multi-select question; AQM does not yet reproduce its multi-select behaviour or scoring.
+                      - paragraph [ref=e398]: Billing Query · New sale · Cancellation · Complaint
+                    - button "Edit" [ref=e399] [cursor=pointer]
+              - button "Add question" [ref=e401] [cursor=pointer]
+        - button "View history" [ref=e403] [cursor=pointer]
+        - group [ref=e404]:
+          - generic "Test this form" [ref=e405] [cursor=pointer]
+          - generic [ref=e406]:
+            - generic [ref=e408]:
+              - text: ISOLATED SANDBOX
+              - heading "Test form" [level=2] [ref=e409]
+            - paragraph [ref=e410]: Try this exact form draft on a small sample. Test results are isolated from production quality, coverage, and monitoring.
+            - generic [ref=e411]:
+              - generic [ref=e412]:
+                - text: Execution
+                - combobox "Execution" [ref=e413]:
+                  - option "Legacy browser sandbox (development)"
+                  - option "Durable server sandbox (recommended)" [selected]
+              - generic [ref=e414]:
+                - text: Source
+                - combobox "Source" [ref=e415]:
+                  - option "Synthetic" [selected]
+                  - option "Genesys Cloud"
+              - generic [ref=e416]:
+                - text: Selection
+                - combobox "Selection" [ref=e417]:
+                  - option "Most recent" [selected]
+                  - option "Deterministic random"
+                  - option "Manual selection"
+              - generic [ref=e418]:
+                - text: Conversations
+                - spinbutton "Conversations" [ref=e419]: "1"
+            - paragraph [ref=e420]:
+              - strong [ref=e421]: 1 conversations · 9 questions · 1 form · 1 evaluation assignments · up to 1 Jev requests
+            - paragraph [ref=e422]: "The server uses its configured Jev credential and keeps isolated durable test history. Jev receives applicable questions in batches, one request per dependency wave. Skipped questions incur no request. Maximum sample size: 20."
+            - button "Test form" [ref=e423] [cursor=pointer]
+            - status [ref=e424]: 0 completed · 0 failed
+            - button "Refresh test history" [ref=e425] [cursor=pointer]
+            - generic [ref=e426]:
+              - heading "Recent test runs" [level=3] [ref=e427]
+              - button "Clear this form's test history" [ref=e428] [cursor=pointer]
+            - button "10/1/2026, 1:00:00 AM · v1 · 0/1 completed · completed" [ref=e430] [cursor=pointer]
+            - generic [ref=e431]:
+              - heading "Test results" [level=3] [ref=e432]
+              - paragraph [ref=e433]: "1 selected · 9 questions · up to 1 Jev requests · Actual Jev requests: Not recorded (legacy) · 0 completed · 0 failed · Provider unavailable"
+              - heading "Per conversation" [level=4] [ref=e434]
+              - heading "Per question" [level=4] [ref=e435]
+              - paragraph [ref=e436]:
+                - strong [ref=e437]: Did the agent give the appropriate greeting to the customer?
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e438]:
+                - strong [ref=e439]: Agent gives their name to the customer
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e440]:
+                - strong [ref=e441]: Did the agent inform the customer DPA validation is required?
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e442]:
+                - strong [ref=e443]: Did the agent apologise for the issue, inconvenience or cost associated with the problem?
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e444]:
+                - strong [ref=e445]: The agent provided the most appropriate solution
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e446]:
+                - strong [ref=e447]: Agent followed the correct procedure for placing a customer on hold
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e448]:
+                - strong [ref=e449]: The agent simplified processes and policies for the customer
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e450]:
+                - strong [ref=e451]: The agent set up a follow-up appointment if necessary
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+              - paragraph [ref=e452]:
+                - strong [ref=e453]: The agent asked whether the customer needed anything else
+                - text: · 0 answers · 0 skipped · 0 pass · average — · 0 critical failures · 0 low confidence · No answers
+```

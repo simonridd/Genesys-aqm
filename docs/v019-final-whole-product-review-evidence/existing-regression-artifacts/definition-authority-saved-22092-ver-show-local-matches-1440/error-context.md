@@ -1,0 +1,218 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: definition-authority.spec.ts >> saved endpoint failures and routing loading never show local matches 1440
+- Location: tests/definition-authority.spec.ts:116:2
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img "IPI" [ref=e6]
+      - generic [ref=e7]:
+        - strong [ref=e8]: IPI AQM
+        - text: Automated Quality Management
+    - navigation "Primary navigation" [ref=e9]:
+      - group [ref=e10]:
+        - generic "Monitor / Quality" [ref=e11] [cursor=pointer]
+        - generic [ref=e12]:
+          - button "Overview" [ref=e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e14]: ◌
+          - button "Evaluations" [ref=e16] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e17]: ◷
+          - button "Analytics" [ref=e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e20]: ▥
+          - button "Calibration" [ref=e22] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e23]: ◎
+      - group [ref=e25]:
+        - generic "Configuration" [ref=e26] [cursor=pointer]
+      - group [ref=e27]:
+        - generic "Interactions" [ref=e28] [cursor=pointer]
+      - generic [ref=e29]:
+        - button "Settings" [ref=e30] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e31]: ⚙
+        - button "About / product tour" [ref=e33] [cursor=pointer]
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: ✦
+        - strong [ref=e37]: Decision intelligence powered by Jev
+        - paragraph [ref=e38]: Typed AI decisions, shaped into clear quality signals.
+      - generic [ref=e39]: V0.19D SHOWCASE • 2026
+  - main [ref=e40]:
+    - generic [ref=e41]:
+      - navigation "Breadcrumb" [ref=e42]:
+        - text: Workspace /
+        - strong [ref=e43]: Conversation review
+      - generic [ref=e44]:
+        - generic "Current role" [ref=e45]: ADMIN
+        - text: Jev managed securely by automation service
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - strong [ref=e49]: Conversation source
+        - generic [ref=e50]: Fictional sample data · no credentials
+      - generic [ref=e51]:
+        - button "Synthetic" [ref=e52] [cursor=pointer]
+        - button "Genesys Cloud" [ref=e53] [cursor=pointer]
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: AUTOMATED QUALITY MANAGEMENT
+          - heading "Conversation review" [level=1] [ref=e58]
+          - paragraph [ref=e59]: Inspect the selected conversation, policy matches, and applicable forms.
+        - generic [ref=e60]:
+          - button "← Back to conversations" [ref=e61] [cursor=pointer]
+          - button "Browse 19 samples →" [ref=e62] [cursor=pointer]
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - text: CURRENT CONVERSATION
+                - heading "Duplicate payment" [level=2] [ref=e68]
+              - generic [ref=e69]: SYNTHETIC SAMPLE
+            - generic [ref=e70]:
+              - button "Change conversation" [ref=e71] [cursor=pointer]
+              - button "↑ Upload JSON" [ref=e72] [cursor=pointer]
+              - button "Upload conversation JSON" [ref=e73]
+          - region "Conversation transcript" [ref=e74]:
+            - generic [ref=e75]:
+              - generic [ref=e76]: MP
+              - generic [ref=e77]:
+                - text: CONVERSATION TRANSCRIPT
+                - heading "Maya Patel with Alex Morgan" [level=2] [ref=e78]:
+                  - text: Maya Patel
+                  - generic [ref=e79]: with Alex Morgan
+                - generic [ref=e80]: 29 Sept 2026 · messaging · conv-billing-001
+              - generic [ref=e81]: Closed
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - generic [ref=e84]: queue
+                - strong [ref=e85]: Customer Service
+              - generic [ref=e86]:
+                - generic [ref=e87]: topic
+                - strong [ref=e88]: Billing
+              - generic [ref=e89]:
+                - generic [ref=e90]: direction
+                - strong [ref=e91]: inbound
+              - generic [ref=e92]:
+                - generic [ref=e93]: Messages
+                - strong [ref=e94]: "11"
+            - generic [ref=e95]:
+              - generic [ref=e96]: 29 Sept 2026
+              - generic [ref=e97]:
+                - generic [ref=e98]: M
+                - generic [ref=e99]:
+                  - generic [ref=e100]:
+                    - strong [ref=e101]: Maya Patel
+                    - time [ref=e102]: 09:00
+                  - generic [ref=e103]: Hi, I think I've been charged twice for my September plan. Could you take a look?
+              - generic [ref=e104]:
+                - generic [ref=e105]: A
+                - generic [ref=e106]:
+                  - generic [ref=e107]:
+                    - strong [ref=e108]: Alex Morgan
+                    - time [ref=e109]: 09:00
+                  - generic [ref=e110]: Hi Maya, you're through to Alex. I'm sorry to hear about the duplicate charge. I'll help you check it.
+              - generic [ref=e111]:
+                - generic [ref=e112]: A
+                - generic [ref=e113]:
+                  - generic [ref=e114]:
+                    - strong [ref=e115]: Alex Morgan
+                    - time [ref=e116]: 09:00
+                  - generic [ref=e117]: Before we discuss your account, could you confirm the last four digits of the phone number on it?
+              - generic [ref=e118]:
+                - generic [ref=e119]: M
+                - generic [ref=e120]:
+                  - generic [ref=e121]:
+                    - strong [ref=e122]: Maya Patel
+                    - time [ref=e123]: 09:00
+                  - generic [ref=e124]: Sure, 4821.
+              - generic [ref=e125]:
+                - generic [ref=e126]: A
+                - generic [ref=e127]:
+                  - generic [ref=e128]:
+                    - strong [ref=e129]: Alex Morgan
+                    - time [ref=e130]: 09:01
+                  - generic [ref=e131]: Thank you, that's verified. I can see two payments of £29 on 27 September. One was a duplicate and has not yet been refunded.
+              - generic [ref=e132]:
+                - generic [ref=e133]: M
+                - generic [ref=e134]:
+                  - generic [ref=e135]:
+                    - strong [ref=e136]: Maya Patel
+                    - time [ref=e137]: 09:01
+                  - generic [ref=e138]: That's a relief. I was worried I'd have to dispute it with my bank.
+              - generic [ref=e139]:
+                - generic [ref=e140]: A
+                - generic [ref=e141]:
+                  - generic [ref=e142]:
+                    - strong [ref=e143]: Alex Morgan
+                    - time [ref=e144]: 09:01
+                  - generic [ref=e145]: I understand the concern. I've submitted a refund for the extra £29 payment. It should return to the same card within five working days.
+              - generic [ref=e146]:
+                - generic [ref=e147]: M
+                - generic [ref=e148]:
+                  - generic [ref=e149]:
+                    - strong [ref=e150]: Maya Patel
+                    - time [ref=e151]: 09:01
+                  - generic [ref=e152]: Great, will I receive a confirmation?
+              - generic [ref=e153]:
+                - generic [ref=e154]: A
+                - generic [ref=e155]:
+                  - generic [ref=e156]:
+                    - strong [ref=e157]: Alex Morgan
+                    - time [ref=e158]: 09:02
+                  - generic [ref=e159]: Yes. A confirmation email will be sent today. If the refund hasn't appeared after five working days, reply to that email and quote reference REF-2048. Is there anything else I can help with?
+              - generic [ref=e160]:
+                - generic [ref=e161]: M
+                - generic [ref=e162]:
+                  - generic [ref=e163]:
+                    - strong [ref=e164]: Maya Patel
+                    - time [ref=e165]: 09:02
+                  - generic [ref=e166]: No, that's everything. Thanks for sorting it out.
+              - generic [ref=e167]:
+                - generic [ref=e168]: A
+                - generic [ref=e169]:
+                  - generic [ref=e170]:
+                    - strong [ref=e171]: Alex Morgan
+                    - time [ref=e172]: 09:02
+                  - generic [ref=e173]: You're welcome, Maya. Thanks for getting in touch, and have a good day.
+            - generic [ref=e174]:
+              - text: End of conversation
+              - generic [ref=e176]: ·
+              - text: 11 messages
+        - generic [ref=e177]:
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e180]: POLICY ROUTING
+              - generic [ref=e181]: Saved routing unavailable
+            - heading "Applicable evaluations" [level=2] [ref=e182]
+            - alert [ref=e183]: Saved policy routing could not be loaded. Fixture configuration unavailable
+            - generic [ref=e184]:
+              - generic [ref=e185]:
+                - text: Manual form selection
+                - combobox "Manual form selection" [ref=e186]:
+                  - option "Saved production form" [selected]
+              - paragraph [ref=e187]: 1 form evaluation · up to 1 Jev requests
+              - button "✦ Evaluate selected form →" [ref=e188] [cursor=pointer]
+            - paragraph [ref=e189]: Production selection includes only published, valid forms . Draft and testing forms can be tested in the isolated sandbox.
+            - button "Test a draft/testing form" [ref=e190] [cursor=pointer]
+            - paragraph [ref=e191]: Jev managed securely by automation service. The exact published server form is authoritative.
+          - generic [ref=e192]:
+            - generic [ref=e193]: ◎
+            - generic [ref=e194]:
+              - strong [ref=e195]: One result per form
+              - paragraph [ref=e196]: Each production evaluation is saved to the automation service with its exact published form and routing provenance.
+```

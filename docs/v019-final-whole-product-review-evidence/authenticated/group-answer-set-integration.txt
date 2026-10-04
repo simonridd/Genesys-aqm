@@ -1,0 +1,105 @@
+Workspace / Question Groups
+AUTHOR
+Jev managed securely by automation service
+CONFIGURATION
+Question Groups
+
+Reuse a set of related questions across multiple evaluation forms.
+
+Import reusable group
+New reusable question group
+Saved in AQM · 5 saved groups
+Refresh saved groups
+Status
+All statuses
+Draft
+Published
+Retired
+Version
+All versions
+Latest version per family
+Usage
+All usage
+Used
+Unused
+Search
+5 results
+Name ↓
+
+Version
+
+Status
+
+Questions
+
+Used by forms
+
+Last modified
+
+Resolution & Next Steps	v1	PUBLISHED	3	2	01/10/2026
+Identity & Security Verification	v1	PUBLISHED	3	0	01/10/2026
+Fresh clarity group	v1	DRAFT	1	0	02/10/2026
+Customer Experience / Empathy	v1	PUBLISHED	3	0	01/10/2026
+Call Closing	v1	PUBLISHED	2	0	01/10/2026
+Local drafts & starter examples · 4 groups
+
+Fresh clarity group v1 saved as DRAFT in AQM.
+
+Fresh clarity group · v1 · DRAFT
+Close details
+Export JSON
+Save changes
+Publish reusable question group
+
+Saved in AQM · 13:18:52
+
+Reusable question group name
+Reusable question group description
+View history
+Reusable questions
+
+Question weights determine the overall score.
+
+Scoring rules · Question weighted · Yes threshold 65%
+Fresh clarity group
+1 question
+Group settings
+01
+Was the resolution clear?
+
+Multiple choice · Weight 1 · Enabled
+
+Assess clarity.
+
+Clear · Mostly clear · Partly clear · Unclear
+
+Using Resolution clarity v1
+
+Done
+Edit: Was the resolution clear?
+Question
+Title
+Instructions / question
+Answer format
+Yes / No
+Multiple choice
+Ordered scale
+Answers
+
+Using Resolution clarity v1
+
+This question keeps its own copy of the published answers. Detach if you want to customize them here.
+
+Newer version available: v2
+Detach and customize
+View answers · Clear · Mostly clear · Partly clear · Unclear
+Scoring
+Weight
+Enabled
+Applicability
+Add question condition
+Advanced details
+Organize question
+Delete question
+Done
+Add question

@@ -1,0 +1,122 @@
+{
+  "network": [
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-BlulwPgz.js",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DLQd533R.css",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-DHn5i8bU.js",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-BlulwPgz.js",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/index-DLQd533R.css",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Welcome-DHn5i8bU.js",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/IPIlogo.svg",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/Demo-Djykow5o.js",
+      "method": "GET",
+      "allow": true
+    },
+    {
+      "url": "https://simonridd.github.io/Genesys-aqm/assets/reviews-DClfUy9e.js",
+      "method": "GET",
+      "allow": true
+    }
+  ],
+  "storage": [],
+  "errors": [],
+  "pitch": [
+    {
+      "label": "Welcome",
+      "elapsedSeconds": 31.242,
+      "url": "https://simonridd.github.io/Genesys-aqm/"
+    },
+    {
+      "label": "Economics",
+      "elapsedSeconds": 66.28,
+      "url": "https://simonridd.github.io/Genesys-aqm/"
+    },
+    {
+      "label": "Customer case",
+      "elapsedSeconds": 116.726,
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=1"
+    },
+    {
+      "label": "Define quality",
+      "elapsedSeconds": 151.79,
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=2"
+    },
+    {
+      "label": "Evaluate at scale",
+      "elapsedSeconds": 196.839,
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=3"
+    },
+    {
+      "label": "Human challenge",
+      "elapsedSeconds": 231.89,
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=4"
+    },
+    {
+      "label": "Manage & pilot",
+      "elapsedSeconds": 261.938,
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=demo&tour=quality&step=5"
+    },
+    {
+      "label": "Pilot",
+      "elapsedSeconds": 271.997,
+      "url": "https://simonridd.github.io/Genesys-aqm/?page=welcome#pilot"
+    }
+  ],
+  "pitchAssumptions": {
+    "dwellSeconds": 260,
+    "sequence": [
+      30,
+      35,
+      40,
+      35,
+      45,
+      35,
+      30,
+      10
+    ],
+    "description": "Historical 260-second explicit dwell; four scroll positions per demo chapter; real elapsed time. Automated presenter simulation, no human comprehension claim."
+  }
+}

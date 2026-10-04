@@ -1,0 +1,261 @@
+{
+  "keylog": [
+    {
+      "label": "review queue open",
+      "tabs": 21,
+      "box": {
+        "x": 1302.9375,
+        "y": 439.5,
+        "width": 80.0625,
+        "height": 46
+      }
+    },
+    {
+      "label": "review start",
+      "tabs": 1,
+      "box": {
+        "x": 309,
+        "y": 552.3125,
+        "width": 101.703125,
+        "height": 37
+      }
+    },
+    {
+      "label": "answer Warm opening",
+      "tabs": 5,
+      "box": {
+        "x": 853,
+        "y": 859.25,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "answer Understanding the issue",
+      "tabs": 1,
+      "box": {
+        "x": 853,
+        "y": 429.6875,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "answer Resolution",
+      "tabs": 1,
+      "box": {
+        "x": 853,
+        "y": 769.125,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "conversation evidence",
+      "tabs": 34,
+      "box": {
+        "x": 309,
+        "y": 676.96875,
+        "width": 132.8125,
+        "height": 33
+      }
+    },
+    {
+      "label": "back to review",
+      "tabs": 1,
+      "box": {
+        "x": 1088.140625,
+        "y": 60.59375,
+        "width": 122.9375,
+        "height": 33
+      }
+    },
+    {
+      "label": "retry answer Warm opening",
+      "tabs": 28,
+      "box": {
+        "x": 853,
+        "y": 692.25,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "type select Warm opening",
+      "tabs": 0,
+      "box": {
+        "x": 853,
+        "y": 652.25,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "type answer Understanding the issue",
+      "tabs": 1,
+      "box": {
+        "x": 853,
+        "y": 429.6875,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "type answer Resolution",
+      "tabs": 1,
+      "box": {
+        "x": 853,
+        "y": 769.125,
+        "width": 497,
+        "height": 41
+      }
+    },
+    {
+      "label": "overall note",
+      "tabs": 1,
+      "box": {
+        "x": 309,
+        "y": 554.625,
+        "width": 1064,
+        "height": 73
+      }
+    },
+    {
+      "label": "evidence after answers",
+      "tabs": 32,
+      "box": {
+        "x": 309,
+        "y": 676.96875,
+        "width": 132.8125,
+        "height": 33
+      }
+    },
+    {
+      "label": "return after answers",
+      "tabs": 1,
+      "box": {
+        "x": 1088.140625,
+        "y": 60.59375,
+        "width": 122.9375,
+        "height": 33
+      }
+    },
+    {
+      "label": "complete review",
+      "tabs": 3,
+      "box": {
+        "x": 426.4375,
+        "y": 662.3125,
+        "width": 127.578125,
+        "height": 37
+      }
+    },
+    {
+      "label": "author choose question form",
+      "tabs": 45,
+      "box": {
+        "x": 299,
+        "y": 645.296875,
+        "width": 127.265625,
+        "height": 13
+      }
+    },
+    {
+      "label": "author question edit",
+      "tabs": 13,
+      "box": {
+        "x": 1338.296875,
+        "y": 709.921875,
+        "width": 42.703125,
+        "height": 26
+      }
+    },
+    {
+      "label": "author answer set picker",
+      "tabs": 4,
+      "box": {
+        "x": 305,
+        "y": 408.703125,
+        "width": 173.953125,
+        "height": 37
+      }
+    },
+    {
+      "label": "author attach answer set",
+      "tabs": 3,
+      "box": {
+        "x": 306,
+        "y": 209.609375,
+        "width": 172.234375,
+        "height": 37
+      }
+    },
+    {
+      "label": "author save",
+      "tabs": 47,
+      "box": {
+        "x": 1012.21875,
+        "y": 539.296875,
+        "width": 110.1875,
+        "height": 37
+      }
+    },
+    {
+      "label": "viewer Questions",
+      "tabs": 18,
+      "box": {
+        "x": 852.578125,
+        "y": 403.59375,
+        "width": 126.453125,
+        "height": 40
+      }
+    },
+    {
+      "label": "viewer supporting evaluations",
+      "tabs": 18,
+      "box": {
+        "x": 1368.6875,
+        "y": 578.59375,
+        "width": 74,
+        "height": 39
+      }
+    },
+    {
+      "label": "viewer Back to Analytics",
+      "tabs": 1,
+      "box": {
+        "x": 284,
+        "y": -0.40625,
+        "width": 124.9375,
+        "height": 33
+      }
+    },
+    {
+      "label": "admin expand Configuration",
+      "tabs": 6,
+      "box": {
+        "x": 15,
+        "y": 363,
+        "width": 212,
+        "height": 37
+      }
+    },
+    {
+      "label": "admin Policies",
+      "tabs": 1,
+      "box": {
+        "x": 15,
+        "y": 400,
+        "width": 212,
+        "height": 44
+      }
+    }
+  ],
+  "reviewCompleted": true,
+  "viewerRestored": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions",
+  "admin": "http://127.0.0.1:4174/Genesys-aqm/?page=policies",
+  "harnessFailures": [
+    "ArrowDown then Enter kept placeholder on macOS Chromium; type-to-select and Tab worked",
+    "Complete review disabled because first replay did not select answers; corrected keyboard input, no product fix"
+  ]
+}

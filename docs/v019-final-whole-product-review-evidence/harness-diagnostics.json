@@ -1,0 +1,43 @@
+{
+  "method": "Manual tool failures are not counted as suite cases. These diagnostic attempts were corrected without changing product code or fresh judgments.",
+  "diagnostics": [
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Immediate snapshots after clicks sometimes captured the preceding state; settled replays used real waits plus installed-clock advancement."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Initial navigation helper did not expand closed native details groups; review helper now expands the containing group."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Capture helper expected H1 on direct disconnected evaluate guard; guard has no review H1 and screenshot capture timed out. Contextual authenticated routes tested separately."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Fixture putAnswerSet correctly rejected overwriting an immutable published version; removed-answer state was seeded directly in fictional MemoryStore."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Keyboard native ArrowDown/Enter replay retained placeholder; type-to-select completed task."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Dirty Settings navigation native confirmation was dismissed by default by automation; state guard worked."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Supplemental Calibration Questions label was ambiguous with sort column; Warm opening has accessible name Open calibration Warm opening. Canonical named selectors completed supporting drill."
+    },
+    {
+      "classification": "HARNESS DEFECT",
+      "attempt": "Fresh assertion tbody was ambiguous with hidden mounted Conversations; all 3 failures preserved, selectors scoped to named review/evaluation regions, rerun passed."
+    }
+  ],
+  "legacyModuleRerun": {
+    "passed": 1,
+    "stillFailed": 1,
+    "remainingClassification": "STALE BASELINE EXPECTATION",
+    "explanation": "The unauthenticated root now shows Welcome, not Conversation review. The pre-mounted-session test seeds module memory before Root via development source interception; Root no longer bootstraps that artificial pre-mounted memory, while ordinary OAuth and Open AQM paths passed."
+  }
+}

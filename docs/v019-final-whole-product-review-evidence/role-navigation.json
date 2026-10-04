@@ -1,0 +1,109 @@
+{
+  "phase": "post-lock exact labels; current task expansion, not a reset initial state",
+  "roles": {
+    "ADMIN": {
+      "text": "Monitor / Quality\n◌\nOverview\n◷\nEvaluations\n▥\nAnalytics\n◎\nCalibration\nConfiguration\nInteractions\n⚙\nSettings\nAbout / product tour",
+      "groups": [
+        {
+          "label": "Monitor / Quality",
+          "open": true
+        },
+        {
+          "label": "Configuration",
+          "open": false
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "visibleButtons": [
+        "◌Overview",
+        "◷Evaluations",
+        "▥Analytics",
+        "◎Calibration",
+        "⚙Settings",
+        "About / product tour"
+      ]
+    },
+    "AUTHOR": {
+      "text": "Configuration\n▤\nEvaluation Forms\n▦\nQuestion Groups\n☷\nAnswer Sets\n◇\nPolicies\nMonitor / Quality\nInteractions\n⚙\nSettings\nAbout / product tour",
+      "groups": [
+        {
+          "label": "Configuration",
+          "open": true
+        },
+        {
+          "label": "Monitor / Quality",
+          "open": false
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "visibleButtons": [
+        "▤Evaluation Forms",
+        "▦Question Groups",
+        "☷Answer Sets",
+        "◇Policies",
+        "⚙Settings",
+        "About / product tour"
+      ]
+    },
+    "REVIEWER": {
+      "text": "Quality / Review\n◷\nEvaluations\n◎\nCalibration\n▥\nAnalytics\n◌\nOverview\nReference configuration\nInteractions\n⚙\nSettings\nAbout / product tour",
+      "groups": [
+        {
+          "label": "Quality / Review",
+          "open": true
+        },
+        {
+          "label": "Reference configuration",
+          "open": false
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "visibleButtons": [
+        "◷Evaluations",
+        "◎Calibration",
+        "▥Analytics",
+        "◌Overview",
+        "⚙Settings",
+        "About / product tour"
+      ]
+    },
+    "VIEWER": {
+      "text": "Monitor / Quality\n◌\nOverview\n▥\nAnalytics\n◷\nEvaluations\n◎\nCalibration\nReference configuration\n▤\nEvaluation Forms\n▦\nQuestion Groups\n☷\nAnswer Sets\n◇\nPolicies\nInteractions\n⚙\nSettings\nAbout / product tour",
+      "groups": [
+        {
+          "label": "Monitor / Quality",
+          "open": true
+        },
+        {
+          "label": "Reference configuration",
+          "open": true
+        },
+        {
+          "label": "Interactions",
+          "open": false
+        }
+      ],
+      "visibleButtons": [
+        "◌Overview",
+        "▥Analytics",
+        "◷Evaluations",
+        "◎Calibration",
+        "▤Evaluation Forms",
+        "▦Question Groups",
+        "☷Answer Sets",
+        "◇Policies",
+        "⚙Settings",
+        "About / product tour"
+      ]
+    }
+  }
+}

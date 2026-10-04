@@ -1,0 +1,55 @@
+Workspace / Settings
+ADMIN
+Jev managed securely by automation service
+Settings
+
+Connect Genesys Cloud and manage your organization's AQM settings.
+
+Connection
+Access
+Reviews
+Privacy & retention
+Notifications
+Audit
+Advanced / Development
+Privacy & retention
+
+All settings saved
+
+Save all settings
+Privacy & data inventory
+
+Stored server-side: EvaluationRecords, form snapshots, PolicyRuns, HumanReviews, alerts, role assignments, audit events and configuration.
+
+Not stored server-side: raw voice transcripts, raw email bodies, raw message transcripts, Genesys OAuth tokens, signed media URLs or raw EML/ZIP.
+
+Browser only: normalized conversation content, with the configured cache lifetime. Search results have an independent short lifetime.
+
+Browser sandbox evaluation history is separate. Clear or reset it using the existing browser controls.
+
+Browser conversation cache hours
+
+0 disables persistent conversation content. Default: 24 hours.
+
+Server retention
+
+Blank means retain indefinitely. Saving settings never deletes data. Evaluation purges also remove their dependent reviews. Active alerts are retained.
+
+Evaluation retention days
+Review retention days
+Policy run retention days
+Resolved alert retention days
+Audit retention days
+Notification delivery retention days
+Retention preview & purge
+
+Preview uses saved settings. Each window scans at most 300 records. Counts below apply to this window; continue for more records.
+
+Preview retention
+Cached Genesys data
+
+Local to this browser. Search snapshots last 15 minutes; completed conversation content uses the lifetime configured in Privacy & retention (24 hours by default). An active Genesys session is required to view cached data. Disconnect clears that identity's cache.
+
+0 cached searches · 1 cached transcripts · Oldest 02/10/2026, 13:01:52 · Newest 02/10/2026, 13:01:52
+
+Clear cached Genesys searches and content

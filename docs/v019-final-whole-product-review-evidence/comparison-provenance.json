@@ -1,0 +1,24 @@
+{
+  "canonicalCommit": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "freshLockCommit": "8483a465fb77d655faf78d8d34a651f870ae3f1d",
+  "lockedAtUtc": "2026-10-04T07:19:09.570615+00:00",
+  "freshSha256": "5e8e80808041443e22ac7af925aa5dd6524f98055607abf158ebe87116aa8db1",
+  "previousReviewRef": "origin/codex/aqm-v019-whole-product-review",
+  "previousReviewCommit": "c8f58f1930c94afba0884f675c3faeedcceb8a1c",
+  "previousReportPath": "docs/v019-whole-product-review.md",
+  "previousReportSha256": "9f54ee716931a9b0d827276b5162ac27d79cc8d22582add5c1254731314fe757",
+  "order": [
+    "blind public observation",
+    "independent authenticated persona tasks",
+    "fresh scorecard/verdicts/findings locked and committed",
+    "product source cause inspection",
+    "old review/tranche reports retrieved",
+    "comparison and comparable historical dwell replay"
+  ],
+  "trancheReportPaths": [
+    "docs/v019a-reviewer-continuity.md",
+    "docs/v019b-authoring-simplification.md",
+    "docs/v019c-quality-actionability.md",
+    "docs/v019d-role-navigation-accessibility.md"
+  ]
+}

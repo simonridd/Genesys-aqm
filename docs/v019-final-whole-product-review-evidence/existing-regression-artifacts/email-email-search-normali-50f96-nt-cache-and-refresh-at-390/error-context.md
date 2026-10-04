@@ -1,0 +1,113 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: email.spec.ts >> email search, normalized relay, content cache and refresh at 390
+- Location: tests/email.spec.ts:7:97
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText(/0 cached searches · 0 cached transcripts/)
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" getByText(/0 cached searches · 0 cached transcripts/) with timeout 5000ms
+  - waiting for getByText(/0 cached searches · 0 cached transcripts/)
+
+```
+
+```yaml
+- complementary:
+  - img "IPI"
+  - strong: IPI AQM
+  - text: Automated Quality Management
+  - navigation "Primary navigation":
+    - group:
+      - text: Interactions
+      - button "Conversations"
+    - group: Monitor / Quality
+    - group: Configuration
+    - button "Settings"
+    - button "About / product tour"
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Settings
+  - text: Connect Genesys Cloud
+  - heading "Settings" [level=1]
+  - paragraph: Connect Genesys Cloud and manage your organization's AQM settings.
+  - navigation "Settings sections":
+    - button "Connection"
+    - button "Access"
+    - button "Reviews"
+    - button "Privacy & retention"
+    - button "Notifications"
+    - button "Audit"
+    - button "Advanced / Development"
+  - heading "Connection" [level=2]
+  - region "Governance"
+  - paragraph: Connect Genesys Cloud to browse real interactions and use saved AQM configuration.
+  - text: G REAL ORGANIZATIONAL DATA
+  - heading "Genesys Cloud" [level=2]
+  - text: Disconnected
+  - strong: Genesys Cloud sign-in
+  - paragraph: Authentication occurs through Genesys Cloud. This application receives a temporary user access token; no client secret is entered or stored here.
+  - text: Region
+  - combobox "Region":
+    - option "EU (Ireland)" [selected]
+    - option "EU (Frankfurt)"
+    - option "US East"
+    - option "US West"
+    - option "Australia"
+    - option "Japan"
+  - text: OAuth Client ID
+  - textbox "OAuth Client ID":
+    - /placeholder: Genesys OAuth client ID
+    - text: e05784c9-2421-4c2b-a3af-79fafb25aea8
+  - paragraph:
+    - text: "Redirect URI:"
+    - code: https://simonridd.github.io/Genesys-aqm/
+  - paragraph: "Region: EU (Ireland)"
+  - button "Connect to Genesys Cloud"
+```
+
+# Test source
+
+```ts
+  1  | import { installOwnerGovernanceFixture } from './governanceFixture'
+  2  | import {test,expect} from '@playwright/test'
+  3  | import {normalizeGenesys} from '../src/domain/genesys'
+  4  | const appUrl=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/'
+  5  | const origin='https://aqm-api-bd54ukouga-nw.a.run.app',id='22222222-2222-4222-8222-222222222222'
+  6  | const detail={conversationId:id,conversationStart:'2026-09-30T12:00:00Z',conversationEnd:'2026-09-30T12:10:00Z',participants:[{purpose:'customer',participantName:'Email Customer',sessions:[{sessionId:'33333333-3333-4333-8333-333333333333',mediaType:'email',direction:'inbound',segments:[{queueId:'55555555-5555-4555-8555-555555555555'}]}]},{purpose:'agent',participantName:'Email Agent',userId:'agent'}]}
+  7  | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`email search, normalized relay, content cache and refresh at ${viewport.width}`,async({browser})=>{
+  8  |  const context=await browser.newContext({viewport}),page=await context.newPage();let retrievals=0,searches=0
+  9  |  await page.addInitScript(()=>{sessionStorage.setItem('genesys-aqm-pkce-transaction',JSON.stringify({region:'eu-west-1',clientId:'e05784c9-2421-4c2b-a3af-79fafb25aea8',verifier:'a'.repeat(43),state:'A'.repeat(43),createdAt:Date.now(),page:'conversations'}));localStorage.setItem('genesys-aqm-v03-source',JSON.stringify('genesys-cloud'))})
+  10 |  await page.route('https://login.mypurecloud.ie/oauth/token',route=>route.fulfill({json:{access_token:'fixture-token',token_type:'Bearer',expires_in:3600}}))
+  11 |  await page.route('https://api.mypurecloud.ie/**',async route=>{const url=route.request().url();if(url.includes('/users/me'))await route.fulfill({json:{id:'fixture-user',name:'Fixture User'}});else if(url.includes('/details/query')){searches++;expect(route.request().postDataJSON().segmentFilters[0].predicates).toContainEqual({dimension:'mediaType',value:'email'});await route.fulfill({json:{conversations:[detail],totalHits:1}})}else if(url.includes('/routing/queues'))await route.fulfill({json:{name:'Email Queue'}});else {expect(url).not.toContain('speechandtextanalytics');await route.fulfill({json:detail})}})
+  12 |  const normalized={...normalizeGenesys(detail),metadata:{...normalizeGenesys(detail).metadata,queue:'Email Queue',transcriptStatus:'Available'},messages:[{id:'logical-email',speaker:'customer' as const,timestamp:'2026-09-30T12:01:00Z',subject:'Billing question',senderName:'Email Customer',text:'Please help with my bill.\nThank you.'}]}
+  13 |  await page.route(`${origin}/**`,async route=>{if(route.request().url().endsWith(`/conversations/${id}/email`)){retrievals++;expect(route.request().headers().authorization).toBe('Bearer fixture-token');await route.fulfill({json:normalized})}else await route.fulfill({json:{items:[]}})})
+  14 |  await installOwnerGovernanceFixture(page);await page.goto(`${appUrl}?code=fixture-code&state=${'A'.repeat(43)}`)
+  15 |  await page.getByLabel('From',{exact:true}).fill('2026-09-30T00:00');await page.getByLabel('To',{exact:true}).fill('2026-10-01T00:00');await page.getByRole('combobox',{name:'Channel',exact:true}).selectOption('email');await page.getByRole('button',{name:'Search completed interactions',exact:true}).click()
+  16 |  await expect(page.getByRole('row').filter({hasText:id})).toContainText('Email Agent');await page.getByRole('group',{name:'View'}).getByRole('button',{name:'Cards'}).click();await page.getByRole('button',{name:/Open transcript/}).click()
+  17 |  await expect(page.locator('.email-subject')).toHaveText('Billing question');await expect(page.locator('.email-body')).toContainText('Please help with my bill.');expect(retrievals).toBe(1)
+  18 |  await page.getByRole('button',{name:'← Back to conversations',exact:true}).click();await page.getByRole('button',{name:/Open transcript/}).click();await expect(page.getByText(/Loaded from local browser cache/)).toBeVisible();expect(retrievals).toBe(1);expect(searches).toBe(1)
+  19 |  await page.getByRole('button',{name:'Refresh from Genesys',exact:true}).click();await expect(page.getByText(/Retrieved from Genesys/)).toBeVisible();expect(retrievals).toBe(2)
+  20 |  const entries=await page.evaluate(async()=>new Promise<unknown[]>((resolve,reject)=>{const req=indexedDB.open('genesys-aqm-conversations-v1',1);req.onsuccess=()=>{const read=req.result.transaction('entries').objectStore('entries').getAll();read.onsuccess=()=>resolve(read.result)};req.onerror=()=>reject(req.error)}))
+  21 |  expect(JSON.stringify(entries)).toContain('Billing question');expect(JSON.stringify(entries)).not.toMatch(/fixture-token|mediaUri|signed|EML|MIME-Version|attachments/)
+  22 |  await page.locator('.transcript').screenshot({path:`/private/tmp/aqm-v09-email-${viewport.width}.png`});expect((await page.locator('.email-body').boundingBox())!.width).toBeLessThan(viewport.width)
+> 23 |  await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Settings',exact:true}).click();await page.getByRole('button',{name:'Disconnect',exact:true}).click();await expect(page.getByText(/0 cached searches · 0 cached transcripts/)).toBeVisible()
+     |                                                                                                                                                                                                                                                                         ^ Error: expect(locator).toBeVisible() failed
+  24 |  await context.close()
+  25 | })
+  26 | 
+```
