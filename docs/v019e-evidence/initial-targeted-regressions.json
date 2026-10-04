@@ -1,0 +1,3757 @@
+{
+  "config": {
+    "argv": [
+      "/Users/simonridd/.nvm/versions/node/v25.8.0/bin/node",
+      "/private/tmp/aqm-v019e-reviewer-focus/node_modules/.bin/playwright",
+      "test",
+      "-c",
+      "docs/v019e-evidence/playwright.config.ts",
+      "tests/reviewer-continuity.spec.ts",
+      "tests/authoring-simplification.spec.ts",
+      "tests/quality-actionability.spec.ts",
+      "tests/role-navigation.spec.ts",
+      "tests/investigation-links.spec.ts",
+      "tests/overview.spec.ts",
+      "--grep-invert",
+      "historical|baseline"
+    ],
+    "configFile": "/private/tmp/aqm-v019e-reviewer-focus/docs/v019e-evidence/playwright.config.ts",
+    "rootDir": "/private/tmp/aqm-v019e-reviewer-focus/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/private/tmp/aqm-v019e-reviewer-focus/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/private/tmp/aqm-v019e-reviewer-focus/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/private/tmp/aqm-v019e-reviewer-focus/docs/v019e-evidence/targeted-regressions.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run preview -- --host 127.0.0.1 --port 4176",
+      "url": "http://127.0.0.1:4176/Genesys-aqm/",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "authoring-simplification.spec.ts",
+      "file": "authoring-simplification.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "question density, connected authority, attach/detach, advanced mapping 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1761,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:48.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-31c50ebc3a64ca0ee154",
+          "file": "authoring-simplification.spec.ts",
+          "line": 16,
+          "column": 2
+        },
+        {
+          "title": "new empty form and exact three-question reusable group 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1462,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:50.049Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-d2a5d05e8a9920ae7927",
+          "file": "authoring-simplification.spec.ts",
+          "line": 29,
+          "column": 2
+        },
+        {
+          "title": "human version comparison and blocked question/group repair 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:51.516Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-5b4877e152cecf178016",
+          "file": "authoring-simplification.spec.ts",
+          "line": 32,
+          "column": 2
+        },
+        {
+          "title": "Customer effort creation, lifecycle and mobile labels 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1518,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:53.165Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-a94704eed3fa4014dea7",
+          "file": "authoring-simplification.spec.ts",
+          "line": 37,
+          "column": 2
+        },
+        {
+          "title": "question density, connected authority, attach/detach, advanced mapping 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:54.688Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-6b6dbb37e36fd20986c7",
+          "file": "authoring-simplification.spec.ts",
+          "line": 16,
+          "column": 2
+        },
+        {
+          "title": "new empty form and exact three-question reusable group 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1444,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:56.405Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-d37ad8016c051e172dc7",
+          "file": "authoring-simplification.spec.ts",
+          "line": 29,
+          "column": 2
+        },
+        {
+          "title": "human version comparison and blocked question/group repair 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1642,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:57.853Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-7402797177b645b8ec71",
+          "file": "authoring-simplification.spec.ts",
+          "line": 32,
+          "column": 2
+        },
+        {
+          "title": "Customer effort creation, lifecycle and mobile labels 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:24:59.500Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-86765a2efb07d534e1ed",
+          "file": "authoring-simplification.spec.ts",
+          "line": 37,
+          "column": 2
+        },
+        {
+          "title": "question density, connected authority, attach/detach, advanced mapping 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1807,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:00.976Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-9495ae319d1a082416c9",
+          "file": "authoring-simplification.spec.ts",
+          "line": 16,
+          "column": 2
+        },
+        {
+          "title": "new empty form and exact three-question reusable group 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1410,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:02.788Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-fc04abfb130f579e072e",
+          "file": "authoring-simplification.spec.ts",
+          "line": 29,
+          "column": 2
+        },
+        {
+          "title": "human version comparison and blocked question/group repair 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1644,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:04.203Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-4c517b50ec90164f9a2f",
+          "file": "authoring-simplification.spec.ts",
+          "line": 32,
+          "column": 2
+        },
+        {
+          "title": "Customer effort creation, lifecycle and mobile labels 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1529,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:05.852Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-da603a8a6b544d0ad8fb",
+          "file": "authoring-simplification.spec.ts",
+          "line": 37,
+          "column": 2
+        },
+        {
+          "title": "imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:07.387Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-ed701dac4cc468ae0f49",
+          "file": "authoring-simplification.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "save inline answers as reusable keeps current question until explicit attach",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1216,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:08.879Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-481819f75598fb47996b",
+          "file": "authoring-simplification.spec.ts",
+          "line": 51,
+          "column": 1
+        },
+        {
+          "title": "published and role-read-only questions expand without disabled editing controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1112,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:10.100Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-3bef47e6f2c99604421c",
+          "file": "authoring-simplification.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "advanced key used by a condition fails closed with no silent migration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1237,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:11.218Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-f65f350def7a5803bdf1",
+          "file": "authoring-simplification.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "disconnected question copy remains neutral; reconnect never uploads definitions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1878,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:12.460Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-6320781f10006c31b249",
+          "file": "authoring-simplification.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "author tasks replay and keyboard reachability from navigation through reusable choices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:14.343Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-a49f6e27064ce0e56b24",
+          "file": "authoring-simplification.spec.ts",
+          "line": 56,
+          "column": 1
+        },
+        {
+          "title": "group version update and detach preserve copied questions and source definitions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1323,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:15.898Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3165eca3671f35208811-5979363ff51c0b267e66",
+          "file": "authoring-simplification.spec.ts",
+          "line": 63,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "investigation-links.spec.ts",
+      "file": "investigation-links.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Analytics investigation, scope edits, clear, return and URL reload at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3746,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:17.257Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-27c6c7466ec05bc6717d",
+          "file": "investigation-links.spec.ts",
+          "line": 56,
+          "column": 2
+        },
+        {
+          "title": "Overview review counts, workload shortcuts and detail at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4869,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:21.007Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-39c1cc6f7224aebd3862",
+          "file": "investigation-links.spec.ts",
+          "line": 77,
+          "column": 2
+        },
+        {
+          "title": "Calibration disagreement drill clears stale cohort at 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:25.880Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-7f5dd30bc1667f1904a9",
+          "file": "investigation-links.spec.ts",
+          "line": 91,
+          "column": 2
+        },
+        {
+          "title": "Analytics investigation, scope edits, clear, return and URL reload at 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3660,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:27.516Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-0929fb8cee3838796f91",
+          "file": "investigation-links.spec.ts",
+          "line": 56,
+          "column": 2
+        },
+        {
+          "title": "Overview review counts, workload shortcuts and detail at 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4942,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:31.180Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-ad4044a7a4e069c30517",
+          "file": "investigation-links.spec.ts",
+          "line": 77,
+          "column": 2
+        },
+        {
+          "title": "Calibration disagreement drill clears stale cohort at 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:36.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-f9e0c3dd2f570a63f54a",
+          "file": "investigation-links.spec.ts",
+          "line": 91,
+          "column": 2
+        },
+        {
+          "title": "Analytics investigation, scope edits, clear, return and URL reload at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3865,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:37.900Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-72148e7634e6d25b0866",
+          "file": "investigation-links.spec.ts",
+          "line": 56,
+          "column": 2
+        },
+        {
+          "title": "Overview review counts, workload shortcuts and detail at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 9336,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: /^Open evaluation / })\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('button', { name: /^Open evaluation / }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: /^Open evaluation / })\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: /^Open evaluation / })\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('button', { name: /^Open evaluation / }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: /^Open evaluation / })\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/investigation-links.spec.ts:86:98",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/investigation-links.spec.ts",
+                      "column": 98,
+                      "line": 86
+                    },
+                    "snippet": "  84 |   await work().getByRole('button',{name:'All review work →',exact:true}).click();await expect(rows(page)).toHaveCount(7);await page.getByRole('region',{name:'Investigation scope'}).getByRole('button',{name:'Remove Active reviews',exact:true}).click();await expect(page.locator('.table-toolbar:visible span')).toHaveText(`${(await state.store.evaluations()).length} results on this page`)\n  85 |   await page.getByLabel('Channel',{exact:true}).fill('email');await expect(rows(page)).toHaveCount(1)\n> 86 |   await page.getByRole('button',{name:'My reviews',exact:true}).click();await expect(rows(page)).toHaveCount(5);await page.getByRole('button',{name:'More filters',exact:true}).click();await expect(page.getByLabel('Channel',{exact:true})).toHaveValue('');expect(new URL(page.url()).searchParams.get('assignment')).toBe('mine')\n     |                                                                                                  ^\n  87 |   await page.getByRole('button',{name:/^Available unassigned reviews/}).click();await expect(rows(page)).toHaveCount(1);expect(new URL(page.url()).searchParams.has('reviewQueue')).toBe(false)\n  88 |   await home();await page.getByRole('region',{name:'Attention required'}).getByRole('button',{name:/Review escalated.*Open review/}).click();await expect(page.getByRole('region',{name:'Human review',exact:true})).toBeVisible();expect(new URL(page.url()).searchParams.get('evaluationId')).toBe('escalated');expect(new URL(page.url()).searchParams.has('assignment')).toBe(false)\n  89 |   expect(state.writes).toEqual([]);expect(state.errors).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close()"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/investigation-links.spec.ts",
+                        "column": 98,
+                        "line": 86
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: /^Open evaluation / })\nExpected: \u001b[32m5\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('button', { name: /^Open evaluation / }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: /^Open evaluation / })\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n  84 |   await work().getByRole('button',{name:'All review work →',exact:true}).click();await expect(rows(page)).toHaveCount(7);await page.getByRole('region',{name:'Investigation scope'}).getByRole('button',{name:'Remove Active reviews',exact:true}).click();await expect(page.locator('.table-toolbar:visible span')).toHaveText(`${(await state.store.evaluations()).length} results on this page`)\n  85 |   await page.getByLabel('Channel',{exact:true}).fill('email');await expect(rows(page)).toHaveCount(1)\n> 86 |   await page.getByRole('button',{name:'My reviews',exact:true}).click();await expect(rows(page)).toHaveCount(5);await page.getByRole('button',{name:'More filters',exact:true}).click();await expect(page.getByLabel('Channel',{exact:true})).toHaveValue('');expect(new URL(page.url()).searchParams.get('assignment')).toBe('mine')\n     |                                                                                                  ^\n  87 |   await page.getByRole('button',{name:/^Available unassigned reviews/}).click();await expect(rows(page)).toHaveCount(1);expect(new URL(page.url()).searchParams.has('reviewQueue')).toBe(false)\n  88 |   await home();await page.getByRole('region',{name:'Attention required'}).getByRole('button',{name:/Review escalated.*Open review/}).click();await expect(page.getByRole('region',{name:'Human review',exact:true})).toBeVisible();expect(new URL(page.url()).searchParams.get('evaluationId')).toBe('escalated');expect(new URL(page.url()).searchParams.has('assignment')).toBe(false)\n  89 |   expect(state.writes).toEqual([]);expect(state.errors).toEqual([]);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await context.close()\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/investigation-links.spec.ts:86:98"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:41.769Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/investigation-links-Overvi-b6ee6-shortcuts-and-detail-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/investigation-links.spec.ts",
+                    "column": 98,
+                    "line": 86
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-c6b127e503890435328e",
+          "file": "investigation-links.spec.ts",
+          "line": 77,
+          "column": 2
+        },
+        {
+          "title": "Calibration disagreement drill clears stale cohort at 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1704,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:51.366Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "786a940c8033d21795f6-93b2d860876a6d6cb0b2",
+          "file": "investigation-links.spec.ts",
+          "line": 91,
+          "column": 2
+        }
+      ]
+    },
+    {
+      "title": "overview.spec.ts",
+      "file": "overview.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Overview healthy, range, freshness, partial failure at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 39,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:57:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:57:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:53.163Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-healthy--7dbc4-ess-partial-failure-at-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-a54f2407786b246bc1ae",
+          "file": "overview.spec.ts",
+          "line": 56,
+          "column": 29
+        },
+        {
+          "title": "Overview healthy, range, freshness, partial failure at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 44,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:57:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:57:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:54.454Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-healthy--5a232-ess-partial-failure-at-1920/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-2be52b4f74c1d395851b",
+          "file": "overview.spec.ts",
+          "line": 56,
+          "column": 29
+        },
+        {
+          "title": "Overview healthy, range, freshness, partial failure at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 44,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:57:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:57:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:55.831Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-healthy--85666-ness-partial-failure-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-45d3110e23bb72a8efe1",
+          "file": "overview.spec.ts",
+          "line": 56,
+          "column": 29
+        },
+        {
+          "title": "Overview ADMIN attention and drill-through at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:57.198Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-ADMIN-attention-and-drill-through-at-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-403b56b8e003c825d8b3",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview AUTHOR attention and drill-through at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 46,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:58.579Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-AUTHOR-attention-and-drill-through-at-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-cd862933818bd1312cbd",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview REVIEWER attention and drill-through at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 46,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:25:59.962Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-REVIEWER-574ec-n-and-drill-through-at-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-2d50912205ab094b8b7c",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview VIEWER attention and drill-through at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:01.339Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-VIEWER-attention-and-drill-through-at-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-6a4e66ab335e5bbc97dd",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview ADMIN attention and drill-through at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:02.718Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-ADMIN-attention-and-drill-through-at-1920/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-e6fd08e68f7c7f578884",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview AUTHOR attention and drill-through at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 44,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:04.097Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-AUTHOR-attention-and-drill-through-at-1920/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-cf07a59959752cab4a9a",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview REVIEWER attention and drill-through at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:05.473Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-REVIEWER-845ad-n-and-drill-through-at-1920/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-c0e9caf378082d6f9c73",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview VIEWER attention and drill-through at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:06.853Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-VIEWER-attention-and-drill-through-at-1920/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-74d3cf99ef74c193cecd",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview ADMIN attention and drill-through at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 12,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 46,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:08.230Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-ADMIN-attention-and-drill-through-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-8e972f50ad9b9f90bc1d",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview AUTHOR attention and drill-through at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 13,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:09.615Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-AUTHOR-attention-and-drill-through-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-c42af1fd4e2a08db2a9f",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview REVIEWER attention and drill-through at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 14,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:10.991Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-REVIEWER-b1041-on-and-drill-through-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-5378995f5c16d6a01da3",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "Overview VIEWER attention and drill-through at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 15,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 45,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:72:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:12.371Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-Overview-VIEWER-attention-and-drill-through-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-d31712be8f498f89644d",
+          "file": "overview.spec.ts",
+          "line": 71,
+          "column": 96
+        },
+        {
+          "title": "existing connected session defaults to Overview before App mounts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 16,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1088,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:90:90",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:90:90"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:13.750Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-existing-connecte-aed98--Overview-before-App-mounts/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-3f56bb5459a13c4c0c61",
+          "file": "overview.spec.ts",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "OAuth return-page intent, evaluation deep link and explicit query page win",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 17,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 43,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:92:98",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                      "column": 13,
+                      "line": 53
+                    },
+                    "snippet": "  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                        "column": 13,
+                        "line": 53
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4174/Genesys-aqm/?code=fixture&state=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\", waiting until \"load\"\u001b[22m\n\n\n  51 |   return json({items:[]})\n  52 |  })\n> 53 |  await page.goto(`${app}?code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)\n     |             ^\n  54 |  return {store,errors,requests,writes,setIncomplete:()=>{incomplete=true},setUnavailable:()=>{unavailable=true},identityCalls:()=>identityCalls}\n  55 | }\n  56 | for(const viewport of sizes)test(`Overview healthy, range, freshness, partial failure at ${viewport.width}`,async({browser})=>{\n    at setup (/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:53:13)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts:92:98"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:15.127Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/overview-OAuth-return-page-c5f3a-and-explicit-query-page-win/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/overview.spec.ts",
+                    "column": 13,
+                    "line": 53
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6e2f4ad74dab265ac116-adbd6f13336a65c693f0",
+          "file": "overview.spec.ts",
+          "line": 91,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "quality-actionability.spec.ts",
+      "file": "quality-actionability.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "quality-leader task and exact insights 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4596,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:16.500Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-bdb80262dadaea79d118",
+          "file": "quality-actionability.spec.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "coverage interpretation, scope and consistency 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2862,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:21.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-54da824d7992b598e845",
+          "file": "quality-actionability.spec.ts",
+          "line": 29,
+          "column": 2
+        },
+        {
+          "title": "quality-leader task and exact insights 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:24.045Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-447b0806b4568a5e4593",
+          "file": "quality-actionability.spec.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "coverage interpretation, scope and consistency 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2820,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:28.744Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-c3f44e5bfe7fd635c45a",
+          "file": "quality-actionability.spec.ts",
+          "line": 29,
+          "column": 2
+        },
+        {
+          "title": "quality-leader task and exact insights 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4201,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:31.568Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-ff47086ad32e927be660",
+          "file": "quality-actionability.spec.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "coverage interpretation, scope and consistency 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2722,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:35.773Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-81dd50c5f6d8a6b9ecf2",
+          "file": "quality-actionability.spec.ts",
+          "line": 29,
+          "column": 2
+        },
+        {
+          "title": "safe errors, retry, empty scope, unavailable names and sparse history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2113,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:38.498Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-383e1975abb19fd70f9f",
+          "file": "quality-actionability.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "goal-only route from Overview uses visible quality evidence",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2037,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:40.616Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-128d1348899434bee9c7",
+          "file": "quality-actionability.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "Overview Analytics entry replaces stale quality filters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1304,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:42.659Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-f4035b6fe0ec21f264f2",
+          "file": "quality-actionability.spec.ts",
+          "line": 48,
+          "column": 1
+        },
+        {
+          "title": "Tab-only quality, filters, table and return 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2326,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:43.971Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-6ff9e873e06c54af151c",
+          "file": "quality-actionability.spec.ts",
+          "line": 52,
+          "column": 97
+        },
+        {
+          "title": "Tab-only quality, filters, table and return 1920",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2304,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:46.303Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-7242d6eb7c97634781bb",
+          "file": "quality-actionability.spec.ts",
+          "line": 52,
+          "column": 97
+        },
+        {
+          "title": "Tab-only quality, filters, table and return 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2275,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:48.611Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "af0ab6d02f1b8e6772b9-2ef582dd4462b3b5cb16",
+          "file": "quality-actionability.spec.ts",
+          "line": 52,
+          "column": 97
+        }
+      ]
+    },
+    {
+      "title": "reviewer-continuity.spec.ts",
+      "file": "reviewer-continuity.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reviewer safely inspects evidence and completes My Reviews at 1440",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 18,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1579,
+                  "error": {
+                    "message": "Error: locator.scrollIntoViewIfNeeded: Error: strict mode violation: getByRole('button', { name: 'Complete review', exact: true }) resolved to 2 elements:\n    1) <button class=\"primary-button\">Complete review</button> aka getByRole('button', { name: 'Complete review' }).first()\n    2) <button class=\"primary-button\">Complete review</button> aka getByRole('group', { name: 'Finish review' }).getByRole('button', { name: 'Complete review' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Complete review', exact: true })\u001b[22m\n",
+                    "stack": "Error: locator.scrollIntoViewIfNeeded: Error: strict mode violation: getByRole('button', { name: 'Complete review', exact: true }) resolved to 2 elements:\n    1) <button class=\"primary-button\">Complete review</button> aka getByRole('button', { name: 'Complete review' }).first()\n    2) <button class=\"primary-button\">Complete review</button> aka getByRole('group', { name: 'Finish review' }).getByRole('button', { name: 'Complete review' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Complete review', exact: true })\u001b[22m\n\n    at reachable (/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:41:17)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:77:23",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                      "column": 17,
+                      "line": 41
+                    },
+                    "snippet": "  39 | async function reachable(page:Page,name:string) {\n  40 |   const control=page.getByRole('button',{name,exact:true})\n> 41 |   await control.scrollIntoViewIfNeeded()\n     |                 ^\n  42 |   const box=(await control.boundingBox())!,viewport=page.viewportSize()!\n  43 |   expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(viewport.width+1)\n  44 |   expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(viewport.height+1)"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                        "column": 17,
+                        "line": 41
+                      },
+                      "message": "Error: locator.scrollIntoViewIfNeeded: Error: strict mode violation: getByRole('button', { name: 'Complete review', exact: true }) resolved to 2 elements:\n    1) <button class=\"primary-button\">Complete review</button> aka getByRole('button', { name: 'Complete review' }).first()\n    2) <button class=\"primary-button\">Complete review</button> aka getByRole('group', { name: 'Finish review' }).getByRole('button', { name: 'Complete review' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Complete review', exact: true })\u001b[22m\n\n\n  39 | async function reachable(page:Page,name:string) {\n  40 |   const control=page.getByRole('button',{name,exact:true})\n> 41 |   await control.scrollIntoViewIfNeeded()\n     |                 ^\n  42 |   const box=(await control.boundingBox())!,viewport=page.viewportSize()!\n  43 |   expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(viewport.width+1)\n  44 |   expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(viewport.height+1)\n    at reachable (/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:41:17)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:77:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:50.905Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/reviewer-continuity-review-1f331-ompletes-My-Reviews-at-1440/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                    "column": 17,
+                    "line": 41
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-951459b8cbeb8823efd7",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "reviewer safely inspects evidence and completes My Reviews at 1920",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 19,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1643,
+                  "error": {
+                    "message": "Error: locator.scrollIntoViewIfNeeded: Error: strict mode violation: getByRole('button', { name: 'Complete review', exact: true }) resolved to 2 elements:\n    1) <button class=\"primary-button\">Complete review</button> aka getByRole('button', { name: 'Complete review' }).first()\n    2) <button class=\"primary-button\">Complete review</button> aka getByRole('group', { name: 'Finish review' }).getByRole('button', { name: 'Complete review' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Complete review', exact: true })\u001b[22m\n",
+                    "stack": "Error: locator.scrollIntoViewIfNeeded: Error: strict mode violation: getByRole('button', { name: 'Complete review', exact: true }) resolved to 2 elements:\n    1) <button class=\"primary-button\">Complete review</button> aka getByRole('button', { name: 'Complete review' }).first()\n    2) <button class=\"primary-button\">Complete review</button> aka getByRole('group', { name: 'Finish review' }).getByRole('button', { name: 'Complete review' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Complete review', exact: true })\u001b[22m\n\n    at reachable (/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:41:17)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:77:23",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                      "column": 17,
+                      "line": 41
+                    },
+                    "snippet": "  39 | async function reachable(page:Page,name:string) {\n  40 |   const control=page.getByRole('button',{name,exact:true})\n> 41 |   await control.scrollIntoViewIfNeeded()\n     |                 ^\n  42 |   const box=(await control.boundingBox())!,viewport=page.viewportSize()!\n  43 |   expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(viewport.width+1)\n  44 |   expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(viewport.height+1)"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                        "column": 17,
+                        "line": 41
+                      },
+                      "message": "Error: locator.scrollIntoViewIfNeeded: Error: strict mode violation: getByRole('button', { name: 'Complete review', exact: true }) resolved to 2 elements:\n    1) <button class=\"primary-button\">Complete review</button> aka getByRole('button', { name: 'Complete review' }).first()\n    2) <button class=\"primary-button\">Complete review</button> aka getByRole('group', { name: 'Finish review' }).getByRole('button', { name: 'Complete review' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Complete review', exact: true })\u001b[22m\n\n\n  39 | async function reachable(page:Page,name:string) {\n  40 |   const control=page.getByRole('button',{name,exact:true})\n> 41 |   await control.scrollIntoViewIfNeeded()\n     |                 ^\n  42 |   const box=(await control.boundingBox())!,viewport=page.viewportSize()!\n  43 |   expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(viewport.width+1)\n  44 |   expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(viewport.height+1)\n    at reachable (/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:41:17)\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:77:23"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:52.715Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/reviewer-continuity-review-02a24-ompletes-My-Reviews-at-1920/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                    "column": 17,
+                    "line": 41
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-61c3409e6576db78102f",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "reviewer safely inspects evidence and completes My Reviews at 390",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 20,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5928,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Open evaluation review-a', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Open evaluation review-a', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Open evaluation review-a', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Open evaluation review-a', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Open evaluation review-a', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Open evaluation review-a', exact: true })\u001b[22m\n\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:51:89",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                      "column": 89,
+                      "line": 51
+                    },
+                    "snippet": "  49 |   test(`reviewer safely inspects evidence and completes My Reviews at ${viewport.width}`,async({browser})=>{\n  50 |     const context=await browser.newContext({viewport}),page=await context.newPage(),state=await continuityFixture(page,undefined,{start:false})\n> 51 |     await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toBeVisible()\n     |                                                                                         ^\n  52 |     await page.screenshot({path:`${evidence}/my-reviews-${viewport.width}.png`,fullPage:true})\n  53 |     await open(page)\n  54 |     await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                        "column": 89,
+                        "line": 51
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Open evaluation review-a', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Open evaluation review-a', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Open evaluation review-a', exact: true })\u001b[22m\n\n\n  49 |   test(`reviewer safely inspects evidence and completes My Reviews at ${viewport.width}`,async({browser})=>{\n  50 |     const context=await browser.newContext({viewport}),page=await context.newPage(),state=await continuityFixture(page,undefined,{start:false})\n> 51 |     await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toBeVisible()\n     |                                                                                         ^\n  52 |     await page.screenshot({path:`${evidence}/my-reviews-${viewport.width}.png`,fullPage:true})\n  53 |     await open(page)\n  54 |     await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:51:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:26:54.648Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/reviewer-continuity-review-271e0-completes-My-Reviews-at-390/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                    "column": 89,
+                    "line": 51
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-810581d71aca84676b2c",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 49,
+          "column": 3
+        },
+        {
+          "title": "exact My Reviews filter context survives evidence navigation",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 21,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6165,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'My reviews', exact: true })\nExpected: \u001b[32m\"true\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByRole('button', { name: 'My reviews', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'My reviews', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'My reviews', exact: true })\nExpected: \u001b[32m\"true\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByRole('button', { name: 'My reviews', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'My reviews', exact: true })\u001b[22m\n\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:106:73",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                      "column": 73,
+                      "line": 106
+                    },
+                    "snippet": "  104 |   expect(page.url()).toBe(url)\n  105 |   expect(puts(state)).toHaveLength(0)\n> 106 |   await expect(page.getByRole('button',{name:'My reviews',exact:true})).toHaveAttribute('aria-pressed','true')\n      |                                                                         ^\n  107 | })\n  108 | test('Analytics question investigation retains exact cohort, selected evaluation and return tab',async({page})=>{\n  109 |   const query='page=analytics&from=2026-09-01&to=2026-09-30&source=genesys-cloud&form=general_service%4017&agent=Test+Agent&queue=Fixture+Queue&channel=voice&mode=scheduled&policy=fictional-policy&analyticsTab=questions'"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                        "column": 73,
+                        "line": 106
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'My reviews', exact: true })\nExpected: \u001b[32m\"true\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByRole('button', { name: 'My reviews', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'My reviews', exact: true })\u001b[22m\n\n\n  104 |   expect(page.url()).toBe(url)\n  105 |   expect(puts(state)).toHaveLength(0)\n> 106 |   await expect(page.getByRole('button',{name:'My reviews',exact:true})).toHaveAttribute('aria-pressed','true')\n      |                                                                         ^\n  107 | })\n  108 | test('Analytics question investigation retains exact cohort, selected evaluation and return tab',async({page})=>{\n  109 |   const query='page=analytics&from=2026-09-01&to=2026-09-30&source=genesys-cloud&form=general_service%4017&agent=Test+Agent&queue=Fixture+Queue&channel=voice&mode=scheduled&policy=fictional-policy&analyticsTab=questions'\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:106:73"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:27:00.878Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/reviewer-continuity-exact--4f7dd-urvives-evidence-navigation/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                    "column": 73,
+                    "line": 106
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-bce7d0bed267584d0c6d",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "Analytics question investigation retains exact cohort, selected evaluation and return tab",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 22,
+                  "parallelIndex": 0,
+                  "status": "interrupted",
+                  "duration": 17592,
+                  "error": {
+                    "message": "Error: locator.click: Test ended.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Back to Analytics', exact: true })\u001b[22m\n",
+                    "stack": "Error: locator.click: Test ended.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Back to Analytics', exact: true })\u001b[22m\n\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:115:72",
+                    "location": {
+                      "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                      "column": 72,
+                      "line": 115
+                    },
+                    "snippet": "  113 |   await open(page);await edit(page);const investigation=page.url()\n  114 |   await evidenceRoundTrip(page);await restored(page);expect(page.url()).toBe(investigation)\n> 115 |   await page.getByRole('button',{name:'Back to Analytics',exact:true}).click()\n      |                                                                        ^\n  116 |   const returned=new URL(page.url()).searchParams,original=new URLSearchParams(query)\n  117 |   for(const key of original.keys())expect(returned.get(key)).toBe(original.get(key))\n  118 |   expect(await selectedView(page)).toBe('Questions')"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                        "column": 72,
+                        "line": 115
+                      },
+                      "message": "Error: locator.click: Test ended.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Back to Analytics', exact: true })\u001b[22m\n\n\n  113 |   await open(page);await edit(page);const investigation=page.url()\n  114 |   await evidenceRoundTrip(page);await restored(page);expect(page.url()).toBe(investigation)\n> 115 |   await page.getByRole('button',{name:'Back to Analytics',exact:true}).click()\n      |                                                                        ^\n  116 |   const returned=new URL(page.url()).searchParams,original=new URLSearchParams(query)\n  117 |   for(const key of original.keys())expect(returned.get(key)).toBe(original.get(key))\n  118 |   expect(await selectedView(page)).toBe('Questions')\n    at /private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts:115:72"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-04T08:27:07.341Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/private/tmp/aqm-v019e-reviewer-focus/test-results/reviewer-continuity-Analyt-e0e44-d-evaluation-and-return-tab/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/private/tmp/aqm-v019e-reviewer-focus/tests/reviewer-continuity.spec.ts",
+                    "column": 72,
+                    "line": 115
+                  }
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-43d8a85ac3a0f2dd1b69",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 108,
+          "column": 1
+        },
+        {
+          "title": "save progress adopts returned revision and clears unload guard, then restores authoritative answers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-0eeee7a5163d4d4efe83",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "completion reconciles All Evaluations without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-2cb8f01fd39fec361104",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 139,
+          "column": 12
+        },
+        {
+          "title": "completion reconciles active cohort without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-6e5c163aaa7fb846ae6b",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 139,
+          "column": 12
+        },
+        {
+          "title": "completion reconciles review status without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-d3b04a3a1f33e6326a42",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 139,
+          "column": 12
+        },
+        {
+          "title": "completion reconciles due cohort without Refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-f2c1efc7a71ab18b2696",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 139,
+          "column": 12
+        },
+        {
+          "title": "revision conflict retains inputs, blocks submit and requires explicit discard",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-4cfafa10d3375b2b1652",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 149,
+          "column": 1
+        },
+        {
+          "title": "reassignment retains unsaved notes but removes editing and submission authority",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-5ae08a57ef92d8de00fd",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "409 refresh retains draft without silently replacing its base",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-8ccfe7df3de46e54390f",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 178,
+          "column": 1
+        },
+        {
+          "title": "two drafts survive unrelated SPA pages; guard remains until both are resolved",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-8d4519c67bd31cce88e2",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 188,
+          "column": 1
+        },
+        {
+          "title": "later server page survives evidence return and completion background reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-9a360c815f31e4409c9c",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 199,
+          "column": 1
+        },
+        {
+          "title": "keyboard-only evidence detour returns to review heading, then reviewer completes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-809c1c3a2b30ece6f642",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 210,
+          "column": 1
+        },
+        {
+          "title": "unstarted review returns to selected evaluation heading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-1b70753a24c6a00a125d",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 225,
+          "column": 1
+        },
+        {
+          "title": "completion removes the row before a failed background list reload, preserving confirmation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-744b4c51e8603a8bdfa7",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 232,
+          "column": 1
+        },
+        {
+          "title": "failed completion retains all changes and explicit retry completes exactly once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-572e21e5a891fae550eb",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 242,
+          "column": 1
+        },
+        {
+          "title": "reload starts a new session without unsubmitted answers or notes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-4557fb31ac1487e157e0",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 256,
+          "column": 1
+        },
+        {
+          "title": "About and workspace handoff retain human work and unload protection in this SPA",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-ab30c2dfd49c852139f1",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 268,
+          "column": 1
+        },
+        {
+          "title": "a pending completion reconciles the current filters rather than the scope at click time",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-8bd6b594084f3b5bcef9",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 279,
+          "column": 1
+        },
+        {
+          "title": "completion in another session keeps unfinished answers separate from completed authority",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-a279cf5cf537995a9a21",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 295,
+          "column": 1
+        },
+        {
+          "title": "a clean saved draft yields to newer completed authority after evidence inspection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a96dd61084db3bf9f2b4-c050d73238980daaef79",
+          "file": "reviewer-continuity.spec.ts",
+          "line": 308,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "role-navigation.spec.ts",
+      "file": "role-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "ADMIN role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-529e347333d85062103c",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "ADMIN role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-d7b0b4c44741f102f4e4",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "AUTHOR role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-c33880cac5cd4588ba00",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "AUTHOR role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-622a937be9403c710ba3",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "REVIEWER role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-ff3a1556e1ee9951b82b",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "REVIEWER role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-b8419b3956dd0435f7e5",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "VIEWER role focus and reference capability 1440",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-7256a2ebc0bc43b80cd7",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "VIEWER role focus and reference capability 390",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-8a3d57de8215e7e6bd8e",
+          "file": "role-navigation.spec.ts",
+          "line": 17,
+          "column": 96
+        },
+        {
+          "title": "ADMIN shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-e3ccba257b3d628ec240",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "AUTHOR shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-0734b16ff5d450d722b7",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "REVIEWER shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-15659956ac0e1c63a142",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "VIEWER shared routes deep-link; labels and access stay authoritative",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-354b80f3b181f6341c1a",
+          "file": "role-navigation.spec.ts",
+          "line": 35,
+          "column": 25
+        },
+        {
+          "title": "keyboard disclosures remember session choices, active page wins, product tour preserves them",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-7791eb6e8c065861efd5",
+          "file": "role-navigation.spec.ts",
+          "line": 41,
+          "column": 1
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 1440x900",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-8c6fbf12f04e74aaa5d2",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 1920x1080",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-4cd32cf0d30a40a12173",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 390x844",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-29a45e472fabb6e2c558",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "view keyboard, hidden controls and reachability 1440x720",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-8714ef302e27d3b2fb92",
+          "file": "role-navigation.spec.ts",
+          "line": 53,
+          "column": 121
+        },
+        {
+          "title": "mobile Questions exact drill returns to same view and cohort; Coverage deep link",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-17817254823ee4c1324b",
+          "file": "role-navigation.spec.ts",
+          "line": 65,
+          "column": 1
+        },
+        {
+          "title": "browser sample Analytics has seven discoverable views and selected URL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-a98abbb82f554fda635a",
+          "file": "role-navigation.spec.ts",
+          "line": 68,
+          "column": 1
+        },
+        {
+          "title": "browser history restores page, active reference group and Analytics view",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-21c674ae5d03c6abbdf1",
+          "file": "role-navigation.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "review contextual evidence and default My Reviews remain coherent on mobile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-33ab4dafe4318f3e1b2c",
+          "file": "role-navigation.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "unresolved access stays neutral and read-only; role arrival preserves route",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dbea05a5fdd66706304-504311b643861ff3b52e",
+          "file": "role-navigation.spec.ts",
+          "line": 80,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-04T08:24:47.030Z",
+    "duration": 158010.852,
+    "expected": 39,
+    "skipped": 42,
+    "unexpected": 22,
+    "flaky": 0
+  }
+}

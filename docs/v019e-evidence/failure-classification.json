@@ -1,0 +1,236 @@
+[
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "investigation-links.spec.ts",
+    "test": "Overview review counts, workload shortcuts and detail at 390",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "V0.19E intentionally replaces mobile ID buttons with task cards, hides queue controls during work, and provides top/end controls. Select the visible presentation or intended action group; underlying filters/revisions remain asserted."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview healthy, range, freshness, partial failure at 1440",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview healthy, range, freshness, partial failure at 1920",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview healthy, range, freshness, partial failure at 390",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview ADMIN attention and drill-through at 1440",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview AUTHOR attention and drill-through at 1440",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview REVIEWER attention and drill-through at 1440",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview VIEWER attention and drill-through at 1440",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview ADMIN attention and drill-through at 1920",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview AUTHOR attention and drill-through at 1920",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview REVIEWER attention and drill-through at 1920",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview VIEWER attention and drill-through at 1920",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview ADMIN attention and drill-through at 390",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview AUTHOR attention and drill-through at 390",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview REVIEWER attention and drill-through at 390",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "Overview VIEWER attention and drill-through at 390",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "existing connected session defaults to Overview before App mounts",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "overview.spec.ts",
+    "test": "OAuth return-page intent, evaluation deep link and explicit query page win",
+    "classification": "HARNESS DEFECT",
+    "reason": "Runner used 4176 while this older harness hard-codes 4174. Corrected runner port; ordinary Overview checks subsequently pass."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "reviewer safely inspects evidence and completes My Reviews at 1440",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "V0.19E intentionally replaces mobile ID buttons with task cards, hides queue controls during work, and provides top/end controls. Select the visible presentation or intended action group; underlying filters/revisions remain asserted."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "reviewer safely inspects evidence and completes My Reviews at 1920",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "V0.19E intentionally replaces mobile ID buttons with task cards, hides queue controls during work, and provides top/end controls. Select the visible presentation or intended action group; underlying filters/revisions remain asserted."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "reviewer safely inspects evidence and completes My Reviews at 390",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "V0.19E intentionally replaces mobile ID buttons with task cards, hides queue controls during work, and provides top/end controls. Select the visible presentation or intended action group; underlying filters/revisions remain asserted."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "exact My Reviews filter context survives evidence navigation",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "V0.19E intentionally replaces mobile ID buttons with task cards, hides queue controls during work, and provides top/end controls. Select the visible presentation or intended action group; underlying filters/revisions remain asserted."
+  },
+  {
+    "report": "initial-targeted-regressions.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "Analytics question investigation retains exact cohort, selected evaluation and return tab",
+    "classification": "HARNESS DEFECT",
+    "reason": "Adaptive opener inspected count before asynchronous list arrival, then waited for mobile cards on desktop. Wait for records before choosing the presentation. Passed after correction."
+  },
+  {
+    "report": "targeted-before-card-selector.json",
+    "file": "investigation-links.spec.ts",
+    "test": "Overview review counts, workload shortcuts and detail at 390",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "V0.19E intentionally replaces mobile ID buttons with task cards, hides queue controls during work, and provides top/end controls. Select the visible presentation or intended action group; underlying filters/revisions remain asserted."
+  },
+  {
+    "report": "targeted-before-card-selector.json",
+    "file": "overview.spec.ts",
+    "test": "existing connected session defaults to Overview before App mounts",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "Pre-existing artificial pre-mounted session or unauthenticated-root expectation. Canonical review already classified these. Ordinary OAuth, role navigation and Open AQM are covered. Left unchanged."
+  },
+  {
+    "report": "targeted-before-card-selector.json",
+    "file": "overview.spec.ts",
+    "test": "OAuth return-page intent, evaluation deep link and explicit query page win",
+    "classification": "EXPECTED CONTRACT CHANGE / STALE TEST",
+    "reason": "Pre-existing artificial pre-mounted session or unauthenticated-root expectation. Canonical review already classified these. Ordinary OAuth, role navigation and Open AQM are covered. Left unchanged."
+  },
+  {
+    "report": "continuity-harness-race.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "Analytics question investigation retains exact cohort, selected evaluation and return tab",
+    "classification": "HARNESS DEFECT",
+    "reason": "Adaptive opener inspected count before asynchronous list arrival, then waited for mobile cards on desktop. Wait for records before choosing the presentation. Passed after correction."
+  },
+  {
+    "report": "continuity-harness-race.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "two drafts survive unrelated SPA pages; guard remains until both are resolved",
+    "classification": "HARNESS DEFECT",
+    "reason": "Adaptive opener inspected count before asynchronous list arrival, then waited for mobile cards on desktop. Wait for records before choosing the presentation. Passed after correction."
+  },
+  {
+    "report": "continuity-harness-race.json",
+    "file": "reviewer-continuity.spec.ts",
+    "test": "About and workspace handoff retain human work and unload protection in this SPA",
+    "classification": "HARNESS DEFECT",
+    "reason": "Adaptive opener inspected count before asynchronous list arrival, then waited for mobile cards on desktop. Wait for records before choosing the presentation. Passed after correction."
+  },
+  {
+    "report": "presentation-page-fixture-error.json",
+    "file": "reviewer-focus.spec.ts",
+    "test": "later presentation page survives evidence, completion and queue return",
+    "classification": "HARNESS DEFECT",
+    "reason": "New fixture seeded revision 2 against expected 0. Replaced the seed with actual assign/start domain operations; no product change."
+  },
+  {
+    "report": "mobile-recheck.json",
+    "test": "runner startup",
+    "classification": "HARNESS DEFECT",
+    "reason": "Error: http://127.0.0.1:4176/Genesys-aqm/ is already used, make sure that nothing is running on the port/url or set reuseExistingServer:true in config.webServer."
+  },
+  {
+    "report": "implementation mobile checks",
+    "test": "highest-priority initial CTA",
+    "classification": "PRODUCT REGRESSION",
+    "reason": "An intermediate grid rule overrode hidden filters; after hiding them, queue toolbar spacing still put CTA below the initial viewport. Fixed filter hiding and compacted the existing queue controls. Final CTA x=43, y=799.90625, 304\u00d742 at scroll (0,0)."
+  },
+  {
+    "report": "sandbox attempts",
+    "test": "deterministic server tests / baseline browser startup / preservation startup",
+    "classification": "HARNESS DEFECT",
+    "reason": "Sandbox prevented local listeners and gcloud credential-cache access. Authorized reruns succeeded. No product or cloud configuration change."
+  },
+  {
+    "report": "runner overlap",
+    "test": "mobile runner startup",
+    "classification": "HARNESS DEFECT",
+    "reason": "A second preview attempted the same port. Reran against the already-running local preview; no product change."
+  }
+]

@@ -49,7 +49,7 @@ async function setup(page:Page,start='analytics'){
  return {store,errors,requests,writes}
 }
 const nav=navigateWorkspace
-const rows=(page:Page)=>page.getByRole('button',{name:/^Open evaluation /})
+const rows=(page:Page)=>page.locator('.evaluation-queue .operational-table tbody tr:visible,.review-task-card:visible')
 async function cohort(page:Page){await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.getByText('Advanced filters',{exact:true}).click();for(const [label,value] of Object.entries({'From':investigationCohort.from,'To':investigationCohort.to,'Agent':investigationCohort.agent,'Queue':investigationCohort.queue,'Channel':investigationCohort.channel}))await page.locator('.analytics-filter-bar').getByLabel(label,{exact:true}).fill(value);await page.locator('.analytics-filter-bar').getByLabel('Policy',{exact:true}).selectOption(investigationCohort.policy);await page.locator('.analytics-filter-bar').getByLabel('Form',{exact:true}).selectOption(investigationCohort.form);await page.locator('.analytics-filter-bar').getByRole('combobox',{name:'Source',exact:true}).selectOption('genesys-cloud');await page.locator('.analytics-filter-bar').getByRole('combobox',{name:'Trigger',exact:true}).selectOption('scheduled');await chooseView(page,'Questions');await expect(page.locator('.operational-table tbody tr').filter({hasText:'Warm opening'})).toHaveCount(1)}
 async function drill(page:Page){await page.locator('.operational-table tbody tr').filter({hasText:'Warm opening'}).click();await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible();await expect(rows(page)).toHaveCount(2)}
 for(const viewport of sizes){

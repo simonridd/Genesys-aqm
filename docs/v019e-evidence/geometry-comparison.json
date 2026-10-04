@@ -1,0 +1,45 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "canonicalSource": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "beforeCta": {
+    "x": 1025.375,
+    "y": 1387.40625,
+    "width": 78.5,
+    "height": 46
+  },
+  "afterCta": {
+    "name": "highest-priority Start review",
+    "box": {
+      "x": 43,
+      "y": 799.90625,
+      "width": 304,
+      "height": 42
+    },
+    "main": {
+      "x": 0,
+      "y": 339.515625,
+      "width": 390,
+      "height": 1414.765625
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "firstAnswerDistance": {
+    "beforeDetailTopToAnswer": 2259.609375,
+    "afterWorkspaceTopToAnswer": 661.984375,
+    "reductionPixels": 1597.625,
+    "reductionPercent": 70.70359229678802
+  },
+  "sameFictionalApiFixture": true,
+  "horizontalDiscoveryGestures": 0,
+  "scope": "Presentation distance, not a timed human-study result"
+}

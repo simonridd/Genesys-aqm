@@ -1,0 +1,48 @@
+{
+  "rubric": "1 seriously ineffective; 2 major friction; 3 acceptable prototype; 4 strong internal product; 5 unusually polished/intuitive",
+  "scope": "Focused reviewer task replay and visual/keyboard assessment; no new whole-product mean or independent-human study",
+  "scores": [
+    {
+      "category": "Reviewer usability",
+      "freshWholeProduct": 3,
+      "current": 4,
+      "reason": "Priority CTA visible, task/evidence/answers lead, notes survive evidence and completion removes queue work without refresh. Multi-question scrolling and automation-only evidence prevent 5."
+    },
+    {
+      "category": "Ease of use",
+      "freshWholeProduct": 3,
+      "focusedReviewerTask": 4,
+      "wholeProductRetained": 3,
+      "reason": "No horizontal discovery or irrelevant analysis detour in review. Other whole-product authoring/scale friction was deliberately not fixed."
+    },
+    {
+      "category": "Responsive/mobile quality",
+      "freshWholeProduct": 3,
+      "focusedReviewerTask": 4,
+      "wholeProductRetained": 3,
+      "reason": "390px review cards and human-first inputs, no overflow, resize continuity; other explorer tables can still require internal horizontal scrolling."
+    },
+    {
+      "category": "Workflow coherence",
+      "freshWholeProduct": 4,
+      "current": 4,
+      "reason": "Choose \u2192 evidence \u2192 answers/notes \u2192 complete \u2192 same queue, with conflicts, reassignment and cursor semantics retained. This focused improvement does not imply a whole-product 5."
+    },
+    {
+      "category": "Focused mobile reviewer task",
+      "current": 4,
+      "reason": "The main mobile task is visible and executable with zero horizontal discovery and no analysis before inputs."
+    }
+  ],
+  "releaseQuestion": "Can a reviewer see, start, carry out and complete their main task on mobile without horizontal discovery or irrelevant analysis preceding their work?",
+  "answer": "Yes, in the fictional authenticated automated replay at 390\u00d7844.",
+  "blockers": {
+    "F1": "FIXED",
+    "F2": "FIXED"
+  },
+  "limitations": [
+    "Automated Chromium emulation, not a physical-device study.",
+    "No recruited human tester or screen-reader certification.",
+    "Only reviewer scope rechecked; unrelated backlog and overall ease/mobile 3 scores remain."
+  ]
+}

@@ -9,7 +9,7 @@ const generated=new URL('./.generated/reviewer-recheck-api.mjs',import.meta.url)
 buildSync({entryPoints:[fileURLToPath(new URL('./reviewer-recheck-api.ts',import.meta.url))],outfile:fileURLToPath(generated),bundle:true,platform:'node',format:'esm',packages:'external'})
 const apiModule=await import(generated.href) as typeof import('./reviewer-recheck-api')
 const {createApi,investigationFixture,investigationNow,overviewFixture,MemoryStore,seedForms,seedGroupAssets,seedAnswerSets,nextAnswerSetVersion,transitionAnswerSet,applyAnswerSet,sampleLibrary}=apiModule
-const app=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/',api='https://aqm-api-bd54ukouga-nw.a.run.app',out='docs/v019a-evidence/recheck'
+const app=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm/',api='https://aqm-api-bd54ukouga-nw.a.run.app',out=process.env.AQM_RECHECK_EVIDENCE??'docs/v019a-evidence/recheck'
 mkdirSync(out,{recursive:true})
 const nav=(page:Page,name:string)=>page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name,exact:true})
 export async function fixture(page:Page,role='ADMIN',state='attention',start='automation'){

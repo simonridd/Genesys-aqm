@@ -1,0 +1,53 @@
+{
+  "deterministic": {
+    "files": 65,
+    "passed": 621,
+    "failed": 0
+  },
+  "currentContractBrowser": {
+    "passed": 116,
+    "failed": 0,
+    "byFile": {
+      "authoring-simplification.spec.ts": 19,
+      "investigation-links.spec.ts": 9,
+      "overview.spec.ts": 15,
+      "quality-actionability.spec.ts": 12,
+      "reviewer-continuity.spec.ts": 24,
+      "reviewer-focus.spec.ts": 15,
+      "role-navigation.spec.ts": 22
+    },
+    "report": "final-browser-qualification.json"
+  },
+  "tableHarness": {
+    "passed": 2,
+    "failed": 0,
+    "report": "table-browser.json"
+  },
+  "canonicalBaseline": {
+    "passed": 1,
+    "source": "c20604c3b33b81a0038388851d07d6f500792bdb"
+  },
+  "existingDebtEncountered": {
+    "stale": 2,
+    "unresolvedHarnessFailures": 0
+  },
+  "viewports": [
+    [
+      390,
+      844
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      1440,
+      720
+    ]
+  ],
+  "scope": "Counts are separate; interim retries and public replays are not added to unique case totals."
+}

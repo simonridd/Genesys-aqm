@@ -6,8 +6,18 @@ import { continuityFixture } from './reviewer-continuity-fixture'
 import { keyboardTo } from './usability-fixture'
 const evidence=process.env.AQM_REVIEW_EVIDENCE??'docs/v019a-evidence';mkdirSync(evidence,{recursive:true})
 const panel=(page:Page)=>page.getByRole('region',{name:'Human review',exact:true})
-const open=(page:Page,id='review-a')=>page.getByRole('button',{name:`Open evaluation ${id}`,exact:true}).click()
+const open=async(page:Page,id='review-a')=>{
+  if(await page.locator('.review-workspace').count())await page.getByRole('button',{name:/^Back to (My Reviews|review queue)$/}).click()
+  const identity=page.getByRole('button',{name:`Open evaluation ${id}`,exact:true})
+  const cards=page.locator('.review-task-card')
+  await expect.poll(async()=>await identity.count()+await cards.count()).toBeGreaterThan(0)
+  if(await identity.count())return identity.click()
+  const index=id==='review-b'&&await cards.count()>1?1:0
+  await cards.nth(index).getByRole('button',{name:/^(Start review|Continue review)$/}).click()
+}
 const nav=navigateWorkspace
+const evidenceButton=(page:Page)=>page.getByRole('button',{name:/^Open conversation(?: evidence)?$/})
+const detailHeading=(page:Page)=>page.locator('.evaluation-detail> .panel-heading h2,.review-workspace>header h1')
 const guard=(page:Page)=>page.evaluate(()=>{const event=new Event('beforeunload',{cancelable:true});window.dispatchEvent(event);return {prevented:event.defaultPrevented,guards:(window as any).__reviewTrace.guards}})
 const puts=(state:Awaited<ReturnType<typeof continuityFixture>>)=>state.requests.filter(r=>r.method==='PUT')
 async function edit(page:Page,all=false) {
@@ -27,7 +37,7 @@ async function restored(page:Page) {
 }
 async function evidenceRoundTrip(page:Page,after?:()=>Promise<unknown>) {
   const exact=page.url()
-  await page.getByRole('button',{name:'Open conversation',exact:true}).click()
+  await evidenceButton(page).click()
   await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible()
   await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeFocused()
   await expect(page.getByText('I need help with my bill.',{exact:true})).toBeVisible()
@@ -37,7 +47,7 @@ async function evidenceRoundTrip(page:Page,after?:()=>Promise<unknown>) {
   await expect(panel(page).getByRole('heading',{level:2})).toBeFocused()
 }
 async function reachable(page:Page,name:string) {
-  const control=page.getByRole('button',{name,exact:true})
+  const control=name==='Open conversation'?evidenceButton(page):page.getByRole('button',{name,exact:true}).first()
   await control.scrollIntoViewIfNeeded()
   const box=(await control.boundingBox())!,viewport=page.viewportSize()!
   expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(viewport.width+1)
@@ -48,10 +58,10 @@ async function reachable(page:Page,name:string) {
 for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}]){
   test(`reviewer safely inspects evidence and completes My Reviews at ${viewport.width}`,async({browser})=>{
     const context=await browser.newContext({viewport}),page=await context.newPage(),state=await continuityFixture(page,undefined,{start:false})
-    await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toBeVisible()
+    await expect(page.getByRole('button',{name:/^(Open evaluation review-a|Start review)$/}).first()).toBeVisible()
     await page.screenshot({path:`${evidence}/my-reviews-${viewport.width}.png`,fullPage:true})
     await open(page)
-    await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+    await expect(detailHeading(page)).toBeFocused()
     expect(await guard(page)).toEqual({prevented:false,guards:0})
     await panel(page).getByRole('button',{name:'Start review',exact:true}).click()
     await expect(panel(page).getByLabel('Human answer: Warm opening',{exact:true})).toBeVisible()
@@ -75,13 +85,14 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     await panel(page).getByLabel('Human answer: Resolution',{exact:true}).selectOption('fully_resolved')
     const workloadBefore=state.requests.filter(r=>r.url.pathname==='/api/review-workload').length
     bounds.push(await reachable(page,'Complete review'))
-    await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+    await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
     await expect(panel(page).getByRole('status')).toContainText('Review completed. It has been removed from My Reviews.')
     await expect(panel(page).getByRole('status')).toBeFocused()
     await expect(panel(page).getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()
     await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(0)
     await expect.poll(()=>state.requests.filter(r=>r.url.pathname==='/api/review-workload').length).toBeGreaterThan(workloadBefore)
-    await expect(page.getByLabel('My review summary').locator('.health-grid>div').first()).toContainText('1')
+    await expect.poll(()=>state.store.review('review-a').then(r=>r?.status)).toBe('REVIEWED')
+    await expect(page.getByLabel('My review summary',{includeHidden:true}).locator('.health-grid>div').first()).toContainText('1')
     expect(puts(state).filter(r=>r.body.action==='complete')).toHaveLength(1)
     expect(JSON.stringify(await state.store.evaluations())).toBe(state.before)
     expect(await guard(page)).toEqual({prevented:false,guards:0})
@@ -92,7 +103,7 @@ for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:3
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
     expect(state.errors).toEqual([]);expect(state.forbidden).toEqual([])
     await panel(page).getByRole('button',{name:'Close and continue My Reviews',exact:true}).click()
-    await expect(page.locator('.evaluation-detail')).toHaveCount(0)
+    await expect(page.locator('.evaluation-detail,.review-workspace')).toHaveCount(0)
     await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeFocused()
     await context.close()
   })
@@ -103,7 +114,7 @@ test('exact My Reviews filter context survives evidence navigation',async({page}
   const url=page.url();await evidenceRoundTrip(page);await restored(page)
   expect(page.url()).toBe(url)
   expect(puts(state)).toHaveLength(0)
-  await expect(page.getByRole('button',{name:'My reviews',exact:true})).toHaveAttribute('aria-pressed','true')
+  await expect(page.getByRole('button',{name:'My reviews',exact:true,includeHidden:true})).toHaveAttribute('aria-pressed','true')
 })
 test('Analytics question investigation retains exact cohort, selected evaluation and return tab',async({page})=>{
   const query='page=analytics&from=2026-09-01&to=2026-09-30&source=genesys-cloud&form=general_service%4017&agent=Test+Agent&queue=Fixture+Queue&channel=voice&mode=scheduled&policy=fictional-policy&analyticsTab=questions'
@@ -112,6 +123,7 @@ test('Analytics question investigation retains exact cohort, selected evaluation
   await expect(page.getByRole('heading',{name:'Evaluations',exact:true})).toBeVisible()
   await open(page);await edit(page);const investigation=page.url()
   await evidenceRoundTrip(page);await restored(page);expect(page.url()).toBe(investigation)
+  await page.getByRole('button',{name:'Back to review queue',exact:true}).click()
   await page.getByRole('button',{name:'Back to Analytics',exact:true}).click()
   const returned=new URL(page.url()).searchParams,original=new URLSearchParams(query)
   for(const key of original.keys())expect(returned.get(key)).toBe(original.get(key))
@@ -119,7 +131,7 @@ test('Analytics question investigation retains exact cohort, selected evaluation
 })
 test('save progress adopts returned revision and clears unload guard, then restores authoritative answers',async({page})=>{
   const state=await continuityFixture(page);await open(page);await edit(page)
-  await panel(page).getByRole('button',{name:'Save progress',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Save progress',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toHaveText('Review progress saved.')
   expect(puts(state)).toHaveLength(1);expect(puts(state)[0].body.expectedRevision).toBe(2)
   expect((await state.store.review('review-a'))!.revision).toBe(3)
@@ -127,7 +139,7 @@ test('save progress adopts returned revision and clears unload guard, then resto
   await evidenceRoundTrip(page);await restored(page)
   await expect(panel(page).getByText(/Unsaved review changes/)).toHaveCount(0)
   await panel(page).getByLabel('Overall review note',{exact:true}).fill('UNSAVED second revision')
-  await panel(page).getByRole('button',{name:'Save progress',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Save progress',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toHaveText('Review progress saved.')
   expect(puts(state).at(-1)!.body.expectedRevision).toBe(3)
 })
@@ -138,7 +150,7 @@ for(const [name,query,remains] of [
   ['due cohort','page=evaluations&dueState=DUE_SOON',false],
 ] as const)test(`completion reconciles ${name} without Refresh`,async({page})=>{
   const state=await continuityFixture(page,query);await open(page);await edit(page,true)
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toHaveText('Review completed. The original AI result is preserved.')
   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(remains?1:0)
   if(remains){const row=page.locator('tr').filter({has:page.getByRole('button',{name:'Open evaluation review-a',exact:true})});await expect(row).toContainText('REVIEWED');await expect(row).toContainText('Fictional Reviewer');await expect(row.getByRole('cell',{name:'62%',exact:true})).toBeVisible()}
@@ -149,14 +161,15 @@ for(const [name,query,remains] of [
 test('revision conflict retains inputs, blocks submit and requires explicit discard',async({page})=>{
   const state=await continuityFixture(page)
   await state.advance();await open(page)
+  await panel(page).getByText(/Review history \(/).click()
   await expect(panel(page)).toContainText('revision 3')
   await edit(page,true)
   expect((await state.store.review('review-a'))!.revision).toBe(3)
   await evidenceRoundTrip(page,()=>state.advance())
   await restored(page)
   await expect(panel(page).getByRole('alert')).toContainText('This review changed while you were inspecting evidence.')
-  await expect(panel(page).getByRole('button',{name:'Save progress',exact:true})).toBeDisabled()
-  await expect(panel(page).getByRole('button',{name:'Complete review',exact:true})).toBeDisabled()
+  await expect(panel(page).getByRole('button',{name:'Save progress',exact:true}).first()).toBeDisabled()
+  await expect(panel(page).getByRole('button',{name:'Complete review',exact:true}).first()).toBeDisabled()
   await panel(page).getByRole('button',{name:'Refresh server review',exact:true}).click();await restored(page)
   expect(puts(state)).toHaveLength(0)
   await panel(page).getByRole('button',{name:'Discard my unsaved answers',exact:true}).click()
@@ -171,13 +184,13 @@ test('reassignment retains unsaved notes but removes editing and submission auth
   await expect(panel(page)).toContainText('UNSAVED question note: fictional review')
   await expect(panel(page)).toContainText('UNSAVED overall note: fictional review')
   await expect(panel(page).getByLabel('Human answer: Warm opening',{exact:true})).toHaveCount(0)
-  await expect(panel(page).getByRole('button',{name:'Complete review',exact:true})).toHaveCount(0)
+  await expect(panel(page).getByRole('button',{name:'Complete review',exact:true}).first()).toHaveCount(0)
   expect(puts(state)).toHaveLength(0)
   expect(await guard(page)).toEqual({prevented:true,guards:1})
 })
 test('409 refresh retains draft without silently replacing its base',async({page})=>{
   const state=await continuityFixture(page);await open(page);await edit(page,true);await state.advance()
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
   await expect(panel(page).getByRole('alert')).toContainText('changed')
   await restored(page);expect(puts(state)).toHaveLength(1)
   expect(puts(state)[0].body.expectedRevision).toBe(2)
@@ -188,7 +201,7 @@ test('409 refresh retains draft without silently replacing its base',async({page
 test('two drafts survive unrelated SPA pages; guard remains until both are resolved',async({page})=>{
   await continuityFixture(page);await open(page);await edit(page)
   await nav(page,'Conversations');await nav(page,'Evaluations');await open(page,'review-b');await edit(page)
-  await panel(page).getByRole('button',{name:'Save progress',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Save progress',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toHaveText('Review progress saved.')
   expect(await guard(page)).toEqual({prevented:true,guards:1})
   await open(page);await restored(page)
@@ -201,7 +214,7 @@ test('later server page survives evidence return and completion background reloa
   await page.getByRole('button',{name:'Next server page →',exact:true}).click()
   await open(page,'review-b');await edit(page,true);await evidenceRoundTrip(page);await restored(page)
   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(0)
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
   await expect.poll(()=>state.requests.filter(r=>r.url.pathname==='/api/evaluations').at(-1)!.url.searchParams.get('cursor')).toBe('page-two')
   await expect(page.getByRole('button',{name:'Open evaluation review-b',exact:true})).toHaveCount(0)
@@ -209,30 +222,30 @@ test('later server page survives evidence return and completion background reloa
 })
 test('keyboard-only evidence detour returns to review heading, then reviewer completes',async({page})=>{
   await continuityFixture(page)
-  await keyboardTo(page,page.getByRole('button',{name:'Open evaluation review-a',exact:true}));await page.keyboard.press('Enter')
-  await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+  await keyboardTo(page,page.getByRole('button',{name:/^(Open evaluation review-a|Continue review)$/}).first());await page.keyboard.press('Enter')
+  await expect(detailHeading(page)).toBeFocused()
   const first=panel(page).getByLabel('Human answer: Warm opening',{exact:true})
   await keyboardTo(page,first);await page.keyboard.press('n');await page.keyboard.press('Tab')
   await keyboardTo(page,panel(page).getByLabel('Question note: Warm opening',{exact:true}));await page.keyboard.type('UNSAVED keyboard note')
-  await keyboardTo(page,page.getByRole('button',{name:'Open conversation',exact:true}));await page.keyboard.press('Enter')
+  await keyboardTo(page,evidenceButton(page));await page.keyboard.press('Enter')
   await keyboardTo(page,page.getByRole('button',{name:'← Back to review',exact:true}));await page.keyboard.press('Enter')
   await expect(panel(page).getByRole('heading',{name:'Review this evaluation',exact:true})).toBeFocused()
   await expect(first).toHaveValue('No')
   for(const [label,keys] of [['Understanding the issue',['g']],['Resolution',['f']]] as const){await keyboardTo(page,panel(page).getByLabel(`Human answer: ${label}`,{exact:true}));for(const key of keys)await page.keyboard.press(key);await page.keyboard.press('Tab')}
-  await keyboardTo(page,panel(page).getByRole('button',{name:'Complete review',exact:true}));await page.keyboard.press('Enter')
+  await keyboardTo(page,panel(page).getByRole('button',{name:'Complete review',exact:true}).first());await page.keyboard.press('Enter')
   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
 })
 test('unstarted review returns to selected evaluation heading',async({page})=>{
   await continuityFixture(page,undefined,{start:false});await open(page);const url=page.url()
-  await page.getByRole('button',{name:'Open conversation',exact:true}).click()
-  await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click()
-  await expect(page).toHaveURL(url);await expect(page.locator('.evaluation-detail> .panel-heading h2')).toBeFocused()
+  await evidenceButton(page).click()
+  await page.getByRole('button',{name:/^← Back to (evaluation|review)$/}).click()
+  await expect(page).toHaveURL(url);await expect(detailHeading(page)).toBeFocused()
   expect(await guard(page)).toEqual({prevented:false,guards:0})
 })
 test('completion removes the row before a failed background list reload, preserving confirmation',async({page})=>{
   const state=await continuityFixture(page);await open(page);await edit(page,true)
   await page.route('**/api/evaluations?**',route=>route.fulfill({status:503,json:{error:'Fictional list refresh unavailable'}}))
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(0)
   await expect(page.getByRole('alert')).toContainText('Fictional list refresh unavailable')
@@ -246,10 +259,10 @@ test('failed completion retains all changes and explicit retry completes exactly
     if(route.request().method()==='PUT'&&failures++===0)return route.fulfill({status:503,json:{error:'Fictional temporary failure'}})
     return route.fallback()
   })
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
   await expect(panel(page).getByRole('alert')).toContainText('Fictional temporary failure')
   await restored(page);expect(await guard(page)).toEqual({prevented:true,guards:1})
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
   expect(failures).toBe(2);expect(puts(state).filter(r=>r.body.action==='complete')).toHaveLength(1)
 })
@@ -285,7 +298,7 @@ test('a pending completion reconciles the current filters rather than the scope 
     if(route.request().method()==='PUT'){started();await waiting}
     await route.fallback()
   })
-  await panel(page).getByRole('button',{name:'Complete review',exact:true}).click();await received
+  await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click();await received
   await page.getByRole('combobox',{name:'Review status',exact:true}).selectOption('REVIEWED')
   release()
   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
@@ -297,8 +310,9 @@ test('completion in another session keeps unfinished answers separate from compl
   await evidenceRoundTrip(page,()=>state.completeElsewhere())
   await expect(panel(page).getByRole('alert')).toContainText('This review has already been completed.')
   await expect(panel(page)).toContainText('UNSAVED overall note: fictional review')
+  await panel(page).getByText('Review comparison',{exact:true}).click()
   await expect(panel(page)).toContainText('HUMAN PROGRESS PREVIEW')
-  await expect(panel(page).getByRole('button',{name:'Complete review',exact:true})).toHaveCount(0)
+  await expect(panel(page).getByRole('button',{name:'Complete review',exact:true}).first()).toHaveCount(0)
   expect(puts(state)).toHaveLength(0)
   await panel(page).getByRole('button',{name:'Discard my unsaved answers',exact:true}).click()
   await expect(panel(page).getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()
@@ -307,7 +321,7 @@ test('completion in another session keeps unfinished answers separate from compl
 })
 test('a clean saved draft yields to newer completed authority after evidence inspection',async({page})=>{
   const state=await continuityFixture(page);await open(page);await edit(page,true)
-  await panel(page).getByRole('button',{name:'Save progress',exact:true}).click()
+  await panel(page).getByRole('button',{name:'Save progress',exact:true}).first().click()
   await expect(panel(page).getByRole('status')).toHaveText('Review progress saved.')
   await evidenceRoundTrip(page,()=>state.completeElsewhere())
   await expect(panel(page).getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()

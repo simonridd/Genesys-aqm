@@ -386,3 +386,71 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
  .mobile-view-switcher{display:grid;gap:6px;font-weight:700;font-size:13px;margin:12px 0 18px}
  .mobile-view-switcher select{width:100%;min-width:0;max-width:100%;padding:10px;border:1px solid var(--aqm-border-subtle);border-radius:8px;background:var(--aqm-surface);color:var(--aqm-ink)}
 }
+
+/* V0.19E: the table and mobile tasks share search, rank and pagination. */
+.review-task-cards{display:none}
+.review-workspace{padding:24px;overflow-wrap:anywhere}
+.review-workspace>header{margin:20px 0 16px}
+.review-workspace h1{font-size:27px;line-height:1.25;margin:8px 0}
+.review-workspace header p{margin:8px 0;color:var(--aqm-muted);font-size:13px;line-height:1.5}
+.review-workspace-state{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.review-workspace-state .review-due-state{margin:0;flex-direction:row;align-items:center;flex-wrap:wrap}
+.review-workspace .review-evidence{margin-bottom:22px}
+.review-task-first>.panel-heading p{margin:6px 0 0;font-size:12px;color:var(--aqm-muted)}
+.review-task-first .review-progress{font-size:13px;font-weight:700;margin:14px 0}
+.review-task-first .review-ai{padding:12px}
+.review-task-first .review-answer-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.review-task-first .review-question.disagreement{background:var(--aqm-surface)}
+.review-comparison,.review-assignment,.review-evaluation-details{margin-top:20px;padding-top:14px;border-top:1px solid var(--aqm-border-subtle);font-size:13px}
+.review-workspace summary{cursor:pointer;font-weight:700;padding:4px 0}
+.review-finish{margin-top:24px;padding:12px 0;border-top:1px solid var(--aqm-border-subtle)}
+.review-task-first .review-actions{margin:14px 0}
+.review-task-first .review-question{margin-top:12px}
+.review-workspace .review-audit{margin-bottom:20px}
+@media(max-width:650px){
+ .responsive-review-list>.table-scroll{display:none}
+ .review-task-cards{display:grid;gap:12px;padding:12px}
+ .review-task-card{padding:14px;border:1px solid var(--aqm-border-subtle);border-radius:10px;min-width:0;overflow-wrap:anywhere}
+ .review-task-card h2{font-size:17px;margin:8px 0}
+ .review-task-card h2 small{font-size:13px;color:var(--aqm-muted)}
+ .review-task-card p{font-size:12px;margin:8px 0;line-height:1.4}
+ .review-task-card .review-due-state{flex-direction:row;flex-wrap:wrap;align-items:center;margin:0}
+ .review-task-card>button{width:100%;margin-top:4px;min-height:42px}
+ .personal-review-queue>.page-heading{margin-bottom:10px}
+ .personal-review-queue .page-heading .eyebrow,.personal-review-queue .page-heading p{display:none}
+ .personal-review-queue .page-heading h1{font-size:24px;margin:0}
+ .personal-review-queue .evaluation-modes{margin-bottom:10px;gap:8px}
+ .personal-review-queue .personal-review-summary{padding:10px 12px;margin-bottom:10px}
+ .personal-review-queue .personal-review-summary h2{display:none}
+ .personal-review-queue .health-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ .personal-review-queue .health-grid>div{padding:6px;min-height:0}
+ .personal-review-queue .health-grid small{font-size:8px;letter-spacing:0}
+ .personal-review-queue .health-grid strong{font-size:18px;margin-top:4px}
+ .personal-review-queue .personal-review-summary .text-link{margin-top:6px;font-size:11px}
+ .personal-review-queue .more-filters{margin-bottom:0}
+ .personal-review-queue>.field-note{display:none}
+ .personal-review-queue .table-toolbar{padding:10px 12px;flex-direction:row;align-items:center;gap:8px}
+ .personal-review-queue .table-toolbar label{display:flex;gap:8px;align-items:center;min-width:0}
+ .personal-review-queue .table-toolbar input{width:100%;min-width:0}
+ .personal-review-queue .table-toolbar>span{font-size:11px;flex:0 0 64px}
+ .personal-review-queue .operational-table-wrap{margin-top:10px}
+ .review-workspace{padding:16px}
+ .review-workspace>header{margin:16px 0}
+ .review-workspace h1{font-size:23px}
+ .review-task-first .review-answer-grid{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:12px}
+ .review-task-first .review-ai strong{font-size:15px}
+ .review-task-first .review-ai p{margin:6px 0}
+ .review-task-first .review-ai small{font-size:11px}
+ .review-task-first .review-question{padding:14px}
+ .review-workspace .review-actions button{min-height:44px}
+}
+
+.evaluation-queue[hidden],.evaluation-queue [hidden]{display:none}
+
+@media(max-width:650px){
+ .page-content:has(>.personal-review-queue){padding-top:16px}
+ .personal-review-queue .evaluation-modes .more-filters{margin:0}
+}
+
+.review-workspace h1{scroll-margin-top:90px}
+.review-workspace .human-review{margin-top:8px;padding-top:18px}

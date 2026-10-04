@@ -1,0 +1,20 @@
+{
+  "source": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "ctaBounds": {
+    "x": 1025.375,
+    "y": 1387.40625,
+    "width": 78.5,
+    "height": 46
+  },
+  "mainBounds": {
+    "x": 0,
+    "y": 340.515625,
+    "width": 390,
+    "height": 1614.640625
+  },
+  "queuePageTop": 388.515625,
+  "detailTop": 1919.15625,
+  "firstAnswerTop": 4178.765625,
+  "documentWidth": 390,
+  "viewport": 390
+}
