@@ -1,0 +1,20 @@
+{
+  "sourceSha": "5979e62c2b91f4a7c12d360c33aed39450840e26",
+  "acceptedBuildEqualsCommittedArchiveBuild": true,
+  "publicFileCount": 12,
+  "buildFiles": {
+    "index.html": "338a5380f12a10a91feb1ffc3eac207148e5f2c3b44319030aa64b4b2a9f5e3d",
+    "IPIlogo.svg": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "samples/billing-conversation.json": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+    "samples/delivery-conversation.json": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+    "assets/index-BajP062x.js": "9c9de182bd7569e59e868df87076695ed6abba561213b56e1505f6651eca4ed6",
+    "assets/App-YtGMO3qy.js": "ee331deffe44f2dcbd73dda046cbf1404caa595fd4015b6a012a305b75354172",
+    "assets/Demo-BbGS7UDH.js": "7fb44d9bfee7855c4d3b214a3bd90f6d489b5ffe47faec69ab697fb2ae7312d4",
+    "assets/reviews-DClfUy9e.js": "a1d60dbc38d1e8095ac7b6242675e99b1640239646cf81b73d7e0eddb866804f",
+    "assets/index-Cuyety1V.css": "4f7e437fb550968ffd9bcc847a44c8f2103b609da695daafc5fb46f12d780316",
+    "assets/Welcome-Ck0_Qfgb.js": "6a24fd40505432826f7278c782eb66d78ed1275bee738d6c693a9c8239e2b618",
+    "assets/genesysEmail-BJj4UQKD.js": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2"
+  },
+  "archiveBuildRoot": "/private/tmp/aqm-v021a-release/dist"
+}

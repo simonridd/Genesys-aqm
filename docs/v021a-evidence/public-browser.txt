@@ -1,0 +1,18 @@
+
+Running 10 tests using 1 worker
+
+(node:31546) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/10] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x900
+[2/10] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x900
+[3/10] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 390x844
+[4/10] tests/showcase-continuity.spec.ts:20:63 › demo handoff 390x844
+[5/10] tests/showcase-continuity.spec.ts:49:32 › direct library, alternate sample, cards and preference 1440
+[6/10] tests/showcase-continuity.spec.ts:49:32 › direct library, alternate sample, cards and preference 390
+[7/10] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped welcome Open AQM 1440
+[8/10] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped demo Open AQM 1440
+[9/10] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped welcome Open AQM 390
+[10/10] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped demo Open AQM 390
+  10 passed (26.9s)

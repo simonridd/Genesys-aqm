@@ -1,0 +1,62 @@
+{
+  "testedSource": "5979e62c2b91f4a7c12d360c33aed39450840e26",
+  "buildInputsRemainUnchanged": true,
+  "refs": {
+    "refs/heads/gh-pages": "cb30f41a012a2cb8f00c3c4a303371b1eb36ff4c",
+    "refs/heads/main": "fadb73dac800cede26389fe883602967cf5b8784",
+    "refs/tags/v0.20.0": "eac819eec24bbfa53295568638fbdfe46bbc3d66",
+    "refs/tags/v0.20.0^{}": "fadb73dac800cede26389fe883602967cf5b8784"
+  },
+  "mergeBase": "fadb73dac800cede26389fe883602967cf5b8784",
+  "finalBrowserStats": {
+    "baseline-browser.json": {
+      "startTime": "2026-10-04T18:46:15.126Z",
+      "duration": 6600.808,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browser.json": {
+      "startTime": "2026-10-04T18:51:54.280Z",
+      "duration": 37572.004,
+      "expected": 17,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "showcase-smoke.json": {
+      "startTime": "2026-10-04T18:52:32.421Z",
+      "duration": 26300.579999999998,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "investigation-smoke.json": {
+      "startTime": "2026-10-04T18:50:22.592Z",
+      "duration": 7842.117,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "public-browser.json": {
+      "startTime": "2026-10-04T18:56:29.642Z",
+      "duration": 26945.700999999997,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "deterministicTests": {
+    "passed": 714,
+    "failed": 0
+  },
+  "productionPreservationPassed": true,
+  "noPullRequest": true,
+  "noMerge": true,
+  "noTagCreationOrMovement": true,
+  "next": "ChatGPT review/merge"
+}

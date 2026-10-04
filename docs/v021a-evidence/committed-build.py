@@ -1,11 +1,11 @@
 """Rebuild an immutable Git archive and compare every accepted build input/output."""
-import pathlib,subprocess,json,hashlib
+import pathlib,subprocess,json,hashlib,sys
 repo=pathlib.Path(__file__).resolve().parents[2];out=repo/'docs/v021a-evidence'
-source=subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip()
+source=subprocess.check_output(['git','rev-parse',sys.argv[1] if len(sys.argv)>1 else 'HEAD'],cwd=repo,text=True).strip()
 release=pathlib.Path('/private/tmp/aqm-v021a-release');release.mkdir(exist_ok=True)
 archive=subprocess.check_output(['git','archive',source],cwd=repo)
 subprocess.run(['tar','-x','-C',str(release)],input=archive,check=True)
-(release/'node_modules').symlink_to((repo/'node_modules').resolve(),target_is_directory=True)
+if not (release/'node_modules').exists(): (release/'node_modules').symlink_to((repo/'node_modules').resolve(),target_is_directory=True)
 with (out/'committed-build.txt').open('w') as log:subprocess.run(['npm','run','build'],cwd=release,stdout=log,stderr=subprocess.STDOUT,check=True)
 def files(root):return {p.relative_to(root).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*') if p.is_file()}
 accepted=files(repo/'dist');committed=files(release/'dist')
