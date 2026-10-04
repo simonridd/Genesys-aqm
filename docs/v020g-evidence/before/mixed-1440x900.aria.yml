@@ -1,0 +1,26 @@
+- paragraph: 1000 interactions considered (Candidates) · 1000 met policy criteria
+- list "Coverage funnel":
+  - listitem:
+    - strong: Eligible
+    - text: 1000 Met policy criteria
+  - listitem:
+    - strong: Sampled
+    - text: 500 50% · Sampling coverage · of eligible
+  - listitem:
+    - strong: Content available
+    - text: 400 80% · Content availability · of sampled
+  - listitem:
+    - strong: Evaluated
+    - text: 350 87.5% · Sample completion · of available
+- paragraph:
+  - strong: "Evaluation coverage: 35%"
+  - text: · Evaluated / eligible
+- paragraph:
+  - text: "Failed evaluation attempts:"
+  - strong: "75"
+- paragraph: Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+- heading "Where coverage was lost" [level=3]
+- paragraph: 500 eligible interactions were not selected by the sampling policy.
+- paragraph: 100 sampled interactions had no usable conversation content.
+- paragraph: 50 interactions had content available but did not reach a completed evaluation.
+- paragraph: Sampling is often intentional. Failed attempts are separate from interaction counts; an interaction may have more than one form evaluation attempt.

@@ -1,0 +1,118 @@
+IPI AQM
+Automated Quality Management
+Monitor / Quality
+◌
+Overview
+◷
+Evaluations
+▥
+Analytics
+◎
+Calibration
+Configuration
+Interactions
+⚙
+Settings
+About / product tour
+✦
+Decision intelligence powered by Jev
+
+Typed AI decisions, shaped into clear quality signals.
+
+V0.19D SHOWCASE • 2026
+Workspace / Analytics
+ADMIN
+Jev available through AQM
+Sample / browser data
+Saved AQM analytics
+QUALITY ANALYTICS
+Quality analytics
+
+Understand quality, coverage and where to investigate.
+
+2 September 2026 – 2 October 2026
+
+Genesys Cloud · All policies · All published forms
+
+12 evaluations · 12 evaluated conversations
+Change filters
+Overview
+Agents
+Queues
+Forms
+Groups
+Questions
+Coverage
+Coverage scope
+
+2 September 2026 – 2 October 2026 · Genesys Cloud · All policies
+
+Quality describes the conversations that were evaluated. Coverage describes how broadly the policy evaluated eligible work.
+
+Date, source and policy filter monitoring runs. Form, queue, agent, channel and trigger quality filters do not change overall coverage denominators.
+
+1250 interactions considered (Candidates) · 1000 met policy criteria
+
+Eligible
+1000
+Met policy criteria
+Sampled
+500
+50% · Sampling coverage · of eligible
+Content available
+460
+92% · Content availability · of sampled
+Evaluated
+450
+97.8% · Sample completion · of available
+
+Evaluation coverage: 45% · Evaluated / eligible
+
+Failed evaluation attempts: 10
+
+Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+
+Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+
+Policy selection
+
+500 eligible interactions were not selected by the sampling policy.
+
+The sampling policy selected 500 of 1,000 eligible interactions (50%).
+
+Sampling can deliberately select only part of the eligible population.
+
+Coverage after sampling
+
+40 sampled interactions had no usable conversation content.
+
+10 interactions had content available but did not reach a completed evaluation.
+
+Content available is not recorded by queue or agent. Breakdowns include only runs carrying that evidence; older runs may not include it. Viewing evaluated quality narrows evaluations without changing historical coverage.
+
+Coverage by queue
+
+2 runs carry queue coverage evidence.
+
+Claims
+
+600 Eligible · 300 Sampled · 270 Evaluated
+
+View evaluated quality →
+Service
+
+400 Eligible · 200 Sampled · 180 Evaluated
+
+View evaluated quality →
+Coverage by agent
+Alex
+
+500 Eligible · 250 Sampled · 220 Evaluated
+
+View evaluated quality →
+Sam
+
+500 Eligible · 250 Sampled · 230 Evaluated
+
+View evaluated quality →
+Data scope & technical details

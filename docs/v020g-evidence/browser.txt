@@ -1,0 +1,36 @@
+
+Running 28 tests using 1 worker
+
+(node:67294) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1440x900
+[2/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1440x900
+[3/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 1440x900
+[4/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 1440x900
+[5/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 1440x900
+[6/28] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x900
+[7/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1920x1080
+[8/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1920x1080
+[9/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 1920x1080
+[10/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 1920x1080
+[11/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 1920x1080
+[12/28] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1920x1080
+[13/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 390x844
+[14/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 390x844
+[15/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 390x844
+[16/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 390x844
+[17/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 390x844
+[18/28] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 390x844
+[19/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1440x720
+[20/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1440x720
+[21/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 1440x720
+[22/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 1440x720
+[23/28] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 1440x720
+[24/28] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x720
+[25/28] tests/coverage-interpretation.spec.ts:70:2 › goal-only quality leader explains eligible work without a loss conclusion
+[26/28] tests/coverage-interpretation.spec.ts:84:2 › no run evidence preserves empty-state explanation
+[27/28] tests/coverage-interpretation.spec.ts:90:44 › Tab-only Overview disclosure to Analytics 1440
+[28/28] tests/coverage-interpretation.spec.ts:90:44 › Tab-only Overview disclosure to Analytics 390
+  28 passed (41.9s)

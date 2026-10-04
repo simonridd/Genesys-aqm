@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test'
 import {mkdirSync,writeFileSync,readFileSync} from 'node:fs'
 import {firstScanFixture} from './overviewFirstScanFixture'
-const phase=process.env.AQM_SCAN_PHASE??'after',out=`docs/v020e-evidence/${phase}`
+const phase=process.env.AQM_SCAN_PHASE??'after',out=process.env.AQM_SCAN_EVIDENCE??`docs/v020e-evidence/${phase}`
 mkdirSync(out,{recursive:true})
 for(const size of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844},{width:1440,height:720}])test(`geometry ${size.width}x${size.height}`,async({page})=>{
  await page.setViewportSize(size);const f=await firstScanFixture(page)
@@ -17,7 +17,7 @@ for(const size of [{width:1440,height:900},{width:1920,height:1080},{width:390,h
  await page.screenshot({path:`${out}/${size.width}x${size.height}-initial.png`})
  await page.screenshot({path:`${out}/${size.width}x${size.height}-full.png`,fullPage:true})
  if(phase==='after'){
-  const baseline=JSON.parse(readFileSync(`docs/v020e-evidence/before/${size.width}x${size.height}.json`,'utf8'))
+  const baseline=JSON.parse(readFileSync(`${process.env.AQM_SCAN_BASELINE??'docs/v020e-evidence/before'}/${size.width}x${size.height}.json`,'utf8'))
   const counts=f.requests.reduce<Record<string,number>>((counts,u)=>({...counts,[u.pathname]:(counts[u.pathname]??0)+1}),{})
   expect(counts).toEqual(baseline.requests)
   expect(geometry.panels.slice(0,7).map(p=>p.name)).toEqual(['Attention required','At a glance','Quality summary','Coverage summary','Review work summary','Automation health summary','Quality detail'])

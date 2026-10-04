@@ -1,0 +1,20 @@
+{
+  "goal": "Why weren't all eligible conversations evaluated?",
+  "route": [
+    "Overview",
+    "Coverage details"
+  ],
+  "visibleEvidence": {
+    "selection": "Policy selection\n\n500 eligible interactions were not selected by the sampling policy.\n\nThe sampling policy selected 500 of 1,000 eligible interactions (50%).\n\nSampling can deliberately select only part of the eligible population.",
+    "downstream": "Coverage after sampling\n\n100 sampled interactions had no usable conversation content.\n\n50 interactions had content available but did not reach a completed evaluation.",
+    "attempts": "Failed evaluation attempts: 75\n\nFailed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt."
+  },
+  "answer": [
+    "500 were not selected by the sampling policy",
+    "100 selected interactions lacked usable content",
+    "50 interactions with content did not reach a completed evaluation",
+    "75 failed evaluation attempts are separate attempt-level evidence"
+  ],
+  "wrongTurns": 0,
+  "method": "Scripted agent replay from visible content; no recruited human participant or timed usability claim"
+}

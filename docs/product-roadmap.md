@@ -98,3 +98,7 @@ Implemented: Attention remains first; Quality, Coverage, Review Work and Automat
 ## V0.20F — User-facing language & technical detail hierarchy
 
 Implemented and qualified: Conversation detail leads with messages and human metadata; Policies use saved/local product language and readable exact-version assignments; Evaluations/Human review use human status labels and ordinary filters. Closed native disclosures retain exact references, IDs and evaluation provenance. Frontend only; contracts, review safety and definition authority remain unchanged. Local/public fixture checks, complete Pages byte/tree equality and read-only production preservation pass. See [implementation and evidence](v020f-user-language.md).
+
+## V0.20G — Coverage interpretation
+
+Implemented shared Policy selection and Coverage after sampling headings, with deliberate sampling explained independently of content/completion gaps and failed attempt units. Funnel metrics/denominators remain unchanged; Overview's compact first scan and closed details, Analytics drills/history, and run detail are preserved. Qualified with 691 deterministic tests, 28 Coverage browser checks and 17 focused regressions across desktop/mobile. Frontend-only Pages publication; backend remains aqm-api-v019-e92f2d6. See [qualification and evidence](v020g-coverage-interpretation.md).

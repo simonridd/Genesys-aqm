@@ -1,0 +1,50 @@
+[
+  {
+    "viewport": "1440x900",
+    "canonicalFirstScanGeometryAndRequestsEqual": {
+      "panels": true,
+      "signals": true,
+      "h1Top": true,
+      "documentHeight": true,
+      "requests": true,
+      "firstScanHeadingGeometry": true
+    },
+    "note": "Comparison covers first-scan headings through Quality trend and all panel/signal geometry. New headings inside closed Coverage details are excluded."
+  },
+  {
+    "viewport": "1920x1080",
+    "canonicalFirstScanGeometryAndRequestsEqual": {
+      "panels": true,
+      "signals": true,
+      "h1Top": true,
+      "documentHeight": true,
+      "requests": true,
+      "firstScanHeadingGeometry": true
+    },
+    "note": "Comparison covers first-scan headings through Quality trend and all panel/signal geometry. New headings inside closed Coverage details are excluded."
+  },
+  {
+    "viewport": "390x844",
+    "canonicalFirstScanGeometryAndRequestsEqual": {
+      "panels": true,
+      "signals": true,
+      "h1Top": true,
+      "documentHeight": true,
+      "requests": true,
+      "firstScanHeadingGeometry": true
+    },
+    "note": "Comparison covers first-scan headings through Quality trend and all panel/signal geometry. New headings inside closed Coverage details are excluded."
+  },
+  {
+    "viewport": "1440x720",
+    "canonicalFirstScanGeometryAndRequestsEqual": {
+      "panels": true,
+      "signals": true,
+      "h1Top": true,
+      "documentHeight": true,
+      "requests": true,
+      "firstScanHeadingGeometry": true
+    },
+    "note": "Comparison covers first-scan headings through Quality trend and all panel/signal geometry. New headings inside closed Coverage details are excluded."
+  }
+]

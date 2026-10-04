@@ -1,0 +1,6 @@
+{
+  "rubric": {"1":"Seriously ineffective","2":"Major friction","3":"Acceptable prototype","4":"Strong internal product","5":"Unusually polished/intuitive"},
+  "scores": {"Coverage interpretability":4,"Information quality":4,"Operational usefulness":4,"Mobile comprehension":4},
+  "assessment":"Scoped agent assessment supported by visible goal/scenario replays, separate semantic headings, exact metric equality, shared surface/keyboard proof and readable mobile captures. No whole-product mean.",
+  "limits":["Scripted agent qualification rather than independent human participants","Inherited mobile navigation length","Source data alone does not establish the causes of post-selection gaps"]
+}

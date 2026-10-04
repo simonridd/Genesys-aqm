@@ -3,7 +3,7 @@ import {mkdirSync,writeFileSync} from 'node:fs'
 import {summarize,summarizeCoverage} from '../src/domain/analytics'
 import {firstScanFixture} from './overviewFirstScanFixture'
 import {navigateWorkspace} from './workspace-navigation'
-const out='docs/v020e-evidence';mkdirSync(out,{recursive:true})
+const out=process.env.AQM_SCAN_EVIDENCE??'docs/v020e-evidence';mkdirSync(out,{recursive:true})
 const region=(page:Page,name:string)=>page.getByRole('region',{name,exact:true})
 const metric=(p:Locator,label:string)=>p.locator('.overview-metric').filter({has:p.page().getByText(label,{exact:true})})
 async function refresh(page:Page){await page.getByRole('button',{name:'Refresh',exact:true}).click();await expect(page.getByRole('button',{name:'Refresh',exact:true})).toBeEnabled()}

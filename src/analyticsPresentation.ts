@@ -20,11 +20,29 @@ export function coverageSteps(c:CoverageCounts){return [
  {label:'Content available',count:c.evaluable,rate:coverageRate(c.evaluable,c.sampled),detail:'Content availability · of sampled'},
  {label:'Evaluated',count:c.evaluated,rate:coverageRate(c.evaluated,c.evaluable),detail:'Sample completion · of available'},
 ]}
-export function coverageGaps(c:CoverageCounts){return [
- `${c.eligible-c.sampled} eligible interactions were not selected by the sampling policy.`,
- `${c.sampled-c.evaluable} sampled interactions had no usable conversation content.`,
- `${c.evaluable-c.evaluated} interactions had content available but did not reach a completed evaluation.`,
-]}
+export const failedEvaluationAttemptsCopy='Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.'
+export interface CoverageInterpretation {
+ selection:{description:string;summary?:string;note?:string}
+ afterSelection:string[]
+}
+// Interpretation only: counts and domain rates remain untouched, including invalid source data.
+export function coverageInterpretation(c:CoverageCounts):CoverageInterpretation {
+ const stages=[c.candidate,c.eligible,c.sampled,c.evaluable,c.evaluated]
+ if(stages.some(n=>!Number.isInteger(n)||n<0)||stages.some((n,i)=>i>0&&n>stages[i-1]))return {selection:{description:'Coverage counts are inconsistent in this scope.'},afterSelection:[]}
+ if(c.eligible===0)return {selection:{description:'No eligible interactions in this scope.'},afterSelection:[]}
+ const notSelected=Math.max(0,c.eligible-c.sampled),withoutContent=Math.max(0,c.sampled-c.evaluable),notCompleted=Math.max(0,c.evaluable-c.evaluated)
+ return {
+  selection:notSelected?{
+   description:`${notSelected} eligible interactions were not selected by the sampling policy.`,
+   summary:`The sampling policy selected ${c.sampled.toLocaleString('en-GB')} of ${c.eligible.toLocaleString('en-GB')} eligible interactions (${qualityPercent(coverageRate(c.sampled,c.eligible))}).`,
+   note:'Sampling can deliberately select only part of the eligible population.',
+  }:{description:'All eligible interactions were selected.'},
+  afterSelection:c.sampled===0?['No sampled interactions in this scope.']:[
+   withoutContent?`${withoutContent} sampled interactions had no usable conversation content.`:'All sampled interactions had usable content.',
+   ...(c.evaluable===0?[]:[notCompleted?`${notCompleted} interactions had content available but did not reach a completed evaluation.`:'All interactions with usable content reached a completed evaluation.']),
+  ],
+ }
+}
 
 export function cohortDateLabel(from:string,to:string){
  if(!from&&!to)return 'All available dates'

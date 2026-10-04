@@ -1,0 +1,320 @@
+
+Running 27 tests using 1 worker
+
+(node:66688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1440x900
+[2/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1440x900
+[3/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 1440x900
+[4/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 1440x900
+[5/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 1440x900
+[6/27] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x900
+  1) tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x900 ─────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 36
+    + Received  +  1
+
+    - 1000 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 400
+    - 80% · Content availability · of sampled
+    - Evaluated
+    - 350
+    - 87.5% · Sample completion · of available
+    -
+    - Evaluation coverage: 35% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 75
+    -
+    - Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    -
+    - Policy selection
+    -
+    - 500 eligible interactions were not selected by the sampling policy.
+    -
+    - The sampling policy selected 500 of 1,000 eligible interactions (50%).
+    -
+    - Sampling can deliberately select only part of the eligible population.
+    -
+    - Coverage after sampling
+    -
+    - 100 sampled interactions had no usable conversation content.
+    -
+    - 50 interactions had content available but did not reach a completed evaluation.
+    + 1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation."
+
+
+      60 |    const requests=f.requests.length;await details.locator('summary').click();await interpretation(details.locator('.coverage-funnel'),'mixed');expect(f.requests.length).toBe(requests)
+      61 |    const expected=await details.locator('.coverage-funnel').innerText();await capture(page,`overview-${viewport.width}x${viewport.height}`,details.locator('.coverage-funnel'))
+    > 62 |    await details.getByRole('button',{name:'Explore coverage →'}).click();await expect(page.locator('.coverage-funnel')).toHaveText(expected)
+         |                                                                                                                         ^
+      63 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({analyticsTab:'coverage',source:'genesys-cloud',from:'2026-09-25',to:'2026-10-02'})
+      64 |    await navigateWorkspace(page,'Overview');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click()
+      65 |    const run=page.locator('#overview-run-detail .coverage-funnel');await interpretation(run,'mixed');await expect(run).toHaveText(expected);await capture(page,`run-${viewport.width}x${viewport.height}`,run)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/coverage-interpretation.spec.ts:62:121
+
+    Error Context: test-results/coverage-interpretation-sh-2a5d9-ew-and-run-details-1440x900/error-context.md
+
+
+(node:66703) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1920x1080
+[8/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1920x1080
+[9/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 1920x1080
+[10/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 1920x1080
+[11/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 1920x1080
+[12/27] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1920x1080
+  2) tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1920x1080 ────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 36
+    + Received  +  1
+
+    - 1000 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 400
+    - 80% · Content availability · of sampled
+    - Evaluated
+    - 350
+    - 87.5% · Sample completion · of available
+    -
+    - Evaluation coverage: 35% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 75
+    -
+    - Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    -
+    - Policy selection
+    -
+    - 500 eligible interactions were not selected by the sampling policy.
+    -
+    - The sampling policy selected 500 of 1,000 eligible interactions (50%).
+    -
+    - Sampling can deliberately select only part of the eligible population.
+    -
+    - Coverage after sampling
+    -
+    - 100 sampled interactions had no usable conversation content.
+    -
+    - 50 interactions had content available but did not reach a completed evaluation.
+    + 1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation."
+
+
+      60 |    const requests=f.requests.length;await details.locator('summary').click();await interpretation(details.locator('.coverage-funnel'),'mixed');expect(f.requests.length).toBe(requests)
+      61 |    const expected=await details.locator('.coverage-funnel').innerText();await capture(page,`overview-${viewport.width}x${viewport.height}`,details.locator('.coverage-funnel'))
+    > 62 |    await details.getByRole('button',{name:'Explore coverage →'}).click();await expect(page.locator('.coverage-funnel')).toHaveText(expected)
+         |                                                                                                                         ^
+      63 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({analyticsTab:'coverage',source:'genesys-cloud',from:'2026-09-25',to:'2026-10-02'})
+      64 |    await navigateWorkspace(page,'Overview');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click()
+      65 |    const run=page.locator('#overview-run-detail .coverage-funnel');await interpretation(run,'mixed');await expect(run).toHaveText(expected);await capture(page,`run-${viewport.width}x${viewport.height}`,run)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/coverage-interpretation.spec.ts:62:121
+
+    Error Context: test-results/coverage-interpretation-sh-bc51f-w-and-run-details-1920x1080/error-context.md
+
+
+(node:66749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 390x844
+[14/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 390x844
+[15/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 390x844
+[16/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 390x844
+[17/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 390x844
+[18/27] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 390x844
+  3) tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 390x844 ──────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 36
+    + Received  +  1
+
+    - 1000 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 400
+    - 80% · Content availability · of sampled
+    - Evaluated
+    - 350
+    - 87.5% · Sample completion · of available
+    -
+    - Evaluation coverage: 35% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 75
+    -
+    - Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    -
+    - Policy selection
+    -
+    - 500 eligible interactions were not selected by the sampling policy.
+    -
+    - The sampling policy selected 500 of 1,000 eligible interactions (50%).
+    -
+    - Sampling can deliberately select only part of the eligible population.
+    -
+    - Coverage after sampling
+    -
+    - 100 sampled interactions had no usable conversation content.
+    -
+    - 50 interactions had content available but did not reach a completed evaluation.
+    + 1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation."
+
+
+      60 |    const requests=f.requests.length;await details.locator('summary').click();await interpretation(details.locator('.coverage-funnel'),'mixed');expect(f.requests.length).toBe(requests)
+      61 |    const expected=await details.locator('.coverage-funnel').innerText();await capture(page,`overview-${viewport.width}x${viewport.height}`,details.locator('.coverage-funnel'))
+    > 62 |    await details.getByRole('button',{name:'Explore coverage →'}).click();await expect(page.locator('.coverage-funnel')).toHaveText(expected,{useInnerText:true})
+         |                                                                                                                         ^
+      63 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({analyticsTab:'coverage',source:'genesys-cloud',from:'2026-09-25',to:'2026-10-02'})
+      64 |    await navigateWorkspace(page,'Overview');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click()
+      65 |    const run=page.locator('#overview-run-detail .coverage-funnel');await interpretation(run,'mixed');await expect(run).toHaveText(expected,{useInnerText:true});await capture(page,`run-${viewport.width}x${viewport.height}`,run)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/coverage-interpretation.spec.ts:62:121
+
+    Error Context: test-results/coverage-interpretation-sh-ca45e-iew-and-run-details-390x844/error-context.md
+
+
+(node:66782) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[19/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1440x720
+[20/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1440x720
+[21/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullSelection 1440x720
+[22/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics fullCoverage 1440x720
+[23/27] tests/coverage-interpretation.spec.ts:49:56 › Analytics zeroEligible 1440x720
+[24/27] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x720
+  4) tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x720 ─────────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('.coverage-funnel')
+    Timeout: 5000ms
+    - Expected  - 36
+    + Received  +  1
+
+    - 1000 interactions considered (Candidates) · 1000 met policy criteria
+    -
+    - Eligible
+    - 1000
+    - Met policy criteria
+    - Sampled
+    - 500
+    - 50% · Sampling coverage · of eligible
+    - Content available
+    - 400
+    - 80% · Content availability · of sampled
+    - Evaluated
+    - 350
+    - 87.5% · Sample completion · of available
+    -
+    - Evaluation coverage: 35% · Evaluated / eligible
+    -
+    - Failed evaluation attempts: 75
+    -
+    - Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+    -
+    - Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+    -
+    - Policy selection
+    -
+    - 500 eligible interactions were not selected by the sampling policy.
+    -
+    - The sampling policy selected 500 of 1,000 eligible interactions (50%).
+    -
+    - Sampling can deliberately select only part of the eligible population.
+    -
+    - Coverage after sampling
+    -
+    - 100 sampled interactions had no usable conversation content.
+    -
+    - 50 interactions had content available but did not reach a completed evaluation.
+    + 1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation.
+
+    Call log:
+      - Expect "toHaveText" locator('.coverage-funnel') with timeout 5000ms
+      - waiting for locator('.coverage-funnel')
+        10 × locator resolved to <div class="coverage-funnel">…</div>
+           - unexpected value "1000 interactions considered (Candidates) · 1000 met policy criteriaEligible1000Met policy criteriaSampled50050% · Sampling coverage · of eligibleContent available40080% · Content availability · of sampledEvaluated35087.5% · Sample completion · of availableEvaluation coverage: 35% · Evaluated / eligibleFailed evaluation attempts: 75Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.Policy selection500 eligible interactions were not selected by the sampling policy.The sampling policy selected 500 of 1,000 eligible interactions (50%).Sampling can deliberately select only part of the eligible population.Coverage after sampling100 sampled interactions had no usable conversation content.50 interactions had content available but did not reach a completed evaluation."
+
+
+      60 |    const requests=f.requests.length;await details.locator('summary').click();await interpretation(details.locator('.coverage-funnel'),'mixed');expect(f.requests.length).toBe(requests)
+      61 |    const expected=await details.locator('.coverage-funnel').innerText();await capture(page,`overview-${viewport.width}x${viewport.height}`,details.locator('.coverage-funnel'))
+    > 62 |    await details.getByRole('button',{name:'Explore coverage →'}).click();await expect(page.locator('.coverage-funnel')).toHaveText(expected,{useInnerText:true})
+         |                                                                                                                         ^
+      63 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({analyticsTab:'coverage',source:'genesys-cloud',from:'2026-09-25',to:'2026-10-02'})
+      64 |    await navigateWorkspace(page,'Overview');await page.getByRole('region',{name:'Recent runs'}).getByRole('button').first().click()
+      65 |    const run=page.locator('#overview-run-detail .coverage-funnel');await interpretation(run,'mixed');await expect(run).toHaveText(expected,{useInnerText:true});await capture(page,`run-${viewport.width}x${viewport.height}`,run)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/coverage-interpretation.spec.ts:62:121
+
+    Error Context: test-results/coverage-interpretation-sh-fd5c0-ew-and-run-details-1440x720/error-context.md
+
+
+(node:66810) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[25/27] tests/coverage-interpretation.spec.ts:70:2 › no run evidence preserves empty-state explanation
+[26/27] tests/coverage-interpretation.spec.ts:76:44 › Tab-only Overview disclosure to Analytics 1440
+[27/27] tests/coverage-interpretation.spec.ts:76:44 › Tab-only Overview disclosure to Analytics 390
+  4 failed
+    tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x900 ──────────
+    tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1920x1080 ─────────
+    tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 390x844 ───────────
+    tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x720 ──────────
+  23 passed (59.7s)

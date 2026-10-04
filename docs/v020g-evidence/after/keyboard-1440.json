@@ -1,0 +1,12 @@
+{
+  "trace": [
+    "Coverage details",
+    "Explore coverage",
+    "Analytics Coverage"
+  ],
+  "method": "Tab and Enter; no pointer or programmatic focus",
+  "detailRequests": 0,
+  "errors": [],
+  "writes": [],
+  "blocked": []
+}

@@ -1,0 +1,25 @@
+
+Running 17 tests using 1 worker
+
+(node:67238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[2/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[3/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[4/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[5/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 1440x900
+[6/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 1920x1080
+[7/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 390x844
+[8/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 1440x720
+[9/17] tests/overview-first-scan.spec.ts:40:1 › coverage/system detail retains evidence, trend and range with no new snapshot calls
+[10/17] tests/overview-geometry.spec.ts:6:117 › geometry 1440x900
+[11/17] tests/overview-geometry.spec.ts:6:117 › geometry 1920x1080
+[12/17] tests/overview-geometry.spec.ts:6:117 › geometry 390x844
+[13/17] tests/overview-geometry.spec.ts:6:117 › geometry 1440x720
+[14/17] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1440
+[15/17] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1920
+[16/17] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 390
+[17/17] tests/quality-actionability.spec.ts:48:1 › Overview Analytics entry replaces stale quality filters
+  17 passed (44.2s)

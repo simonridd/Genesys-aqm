@@ -1,0 +1,73 @@
+{
+  "counts": {
+    "candidate": 100,
+    "eligible": 100,
+    "sampled": 100,
+    "evaluable": 100,
+    "evaluated": 100,
+    "failed": 0
+  },
+  "totals": {
+    "candidate": 100,
+    "eligible": 100,
+    "sampled": 100,
+    "evaluable": 100,
+    "evaluated": 100,
+    "successful": 100,
+    "failed": 0,
+    "samplingCoverage": 1,
+    "evaluationCoverage": 1,
+    "sampleCompletion": 1,
+    "transcriptAvailability": 1
+  },
+  "steps": [
+    {
+      "label": "Eligible",
+      "count": 100,
+      "rate": null,
+      "detail": "Met policy criteria"
+    },
+    {
+      "label": "Sampled",
+      "count": 100,
+      "rate": 1,
+      "detail": "Sampling coverage · of eligible"
+    },
+    {
+      "label": "Content available",
+      "count": 100,
+      "rate": 1,
+      "detail": "Content availability · of sampled"
+    },
+    {
+      "label": "Evaluated",
+      "count": 100,
+      "rate": 1,
+      "detail": "Sample completion · of available"
+    }
+  ],
+  "apiRequests": [
+    "/api/overview",
+    "/api/policies",
+    "/api/schedules",
+    "/api/runs",
+    "/api/session",
+    "/api/governance",
+    "/api/answer-sets",
+    "/api/forms",
+    "/api/policies",
+    "/api/question-groups",
+    "/api/alerts",
+    "/api/monitoring-health",
+    "/api/overview",
+    "/api/policies",
+    "/api/schedules",
+    "/api/runs",
+    "/api/policies",
+    "/api/forms",
+    "/api/analytics"
+  ],
+  "errors": [],
+  "writes": [],
+  "blocked": []
+}

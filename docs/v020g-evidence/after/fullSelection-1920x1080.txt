@@ -1,0 +1,32 @@
+100 interactions considered (Candidates) · 100 met policy criteria
+
+Eligible
+100
+Met policy criteria
+Sampled
+100
+100% · Sampling coverage · of eligible
+Content available
+90
+90% · Content availability · of sampled
+Evaluated
+85
+94.4% · Sample completion · of available
+
+Evaluation coverage: 85% · Evaluated / eligible
+
+Failed evaluation attempts: 0
+
+Failed evaluation attempts are attempts, not interaction counts. One interaction can have more than one form evaluation attempt.
+
+Coverage totals count observations across monitoring runs. The same conversation may appear in more than one run.
+
+Policy selection
+
+All eligible interactions were selected.
+
+Coverage after sampling
+
+10 sampled interactions had no usable conversation content.
+
+5 interactions had content available but did not reach a completed evaluation.

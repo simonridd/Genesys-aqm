@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-v020g-coverage-interpretation
+
+
+ Test Files  71 passed (71)
+      Tests  691 passed (691)
+   Start at  17:11:11
+   Duration  2.01s (import 39%, tests 37%, transform 23%, worker 2%)
+
+    Isolate  71 workers spawned · ~84ms startup each (spawn + environment, per file)
+             at least ~514ms faster with isolate: false — reuses workers across files instead of one per file
+

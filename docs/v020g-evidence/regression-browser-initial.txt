@@ -1,0 +1,202 @@
+
+Running 17 tests using 1 worker
+
+(node:66867) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[2/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[3/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[4/17] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[5/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 1440x900
+[6/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 1920x1080
+[7/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 390x844
+[8/17] tests/overview-first-scan.spec.ts:10:121 › goal-only first scan 1440x720
+[9/17] tests/overview-first-scan.spec.ts:40:1 › coverage/system detail retains evidence, trend and range with no new snapshot calls
+[10/17] tests/overview-geometry.spec.ts:6:117 › geometry 1440x900
+  1) tests/overview-geometry.spec.ts:6:117 › geometry 1440x900 ─────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+      Object {
+    -   "/api/alerts": 2,
+    +   "/api/alerts": 1,
+        "/api/answer-sets": 1,
+        "/api/forms": 1,
+        "/api/governance": 1,
+    -   "/api/monitoring-health": 2,
+    -   "/api/overview": 3,
+    -   "/api/policies": 4,
+    +   "/api/monitoring-health": 1,
+    +   "/api/overview": 2,
+    +   "/api/policies": 3,
+        "/api/question-groups": 1,
+    -   "/api/runs": 3,
+    -   "/api/schedules": 3,
+    +   "/api/runs": 2,
+    +   "/api/schedules": 2,
+        "/api/session": 1,
+      }
+
+      20 |   const baseline=JSON.parse(readFileSync(`docs/v020e-evidence/before/${size.width}x${size.height}.json`,'utf8'))
+      21 |   const counts=f.requests.reduce<Record<string,number>>((counts,u)=>({...counts,[u.pathname]:(counts[u.pathname]??0)+1}),{})
+    > 22 |   expect(counts).toEqual(baseline.requests)
+         |                  ^
+      23 |   expect(geometry.panels.slice(0,7).map(p=>p.name)).toEqual(['Attention required','At a glance','Quality summary','Coverage summary','Review work summary','Automation health summary','Quality detail'])
+      24 |   if(size.width===1440&&size.height===900)for(const signal of geometry.signals)expect(signal.bottom).toBeLessThan(900)
+      25 |   if(size.width===1920)expect(geometry.panels.find(p=>p.name==='At a glance')!.bottom).toBeLessThanOrEqual(1080)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/overview-geometry.spec.ts:22:18
+
+    Error Context: test-results/overview-geometry-geometry-1440x900/error-context.md
+
+
+(node:66966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/17] tests/overview-geometry.spec.ts:6:117 › geometry 1920x1080
+  2) tests/overview-geometry.spec.ts:6:117 › geometry 1920x1080 ────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+      Object {
+    -   "/api/alerts": 2,
+    +   "/api/alerts": 1,
+        "/api/answer-sets": 1,
+        "/api/forms": 1,
+        "/api/governance": 1,
+    -   "/api/monitoring-health": 2,
+    -   "/api/overview": 3,
+    -   "/api/policies": 4,
+    +   "/api/monitoring-health": 1,
+    +   "/api/overview": 2,
+    +   "/api/policies": 3,
+        "/api/question-groups": 1,
+    -   "/api/runs": 3,
+    -   "/api/schedules": 3,
+    +   "/api/runs": 2,
+    +   "/api/schedules": 2,
+        "/api/session": 1,
+      }
+
+      20 |   const baseline=JSON.parse(readFileSync(`docs/v020e-evidence/before/${size.width}x${size.height}.json`,'utf8'))
+      21 |   const counts=f.requests.reduce<Record<string,number>>((counts,u)=>({...counts,[u.pathname]:(counts[u.pathname]??0)+1}),{})
+    > 22 |   expect(counts).toEqual(baseline.requests)
+         |                  ^
+      23 |   expect(geometry.panels.slice(0,7).map(p=>p.name)).toEqual(['Attention required','At a glance','Quality summary','Coverage summary','Review work summary','Automation health summary','Quality detail'])
+      24 |   if(size.width===1440&&size.height===900)for(const signal of geometry.signals)expect(signal.bottom).toBeLessThan(900)
+      25 |   if(size.width===1920)expect(geometry.panels.find(p=>p.name==='At a glance')!.bottom).toBeLessThanOrEqual(1080)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/overview-geometry.spec.ts:22:18
+
+    Error Context: test-results/overview-geometry-geometry-1920x1080/error-context.md
+
+
+(node:66972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[12/17] tests/overview-geometry.spec.ts:6:117 › geometry 390x844
+  3) tests/overview-geometry.spec.ts:6:117 › geometry 390x844 ──────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+      Object {
+    -   "/api/alerts": 2,
+    +   "/api/alerts": 1,
+        "/api/answer-sets": 1,
+        "/api/forms": 1,
+        "/api/governance": 1,
+    -   "/api/monitoring-health": 2,
+    -   "/api/overview": 3,
+    -   "/api/policies": 4,
+    +   "/api/monitoring-health": 1,
+    +   "/api/overview": 2,
+    +   "/api/policies": 3,
+        "/api/question-groups": 1,
+    -   "/api/runs": 3,
+    -   "/api/schedules": 3,
+    +   "/api/runs": 2,
+    +   "/api/schedules": 2,
+        "/api/session": 1,
+      }
+
+      20 |   const baseline=JSON.parse(readFileSync(`docs/v020e-evidence/before/${size.width}x${size.height}.json`,'utf8'))
+      21 |   const counts=f.requests.reduce<Record<string,number>>((counts,u)=>({...counts,[u.pathname]:(counts[u.pathname]??0)+1}),{})
+    > 22 |   expect(counts).toEqual(baseline.requests)
+         |                  ^
+      23 |   expect(geometry.panels.slice(0,7).map(p=>p.name)).toEqual(['Attention required','At a glance','Quality summary','Coverage summary','Review work summary','Automation health summary','Quality detail'])
+      24 |   if(size.width===1440&&size.height===900)for(const signal of geometry.signals)expect(signal.bottom).toBeLessThan(900)
+      25 |   if(size.width===1920)expect(geometry.panels.find(p=>p.name==='At a glance')!.bottom).toBeLessThanOrEqual(1080)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/overview-geometry.spec.ts:22:18
+
+    Error Context: test-results/overview-geometry-geometry-390x844/error-context.md
+
+
+(node:66979) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[13/17] tests/overview-geometry.spec.ts:6:117 › geometry 1440x720
+  4) tests/overview-geometry.spec.ts:6:117 › geometry 1440x720 ─────────────────────────────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+      Object {
+    -   "/api/alerts": 2,
+    +   "/api/alerts": 1,
+        "/api/answer-sets": 1,
+        "/api/forms": 1,
+        "/api/governance": 1,
+    -   "/api/monitoring-health": 2,
+    -   "/api/overview": 3,
+    -   "/api/policies": 4,
+    +   "/api/monitoring-health": 1,
+    +   "/api/overview": 2,
+    +   "/api/policies": 3,
+        "/api/question-groups": 1,
+    -   "/api/runs": 3,
+    -   "/api/schedules": 3,
+    +   "/api/runs": 2,
+    +   "/api/schedules": 2,
+        "/api/session": 1,
+      }
+
+      20 |   const baseline=JSON.parse(readFileSync(`docs/v020e-evidence/before/${size.width}x${size.height}.json`,'utf8'))
+      21 |   const counts=f.requests.reduce<Record<string,number>>((counts,u)=>({...counts,[u.pathname]:(counts[u.pathname]??0)+1}),{})
+    > 22 |   expect(counts).toEqual(baseline.requests)
+         |                  ^
+      23 |   expect(geometry.panels.slice(0,7).map(p=>p.name)).toEqual(['Attention required','At a glance','Quality summary','Coverage summary','Review work summary','Automation health summary','Quality detail'])
+      24 |   if(size.width===1440&&size.height===900)for(const signal of geometry.signals)expect(signal.bottom).toBeLessThan(900)
+      25 |   if(size.width===1920)expect(geometry.panels.find(p=>p.name==='At a glance')!.bottom).toBeLessThanOrEqual(1080)
+        at /private/tmp/aqm-v020g-coverage-interpretation/tests/overview-geometry.spec.ts:22:18
+
+    Error Context: test-results/overview-geometry-geometry-1440x720/error-context.md
+
+
+(node:66998) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[14/17] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1440
+[15/17] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1920
+[16/17] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 390
+[17/17] tests/quality-actionability.spec.ts:48:1 › Overview Analytics entry replaces stale quality filters
+  4 failed
+    tests/overview-geometry.spec.ts:6:117 › geometry 1440x900 ──────────────────────────────────────
+    tests/overview-geometry.spec.ts:6:117 › geometry 1920x1080 ─────────────────────────────────────
+    tests/overview-geometry.spec.ts:6:117 › geometry 390x844 ───────────────────────────────────────
+    tests/overview-geometry.spec.ts:6:117 › geometry 1440x720 ──────────────────────────────────────
+  13 passed (45.1s)

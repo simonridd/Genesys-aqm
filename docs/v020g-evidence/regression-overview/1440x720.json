@@ -1,0 +1,265 @@
+{
+  "signals": [
+    {
+      "name": "Quality summary",
+      "text": "79% →",
+      "x": 327,
+      "y": 762.59375,
+      "width": 92.28125,
+      "height": 39.1875,
+      "bottom": 801.78125
+    },
+    {
+      "name": "Coverage summary",
+      "text": "20%",
+      "x": 596,
+      "y": 765.59375,
+      "width": 58.375,
+      "height": 33,
+      "bottom": 798.59375
+    },
+    {
+      "name": "Review work summary",
+      "text": "7 →",
+      "x": 865,
+      "y": 762.59375,
+      "width": 48.875,
+      "height": 39.1875,
+      "bottom": 801.78125
+    },
+    {
+      "name": "Automation health summary",
+      "text": "Attention",
+      "x": 1134,
+      "y": 765.59375,
+      "width": 113.765625,
+      "height": 33,
+      "bottom": 798.59375
+    }
+  ],
+  "h1Top": 130,
+  "headings": [
+    {
+      "text": "Attention required",
+      "x": 314,
+      "y": 266.59375,
+      "width": 156.984375,
+      "height": 22,
+      "bottom": 288.59375
+    },
+    {
+      "text": "At a glance",
+      "x": 311,
+      "y": 634.59375,
+      "width": 1060,
+      "height": 22,
+      "bottom": 656.59375
+    },
+    {
+      "text": "Quality",
+      "x": 327,
+      "y": 690.59375,
+      "width": 221,
+      "height": 20,
+      "bottom": 710.59375
+    },
+    {
+      "text": "Coverage",
+      "x": 596,
+      "y": 690.59375,
+      "width": 221,
+      "height": 20,
+      "bottom": 710.59375
+    },
+    {
+      "text": "Review work",
+      "x": 865,
+      "y": 690.59375,
+      "width": 221,
+      "height": 20,
+      "bottom": 710.59375
+    },
+    {
+      "text": "Automation health",
+      "x": 1134,
+      "y": 690.59375,
+      "width": 221,
+      "height": 20,
+      "bottom": 710.59375
+    },
+    {
+      "text": "Quality trend",
+      "x": 311,
+      "y": 1112.125,
+      "width": 1060,
+      "height": 22,
+      "bottom": 1134.125
+    },
+    {
+      "text": "Policy selection",
+      "x": 0,
+      "y": 1784.625,
+      "width": 1060,
+      "height": 22,
+      "bottom": 1806.625
+    },
+    {
+      "text": "Coverage after sampling",
+      "x": 311,
+      "y": 1933.84375,
+      "width": 1060,
+      "height": 22,
+      "bottom": 1955.84375
+    },
+    {
+      "text": "Automation",
+      "x": 311,
+      "y": 1417.125,
+      "width": 100.65625,
+      "height": 22,
+      "bottom": 1439.125
+    },
+    {
+      "text": "Last automated run",
+      "x": 311,
+      "y": 1499.125,
+      "width": 1060,
+      "height": 22,
+      "bottom": 1521.125
+    },
+    {
+      "text": "Upcoming scheduled work",
+      "x": 311,
+      "y": 1639.84375,
+      "width": 1060,
+      "height": 22,
+      "bottom": 1661.84375
+    },
+    {
+      "text": "Recent runs",
+      "x": 311,
+      "y": 1892.5625,
+      "width": 1060,
+      "height": 22,
+      "bottom": 1914.5625
+    },
+    {
+      "text": "Operational alerts 0",
+      "x": 0,
+      "y": 2472.5625,
+      "width": 179.828125,
+      "height": 22,
+      "bottom": 2494.5625
+    },
+    {
+      "text": "Monitoring runs",
+      "x": 311,
+      "y": 2971.28125,
+      "width": 1060,
+      "height": 22,
+      "bottom": 2993.28125
+    }
+  ],
+  "panels": [
+    {
+      "name": "Attention required",
+      "x": 284,
+      "y": 239.59375,
+      "width": 1114,
+      "height": 346,
+      "bottom": 585.59375
+    },
+    {
+      "name": "At a glance",
+      "x": 284,
+      "y": 607.59375,
+      "width": 1114,
+      "height": 455.53125,
+      "bottom": 1063.125
+    },
+    {
+      "name": "Quality summary",
+      "x": 311,
+      "y": 674.59375,
+      "width": 253,
+      "height": 361.53125,
+      "bottom": 1036.125
+    },
+    {
+      "name": "Coverage summary",
+      "x": 580,
+      "y": 674.59375,
+      "width": 253,
+      "height": 361.53125,
+      "bottom": 1036.125
+    },
+    {
+      "name": "Review work summary",
+      "x": 849,
+      "y": 674.59375,
+      "width": 253,
+      "height": 361.53125,
+      "bottom": 1036.125
+    },
+    {
+      "name": "Automation health summary",
+      "x": 1118,
+      "y": 674.59375,
+      "width": 253,
+      "height": 361.53125,
+      "bottom": 1036.125
+    },
+    {
+      "name": "Quality detail",
+      "x": 284,
+      "y": 1085.125,
+      "width": 1114,
+      "height": 283,
+      "bottom": 1368.125
+    },
+    {
+      "name": "Upcoming automation",
+      "x": 284,
+      "y": 1390.125,
+      "width": 1114,
+      "height": 453.4375,
+      "bottom": 1843.5625
+    },
+    {
+      "name": "Recent runs",
+      "x": 284,
+      "y": 1865.5625,
+      "width": 1114,
+      "height": 268,
+      "bottom": 2133.5625
+    },
+    {
+      "name": "Operational alerts",
+      "x": 311,
+      "y": 2429.5625,
+      "width": 1060,
+      "height": 517.71875,
+      "bottom": 2947.28125
+    }
+  ],
+  "documentHeight": 2517,
+  "scrollY": 0,
+  "viewport": {
+    "width": 1440,
+    "height": 720
+  },
+  "overflow": false,
+  "requests": {
+    "/api/overview": 2,
+    "/api/policies": 3,
+    "/api/schedules": 2,
+    "/api/runs": 2,
+    "/api/session": 1,
+    "/api/governance": 1,
+    "/api/answer-sets": 1,
+    "/api/forms": 1,
+    "/api/question-groups": 1,
+    "/api/alerts": 1,
+    "/api/monitoring-health": 1
+  }
+}

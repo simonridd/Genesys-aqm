@@ -1,0 +1,62 @@
+[
+  {
+    "viewport": "1440x900",
+    "before": {
+      "candidate": 1000,
+      "eligible": 1000,
+      "sampled": 500,
+      "evaluable": 400,
+      "evaluated": 350,
+      "failed": 75,
+      "samplingCoverage": 0.5,
+      "transcriptAvailability": 0.8,
+      "sampleCompletion": 0.875,
+      "evaluationCoverage": 0.35
+    },
+    "after": {
+      "candidate": 1000,
+      "eligible": 1000,
+      "sampled": 500,
+      "evaluable": 400,
+      "evaluated": 350,
+      "failed": 75,
+      "samplingCoverage": 0.5,
+      "transcriptAvailability": 0.8,
+      "sampleCompletion": 0.875,
+      "evaluationCoverage": 0.35
+    },
+    "allValuesExactlyEqual": true,
+    "stepsExactlyEqual": true,
+    "apiRequestCountsExactlyEqual": true
+  },
+  {
+    "viewport": "390x844",
+    "before": {
+      "candidate": 1000,
+      "eligible": 1000,
+      "sampled": 500,
+      "evaluable": 400,
+      "evaluated": 350,
+      "failed": 75,
+      "samplingCoverage": 0.5,
+      "transcriptAvailability": 0.8,
+      "sampleCompletion": 0.875,
+      "evaluationCoverage": 0.35
+    },
+    "after": {
+      "candidate": 1000,
+      "eligible": 1000,
+      "sampled": 500,
+      "evaluable": 400,
+      "evaluated": 350,
+      "failed": 75,
+      "samplingCoverage": 0.5,
+      "transcriptAvailability": 0.8,
+      "sampleCompletion": 0.875,
+      "evaluationCoverage": 0.35
+    },
+    "allValuesExactlyEqual": true,
+    "stepsExactlyEqual": true,
+    "apiRequestCountsExactlyEqual": true
+  }
+]
