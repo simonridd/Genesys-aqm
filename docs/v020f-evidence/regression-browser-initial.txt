@@ -1,0 +1,724 @@
+[WebServer] (node:38725) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 120 tests using 1 worker
+
+(node:38730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/120] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/120] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 1440
+[3/120] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 1440
+[4/120] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 1440
+[5/120] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 1440
+[6/120] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[7/120] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 1920
+[8/120] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 1920
+[9/120] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 1920
+[10/120] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 1920
+[11/120] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[WebServer] 3:35:48 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:35:48 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[12/120] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 390
+[13/120] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 390
+[14/120] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 390
+[15/120] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 390
+[16/120] tests/answer-set-discovery.spec.ts:25:1 › connected picker excludes browser starters and shows precise no-match copy
+[17/120] tests/answer-set-discovery.spec.ts:26:1 › disconnected Yes/No discovers local set; reconnect never uploads form or library
+[WebServer] 3:35:56 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:35:56 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[18/120] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+[19/120] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+  1) tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920 
+
+    TypeError: Cannot read properties of undefined (reading 'questions')
+
+      26 | test('disconnected Yes/No discovers local set; reconnect never uploads form or library',async({page})=>{await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(app).origin?r.continue():r.abort());await page.goto(`${app}?page=forms`);const detail=await newQuestion(page),{region}=await preview(page,detail);await region.getByRole('button',{name:'Change to Multiple choice and use Resolution clarity v1'}).click();await expect(detail.getByRole('status')).toContainText('Saved in this browser');const before=await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}));expect(JSON.parse(before.forms!).some((f:EvaluationForm)=>f.questions.some(q=>q.sourceAnswerSet?.answerSetId===clarity.id))).toBe(true);await page.unroute('**/*');const state=await fixture(page,'AUTHOR',[],[]);try{await nav(page).click();await expect(page.getByRole('heading',{name:'Saved in AQM · 0 saved forms'})).toBeVisible();expect(await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}))).toEqual(before);await newQuestion(page);await detail.getByRole('button',{name:'Use reusable Answer Set'}).click();await expect(detail.getByRole('dialog')).toContainText('No published Answer Sets are available in this library.');expect(state.requests.every(r=>r.method==='GET')).toBe(true);expect(await state.store.forms()).toEqual([]);expect((await state.store.query('answerSetAssets',100)).items).toEqual([]);const after=await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}));expect(JSON.parse(after.forms!).slice(0,JSON.parse(before.forms!).length)).toEqual(JSON.parse(before.forms!));expect(after.sets).toBe(before.sets)}finally{await state.close()}})
+      27 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(e=>e===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard could not reach target')}
+    > 28 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`keyboard-only default question to search, preview, cancel, Apply and return ${viewport.width}`,async({page})=>{await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR',[clarity],[]);const act=async(target:Locator)=>{await tabTo(page,target);await page.keyboard.press('Enter')};try{await act(nav(page));await act(page.getByRole('button',{name:'＋ New form'}));const detail=page.locator('.form-detail');await tabTo(page,detail.getByLabel('Form name',{exact:true}));await page.keyboard.type('Keyboard form');await act(detail.getByRole('button',{name:'Add question',exact:true}));await tabTo(page,detail.getByLabel('Title',{exact:true}));await page.keyboard.type('Was the resolution clear?');await tabTo(page,detail.getByLabel('Instructions / question'));await page.keyboard.type('Assess resolution clarity.');await expect(detail.getByLabel('Answer format')).toHaveValue('noul');await act(detail.getByRole('button',{name:'Use reusable Answer Set'}));const dialog=detail.getByRole('dialog');await expect(dialog.locator('h4')).toBeFocused();await tabTo(page,dialog.getByLabel('Find Answer Set'));await page.keyboard.type('Resolution clarity');await act(dialog.getByRole('button',{name:'Preview Resolution clarity v1 format change'}));await expect(dialog.locator('h5')).toBeFocused();await act(dialog.getByRole('button',{name:'Cancel format change'}));await expect(dialog.getByRole('button',{name:'Preview Resolution clarity v1 format change'})).toBeFocused();await page.keyboard.press('Enter');await act(dialog.getByRole('button',{name:'Change to Multiple choice and use Resolution clarity v1'}));await expect(detail.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await act(detail.locator('.question-done').getByRole('button',{name:'Done'}));await act(detail.getByRole('button',{name:'Save changes',exact:true}));expect((await state.store.forms())[0].questions[0].options).toEqual(clarity.options);expect(state.errors).toEqual([]);writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({goal,keyboardOnly:true,manualAnswerFormatSelectionNeeded:false,focus:['Question editor','Published Answer Sets heading','Preview heading','Preview opener on cancel','Answers heading on apply','Question edit on Done'],completed:true},null,2))}finally{await state.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+      29 |
+        at /private/tmp/aqm-v020f-user-language/tests/answer-set-discovery.spec.ts:28:1984
+
+    TypeError: fetch failed
+    [cause]: Error: read ECONNRESET
+
+    Error Context: test-results/answer-set-discovery-keybo-e8027-ancel-Apply-and-return-1920/error-context.md
+
+
+(node:38842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[20/120] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+[21/120] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440
+[WebServer] 3:36:04 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:04 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+  2) tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "general_service-v17-0"
+    Received string:    "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care"
+
+      21 |    await drill(page).getByRole('button',{name:'Open disagreements',exact:true}).click();await expect(evals(page)).toHaveCount(5)
+      22 |    const ids=await evals(page).evaluateAll(els=>els.map(e=>e.getAttribute('aria-label')??e.textContent))
+    > 23 |    for(let i=0;i<5;i++)expect(ids.join(' ')).toContain(`general_service-v17-${i}`)
+         |                                              ^
+      24 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({page:'evaluations',source:'genesys-cloud',form:'general_service@17',reviewQuestion:'understanding',reviewStatus:'REVIEWED',comparison:'disagreements',evaluationSource:'server',origin:'calibration'})
+      25 |    await evals(page).first().click();await expect(page.locator('.evaluation-detail')).toBeVisible();await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await expect(page.getByRole('heading',{name:'Conversation detail',exact:true})).toBeFocused();await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click();await expect(page.locator('.evaluation-detail')).toBeVisible();await page.getByRole('button',{name:'Back to Calibration',exact:true}).click();await expect(drill(page).getByRole('heading',{name:'Clear next step',exact:true})).toBeFocused();expect(new URL(page.url()).searchParams.get('calibrationTab')).toBe('questions');await page.reload();await expect(drill(page)).toContainText('Customer Service v17');await capture(page,'return')
+      26 |    expect(state.errors).toEqual([]);expect(state.blocked).toEqual([]);expect(state.requests.every(r=>r.method==='GET')).toBe(true)
+        at /private/tmp/aqm-v020f-user-language/tests/calibration-discovery.spec.ts:23:46
+
+    Error Context: test-results/calibration-discovery-goal-d7a7f-rt-question-and-return-1440/error-context.md
+
+
+(node:38857) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[22/120] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1440
+[23/120] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920
+[WebServer] 3:36:12 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:12 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+  3) tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "general_service-v17-0"
+    Received string:    "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care"
+
+      21 |    await drill(page).getByRole('button',{name:'Open disagreements',exact:true}).click();await expect(evals(page)).toHaveCount(5)
+      22 |    const ids=await evals(page).evaluateAll(els=>els.map(e=>e.getAttribute('aria-label')??e.textContent))
+    > 23 |    for(let i=0;i<5;i++)expect(ids.join(' ')).toContain(`general_service-v17-${i}`)
+         |                                              ^
+      24 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({page:'evaluations',source:'genesys-cloud',form:'general_service@17',reviewQuestion:'understanding',reviewStatus:'REVIEWED',comparison:'disagreements',evaluationSource:'server',origin:'calibration'})
+      25 |    await evals(page).first().click();await expect(page.locator('.evaluation-detail')).toBeVisible();await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await expect(page.getByRole('heading',{name:'Conversation detail',exact:true})).toBeFocused();await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click();await expect(page.locator('.evaluation-detail')).toBeVisible();await page.getByRole('button',{name:'Back to Calibration',exact:true}).click();await expect(drill(page).getByRole('heading',{name:'Clear next step',exact:true})).toBeFocused();expect(new URL(page.url()).searchParams.get('calibrationTab')).toBe('questions');await page.reload();await expect(drill(page)).toContainText('Customer Service v17');await capture(page,'return')
+      26 |    expect(state.errors).toEqual([]);expect(state.blocked).toEqual([]);expect(state.requests.every(r=>r.method==='GET')).toBe(true)
+        at /private/tmp/aqm-v020f-user-language/tests/calibration-discovery.spec.ts:23:46
+
+    Error Context: test-results/calibration-discovery-goal-f7e10-rt-question-and-return-1920/error-context.md
+
+
+(node:38884) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[24/120] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1920
+[25/120] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390
+  4) tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected substring: "general_service-v17-0"
+    Received string:    "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care"
+
+      21 |    await drill(page).getByRole('button',{name:'Open disagreements',exact:true}).click();await expect(evals(page)).toHaveCount(5)
+      22 |    const ids=await evals(page).evaluateAll(els=>els.map(e=>e.getAttribute('aria-label')??e.textContent))
+    > 23 |    for(let i=0;i<5;i++)expect(ids.join(' ')).toContain(`general_service-v17-${i}`)
+         |                                              ^
+      24 |    expect(Object.fromEntries(new URL(page.url()).searchParams)).toMatchObject({page:'evaluations',source:'genesys-cloud',form:'general_service@17',reviewQuestion:'understanding',reviewStatus:'REVIEWED',comparison:'disagreements',evaluationSource:'server',origin:'calibration'})
+      25 |    await evals(page).first().click();await expect(page.locator('.evaluation-detail')).toBeVisible();await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await expect(page.getByRole('heading',{name:'Conversation detail',exact:true})).toBeFocused();await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click();await expect(page.locator('.evaluation-detail')).toBeVisible();await page.getByRole('button',{name:'Back to Calibration',exact:true}).click();await expect(drill(page).getByRole('heading',{name:'Clear next step',exact:true})).toBeFocused();expect(new URL(page.url()).searchParams.get('calibrationTab')).toBe('questions');await page.reload();await expect(drill(page)).toContainText('Customer Service v17');await capture(page,'return')
+      26 |    expect(state.errors).toEqual([]);expect(state.blocked).toEqual([]);expect(state.requests.every(r=>r.method==='GET')).toBe(true)
+        at /private/tmp/aqm-v020f-user-language/tests/calibration-discovery.spec.ts:23:46
+
+    Error Context: test-results/calibration-discovery-goal-21bf8-ort-question-and-return-390/error-context.md
+
+
+(node:38894) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[26/120] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 390
+[27/120] tests/calibration-discovery.spec.ts:45:1 › catalogue cohort request, source/date/agent/queue refresh and unavailable selection reset
+[WebServer] 3:36:24 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:24 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:25 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:25 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:25 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:26 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:26 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:27 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:27 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:27 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:27 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:27 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[28/120] tests/calibration-discovery.spec.ts:59:1 › catalogue failure leaves filtered data usable, retry is isolated, main failure and no comparisons are safe
+[WebServer] 3:36:29 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:29 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:30 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:30 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:30 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:31 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:33 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:34 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[29/120] tests/calibration-discovery.spec.ts:67:1 › Back/Forward preserve form, view and exact question; deep link reload
+[WebServer] 3:36:34 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:34 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:34 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:35 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:38 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:38 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:38 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:38 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:38 PM [vite] (client) [console.error] Encountered two children with the same key, `recent`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[30/120] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 1440
+[WebServer] 3:36:39 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:39 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:39 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:39 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:40 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:40 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:40 PM [vite] (client) [console.error] Encountered two children with the same key, `escalated`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[WebServer] 3:36:41 PM [vite] (client) [console.error] Encountered two children with the same key, `general_service-v17-0`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[31/120] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 390
+[WebServer] 3:36:44 PM [vite] (client) [console.error] Encountered two children with the same key, `general_service-v17-0`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.
+
+[32/120] tests/calibration-discovery.spec.ts:83:1 › valid deep-linked version absent from fresh catalogue retains returned human authority
+[33/120] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 390
+[34/120] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1440
+[35/120] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1920
+[36/120] tests/evaluation-availability.spec.ts:64:1 › successful empty is a data result
+[37/120] tests/evaluation-availability.spec.ts:65:1 › refresh failure preserves search, rows and loaded time; retry replaces atomically
+[38/120] tests/evaluation-availability.spec.ts:74:1 › scope change suspends old rows while loading and failed; retry keeps the exact new scope
+[39/120] tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success
+  5) tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Next server page →' })
+
+
+      84 |  const f=await fixture(page);f.c.paginate=true;await enter(page);await healthy(page)
+      85 |  const first=await rows(page).evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))
+    > 86 |  f.c.fail=503;await page.getByRole('button',{name:'Next server page →'}).click()
+         |                                                                          ^
+      87 |  await expect(availability(page)).toContainText('Couldn’t load the next page.');await expect(availability(page)).toContainText('Current page is unchanged.')
+      88 |  expect(await rows(page).evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))).toEqual(first);await expect(page.getByRole('button',{name:'First page',exact:true})).toBeDisabled()
+      89 |  f.c.fail=0;await availability(page).getByRole('button',{name:'Retry next page'}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeEnabled();await healthy(page)
+        at /private/tmp/aqm-v020f-user-language/tests/evaluation-availability.spec.ts:86:74
+
+    Error Context: test-results/evaluation-availability-ne-ac1e2-ontrols-until-retry-success/error-context.md
+
+
+(node:39059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[40/120] tests/evaluation-availability.spec.ts:96:44 › request race B then A
+[41/120] tests/evaluation-availability.spec.ts:96:44 › request race A then B
+[42/120] tests/evaluation-availability.spec.ts:105:1 › detail failure isolates list and prevents writable review until details retry succeeds
+[43/120] tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific
+  6) tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.check: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('checkbox', { name: 'Select evaluation quality-1', exact: true })
+
+
+      115 |  await expect(page.getByRole('region',{name:'Calibration sample',exact:true})).toContainText('Calibration sample could not be requested.');await healthy(page);await expect(availability(page)).toHaveCount(0)
+      116 |  // A requested review is eligible for assignment and due-date operations.
+    > 117 |  await page.locator('tr').filter({has:page.locator('button[data-evaluation-id="quality-1"]')}).getByRole('checkbox').check();await page.getByText('Bulk assignment',{exact:true}).first().click()
+          |                                                                                   ^
+      118 |  const bulk=page.getByRole('region',{name:'Bulk review assignment',exact:true});await bulk.getByLabel('Bulk assign to',{exact:true}).selectOption('admin');await bulk.getByRole('button',{name:'Assign 1 reviews'}).click()
+      119 |  await expect(bulk).toContainText('Reviews could not be assigned.');await healthy(page);await expect(availability(page)).toHaveCount(0)
+      120 |  await bulk.getByRole('button',{name:'Clear due date',exact:true}).click();await expect(bulk).toContainText('Review due dates could not be updated.');await healthy(page);await expect(availability(page)).toHaveCount(0)
+        at /private/tmp/aqm-v020f-user-language/tests/evaluation-availability.spec.ts:117:83
+
+    Error Context: test-results/evaluation-availability-sa-08083-s-remain-operation-specific/error-context.md
+
+
+(node:39098) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[44/120] tests/evaluation-availability.spec.ts:123:1 › workload unavailable leaves the list usable
+[45/120] tests/evaluation-availability.spec.ts:124:31 › permission failure 401
+[46/120] tests/evaluation-availability.spec.ts:124:31 › permission failure 403
+[47/120] tests/evaluation-availability.spec.ts:125:1 › network failure is unavailable; malformed successful response is not an empty cohort
+[48/120] tests/evaluation-availability.spec.ts:129:1 › disconnected server does not render false empty; browser local history works and server stays truthful
+[49/120] tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards
+[50/120] tests/evaluation-availability.spec.ts:148:1 › successful My Reviews empty has its own copy
+[51/120] tests/evaluation-availability.spec.ts:152:60 › Overview investigation failure and exact retry 390
+[52/120] tests/evaluation-availability.spec.ts:152:60 › Analytics investigation failure and exact retry 390
+[53/120] tests/evaluation-availability.spec.ts:152:60 › Calibration investigation failure and exact retry 390
+[54/120] tests/evaluation-availability.spec.ts:175:1 › server failure cannot poison actual browser-local records
+[55/120] tests/evaluation-availability.spec.ts:182:1 › failed authoritative detail cannot enter writable focused reviewer task
+[56/120] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[57/120] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[58/120] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[59/120] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[60/120] tests/investigation-history.spec.ts:78:1 › v18 stays v18 rather than v17 or All published forms
+[61/120] tests/investigation-history.spec.ts:83:1 › rapid Back/Forward while Analytics refetches never grows history or reuses stale Evaluation scope
+[62/120] tests/investigation-history.spec.ts:96:50 › Queues investigation uses the same history path
+[63/120] tests/investigation-history.spec.ts:96:50 › Groups investigation uses the same history path
+[64/120] tests/investigation-history.spec.ts:96:50 › Overview investigation uses the same history path
+[65/120] tests/investigation-history.spec.ts:104:1 › reload preserves browser stack; fictional reconnect does not fabricate a source
+[66/120] tests/investigation-history.spec.ts:112:1 › Analytics and Evaluations failure retain restored scope and exact retry
+[67/120] tests/investigation-history.spec.ts:126:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+[68/120] tests/investigation-history.spec.ts:134:1 › direct external Evaluation entry has no fabricated Analytics history
+[69/120] tests/investigation-history.spec.ts:141:1 › Calibration disagreement Back/Forward restores exact version, question, view and cohort
+[70/120] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 1440
+[71/120] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 390
+[72/120] tests/investigation-history.spec.ts:160:1 › session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return
+[73/120] tests/investigation-history.spec.ts:171:1 › Overview characterization: range is not URL durable and its drill still replaces
+[74/120] tests/overview-regression-smoke.spec.ts:3:1 › Overview My review queue still opens mobile priority cards and focused review
+[75/120] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440
+  7) tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440 ─────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.policy-detail').getByText('DURABLE POLICY · v1')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.policy-detail').getByText('DURABLE POLICY · v1') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByText('DURABLE POLICY · v1')
+
+
+      55 |  await page.screenshot({path:`/private/tmp/aqm-v014-library-${viewport.width}.png`,fullPage:true})
+      56 |  await page.getByLabel('Policy schedule filter').selectOption('All');await page.getByLabel('Policy forms filter').selectOption('All');await page.getByRole('button',{name:'＋ New policy'}).click()
+    > 57 |  await expect(detail.getByText('SAVED POLICY · v1')).toBeVisible();await expect(detail.getByLabel('Criteria value')).toHaveValue('');await expect(detail.getByLabel('Enabled (requires Save changes)')).not.toBeChecked()
+         |                                                        ^
+      58 |  await detail.getByLabel('Policy name').fill('Authored voice policy');await detail.getByLabel('Condition field').selectOption('channel');await detail.getByLabel('Criteria value').fill('voice')
+      59 |  await detail.getByRole('button',{name:'Add condition',exact:true}).click();await detail.getByLabel('Condition field').nth(1).selectOption('direction');await detail.getByLabel('Criteria value').nth(1).fill('inbound')
+      60 |  await detail.getByRole('button',{name:'Add OR group'}).click();await detail.getByLabel('Condition field').nth(2).selectOption('queue');await detail.getByLabel('Criteria value').nth(2).fill('Customer Service');await expect(detail.getByText('Match ALL',{exact:true})).toHaveCount(2)
+        at /private/tmp/aqm-v020f-user-language/tests/policy-authoring.spec.ts:57:56
+
+    Error Context: test-results/policy-authoring-durable-p-ef9e1-oring-and-schedules-at-1440/error-context.md
+
+
+(node:39371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[76/120] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1920
+  8) tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1920 ─────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.policy-detail').getByText('DURABLE POLICY · v1')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.policy-detail').getByText('DURABLE POLICY · v1') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByText('DURABLE POLICY · v1')
+
+
+      55 |  await page.screenshot({path:`/private/tmp/aqm-v014-library-${viewport.width}.png`,fullPage:true})
+      56 |  await page.getByLabel('Policy schedule filter').selectOption('All');await page.getByLabel('Policy forms filter').selectOption('All');await page.getByRole('button',{name:'＋ New policy'}).click()
+    > 57 |  await expect(detail.getByText('SAVED POLICY · v1')).toBeVisible();await expect(detail.getByLabel('Criteria value')).toHaveValue('');await expect(detail.getByLabel('Enabled (requires Save changes)')).not.toBeChecked()
+         |                                                        ^
+      58 |  await detail.getByLabel('Policy name').fill('Authored voice policy');await detail.getByLabel('Condition field').selectOption('channel');await detail.getByLabel('Criteria value').fill('voice')
+      59 |  await detail.getByRole('button',{name:'Add condition',exact:true}).click();await detail.getByLabel('Condition field').nth(1).selectOption('direction');await detail.getByLabel('Criteria value').nth(1).fill('inbound')
+      60 |  await detail.getByRole('button',{name:'Add OR group'}).click();await detail.getByLabel('Condition field').nth(2).selectOption('queue');await detail.getByLabel('Criteria value').nth(2).fill('Customer Service');await expect(detail.getByText('Match ALL',{exact:true})).toHaveCount(2)
+        at /private/tmp/aqm-v020f-user-language/tests/policy-authoring.spec.ts:57:56
+
+    Error Context: test-results/policy-authoring-durable-p-447ea-oring-and-schedules-at-1920/error-context.md
+
+
+(node:39393) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[77/120] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390
+  9) tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390 ──────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.policy-detail').getByText('DURABLE POLICY · v1')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.policy-detail').getByText('DURABLE POLICY · v1') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByText('DURABLE POLICY · v1')
+
+
+      55 |  await page.screenshot({path:`/private/tmp/aqm-v014-library-${viewport.width}.png`,fullPage:true})
+      56 |  await page.getByLabel('Policy schedule filter').selectOption('All');await page.getByLabel('Policy forms filter').selectOption('All');await page.getByRole('button',{name:'＋ New policy'}).click()
+    > 57 |  await expect(detail.getByText('SAVED POLICY · v1')).toBeVisible();await expect(detail.getByLabel('Criteria value')).toHaveValue('');await expect(detail.getByLabel('Enabled (requires Save changes)')).not.toBeChecked()
+         |                                                        ^
+      58 |  await detail.getByLabel('Policy name').fill('Authored voice policy');await detail.getByLabel('Condition field').selectOption('channel');await detail.getByLabel('Criteria value').fill('voice')
+      59 |  await detail.getByRole('button',{name:'Add condition',exact:true}).click();await detail.getByLabel('Condition field').nth(1).selectOption('direction');await detail.getByLabel('Criteria value').nth(1).fill('inbound')
+      60 |  await detail.getByRole('button',{name:'Add OR group'}).click();await detail.getByLabel('Condition field').nth(2).selectOption('queue');await detail.getByLabel('Criteria value').nth(2).fill('Customer Service');await expect(detail.getByText('Match ALL',{exact:true})).toHaveCount(2)
+        at /private/tmp/aqm-v020f-user-language/tests/policy-authoring.spec.ts:57:56
+
+    Error Context: test-results/policy-authoring-durable-p-ac285-horing-and-schedules-at-390/error-context.md
+
+
+(node:39403) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[78/120] tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate
+  10) tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate 
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('.policy-detail').getByLabel('Policy name')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('.policy-detail').getByLabel('Policy name') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByLabel('Policy name')
+        14 × locator resolved to <input readonly value="Daily Voice fixture"/>
+           - unexpected value "enabled"
+
+
+      81 | for(const role of ['VIEWER','REVIEWER'] as const)test(`${role} can inspect policies and schedule but cannot mutate`,async({page})=>{
+      82 |  const state=await fixture(page,role);await page.getByRole('button',{name:'Daily Voice fixture',exact:true}).click();const detail=page.locator('.policy-detail')
+    > 83 |  await expect(detail.getByLabel('Policy name')).toBeDisabled();await expect(detail.getByLabel('Schedule',{exact:true})).toBeDisabled();await expect(detail.getByRole('button',{name:'View runs'})).toBeEnabled();for(const name of ['Save changes','Duplicate policy','Save schedule','＋ New policy'])await expect(page.getByRole('button',{name,exact:true})).toHaveCount(0);expect(state.mutations).toBe(0)
+         |                                                 ^
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+      86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v020f-user-language/tests/policy-authoring.spec.ts:83:49
+
+    Error Context: test-results/policy-authoring-VIEWER-ca-ba8d2--schedule-but-cannot-mutate/error-context.md
+
+
+(node:39419) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[79/120] tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate
+  11) tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate 
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('.policy-detail').getByLabel('Policy name')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('.policy-detail').getByLabel('Policy name') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByLabel('Policy name')
+        14 × locator resolved to <input readonly value="Daily Voice fixture"/>
+           - unexpected value "enabled"
+
+
+      81 | for(const role of ['VIEWER','REVIEWER'] as const)test(`${role} can inspect policies and schedule but cannot mutate`,async({page})=>{
+      82 |  const state=await fixture(page,role);await page.getByRole('button',{name:'Daily Voice fixture',exact:true}).click();const detail=page.locator('.policy-detail')
+    > 83 |  await expect(detail.getByLabel('Policy name')).toBeDisabled();await expect(detail.getByLabel('Schedule',{exact:true})).toBeDisabled();await expect(detail.getByRole('button',{name:'View runs'})).toBeEnabled();for(const name of ['Save changes','Duplicate policy','Save schedule','＋ New policy'])await expect(page.getByRole('button',{name,exact:true})).toHaveCount(0);expect(state.mutations).toBe(0)
+         |                                                 ^
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+      86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v020f-user-language/tests/policy-authoring.spec.ts:83:49
+
+    Error Context: test-results/policy-authoring-REVIEWER--7576b--schedule-but-cannot-mutate/error-context.md
+
+
+(node:39425) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[80/120] tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records
+  12) tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Policies', exact: true })
+
+
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+    > 86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+         |                                                                                                                                       ^
+      87 | })
+      88 | test('connected load failure does not expose local definitions or production mutation controls',async({page})=>{
+      89 |  await fixture(page);await page.route(`${origin}/api/policies**`,r=>r.fulfill({status:503,json:{error:'Durable library unavailable'}}));await page.getByRole('button',{name:'Refresh policies'}).click();await expect(page.getByRole('alert')).toContainText('Durable library unavailable');await expect(page.getByText('STALE LOCAL MUST NOT MERGE')).toHaveCount(0);await expect(page.getByRole('button',{name:'＋ New policy'})).toHaveCount(0);await expect(page.locator('.policy-detail')).toHaveCount(0)
+        at /private/tmp/aqm-v020f-user-language/tests/policy-authoring.spec.ts:86:135
+
+    Error Context: test-results/policy-authoring-offline-s-ec345-gles-with-connected-records/error-context.md
+
+
+(node:40450) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[81/120] tests/policy-authoring.spec.ts:88:1 › connected load failure does not expose local definitions or production mutation controls
+[82/120] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[83/120] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[84/120] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390
+  13) tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('button[data-evaluation-id="review-a"]')
+        - locator resolved to <button class="text-link" data-evaluation-id="review-a" aria-label="Open evaluation for Test Agent · voice · General Customer Service v17 · Fixture Queue">Test Agent · voice</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+        56 × waiting for element to be visible, enabled and stable
+           - element is not visible
+         - retrying click action
+           - waiting 500ms
+
+
+      12 |   const cards=page.locator('.review-task-card')
+      13 |   await expect.poll(async()=>await identity.count()+await cards.count()).toBeGreaterThan(0)
+    > 14 |   if(await identity.count())return identity.click()
+         |                                             ^
+      15 |   const index=id==='review-b'&&await cards.count()>1?1:0
+      16 |   await cards.nth(index).getByRole('button',{name:/^(Start review|Continue review)$/}).click()
+      17 | }
+        at open (/private/tmp/aqm-v020f-user-language/tests/reviewer-continuity.spec.ts:14:45)
+        at /private/tmp/aqm-v020f-user-language/tests/reviewer-continuity.spec.ts:63:5
+
+    Error Context: test-results/reviewer-continuity-review-271e0-completes-My-Reviews-at-390/error-context.md
+
+
+(node:49366) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[85/120] tests/reviewer-continuity.spec.ts:111:1 › exact My Reviews filter context survives evidence navigation
+[86/120] tests/reviewer-continuity.spec.ts:119:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[87/120] tests/reviewer-continuity.spec.ts:132:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[88/120] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles All Evaluations without Refresh
+[89/120] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles active cohort without Refresh
+[90/120] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles review status without Refresh
+[91/120] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles due cohort without Refresh
+[92/120] tests/reviewer-continuity.spec.ts:161:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+  14) tests/reviewer-continuity.spec.ts:161:1 › revision conflict retains inputs, blocks submit and requires explicit discard 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Human review', exact: true }).getByRole('button', { name: 'Refresh server review', exact: true })
+
+
+      171 |   await expect(panel(page).getByRole('button',{name:'Save progress',exact:true}).first()).toBeDisabled()
+      172 |   await expect(panel(page).getByRole('button',{name:'Complete review',exact:true}).first()).toBeDisabled()
+    > 173 |   await panel(page).getByRole('button',{name:'Refresh current review',exact:true}).click();await restored(page)
+          |                                                                                   ^
+      174 |   expect(puts(state)).toHaveLength(0)
+      175 |   await panel(page).getByRole('button',{name:'Discard my unsaved answers',exact:true}).click()
+      176 |   await expect(panel(page).getByLabel('Overall review note',{exact:true})).toHaveValue('New authoritative note')
+        at /private/tmp/aqm-v020f-user-language/tests/reviewer-continuity.spec.ts:173:83
+
+    Error Context: test-results/reviewer-continuity-revisi-c57e3-d-requires-explicit-discard/error-context.md
+
+
+(node:49687) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[93/120] tests/reviewer-continuity.spec.ts:180:1 › reassignment retains unsaved notes but removes editing and submission authority
+[94/120] tests/reviewer-continuity.spec.ts:191:1 › 409 refresh retains draft without silently replacing its base
+[95/120] tests/reviewer-continuity.spec.ts:201:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[96/120] tests/reviewer-continuity.spec.ts:212:1 › later server page survives evidence return and completion background reload
+  15) tests/reviewer-continuity.spec.ts:212:1 › later server page survives evidence return and completion background reload 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Next server page →', exact: true })
+
+
+      212 | test('later server page survives evidence return and completion background reload',async({page})=>{
+      213 |   const state=await continuityFixture(page,undefined,{pagination:true})
+    > 214 |   await page.getByRole('button',{name:'Next server page →',exact:true}).click()
+          |                                                                         ^
+      215 |   await open(page,'review-b');await edit(page,true);await evidenceRoundTrip(page);await restored(page)
+      216 |   await expect(page.locator('button[data-evaluation-id="review-a"]:visible')).toHaveCount(0)
+      217 |   await panel(page).getByRole('button',{name:'Complete review',exact:true}).first().click()
+        at /private/tmp/aqm-v020f-user-language/tests/reviewer-continuity.spec.ts:214:73
+
+    Error Context: test-results/reviewer-continuity-later--5de09-ompletion-background-reload/error-context.md
+
+
+(node:49823) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[97/120] tests/reviewer-continuity.spec.ts:223:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[98/120] tests/reviewer-continuity.spec.ts:238:1 › unstarted review returns to selected evaluation heading
+[99/120] tests/reviewer-continuity.spec.ts:245:1 › completion removes the row before a failed background list reload, preserving confirmation
+[100/120] tests/reviewer-continuity.spec.ts:259:1 › failed completion retains all changes and explicit retry completes exactly once
+[101/120] tests/reviewer-continuity.spec.ts:273:1 › reload starts a new session without unsubmitted answers or notes
+[102/120] tests/reviewer-continuity.spec.ts:285:1 › About and workspace handoff retain human work and unload protection in this SPA
+[103/120] tests/reviewer-continuity.spec.ts:296:1 › a pending completion reconciles the current filters rather than the scope at click time
+[104/120] tests/reviewer-continuity.spec.ts:312:1 › completion in another session keeps unfinished answers separate from completed authority
+[105/120] tests/reviewer-continuity.spec.ts:326:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[106/120] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[107/120] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[108/120] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[109/120] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[110/120] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[111/120] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely
+  16) tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely ───────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Human review', exact: true }).getByRole('button', { name: 'Refresh server review', exact: true })
+
+
+      137 |  if(change==='revision'){
+      138 |   await restored(page);await expect(panel(page).getByRole('button',{name:'Save progress',exact:true}).first()).toBeDisabled();await expect(panel(page).getByRole('button',{name:'Complete review',exact:true}).first()).toBeDisabled()
+    > 139 |   await panel(page).getByRole('button',{name:'Refresh current review',exact:true}).click();await restored(page)
+          |                                                                                   ^
+      140 |   await panel(page).getByRole('button',{name:'Discard my unsaved answers',exact:true}).click();await expect(page.getByLabel('Overall review note',{exact:true})).toHaveValue('New authoritative note')
+      141 |  }else{
+      142 |   await expect(panel(page)).toContainText('Assigned to another reviewer');await expect(panel(page)).toContainText('UNSAVED focused overall note');await expect(page.getByLabel('Human answer: Warm opening',{exact:true})).toHaveCount(0);await expect(page.getByRole('button',{name:'Complete review',exact:true})).toHaveCount(0)
+        at /private/tmp/aqm-v020f-user-language/tests/reviewer-focus.spec.ts:139:83
+
+    Error Context: test-results/reviewer-focus-dirty-focused-review-handles-revision-safely/error-context.md
+
+
+(node:49936) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[112/120] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles assignment safely
+[113/120] tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters
+  17) tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Next server page →', exact: true })
+
+
+      147 |  const query='page=evaluations&reviewQueue=mine&assignment=mine&due=today&dueState=DUE_SOON&queue=Fixture+Queue&form=general_service%4017'
+      148 |  const f=await continuityFixture(page,query,{pagination:true})
+    > 149 |  await page.getByRole('button',{name:'Next server page →',exact:true}).click();await cta(page).click();await edit(page,true)
+          |                                                                        ^
+      150 |  await evidence(page);await restored(page)
+      151 |  const writes=await page.evaluate(()=>(window as any).__reviewTrace.writes)
+      152 |  expect(writes.filter((w:any)=>/UNSAVED|baseRevision|reviewDraft|"questionId"/.test(w.value))).toEqual([])
+        at /private/tmp/aqm-v020f-user-language/tests/reviewer-focus.spec.ts:149:72
+
+    Error Context: test-results/reviewer-focus-focused-evi-87182-er-cursor-and-exact-filters/error-context.md
+
+
+(node:49967) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[114/120] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[115/120] tests/reviewer-focus.spec.ts:180:1 › mobile available work claims into the same focused workspace
+[116/120] tests/reviewer-focus.spec.ts:197:1 › applicable progress excludes skipped questions
+[117/120] tests/reviewer-focus.spec.ts:206:1 › focused ADMIN retains assignment management under disclosure
+[118/120] tests/reviewer-focus.spec.ts:215:162 › explicit Start from active enters focused work and reconciles completion
+[119/120] tests/reviewer-focus.spec.ts:215:162 › explicit Start from explorer enters focused work and reconciles completion
+[120/120] tests/reviewer-focus.spec.ts:230:1 › later presentation page survives evidence, completion and queue return
+  17 failed
+    tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920 
+    tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440 
+    tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920 
+    tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390 
+    tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success 
+    tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific 
+    tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440 ──────────
+    tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1920 ──────────
+    tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 390 ───────────
+    tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate 
+    tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate 
+    tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records 
+    tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390 
+    tests/reviewer-continuity.spec.ts:161:1 › revision conflict retains inputs, blocks submit and requires explicit discard 
+    tests/reviewer-continuity.spec.ts:212:1 › later server page survives evidence return and completion background reload 
+    tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely ─────────────
+    tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters 
+  103 passed (8.6m)

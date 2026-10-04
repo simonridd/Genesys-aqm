@@ -524,3 +524,15 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
 .overview-quality-attention>.text-link {margin-top:8px;margin-bottom:12px}
 .overview-alerts>.text-link {align-self:flex-start;margin-top:4px}
 .overview-attention .panel-heading h2 {margin-bottom:0}
+
+/* V0.20F: deliberate technical disclosure remains compact and wraps exact evidence. */
+.conversation-technical {padding:0 24px;margin:0;border-top:1px solid var(--aqm-border-subtle)}
+.technical-values {font-size:12px;overflow-wrap:anywhere;min-width:0}
+.technical-values dt {font-weight:700;margin-top:12px;color:var(--aqm-muted)}
+.technical-values dd {margin:4px 0 12px}
+.exact-reference-filters {grid-column:1/-1}
+.exact-reference-filters .browser-filters {padding:0;margin:12px 0 0}
+.policy-detail .form-checks label {overflow-wrap:anywhere;min-width:0}
+
+.conversation-detail-page .conversation-identity h2 {white-space:normal;overflow:visible;text-overflow:clip}
+@media(max-width:900px){.conversation-detail-page .right-column{grid-row:auto}.conversation-detail-page .left-column{grid-row:1}}

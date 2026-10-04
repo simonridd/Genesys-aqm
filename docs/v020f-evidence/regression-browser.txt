@@ -1,0 +1,156 @@
+[WebServer] (node:60039) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 122 tests using 1 worker
+
+(node:60041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/122] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/122] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 1440
+[3/122] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 1440
+[4/122] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 1440
+[5/122] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 1440
+[6/122] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[7/122] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 1920
+[8/122] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 1920
+[9/122] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 1920
+[10/122] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 1920
+[11/122] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[12/122] tests/answer-set-discovery.spec.ts:20:2 › Ordered scale wrong-turn finds Resolution clarity and keeps ordinary fields 390
+[13/122] tests/answer-set-discovery.spec.ts:21:2 › same-format apply has no format confirmation 390
+[14/122] tests/answer-set-discovery.spec.ts:22:2 › cross-format Service quality preserves ordered credit/source values 390
+[15/122] tests/answer-set-discovery.spec.ts:23:2 › dependent condition blocks format change with human guidance 390
+[16/122] tests/answer-set-discovery.spec.ts:25:1 › connected picker excludes browser starters and shows precise no-match copy
+[17/122] tests/answer-set-discovery.spec.ts:26:1 › disconnected Yes/No discovers local set; reconnect never uploads form or library
+[18/122] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+  1) tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440 
+
+    TypeError: Cannot read properties of undefined (reading 'questions')
+
+      26 | test('disconnected Yes/No discovers local set; reconnect never uploads form or library',async({page})=>{await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(app).origin?r.continue():r.abort());await page.goto(`${app}?page=forms`);const detail=await newQuestion(page),{region}=await preview(page,detail);await region.getByRole('button',{name:'Change to Multiple choice and use Resolution clarity v1'}).click();await expect(detail.getByRole('status')).toContainText('Saved in this browser');const before=await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}));expect(JSON.parse(before.forms!).some((f:EvaluationForm)=>f.questions.some(q=>q.sourceAnswerSet?.answerSetId===clarity.id))).toBe(true);await page.unroute('**/*');const state=await fixture(page,'AUTHOR',[],[]);try{await nav(page).click();await expect(page.getByRole('heading',{name:'Saved in AQM · 0 saved forms'})).toBeVisible();expect(await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}))).toEqual(before);await newQuestion(page);await detail.getByRole('button',{name:'Use reusable Answer Set'}).click();await expect(detail.getByRole('dialog')).toContainText('No published Answer Sets are available in this library.');expect(state.requests.every(r=>r.method==='GET')).toBe(true);expect(await state.store.forms()).toEqual([]);expect((await state.store.query('answerSetAssets',100)).items).toEqual([]);const after=await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}));expect(JSON.parse(after.forms!).slice(0,JSON.parse(before.forms!).length)).toEqual(JSON.parse(before.forms!));expect(after.sets).toBe(before.sets)}finally{await state.close()}})
+      27 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(e=>e===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard could not reach target')}
+    > 28 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`keyboard-only default question to search, preview, cancel, Apply and return ${viewport.width}`,async({page})=>{await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR',[clarity],[]);const act=async(target:Locator)=>{await tabTo(page,target);await page.keyboard.press('Enter')};try{await act(nav(page));await act(page.getByRole('button',{name:'＋ New form'}));const detail=page.locator('.form-detail');await tabTo(page,detail.getByLabel('Form name',{exact:true}));await page.keyboard.type('Keyboard form');await act(detail.getByRole('button',{name:'Add question',exact:true}));await tabTo(page,detail.getByLabel('Title',{exact:true}));await page.keyboard.type('Was the resolution clear?');await tabTo(page,detail.getByLabel('Instructions / question'));await page.keyboard.type('Assess resolution clarity.');await expect(detail.getByLabel('Answer format')).toHaveValue('noul');await act(detail.getByRole('button',{name:'Use reusable Answer Set'}));const dialog=detail.getByRole('dialog');await expect(dialog.locator('h4')).toBeFocused();await tabTo(page,dialog.getByLabel('Find Answer Set'));await page.keyboard.type('Resolution clarity');await act(dialog.getByRole('button',{name:'Preview Resolution clarity v1 format change'}));await expect(dialog.locator('h5')).toBeFocused();await act(dialog.getByRole('button',{name:'Cancel format change'}));await expect(dialog.getByRole('button',{name:'Preview Resolution clarity v1 format change'})).toBeFocused();await page.keyboard.press('Enter');await act(dialog.getByRole('button',{name:'Change to Multiple choice and use Resolution clarity v1'}));await expect(detail.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await act(detail.locator('.question-done').getByRole('button',{name:'Done'}));await act(detail.getByRole('button',{name:'Save changes',exact:true}));expect((await state.store.forms())[0].questions[0].options).toEqual(clarity.options);expect(state.errors).toEqual([]);writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({goal,keyboardOnly:true,manualAnswerFormatSelectionNeeded:false,focus:['Question editor','Published Answer Sets heading','Preview heading','Preview opener on cancel','Answers heading on apply','Question edit on Done'],completed:true},null,2))}finally{await state.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+      29 |
+        at /private/tmp/aqm-v020f-user-language/tests/answer-set-discovery.spec.ts:28:1984
+
+    TypeError: fetch failed
+    [cause]: Error: read ECONNRESET
+
+    Error Context: test-results/answer-set-discovery-keybo-5b6f8-ancel-Apply-and-return-1440/error-context.md
+
+
+(node:60080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[19/122] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+[20/122] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+[21/122] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440
+[22/122] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1440
+[23/122] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920
+[24/122] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1920
+[25/122] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390
+[26/122] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 390
+[27/122] tests/calibration-discovery.spec.ts:45:1 › catalogue cohort request, source/date/agent/queue refresh and unavailable selection reset
+[28/122] tests/calibration-discovery.spec.ts:59:1 › catalogue failure leaves filtered data usable, retry is isolated, main failure and no comparisons are safe
+[29/122] tests/calibration-discovery.spec.ts:67:1 › Back/Forward preserve form, view and exact question; deep link reload
+[30/122] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 1440
+[31/122] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 390
+[32/122] tests/calibration-discovery.spec.ts:83:1 › valid deep-linked version absent from fresh catalogue retains returned human authority
+[33/122] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 390
+[34/122] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1440
+[35/122] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1920
+[36/122] tests/evaluation-availability.spec.ts:64:1 › successful empty is a data result
+[37/122] tests/evaluation-availability.spec.ts:65:1 › refresh failure preserves search, rows and loaded time; retry replaces atomically
+[38/122] tests/evaluation-availability.spec.ts:74:1 › scope change suspends old rows while loading and failed; retry keeps the exact new scope
+[39/122] tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success
+[40/122] tests/evaluation-availability.spec.ts:96:44 › request race B then A
+[41/122] tests/evaluation-availability.spec.ts:96:44 › request race A then B
+[42/122] tests/evaluation-availability.spec.ts:105:1 › detail failure isolates list and prevents writable review until details retry succeeds
+[43/122] tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific
+[44/122] tests/evaluation-availability.spec.ts:123:1 › workload unavailable leaves the list usable
+[45/122] tests/evaluation-availability.spec.ts:124:31 › permission failure 401
+[46/122] tests/evaluation-availability.spec.ts:124:31 › permission failure 403
+[47/122] tests/evaluation-availability.spec.ts:125:1 › network failure is unavailable; malformed successful response is not an empty cohort
+[48/122] tests/evaluation-availability.spec.ts:129:1 › disconnected server does not render false empty; browser local history works and server stays truthful
+[49/122] tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards
+[50/122] tests/evaluation-availability.spec.ts:148:1 › successful My Reviews empty has its own copy
+[51/122] tests/evaluation-availability.spec.ts:152:60 › Overview investigation failure and exact retry 390
+[52/122] tests/evaluation-availability.spec.ts:152:60 › Analytics investigation failure and exact retry 390
+[53/122] tests/evaluation-availability.spec.ts:152:60 › Calibration investigation failure and exact retry 390
+[54/122] tests/evaluation-availability.spec.ts:175:1 › server failure cannot poison actual browser-local records
+[55/122] tests/evaluation-availability.spec.ts:182:1 › failed authoritative detail cannot enter writable focused reviewer task
+[56/122] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[57/122] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[58/122] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[59/122] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[60/122] tests/investigation-history.spec.ts:78:1 › v18 stays v18 rather than v17 or All published forms
+[61/122] tests/investigation-history.spec.ts:83:1 › rapid Back/Forward while Analytics refetches never grows history or reuses stale Evaluation scope
+[62/122] tests/investigation-history.spec.ts:96:50 › Queues investigation uses the same history path
+[63/122] tests/investigation-history.spec.ts:96:50 › Groups investigation uses the same history path
+[64/122] tests/investigation-history.spec.ts:96:50 › Overview investigation uses the same history path
+[65/122] tests/investigation-history.spec.ts:104:1 › reload preserves browser stack; fictional reconnect does not fabricate a source
+[66/122] tests/investigation-history.spec.ts:112:1 › Analytics and Evaluations failure retain restored scope and exact retry
+[67/122] tests/investigation-history.spec.ts:126:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+[68/122] tests/investigation-history.spec.ts:134:1 › direct external Evaluation entry has no fabricated Analytics history
+[69/122] tests/investigation-history.spec.ts:141:1 › Calibration disagreement Back/Forward restores exact version, question, view and cohort
+[70/122] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 1440
+[71/122] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 390
+[72/122] tests/investigation-history.spec.ts:160:1 › session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return
+[73/122] tests/investigation-history.spec.ts:171:1 › Overview characterization: range is not URL durable and its drill still replaces
+[74/122] tests/overview-regression-smoke.spec.ts:3:1 › Overview My review queue still opens mobile priority cards and focused review
+[75/122] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[76/122] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[77/122] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[78/122] tests/reviewer-continuity.spec.ts:111:1 › exact My Reviews filter context survives evidence navigation
+[79/122] tests/reviewer-continuity.spec.ts:119:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[80/122] tests/reviewer-continuity.spec.ts:132:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[81/122] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles All Evaluations without Refresh
+[82/122] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles active cohort without Refresh
+[83/122] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles review status without Refresh
+[84/122] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles due cohort without Refresh
+[85/122] tests/reviewer-continuity.spec.ts:161:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[86/122] tests/reviewer-continuity.spec.ts:180:1 › reassignment retains unsaved notes but removes editing and submission authority
+[87/122] tests/reviewer-continuity.spec.ts:191:1 › 409 refresh retains draft without silently replacing its base
+[88/122] tests/reviewer-continuity.spec.ts:201:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[89/122] tests/reviewer-continuity.spec.ts:212:1 › later server page survives evidence return and completion background reload
+[90/122] tests/reviewer-continuity.spec.ts:223:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[91/122] tests/reviewer-continuity.spec.ts:238:1 › unstarted review returns to selected evaluation heading
+[92/122] tests/reviewer-continuity.spec.ts:245:1 › completion removes the row before a failed background list reload, preserving confirmation
+[93/122] tests/reviewer-continuity.spec.ts:259:1 › failed completion retains all changes and explicit retry completes exactly once
+[94/122] tests/reviewer-continuity.spec.ts:273:1 › reload starts a new session without unsubmitted answers or notes
+[95/122] tests/reviewer-continuity.spec.ts:285:1 › About and workspace handoff retain human work and unload protection in this SPA
+[96/122] tests/reviewer-continuity.spec.ts:296:1 › a pending completion reconciles the current filters rather than the scope at click time
+[97/122] tests/reviewer-continuity.spec.ts:312:1 › completion in another session keeps unfinished answers separate from completed authority
+[98/122] tests/reviewer-continuity.spec.ts:326:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[99/122] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[100/122] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[101/122] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[102/122] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[103/122] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[104/122] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely
+[105/122] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles assignment safely
+[106/122] tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters
+[107/122] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[108/122] tests/reviewer-focus.spec.ts:180:1 › mobile available work claims into the same focused workspace
+[109/122] tests/reviewer-focus.spec.ts:197:1 › applicable progress excludes skipped questions
+[110/122] tests/reviewer-focus.spec.ts:206:1 › focused ADMIN retains assignment management under disclosure
+[111/122] tests/reviewer-focus.spec.ts:215:162 › explicit Start from active enters focused work and reconciles completion
+[112/122] tests/reviewer-focus.spec.ts:215:162 › explicit Start from explorer enters focused work and reconciles completion
+[113/122] tests/reviewer-focus.spec.ts:230:1 › later presentation page survives evidence, completion and queue return
+[114/122] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x900
+[115/122] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1920x1080
+[116/122] tests/user-language.spec.ts:19:25 › routine language and technical evidence 390x844
+[117/122] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x720
+[118/122] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 1440
+[119/122] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 390
+[120/122] tests/user-language.spec.ts:111:1 › local policy authority uses browser language
+[121/122] tests/user-language.spec.ts:121:1 › saved policy and schedule remain separate with dirty guards and read-only roles
+[122/122] tests/user-language.spec.ts:142:1 › manual AI evaluation uses product copy and retains result provenance
+  1 failed
+    tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440 
+  121 passed (4.7m)

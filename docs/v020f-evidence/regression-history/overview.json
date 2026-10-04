@@ -1,0 +1,11 @@
+{
+  "source": "http://127.0.0.1:4174/Genesys-aqm/?page=automation",
+  "range": 30,
+  "rangeUrlDurable": false,
+  "drill": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&evaluationSource=server&source=genesys-cloud&from=2026-09-02&to=2026-10-02&critical=yes",
+  "back": "http://127.0.0.1:4174/Genesys-aqm/?page=welcome",
+  "historyBefore": 4,
+  "historyAfter": 4,
+  "changed": false,
+  "boundary": "Dashboard range, selected alerts and operational state are component state; truthful restoration requires a separate Overview model."
+}

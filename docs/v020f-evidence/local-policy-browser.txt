@@ -1,0 +1,34 @@
+
+Running 1 test using 1 worker
+
+(node:49740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] tests/user-language.spec.ts:111:1 › local policy authority uses browser language
+  1) tests/user-language.spec.ts:111:1 › local policy authority uses browser language ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).locator('button').filter({ has: getByText('Policies', { exact: true }) })
+
+
+       at workspace-navigation.ts:6
+
+      4 |  const group=item.locator('xpath=ancestor::details')
+      5 |  if(await group.count()&&await group.getAttribute('open')===null)await group.locator('summary').click()
+    > 6 |  await item.click()
+        |             ^
+      7 | }
+      8 | export async function chooseView(page:Page,label:string){
+      9 |  await page.locator('.responsive-view-switcher').waitFor({state:'visible'})
+        at navigateWorkspace (/private/tmp/aqm-v020f-user-language/tests/workspace-navigation.ts:6:13)
+        at /private/tmp/aqm-v020f-user-language/tests/user-language.spec.ts:114:2
+
+    Error Context: test-results/user-language-local-policy-authority-uses-browser-language/error-context.md
+
+
+  1 failed
+    tests/user-language.spec.ts:111:1 › local policy authority uses browser language ───────────────

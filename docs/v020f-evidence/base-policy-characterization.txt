@@ -1,0 +1,134 @@
+[WebServer] (node:49786) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 4 tests using 1 worker
+
+(node:49787) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440
+  1) tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440 ─────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.policy-detail').getByText('DURABLE POLICY · v1')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.policy-detail').getByText('DURABLE POLICY · v1') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByText('DURABLE POLICY · v1')
+
+
+      55 |  await page.screenshot({path:`/private/tmp/aqm-v014-library-${viewport.width}.png`,fullPage:true})
+      56 |  await page.getByLabel('Policy schedule filter').selectOption('All');await page.getByLabel('Policy forms filter').selectOption('All');await page.getByRole('button',{name:'＋ New policy'}).click()
+    > 57 |  await expect(detail.getByText('DURABLE POLICY · v1')).toBeVisible();await expect(detail.getByLabel('Criteria value')).toHaveValue('');await expect(detail.getByLabel('Enabled (requires Save changes)')).not.toBeChecked()
+         |                                                        ^
+      58 |  await detail.getByLabel('Policy name').fill('Authored voice policy');await detail.getByLabel('Condition field').selectOption('channel');await detail.getByLabel('Criteria value').fill('voice')
+      59 |  await detail.getByRole('button',{name:'Add condition',exact:true}).click();await detail.getByLabel('Condition field').nth(1).selectOption('direction');await detail.getByLabel('Criteria value').nth(1).fill('inbound')
+      60 |  await detail.getByRole('button',{name:'Add OR group'}).click();await detail.getByLabel('Condition field').nth(2).selectOption('queue');await detail.getByLabel('Criteria value').nth(2).fill('Customer Service');await expect(detail.getByText('Match ALL',{exact:true})).toHaveCount(2)
+        at /private/tmp/aqm-v020f-canonical/tests/policy-authoring.spec.ts:57:56
+
+    Error Context: test-results/policy-authoring-durable-p-ef9e1-oring-and-schedules-at-1440/error-context.md
+
+
+(node:49803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/4] tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate
+  2) tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate 
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('.policy-detail').getByLabel('Policy name')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('.policy-detail').getByLabel('Policy name') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByLabel('Policy name')
+        14 × locator resolved to <input readonly value="Daily Voice fixture"/>
+           - unexpected value "enabled"
+
+
+      81 | for(const role of ['VIEWER','REVIEWER'] as const)test(`${role} can inspect policies and schedule but cannot mutate`,async({page})=>{
+      82 |  const state=await fixture(page,role);await page.getByRole('button',{name:'Daily Voice fixture',exact:true}).click();const detail=page.locator('.policy-detail')
+    > 83 |  await expect(detail.getByLabel('Policy name')).toBeDisabled();await expect(detail.getByLabel('Automation',{exact:true})).toBeDisabled();await expect(detail.getByRole('button',{name:'View runs'})).toBeEnabled();for(const name of ['Save changes','Duplicate policy','Save schedule','＋ New policy'])await expect(page.getByRole('button',{name,exact:true})).toHaveCount(0);expect(state.mutations).toBe(0)
+         |                                                 ^
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+      86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v020f-canonical/tests/policy-authoring.spec.ts:83:49
+
+    Error Context: test-results/policy-authoring-VIEWER-ca-ba8d2--schedule-but-cannot-mutate/error-context.md
+
+
+(node:49830) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate
+  3) tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate 
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('.policy-detail').getByLabel('Policy name')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('.policy-detail').getByLabel('Policy name') with timeout 5000ms
+      - waiting for locator('.policy-detail').getByLabel('Policy name')
+        14 × locator resolved to <input readonly value="Daily Voice fixture"/>
+           - unexpected value "enabled"
+
+
+      81 | for(const role of ['VIEWER','REVIEWER'] as const)test(`${role} can inspect policies and schedule but cannot mutate`,async({page})=>{
+      82 |  const state=await fixture(page,role);await page.getByRole('button',{name:'Daily Voice fixture',exact:true}).click();const detail=page.locator('.policy-detail')
+    > 83 |  await expect(detail.getByLabel('Policy name')).toBeDisabled();await expect(detail.getByLabel('Automation',{exact:true})).toBeDisabled();await expect(detail.getByRole('button',{name:'View runs'})).toBeEnabled();for(const name of ['Save changes','Duplicate policy','Save schedule','＋ New policy'])await expect(page.getByRole('button',{name,exact:true})).toHaveCount(0);expect(state.mutations).toBe(0)
+         |                                                 ^
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+      86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+        at /private/tmp/aqm-v020f-canonical/tests/policy-authoring.spec.ts:83:49
+
+    Error Context: test-results/policy-authoring-REVIEWER--7576b--schedule-but-cannot-mutate/error-context.md
+
+
+(node:49839) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/4] tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records
+  4) tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('navigation', { name: 'Primary navigation' }).getByRole('button', { name: 'Policies', exact: true })
+
+
+      84 | })
+      85 | test('offline sandbox saves locally and never intermingles with connected records',async({page})=>{
+    > 86 |  await page.goto(app);await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByText(/Local\/demo policy sandbox · saved in this browser only/)).toBeVisible();await page.getByRole('button',{name:'＋ New policy'}).click();const detail=page.locator('.policy-detail');await detail.getByLabel('Policy name').fill('Offline only');await detail.getByLabel('Criteria value').fill('Complaint');await detail.getByRole('button',{name:'Save changes',exact:true}).click();await page.reload();await page.getByRole('navigation',{name:'Primary navigation'}).getByRole('button',{name:'Policies',exact:true}).click();await expect(page.getByRole('button',{name:'Offline only',exact:true})).toBeVisible()
+         |                                                                                                                                       ^
+      87 | })
+      88 | test('connected load failure does not expose local definitions or production mutation controls',async({page})=>{
+      89 |  await fixture(page);await page.route(`${origin}/api/policies**`,r=>r.fulfill({status:503,json:{error:'Durable library unavailable'}}));await page.getByRole('button',{name:'Refresh durable policies'}).click();await expect(page.getByRole('alert')).toContainText('Durable library unavailable');await expect(page.getByText('STALE LOCAL MUST NOT MERGE')).toHaveCount(0);await expect(page.getByRole('button',{name:'＋ New policy'})).toHaveCount(0);await expect(page.locator('.policy-detail')).toHaveCount(0)
+        at /private/tmp/aqm-v020f-canonical/tests/policy-authoring.spec.ts:86:135
+
+    Error Context: test-results/policy-authoring-offline-s-ec345-gles-with-connected-records/error-context.md
+
+
+  4 failed
+    tests/policy-authoring.spec.ts:45:97 › durable policy authoring and schedules at 1440 ──────────
+    tests/policy-authoring.spec.ts:81:50 › VIEWER can inspect policies and schedule but cannot mutate 
+    tests/policy-authoring.spec.ts:81:50 › REVIEWER can inspect policies and schedule but cannot mutate 
+    tests/policy-authoring.spec.ts:85:1 › offline sandbox saves locally and never intermingles with connected records 

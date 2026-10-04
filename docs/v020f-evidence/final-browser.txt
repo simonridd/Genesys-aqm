@@ -1,0 +1,24 @@
+[WebServer] (node:60670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 13 tests using 1 worker
+
+(node:60672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/13] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+[2/13] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+[3/13] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+[4/13] tests/policy-authoring.spec.ts:88:1 › connected load failure does not expose local definitions or production mutation controls
+[5/13] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x900
+[6/13] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1920x1080
+[7/13] tests/user-language.spec.ts:19:25 › routine language and technical evidence 390x844
+[8/13] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x720
+[9/13] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 1440
+[10/13] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 390
+[11/13] tests/user-language.spec.ts:111:1 › local policy authority uses browser language
+[12/13] tests/user-language.spec.ts:121:1 › saved policy and schedule remain separate with dirty guards and read-only roles
+[13/13] tests/user-language.spec.ts:142:1 › manual AI evaluation uses product copy and retains result provenance
+  13 passed (35.4s)

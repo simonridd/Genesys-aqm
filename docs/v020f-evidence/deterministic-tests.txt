@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-v020f-user-language
+
+
+ Test Files  70 passed (70)
+      Tests  681 passed (681)
+   Start at  15:52:29
+   Duration  2.00s (import 40%, tests 37%, transform 22%, worker 2%)
+
+    Isolate  70 workers spawned · ~83ms startup each (spawn + environment, per file)
+             at least ~498ms faster with isolate: false — reuses workers across files instead of one per file
+

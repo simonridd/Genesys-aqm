@@ -17,7 +17,7 @@ describe('role prominence preserves shared capability',()=>{
   expect(navigationForRole(null).filter(g=>g.primary)).toHaveLength(1)
  })
  it('human labels cover every route',()=>{
-  expect(pageLabel('answerSets')).toBe('Answer Sets');expect(pageLabel('groups')).toBe('Question Groups');expect(pageLabel('evaluate')).toBe('Conversation review');expect(pageLabel('automation')).toBe('Overview')
+  expect(pageLabel('answerSets')).toBe('Answer Sets');expect(pageLabel('groups')).toBe('Question Groups');expect(pageLabel('evaluate')).toBe('Conversation detail');expect(pageLabel('automation')).toBe('Overview')
  })
  it('permission contract is invariant, including existing reference reads',()=>{
   const reads=['forms.read','groups.read','policies.read','evaluations.read','reviews.read','alerts.read','settings.read']

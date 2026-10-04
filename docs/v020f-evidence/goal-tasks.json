@@ -1,0 +1,43 @@
+{
+  "method": "Scripted agent-visible goal replays; no independent human timing study.",
+  "routineGoals": [
+    {
+      "goal": "Read this conversation and tell me what happened.",
+      "technicalOpeningsRequired": 0,
+      "wrongTurnsRequired": 0,
+      "evidence": "after/conversation-*; Transcript messages before detail/control panels"
+    },
+    {
+      "goal": "Check which evaluation form this policy uses and when it runs.",
+      "technicalOpeningsRequired": 0,
+      "wrongTurnsRequired": 0,
+      "evidence": "after/policy-*; ordinary form/version and saved Schedule"
+    },
+    {
+      "goal": "Find a ready review, check evidence and continue human review.",
+      "technicalOpeningsRequired": 0,
+      "wrongTurnsRequired": 0,
+      "evidence": "regression-focus/task-*; final-browser tests maintain answer on return"
+    },
+    {
+      "goal": "What was evaluated, result, form and human review status?",
+      "technicalOpeningsRequired": 0,
+      "wrongTurnsRequired": 0,
+      "evidence": "after/viewer-*; 80% Pass, General Customer Service v17, Not reviewed"
+    }
+  ],
+  "technicalGoals": [
+    {
+      "goal": "Exact evaluation/conversation/policy run/AI model",
+      "openingsRequired": 1,
+      "summary": "Evaluation provenance",
+      "evidence": "after/provenance-*"
+    },
+    {
+      "goal": "Exact policy/assigned form reference",
+      "openingsRequired": 1,
+      "summary": "Advanced details",
+      "evidence": "after/policy-technical-*"
+    }
+  ]
+}

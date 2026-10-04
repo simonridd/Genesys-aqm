@@ -1,0 +1,196 @@
+{
+  "base": "c128bca90b68df3cbf4f64462587e51b7a59b681",
+  "method": "Rendered main.innerText and before screenshots; closed native disclosures excluded. Count aliases overlap and are not a combined metric.",
+  "screens": [
+    {
+      "capture": "conversation-1440x900.json",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "visibleOccurrences": {
+        "server": 1,
+        "22222222-2222": 1,
+        "33333333-3333": 1,
+        "55555555-5555": 1,
+        "automation service": 3
+      },
+      "rawMetadataKeysPresent": [
+        "queueId",
+        "sessionId",
+        "source",
+        "wrapUpCode",
+        "durationSeconds",
+        "agent",
+        "conversationEnd"
+      ]
+    },
+    {
+      "capture": "conversation-390x844.json",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visibleOccurrences": {
+        "server": 1,
+        "22222222-2222": 1,
+        "33333333-3333": 1,
+        "55555555-5555": 1,
+        "automation service": 3
+      },
+      "rawMetadataKeysPresent": [
+        "queueId",
+        "sessionId",
+        "source",
+        "wrapUpCode",
+        "durationSeconds",
+        "agent",
+        "conversationEnd"
+      ]
+    },
+    {
+      "capture": "detail-1440x900.json",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "visibleOccurrences": {
+        "server": 1,
+        "NOT_REVIEWED": 16,
+        "REVIEW_REQUESTED": 1,
+        "IN_REVIEW": 2,
+        "REVIEWED": 21,
+        "22222222-2222": 21,
+        "fixture-jev": 1,
+        "fixture-policy-run": 2,
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "source",
+        "agent"
+      ]
+    },
+    {
+      "capture": "detail-390x844.json",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visibleOccurrences": {
+        "server": 1,
+        "NOT_REVIEWED": 16,
+        "REVIEW_REQUESTED": 1,
+        "IN_REVIEW": 2,
+        "REVIEWED": 21,
+        "22222222-2222": 21,
+        "fixture-jev": 1,
+        "fixture-policy-run": 2,
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "source",
+        "agent"
+      ]
+    },
+    {
+      "capture": "evaluations-1440x900.json",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "visibleOccurrences": {
+        "server": 1,
+        "NOT_REVIEWED": 15,
+        "REVIEW_REQUESTED": 1,
+        "IN_REVIEW": 2,
+        "REVIEWED": 19,
+        "22222222-2222": 20,
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "source",
+        "agent"
+      ]
+    },
+    {
+      "capture": "evaluations-390x844.json",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visibleOccurrences": {
+        "server": 1,
+        "NOT_REVIEWED": 15,
+        "REVIEW_REQUESTED": 1,
+        "IN_REVIEW": 2,
+        "REVIEWED": 19,
+        "22222222-2222": 20,
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "source",
+        "agent"
+      ]
+    },
+    {
+      "capture": "focused-1440x900.json",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "visibleOccurrences": {
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "agent"
+      ]
+    },
+    {
+      "capture": "focused-390x844.json",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visibleOccurrences": {
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "agent"
+      ]
+    },
+    {
+      "capture": "policy-1440x900.json",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "visibleOccurrences": {
+        "durable": 1,
+        "server": 2,
+        "DURABLE POLICY": 1,
+        "general_service": 1,
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "agent"
+      ]
+    },
+    {
+      "capture": "policy-390x844.json",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visibleOccurrences": {
+        "durable": 1,
+        "server": 2,
+        "DURABLE POLICY": 1,
+        "general_service": 1,
+        "automation service": 1
+      },
+      "rawMetadataKeysPresent": [
+        "agent"
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import type { Page } from './domain/navigation'
 export const pageLabels:Record<Page,string> = {
  automation:'Overview', evaluations:'Evaluations', analytics:'Analytics', calibration:'Calibration',
  policies:'Policies', forms:'Evaluation Forms', groups:'Question Groups', answerSets:'Answer Sets',
- conversations:'Conversations', evaluate:'Conversation review', settings:'Settings', history:'Browser history',
+ conversations:'Conversations', evaluate:'Conversation detail', settings:'Settings', history:'Browser history',
 }
 export const pageLabel=(page:Page)=>pageLabels[page]
 export type NavigationGroupId='quality'|'configuration'|'interactions'

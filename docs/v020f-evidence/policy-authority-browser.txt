@@ -1,0 +1,10 @@
+
+Running 2 tests using 1 worker
+
+(node:49998) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] tests/user-language.spec.ts:111:1 › local policy authority uses browser language
+[2/2] tests/user-language.spec.ts:121:1 › saved policy and schedule remain separate with dirty guards and read-only roles
+  2 passed (4.7s)

@@ -1,0 +1,57 @@
+[
+  {
+    "text": "Cancel",
+    "x": 1705.75,
+    "right": 1772
+  },
+  {
+    "text": "",
+    "x": 390,
+    "right": 1772
+  },
+  {
+    "text": "Service quality · v1",
+    "x": 390,
+    "right": 527.015625
+  },
+  {
+    "text": "Preview Service quality v1 format change",
+    "x": 390,
+    "right": 648.09375
+  },
+  {
+    "text": "Change answer format",
+    "x": 407,
+    "right": 1755
+  },
+  {
+    "text": "Excellent",
+    "x": 447,
+    "right": 499.421875
+  },
+  {
+    "text": "Good",
+    "x": 447,
+    "right": 477.625
+  },
+  {
+    "text": "Adequate",
+    "x": 447,
+    "right": 502.578125
+  },
+  {
+    "text": "Poor",
+    "x": 447,
+    "right": 473.8125
+  },
+  {
+    "text": "Change to Ordered scale and use Service quality v1",
+    "x": 407,
+    "right": 730.1875
+  },
+  {
+    "text": "Cancel format change",
+    "x": 740.1875,
+    "right": 862.765625
+  }
+]

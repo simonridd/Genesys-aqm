@@ -1,0 +1,21 @@
+{
+  "rubric": {
+    "1": "Seriously ineffective",
+    "2": "Major friction",
+    "3": "Acceptable prototype",
+    "4": "Strong internal product",
+    "5": "Unusually polished/intuitive"
+  },
+  "scores": {
+    "User-facing cleanliness": 4,
+    "First-time learnability": 4,
+    "Reviewer/viewer comprehension": 4,
+    "Technical traceability": 4
+  },
+  "assessment": "Scoped agent assessment supported by rendered states, scripted role/goal tasks and explicit disclosure evidence; no whole-product mean or recruited participant study.",
+  "limits": [
+    "Inherited mobile navigation/table length",
+    "Unnamed directory assignment controls retain IDs to distinguish reviewers",
+    "Scripted qualification"
+  ]
+}

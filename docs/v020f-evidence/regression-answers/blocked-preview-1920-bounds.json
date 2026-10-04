@@ -1,0 +1,62 @@
+[
+  {
+    "text": "Cancel",
+    "x": 1705.75,
+    "right": 1772
+  },
+  {
+    "text": "",
+    "x": 390,
+    "right": 1772
+  },
+  {
+    "text": "Resolution clarity · v1",
+    "x": 390,
+    "right": 545.6875
+  },
+  {
+    "text": "Preview Resolution clarity v1 format change",
+    "x": 390,
+    "right": 662.609375
+  },
+  {
+    "text": "Change answer format",
+    "x": 407,
+    "right": 1755
+  },
+  {
+    "text": "Clear",
+    "x": 447,
+    "right": 477.453125
+  },
+  {
+    "text": "Mostly clear",
+    "x": 447,
+    "right": 517.34375
+  },
+  {
+    "text": "Partly clear",
+    "x": 447,
+    "right": 512.546875
+  },
+  {
+    "text": "Unclear",
+    "x": 447,
+    "right": 491.65625
+  },
+  {
+    "text": "CAN’T CHANGE ANSWER FORMAT YET",
+    "x": 422,
+    "right": 629.5625
+  },
+  {
+    "text": "Change to Multiple choice and use Resolution clarity v1",
+    "x": 407,
+    "right": 752.265625
+  },
+  {
+    "text": "Cancel format change",
+    "x": 762.265625,
+    "right": 884.84375
+  }
+]

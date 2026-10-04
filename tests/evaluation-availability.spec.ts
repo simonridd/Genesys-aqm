@@ -83,7 +83,7 @@ test('scope change suspends old rows while loading and failed; retry keeps the e
 test('next and first page failures preserve cursor, current rows and page controls until retry success',async({page})=>{
  const f=await fixture(page);f.c.paginate=true;await enter(page);await healthy(page)
  const first=await rows(page).evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))
- f.c.fail=503;await page.getByRole('button',{name:'Next server page →'}).click()
+ f.c.fail=503;await page.getByRole('button',{name:'Next page →'}).click()
  await expect(availability(page)).toContainText('Couldn’t load the next page.');await expect(availability(page)).toContainText('Current page is unchanged.')
  expect(await rows(page).evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))).toEqual(first);await expect(page.getByRole('button',{name:'First page',exact:true})).toBeDisabled()
  f.c.fail=0;await availability(page).getByRole('button',{name:'Retry next page'}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeEnabled();await healthy(page)
@@ -114,7 +114,7 @@ test('sample, bulk assignment and bulk due failures remain operation-specific',a
  await page.getByText('Calibration sample',{exact:true}).click();await page.getByRole('button',{name:'Request sample',exact:true}).click()
  await expect(page.getByRole('region',{name:'Calibration sample',exact:true})).toContainText('Calibration sample could not be requested.');await healthy(page);await expect(availability(page)).toHaveCount(0)
  // A requested review is eligible for assignment and due-date operations.
- await page.getByRole('checkbox',{name:'Select evaluation quality-1',exact:true}).check();await page.getByText('Bulk assignment',{exact:true}).first().click()
+ await page.locator('tr').filter({has:page.locator('button[data-evaluation-id="quality-1"]')}).getByRole('checkbox').check();await page.getByText('Bulk assignment',{exact:true}).first().click()
  const bulk=page.getByRole('region',{name:'Bulk review assignment',exact:true});await bulk.getByLabel('Bulk assign to',{exact:true}).selectOption('admin');await bulk.getByRole('button',{name:'Assign 1 reviews'}).click()
  await expect(bulk).toContainText('Reviews could not be assigned.');await healthy(page);await expect(availability(page)).toHaveCount(0)
  await bulk.getByRole('button',{name:'Clear due date',exact:true}).click();await expect(bulk).toContainText('Review due dates could not be updated.');await healthy(page);await expect(availability(page)).toHaveCount(0)
@@ -176,7 +176,7 @@ test('server failure cannot poison actual browser-local records',async({page})=>
  const record=reviewFixture('local-only')
  await page.addInitScript(({key,record})=>localStorage.setItem(key,JSON.stringify([record])),{key:historyStorageKey,record})
  const f=await fixture(page);f.c.fail=503;await enter(page);await expect(availability(page)).toBeVisible()
- await page.getByRole('combobox',{name:'History',exact:true}).selectOption('browser');await expect(rows(page)).toHaveCount(1);await expect(rows(page).first()).toHaveAttribute('aria-label','Open evaluation local-only');await expect(availability(page)).toHaveCount(0)
+ await page.getByRole('combobox',{name:'History',exact:true}).selectOption('browser');await expect(rows(page)).toHaveCount(1);await expect(rows(page).first()).toHaveAttribute('data-evaluation-id','local-only');await expect(availability(page)).toHaveCount(0)
  await page.getByRole('combobox',{name:'History',exact:true}).selectOption('server');await expect(availability(page)).toBeVisible();await noFalseEmpty(page)
 })
 test('failed authoritative detail cannot enter writable focused reviewer task',async({page})=>{

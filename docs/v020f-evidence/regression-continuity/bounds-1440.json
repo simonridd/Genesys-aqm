@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Open conversation",
+    "box": {
+      "x": 309,
+      "y": 324.25,
+      "width": 186,
+      "height": 33
+    }
+  },
+  {
+    "name": "← Back to human review",
+    "box": {
+      "x": 1049.515625,
+      "y": 38.390625,
+      "width": 163.65625,
+      "height": 33
+    }
+  },
+  {
+    "name": "Complete review",
+    "box": {
+      "x": 426.4375,
+      "y": 458.25,
+      "width": 127.578125,
+      "height": 37
+    }
+  },
+  {
+    "name": "Close and continue My Reviews",
+    "box": {
+      "x": 309,
+      "y": 736.96875,
+      "width": 203.03125,
+      "height": 33
+    }
+  }
+]

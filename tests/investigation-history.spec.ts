@@ -164,7 +164,7 @@ test('session-only reviewer draft survives pushed Analytics investigation Back/F
  await note.fill('V020D session-only draft');const d=page.url(),writes=f.requests.filter(r=>r.method==='PUT').length
  await page.goBack();await expect(page.getByRole('heading',{name:'Quality analytics',exact:true})).toBeVisible();await expect(page).toHaveURL(sourceUrl)
  await page.goForward();await expect(note).toHaveValue('V020D session-only draft');await expect(page).toHaveURL(d)
- await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await expect(page.getByRole('heading',{name:'Conversation review',exact:true})).toBeVisible();await page.getByRole('button',{name:'← Back to review',exact:true}).click();await expect(note).toHaveValue('V020D session-only draft')
+ await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await expect(page.getByRole('heading',{name:'Conversation detail',exact:true})).toBeVisible();await page.getByRole('button',{name:'← Back to human review',exact:true}).click();await expect(note).toHaveValue('V020D session-only draft')
  expect(f.requests.filter(r=>r.method==='PUT')).toHaveLength(writes);expect(f.errors).toEqual([]);expect(f.forbidden).toEqual([])
  writeFileSync(`${evidence}/review-draft.json`,JSON.stringify({source:sourceUrl,investigation:d,draftPreserved:true,evidenceReturnPreserved:true,extraWrites:0},null,2))
 })
