@@ -1,0 +1,24 @@
+{
+  "testedSourceSha": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "originalDeployedSourceSha": "9f5ce133fda64d2de458002b67f9002552bbe25b",
+  "frontendInputsAndBuildIdentical": true,
+  "remoteMainObserved": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "deterministicPassed": 621,
+  "focusedPlaywrightPassed": 35,
+  "pagesFilesMatched": 12,
+  "productionCollectionsUnchangedDuringRecheck": true,
+  "runtimeUnchangedDuringRecheck": true,
+  "historicalChangedCollections": [
+    "schedules",
+    "policyRuns",
+    "operationalHealth",
+    "scheduleExecutionClaims"
+  ],
+  "agentProductionMutations": 0,
+  "agentProviderCalls": {
+    "Genesys": 0,
+    "Jev": 0
+  },
+  "noDeploymentDuringRecheck": true,
+  "retainedLegacyOverviewFailures": 2
+}

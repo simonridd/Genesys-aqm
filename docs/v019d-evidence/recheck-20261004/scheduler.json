@@ -1,0 +1,25 @@
+{
+  "newerScheduledRuns": [
+    {
+      "startedAt": "2026-10-04T01:00:07.222Z",
+      "completedAt": "2026-10-04T01:00:07.815Z",
+      "executionMode": "scheduled",
+      "source": "genesys-cloud",
+      "status": "completed",
+      "candidateConversationCount": "0",
+      "evaluationsRequested": "0",
+      "evaluationsSucceeded": "0",
+      "evaluationsFailed": "0",
+      "actualProviderRequests": "0"
+    }
+  ],
+  "scheduleRuntime": [
+    {
+      "enabled": true,
+      "frequency": "DAILY",
+      "nextDueAt": "2026-10-05T01:00:00.000Z",
+      "lastSuccessfulAt": "2026-10-04T01:00:07.815Z",
+      "lastAttemptAt": null
+    }
+  ]
+}

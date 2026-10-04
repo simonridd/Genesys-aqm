@@ -120,6 +120,20 @@ Read-only snapshots store counts/hashes only for 25 production collections, incl
 
 Production mutations: **0**. Provider calls: **Genesys 0; Jev 0**. Notification sends: **0**. No Cloud Run deployment, production domain, runtime configuration, IAM, secret or Scheduler mutation occurred. Browser proof uses intercepted fictional APIs and blocks external provider traffic; production proof uses read-only counts/hashes and configuration metadata. The unrelated environment-builder-v2 project is untouched.
 
+## Verification resumed on 4 October 2026
+
+The requested worktree/branch was already clean and pushed at `c20604c3b33b81a0038388851d07d6f500792bdb` when this verification started. A read-only GitHub check found remote `main` also at that SHA, rather than the supplied original canonical base. No merge, PR, tag or deployment was performed in this resumed run. This addendum and its evidence are the only new branch changes.
+
+A fresh Git archive of that committed HEAD passed **621/621 deterministic tests**, build/typecheck and **35/35 focused Playwright checks**. Those checks include eight role/mobile task replays, all role-route cases, keyboard/disclosure/current-page semantics, mobile view selection and exact question return, asynchronous access resolution, history and dirty-navigation guards. Proof again covers 1440×900, 1920×1080, 390×844 and 1440×720. The initial sandbox attempts could not bind local fixture/preview servers; the successful runs used localhost access with intercepted fictional services. Existing regression results and the two explicitly documented legacy Overview failures above remain unchanged; no fresh whole-product review was run.
+
+All frontend build inputs still match deployed tested source `9f5ce133fda64d2de458002b67f9002552bbe25b`. The fresh HEAD build matched its recorded 12-file manifest byte-for-byte, and a read-only public comparison again verified all 12 files and the Pages Git tree at `0615b57ed4fb3acfa3fce57807dc7b6f0195993e`. Republishing the identical build was unnecessary.
+
+Fresh before/after production snapshots for this recheck matched **25/25 collections**, including schedules. Runtime, revision/image, IAM, secret metadata/versions/IAM and Scheduler configuration/runtime also matched across this recheck. Cloud Run remains `aqm-api-v019-e92f2d6`. Agent-initiated production mutations and Genesys/Jev provider calls are **0**.
+
+The historical 3 October snapshots are distinct from this fresh comparison: since then, schedules, policyRuns, operationalHealth and scheduleExecutionClaims changed. The safe run counters show an unattended scheduled Genesys-source run at `2026-10-04T01:00:07.222Z`, completed at `01:00:07.815Z`, with zero candidates, zero requested/succeeded/failed evaluations and zero actual Jev provider requests. The daily schedule now has nextDueAt `2026-10-05T01:00:00.000Z`. Scheduler lastAttemptTime advanced from `2026-10-03T20:00:04.938490Z` to `2026-10-04T06:00:04.861275Z`; its scheduleTime advanced to `2026-10-04T07:00:04.028877Z`, and operational-health lastSuccessfulTickAt to `2026-10-04T06:00:08.269Z`. Forms, Groups, Answer Sets, Policies, Evaluations and Reviews also match the historical snapshot. These observations are consistent with existing unattended scheduling between the two dates; they are not agent-triggered proof mutations. Historical schedule document hashes differ, so this addendum does not claim that the schedule document stayed byte-identical overnight.
+
+Fresh reports, count/hash snapshots, safe Scheduler counters and public byte verification are retained in [recheck-20261004](v019d-evidence/recheck-20261004/summary.json). The dedicated worktree is left clean after pushing this documentation/evidence update.
+
 ## Next
 
 ChatGPT reviews/merges this branch. After that, a separate fresh thorough whole-product Playwright review should start from the new canonical main and evaluate V0.19A–D together. This tranche does not run or prewrite that review.
