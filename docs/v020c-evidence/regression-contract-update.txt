@@ -1,0 +1,81 @@
+[WebServer] (node:49766) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 38 tests using 1 worker
+
+(node:49768) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/38] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/38] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[3/38] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[4/38] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+[5/38] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+[6/38] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+[7/38] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440
+[8/38] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920
+[9/38] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390
+[10/38] tests/calibration-discovery.spec.ts:45:1 › catalogue cohort request, source/date/agent/queue refresh and unavailable selection reset
+[11/38] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[12/38] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1440
+[13/38] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[14/38] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1920
+[15/38] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[16/38] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390
+[17/38] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[18/38] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[19/38] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[20/38] tests/reviewer-continuity.spec.ts:111:1 › exact My Reviews filter context survives evidence navigation
+[21/38] tests/reviewer-continuity.spec.ts:223:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[22/38] tests/reviewer-continuity.spec.ts:245:1 › completion removes the row before a failed background list reload, preserving confirmation
+  1) tests/reviewer-continuity.spec.ts:245:1 › completion removes the row before a failed background list reload, preserving confirmation 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('alert')
+    Expected substring: "Fictional list refresh unavailable"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" getByRole('alert') with timeout 5000ms
+      - waiting for getByRole('alert')
+
+
+      249 |   await expect(panel(page).getByRole('status')).toContainText('Review completed.')
+      250 |   await expect(page.getByRole('button',{name:'Open evaluation review-a',exact:true})).toHaveCount(0)
+    > 251 |   await expect(page.getByRole('alert')).toContainText('Fictional list refresh unavailable')
+          |                                         ^
+      252 |   await expect(panel(page).getByRole('heading',{name:'Completed calibration',exact:true})).toBeVisible()
+      253 |   expect(puts(state).filter(r=>r.body.action==='complete')).toHaveLength(1)
+      254 | })
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/reviewer-continuity.spec.ts:251:41
+
+    Error Context: test-results/reviewer-continuity-comple-b9699-oad-preserving-confirmation/error-context.md
+
+
+(node:49926) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[23/38] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[24/38] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[25/38] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[26/38] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[27/38] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[28/38] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely
+[29/38] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles assignment safely
+[30/38] tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters
+[31/38] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[32/38] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 1440
+[33/38] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 390
+[34/38] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x900
+[35/38] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1920x1080
+[36/38] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 390x844
+[37/38] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x720
+[38/38] tests/role-navigation.spec.ts:71:1 › browser history restores page, active reference group and Analytics view
+  1 failed
+    tests/reviewer-continuity.spec.ts:245:1 › completion removes the row before a failed background list reload, preserving confirmation 
+  37 passed (1.5m)

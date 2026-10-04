@@ -490,3 +490,9 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
  .calibration-insight .review-actions { grid-template-columns:repeat(2,minmax(0,1fr)); }
  .calibration-insight .review-actions button { padding:10px 6px; font-size:11px; }
 }
+
+.evaluation-availability { overflow-wrap:anywhere; }
+.evaluation-availability h2 { font-size:20px; }
+.evaluation-availability .text-link { margin-left:12px; }
+.availability-technical { margin-top:16px; }
+.availability-technical pre { white-space:pre-wrap; overflow-wrap:anywhere; word-break:break-word; max-width:100%; font-size:12px; }

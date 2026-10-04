@@ -1,0 +1,112 @@
+[WebServer] (node:49101) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 32 tests using 1 worker
+
+(node:49103) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/32] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/32] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[3/32] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[4/32] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+[5/32] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+  1) tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920 
+
+    TypeError: Cannot read properties of undefined (reading 'questions')
+
+      26 | test('disconnected Yes/No discovers local set; reconnect never uploads form or library',async({page})=>{await page.route('**/*',r=>new URL(r.request().url()).origin===new URL(app).origin?r.continue():r.abort());await page.goto(`${app}?page=forms`);const detail=await newQuestion(page),{region}=await preview(page,detail);await region.getByRole('button',{name:'Change to Multiple choice and use Resolution clarity v1'}).click();await expect(detail.getByRole('status')).toContainText('Saved in this browser');const before=await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}));expect(JSON.parse(before.forms!).some((f:EvaluationForm)=>f.questions.some(q=>q.sourceAnswerSet?.answerSetId===clarity.id))).toBe(true);await page.unroute('**/*');const state=await fixture(page,'AUTHOR',[],[]);try{await nav(page).click();await expect(page.getByRole('heading',{name:'Saved in AQM · 0 saved forms'})).toBeVisible();expect(await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}))).toEqual(before);await newQuestion(page);await detail.getByRole('button',{name:'Use reusable Answer Set'}).click();await expect(detail.getByRole('dialog')).toContainText('No published Answer Sets are available in this library.');expect(state.requests.every(r=>r.method==='GET')).toBe(true);expect(await state.store.forms()).toEqual([]);expect((await state.store.query('answerSetAssets',100)).items).toEqual([]);const after=await page.evaluate(()=>({forms:localStorage.getItem('genesys-aqm-v02-forms'),sets:localStorage.getItem('genesys-aqm-v019-answer-sets')}));expect(JSON.parse(after.forms!).slice(0,JSON.parse(before.forms!).length)).toEqual(JSON.parse(before.forms!));expect(after.sets).toBe(before.sets)}finally{await state.close()}})
+      27 | async function tabTo(page:Page,target:Locator){for(let i=0;i<180;i++){if(await target.evaluate(e=>e===document.activeElement))return;await page.keyboard.press('Tab')}throw Error('Keyboard could not reach target')}
+    > 28 | for(const viewport of [{width:1440,height:900},{width:1920,height:1080},{width:390,height:844}])test(`keyboard-only default question to search, preview, cancel, Apply and return ${viewport.width}`,async({page})=>{await page.setViewportSize(viewport);const state=await fixture(page,'AUTHOR',[clarity],[]);const act=async(target:Locator)=>{await tabTo(page,target);await page.keyboard.press('Enter')};try{await act(nav(page));await act(page.getByRole('button',{name:'＋ New form'}));const detail=page.locator('.form-detail');await tabTo(page,detail.getByLabel('Form name',{exact:true}));await page.keyboard.type('Keyboard form');await act(detail.getByRole('button',{name:'Add question',exact:true}));await tabTo(page,detail.getByLabel('Title',{exact:true}));await page.keyboard.type('Was the resolution clear?');await tabTo(page,detail.getByLabel('Instructions / question'));await page.keyboard.type('Assess resolution clarity.');await expect(detail.getByLabel('Answer format')).toHaveValue('noul');await act(detail.getByRole('button',{name:'Use reusable Answer Set'}));const dialog=detail.getByRole('dialog');await expect(dialog.locator('h4')).toBeFocused();await tabTo(page,dialog.getByLabel('Find Answer Set'));await page.keyboard.type('Resolution clarity');await act(dialog.getByRole('button',{name:'Preview Resolution clarity v1 format change'}));await expect(dialog.locator('h5')).toBeFocused();await act(dialog.getByRole('button',{name:'Cancel format change'}));await expect(dialog.getByRole('button',{name:'Preview Resolution clarity v1 format change'})).toBeFocused();await page.keyboard.press('Enter');await act(dialog.getByRole('button',{name:'Change to Multiple choice and use Resolution clarity v1'}));await expect(detail.getByRole('heading',{name:'Answers',exact:true})).toBeFocused();await act(detail.locator('.question-done').getByRole('button',{name:'Done'}));await act(detail.getByRole('button',{name:'Save changes',exact:true}));expect((await state.store.forms())[0].questions[0].options).toEqual(clarity.options);expect(state.errors).toEqual([]);writeFileSync(`${evidence}/keyboard-${viewport.width}.json`,JSON.stringify({goal,keyboardOnly:true,manualAnswerFormatSelectionNeeded:false,focus:['Question editor','Published Answer Sets heading','Preview heading','Preview opener on cancel','Answers heading on apply','Question edit on Done'],completed:true},null,2))}finally{await state.close()}})
+         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+      29 |
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/answer-set-discovery.spec.ts:28:1984
+
+    TypeError: fetch failed
+    [cause]: Error: read ECONNRESET
+
+    Error Context: test-results/answer-set-discovery-keybo-e8027-ancel-Apply-and-return-1920/error-context.md
+
+
+(node:49203) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/32] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+[7/32] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[8/32] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1440
+[9/32] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[10/32] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1920
+[11/32] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[12/32] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390
+[13/32] tests/reviewer-cards.spec.ts:3:1 › review cards and table share search, rank, pagination and resize state
+  2) tests/reviewer-cards.spec.ts:3:1 › review cards and table share search, rank, pagination and resize state 
+
+    Error: page.evaluate: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:4174/Genesys-aqm/node_modules/.vite/deps/react.js
+
+      4 |  await page.route('**/*',route=>new URL(route.request().url()).origin===new URL(app).origin?route.continue():route.abort())
+      5 |  await page.setViewportSize({width:1440,height:900});await page.goto(app)
+    > 6 |  await page.evaluate(async()=>{
+        |             ^
+      7 |   const react=await import('/Genesys-aqm/node_modules/.vite/deps/react.js' as string),rootModule=await import('/Genesys-aqm/node_modules/.vite/deps/react-dom_client.js' as string),{OperationalTable}=await import('/Genesys-aqm/src/OperationalTable.tsx' as string)
+      8 |   const React=react.default??react,createRoot=rootModule.createRoot??rootModule.default.createRoot,el=React.createElement,host=document.createElement('div');document.body.replaceChildren(host)
+      9 |   const rows=[{id:'escalated',name:'Priority'},{id:'overdue',name:'Overdue'},{id:'soon',name:'Soon'},{id:'later',name:'Later'},{id:'last',name:'Last'}]
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/reviewer-cards.spec.ts:6:13
+
+    Error Context: test-results/reviewer-cards-review-card-a6377-pagination-and-resize-state/error-context.md
+
+
+(node:49241) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[14/32] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[15/32] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[16/32] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[17/32] tests/reviewer-continuity.spec.ts:111:1 › exact My Reviews filter context survives evidence navigation
+[18/32] tests/reviewer-continuity.spec.ts:223:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[19/32] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+  3) tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844 ────────────────────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 845
+    Received:    889.8125
+
+      13 |  const box=(await locator.boundingBox())!,v=page.viewportSize()!,main=(await page.locator('main').boundingBox())!
+      14 |  expect(box.x).toBeGreaterThanOrEqual(main.x);expect(box.x+box.width).toBeLessThanOrEqual(Math.min(main.x+main.width,v.width)+1)
+    > 15 |  expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(v.height+1)
+         |                                                                   ^
+      16 |  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+      17 |  return {name,box,main,viewport:v,scroll:await page.evaluate(()=>({x:scrollX,y:scrollY}))}
+      18 | }
+        at geometry (/private/tmp/aqm-v020c-evaluation-availability/tests/reviewer-focus.spec.ts:15:67)
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/reviewer-focus.spec.ts:56:15
+
+    Error Context: test-results/reviewer-focus-focused-reviewer-task-replay-390x844/error-context.md
+
+
+(node:49333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[20/32] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[21/32] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[22/32] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[23/32] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[24/32] tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters
+[25/32] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[26/32] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 1440
+[27/32] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 390
+[28/32] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x900
+[29/32] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1920x1080
+[30/32] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 390x844
+[31/32] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x720
+[32/32] tests/role-navigation.spec.ts:71:1 › browser history restores page, active reference group and Analytics view
+  3 failed
+    tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920 
+    tests/reviewer-cards.spec.ts:3:1 › review cards and table share search, rank, pagination and resize state 
+    tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844 ─────────────────────
+  29 passed (1.0m)

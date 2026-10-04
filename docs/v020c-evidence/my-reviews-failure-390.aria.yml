@@ -1,0 +1,24 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: REVIEWER Jev managed securely by automation service
+  - heading "Evaluations" [level=1]
+  - group "Evaluation mode":
+    - button "My reviews" [pressed]
+    - button "All evaluations"
+    - button "More filters"
+  - alert "Evaluation availability":
+    - heading "Your review queue could not be loaded." [level=2]
+    - paragraph: Your filters are unchanged.
+    - button "Retry"
+    - group: Technical details
+  - region "My review summary":
+    - text: Assigned open
+    - strong: "2"
+    - text: Due soon
+    - strong: "2"
+    - text: Overdue
+    - strong: "0"
+    - text: Escalated
+    - strong: "0"

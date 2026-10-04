@@ -1,0 +1,34 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 720
+  },
+  "sidebarHeight": 720,
+  "navHeight": 424,
+  "visibleDestinations": [
+    "◌Overview",
+    "◷Evaluations",
+    "▥Analytics",
+    "◎Calibration",
+    "⚙Settings",
+    "About / product tour"
+  ],
+  "visibleDestinationCount": 6,
+  "collapsedSecondaryGroups": 2,
+  "documentWidth": 1440,
+  "bodyWidth": 1440,
+  "viewControls": [
+    {
+      "display": "flex",
+      "width": 1114,
+      "scrollWidth": 1114,
+      "selected": "Coverage"
+    },
+    {
+      "display": "none",
+      "width": 0,
+      "scrollWidth": 0,
+      "selected": "Coverage"
+    }
+  ]
+}

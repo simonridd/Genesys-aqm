@@ -1,0 +1,8 @@
+{
+  "base": "94b8f19330b2795cca9b092d61844c74269be4c2",
+  "status": 503,
+  "error": true,
+  "empty": true,
+  "zeroResults": true,
+  "fixture": "fictional authenticated APIs"
+}

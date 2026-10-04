@@ -1,0 +1,14 @@
+{
+  "goal": "Create a quality form that asks whether the resolution was clear, using the reusable four-level Resolution clarity scale.",
+  "keyboardOnly": true,
+  "manualAnswerFormatSelectionNeeded": false,
+  "focus": [
+    "Question editor",
+    "Published Answer Sets heading",
+    "Preview heading",
+    "Preview opener on cancel",
+    "Answers heading on apply",
+    "Question edit on Done"
+  ],
+  "completed": true
+}

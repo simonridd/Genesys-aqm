@@ -1,0 +1,33 @@
+{
+  "goal": "Find where human reviewers and AI disagree most and show me the supporting evaluations.",
+  "route": [
+    "Overview",
+    "Calibration",
+    "Question detail",
+    "Evaluations",
+    "Evaluation detail",
+    "Conversation evidence",
+    "Evaluation detail",
+    "Calibration"
+  ],
+  "actions": [
+    "Read highest disagreement signal",
+    "Inspect question",
+    "Open disagreements",
+    "Open first reviewed evaluation",
+    "Open conversation evidence",
+    "Back to evaluation",
+    "Back to Calibration",
+    "Reload"
+  ],
+  "wrongTurns": [],
+  "result": "Customer Service v17 · Clear next step · 5 of 8 (62.5%)",
+  "exactCohort": [
+    "Open evaluation general_service-v17-0",
+    "Open evaluation general_service-v17-1",
+    "Open evaluation general_service-v17-2",
+    "Open evaluation general_service-v17-3",
+    "Open evaluation general_service-v17-4"
+  ],
+  "limitation": "Scripted fictional-user replay; no independent recruited participant."
+}

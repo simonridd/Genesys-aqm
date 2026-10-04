@@ -1,0 +1,126 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: ADMIN Jev managed securely by automation service QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Production results with form snapshots and provider provenance.
+  - group "Evaluation mode":
+    - button "My reviews"
+    - button "All evaluations" [pressed]
+  - group: Team review workload
+  - text: History
+  - combobox "History":
+    - option "Server" [selected]
+    - option "This browser"
+  - text: Review status
+  - combobox "Review status":
+    - option "All" [selected]
+    - option "NOT REVIEWED"
+    - option "REVIEW REQUESTED"
+    - option "IN REVIEW"
+    - option "REVIEWED"
+  - text: Assignment
+  - combobox "Assignment":
+    - option "All" [selected]
+    - option "Unassigned"
+    - option "Assigned"
+    - option "Assigned to me"
+  - text: SLA state
+  - combobox "SLA state":
+    - option "All states" [selected]
+    - option "Due soon"
+    - option "Overdue"
+    - option "Escalated"
+  - text: Due
+  - combobox "Due":
+    - option "All" [selected]
+    - option "Overdue"
+    - option "Due today"
+    - option "Due next 7 days"
+    - option "No due date"
+  - text: Form ID @ version
+  - textbox "Form ID @ version"
+  - text: Agent
+  - textbox "Agent"
+  - text: Queue
+  - textbox "Queue"
+  - text: Channel
+  - textbox "Channel"
+  - text: Result
+  - combobox "Result":
+    - option "All" [selected]
+    - option "Pass"
+    - option "Fail"
+  - text: Question failures
+  - textbox "Question failures":
+    - /placeholder: Question ID
+  - text: From
+  - textbox "From"
+  - text: To
+  - textbox "To"
+  - text: Policy ID
+  - textbox "Policy ID"
+  - text: Source
+  - combobox "Source":
+    - option "All" [selected]
+    - option "Genesys Cloud"
+    - option "Synthetic"
+    - option "Uploaded"
+  - text: Trigger
+  - combobox "Trigger":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Scheduled"
+  - text: Critical failure
+  - combobox "Critical failure":
+    - option "All" [selected]
+    - option "Yes"
+    - option "No"
+  - button "Refresh"
+  - alert: "Fictional 503: evaluation service unavailable"
+  - paragraph: Server filters scan a bounded window of up to 500 records per request. Use Next to continue the search.
+  - group: Calibration sample
+  - group: Bulk assignment
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 0 results on this page
+  - region "All evaluations table":
+    - table:
+      - rowgroup:
+        - row "Evaluated ↓ Select Conversation Agent Queue Form Source AI score Review Human score Agreement Assigned to Due Reviewer Reviewed at":
+          - columnheader "Evaluated ↓":
+            - button "Evaluated ↓"
+          - columnheader "Select":
+            - button "Select"
+          - columnheader "Conversation":
+            - button "Conversation"
+          - columnheader "Agent":
+            - button "Agent"
+          - columnheader "Queue":
+            - button "Queue"
+          - columnheader "Form":
+            - button "Form"
+          - columnheader "Source":
+            - button "Source"
+          - columnheader "AI score":
+            - button "AI score"
+          - columnheader "Review":
+            - button "Review"
+          - columnheader "Human score":
+            - button "Human score"
+          - columnheader "Agreement":
+            - button "Agreement"
+          - columnheader "Assigned to":
+            - button "Assigned to"
+          - columnheader "Due":
+            - button "Due"
+          - columnheader "Reviewer":
+            - button "Reviewer"
+          - columnheader "Reviewed at":
+            - button "Reviewed at"
+      - rowgroup
+  - paragraph: No production evaluations on this page.
+  - button "First page" [disabled]
+  - button "Next server page →" [disabled]

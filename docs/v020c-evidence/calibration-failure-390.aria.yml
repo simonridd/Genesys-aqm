@@ -1,0 +1,97 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: ADMIN Jev managed securely by automation service
+  - button "Back to Calibration"
+  - text: QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Production results with form snapshots and provider provenance.
+  - group "Evaluation mode":
+    - button "My reviews"
+    - button "All evaluations" [pressed]
+  - region "Investigation scope":
+    - strong: "Investigating:"
+    - 'button "Remove Form: Customer Service v17"'
+    - 'button "Remove Reviewed question: Clear next step"'
+    - 'button "Remove Comparison: disagreements"'
+    - 'button "Remove Review status: Reviewed"'
+    - 'button "Remove Source: Genesys Cloud"'
+    - button "Clear investigation filters"
+  - alert "Evaluation availability":
+    - heading "Evaluations could not be loaded for this scope." [level=2]
+    - paragraph: Your filters are unchanged.
+    - button "Retry"
+    - group: Technical details
+  - group: Team review workload
+  - text: History
+  - combobox "History":
+    - option "Server" [selected]
+    - option "This browser"
+  - text: Review status
+  - combobox "Review status":
+    - option "All"
+    - option "NOT REVIEWED"
+    - option "REVIEW REQUESTED"
+    - option "IN REVIEW"
+    - option "REVIEWED" [selected]
+  - text: Assignment
+  - combobox "Assignment":
+    - option "All" [selected]
+    - option "Unassigned"
+    - option "Assigned"
+    - option "Assigned to me"
+    - option "Fictional Admin"
+  - text: SLA state
+  - combobox "SLA state":
+    - option "All states" [selected]
+    - option "Due soon"
+    - option "Overdue"
+    - option "Escalated"
+  - text: Due
+  - combobox "Due":
+    - option "All" [selected]
+    - option "Overdue"
+    - option "Due today"
+    - option "Due next 7 days"
+    - option "No due date"
+  - text: Form ID @ version
+  - textbox "Form ID @ version": general_service@17
+  - text: Agent
+  - textbox "Agent"
+  - text: Queue
+  - textbox "Queue"
+  - text: Channel
+  - textbox "Channel"
+  - text: Result
+  - combobox "Result":
+    - option "All" [selected]
+    - option "Pass"
+    - option "Fail"
+  - text: Question failures
+  - textbox "Question failures":
+    - /placeholder: Question ID
+  - text: From
+  - textbox "From"
+  - text: To
+  - textbox "To"
+  - text: Policy ID
+  - textbox "Policy ID"
+  - text: Source
+  - combobox "Source":
+    - option "All"
+    - option "Genesys Cloud" [selected]
+    - option "Synthetic"
+    - option "Uploaded"
+  - text: Trigger
+  - combobox "Trigger":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Scheduled"
+  - text: Critical failure
+  - combobox "Critical failure":
+    - option "All" [selected]
+    - option "Yes"
+    - option "No"
+  - group: Calibration sample
+  - group: Bulk assignment

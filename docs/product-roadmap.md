@@ -82,3 +82,7 @@ Implemented: authors can discover a published reusable standard before knowing i
 ## V0.20B — Calibration discovery and disagreement investigation
 
 Implemented and qualified: historical human form/version selection from completed-review evidence, an independently scoped catalogue, highest observed question-level disagreement with a comparable sample denominator, exact reviewed-evaluation investigation, durable URL/return state, mobile question cards and keyboard focus. Existing calibration math, review contracts and backend remain unchanged. 47 focused deterministic, 12 Calibration browser, 27 current-contract regression and 12 public fixture checks pass; all 12 Pages files/tree match the tested commit and preservation hashes match. See [implementation and evidence](v020b-calibration-discovery.md).
+
+## V0.20C — Evaluation availability & recovery
+
+Implemented and qualified: authoritative server list state distinguishes loading, successful empty, unavailable and retained-page recovery. Exact scope retries, refresh timestamps, atomic pagination, race guards and isolated detail/action errors protect investigation and reviewer trust. 105 deterministic, 23 recovery browser, 38 focused regression and one reviewer-card check pass. Frontend only; backend and review contracts unchanged. See [implementation and evidence](v020c-evaluation-availability.md).

@@ -1,0 +1,171 @@
+[WebServer] (node:38061) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 21 tests using 1 worker
+
+(node:38063) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/21] tests/evaluation-availability.spec.ts:47:36 › initial 503 and keyboard retry 390
+[2/21] tests/evaluation-availability.spec.ts:47:36 › initial 503 and keyboard retry 1440
+[3/21] tests/evaluation-availability.spec.ts:47:36 › initial 503 and keyboard retry 1920
+[4/21] tests/evaluation-availability.spec.ts:62:1 › successful empty is a data result
+[5/21] tests/evaluation-availability.spec.ts:63:1 › refresh failure preserves search, rows and loaded time; retry replaces atomically
+[6/21] tests/evaluation-availability.spec.ts:72:1 › scope change suspends old rows while loading and failed; retry keeps the exact new scope
+[7/21] tests/evaluation-availability.spec.ts:81:1 › next and first page failures preserve cursor, current rows and page controls until retry success
+  1) tests/evaluation-availability.spec.ts:81:1 › next and first page failures preserve cursor, current rows and page controls until retry success 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Array [
+    -   "Open evaluation quality-0",
+    -   "Open evaluation quality-1",
+    -   "Open evaluation quality-2",
+    +   "Open evaluation quality-3",
+    +   "Open evaluation quality-4",
+    +   "Open evaluation quality-5",
+      ]
+
+      90 |  expect(await rows(page).evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))).toEqual(second);await expect(page.getByRole('button',{name:'First page',exact:true})).toBeEnabled()
+      91 |  f.c.fail=0;await availability(page).getByRole('button',{name:'Retry first page'}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeDisabled();expect(f.c.requests.at(-1)!.searchParams.has('cursor')).toBe(false)
+    > 92 |  expect(await rows(page).evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))).toEqual(first)
+         |                                                                                          ^
+      93 | })
+      94 | for(const order of ['B then A','A then B'])test(`request race ${order}`,async({page})=>{
+      95 |  const f=await fixture(page);await enter(page);await healthy(page)
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/evaluation-availability.spec.ts:92:90
+
+    Error Context: test-results/evaluation-availability-ne-ac1e2-ontrols-until-retry-success/error-context.md
+
+
+(node:38120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/21] tests/evaluation-availability.spec.ts:94:44 › request race B then A
+[9/21] tests/evaluation-availability.spec.ts:94:44 › request race A then B
+[10/21] tests/evaluation-availability.spec.ts:103:1 › detail failure isolates list and prevents writable review until details retry succeeds
+[11/21] tests/evaluation-availability.spec.ts:110:1 › sample, bulk assignment and bulk due failures remain operation-specific
+[12/21] tests/evaluation-availability.spec.ts:121:1 › workload unavailable leaves the list usable
+[13/21] tests/evaluation-availability.spec.ts:122:31 › permission failure 401
+[14/21] tests/evaluation-availability.spec.ts:122:31 › permission failure 403
+[15/21] tests/evaluation-availability.spec.ts:123:1 › network failure is unavailable; malformed successful response is not an empty cohort
+[16/21] tests/evaluation-availability.spec.ts:127:1 › disconnected server does not render false empty; browser local history works and server stays truthful
+  2) tests/evaluation-availability.spec.ts:127:1 › disconnected server does not render false empty; browser local history works and server stays truthful 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.selectOption: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByLabel('History', { exact: true })
+
+
+      127 | test('disconnected server does not render false empty; browser local history works and server stays truthful',async({page})=>{
+      128 |  await page.goto(`${app}?page=evaluations`);await expect(queue(page)).toContainText('Connect to Genesys Cloud');await noFalseEmpty(page)
+    > 129 |  await page.getByLabel('History',{exact:true}).selectOption('browser');await expect(queue(page).getByText('No evaluations match this browser scope.',{exact:true})).toBeVisible()
+          |                                                ^
+      130 |  await page.getByLabel('History',{exact:true}).selectOption('server');await noFalseEmpty(page)
+      131 |  const f=await fixture(page);f.c.fail=503;await enter(page);await expect(availability(page)).toBeVisible()
+      132 |  await page.getByLabel('History',{exact:true}).selectOption('browser');await expect(queue(page).getByText('No evaluations match this browser scope.',{exact:true})).toBeVisible();await expect(availability(page)).toHaveCount(0)
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/evaluation-availability.spec.ts:129:48
+
+    Error Context: test-results/evaluation-availability-di-5e539-s-and-server-stays-truthful/error-context.md
+
+
+(node:38195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[17/21] tests/evaluation-availability.spec.ts:135:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards
+  3) tests/evaluation-availability.spec.ts:135:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Review workload' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Review workload' }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Review workload' })
+
+
+      138 |  await page.setViewportSize({width:390,height:844});const f=await continuityFixture(page,'page=evaluations',{start:false});await navigateWorkspace(page,'Overview')
+      139 |  let fail=true;const queries:URL[]=[]
+    > 140 |  await page.route(`${api}/api/evaluations?*`,r=>{queries.push(new URL(r.request().url()));return fail?r.fulfill({status:503,json:{error:'Fictional queue unavailable'}}):r.fallback()})
+          |                                                                  ^
+      141 |  await enter(page);await expect(availability(page)).toContainText('Your review queue could not be loaded.');await noFalseEmpty(page);await expect(page.getByRole('button',{name:'My reviews',exact:true})).toHaveAttribute('aria-pressed','true')
+      142 |  await expect(page.getByRole('region',{name:'My review summary'})).toBeVisible();await expect(page.locator('.review-task-cards')).toHaveCount(0);await capture(page,'my-reviews-failure-390')
+      143 |  fail=false;await availability(page).getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('list',{name:'My review tasks'}).getByRole('button',{name:'Start review',exact:true})).toHaveCount(2)
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/evaluation-availability.spec.ts:140:66
+
+    Error Context: test-results/evaluation-availability-re-0d5db-tores-mobile-priority-cards/error-context.md
+
+
+(node:38211) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[18/21] tests/evaluation-availability.spec.ts:146:1 › successful My Reviews empty has its own copy
+[19/21] tests/evaluation-availability.spec.ts:150:60 › Overview investigation failure and exact retry 390
+  4) tests/evaluation-availability.spec.ts:150:60 › Overview investigation failure and exact retry 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Inspect critical evaluations →' })
+
+
+      152 | for(const origin of ['Overview','Analytics','Calibration'])test(`${origin} investigation failure and exact retry 390`,async({page})=>{
+      153 |  await page.setViewportSize({width:390,height:844})
+    > 154 |  const f=origin==='Calibration'?await calibrationFixture(page):await qualityFixture(page)
+          |                                                                                          ^
+      155 |  const c=await control(page,f.store);c.fail=503
+      156 |  if(origin==='Overview')await page.getByRole('button',{name:'Inspect critical evaluations →'}).click()
+      157 |  if(origin==='Analytics'){
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/evaluation-availability.spec.ts:154:96
+
+    Error Context: test-results/evaluation-availability-Ov-79bc4-failure-and-exact-retry-390/error-context.md
+
+
+(node:40126) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[20/21] tests/evaluation-availability.spec.ts:150:60 › Analytics investigation failure and exact retry 390
+[21/21] tests/evaluation-availability.spec.ts:150:60 › Calibration investigation failure and exact retry 390
+  5) tests/evaluation-availability.spec.ts:150:60 › Calibration investigation failure and exact retry 390 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.calibration-insight').getByRole('button', { name: 'Open disagreements', exact: true })
+
+
+      158 |   await navigateWorkspace(page,'Analytics');await page.getByRole('button',{name:'Change filters',exact:true}).click();await page.locator('.analytics-filter-bar').getByLabel('From',{exact:true}).fill('2026-09-01');await page.locator('.analytics-filter-bar').getByLabel('To',{exact:true}).fill('2026-09-30')
+      159 |   await expect(page.getByRole('region',{name:'Selected quality cohort'})).toContainText('12 evaluations')
+    > 160 |   await page.getByRole('region',{name:'What stands out'}).locator('article').filter({hasText:'Lowest average question'}).getByRole('button',{name:'Inspect evaluations →'}).click()
+          |                                                                                                                                  ^
+      161 |  }
+      162 |  if(origin==='Calibration')await page.locator('.calibration-insight').getByRole('button',{name:'Open disagreements',exact:true}).click()
+      163 |  await expect(availability(page)).toContainText('Evaluations could not be loaded for this scope.');await noFalseEmpty(page);await expect(page.getByRole('region',{name:'Investigation scope'})).toBeVisible()
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/evaluation-availability.spec.ts:160:130
+
+    Error Context: test-results/evaluation-availability-Ca-bc839-failure-and-exact-retry-390/error-context.md
+
+
+  5 failed
+    tests/evaluation-availability.spec.ts:81:1 › next and first page failures preserve cursor, current rows and page controls until retry success 
+    tests/evaluation-availability.spec.ts:127:1 › disconnected server does not render false empty; browser local history works and server stays truthful 
+    tests/evaluation-availability.spec.ts:135:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards 
+    tests/evaluation-availability.spec.ts:150:60 › Overview investigation failure and exact retry 390 
+    tests/evaluation-availability.spec.ts:150:60 › Calibration investigation failure and exact retry 390 
+  16 passed (2.1m)

@@ -1,3 +1,4 @@
+import { withEvaluationScopeLabels } from './evaluationAvailability'
 import { ResponsiveViewSwitcher, calibrationViews } from './ResponsiveViewSwitcher'
 import { useDetailFocus } from './useDetailFocus'
 import { useEffect, useRef, useState } from 'react'
@@ -81,7 +82,7 @@ export function CalibrationPage({session,onExplore}:{session:AuthSession|null;on
       {key:'disagreeConfidence',label:'Confidence: disagree',value:(item:CalibrationGroup)=>item.confidenceOnDisagreements??-1,render:(item:CalibrationGroup)=>reviewPercent(item.confidenceOnDisagreements)}]:[])
   ]
   const inspect=(item:CalibrationGroup)=>{focus.capture();update({form:item.formRef!,calibrationTab:'questions',calibrationQuestion:item.key})}
-  const explore=(item:CalibrationGroup,comparison='',evaluationId='')=>onExplore({source:source==='all'?'':source,form:item.formRef??form,reviewQuestion:item.questionId??'',reviewStatus:'REVIEWED',comparison,evaluationId,agent,queue,from,to,evaluationSource:'server'})
+  const explore=(item:CalibrationGroup,comparison='',evaluationId='')=>onExplore(withEvaluationScopeLabels({source:source==='all'?'':source,form:item.formRef??form,reviewQuestion:item.questionId??'',reviewStatus:'REVIEWED',comparison,evaluationId,agent,queue,from,to,evaluationSource:'server'},{form:formLabel(item.formRef??form),reviewQuestion:item.label}))
   const questionCard=(item:CalibrationGroup)=><article className="calibration-question-card"><h3><button className="text-link" disabled={!current} onClick={()=>{focus.capture();update({calibrationQuestion:item.key})}} aria-label={`Open calibration ${item.label} · ${formLabel(item.formRef!)}`}>{item.label}</button></h3><p>{formLabel(item.formRef!)}</p><dl>{columns.filter(column=>!['name','form'].includes(column.key)).map(column=><div key={column.key}><dt>{column.label}</dt><dd>{column.render?.(item)??column.value(item)}</dd></div>)}</dl></article>
   const changeFilters=()=>{setFiltersOpen(true);requestAnimationFrame(()=>document.getElementById('calibration-source')?.focus())}
   return <div className="page-content calibration-page">

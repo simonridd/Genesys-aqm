@@ -1,0 +1,50 @@
+{
+  "canonicalBase": "94b8f19330b2795cca9b092d61844c74269be4c2",
+  "deterministic": {
+    "passed": 105,
+    "failed": 0
+  },
+  "recoveryBrowser": {
+    "startTime": "2026-10-04T11:39:56.739Z",
+    "duration": 35429.5,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "regressionBrowser": {
+    "startTime": "2026-10-04T11:40:32.744Z",
+    "duration": 81655.405,
+    "expected": 38,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "reviewerCards": {
+    "startTime": "2026-10-04T11:38:33.690Z",
+    "duration": 978.944,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "viewports": [
+    "390x844",
+    "1440x900",
+    "1920x900",
+    "1920x1080",
+    "1440x720"
+  ],
+  "zeroPageOverflow": true,
+  "productionDomainMutations": 0,
+  "providerCalls": {
+    "Genesys": 0,
+    "Jev": 0,
+    "notifications": 0
+  },
+  "backendRevision": "aqm-api-v019-e92f2d6",
+  "limitations": [
+    "Scripted Chromium fictional API replay; no independent participant or physical device.",
+    "Giant historical suite not run."
+  ]
+}

@@ -1,3 +1,4 @@
+import { evaluationScopeLabelsKey } from '../evaluationAvailability'
 import { calibrationScopeKeys } from '../calibrationPresentation'
 export const pages=['evaluate','conversations','forms','groups','answerSets','policies','automation','evaluations','history','analytics','calibration','settings'] as const
 export type Page=typeof pages[number]
@@ -16,11 +17,12 @@ const analyticsReturnKeys=[...analyticsCohortKeys.map(key=>`analytics.${key}`),'
 /** Replace the entire evaluation scope. Return context is explicit URL state, never API filters. */
 export function evaluationExploreUrl(url:URL,filters:Record<string,string>,options:{analyticsReturn?:boolean;calibrationReturn?:boolean}={}):URL {
  const next=new URL(url)
- for(const key of [...evaluationFilterKeys,...analyticsReturnKeys,...calibrationReturnKeys,'origin'])next.searchParams.delete(key)
+ for(const key of [...evaluationFilterKeys,...analyticsReturnKeys,...calibrationReturnKeys,evaluationScopeLabelsKey,'origin'])next.searchParams.delete(key)
  // Operational detail selectors cannot remain authoritative on another destination.
  for(const key of ['runId','policyId','alertId'])next.searchParams.delete(key)
  next.searchParams.set('page','evaluations');next.searchParams.set('evaluationSource','server')
  for(const key of evaluationFilterKeys){const value=filters[key];if(value)next.searchParams.set(key,value)}
+ const labels=filters[evaluationScopeLabelsKey];if(labels)next.searchParams.set(evaluationScopeLabelsKey,labels)
  if(options.analyticsReturn){
   next.searchParams.set('origin','analytics')
   for(const key of analyticsCohortKeys){const value=url.searchParams.get(key);if(value)next.searchParams.set(`analytics.${key}`,value)}
@@ -64,7 +66,7 @@ export function settingsSection(query:URLSearchParams):SettingsSection {
 /** Settings carries no conversation, evaluation, policy, run or analytics scope. */
 export function settingsUrl(url:URL,section:SettingsSection='connection'):URL {
  const next=new URL(url)
- for(const key of [...evaluationFilterKeys,...analyticsReturnKeys,...calibrationReturnKeys,'origin','runId','policyId','alertId','analyticsTab','calibrationTab','calibrationQuestion'])next.searchParams.delete(key)
+ for(const key of [...evaluationFilterKeys,...analyticsReturnKeys,...calibrationReturnKeys,evaluationScopeLabelsKey,'origin','runId','policyId','alertId','analyticsTab','calibrationTab','calibrationQuestion'])next.searchParams.delete(key)
  next.hash='';next.searchParams.set('page','settings');next.searchParams.set('settingsSection',section)
  return next
 }

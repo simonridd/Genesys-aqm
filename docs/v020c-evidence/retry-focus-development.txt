@@ -1,0 +1,66 @@
+[WebServer] (node:49667) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 23 tests using 1 worker
+
+(node:49670) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/23] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 390
+[2/23] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1440
+[3/23] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1920
+[4/23] tests/evaluation-availability.spec.ts:64:1 › successful empty is a data result
+[5/23] tests/evaluation-availability.spec.ts:65:1 › refresh failure preserves search, rows and loaded time; retry replaces atomically
+[6/23] tests/evaluation-availability.spec.ts:74:1 › scope change suspends old rows while loading and failed; retry keeps the exact new scope
+[7/23] tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success
+[8/23] tests/evaluation-availability.spec.ts:96:44 › request race B then A
+[9/23] tests/evaluation-availability.spec.ts:96:44 › request race A then B
+[10/23] tests/evaluation-availability.spec.ts:105:1 › detail failure isolates list and prevents writable review until details retry succeeds
+[11/23] tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific
+[12/23] tests/evaluation-availability.spec.ts:123:1 › workload unavailable leaves the list usable
+[13/23] tests/evaluation-availability.spec.ts:124:31 › permission failure 401
+[14/23] tests/evaluation-availability.spec.ts:124:31 › permission failure 403
+[15/23] tests/evaluation-availability.spec.ts:125:1 › network failure is unavailable; malformed successful response is not an empty cohort
+[16/23] tests/evaluation-availability.spec.ts:129:1 › disconnected server does not render false empty; browser local history works and server stays truthful
+[17/23] tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards
+  1) tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('region', { name: 'Review workspace' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('region', { name: 'Review workspace' }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Review workspace' })
+
+
+      143 |  fail=false;await availability(page).getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('list',{name:'My review tasks'}).getByRole('button',{name:'Start review',exact:true})).toHaveCount(2)
+      144 |  expect(queries.at(-1)!.searchParams.get('reviewQueue')).toBe('mine');expect(queries.at(-1)!.searchParams.get('assignment')).toBe('mine')
+    > 145 |  await page.getByRole('list',{name:'My review tasks'}).getByRole('button',{name:'Start review',exact:true}).first().click();await expect(page.getByRole('region',{name:'Review workspace'})).toBeVisible()
+          |                                                                                                                                                                                              ^
+      146 |  expect(f.forbidden).toEqual([])
+      147 | })
+      148 | test('successful My Reviews empty has its own copy',async({page})=>{
+        at /private/tmp/aqm-v020c-evaluation-availability/tests/evaluation-availability.spec.ts:145:190
+
+    Error Context: test-results/evaluation-availability-re-0d5db-tores-mobile-priority-cards/error-context.md
+
+
+(node:49713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[18/23] tests/evaluation-availability.spec.ts:148:1 › successful My Reviews empty has its own copy
+[19/23] tests/evaluation-availability.spec.ts:152:60 › Overview investigation failure and exact retry 390
+[20/23] tests/evaluation-availability.spec.ts:152:60 › Analytics investigation failure and exact retry 390
+[21/23] tests/evaluation-availability.spec.ts:152:60 › Calibration investigation failure and exact retry 390
+[22/23] tests/evaluation-availability.spec.ts:175:1 › server failure cannot poison actual browser-local records
+[23/23] tests/evaluation-availability.spec.ts:182:1 › failed authoritative detail cannot enter writable focused reviewer task
+  1 failed
+    tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards 
+  22 passed (43.5s)

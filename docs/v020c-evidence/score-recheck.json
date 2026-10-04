@@ -1,0 +1,11 @@
+{
+  "rubric": "1 seriously ineffective; 2 major friction; 3 acceptable prototype; 4 strong internal product; 5 unusually polished/intuitive",
+  "scope": "Evaluations availability and recovery only. No new whole-product average.",
+  "scores": [
+    {"category":"Trust / credibility for Evaluations","score":4,"reason":"Authoritative empty is separated from unavailable; exact scope labels and timestamped retained results prevent misleading cohort claims."},
+    {"category":"Failure recovery","score":4,"reason":"Exact retries, refresh retention, atomic pagination and isolated detail/action failures qualified with deterministic fictional APIs."},
+    {"category":"Evaluation-task clarity","score":4,"reason":"User-oriented unavailable copy, closed technical diagnostics and preserved investigation/reviewer context make the next action clear."},
+    {"category":"Mobile recovery","score":4,"reason":"390x844 recovery buttons/scope are reachable without horizontal overflow, and retry restores priority review cards and safe detail authority."}
+  ],
+  "limitations":["Scripted Chromium and keyboard replays, no recruited participant or physical-device study.","No screen-reader certification.","Inherited long navigation/filter stacks prevent a 5 claim."]
+}
