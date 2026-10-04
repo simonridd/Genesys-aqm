@@ -1,0 +1,19 @@
+{
+  "goal": "Create a quality form that asks whether the resolution was clear, using the reusable four-level Resolution clarity scale.",
+  "actions": [
+    "New form",
+    "Add question (default Yes / No)",
+    "Enter wording",
+    "Use reusable Answer Set",
+    "Search Resolution clarity",
+    "Preview Resolution clarity v1 format change",
+    "Change to Multiple choice and use Resolution clarity v1",
+    "Save"
+  ],
+  "wrongTurns": 0,
+  "manualAnswerFormatSelectionNeeded": false,
+  "attachedSnapshotExact": true,
+  "saveReloadExport": true,
+  "detach": true,
+  "limitation": "Scripted fictional authenticated replay; not a recruited first-time author."
+}

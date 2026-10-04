@@ -1,0 +1,18 @@
+{
+  "goal": "Show me calibration for Customer Service v17.",
+  "actions": [
+    "Change filters",
+    "Select Customer Service v17"
+  ],
+  "typedTechnicalReference": false,
+  "value": "general_service@17",
+  "historicalOnlyVersions": [
+    17,
+    3
+  ],
+  "currentLibraryVersions": [
+    18
+  ],
+  "catalogueRetained": true,
+  "resizePreservesState": true
+}

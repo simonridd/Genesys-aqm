@@ -1,0 +1,31 @@
+{
+  "rubric": "1 seriously ineffective; 2 major friction; 3 acceptable prototype; 4 strong internal product; 5 unusually polished/intuitive",
+  "scope": "Calibration task only; scripted fictional authenticated Chromium replay and visual/keyboard assessment. No new whole-product average.",
+  "scores": [
+    {
+      "category": "Calibration task usability",
+      "score": 4,
+      "reason": "Highest observed disagreement plus supporting reviewed evaluations reached without technical form syntax; exact version/cohort and question restore."
+    },
+    {
+      "category": "First-time learnability for this task",
+      "score": 4,
+      "reason": "Purpose and next-action signal explain the task; human form/version choices include historical evidence. Scripted replay is not an independent first-time user study."
+    },
+    {
+      "category": "User-facing cleanliness for this task",
+      "score": 4,
+      "reason": "Human form/version and ordinal evaluation controls replace ordinary raw identifiers; advanced references remain available."
+    },
+    {
+      "category": "Mobile discoverability for this task",
+      "score": 4,
+      "reason": "390px scope disclosure, visible disagreement actions, native View and question cards avoid horizontal discovery. Long desktop-derived navigation/page stacks prevent 5."
+    }
+  ],
+  "limitations": [
+    "Chromium viewport emulation, not a physical-device study.",
+    "No recruited participant or screen-reader certification.",
+    "Observed disagreement is not accuracy, causality or statistical significance."
+  ]
+}

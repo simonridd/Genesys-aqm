@@ -1,0 +1,248 @@
+- text: HUMAN + AI
+- heading "Calibration" [level=1]
+- paragraph: Find human / AI disagreements and their supporting evaluations.
+- region "Calibration scope":
+  - strong: Genesys Cloud · All dates
+  - paragraph: All form versions
+  - text: All agents · All queues
+  - button "Change filters"
+- region "Where humans and AI differ":
+  - heading "Where humans and AI differ" [level=2]
+  - paragraph: Highest disagreement rate in this scope
+  - heading "Clear next step" [level=3]
+  - paragraph: Customer Service v17
+  - paragraph:
+    - strong: 5 of 8 comparable reviewed answers disagreed
+    - text: 62.5% disagreement
+  - button "Inspect question →"
+  - button "Open disagreements →"
+- text: Evaluations reviewed
+- strong: "18"
+- text: Questions reviewed
+- strong: "54"
+- text: Exact agreement
+- strong: 80%
+- text: Mean absolute score gap
+- strong: 5.7 pp
+- text: Unresolved reviews
+- strong: "0"
+- text: 0 in progress · outside completed comparisons View
+- combobox "View":
+  - option "Form / version"
+  - option "Groups"
+  - option "Questions" [selected]
+  - option "Question types"
+  - option "Confidence vs disagreement"
+- text: Search
+- textbox "Search table":
+  - /placeholder: Search visible fields
+- text: 9 results
+- list "Calibration question comparisons":
+  - listitem:
+    - article:
+      - heading "Open calibration Warm opening · Customer Service v17" [level=3]:
+        - button "Open calibration Warm opening · Customer Service v17": Warm opening
+      - paragraph: Customer Service v17
+      - term: Reviews
+      - definition: "8"
+      - term: Comparable answers
+      - definition: "8"
+      - term: Exact agreement
+      - definition: 88%
+      - term: Disagreements
+      - definition: "1"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 88%
+      - term: Mean credit gap
+      - definition: 12.5 pp
+      - term: "Confidence: agree"
+      - definition: 95%
+      - term: "Confidence: disagree"
+      - definition: 95%
+  - listitem:
+    - article:
+      - heading "Open calibration Warm opening · Customer Service v18" [level=3]:
+        - button "Open calibration Warm opening · Customer Service v18": Warm opening
+      - paragraph: Customer Service v18
+      - term: Reviews
+      - definition: "6"
+      - term: Comparable answers
+      - definition: "6"
+      - term: Exact agreement
+      - definition: 83%
+      - term: Disagreements
+      - definition: "1"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 83%
+      - term: Mean credit gap
+      - definition: 16.7 pp
+      - term: "Confidence: agree"
+      - definition: 95%
+      - term: "Confidence: disagree"
+      - definition: 95%
+  - listitem:
+    - article:
+      - heading "Open calibration Warm opening · Complaints Handling v3" [level=3]:
+        - button "Open calibration Warm opening · Complaints Handling v3": Warm opening
+      - paragraph: Complaints Handling v3
+      - term: Reviews
+      - definition: "4"
+      - term: Comparable answers
+      - definition: "4"
+      - term: Exact agreement
+      - definition: 75%
+      - term: Disagreements
+      - definition: "1"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 75%
+      - term: Mean credit gap
+      - definition: 25.0 pp
+      - term: "Confidence: agree"
+      - definition: 95%
+      - term: "Confidence: disagree"
+      - definition: 95%
+  - listitem:
+    - article:
+      - heading "Open calibration Resolution · Customer Service v17" [level=3]:
+        - button "Open calibration Resolution · Customer Service v17": Resolution
+      - paragraph: Customer Service v17
+      - term: Reviews
+      - definition: "8"
+      - term: Comparable answers
+      - definition: "8"
+      - term: Exact agreement
+      - definition: 100%
+      - term: Disagreements
+      - definition: "0"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 100%
+      - term: Mean credit gap
+      - definition: 0.0 pp
+      - term: "Confidence: agree"
+      - definition: 85%
+      - term: "Confidence: disagree"
+      - definition: —
+  - listitem:
+    - article:
+      - heading "Open calibration Resolution · Customer Service v18" [level=3]:
+        - button "Open calibration Resolution · Customer Service v18": Resolution
+      - paragraph: Customer Service v18
+      - term: Reviews
+      - definition: "6"
+      - term: Comparable answers
+      - definition: "6"
+      - term: Exact agreement
+      - definition: 100%
+      - term: Disagreements
+      - definition: "0"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 100%
+      - term: Mean credit gap
+      - definition: 0.0 pp
+      - term: "Confidence: agree"
+      - definition: 85%
+      - term: "Confidence: disagree"
+      - definition: —
+  - listitem:
+    - article:
+      - heading "Open calibration Resolution · Complaints Handling v3" [level=3]:
+        - button "Open calibration Resolution · Complaints Handling v3": Resolution
+      - paragraph: Complaints Handling v3
+      - term: Reviews
+      - definition: "4"
+      - term: Comparable answers
+      - definition: "4"
+      - term: Exact agreement
+      - definition: 100%
+      - term: Disagreements
+      - definition: "0"
+      - term: AI credit
+      - definition: 100%
+      - term: Human credit
+      - definition: 100%
+      - term: Mean credit gap
+      - definition: 0.0 pp
+      - term: "Confidence: agree"
+      - definition: 85%
+      - term: "Confidence: disagree"
+      - definition: —
+  - listitem:
+    - article:
+      - heading "Open calibration Clear next step · Customer Service v17" [level=3]:
+        - button "Open calibration Clear next step · Customer Service v17": Clear next step
+      - paragraph: Customer Service v17
+      - term: Reviews
+      - definition: "8"
+      - term: Comparable answers
+      - definition: "8"
+      - term: Exact agreement
+      - definition: 38%
+      - term: Disagreements
+      - definition: "5"
+      - term: AI credit
+      - definition: 33%
+      - term: Human credit
+      - definition: 54%
+      - term: Mean credit gap
+      - definition: 21.2 pp
+      - term: "Confidence: agree"
+      - definition: 75%
+      - term: "Confidence: disagree"
+      - definition: 75%
+  - listitem:
+    - article:
+      - heading "Open calibration Clear next step · Customer Service v18" [level=3]:
+        - button "Open calibration Clear next step · Customer Service v18": Clear next step
+      - paragraph: Customer Service v18
+      - term: Reviews
+      - definition: "6"
+      - term: Comparable answers
+      - definition: "6"
+      - term: Exact agreement
+      - definition: 67%
+      - term: Disagreements
+      - definition: "2"
+      - term: AI credit
+      - definition: 33%
+      - term: Human credit
+      - definition: 44%
+      - term: Mean credit gap
+      - definition: 11.4 pp
+      - term: "Confidence: agree"
+      - definition: 75%
+      - term: "Confidence: disagree"
+      - definition: 75%
+  - listitem:
+    - article:
+      - heading "Open calibration Clear next step · Complaints Handling v3" [level=3]:
+        - button "Open calibration Clear next step · Complaints Handling v3": Clear next step
+      - paragraph: Complaints Handling v3
+      - term: Reviews
+      - definition: "4"
+      - term: Comparable answers
+      - definition: "4"
+      - term: Exact agreement
+      - definition: 75%
+      - term: Disagreements
+      - definition: "1"
+      - term: AI credit
+      - definition: 33%
+      - term: Human credit
+      - definition: 42%
+      - term: Mean credit gap
+      - definition: 8.6 pp
+      - term: "Confidence: agree"
+      - definition: 75%
+      - term: "Confidence: disagree"
+      - definition: 75%
+- paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

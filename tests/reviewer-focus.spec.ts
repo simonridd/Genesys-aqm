@@ -5,7 +5,7 @@ import { continuityFixture } from './reviewer-continuity-fixture'
 import { assignReview,scoreAssignedReview } from '../src/server/reviewOperations'
 import { reviewInput } from '../src/fixtures/reviewFixture'
 import { keyboardTo } from './usability-fixture'
-const out='docs/v019e-evidence';mkdirSync(out,{recursive:true})
+const out=process.env.AQM_REVIEW_FOCUS_EVIDENCE??'docs/v019e-evidence';mkdirSync(out,{recursive:true})
 const panel=(page:Page)=>page.getByRole('region',{name:'Human review',exact:true})
 const task=(page:Page)=>page.getByRole('region',{name:'Review workspace',exact:true})
 const cta=(page:Page,label='Continue review')=>page.getByRole('button',{name:label,exact:true}).filter({visible:true}).first()

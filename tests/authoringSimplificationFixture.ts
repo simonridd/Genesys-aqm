@@ -15,7 +15,7 @@ export const app=process.env.AQM_BROWSER_URL??'http://127.0.0.1:4174/Genesys-aqm
 mkdirSync(evidence,{recursive:true})
 const nav=(page:Page,name:string)=>page.getByRole('navigation').getByRole('button',{name,exact:true})
 export function draft(type:'choice'|'score'='choice'):EvaluationForm{return {...structuredClone(seedForms[0]),id:`fixture_${type}`,familyId:`fixture_${type}`,name:`Fixture ${type} form`,status:'DRAFT',enabled:false,groups:[{id:'general',name:'General'}],questions:[{id:'q',title:'Quality',instructions:'Assess the quality.',groupId:'general',type,options:structuredClone(seedAnswerSets[type==='choice'?1:0].options),weight:1,enabled:true}]}}
-export async function fixture(page:Page,role:Role='ADMIN',sets:AnswerSetAsset[]=[],forms:EvaluationForm[]=[draft(),draft('score')],groups:QuestionGroupAsset[]=[],start='answerSets',options:{sessionGate?:Promise<void>}={}){
+export async function fixture(page:Page,role:Role='ADMIN',sets:AnswerSetAsset[]=[],forms:EvaluationForm[]=[draft(),draft('score')],groups:QuestionGroupAsset[]=[],start='answerSets',options:{sessionGate?:Promise<void>;reauthenticateOnLoad?:boolean}={}){
  const store=new MemoryStore(),errors:string[]=[],requests:{path:string;method:string}[]=[],user=role==='ADMIN'?'owner':role.toLowerCase()
  for(const f of forms)await store.putForm(f)
  for(const group of groups)await store.putGroupAsset(group)
@@ -24,7 +24,7 @@ export async function fixture(page:Page,role:Role='ADMIN',sets:AnswerSetAsset[]=
  const server=createApi({store,now:()=>new Date(now),genesys:{list:async()=>{throw Error('Provider forbidden')},load:async()=>{throw Error('Provider forbidden')},withQueueNames:async c=>c},jev:{evaluate:async()=>{throw Error('Provider forbidden')}}},{origin:'https://simonridd.github.io',region:'eu-west-1',allowedUserIds:new Set(['owner','author','reviewer','viewer']),bootstrapAdminId:'owner',schedulerEmail:'fixture',schedulerAudience:'https://fixture'},async()=>new Response(JSON.stringify({id:user,name:user})))
  await new Promise<void>(r=>server.listen(0,r));const local=`http://127.0.0.1:${(server.address() as AddressInfo).port}`
  page.on('pageerror',e=>errors.push(e.message))
- await page.addInitScript((start)=>{sessionStorage.setItem('genesys-aqm-pkce-transaction',JSON.stringify({region:'eu-west-1',clientId:'fixture-client',verifier:'a'.repeat(43),state:'A'.repeat(43),createdAt:Date.now(),page:start}));localStorage.setItem('genesys-aqm-auth-config',JSON.stringify({region:'eu-west-1',clientId:'fixture-client'}))},start)
+ await page.addInitScript(({start,reauthenticateOnLoad})=>{if(reauthenticateOnLoad){const url=new URL(location.href);start=url.searchParams.get('page')??start;url.searchParams.set('code','fixture');url.searchParams.set('state','A'.repeat(43));history.replaceState(null,'',url)}sessionStorage.setItem('genesys-aqm-pkce-transaction',JSON.stringify({region:'eu-west-1',clientId:'fixture-client',verifier:'a'.repeat(43),state:'A'.repeat(43),createdAt:Date.now(),page:start}));localStorage.setItem('genesys-aqm-auth-config',JSON.stringify({region:'eu-west-1',clientId:'fixture-client'}))},{start,reauthenticateOnLoad:options.reauthenticateOnLoad})
  await page.route('**/*',async route=>{
   const u=new URL(route.request().url())
   if(u.origin===new URL(app).origin)return route.continue()

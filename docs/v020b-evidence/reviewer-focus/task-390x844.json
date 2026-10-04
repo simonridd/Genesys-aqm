@@ -1,0 +1,112 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "actions": [
+    "Choose highest-priority review",
+    "Start independent review",
+    "Answer first question",
+    "Add question note",
+    "Answer second question",
+    "Add overall note",
+    "Inspect conversation evidence",
+    "Back to review",
+    "Answer final question",
+    "Complete review",
+    "Close and continue My Reviews"
+  ],
+  "horizontalDiscoveryGestures": 0,
+  "wrongTurns": 0,
+  "verticalAnalysisDetours": 0,
+  "distance": {
+    "workspaceTop": 404.515625,
+    "firstAnswerTop": 1066.5,
+    "distance": 661.984375
+  },
+  "hierarchy": {
+    "humanBeforeAi": true,
+    "questionBeforeComparison": true,
+    "questionBeforeHistory": true,
+    "queueHidden": true,
+    "comparisonClosed": true,
+    "historyClosed": true
+  },
+  "bounds": [
+    {
+      "name": "highest-priority Start review",
+      "box": {
+        "x": 43,
+        "y": 799.90625,
+        "width": 304,
+        "height": 42
+      },
+      "main": {
+        "x": 0,
+        "y": 339.515625,
+        "width": 390,
+        "height": 1414.765625
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "name": "Open conversation evidence",
+      "box": {
+        "x": 32,
+        "y": 191.765625,
+        "width": 186,
+        "height": 33
+      },
+      "main": {
+        "x": 0,
+        "y": -70.484375,
+        "width": 390,
+        "height": 1951.046875
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 410
+      }
+    },
+    {
+      "name": "Complete review after final note",
+      "box": {
+        "x": 200,
+        "y": 539.15625,
+        "width": 158,
+        "height": 44
+      },
+      "main": {
+        "x": 0,
+        "y": -1686.484375,
+        "width": 390,
+        "height": 2530.640625
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2026
+      }
+    }
+  ],
+  "requestBoundary": {
+    "pageErrors": [],
+    "blocked": [],
+    "reviewPuts": 2,
+    "completionPuts": 1
+  }
+}

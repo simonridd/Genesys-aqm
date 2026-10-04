@@ -1,0 +1,38 @@
+[WebServer] (node:21491) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 27 tests using 1 worker
+
+(node:21494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/27] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1440
+[2/27] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 1920
+[3/27] tests/answer-set-discovery.spec.ts:14:2 › default Yes/No discovery author goal, save/reload/export and detach 390
+[4/27] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1440
+[5/27] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 1920
+[6/27] tests/answer-set-discovery.spec.ts:28:97 › keyboard-only default question to search, preview, cancel, Apply and return 390
+[7/27] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1440
+[8/27] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1440
+[9/27] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 1920
+[10/27] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 1920
+[11/27] tests/investigation-links.spec.ts:56:2 › Analytics investigation, scope edits, clear, return and URL reload at 390
+[12/27] tests/investigation-links.spec.ts:91:2 › Calibration disagreement drill clears stale cohort at 390
+[13/27] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[14/27] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[15/27] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[16/27] tests/reviewer-continuity.spec.ts:111:1 › exact My Reviews filter context survives evidence navigation
+[17/27] tests/reviewer-continuity.spec.ts:223:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[18/27] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[19/27] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[20/27] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[21/27] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[22/27] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[23/27] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[24/27] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x900
+[25/27] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1920x1080
+[26/27] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 390x844
+[27/27] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x720
+  27 passed (55.9s)

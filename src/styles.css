@@ -456,3 +456,37 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
 .review-workspace .human-review{margin-top:8px;padding-top:18px}
 
 .answer-format-preview{margin-top:16px;padding:16px;border:1px solid var(--aqm-border-subtle);min-width:0}.answer-format-preview h5{font-size:14px;margin:0 0 12px}.answer-format-preview li{font-size:12px;overflow-wrap:anywhere}.answer-picker-item strong{overflow-wrap:anywhere}
+
+.calibration-scope { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:16px; }
+.calibration-scope p { margin:6px 0; }
+.calibration-insight { margin:16px 0; }
+.calibration-insight h2 { margin:0 0 14px; }
+.calibration-insight h3 { margin:8px 0; }
+.calibration-page [hidden] { display:none !important; }
+.calibration-page .review-actions { flex-wrap:wrap; }
+@media(max-width:600px) {
+ .calibration-scope { align-items:flex-start; gap:10px; }
+ .calibration-scope .outline-button { flex-shrink:0; padding:9px; }
+ .calibration-page .calibration-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .calibration-insight .review-actions { display:grid; grid-template-columns:1fr; }
+ .calibration-insight { padding:16px; }
+ .calibration-drill .panel-heading { flex-wrap:wrap; }
+}
+
+.calibration-question-card { padding:14px; border:1px solid var(--aqm-border-subtle); border-radius:10px; min-width:0; overflow-wrap:anywhere; }
+.calibration-question-card h3 { margin:0 0 8px; }
+.calibration-question-card dl { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:12px 0 0; }
+.calibration-question-card dt { font-size:11px; color:var(--aqm-muted); }
+.calibration-question-card dd { margin:4px 0 0; font-weight:700; }
+@media(max-width:600px) {
+ .calibration-page .page-heading { margin-bottom:18px; }
+ .calibration-page .calibration-metrics .metric { padding:12px; min-height:0; }
+ .calibration-page .calibration-metrics .metric strong { font-size:26px; margin:6px 0; }
+ .calibration-page .calibration-metrics .metric small { font-size:10px; letter-spacing:.04em; }
+ .calibration-insight { padding:12px; }
+ .calibration-insight h2 { font-size:20px; margin-bottom:8px; }
+ .calibration-insight h3 { font-size:18px; }
+ .calibration-insight p { margin:8px 0; }
+ .calibration-insight .review-actions { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .calibration-insight .review-actions button { padding:10px 6px; font-size:11px; }
+}

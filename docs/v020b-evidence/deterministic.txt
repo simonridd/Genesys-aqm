@@ -1,0 +1,5 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run src/calibrationPresentation.test.ts src/domain/navigation.test.ts src/domain/reviews.test.ts src/server/reviews.test.ts src/analyticsPresentation.test.ts src/navigationPresentation.test.ts --reporter=json --outputFile=docs/v020b-evidence/deterministic.json
+
+JSON report written to /Users/simonridd/.codex/worktrees/aqm-v020b-calibration-discovery/Genesys-aqm/docs/v020b-evidence/deterministic.json
