@@ -1,0 +1,123 @@
+- text: HUMAN + AI
+- heading "Calibration" [level=1]
+- paragraph: Find human / AI disagreements and their supporting evaluations.
+- region "Calibration scope":
+  - strong: Genesys Cloud · All dates
+  - paragraph: Customer Service v17
+  - text: All agents · All queues
+  - button "Change filters"
+- region "Where humans and AI differ":
+  - heading "Where humans and AI differ" [level=2]
+  - paragraph: Highest disagreement rate in this scope
+  - heading "Clear next step" [level=3]
+  - paragraph: Customer Service v17
+  - paragraph:
+    - strong: 5 of 8 comparable reviewed answers disagreed
+    - text: 62.5% disagreement
+  - button "Inspect question →"
+  - button "Open disagreements →"
+- text: Evaluations reviewed
+- strong: "8"
+- text: Questions reviewed
+- strong: "24"
+- text: Exact agreement
+- strong: 75%
+- text: Mean absolute score gap
+- strong: 7.5 pp
+- text: Unresolved reviews
+- strong: "0"
+- text: 0 in progress · outside completed comparisons
+- group "Calibration breakdown":
+  - button "Form / version"
+  - button "Groups"
+  - button "Questions" [pressed]
+  - button "Question types"
+  - button "Confidence vs disagreement"
+- text: Search
+- textbox "Search table":
+  - /placeholder: Search visible fields
+- text: 3 results
+- region "Calibration questions table":
+  - table:
+    - rowgroup:
+      - 'row "Question ↓ Form / version Reviews Comparable answers Exact agreement Disagreements AI credit Human credit Mean credit gap Confidence: agree Confidence: disagree"':
+        - columnheader "Question ↓":
+          - button "Question ↓"
+        - columnheader "Form / version":
+          - button "Form / version"
+        - columnheader "Reviews":
+          - button "Reviews"
+        - columnheader "Comparable answers":
+          - button "Comparable answers"
+        - columnheader "Exact agreement":
+          - button "Exact agreement"
+        - columnheader "Disagreements":
+          - button "Disagreements"
+        - columnheader "AI credit":
+          - button "AI credit"
+        - columnheader "Human credit":
+          - button "Human credit"
+        - columnheader "Mean credit gap":
+          - button "Mean credit gap"
+        - 'columnheader "Confidence: agree"':
+          - 'button "Confidence: agree"'
+        - 'columnheader "Confidence: disagree"':
+          - 'button "Confidence: disagree"'
+    - rowgroup:
+      - row "Open calibration Warm opening · Customer Service v17 Customer Service v17 8 8 88% 1 100% 88% 12.5 pp 95% 95%":
+        - cell "Open calibration Warm opening · Customer Service v17":
+          - button "Open calibration Warm opening · Customer Service v17": Warm opening
+        - cell "Customer Service v17"
+        - cell "8"
+        - cell "8"
+        - cell "88%"
+        - cell "1"
+        - cell "100%"
+        - cell "88%"
+        - cell "12.5 pp"
+        - cell "95%"
+        - cell "95%"
+      - row "Open calibration Resolution · Customer Service v17 Customer Service v17 8 8 100% 0 100% 100% 0.0 pp 85% —":
+        - cell "Open calibration Resolution · Customer Service v17":
+          - button "Open calibration Resolution · Customer Service v17": Resolution
+        - cell "Customer Service v17"
+        - cell "8"
+        - cell "8"
+        - cell "100%"
+        - cell "0"
+        - cell "100%"
+        - cell "100%"
+        - cell "0.0 pp"
+        - cell "85%"
+        - cell "—"
+      - row "Open calibration Clear next step · Customer Service v17 Customer Service v17 8 8 38% 5 33% 54% 21.2 pp 75% 75%":
+        - cell "Open calibration Clear next step · Customer Service v17":
+          - button "Open calibration Clear next step · Customer Service v17": Clear next step
+        - cell "Customer Service v17"
+        - cell "8"
+        - cell "8"
+        - cell "38%"
+        - cell "5"
+        - cell "33%"
+        - cell "54%"
+        - cell "21.2 pp"
+        - cell "75%"
+        - cell "75%"
+- region "Question calibration drill-down":
+  - text: Customer Service v17
+  - heading "Clear next step" [level=2]
+  - paragraph: 8 completed reviews · 8 comparable answers · 3 agree / 5 disagree
+  - button "Close question"
+  - paragraph: "AI credit: 33% · Human credit: 54% · Mean credit gap: 21.2 pp"
+  - button "Open reviewed evaluations"
+  - button "Open disagreements"
+  - button "Open reviewed evaluation 1 →"
+  - button "Open reviewed evaluation 2 →"
+  - button "Open reviewed evaluation 3 →"
+  - button "Open reviewed evaluation 4 →"
+  - button "Open reviewed evaluation 5 →"
+  - button "Open reviewed evaluation 6 →"
+  - button "Open reviewed evaluation 7 →"
+  - button "Open reviewed evaluation 8 →"
+  - group: Advanced details
+- paragraph: Diagnostic evidence from completed reviews. Exact agreement is descriptive; sample size does not establish statistical confidence or causality. Human scores do not replace Quality KPIs. Confidence is not accuracy or human agreement.

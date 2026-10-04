@@ -1,0 +1,81 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: ADMIN Jev available through AQM QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Find saved evaluations, inspect the AI result and follow human review progress.
+  - group "Evaluation mode":
+    - button "My reviews"
+    - button "All evaluations" [pressed]
+  - alert "Evaluation availability":
+    - heading "Evaluations could not be loaded." [level=2]
+    - paragraph: Your filters are unchanged.
+    - button "Retry"
+    - group: Technical details
+  - group: Team review workload
+  - text: History
+  - combobox "History":
+    - option "Saved in AQM" [selected]
+    - option "Saved in this browser"
+  - text: Review status
+  - combobox "Review status":
+    - option "All" [selected]
+    - option "Not reviewed"
+    - option "Review requested"
+    - option "In progress"
+    - option "Completed"
+  - text: Assignment
+  - combobox "Assignment":
+    - option "All" [selected]
+    - option "Unassigned"
+    - option "Assigned"
+    - option "Assigned to me"
+    - option "Fictional Admin"
+  - text: SLA state
+  - combobox "SLA state":
+    - option "All states" [selected]
+    - option "Due soon"
+    - option "Overdue"
+    - option "Escalated"
+  - text: Due
+  - combobox "Due":
+    - option "All" [selected]
+    - option "Overdue"
+    - option "Due today"
+    - option "Due next 7 days"
+    - option "No due date"
+  - text: Agent
+  - textbox "Agent"
+  - text: Queue
+  - textbox "Queue"
+  - text: Channel
+  - textbox "Channel"
+  - text: Result
+  - combobox "Result":
+    - option "All" [selected]
+    - option "Pass"
+    - option "Fail"
+  - text: From
+  - textbox "From"
+  - text: To
+  - textbox "To"
+  - text: Source
+  - combobox "Source":
+    - option "All" [selected]
+    - option "Genesys Cloud"
+    - option "Synthetic"
+    - option "Uploaded"
+  - text: Trigger
+  - combobox "Trigger":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Scheduled"
+  - text: Critical failure
+  - combobox "Critical failure":
+    - option "All" [selected]
+    - option "Yes"
+    - option "No"
+  - group: Advanced filters
+  - group: Calibration sample
+  - group: Bulk assignment

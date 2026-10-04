@@ -1,0 +1,126 @@
+
+Running 16 tests using 1 worker
+
+(node:53251) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/16] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900
+[2/16] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 390x844
+[3/16] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1920x1080
+[4/16] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x720
+[5/16] tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 1440x900
+[6/16] tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 390x844
+[7/16] tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 1920x1080
+[8/16] tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 1440x720
+[9/16] tests/investigation-result-focus.spec.ts:74:49 › analytics filter, refresh, pagination and rendered order never re-focus
+  1) tests/investigation-result-focus.spec.ts:74:49 › analytics filter, refresh, pagination and rendered order never re-focus 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: 'Refresh', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: 'Refresh', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Refresh', exact: true })
+        14 × locator resolved to <button class="outline-button">Refresh</button>
+           - unexpected value "inactive"
+
+
+      81 |   await page.keyboard.press('Shift+Tab');expect(await heading(page).evaluate(n=>n===document.activeElement)).toBe(false)
+      82 |   const queue=page.getByLabel('Queue',{exact:true});await queue.fill('Changed fictional queue');await expect.poll(()=>queries.at(-1)?.includes('Changed+fictional+queue')).toBe(true);await expect(rows(page)).toHaveCount(3);await expect(queue).toBeFocused()
+    > 83 |   const refresh=page.getByRole('button',{name:'Refresh',exact:true});await refresh.focus();await page.keyboard.press('Enter');await expect(refresh).toBeEnabled();await expect(refresh).toBeFocused()
+         |                                                                                                                                                                                         ^
+      84 |   await page.getByRole('button',{name:'Next page →'}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeEnabled();expect(cursor).toBe(true);await expect(heading(page)).not.toBeFocused()
+      85 |   await page.getByRole('button',{name:'First page',exact:true}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeDisabled();expect(cursor).toBe(false)
+      86 |   // Jump follows the actual rendered order after client sort/search, without selection/request/URL changes.
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:83:185
+
+    Error Context: test-results/investigation-result-focus-4e9a3-ndered-order-never-re-focus/error-context.md
+
+
+(node:53481) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/16] tests/investigation-result-focus.spec.ts:74:49 › calibration filter, refresh, pagination and rendered order never re-focus
+  2) tests/investigation-result-focus.spec.ts:74:49 › calibration filter, refresh, pagination and rendered order never re-focus 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('button', { name: 'Refresh', exact: true })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('button', { name: 'Refresh', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Refresh', exact: true })
+        14 × locator resolved to <button class="outline-button">Refresh</button>
+           - unexpected value "inactive"
+
+
+      81 |   await page.keyboard.press('Shift+Tab');expect(await heading(page).evaluate(n=>n===document.activeElement)).toBe(false)
+      82 |   const queue=page.getByLabel('Queue',{exact:true});await queue.fill('Changed fictional queue');await expect.poll(()=>queries.at(-1)?.includes('Changed+fictional+queue')).toBe(true);await expect(rows(page)).toHaveCount(3);await expect(queue).toBeFocused()
+    > 83 |   const refresh=page.getByRole('button',{name:'Refresh',exact:true});await refresh.focus();await page.keyboard.press('Enter');await expect(refresh).toBeEnabled();await expect(refresh).toBeFocused()
+         |                                                                                                                                                                                         ^
+      84 |   await page.getByRole('button',{name:'Next page →'}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeEnabled();expect(cursor).toBe(true);await expect(heading(page)).not.toBeFocused()
+      85 |   await page.getByRole('button',{name:'First page',exact:true}).click();await expect(page.getByRole('button',{name:'First page',exact:true})).toBeDisabled();expect(cursor).toBe(false)
+      86 |   // Jump follows the actual rendered order after client sort/search, without selection/request/URL changes.
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:83:185
+
+    Error Context: test-results/investigation-result-focus-84081-ndered-order-never-re-focus/error-context.md
+
+
+(node:53488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[11/16] tests/investigation-result-focus.spec.ts:95:40 › investigation initial empty and retry authority
+[12/16] tests/investigation-result-focus.spec.ts:95:40 › investigation initial failure and retry authority
+[13/16] tests/investigation-result-focus.spec.ts:107:175 › ordinary entry control page=evaluations
+[14/16] tests/investigation-result-focus.spec.ts:107:175 › ordinary entry control page=evaluations&origin=analytics
+[15/16] tests/investigation-result-focus.spec.ts:107:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017
+  3) tests/investigation-result-focus.spec.ts:107:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017 
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.evaluation-queue button[data-evaluation-id]')
+    Expected: 12
+    Received: 8
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveCount" locator('.evaluation-queue button[data-evaluation-id]') with timeout 5000ms
+      - waiting for locator('.evaluation-queue button[data-evaluation-id]')
+        4 × locator resolved to 0 elements
+          - unexpected value "0"
+        10 × locator resolved to 8 elements
+           - unexpected value "8"
+
+
+      107 | for(const urlQuery of ['page=evaluations','page=evaluations&origin=analytics','page=evaluations&origin=overview&form=general_service%4017','page=evaluations&entry=showcase'])test(`ordinary entry control ${urlQuery}`,async({page})=>{
+      108 |  await qualityFixture(page);await page.evaluate(q=>{history.pushState(null,'','?'+q);dispatchEvent(new PopStateEvent('popstate'))},urlQuery)
+    > 109 |  await expect(rows(page)).toHaveCount(12);await expect(heading(page)).toHaveCount(0);await expect(jump(page)).toHaveCount(0)
+          |                           ^
+      110 | })
+      111 | }
+      112 |
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:109:27
+
+    Error Context: test-results/investigation-result-focus-d3f8d-w-form-general-service-4017/error-context.md
+
+
+(node:53521) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[16/16] tests/investigation-result-focus.spec.ts:107:175 › ordinary entry control page=evaluations&entry=showcase
+  3 failed
+    tests/investigation-result-focus.spec.ts:74:49 › analytics filter, refresh, pagination and rendered order never re-focus 
+    tests/investigation-result-focus.spec.ts:74:49 › calibration filter, refresh, pagination and rendered order never re-focus 
+    tests/investigation-result-focus.spec.ts:107:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017 
+  13 passed (1.1m)

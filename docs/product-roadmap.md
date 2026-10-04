@@ -110,3 +110,7 @@ Resolved F10's scoped calculator ambiguity: visible monthly whole-conversation f
 ## V0.21A — Showcase-to-product continuity
 
 Qualified: both disconnected Explore actions carry a temporary contextual bridge to the existing Incomplete resolution sample, connecting the missing-next-step theme to Theo/Jordan's transcript. Synthetic Table now leads with scenario title/summary, customer and quality; direct Conversations stays ordinary, Cards/preferences persist, and any sample selection consumes the handoff. Workspace footer is release-neutral INTERNAL PILOT • 2026. Frontend only; V0.20 tag and backend unchanged. See [V0.21A qualification and evidence](v021a-showcase-product-continuity.md). Next: ChatGPT review/merge.
+
+## V0.21B — Investigation result focus
+
+Qualified: successful exact Analytics/Calibration investigations arrive at Matching evaluations, with human scope context and a local Jump to first evaluation shortcut. Two deliberate keyboard actions reach the existing first opener; measured main baseline was Analytics 58 Tabs / Calibration 56. One-shot focus preserves filters, retry, pagination, detail/evidence return, reviewer tasks and exact history/query/record order, adding zero requests. Frontend only; V0.20 tag and backend unchanged. See [qualification and evidence](v021b-investigation-result-focus.md). Next: ChatGPT review/merge.

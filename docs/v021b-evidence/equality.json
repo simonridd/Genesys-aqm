@@ -1,0 +1,70 @@
+[
+  {
+    "origin": "analytics",
+    "size": "1440x900",
+    "baselineTabCount": 58,
+    "afterKeyboardActions": 2,
+    "exactEquality": {
+      "sourceUrl": true,
+      "url": true,
+      "scope": true,
+      "ids": true,
+      "requests": true
+    },
+    "apiRequestCountBefore": 31,
+    "apiRequestCountAfter": 31,
+    "addedApiRequests": 0,
+    "firstRenderedEvaluation": "quality-0"
+  },
+  {
+    "origin": "analytics",
+    "size": "390x844",
+    "baselineTabCount": 58,
+    "afterKeyboardActions": 2,
+    "exactEquality": {
+      "sourceUrl": true,
+      "url": true,
+      "scope": true,
+      "ids": true,
+      "requests": true
+    },
+    "apiRequestCountBefore": 31,
+    "apiRequestCountAfter": 31,
+    "addedApiRequests": 0,
+    "firstRenderedEvaluation": "quality-0"
+  },
+  {
+    "origin": "calibration",
+    "size": "1440x900",
+    "baselineTabCount": 56,
+    "afterKeyboardActions": 2,
+    "exactEquality": {
+      "sourceUrl": true,
+      "url": true,
+      "scope": true,
+      "ids": true,
+      "requests": true
+    },
+    "apiRequestCountBefore": 29,
+    "apiRequestCountAfter": 29,
+    "addedApiRequests": 0,
+    "firstRenderedEvaluation": "general_service-v17-0"
+  },
+  {
+    "origin": "calibration",
+    "size": "390x844",
+    "baselineTabCount": 56,
+    "afterKeyboardActions": 2,
+    "exactEquality": {
+      "sourceUrl": true,
+      "url": true,
+      "scope": true,
+      "ids": true,
+      "requests": true
+    },
+    "apiRequestCountBefore": 29,
+    "apiRequestCountAfter": 29,
+    "addedApiRequests": 0,
+    "firstRenderedEvaluation": "general_service-v17-0"
+  }
+]

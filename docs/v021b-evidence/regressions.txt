@@ -1,0 +1,102 @@
+
+Running 94 tests using 1 worker
+
+(node:54481) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/94] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1440
+[2/94] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1440
+[3/94] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 1920
+[4/94] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 1920
+[5/94] tests/calibration-discovery.spec.ts:14:2 › goal-only disagreement task exact cohort, question and return 390
+[6/94] tests/calibration-discovery.spec.ts:30:2 › human historical form discovery, catalogue stability and responsive resize 390
+[7/94] tests/calibration-discovery.spec.ts:45:1 › catalogue cohort request, source/date/agent/queue refresh and unavailable selection reset
+[8/94] tests/calibration-discovery.spec.ts:59:1 › catalogue failure leaves filtered data usable, retry is isolated, main failure and no comparisons are safe
+[9/94] tests/calibration-discovery.spec.ts:67:1 › Back/Forward preserve form, view and exact question; deep link reload
+[10/94] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 1440
+[11/94] tests/calibration-discovery.spec.ts:73:31 › keyboard scope, mobile View, question, evaluation and return 390
+[12/94] tests/calibration-discovery.spec.ts:83:1 › valid deep-linked version absent from fresh catalogue retains returned human authority
+[13/94] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 390
+[14/94] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1440
+[15/94] tests/evaluation-availability.spec.ts:49:36 › initial 503 and keyboard retry 1920
+[16/94] tests/evaluation-availability.spec.ts:64:1 › successful empty is a data result
+[17/94] tests/evaluation-availability.spec.ts:65:1 › refresh failure preserves search, rows and loaded time; retry replaces atomically
+[18/94] tests/evaluation-availability.spec.ts:74:1 › scope change suspends old rows while loading and failed; retry keeps the exact new scope
+[19/94] tests/evaluation-availability.spec.ts:83:1 › next and first page failures preserve cursor, current rows and page controls until retry success
+[20/94] tests/evaluation-availability.spec.ts:96:44 › request race B then A
+[21/94] tests/evaluation-availability.spec.ts:96:44 › request race A then B
+[22/94] tests/evaluation-availability.spec.ts:105:1 › detail failure isolates list and prevents writable review until details retry succeeds
+[23/94] tests/evaluation-availability.spec.ts:112:1 › sample, bulk assignment and bulk due failures remain operation-specific
+[24/94] tests/evaluation-availability.spec.ts:123:1 › workload unavailable leaves the list usable
+[25/94] tests/evaluation-availability.spec.ts:124:31 › permission failure 401
+[26/94] tests/evaluation-availability.spec.ts:124:31 › permission failure 403
+[27/94] tests/evaluation-availability.spec.ts:125:1 › network failure is unavailable; malformed successful response is not an empty cohort
+[28/94] tests/evaluation-availability.spec.ts:129:1 › disconnected server does not render false empty; browser local history works and server stays truthful
+[29/94] tests/evaluation-availability.spec.ts:137:1 › reviewer default My Reviews unavailable, independent workload, retry restores mobile priority cards
+[30/94] tests/evaluation-availability.spec.ts:148:1 › successful My Reviews empty has its own copy
+[31/94] tests/evaluation-availability.spec.ts:152:60 › Overview investigation failure and exact retry 390
+[32/94] tests/evaluation-availability.spec.ts:152:60 › Analytics investigation failure and exact retry 390
+[33/94] tests/evaluation-availability.spec.ts:152:60 › Calibration investigation failure and exact retry 390
+[34/94] tests/evaluation-availability.spec.ts:175:1 › server failure cannot poison actual browser-local records
+[35/94] tests/evaluation-availability.spec.ts:182:1 › failed authoritative detail cannot enter writable focused reviewer task
+[36/94] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x900
+[37/94] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1920x1080
+[38/94] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 390x844
+[39/94] tests/investigation-history.spec.ts:61:121 › Questions exact filters, one push, Back/Forward and repeat 1440x720
+[40/94] tests/investigation-history.spec.ts:78:1 › v18 stays v18 rather than v17 or All published forms
+[41/94] tests/investigation-history.spec.ts:83:1 › rapid Back/Forward while Analytics refetches never grows history or reuses stale Evaluation scope
+[42/94] tests/investigation-history.spec.ts:96:50 › Queues investigation uses the same history path
+[43/94] tests/investigation-history.spec.ts:96:50 › Groups investigation uses the same history path
+[44/94] tests/investigation-history.spec.ts:96:50 › Overview investigation uses the same history path
+[45/94] tests/investigation-history.spec.ts:104:1 › reload preserves browser stack; fictional reconnect does not fabricate a source
+[46/94] tests/investigation-history.spec.ts:112:1 › Analytics and Evaluations failure retain restored scope and exact retry
+[47/94] tests/investigation-history.spec.ts:126:1 › explicit Back to Analytics reconstructs clean safe context from a deep link
+[48/94] tests/investigation-history.spec.ts:134:1 › direct external Evaluation entry has no fabricated Analytics history
+[49/94] tests/investigation-history.spec.ts:141:1 › Calibration disagreement Back/Forward restores exact version, question, view and cohort
+[50/94] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 1440
+[51/94] tests/investigation-history.spec.ts:151:31 › keyboard-only Questions history and usable restored view 390
+[52/94] tests/investigation-history.spec.ts:160:1 › session-only reviewer draft survives pushed Analytics investigation Back/Forward and evidence return
+[53/94] tests/investigation-history.spec.ts:171:1 › Overview characterization: range is not URL durable and its drill still replaces
+[54/94] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[55/94] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[56/94] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[57/94] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[58/94] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[59/94] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely
+[60/94] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles assignment safely
+[61/94] tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters
+[62/94] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[63/94] tests/reviewer-focus.spec.ts:180:1 › mobile available work claims into the same focused workspace
+[64/94] tests/reviewer-focus.spec.ts:197:1 › applicable progress excludes skipped questions
+[65/94] tests/reviewer-focus.spec.ts:206:1 › focused ADMIN retains assignment management under disclosure
+[66/94] tests/reviewer-focus.spec.ts:215:162 › explicit Start from active enters focused work and reconciles completion
+[67/94] tests/reviewer-focus.spec.ts:215:162 › explicit Start from explorer enters focused work and reconciles completion
+[68/94] tests/reviewer-focus.spec.ts:230:1 › later presentation page survives evidence, completion and queue return
+[69/94] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x900
+[70/94] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x900
+[71/94] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1920x1080
+[72/94] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1920x1080
+[73/94] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 390x844
+[74/94] tests/showcase-continuity.spec.ts:20:63 › demo handoff 390x844
+[75/94] tests/showcase-continuity.spec.ts:20:63 › welcome handoff 1440x720
+[76/94] tests/showcase-continuity.spec.ts:20:63 › demo handoff 1440x720
+[77/94] tests/showcase-continuity.spec.ts:49:32 › direct library, alternate sample, cards and preference 1440
+[78/94] tests/showcase-continuity.spec.ts:49:32 › direct library, alternate sample, cards and preference 390
+[79/94] tests/showcase-continuity.spec.ts:66:40 › keyboard welcome to sample and back
+[80/94] tests/showcase-continuity.spec.ts:66:40 › keyboard demo to sample and back
+[81/94] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped welcome Open AQM 1440
+[82/94] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped demo Open AQM 1440
+[83/94] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped welcome Open AQM 390
+[84/94] tests/showcase-continuity.spec.ts:73:70 › authenticated-shaped demo Open AQM 390
+[85/94] tests/showcase-continuity.spec.ts:80:2 › context consumed when leaving for another workspace page
+[86/94] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x900
+[87/94] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1920x1080
+[88/94] tests/user-language.spec.ts:19:25 › routine language and technical evidence 390x844
+[89/94] tests/user-language.spec.ts:19:25 › routine language and technical evidence 1440x720
+[90/94] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 1440
+[91/94] tests/user-language.spec.ts:87:31 › viewer comprehension and author missing assignment 390
+[92/94] tests/user-language.spec.ts:111:1 › local policy authority uses browser language
+[93/94] tests/user-language.spec.ts:121:1 › saved policy and schedule remain separate with dirty guards and read-only roles
+[94/94] tests/user-language.spec.ts:142:1 › manual AI evaluation uses product copy and retains result provenance
+  94 passed (4.1m)

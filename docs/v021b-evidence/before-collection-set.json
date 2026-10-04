@@ -1,0 +1,12 @@
+[
+  "evaluationForms",
+  "evaluationRecords",
+  "evaluationSlots",
+  "formTestRuns",
+  "operationalHealth",
+  "policies",
+  "policyRuns",
+  "questionGroupAssets",
+  "scheduleExecutionClaims",
+  "schedules"
+]

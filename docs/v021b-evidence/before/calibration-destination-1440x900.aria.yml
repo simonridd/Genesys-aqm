@@ -1,0 +1,224 @@
+- main:
+  - navigation "Breadcrumb":
+    - text: Workspace
+    - strong: Evaluations
+  - text: ADMIN Jev available through AQM
+  - button "Back to Calibration"
+  - text: QUALITY
+  - heading "Evaluations" [level=1]
+  - paragraph: Find saved evaluations, inspect the AI result and follow human review progress.
+  - group "Evaluation mode":
+    - button "My reviews"
+    - button "All evaluations" [pressed]
+  - region "Investigation scope":
+    - strong: "Investigating:"
+    - 'button "Remove Form: Customer Service v17"'
+    - 'button "Remove Reviewed question: Clear next step"'
+    - 'button "Remove Comparison: disagreements"'
+    - 'button "Remove Human review: Completed"'
+    - 'button "Remove Source: Genesys Cloud"'
+    - 'button "Remove Agent: Fixture Agent"'
+    - 'button "Remove Queue: Customer care"'
+    - 'button "Remove From: 2026-09-01"'
+    - 'button "Remove To: 2026-09-30"'
+    - button "Clear investigation filters"
+  - paragraph: Search checks up to 500 evaluations at a time. Use Next to continue.
+  - group: Team review workload
+  - text: History
+  - combobox "History":
+    - option "Saved in AQM" [selected]
+    - option "Saved in this browser"
+  - text: Review status
+  - combobox "Review status":
+    - option "All"
+    - option "Not reviewed"
+    - option "Review requested"
+    - option "In progress"
+    - option "Completed" [selected]
+  - text: Assignment
+  - combobox "Assignment":
+    - option "All" [selected]
+    - option "Unassigned"
+    - option "Assigned"
+    - option "Assigned to me"
+    - option "owner"
+  - text: SLA state
+  - combobox "SLA state":
+    - option "All states" [selected]
+    - option "Due soon"
+    - option "Overdue"
+    - option "Escalated"
+  - text: Due
+  - combobox "Due":
+    - option "All" [selected]
+    - option "Overdue"
+    - option "Due today"
+    - option "Due next 7 days"
+    - option "No due date"
+  - text: Agent
+  - textbox "Agent": Fixture Agent
+  - text: Queue
+  - textbox "Queue": Customer care
+  - text: Channel
+  - textbox "Channel"
+  - text: Result
+  - combobox "Result":
+    - option "All" [selected]
+    - option "Pass"
+    - option "Fail"
+  - text: From
+  - textbox "From": 2026-09-01
+  - text: To
+  - textbox "To": 2026-09-30
+  - text: Source
+  - combobox "Source":
+    - option "All"
+    - option "Genesys Cloud" [selected]
+    - option "Synthetic"
+    - option "Uploaded"
+  - text: Trigger
+  - combobox "Trigger":
+    - option "All" [selected]
+    - option "Manual"
+    - option "Scheduled"
+  - text: Critical failure
+  - combobox "Critical failure":
+    - option "All" [selected]
+    - option "Yes"
+    - option "No"
+  - button "Refresh"
+  - group: Advanced filters
+  - group: Calibration sample
+  - group: Bulk assignment
+  - paragraph: Loaded 08:27:38 PM
+  - text: Search
+  - textbox "Search table":
+    - /placeholder: Search visible fields
+  - text: 5 results on this page
+  - region "All evaluations table":
+    - table:
+      - rowgroup:
+        - row "Evaluated ↓ Select Evaluation Agent Queue Form Source AI score Human review Human score Agreement Assigned to Due Reviewer Reviewed at":
+          - columnheader "Evaluated ↓":
+            - button "Evaluated ↓"
+          - columnheader "Select":
+            - button "Select"
+          - columnheader "Evaluation":
+            - button "Evaluation"
+          - columnheader "Agent":
+            - button "Agent"
+          - columnheader "Queue":
+            - button "Queue"
+          - columnheader "Form":
+            - button "Form"
+          - columnheader "Source":
+            - button "Source"
+          - columnheader "AI score":
+            - button "AI score"
+          - columnheader "Human review":
+            - button "Human review"
+          - columnheader "Human score":
+            - button "Human score"
+          - columnheader "Agreement":
+            - button "Agreement"
+          - columnheader "Assigned to":
+            - button "Assigned to"
+          - columnheader "Due":
+            - button "Due"
+          - columnheader "Reviewer":
+            - button "Reviewer"
+          - columnheader "Reviewed at":
+            - button "Reviewed at"
+      - rowgroup:
+        - 'row "9/10/2026, 11:00:00 AM Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Fixture Agent Customer care Customer Service v17 Genesys Cloud 78% Completed 62% 1/3 Unassigned Completed Reviewer name unavailable 10/3/2026, 11:00:00 AM"':
+          - cell "9/10/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM" [disabled]'
+          - cell "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care":
+            - button "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care": Fixture Agent · voice
+          - cell "Fixture Agent"
+          - cell "Customer care"
+          - cell "Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Completed"
+          - cell "62%"
+          - cell "1/3"
+          - cell "Unassigned"
+          - cell "Completed"
+          - cell "Reviewer name unavailable"
+          - cell "10/3/2026, 11:00:00 AM"
+        - 'row "9/10/2026, 11:00:00 AM Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Fixture Agent Customer care Customer Service v17 Genesys Cloud 78% Completed 89% 2/3 Unassigned Completed Reviewer name unavailable 10/3/2026, 11:00:00 AM"':
+          - cell "9/10/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM" [disabled]'
+          - cell "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care":
+            - button "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care": Fixture Agent · voice
+          - cell "Fixture Agent"
+          - cell "Customer care"
+          - cell "Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Completed"
+          - cell "89%"
+          - cell "2/3"
+          - cell "Unassigned"
+          - cell "Completed"
+          - cell "Reviewer name unavailable"
+          - cell "10/3/2026, 11:00:00 AM"
+        - 'row "9/10/2026, 11:00:00 AM Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Fixture Agent Customer care Customer Service v17 Genesys Cloud 78% Completed 89% 2/3 Unassigned Completed Reviewer name unavailable 10/3/2026, 11:00:00 AM"':
+          - cell "9/10/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM" [disabled]'
+          - cell "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care":
+            - button "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care": Fixture Agent · voice
+          - cell "Fixture Agent"
+          - cell "Customer care"
+          - cell "Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Completed"
+          - cell "89%"
+          - cell "2/3"
+          - cell "Unassigned"
+          - cell "Completed"
+          - cell "Reviewer name unavailable"
+          - cell "10/3/2026, 11:00:00 AM"
+        - 'row "9/10/2026, 11:00:00 AM Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Fixture Agent Customer care Customer Service v17 Genesys Cloud 78% Completed 89% 2/3 Unassigned Completed Reviewer name unavailable 10/3/2026, 11:00:00 AM"':
+          - cell "9/10/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM" [disabled]'
+          - cell "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care":
+            - button "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care": Fixture Agent · voice
+          - cell "Fixture Agent"
+          - cell "Customer care"
+          - cell "Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Completed"
+          - cell "89%"
+          - cell "2/3"
+          - cell "Unassigned"
+          - cell "Completed"
+          - cell "Reviewer name unavailable"
+          - cell "10/3/2026, 11:00:00 AM"
+        - 'row "9/10/2026, 11:00:00 AM Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care Fixture Agent Customer care Customer Service v17 Genesys Cloud 78% Completed 89% 2/3 Unassigned Completed Reviewer name unavailable 10/3/2026, 11:00:00 AM"':
+          - cell "9/10/2026, 11:00:00 AM"
+          - 'cell "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM"':
+            - 'checkbox "Select evaluation: Fixture Agent · voice · Customer Service v17 · 9/10/2026, 11:00:00 AM" [disabled]'
+          - cell "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care":
+            - button "Open evaluation for Fixture Agent · voice · Customer Service v17 · Customer care": Fixture Agent · voice
+          - cell "Fixture Agent"
+          - cell "Customer care"
+          - cell "Customer Service v17"
+          - cell "Genesys Cloud"
+          - cell "78%"
+          - cell "Completed"
+          - cell "89%"
+          - cell "2/3"
+          - cell "Unassigned"
+          - cell "Completed"
+          - cell "Reviewer name unavailable"
+          - cell "10/3/2026, 11:00:00 AM"
+  - button "First page" [disabled]
+  - button "Next page →" [disabled]

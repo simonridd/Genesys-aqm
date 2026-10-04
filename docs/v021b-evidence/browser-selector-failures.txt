@@ -1,0 +1,301 @@
+
+Running 17 tests using 1 worker
+
+(node:54452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900
+  1) tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900 ───
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-2a0ca-t-keyboard-history-1440x900/error-context.md
+
+
+(node:54511) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844
+  2) tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844 ────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-febd9-ct-keyboard-history-390x844/error-context.md
+
+
+(node:54527) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1920x1080
+  3) tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1920x1080 ──
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-a2b89--keyboard-history-1920x1080/error-context.md
+
+
+(node:54537) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x720
+  4) tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x720 ───
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-301c2-t-keyboard-history-1440x720/error-context.md
+
+
+(node:54546) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900
+  5) tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900 ─
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-8f1e6-t-keyboard-history-1440x900/error-context.md
+
+
+(node:54572) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[6/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844
+  6) tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844 ──
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-a637e-ct-keyboard-history-390x844/error-context.md
+
+
+(node:54581) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1920x1080
+  7) tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1920x1080 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-c47ea--keyboard-history-1920x1080/error-context.md
+
+
+(node:54594) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x720
+  8) tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x720 ─
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.evaluation-queue').getByLabel('History', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.evaluation-queue').getByLabel('History', { exact: true }) with timeout 5000ms
+      - waiting for locator('.evaluation-queue').getByLabel('History', { exact: true })
+
+
+      45 |   else {
+      46 |    await expect(heading(page)).toBeFocused()
+    > 47 |    for(const label of ['History','Review status','Assignment','SLA state','Agent','Queue','Channel','Result','From','To','Source','Trigger','Critical failure'])await expect(page.locator('.evaluation-queue').getByLabel(label,{exact:true})).toBeVisible()
+         |                                                                                                                                                                                                                                                ^
+      48 |    await expect(page.locator('.evaluation-queue .exact-reference-filters')).not.toHaveAttribute('open','')
+      49 |    const box=await heading(page).boundingBox();expect(box!.y).toBeGreaterThanOrEqual(0);expect(box!.y).toBeLessThan(size.height)
+      50 |    await expect(jump(page)).toBeInViewport();await capture(page,`${origin}-heading-${size.width}x${size.height}`);await page.keyboard.press('Tab');await expect(jump(page)).toBeFocused();tabs++
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:47:240
+
+    Error Context: test-results/investigation-result-focus-add22-t-keyboard-history-1440x720/error-context.md
+
+
+(node:54607) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[9/17] tests/investigation-result-focus.spec.ts:77:49 › analytics filter, refresh, pagination and rendered order never re-focus
+[10/17] tests/investigation-result-focus.spec.ts:77:49 › calibration filter, refresh, pagination and rendered order never re-focus
+[11/17] tests/investigation-result-focus.spec.ts:98:40 › investigation initial empty and retry authority
+[12/17] tests/investigation-result-focus.spec.ts:98:40 › investigation initial failure and retry authority
+[13/17] tests/investigation-result-focus.spec.ts:110:175 › ordinary entry control page=evaluations
+[14/17] tests/investigation-result-focus.spec.ts:110:175 › ordinary entry control page=evaluations&origin=analytics
+[15/17] tests/investigation-result-focus.spec.ts:110:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017
+[16/17] tests/investigation-result-focus.spec.ts:110:175 › ordinary entry control page=evaluations&entry=showcase
+[17/17] tests/investigation-result-focus.spec.ts:116:14 › dirty Human review evidence return owns focus, including Forward with evaluationId
+  9) tests/investigation-result-focus.spec.ts:116:14 › dirty Human review evidence return owns focus, including Forward with evaluationId 
+
+    Error: expect(locator).not.toBeFocused() failed
+
+    Locator: getByRole('heading', { name: 'Matching evaluations', exact: true })
+    Expected: not focused
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "not toBeFocused" getByRole('heading', { name: 'Matching evaluations', exact: true }) with timeout 5000ms
+      - waiting for getByRole('heading', { name: 'Matching evaluations', exact: true })
+
+
+      122 |  await page.goBack();await expect(page).toHaveURL(sourceUrl);await page.goForward();await expect(page).toHaveURL(detailUrl);await expect(note).toHaveValue('Fictional pending review');await expect(heading(page)).not.toBeFocused()
+      123 |  await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await page.getByRole('button',{name:'← Back to human review',exact:true}).click()
+    > 124 |  await expect(page.getByRole('region',{name:'Human review',exact:true}).getByRole('heading',{level:2})).toBeFocused();await expect(note).toHaveValue('Fictional pending review');await expect(heading(page)).not.toBeFocused()
+          |                                                                                                                                                                                                                  ^
+      125 |  expect(f.forbidden).toEqual([]);expect(f.errors).toEqual([])
+      126 | })
+      127 |
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:124:210
+
+    Error Context: test-results/investigation-result-focus-c14b6-g-Forward-with-evaluationId/error-context.md
+
+
+  9 failed
+    tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900 ────
+    tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844 ─────
+    tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1920x1080 ───
+    tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x720 ────
+    tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900 ──
+    tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844 ───
+    tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1920x1080 ─
+    tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x720 ──
+    tests/investigation-result-focus.spec.ts:116:14 › dirty Human review evidence return owns focus, including Forward with evaluationId 
+  8 passed (1.5m)

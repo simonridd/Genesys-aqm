@@ -1,0 +1,6 @@
+{
+  "source": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&queue=Claims&agent=Sam&source=genesys-cloud&form=general_service%4017",
+  "drill": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&analyticsTab=questions&evaluationSource=server&form=general_service%4017&question=understanding&source=genesys-cloud&agent=Sam&queue=Claims&cohort=analytics&evaluation.scopeLabels=%7B%22form%22%3A%7B%22value%22%3A%22general_service%4017%22%2C%22label%22%3A%22Customer+Service+v17%22%7D%2C%22question%22%3A%7B%22value%22%3A%22understanding%22%2C%22label%22%3A%22Clear+next+step%22%7D%7D&origin=analytics&analytics.source=genesys-cloud&analytics.form=general_service%4017&analytics.agent=Sam&analytics.queue=Claims&analytics.tab=questions",
+  "back": "http://127.0.0.1:4174/Genesys-aqm/?page=analytics&analyticsTab=questions&queue=Claims&agent=Sam&source=genesys-cloud&form=general_service%4017",
+  "method": "Tab traversal, native select type-ahead, Enter, browser goBack; continued keyboard use after remount"
+}

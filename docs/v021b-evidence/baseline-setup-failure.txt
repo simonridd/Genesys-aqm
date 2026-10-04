@@ -1,0 +1,158 @@
+
+Running 4 tests using 1 worker
+
+(node:52931) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900
+  1) tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900 ───
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByLabel('Current role')
+    Expected: "ADMIN"
+    Received: "Verifying role…"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+        9 × locator resolved to <span class="pill" aria-label="Current role">Verifying role…</span>
+          - unexpected value "Verifying role…"
+
+
+       at qualityActionabilityFixture.ts:53
+
+      51 |   return json({items:[]})
+      52 |  })
+    > 53 |  await page.goto(`${app}?code=fictional&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                                 ^
+      54 |  return {store,requests,errors,writes,blocked,failAnalytics:(value=true)=>{failAnalytics=value},failNames:()=>{failNames=true}}
+      55 | }
+      56 |
+        at qualityFixture (/private/tmp/aqm-v021b-investigation-result-focus/tests/qualityActionabilityFixture.ts:53:113)
+        at source (/private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:15:31)
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:33:43
+
+    Error Context: test-results/investigation-result-focus-2a0ca-t-keyboard-history-1440x900/error-context.md
+
+
+(node:52939) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[2/4] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 390x844
+  2) tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 390x844 ────
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByLabel('Current role')
+    Expected: "ADMIN"
+    Received: "Verifying role…"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+        9 × locator resolved to <span class="pill" aria-label="Current role">Verifying role…</span>
+          - unexpected value "Verifying role…"
+
+
+       at qualityActionabilityFixture.ts:53
+
+      51 |   return json({items:[]})
+      52 |  })
+    > 53 |  await page.goto(`${app}?code=fictional&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                                 ^
+      54 |  return {store,requests,errors,writes,blocked,failAnalytics:(value=true)=>{failAnalytics=value},failNames:()=>{failNames=true}}
+      55 | }
+      56 |
+        at qualityFixture (/private/tmp/aqm-v021b-investigation-result-focus/tests/qualityActionabilityFixture.ts:53:113)
+        at source (/private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:15:31)
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:33:43
+
+    Error Context: test-results/investigation-result-focus-febd9-ct-keyboard-history-390x844/error-context.md
+
+
+(node:52957) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/4] tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 1440x900
+  3) tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 1440x900 ─
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByLabel('Current role')
+    Expected: "ADMIN"
+    Received: "Verifying role…"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+        9 × locator resolved to <span class="pill" aria-label="Current role">Verifying role…</span>
+          - unexpected value "Verifying role…"
+
+
+       at authoringSimplificationFixture.ts:39
+
+      37 |   return route.fulfill({status:response.status,body:await response.text(),contentType:'application/json'})
+      38 |  })
+    > 39 |  await page.goto(`${app}?page=${start}&code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                                             ^
+      40 |  return {store,errors,requests,close:()=>new Promise<void>(r=>{server.closeAllConnections();server.close(()=>r())})}
+      41 | }
+      42 |
+        at fixture (/private/tmp/aqm-v021b-investigation-result-focus/tests/authoringSimplificationFixture.ts:39:125)
+        at calibrationFixture (/private/tmp/aqm-v021b-investigation-result-focus/tests/calibrationDiscoveryFixture.ts:9:14)
+        at source (/private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:15:55)
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:33:43
+
+    Error Context: test-results/investigation-result-focus-8f1e6-t-keyboard-history-1440x900/error-context.md
+
+
+(node:52964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/4] tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 390x844
+  4) tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 390x844 ──
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  getByLabel('Current role')
+    Expected: "ADMIN"
+    Received: "Verifying role…"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveText" getByLabel('Current role') with timeout 5000ms
+      - waiting for getByLabel('Current role')
+        10 × locator resolved to <span class="pill" aria-label="Current role">Verifying role…</span>
+           - unexpected value "Verifying role…"
+
+
+       at authoringSimplificationFixture.ts:39
+
+      37 |   return route.fulfill({status:response.status,body:await response.text(),contentType:'application/json'})
+      38 |  })
+    > 39 |  await page.goto(`${app}?page=${start}&code=fixture&state=${'A'.repeat(43)}`);await expect(page.getByLabel('Current role')).toHaveText(role)
+         |                                                                                                                             ^
+      40 |  return {store,errors,requests,close:()=>new Promise<void>(r=>{server.closeAllConnections();server.close(()=>r())})}
+      41 | }
+      42 |
+        at fixture (/private/tmp/aqm-v021b-investigation-result-focus/tests/authoringSimplificationFixture.ts:39:125)
+        at calibrationFixture (/private/tmp/aqm-v021b-investigation-result-focus/tests/calibrationDiscoveryFixture.ts:9:14)
+        at source (/private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:15:55)
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:33:43
+
+    Error Context: test-results/investigation-result-focus-a637e-ct-keyboard-history-390x844/error-context.md
+
+
+  4 failed
+    tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900 ────
+    tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 390x844 ─────
+    tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 1440x900 ──
+    tests/investigation-result-focus.spec.ts:32:182 › calibration exact keyboard/history 390x844 ───

@@ -1,0 +1,13 @@
+{
+  "resultFocusEvents": 0,
+  "queries": [
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Customer+care&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Changed+fictional+queue&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Changed+fictional+queue&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&cursor=page-two&form=general_service%4017&agent=Fixture+Agent&queue=Changed+fictional+queue&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Changed+fictional+queue&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Fixture+Agent&queue=Changed+fictional+queue&source=genesys-cloud&reviewStatus=REVIEWED&reviewQuestion=understanding&comparison=disagreements&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z"
+  ],
+  "retainedRowsOnRefreshFailure": 3,
+  "firstRendered": "general_service-v18-0"
+}

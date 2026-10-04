@@ -1,0 +1,13 @@
+{
+  "resultFocusEvents": 0,
+  "queries": [
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Claims&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Changed+fictional+queue&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Changed+fictional+queue&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&cursor=page-two&form=general_service%4017&agent=Sam&queue=Changed+fictional+queue&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Changed+fictional+queue&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z",
+    "https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations?limit=50&form=general_service%4017&agent=Sam&queue=Changed+fictional+queue&channel=voice&cohort=analytics&question=understanding&policy=daily_voice&source=genesys-cloud&mode=scheduled&from=2026-09-01T00%3A00%3A00.000Z&to=2026-09-30T23%3A59%3A59.999Z"
+  ],
+  "retainedRowsOnRefreshFailure": 3,
+  "firstRendered": "quality-1"
+}

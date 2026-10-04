@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:4174/Genesys-aqm/?page=evaluations&evaluationSource=server&assignment=mine&reviewQueue=mine&evaluationId=escalated",
+  "text": "Workspace / Evaluations\nADMIN\nJev available through AQM\nBack to My Reviews\nMY REVIEW\nGeneral Customer Service v17\n\nAlex Morgan · Customer care · voice\n\nReady to review\nESCALATED\nOverdue by 4 days\nOpen conversation evidence\nHUMAN REVIEW\nReview this evaluation\n\nReady to review · Assigned to you\n\nREAL GENESYS DATA\n\n0 of 3 questions answered\n\nStart review\nCustomer care\nWarm opening\nUnanswered\n\nDid the agent greet the customer and offer help at the start of the conversation?\n\nHUMAN REVIEW\nNot answered\n\nHuman credit —\n\nAI RESULT\nYes\n\nCredit 100% · Yes probability 95%\n\nSelected-answer confidence 95%\nCustomer care\nUnderstanding the issue\nUnanswered\n\nHow effectively did the agent establish and acknowledge the customer’s actual issue?\n\nHUMAN REVIEW\nNot answered\n\nHuman credit —\n\nAI RESULT\n1.00 / 3\n\nCredit 33% · Confidence 75%\n\nCustomer care\nResolution\nUnanswered\n\nWhat is the best description of the issue outcome by the end of the conversation?\n\nHUMAN REVIEW\nNot answered\n\nHuman credit —\n\nAI RESULT\nFully resolved\n\nCredit 100% · Confidence 85%\n\nReview comparison\nAssignment details\nReview history (1 events)\nAI evaluation result\nEvaluation provenance",
+  "width": 1920,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  }
+}

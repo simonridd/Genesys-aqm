@@ -1,0 +1,55 @@
+
+Running 17 tests using 1 worker
+
+(node:53771) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x900
+[2/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 390x844
+[3/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1920x1080
+[4/17] tests/investigation-result-focus.spec.ts:33:182 › analytics exact keyboard/history 1440x720
+[5/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x900
+[6/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 390x844
+[7/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1920x1080
+[8/17] tests/investigation-result-focus.spec.ts:33:182 › calibration exact keyboard/history 1440x720
+[9/17] tests/investigation-result-focus.spec.ts:75:49 › analytics filter, refresh, pagination and rendered order never re-focus
+[10/17] tests/investigation-result-focus.spec.ts:75:49 › calibration filter, refresh, pagination and rendered order never re-focus
+[11/17] tests/investigation-result-focus.spec.ts:96:40 › investigation initial empty and retry authority
+[12/17] tests/investigation-result-focus.spec.ts:96:40 › investigation initial failure and retry authority
+[13/17] tests/investigation-result-focus.spec.ts:108:175 › ordinary entry control page=evaluations
+[14/17] tests/investigation-result-focus.spec.ts:108:175 › ordinary entry control page=evaluations&origin=analytics
+[15/17] tests/investigation-result-focus.spec.ts:108:175 › ordinary entry control page=evaluations&origin=overview&form=general_service%4017
+[16/17] tests/investigation-result-focus.spec.ts:108:175 › ordinary entry control page=evaluations&entry=showcase
+[17/17] tests/investigation-result-focus.spec.ts:114:14 › dirty Human review evidence return owns focus, including Forward with evaluationId
+  1) tests/investigation-result-focus.spec.ts:114:14 › dirty Human review evidence return owns focus, including Forward with evaluationId 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  getByRole('region', { name: 'Review workspace' }).getByRole('heading', { level: 1 })
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" getByRole('region', { name: 'Review workspace' }).getByRole('heading', { level: 1 }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Review workspace' }).getByRole('heading', { level: 1 })
+        13 × locator resolved to <h1 tabindex="-1">General Customer Service v17</h1>
+           - unexpected value "inactive"
+
+
+      120 |  const note=page.getByRole('region',{name:'Human review',exact:true}).getByLabel('Overall review note',{exact:true})
+      121 |  await note.fill('Fictional pending review');const detailUrl=page.url()
+    > 122 |  await page.goBack();await expect(page).toHaveURL(sourceUrl);await page.goForward();await expect(page).toHaveURL(detailUrl);await expect(note).toHaveValue('Fictional pending review');await expect(heading(page)).not.toBeFocused()
+          |                                                                                                  ^
+      123 |  await page.getByRole('button',{name:/^Open conversation(?: evidence)?$/}).click();await page.getByRole('button',{name:'← Back to human review',exact:true}).click()
+      124 |  await expect(page.getByRole('region',{name:'Human review',exact:true}).getByRole('heading',{level:2})).toBeFocused();await expect(note).toHaveValue('Fictional pending review');await expect(heading(page)).not.toBeFocused()
+      125 |  expect(f.forbidden).toEqual([]);expect(f.errors).toEqual([])
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:122:98
+
+    Error Context: test-results/investigation-result-focus-c14b6-g-Forward-with-evaluationId/error-context.md
+
+
+  1 failed
+    tests/investigation-result-focus.spec.ts:114:14 › dirty Human review evidence return owns focus, including Forward with evaluationId 
+  16 passed (57.0s)

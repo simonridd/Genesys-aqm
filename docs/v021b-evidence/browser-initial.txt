@@ -1,0 +1,58 @@
+
+Running 8 tests using 1 worker
+
+(node:53184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/8] tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900
+  1) tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900 ───
+
+    Test was interrupted.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: 'Open conversation', exact: true })
+
+
+      56 |    await page.getByRole('button',{name:'Close details',exact:true}).click();await expect(rows(page).first()).toBeFocused()
+      57 |    await page.route(`${api}/api/evaluations/*`,async r=>{const response=await r.fetch();const body=await response.json();return r.fulfill({json:{...body,conversationId:'syn-incomplete-resolution'}})})
+    > 58 |    await rows(page).first().click();await page.getByRole('button',{name:'Open conversation',exact:true}).click()
+         |                                                                                                          ^
+      59 |    await expect(page.getByRole('button',{name:'← Back to evaluation',exact:true})).toBeVisible();await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click()
+      60 |    await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible();await expect(heading(page)).not.toBeFocused()
+      61 |    await page.getByRole('button',{name:'Close details',exact:true}).click()
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:58:106
+
+    Error: "route.fetch: Test ended.
+    Call log:
+      - → GET https://aqm-api-bd54ukouga-nw.a.run.app/api/evaluations/quality-0
+        - user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36
+        - accept: */*
+        - accept-encoding: gzip,deflate,br
+        - accept-language: en-US
+        - authorization: Bearer fictional
+        - origin: http://127.0.0.1:4174
+        - referer: http://127.0.0.1:4174/
+        - sec-ch-ua: "HeadlessChrome";v="153", "Not_A Brand";v="8", "Chromium";v="153"
+        - sec-ch-ua-mobile: ?0
+        - sec-ch-ua-platform: "macOS"
+    " while running route callback.
+    Consider awaiting `await page.unrouteAll({ behavior: 'ignoreErrors' })`
+    before the end of the test to ignore remaining routes in flight.
+
+      55 |    await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible()
+      56 |    await page.getByRole('button',{name:'Close details',exact:true}).click();await expect(rows(page).first()).toBeFocused()
+    > 57 |    await page.route(`${api}/api/evaluations/*`,async r=>{const response=await r.fetch();const body=await response.json();return r.fulfill({json:{...body,conversationId:'syn-incomplete-resolution'}})})
+         |                                                                                 ^
+      58 |    await rows(page).first().click();await page.getByRole('button',{name:'Open conversation',exact:true}).click()
+      59 |    await expect(page.getByRole('button',{name:'← Back to evaluation',exact:true})).toBeVisible();await page.getByRole('button',{name:'← Back to evaluation',exact:true}).click()
+      60 |    await expect(page.getByRole('button',{name:'Close details',exact:true})).toBeVisible();await expect(heading(page)).not.toBeFocused()
+        at /private/tmp/aqm-v021b-investigation-result-focus/tests/investigation-result-focus.spec.ts:57:81
+
+    Error Context: test-results/investigation-result-focus-2a0ca-t-keyboard-history-1440x900/error-context.md
+
+
+  1 interrupted
+    tests/investigation-result-focus.spec.ts:32:182 › analytics exact keyboard/history 1440x900 ────
+  7 did not run
