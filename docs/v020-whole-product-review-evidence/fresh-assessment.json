@@ -1,0 +1,471 @@
+{
+  "canonical_main_sha": "fadb73dac800cede26389fe883602967cf5b8784",
+  "pages_head": "84caf3b8a2d363ae651c1cf91d7d4e9c7983aa6e",
+  "deployed_source_sha": "cf860d9bf008950446e12291489708b419b84ee5",
+  "timestamp": "2026-10-04T18:00:12.960685+00:00",
+  "backend": {
+    "revision": "aqm-api-v019-e92f2d6",
+    "traffic_percent": 100,
+    "verified_via": "Cloud Run read-only service metadata, project genesys-aqm-2026 / europe-west2"
+  },
+  "phase": "C — immutable independent judgment before source/history/regression",
+  "review_only_never_merge": true,
+  "independence": "No historical review conclusions, V0.20A–H reports, or roadmap descriptions read. No implementation inspected to interpret UI. Existing fixture infrastructure and fictional network response shapes used only for data/authentication/failure injection.",
+  "scale": {
+    "1": "seriously ineffective",
+    "2": "major friction",
+    "3": "acceptable prototype",
+    "4": "strong internal product",
+    "5": "unusually polished / intuitive"
+  },
+  "scorecard": [
+    {
+      "category": "Human effectiveness",
+      "score": 4,
+      "prevents_5": "The public sample handoff drops the customer case; evaluation evidence needs a long filter traversal by keyboard.",
+      "reason": "The public sample handoff drops the customer case; evaluation evidence needs a long filter traversal by keyboard."
+    },
+    {
+      "category": "Value proposition",
+      "score": 5,
+      "prevents_5": null,
+      "reason": "The hero and customer case make wider quality evaluation, focused AI answers, transparent rules and independent human judgment immediately coherent."
+    },
+    {
+      "category": "Information quality",
+      "score": 4,
+      "prevents_5": "Policy detail shows one schedule while the fictional Overview exposes two for that same policy; contract boundary remains unverified.",
+      "reason": "Policy detail shows one schedule while the fictional Overview exposes two for that same policy; contract boundary remains unverified."
+    },
+    {
+      "category": "Ease of use",
+      "score": 4,
+      "prevents_5": "Evaluation lists put many filters before the result actions; form editing shares the page with the full library.",
+      "reason": "Evaluation lists put many filters before the result actions; form editing shares the page with the full library."
+    },
+    {
+      "category": "Visual quality",
+      "score": 4,
+      "prevents_5": "Strong hierarchy and readable cards; dense form/library and policy tables remain less effortless than the guided story.",
+      "reason": "Strong hierarchy and readable cards; dense form/library and policy tables remain less effortless than the guided story."
+    },
+    {
+      "category": "Trust / credibility",
+      "score": 4,
+      "prevents_5": "Visible evidence limits are strong, but duplicate-schedule representation is unclear and the shell still says V0.19D SHOWCASE.",
+      "reason": "Visible evidence limits are strong, but duplicate-schedule representation is unclear and the shell still says V0.19D SHOWCASE."
+    },
+    {
+      "category": "User-facing cleanliness",
+      "score": 4,
+      "prevents_5": "Most names and exact versions are human-readable; disconnected conversation tables still lead with IDs and stale release branding.",
+      "reason": "Most names and exact versions are human-readable; disconnected conversation tables still lead with IDs and stale release branding."
+    },
+    {
+      "category": "Navigation / IA",
+      "score": 4,
+      "prevents_5": "Core investigation history and explicit evidence returns work; reviewer evidence uses a temporary session and browser Back can exit the document behind a warning.",
+      "reason": "Core investigation history and explicit evidence returns work; reviewer evidence uses a temporary session and browser Back can exit the document behind a warning."
+    },
+    {
+      "category": "Workflow coherence",
+      "score": 4,
+      "prevents_5": "Quality, calibration, review and authoring chains complete; disconnected story-to-library continuity is weaker.",
+      "reason": "Quality, calibration, review and authoring chains complete; disconnected story-to-library continuity is weaker."
+    },
+    {
+      "category": "First-time learnability",
+      "score": 4,
+      "prevents_5": "Guided pitch and reusable-answer teaching are clear; disconnected prototype offers many samples without a recommended next task.",
+      "reason": "Guided pitch and reusable-answer teaching are clear; disconnected prototype offers many samples without a recommended next task."
+    },
+    {
+      "category": "Authoring usability",
+      "score": 4,
+      "prevents_5": "Empty forms, answer discovery, format adoption, group reuse and version comparison work; library/editor density adds focus and scrolling burden.",
+      "reason": "Empty forms, answer discovery, format adoption, group reuse and version comparison work; library/editor density adds focus and scrolling burden."
+    },
+    {
+      "category": "Reviewer usability",
+      "score": 4,
+      "prevents_5": "Urgency, active workspace, draft retention, independent AI result and completion work; the queue Start action first opens a workspace requiring another Start, and browser-history behavior differs from investigation history.",
+      "reason": "Urgency, active workspace, draft retention, independent AI result and completion work; the queue Start action first opens a workspace requiring another Start, and browser-history behavior differs from investigation history."
+    },
+    {
+      "category": "Operational usefulness",
+      "score": 4,
+      "prevents_5": "Attention, quality, coverage and review work are useful; multi-schedule policy-detail boundary needs explanation and live operational effectiveness is unproven.",
+      "reason": "Attention, quality, coverage and review work are useful; multi-schedule policy-detail boundary needs explanation and live operational effectiveness is unproven."
+    },
+    {
+      "category": "Responsive/mobile quality",
+      "score": 4,
+      "prevents_5": "All priority tasks can be completed in emulated mobile Chromium; navigation and library content precede work, and some tables require Cards or contained horizontal movement.",
+      "reason": "All priority tasks can be completed in emulated mobile Chromium; navigation and library content precede work, and some tables require Cards or contained horizontal movement."
+    },
+    {
+      "category": "Accessibility pragmatics",
+      "score": 4,
+      "prevents_5": "Visible focus, native answer controls, current navigation, meaningful actions and status messages work; 48–49 Tab stops to the first evaluation from a drill create material effort.",
+      "reason": "Visible focus, native answer controls, current navigation, meaningful actions and status messages work; 48–49 Tab stops to the first evaluation from a drill create material effort."
+    },
+    {
+      "category": "Showcase → product continuity",
+      "score": 3,
+      "prevents_5": "Disconnected Explore reaches a different sample library, loses Jamie/customer-case context, and offers no direct continuation recommendation.",
+      "reason": "Disconnected Explore reaches a different sample library, loses Jamie/customer-case context, and offers no direct continuation recommendation."
+    }
+  ],
+  "unweighted_mean": 4.0,
+  "mean_boundary": "The mean does not override a release-blocking finding.",
+  "fresh_findings": [
+    {
+      "id": "N1",
+      "severity": "P2",
+      "page_task": "Public visitor: Explore the prototype",
+      "observation": "The Jamie/Alex case changes to a generic 19-sample library. The desktop table foregrounds conversation IDs; no recommended continuation points back to the quality question just demonstrated.",
+      "why_it_matters": "A colleague understands the pitch but has to invent a new task and discover a different customer story before learning the prototype.",
+      "reproduction": [
+        "Clean public Welcome",
+        "Complete the five guided chapters",
+        "Exit demo",
+        "Explore the prototype",
+        "Inspect the first screen and open the billing sample"
+      ],
+      "proposed_improvement": "Add a short landing cue that suggests opening one named sample and explains how that sample relates to the guided quality workflow; prioritize human topic/context over conversation ID in the disconnected list.",
+      "scope_risk": "Small public/sample navigation and presentation change; no scoring or provider behavior. Non-blocking for a supervised pilot.",
+      "evidence": [
+        "public-disconnected-handoff.txt",
+        "public-sample-detail.txt",
+        "public-library-cards-mobile.png"
+      ]
+    },
+    {
+      "id": "N2",
+      "severity": "P2",
+      "page_task": "Policy author: when will the daily voice policy run?",
+      "observation": "The fictional Overview shows daily and weekly scheduled work for the same named policy. Policy collection/detail shows only the weekly schedule and next run.",
+      "why_it_matters": "A user can give an incomplete answer about active scheduled work if more than one schedule per policy is a valid authority state.",
+      "reproduction": [
+        "Fictional attention scope",
+        "Overview: inspect upcoming daily and weekly entries for Daily Voice Customer Service AQM",
+        "Open Policies and that policy",
+        "Compare Schedule (saved) and Next run with Overview"
+      ],
+      "proposed_improvement": "If multiple schedules are supported, expose all active schedules in policy detail or warn that other schedules exist. If the contract permits only one, enforce/normalize that authority boundary rather than presenting an ambiguous fixture as a normal state.",
+      "scope_risk": "Conditional authority/navigation edge; investigate contract after lock. No production schedule was changed. Not a blocker on the single-schedule authoring path.",
+      "evidence": [
+        "viewer-overview-desktop.txt",
+        "policy-detail-mobile.txt",
+        "policy-detail-desktop.txt"
+      ]
+    },
+    {
+      "id": "N3",
+      "severity": "P3",
+      "page_task": "Keyboard quality/Calibration investigation: evaluation result discovery",
+      "observation": "After a drill, keyboard traversal to the first evaluation passes 48–49 Tab stops through filters and list controls. The primary row action is reachable with visible focus.",
+      "why_it_matters": "A keyboard user pays disproportionate effort to inspect evidence already narrowed by the investigation.",
+      "reproduction": [
+        "Use keyboard to activate Inspect evaluations or Open disagreements",
+        "Tab to the first Open evaluation action"
+      ],
+      "proposed_improvement": "Offer an in-page jump to results, or move focus to the result heading/action when entering an exact investigation, preserving access to filters.",
+      "scope_risk": "Bounded focus/navigation polish; verify native focus and row return. Non-blocking.",
+      "evidence": [
+        "quality-keyboard.json",
+        "calibration-keyboard.json",
+        "quality-cohort-mobile.aria.yml"
+      ]
+    },
+    {
+      "id": "N4",
+      "severity": "P3",
+      "page_task": "Product shell / release credibility",
+      "observation": "The product shell footer displays V0.19D SHOWCASE • 2026 even in the current authenticated product.",
+      "why_it_matters": "A colleague can reasonably wonder whether the reviewed product is an older showcase build.",
+      "reproduction": [
+        "Explore the prototype or open authenticated Overview",
+        "Inspect desktop navigation footer"
+      ],
+      "proposed_improvement": "Use product-neutral prototype wording or current release identity in the shell.",
+      "scope_risk": "Text-only polish, no product-state behavior; non-blocking.",
+      "evidence": [
+        "public-disconnected-handoff.txt",
+        "viewer-overview-desktop.png",
+        "admin-settings-connection.txt"
+      ]
+    }
+  ],
+  "verdicts": {
+    "pitch": "READY",
+    "product_usability": "READY WITH MINOR POLISH",
+    "internal_pilot": "READY WITH MINOR POLISH — supervised internal pilot",
+    "v020_release": "A. TAG V0.20"
+  },
+  "release_blockers": [],
+  "non_blocking_backlog": [
+    "N1",
+    "N2",
+    "N3",
+    "N4"
+  ],
+  "task_outcomes": {
+    "public_visitor": {
+      "starting_point": "Clean actual public Welcome, 1440×900; repeated clean 390×844",
+      "goal": "Understand the product and safely explore without connecting",
+      "actions": "Read hero; guided chapters 1–5 via Next; Exit; calculator cases; Explore; sample detail; Settings connection guidance; fictional authenticated Open AQM separately",
+      "result": "Pitch comprehensible; safe fictional library and OAuth setup discoverable; disconnected customer context does not survive",
+      "confidence": "High within browser/fictional boundary",
+      "wrong_turns": "Connect Genesys Cloud in the product breadcrumb was status text, not a button; Settings supplied the actual connection controls. Two automation locator retries are not counted as real user errors.",
+      "technical_disclosures_opened": 0,
+      "scrolls": "Chapters 2/3/5 and calculator require mobile scrolling to Next/result/exclusions; controls remain reachable."
+    },
+    "quality_leader_viewer": {
+      "starting_point": "Fictional VIEWER, connection landing → Open Overview",
+      "goal": "Identify attention, weakest quality issue, and supporting evaluations/conversation",
+      "actions": [
+        "Open Overview",
+        "Explore quality",
+        "Inspect weakest-question evaluations",
+        "Open an evaluation",
+        "Open conversation",
+        "Back to evaluation",
+        "Back to Analytics",
+        "Browser Back/Forward"
+      ],
+      "result": "Understanding the issue, General Customer Service v17: 33.1% / 8 applicable answers; exact form/question/source/date cohort survives detail/evidence return. Quality and coverage remain separate.",
+      "confidence": "High for this scope",
+      "wrong_turns": 0,
+      "backtracks": "Expected evidence return and browser-history checks",
+      "technical_disclosures_opened": 0,
+      "scrolls": "Desktop first scan supplies task areas; mobile passes attention and quality panels. Keyboard 48 tabs from cohort entry to first result."
+    },
+    "coverage": {
+      "starting_point": "Analytics Coverage, 20 eligible observations across fictional monitoring runs",
+      "goal": "Why were not all eligible conversations evaluated?",
+      "result": "10 deliberately not selected; 4 sampled without usable content; 2 available without completed evaluation; 3 failed attempts clearly distinguished from interaction counts. Repeated run observations and denominator/filter scope disclosed.",
+      "confidence": "High",
+      "technical_disclosures_opened": 0,
+      "wrong_turns": 0
+    },
+    "reviewer": {
+      "starting_point": "Fictional REVIEWER Overview → My review queue; repeated direct queue at desktop/mobile",
+      "goal": "Complete the most urgent review carefully",
+      "primary_action_count": 12,
+      "action_count_definition": "Queue, open urgent item, start, two answer selections, question note, overall note, evidence, return, final answer, complete, continue-queue availability; Tab keystrokes are separate. Reproduction/harness retries excluded.",
+      "result": "Escalated item discoverable first; active task separate; two answers and both notes survive explicit evidence return and 1440→390→1440. Full mobile completion succeeds. Completion announces queue removal and independent original AI preservation; in-memory AI records unchanged.",
+      "confidence": "High for supported explicit return; browser exit intentionally guarded and temporary drafts are session-bound",
+      "wrong_turns": "Guessed return label corrected from Back to review to the visible Back to human review. Native select ArrowDown sequence did not commit first answer; keyboard type-ahead worked. These are harness interaction corrections.",
+      "backtracks": "Explicit evidence return; browser exit declined in realistic prior-Welcome reproduction",
+      "technical_disclosures_opened": 0,
+      "scrolls": "Mobile active review auto-focuses workspace; questions and end-of-form finish controls are vertically reachable; queue cards expose action without horizontal action discovery."
+    },
+    "reviewer_interruption": {
+      "result": "Two answers (Yes / Needs improvement), question note and overall note retained. Real prior-Welcome browser Back emits beforeunload; dismissing preserves draft. Earlier about:blank Back/Forward exits/reloads disconnected, classified pre-lock as harness context boundary, not unguarded product loss.",
+      "evidence": [
+        "reviewer-retention.json",
+        "reviewer-public-browser-back.json",
+        "reviewer-browser-history-repro.json"
+      ]
+    },
+    "author_new_form": {
+      "starting_point": "Fictional AUTHOR Evaluation Forms",
+      "goal": "Create a draft resolution-quality form with reusable standards",
+      "result": "New form has zero questions. Add question exposes Use reusable Answer Set across formats; readable preview adopts Multiple choice and retains wording/weight; fictional Save changes confirms Saved in AQM. Repeated complete 390×844 task succeeds.",
+      "confidence": "High",
+      "wrong_turns": 0,
+      "technical_disclosures_opened": 0,
+      "scrolls": "Library precedes editor; mobile needs substantial vertical travel but native controls and save are reachable."
+    },
+    "author_reuse": {
+      "goal": "Create another form reusing existing questions",
+      "result": "Add reusable group introduces published reusable standards. Resolution & Next Steps adds exactly Ownership, Resolution, Clear next steps. Empty General group remains but no unrelated starter questions appear. Saved fictionally.",
+      "confidence": "High",
+      "wrong_turns": 0,
+      "technical_disclosures_opened": 0
+    },
+    "author_versioning": {
+      "goal": "Understand what changes before adopting newer reusable standard",
+      "result": "Resolution clarity v1→v2 comparison names renamed label, credit 100→90%, position changes and new Not applicable answer. Resulting order and dependent-condition check explicit. Detach customization is distinct. Adoption not saved. Published policy version stays pinned; showcase explains immutable published snapshots.",
+      "confidence": "High for observed comparison; no real historical data migration proven",
+      "technical_disclosures_opened": 0
+    },
+    "policy_author": {
+      "goal": "Identify exact form, selection, next run; protect unsaved edit",
+      "result": "General Customer Service v17, voice condition, 50% sampling, exact published-version pin, schedule timezone/run window and separate save explicit. Native leave confirmation retains unsaved description when declined. Multi-schedule fixture representation is N2.",
+      "confidence": "High for form/selection and guard; conditional for all schedules",
+      "wrong_turns": 0,
+      "technical_disclosures_opened": 0
+    },
+    "calibration": {
+      "goal": "Find largest human/AI disagreement and supporting evaluations",
+      "result": "Landing highlights Understanding the issue / General Customer Service v17; 2 of 2 comparable answers disagree, 100%. Exact completed-review/question/source/date drill gives 2 evaluations; evidence/return/browser history preserve scope. Desktop/mobile and keyboard completed.",
+      "confidence": "High, sample explicitly descriptive",
+      "wrong_turns": 0,
+      "technical_disclosures_opened": 0,
+      "scrolls": "Mobile results/actions vertically reachable; cohort filters require 49 Tab stops to first evaluation."
+    },
+    "admin_settings": {
+      "goal": "Find connection/settings and understand retention/notification effect before change",
+      "result": "Settings sections separate connection, governance/privacy, notifications and advanced/development. Storage inventory, retention non-destructive-save boundary and dependent-review purge disclosed. Notification routes new operational alerts after scheduler ticks, no backfill. Current section aria-current=location. No writes or destructive actions.",
+      "confidence": "High",
+      "wrong_turns": 0,
+      "technical_disclosures_opened": 0
+    },
+    "failure_empty_matrix": {
+      "successful_zero_evaluations": "No evaluations match this scope; no unavailable/retry fiction.",
+      "failed_initial_evaluations": "Evaluations could not be loaded; filters unchanged; Retry.",
+      "same_scope_refresh_failure": "Previous rows retained with loaded-at timestamp; Retry refresh.",
+      "failed_next_page": "Current page unchanged; Retry next page.",
+      "overview_partial": "Affected section Unavailable / Refresh; other task areas remain.",
+      "calibration_main_only": "Main unavailable with Retry calibration; form choices available.",
+      "calibration_catalogue_only": "Catalogue unavailable with Retry form choices; disagreement evidence remains usable.",
+      "policy_collection_failure": "Saved policies unavailable; editing/new action removed; no fake zero collection.",
+      "confidence": "High after independently isolating catalogue/main recovery"
+    },
+    "responsive": {
+      "viewports": [
+        [
+          1440,
+          900
+        ],
+        [
+          390,
+          844
+        ],
+        [
+          1920,
+          1080
+        ],
+        [
+          1440,
+          720
+        ]
+      ],
+      "result": "Priority task chains completed in browser emulation. No document-level horizontal overflow in representative checked surfaces. Tables can scroll within containers; Cards offered for sample/form libraries. Resize preserves investigation and review draft state.",
+      "limitations": "Not physical-device testing; no exhaustive pixel audit of every expanded disclosure."
+    },
+    "keyboard": {
+      "tasks": [
+        "public chapter progression",
+        "calculator edit",
+        "quality investigation/evidence return",
+        "human review/evidence return/completion",
+        "new form/reusable-answer adoption/save",
+        "Calibration disagreement/evidence return",
+        "Settings sections"
+      ],
+      "result": "Reachable primary actions, visible 3px focus outline, native controls, meaningful names, current/pressed state, status/error semantics. Native select type-ahead tested successfully. Filter traversal burden N3.",
+      "limitations": "No WCAG or screen-reader certification; actual screen-reader announcements not tested."
+    }
+  },
+  "chapter_assessment": [
+    {
+      "chapter": 1,
+      "name": "The customer case",
+      "scores": {
+        "Clarity": 5,
+        "Narrative value": 5,
+        "Information quality": 5,
+        "Visual effectiveness": 5,
+        "Interaction burden": 5
+      },
+      "classification": "KEEP",
+      "prevents_5": {}
+    },
+    {
+      "chapter": 2,
+      "name": "Define quality",
+      "scores": {
+        "Clarity": 4,
+        "Narrative value": 5,
+        "Information quality": 5,
+        "Visual effectiveness": 4,
+        "Interaction burden": 4
+      },
+      "classification": "KEEP",
+      "prevents_5": {
+        "Clarity": "Several weighting/critical/conditional concepts arrive in one read; careful attention is needed.",
+        "Visual effectiveness": "Scoring consequences are mostly prose rather than a compact worked score.",
+        "Interaction burden": "Mobile reader scrolls beyond question cards and scoring paragraphs to progress."
+      }
+    },
+    {
+      "chapter": 3,
+      "name": "Evaluate at scale",
+      "scores": {
+        "Clarity": 5,
+        "Narrative value": 5,
+        "Information quality": 5,
+        "Visual effectiveness": 4,
+        "Interaction burden": 4
+      },
+      "classification": "KEEP",
+      "prevents_5": {
+        "Visual effectiveness": "Model-economics and coverage explanation adds a dense second section.",
+        "Interaction burden": "Mobile reader scrolls through three answer cards and economics before Next."
+      }
+    },
+    {
+      "chapter": 4,
+      "name": "Human challenge",
+      "scores": {
+        "Clarity": 5,
+        "Narrative value": 5,
+        "Information quality": 5,
+        "Visual effectiveness": 5,
+        "Interaction burden": 5
+      },
+      "classification": "KEEP",
+      "prevents_5": {}
+    },
+    {
+      "chapter": 5,
+      "name": "Manage & pilot",
+      "scores": {
+        "Clarity": 4,
+        "Narrative value": 4,
+        "Information quality": 5,
+        "Visual effectiveness": 4,
+        "Interaction burden": 4
+      },
+      "classification": "TIGHTEN",
+      "prevents_5": {
+        "Clarity": "Management insight, ownership facts and six pilot steps compete in the closing read.",
+        "Narrative value": "Generic pilot checklist partially moves away from the concrete Jamie action.",
+        "Visual effectiveness": "More prose/list density than preceding score comparison.",
+        "Interaction burden": "Longer mobile closing read before the pilot action; useful content, not a blocker."
+      }
+    }
+  ],
+  "calculator": {
+    "default_usd": 16.8,
+    "second_usd": 0.63,
+    "tiny_usd": 0,
+    "tiny_communication": "Before rounding 0.01 conversations; whole monthly count selects 0.",
+    "positive_subcent": "Less than $0.01/month; positive $4.20e-8 before rounding.",
+    "zero": "$0.00/month",
+    "blank_invalid": "Check inputs and explicit bounds; no misleading estimate.",
+    "user_understanding": "Jev model input cost only; exclusions prominent. No claim of total AQM operating cost. Summary 0M tokens for one token is rounded; detailed assumption still gives one token."
+  },
+  "public_isolation": "Clean public chapters/calculator: zero AQM, Genesys, Jev or notification traffic, zero local/session/IndexedDB writes or residual stores. Explicit sample handoff initializes normal local product state separately.",
+  "uncertainties": [
+    "N2 depends on whether multiple schedules per policy are a valid authority state; inspect only after lock.",
+    "No real-user comprehension experiment; persona results are agent/browser observations.",
+    "All initial source explanations and historical closure classifications are intentionally deferred."
+  ],
+  "limitations": [
+    "Chromium desktop/headless viewport emulation only; no physical device or screen reader.",
+    "Fictional identities/APIs; no real Genesys OAuth grants/retrieval, Jev inference/billing, notification transport, production latency or population outcomes proven.",
+    "Scroll burden recorded qualitatively and by representative captures; exhaustive scroll event counts were not instrumented.",
+    "Deterministic/build/browser corroboration after lock can classify findings but cannot rewrite this assessment."
+  ],
+  "safety": {
+    "production_mutations": 0,
+    "real_provider_calls": 0,
+    "jev_calls": 0,
+    "notifications_sent": 0,
+    "deployments": 0
+  }
+}
