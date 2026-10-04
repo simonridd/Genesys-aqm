@@ -1,0 +1,42 @@
+{
+  "deterministic": {
+    "files": 66,
+    "passed": 632,
+    "failed": 0
+  },
+  "discoveryBrowser": {
+    "passed": 20,
+    "failed": 0,
+    "byFile": {
+      "answer-set-discovery.spec.ts": 20
+    }
+  },
+  "v019Regressions": {
+    "passed": 92,
+    "failed": 0,
+    "byFile": {
+      "authoring-simplification.spec.ts": 19,
+      "quality-actionability.spec.ts": 12,
+      "reviewer-continuity.spec.ts": 24,
+      "reviewer-focus.spec.ts": 15,
+      "role-navigation.spec.ts": 22
+    }
+  },
+  "uniqueBrowserCases": 112,
+  "viewports": [
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "keyboardAtAllThreeViewports": true,
+  "backendDeployment": false
+}

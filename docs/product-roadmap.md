@@ -74,3 +74,7 @@ Depend on existing Reusable Question Group lifecycle patterns, V0.18 definition 
 ### Compatibility and non-goals
 
 Old forms without provenance keep working. Existing choice/score scoring, provider mapping, condition evaluation, human review and analytics consume the embedded options unchanged. No new runtime question type, provider/schema changes, live library lookup, auto-update of published forms, historical re-scoring, separate runtime scoring table, or implementation in the showcase tranche.
+
+## V0.20A — Answer Set discovery
+
+Implemented: authors can discover a published reusable standard before knowing its stored answer format, including from a new Yes / No question. The picker searches all published sets in the current authority and visibly labels Multiple choice or Ordered scale. Cross-format adoption requires an explicit preview/action, preserves ordinary question fields, copies the authoritative answer snapshot and fails closed on invalid dependent conditions. Same-format attach, version update/detach, saved/local authority and historical snapshots are preserved. See [implementation and evidence](v020a-answer-set-discovery.md).

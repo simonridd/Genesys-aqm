@@ -1,0 +1,103 @@
+[WebServer] (node:74041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 92 tests using 1 worker
+
+(node:74043) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/92] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1440
+[2/92] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1440
+[3/92] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1440
+[4/92] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1440
+[5/92] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 1920
+[6/92] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 1920
+[7/92] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 1920
+[8/92] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 1920
+[9/92] tests/authoring-simplification.spec.ts:16:2 › question density, connected authority, attach/detach, advanced mapping 390
+[10/92] tests/authoring-simplification.spec.ts:29:2 › new empty form and exact three-question reusable group 390
+[11/92] tests/authoring-simplification.spec.ts:32:2 › human version comparison and blocked question/group repair 390
+[12/92] tests/authoring-simplification.spec.ts:37:2 › Customer effort creation, lifecycle and mobile labels 390
+[13/92] tests/authoring-simplification.spec.ts:41:1 › imported form, group and Answer Set preserve keys, external mappings and export after unrelated edits
+[14/92] tests/authoring-simplification.spec.ts:51:1 › save inline answers as reusable keeps current question until explicit attach
+[15/92] tests/authoring-simplification.spec.ts:52:1 › published and role-read-only questions expand without disabled editing controls
+[16/92] tests/authoring-simplification.spec.ts:53:1 › advanced key used by a condition fails closed with no silent migration
+[17/92] tests/authoring-simplification.spec.ts:54:1 › disconnected question copy remains neutral; reconnect never uploads definitions
+[18/92] tests/authoring-simplification.spec.ts:56:1 › author tasks replay and keyboard reachability from navigation through reusable choices
+[19/92] tests/authoring-simplification.spec.ts:63:1 › group version update and detach preserve copied questions and source definitions
+[20/92] tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 1440
+[21/92] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1440
+[22/92] tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 1920
+[23/92] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 1920
+[24/92] tests/quality-actionability.spec.ts:11:2 › quality-leader task and exact insights 390
+[25/92] tests/quality-actionability.spec.ts:29:2 › coverage interpretation, scope and consistency 390
+[26/92] tests/quality-actionability.spec.ts:37:1 › safe errors, retry, empty scope, unavailable names and sparse history
+[27/92] tests/quality-actionability.spec.ts:40:1 › goal-only route from Overview uses visible quality evidence
+[28/92] tests/quality-actionability.spec.ts:48:1 › Overview Analytics entry replaces stale quality filters
+[29/92] tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 1440
+[30/92] tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 1920
+[31/92] tests/quality-actionability.spec.ts:52:97 › Tab-only quality, filters, table and return 390
+[32/92] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1440
+[33/92] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 1920
+[34/92] tests/reviewer-continuity.spec.ts:59:3 › reviewer safely inspects evidence and completes My Reviews at 390
+[35/92] tests/reviewer-continuity.spec.ts:111:1 › exact My Reviews filter context survives evidence navigation
+[36/92] tests/reviewer-continuity.spec.ts:119:1 › Analytics question investigation retains exact cohort, selected evaluation and return tab
+[37/92] tests/reviewer-continuity.spec.ts:132:1 › save progress adopts returned revision and clears unload guard, then restores authoritative answers
+[38/92] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles All Evaluations without Refresh
+[39/92] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles active cohort without Refresh
+[40/92] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles review status without Refresh
+[41/92] tests/reviewer-continuity.spec.ts:151:12 › completion reconciles due cohort without Refresh
+[42/92] tests/reviewer-continuity.spec.ts:161:1 › revision conflict retains inputs, blocks submit and requires explicit discard
+[43/92] tests/reviewer-continuity.spec.ts:180:1 › reassignment retains unsaved notes but removes editing and submission authority
+[44/92] tests/reviewer-continuity.spec.ts:191:1 › 409 refresh retains draft without silently replacing its base
+[45/92] tests/reviewer-continuity.spec.ts:201:1 › two drafts survive unrelated SPA pages; guard remains until both are resolved
+[46/92] tests/reviewer-continuity.spec.ts:212:1 › later server page survives evidence return and completion background reload
+[47/92] tests/reviewer-continuity.spec.ts:223:1 › keyboard-only evidence detour returns to review heading, then reviewer completes
+[48/92] tests/reviewer-continuity.spec.ts:238:1 › unstarted review returns to selected evaluation heading
+[49/92] tests/reviewer-continuity.spec.ts:245:1 › completion removes the row before a failed background list reload, preserving confirmation
+[50/92] tests/reviewer-continuity.spec.ts:255:1 › failed completion retains all changes and explicit retry completes exactly once
+[51/92] tests/reviewer-continuity.spec.ts:269:1 › reload starts a new session without unsubmitted answers or notes
+[52/92] tests/reviewer-continuity.spec.ts:281:1 › About and workspace handoff retain human work and unload protection in this SPA
+[53/92] tests/reviewer-continuity.spec.ts:292:1 › a pending completion reconciles the current filters rather than the scope at click time
+[54/92] tests/reviewer-continuity.spec.ts:308:1 › completion in another session keeps unfinished answers separate from completed authority
+[55/92] tests/reviewer-continuity.spec.ts:322:1 › a clean saved draft yields to newer completed authority after evidence inspection
+[56/92] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 390x844
+[57/92] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x900
+[58/92] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1920x1080
+[59/92] tests/reviewer-focus.spec.ts:45:121 › focused reviewer task replay 1440x720
+[60/92] tests/reviewer-focus.spec.ts:116:1 › Continue, multiple drafts, resize and save retain focus and values
+[61/92] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles revision safely
+[62/92] tests/reviewer-focus.spec.ts:131:56 › dirty focused review handles assignment safely
+[63/92] tests/reviewer-focus.spec.ts:146:1 › focused evidence, completion and queue return preserve later server cursor and exact filters
+[64/92] tests/reviewer-focus.spec.ts:163:1 › keyboard-only focused task uses meaningful focus transitions
+[65/92] tests/reviewer-focus.spec.ts:180:1 › mobile available work claims into the same focused workspace
+[66/92] tests/reviewer-focus.spec.ts:197:1 › applicable progress excludes skipped questions
+[67/92] tests/reviewer-focus.spec.ts:206:1 › focused ADMIN retains assignment management under disclosure
+[68/92] tests/reviewer-focus.spec.ts:215:162 › explicit Start from active enters focused work and reconciles completion
+[69/92] tests/reviewer-focus.spec.ts:215:162 › explicit Start from explorer enters focused work and reconciles completion
+[70/92] tests/reviewer-focus.spec.ts:230:1 › later presentation page survives evidence, completion and queue return
+[71/92] tests/role-navigation.spec.ts:17:96 › ADMIN role focus and reference capability 1440
+[72/92] tests/role-navigation.spec.ts:17:96 › ADMIN role focus and reference capability 390
+[73/92] tests/role-navigation.spec.ts:17:96 › AUTHOR role focus and reference capability 1440
+[74/92] tests/role-navigation.spec.ts:17:96 › AUTHOR role focus and reference capability 390
+[75/92] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 1440
+[76/92] tests/role-navigation.spec.ts:17:96 › REVIEWER role focus and reference capability 390
+[77/92] tests/role-navigation.spec.ts:17:96 › VIEWER role focus and reference capability 1440
+[78/92] tests/role-navigation.spec.ts:17:96 › VIEWER role focus and reference capability 390
+[79/92] tests/role-navigation.spec.ts:35:25 › ADMIN shared routes deep-link; labels and access stay authoritative
+[80/92] tests/role-navigation.spec.ts:35:25 › AUTHOR shared routes deep-link; labels and access stay authoritative
+[81/92] tests/role-navigation.spec.ts:35:25 › REVIEWER shared routes deep-link; labels and access stay authoritative
+[82/92] tests/role-navigation.spec.ts:35:25 › VIEWER shared routes deep-link; labels and access stay authoritative
+[83/92] tests/role-navigation.spec.ts:41:1 › keyboard disclosures remember session choices, active page wins, product tour preserves them
+[84/92] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x900
+[85/92] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1920x1080
+[86/92] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 390x844
+[87/92] tests/role-navigation.spec.ts:53:121 › view keyboard, hidden controls and reachability 1440x720
+[88/92] tests/role-navigation.spec.ts:65:1 › mobile Questions exact drill returns to same view and cohort; Coverage deep link
+[89/92] tests/role-navigation.spec.ts:68:1 › browser sample Analytics has seven discoverable views and selected URL
+[90/92] tests/role-navigation.spec.ts:71:1 › browser history restores page, active reference group and Analytics view
+[91/92] tests/role-navigation.spec.ts:76:1 › review contextual evidence and default My Reviews remain coherent on mobile
+[92/92] tests/role-navigation.spec.ts:80:1 › unresolved access stays neutral and read-only; role arrival preserves route
+  92 passed (3.2m)

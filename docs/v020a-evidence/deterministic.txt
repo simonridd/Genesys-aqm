@@ -1,0 +1,5 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run --reporter=json --outputFile=docs/v020a-evidence/deterministic.json
+
+JSON report written to /private/tmp/aqm-v020a-answer-set-discovery/docs/v020a-evidence/deterministic.json

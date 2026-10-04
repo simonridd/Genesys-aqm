@@ -1,0 +1,19 @@
+{
+  "tag": "v0.19.0",
+  "newlyCreated": true,
+  "tagObject": "ae5ce19328faa69463178c0c4ed1a4262f3c29e8",
+  "peeledCommit": "1363f4eda490c0751e06c5dd0b07fe913a74cee1",
+  "annotation": "Genesys AQM V0.19.0 \u2014 Reusable answer sets and workflow UX",
+  "objectType": "tag",
+  "requiredMain": "1363f4eda490c0751e06c5dd0b07fe913a74cee1",
+  "postTagMainCheckpoint": "1363f4eda490c0751e06c5dd0b07fe913a74cee1",
+  "remoteVerification": {
+    "refs/tags/v0.19.0": "ae5ce19328faa69463178c0c4ed1a4262f3c29e8",
+    "refs/tags/v0.19.0^{}": "1363f4eda490c0751e06c5dd0b07fe913a74cee1"
+  },
+  "releaseWorktree": "/private/tmp/aqm-v0190-release",
+  "implementationWorktree": "/private/tmp/aqm-v020a-answer-set-discovery",
+  "implementationBranch": "codex/aqm-v020a-answer-set-discovery",
+  "branchBase": "1363f4eda490c0751e06c5dd0b07fe913a74cee1",
+  "githubReleaseCreated": false
+}

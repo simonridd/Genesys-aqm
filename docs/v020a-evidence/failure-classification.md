@@ -1,0 +1,7 @@
+# Qualification diagnostics
+
+The first deterministic run used the restricted sandbox: 58 API tests could not use local listeners and timed out. Rerunning with listener access passed the unchanged API tests. Four new round-trip fixtures disabled their only question, so import correctly rejected them. The fixture now independently checks disabled-state preservation and round-trips a valid enabled form. Final result: 66 files / 632 tests passed.
+
+The first discovery browser run passed 13/18 checks. Three reload checks assumed an in-memory authenticated session survives a full reload; the corrected fixture performs a fresh fictional PKCE sign-in after reload. One library assertion compared seed publication timestamps to fixture publication timestamps; it now checks the exact definition/snapshot and lifecycle. The reconnect check incorrectly expected deliberately creating a new unsaved connected form to leave the entire local draft array identical. It now proves reconnect itself leaves the array byte-identical, then proves all original local forms and the library remain identical after deliberately creating the new draft. All requests during reconnect/discovery are GET and saved collections remain empty. The expanded final run adds keyboard journeys at the other two viewports: 20/20 discovery browser checks passed. All 92 V0.19A–E regression checks also passed.
+
+These were harness/fixture defects. No product regression was found or hidden in these runs. Raw initial reports are retained.

@@ -454,3 +454,5 @@ h1[tabindex],h2[tabindex],h3[tabindex]{scroll-margin-top:24px}
 
 .review-workspace h1{scroll-margin-top:90px}
 .review-workspace .human-review{margin-top:8px;padding-top:18px}
+
+.answer-format-preview{margin-top:16px;padding:16px;border:1px solid var(--aqm-border-subtle);min-width:0}.answer-format-preview h5{font-size:14px;margin:0 0 12px}.answer-format-preview li{font-size:12px;overflow-wrap:anywhere}.answer-picker-item strong{overflow-wrap:anywhere}

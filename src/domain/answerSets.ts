@@ -58,6 +58,17 @@ export function applyAnswerSet(form:EvaluationForm,questionId:string,asset:Answe
  if(errors.length)throw Error(`Answer Set application blocked: ${errors.join(' ')}`)
  return next
 }
+/** Explicit authoring boundary: keep identity/ordinary fields, change only the answer snapshot. */
+export function applyAnswerSetWithFormatChange(form:EvaluationForm,questionId:string,asset:AnswerSetAsset):EvaluationForm {
+ const q=question(form,questionId)
+ if(q.sourceAnswerSet)throw Error('Detach the current Answer Set first, or explicitly update its version.')
+ if(q.type===asset.type)throw Error('Use ordinary Answer Set application for the same answer format.')
+ // A Yes/No outcome must not become a choice key by coincidence. Never infer equivalence.
+ if(q.type==='noul'&&[...form.questions,...(form.groups??[])].some(v=>v.condition?.kind==='question_outcome'&&v.condition.questionId===q.id))throw Error('Answer format change blocked: a condition depends on the current Yes/No answers.')
+ const changed=structuredClone(form)
+ changed.questions.find(v=>v.id===q.id)!.type=asset.type
+ return applyAnswerSet(changed,questionId,asset)
+}
 function snapshot(form:EvaluationForm,q:ScorecardItem,asset:AnswerSetAsset):EvaluationForm {
  if(asset.status!=='PUBLISHED')throw Error('Select a published Answer Set.')
  const errors=validateAnswerSetAsset(asset);if(errors.length)throw Error(errors.join(' '))
