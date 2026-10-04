@@ -1,0 +1,38 @@
+{
+  "sourceSha": "4a777b7fc2024af598d388f66238eb246c4eb365",
+  "canonicalBase": "5caf352be93f8a8f9477828b63ca85e09be30066",
+  "deterministicTests": 691,
+  "coverageBrowserTests": 28,
+  "focusedRegressionTests": 17,
+  "publicBrowserTests": 8,
+  "viewports": [
+    "1440x900",
+    "1920x1080",
+    "390x844",
+    "1440x720"
+  ],
+  "numericEquality": true,
+  "canonicalFirstScanGeometryEquality": true,
+  "apiRequestCountsUnchanged": true,
+  "coverageDisclosureAddsRequests": 0,
+  "sharedSurfaces": [
+    "Analytics Coverage",
+    "Overview Coverage details",
+    "Automation run detail"
+  ],
+  "publicFilesVerified": 12,
+  "pagesHead": "3c159247b29b6cc34f9668e1b48ed798c442ea18",
+  "pagesBytesAndCompleteTreeEqualTestedBuild": true,
+  "productionCollectionsEqual": 25,
+  "existingCollectionInventoryEqual": true,
+  "cloudRunRevision": "aqm-api-v019-e92f2d6",
+  "runtimeImageConfigTrafficIamSecretMetadataVersionsIamSchedulerConfigUnchanged": true,
+  "naturalTimestampMovementObserved": false,
+  "productionDomainMutations": 0,
+  "liveGenesysCalls": 0,
+  "jevCalls": 0,
+  "notifications": 0,
+  "prCreated": false,
+  "merged": false,
+  "tagged": false
+}

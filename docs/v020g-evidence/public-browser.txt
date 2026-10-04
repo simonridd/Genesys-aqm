@@ -1,0 +1,16 @@
+
+Running 8 tests using 1 worker
+
+(node:68051) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/8] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 1440x900
+[2/8] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 1440x900
+[3/8] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 1440x900
+[4/8] tests/coverage-interpretation.spec.ts:49:56 › Analytics mixed 390x844
+[5/8] tests/coverage-interpretation.spec.ts:49:56 › Analytics intentional 390x844
+[6/8] tests/coverage-interpretation.spec.ts:56:3 › shared Overview and run details 390x844
+[7/8] tests/coverage-interpretation.spec.ts:70:2 › goal-only quality leader explains eligible work without a loss conclusion
+[8/8] tests/coverage-interpretation.spec.ts:90:44 › Tab-only Overview disclosure to Analytics 390
+  8 passed (13.1s)
