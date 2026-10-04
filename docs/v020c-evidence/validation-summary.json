@@ -46,5 +46,24 @@
   "limitations": [
     "Scripted Chromium fictional API replay; no independent participant or physical device.",
     "Giant historical suite not run."
-  ]
+  ],
+  "testedSourceSha": "d48f40a5cffa7cd19d3eded00ddcaca679fcef37",
+  "pagesHead": "51d946656b5574e820afe1ab8acc168c32ee0697",
+  "publicBrowser": {
+    "startTime": "2026-10-04T11:46:54.801Z",
+    "duration": 40369.19300000001,
+    "expected": 23,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "publicFilesMatching": 12,
+  "completePagesTreeMatching": true,
+  "matchingProductionCollections": 25,
+  "allRuntimeConfigurationUnchanged": true,
+  "operationalHealthMovement": false,
+  "schedulerRuntimeMovement": false,
+  "trafficRevision": "aqm-api-v019-e92f2d6",
+  "trafficPercent": 100,
+  "frontendInputsMatchTestedSource": true
 }
