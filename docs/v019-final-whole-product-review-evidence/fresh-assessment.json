@@ -1,0 +1,255 @@
+{
+  "lockedAtUtc": "2026-10-04T07:19:09.570615+00:00",
+  "canonicalCommit": "c20604c3b33b81a0038388851d07d6f500792bdb",
+  "method": "Blind public pass, independent role/task review with real production frontend and local fictional API contracts. No earlier review or tranche report read before this file. Fixture setup code was consulted solely to isolate APIs; product components and cause analysis were not read. Scores remain fixed when historical reports are opened.",
+  "verdicts": {
+    "pitch": "B READY WITH MINOR POLISH",
+    "product": "B STRONG PROTOTYPE WITH MINOR FRICTION",
+    "pilot": "ONE FOCUSED PASS REQUIRED",
+    "release": "ONE MORE FOCUSED PASS BEFORE TAG"
+  },
+  "scorecard": [
+    {
+      "category": "Human effectiveness",
+      "score": 4,
+      "evidenceAndWhatWorks": "Independent review completed and quality evidence reached exact cohort.",
+      "preventsFive": "Dense review surface and mobile action search slow the main task.",
+      "improvement": "Give review its own focused work surface."
+    },
+    {
+      "category": "Value proposition",
+      "score": 4,
+      "evidenceAndWhatWorks": "Welcome and five chapters distinguish Jev answers, AQM scoring and human calibration.",
+      "preventsFive": "Weights/critical rules and wider operational cost still need explanation.",
+      "improvement": "Tighten Define quality; preserve honest exclusions."
+    },
+    {
+      "category": "Information quality",
+      "score": 4,
+      "evidenceAndWhatWorks": "Analytics shows exact versions, applicable counts and descriptive caveats; coverage names denominators.",
+      "preventsFive": "Coverage and quality scopes differ; raw statuses make some information harder to interpret.",
+      "improvement": "Keep scope attached to every drill; use human labels."
+    },
+    {
+      "category": "Ease of use",
+      "score": 3,
+      "evidenceAndWhatWorks": "Core persona tasks completed through real controls.",
+      "preventsFive": "Review density, horizontal tables and scale-format mismatch add detours.",
+      "improvement": "Make primary task actions persistently visible."
+    },
+    {
+      "category": "Visual quality",
+      "score": 4,
+      "evidenceAndWhatWorks": "Consistent restrained palette, readable typography, clear comparison cards.",
+      "preventsFive": "Long stacked surfaces and broad tables reduce hierarchy.",
+      "improvement": "Collapse supplementary panels and shorten queues."
+    },
+    {
+      "category": "Trust / credibility",
+      "score": 4,
+      "evidenceAndWhatWorks": "AI result preserved; unsaved copy, revision conflict, retention and fictional boundaries visible.",
+      "preventsFive": "This review proves no live provider capability; ordinary technical copy distracts.",
+      "improvement": "Keep evidence/provenance behind deliberate disclosure."
+    },
+    {
+      "category": "User-facing cleanliness",
+      "score": 3,
+      "evidenceAndWhatWorks": "Form question summaries avoid raw IDs and types until Advanced details.",
+      "preventsFive": "Conversation metadata, policy/server terminology, review enums and failure strings remain visible.",
+      "improvement": "Remove raw mechanics from routine work."
+    },
+    {
+      "category": "Navigation / IA",
+      "score": 3,
+      "evidenceAndWhatWorks": "Roles surface appropriate primary tasks; active secondary groups and breadcrumbs work.",
+      "preventsFive": "Browser Back returned to Welcome from the tested analytics drill; explicit return works.",
+      "improvement": "Make meaningful task transitions restore browser history."
+    },
+    {
+      "category": "Workflow coherence",
+      "score": 4,
+      "evidenceAndWhatWorks": "Analytics-to-evidence explicit return, group reuse, pinned forms and review completion connect.",
+      "preventsFive": "Queue remains above the detail; dual policy/schedule saves need care.",
+      "improvement": "Separate the active review from list and analysis context."
+    },
+    {
+      "category": "First-time learnability",
+      "score": 3,
+      "evidenceAndWhatWorks": "Forms, Groups, Answer Sets and Policies have useful one-sentence introductions.",
+      "preventsFive": "Four-level scale can lead to an incompatible format; calibration expects a typed form reference.",
+      "improvement": "Teach compatibility in the picker; offer named form/version choices."
+    },
+    {
+      "category": "Authoring usability",
+      "score": 3,
+      "evidenceAndWhatWorks": "Fresh form and another form reusing three questions were saved locally.",
+      "preventsFive": "Format detour, list-plus-editor height and local/saved libraries add cognitive load.",
+      "improvement": "Let users find the intended reusable standard before choosing its technical format."
+    },
+    {
+      "category": "Reviewer usability",
+      "score": 3,
+      "evidenceAndWhatWorks": "Answers and both note types survived evidence; completion reduced 5 to 4 without Refresh.",
+      "preventsFive": "My Reviews action is offscreen at 390px; comparison/queue repeat before inputs.",
+      "improvement": "A focused review page with visible evidence and completion actions."
+    },
+    {
+      "category": "Operational usefulness",
+      "score": 4,
+      "evidenceAndWhatWorks": "Overview identifies attention, quality, coverage, open work and health; drills exist.",
+      "preventsFive": "Workload/health fall below coverage; pass rate and some health metrics lack direct action.",
+      "improvement": "Compress coverage and bring workload/health into the initial scan."
+    },
+    {
+      "category": "Responsive/mobile quality",
+      "score": 3,
+      "evidenceAndWhatWorks": "Required pages fit 390px; mobile View selectors and resize state worked.",
+      "preventsFive": "Table investigation/review actions require horizontal scrolling; long filter and metadata stacks.",
+      "improvement": "Use task cards or frozen primary actions for reviewer mobile queues."
+    },
+    {
+      "category": "Accessibility pragmatics",
+      "score": 4,
+      "evidenceAndWhatWorks": "Four persona keyboard tasks completed; labelled controls, aria-current, sorting and status exist.",
+      "preventsFive": "Long tab sequences; native select replay needed type-to-select; no certification or physical-device proof.",
+      "improvement": "Reduce focus stops and make primary actions easier to reach."
+    },
+    {
+      "category": "Showcase \u2192 product continuity",
+      "score": 3,
+      "evidenceAndWhatWorks": "Visual identity stays consistent; public fictional library and authenticated Overview are distinct.",
+      "preventsFive": "Public handoff changes from a clear customer story to raw IDs and a technical table.",
+      "improvement": "Offer a short role/task start with a meaningful sample interaction label."
+    }
+  ],
+  "unweightedAverage": 3.5,
+  "answerSetScores": {
+    "Concept clarity": 4,
+    "Discoverability": 4,
+    "Creation UX": 4,
+    "Reuse UX": 3,
+    "Versioning UX": 4,
+    "Safety/error clarity": 4,
+    "Forms integration": 4,
+    "Groups integration": 4,
+    "Mobile": 3,
+    "Terminology cleanliness": 4
+  },
+  "answerSetMean": 3.8,
+  "answerSetVerdict": "Strong reusable primitive with format-discovery and mobile-table friction.",
+  "topFindings": [
+    {
+      "id": "F1",
+      "priority": "P1",
+      "finding": "The primary mobile reviewer action starts outside the visible table.",
+      "evidence": "reviewer-my-reviews-mobile.png; Start review before scroll x=1025.375, width=78.5; after internal scroll x=281.375.",
+      "persona": "REVIEWER",
+      "impact": "A user looking for work must discover horizontal scrolling before the obvious action.",
+      "recommendedFix": "Use review cards or freeze/repeat Start/Continue review beside meaningful interaction labels.",
+      "likelyScope": "Reviewer queue rendering only.",
+      "blockV019": true
+    },
+    {
+      "id": "F2",
+      "priority": "P1",
+      "finding": "Active review is buried beneath the queue and repeated comparison material.",
+      "evidence": "review-detail-start.png: 3773px page; active controls follow queue, evaluation summary, assignment, four comparison metrics and group comparison. Completed desktop page 3826px.",
+      "persona": "REVIEWER",
+      "impact": "Excessive scrolling and attention switching during the primary human task; safe continuity does not make the surface efficient.",
+      "recommendedFix": "Open a focused review work surface; put evidence/answers/save/complete first and comparisons/history behind disclosure.",
+      "likelyScope": "Reviewer detail composition and task navigation.",
+      "blockV019": true
+    },
+    {
+      "id": "F3",
+      "priority": "P2",
+      "finding": "Routine screens still leak technical mechanics and identifiers.",
+      "evidence": "Conversation evidence shows QUEUEID, SESSIONID, raw agent ID and SOURCE before messages; policy editor shows DURABLE POLICY, form ID; evaluations show raw review enums.",
+      "persona": "REVIEWER / VIEWER / AUTHOR",
+      "impact": "Colleagues need to translate implementation vocabulary while investigating quality.",
+      "recommendedFix": "Move raw IDs, provider provenance and architecture terminology into Advanced details.",
+      "likelyScope": "Copy and disclosure hierarchy.",
+      "blockV019": false
+    },
+    {
+      "id": "F4",
+      "priority": "P2",
+      "finding": "Most failure surfaces expose raw errors instead of consistent recovery guidance.",
+      "evidence": "failure-groups has the raw message twice; failure-evaluations looks like an empty results table; settings-save ends with internal-fixture-503. Analytics and partial Overview are better.",
+      "persona": "All authenticated roles",
+      "impact": "Users cannot consistently distinguish unavailable data from no results or decide their next safe step.",
+      "recommendedFix": "Reuse the Analytics failure pattern: what failed, retained state, Retry, subordinate Technical details.",
+      "likelyScope": "Failure presentation components.",
+      "blockV019": false
+    },
+    {
+      "id": "F5",
+      "priority": "P2",
+      "finding": "The reusable clarity scale is absent after the natural Ordered scale choice.",
+      "evidence": "Blind author task picked Ordered scale; picker offered only Customer effort and Service quality. Switching to Multiple choice exposed Resolution clarity v1/v2.",
+      "persona": "AUTHOR",
+      "impact": "A reasonable mental model appears to lose the requested reusable standard.",
+      "recommendedFix": "Show named sets with compatibility explanation and an explicit format-switch action.",
+      "likelyScope": "Answer Set picker discovery.",
+      "blockV019": false
+    },
+    {
+      "id": "F6",
+      "priority": "P2",
+      "finding": "Calibration question investigation still asks for a technical form reference.",
+      "evidence": "calibration-mobile.png: selecting Questions says Select a form/version; filter placeholder form_id@17.",
+      "persona": "QUALITY LEADER / VIEWER",
+      "impact": "Knowing the human form name/version is insufficient for an easy question breakdown.",
+      "recommendedFix": "Use a named published form/version picker and an obvious drill from the form comparison.",
+      "likelyScope": "Calibration filters and drill.",
+      "blockV019": false
+    },
+    {
+      "id": "F7",
+      "priority": "P2",
+      "finding": "Browser Back does not follow the meaningful analytics investigation transition.",
+      "evidence": "Original analyticsTab=questions; drill to evaluations; browser Back reached page=welcome; Forward restored evaluation cohort; explicit Back to Analytics restored Questions.",
+      "persona": "QUALITY LEADER / VIEWER",
+      "impact": "Ordinary browser navigation unexpectedly leaves the investigation.",
+      "recommendedFix": "Push task transitions to history and restore cohort/tab on popstate.",
+      "likelyScope": "Workspace URL/history routing.",
+      "blockV019": false
+    },
+    {
+      "id": "F8",
+      "priority": "P2",
+      "finding": "Overview hides workload and automation health below a lengthy coverage section.",
+      "evidence": "admin-overview-desktop.png / mobile-admin-overview.png: attention and quality precede coverage, then workload and health; desktop total 3080px, mobile 4756px.",
+      "persona": "QUALITY LEADER / ADMIN",
+      "impact": "The 30-second scan needs scrolling to answer all five primary questions.",
+      "recommendedFix": "Use a compact first-screen workload/health summary with coverage details below.",
+      "likelyScope": "Overview hierarchy.",
+      "blockV019": false
+    },
+    {
+      "id": "F9",
+      "priority": "P2",
+      "finding": "Coverage still groups intentional sampling under Where coverage was lost.",
+      "evidence": "coverage-1000-observations.txt: 500 policy-excluded interactions appear beneath loss heading; subsequent text correctly says intentional.",
+      "persona": "QUALITY LEADER",
+      "impact": "The heading briefly frames a policy decision as failure.",
+      "recommendedFix": "Split Not selected by policy from Content or evaluation gaps.",
+      "likelyScope": "Coverage subsection heading/copy.",
+      "blockV019": false
+    },
+    {
+      "id": "F10",
+      "priority": "P3",
+      "finding": "Tiny calculator scenarios round fractional selected work to zero.",
+      "evidence": "public-exercises.json: 1 conversation \u00d7 1% \u00d7 1 form \u00d7 1 request \u00d7 1 token displays 0 selected and $0.00.",
+      "persona": "PITCH VISITOR",
+      "impact": "Harmless at ordinary volumes but the displayed estimate obscures small nonzero quantities.",
+      "recommendedFix": "Use less-than labels or fractional planning counts at tiny volumes.",
+      "likelyScope": "Calculator formatting.",
+      "blockV019": false
+    }
+  ],
+  "next": "One narrowly scoped Reviewer task-focus pass addressing F1 and F2. Other findings remain non-blocking backlog.",
+  "noP0Observed": true,
+  "timing": "Comparable dwell replay is deferred until historical methodology may be consulted in Phase 5. Timing does not alter the locked fresh pitch score."
+}
