@@ -49,5 +49,27 @@
       720
     ]
   ],
-  "scope": "Counts are separate; interim retries and public replays are not added to unique case totals."
+  "scope": "Counts are separate; interim retries and public replays are not added to unique case totals.",
+  "publishedReplay": {
+    "passed": 15,
+    "failed": 0,
+    "report": "public-focused-browser.json",
+    "overlaps": "Same 15 V0.19E cases as local qualification"
+  },
+  "deployment": {
+    "sourceSha": "6fd61193f823deb9e629202b281c84e139c2c566",
+    "pagesHead": "15bd26b89cf96d26fafc3fea8f39e412356c7a6a",
+    "publicFilesMatched": 12,
+    "cloudRun": "aqm-api-v019-e92f2d6",
+    "trafficPercent": 100
+  },
+  "preservation": {
+    "matchedCollections": 25,
+    "totalCollections": 25,
+    "domainMutations": 0,
+    "runtimeConfigurationChanged": false,
+    "liveGenesysCalls": 0,
+    "liveJevCalls": 0,
+    "notificationSends": 0
+  }
 }

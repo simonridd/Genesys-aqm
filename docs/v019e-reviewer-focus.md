@@ -65,7 +65,7 @@ The unchanged scale is 1 seriously ineffective, 2 major friction, 3 acceptable p
 
 A 5 would require stronger human-study/physical-device evidence and further reduction in long question/note/tab flows. This is a scoped automated/editorial recheck, not another independent whole-product review or a new overall mean. [Scores and limits](v019e-evidence/score-recheck.json).
 
-Release question: **yes**, a reviewer can see, start, carry out and complete the main mobile task without horizontal discovery or irrelevant analysis preceding the inputs in this qualified fictional replay. **F1 FIXED; F2 FIXED.** Once final committed-source/public/preservation qualification is recorded below, V0.19.0 can proceed to ChatGPT review/merge and release/tag decision; this tranche creates no PR, merge or tag.
+Release question: **yes**, a reviewer can see, start, carry out and complete the main mobile task without horizontal discovery or irrelevant analysis preceding the inputs in this qualified fictional replay. **F1 FIXED; F2 FIXED.** Final committed-source/public/preservation qualification is recorded below. V0.19.0 can proceed to ChatGPT review/merge and release/tag decision; this tranche creates no PR, merge or tag.
 
 ## Validation, deployment and preservation
 
@@ -73,4 +73,17 @@ The production TypeScript/Vite build passes. **65 deterministic files / 621 test
 
 Two legacy Overview entry expectations remain **EXPECTED CONTRACT CHANGE / STALE TEST** (artificial pre-mounted session and unauthenticated root). They failed in the raw 79-case diagnostic run and are excluded from the current-contract run. They are unchanged, documented debt; no current test assertion is weakened. Sandbox listener/credential access, mismatched port, adaptive-opener race, component source-import requirements and a new fixture revision-seed defect are **HARNESS DEFECT** issues, resolved in qualification. Intermediate mobile layout failures were **PRODUCT REGRESSION**, corrected before final qualification. No unresolved product regression or harness failure remains in the scoped checks. This pass does not clean up the wider 62 stale / 1 harness failures in the canonical whole-product broad run.
 
-Committed-source deployment and preservation records will be appended after completion. Interim diagnostic runs are retained and every encountered failure is classified in [failure-classification.md](v019e-evidence/failure-classification.md). The two pre-existing Overview entry expectations remain untouched; they are separate from current-contract reviewer qualification and the wider stale-suite debt recorded by the canonical review.
+**Tested/published source: `6fd61193f823deb9e629202b281c84e139c2c566`. Pages HEAD: `15bd26b89cf96d26fafc3fea8f39e412356c7a6a`.** A fresh immutable Git archive rebuilt all 12 files byte-for-byte identically to the locally qualified build. The complete gh-pages Git tree and **12/12 public files** match it. The actual public frontend passed all **15 focused reviewer checks**, using fictional authenticated APIs with external providers intercepted. This is a replay of the same unique cases, not 15 additional distinct regression cases. [Committed source proof](v019e-evidence/committed-build.json), [public bytes/Git tree](v019e-evidence/pages.json), [public replay](v019e-evidence/public-focused-browser.json), [Pages](https://simonridd.github.io/Genesys-aqm/).
+
+**Cloud Run remains `aqm-api-v019-e92f2d6`, serving 100% of traffic.** No Cloud Run deployment occurred. All **25/25 production collection counts/hashes match** before/after, including forms, groups, Answer Sets/families, policies, evaluations, Human Reviews, schedules, notification/control/audit data and operational health. Runtime configuration, image/revision, service IAM, secret metadata/versions/IAM and Scheduler configuration match. Scheduler runtime and operational health did not move during this window. No production domain mutation was used for proof; actual **Genesys calls 0, Jev calls 0, notification sends 0**. [Preservation](v019e-evidence/preservation.json), [traffic](v019e-evidence/cloud-run-traffic.json). Only hashes/counts and non-secret operational metadata are retained.
+
+The dedicated branch is pushed. No PR, merge or tag is created. Main remains the canonical base; the read-only final-review branch remains untouched. The final documentation/evidence commit leaves every frontend build input identical to the tested/published source. The final pushed SHA is supplied in the delivery response, and the dedicated worktree is clean.
+
+## Release blocker decision
+
+| Blocker | Status | Qualification |
+|---|---|---|
+| F1 — mobile review action | **FIXED** | Highest-priority CTA and meaningful task identity are in the initial 390px viewport at scroll (0,0); no horizontal discovery. |
+| F2 — active review focus | **FIXED** | Queue hidden; contextual header/evidence/actions/human questions lead; comparison/history closed; completion follows final note. |
+
+**V0.19.0 can proceed to ChatGPT review/merge and the release/tag decision.** This does not approve an automatic merge/tag, change the independent review's non-blocking backlog or claim a new whole-product usability mean. Interim diagnostic runs are retained and every encountered failure is classified in [failure-classification.md](v019e-evidence/failure-classification.md). The two pre-existing Overview entry expectations remain untouched; they are separate from current-contract reviewer qualification and the wider stale-suite debt recorded by the canonical review.

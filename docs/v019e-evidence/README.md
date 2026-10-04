@@ -5,7 +5,7 @@ The canonical before run uses an isolated archive of `c20604c3b33b81a0038388851d
 - [Controlled geometry comparison](geometry-comparison.json), [before measurements](baseline-geometry.json), [canonical run](baseline-browser.json).
 - [Mobile task replay and bounds](task-390x844.json), [1440×900](task-1440x900.json), [1920×1080](task-1920x1080.json), [short desktop](task-1440x720.json).
 - [Reviewer score recheck](score-recheck.json), [encountered-failure classification](failure-classification.md), [structured ledger](failure-classification.json).
-- [Deterministic tests](deterministic-tests.txt); [OperationalTable/shared cards](table-browser.json). Browser qualification/deployment/preservation records are added as those operations complete.
+- [Deterministic tests](deterministic-tests.txt); [OperationalTable/shared cards](table-browser.json). [Final current-contract browser qualification](final-browser-qualification.json) (116 passed), [public focused replay](public-focused-browser.json) (15 passed), [validation summary](validation-summary.json), [immutable committed build](committed-build.json), [Pages bytes/tree](pages.json), [production preservation](preservation.json).
 
 ## Visual evidence
 
