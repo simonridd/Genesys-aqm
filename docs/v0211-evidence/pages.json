@@ -1,0 +1,82 @@
+{
+  "testedSourceSha": "43bc67f459508f8b319b093774bdd816ab6592a2",
+  "pagesHead": "c97950c335ef53dbd94faee43ad4f5a285f07743",
+  "pagesTree": "701bc67612e658c96150af2b6101bfc6f816a2d5",
+  "completeTreePathsMatchBuild": true,
+  "publicFiles": 12,
+  "allPublicBytesEqualTestedBuild": true,
+  "files": {
+    ".nojekyll": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "IPIlogo.svg": {
+      "sha256": "abaaa77faa7b27add57acf58f1723f1011481c7107ade6b5e326d7e59edfb865",
+      "bytes": 13079,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/App-Bccn4quX.js": {
+      "sha256": "b5e6ed98c91199932c9cb55588c3faf392a806f33a22a7badfb47c1a637840d4",
+      "bytes": 475961,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/Demo-BCb7a5az.js": {
+      "sha256": "5ae8114a269ae8d2e89b1e0e5d352b1f61b5921a290e66149f8d7f8afb3ff929",
+      "bytes": 20498,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/Welcome-V_gkYwWB.js": {
+      "sha256": "12b2a929db39583449625c2497f4c7cebf6bfe49c665c91a0aac82090585959d",
+      "bytes": 13686,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/genesysEmail-BJj4UQKD.js": {
+      "sha256": "7aaacbc64027ebf63b4c41eab0f645598b4495ba5c818a63371be706b0fbc0e2",
+      "bytes": 193811,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/index-Cuyety1V.css": {
+      "sha256": "4f7e437fb550968ffd9bcc847a44c8f2103b609da695daafc5fb46f12d780316",
+      "bytes": 92275,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/index-DkaQ8qRu.js": {
+      "sha256": "4d8b67fa9df6d196f14ab84f152b72a0f831521d3a01a7ce39bd3a1ef5b4eb71",
+      "bytes": 225099,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "assets/reviews-DClfUy9e.js": {
+      "sha256": "a1d60dbc38d1e8095ac7b6242675e99b1640239646cf81b73d7e0eddb866804f",
+      "bytes": 23430,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "index.html": {
+      "sha256": "3d97d7f81e127d93008edc5be7bf48359f02c98df8ec08fa8b8edfd178ee7f46",
+      "bytes": 470,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "samples/billing-conversation.json": {
+      "sha256": "67ced33e87bd858a6a9bb7729f8b2f3bddc3cb29902718686dac3ef14d220040",
+      "bytes": 2762,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    },
+    "samples/delivery-conversation.json": {
+      "sha256": "25e81077f83ee34824a07389a9dc283f490e9bdf0edcd07a14f1ba6ac0283dc7",
+      "bytes": 1850,
+      "treeEqualsTestedBuild": true,
+      "publicEqualsTree": true
+    }
+  }
+}

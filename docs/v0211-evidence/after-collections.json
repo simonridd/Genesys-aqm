@@ -1,0 +1,115 @@
+{
+  "policies": {
+    "count": 7,
+    "sha256": "25c834d2b02213719e761705632843cc028292c90bf530fdc12825809def12c8"
+  },
+  "schedules": {
+    "count": 1,
+    "sha256": "ca4c3de4a97bc9efc875d1dd12bf619bf2b8c18d8c54843c470946638d51ebde"
+  },
+  "policyRuns": {
+    "count": 6,
+    "sha256": "0e0fc035e012dd46f37c8877a0f662f8562190f53cda4dfa09c2b276dc6fa261"
+  },
+  "evaluationRecords": {
+    "count": 8,
+    "sha256": "83f09afd55c106cc33c6098ba92d616e892c3e4eb5f00c8684b2ce33f2846438"
+  },
+  "humanReviews": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "evaluationForms": {
+    "count": 7,
+    "sha256": "83541663d2fdb611f52658abbd442799ed7c11a19385d6546271c9492b876a82"
+  },
+  "questionGroupAssets": {
+    "count": 4,
+    "sha256": "3096111299cd49744a485c2bd2757b8f11b34120ad3e0fe954fe532e748b1b97"
+  },
+  "roleAssignments": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "governanceSettings": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "operationalAlerts": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationDestinations": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationRules": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "operationalHealth": {
+    "count": 2,
+    "sha256": "ebf4e1d1e1e807d2ab804988924fd952e57ba2b7352099bd932d56e2a4aa7c35",
+    "nonTickSha256": "209e8df7a25b5583809b7b15b70185120930aa8a5f3fe8460abce4ae0b12c01b",
+    "timestamps": [
+      {
+        "updatedAt": "2026-10-05T07:00:09.390107Z",
+        "lastSuccessfulTickAt": null,
+        "asOf": "2026-10-05T07:00:09.084Z"
+      },
+      {
+        "updatedAt": "2026-10-05T07:00:09.014455Z",
+        "lastSuccessfulTickAt": "2026-10-05T07:00:08.836Z",
+        "asOf": null
+      }
+    ]
+  },
+  "scheduleExecutionClaims": {
+    "count": 6,
+    "sha256": "600a87244efd1b60a47e5db520120d78ef3dab4f650fab65c3c76d931e64c1fe"
+  },
+  "evaluationSlots": {
+    "count": 8,
+    "sha256": "fcfdf2b52d2eb4fe86a6a527f63c98bc4bea39cdcbc90c909667d27f6bdb3da8"
+  },
+  "auditEvents": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationDeliveries": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationEvents": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationDestinationHealth": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "notificationControl": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "operationalAlertKeys": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "formTestRuns": {
+    "count": 1,
+    "sha256": "31edab3310e02fb3073579fbfe109751a354dde39fc108cfbebf9d91f9739c83"
+  },
+  "purgePlans": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "answerSetAssets": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "answerSetFamilies": {
+    "count": 0,
+    "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

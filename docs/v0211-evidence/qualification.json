@@ -1,0 +1,51 @@
+{
+  "testedSourceSha": "43bc67f459508f8b319b093774bdd816ab6592a2",
+  "deterministic": {
+    "passed": 723,
+    "failed": 0
+  },
+  "frontendBuildAndTypecheck": true,
+  "serverTypecheck": true,
+  "localBrowser": {
+    "passed": 35,
+    "failed": 0
+  },
+  "localCompactInvestigation": {
+    "passed": 4,
+    "failed": 0
+  },
+  "localFinalFocusedEvidence": {
+    "passed": 11,
+    "failed": 0
+  },
+  "actualPublicBrowser": {
+    "passed": 39,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "focusedViewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "smokeViewports": [
+    "1920x1080",
+    "1440x720"
+  ],
+  "unchangedTrackedBuildInputs": 210,
+  "pagesByteEquality": "12/12",
+  "allowedWelcomeStorage": {
+    "localStorage": {
+      "genesys-aqm-welcome-seen-v1": "1"
+    },
+    "sessionStorageKeys": [],
+    "indexedDB": []
+  },
+  "workCausedProductionMutations": 0,
+  "liveProviderCalls": {
+    "Genesys": 0,
+    "Jev": 0,
+    "notifications": 0
+  },
+  "productionPreservation": "25/25 counts and raw hashes; 10-collection inventory; runtime/traffic/IAM/secrets/Scheduler unchanged"
+}

@@ -1,0 +1,17 @@
+{
+  "productionEvidence": "counts, digests, public revision/image/traffic and health/Scheduler timestamps only",
+  "savedProductionDocuments": 0,
+  "savedSecretPayloads": 0,
+  "savedCredentials": 0,
+  "savedIamBindingsOrPrincipals": 0,
+  "browserFixtures": "fictional records and tokens only; no real authentication",
+  "canonicalPublicCountsMatch": false,
+  "canonicalPublicDomainDigestsMatch": false,
+  "historicalBaselineChangesPrecededTask": [
+    "schedules",
+    "policyRuns",
+    "operationalHealth",
+    "scheduleExecutionClaims"
+  ],
+  "beforeAfter25CountsAndRawHashesUnchanged": true
+}
