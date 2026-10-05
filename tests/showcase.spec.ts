@@ -22,8 +22,9 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
     await page.addInitScript(() => {
       localStorage.setItem('fictional-existing-draft', 'unchanged')
       sessionStorage.setItem('fictional-existing-credential', 'do-not-read')
-      Storage.prototype.getItem = function(key) { throw Error(`Protected storage read: ${key}`) }
-      Storage.prototype.setItem = function(key) { throw Error(`Forbidden storage write: ${key}`) }
+      const read = Storage.prototype.getItem, write = Storage.prototype.setItem
+      Storage.prototype.getItem = function(key) { if (this === localStorage && key === 'genesys-aqm-welcome-seen-v1') return read.call(this, key); throw Error(`Protected storage read: ${key}`) }
+      Storage.prototype.setItem = function(key, value) { if (this === localStorage && key === 'genesys-aqm-welcome-seen-v1' && value === '1') return write.call(this, key, value); throw Error(`Forbidden storage write: ${key}`) }
       Storage.prototype.removeItem = function(key) { throw Error(`Forbidden storage removal: ${key}`) }
       Storage.prototype.clear = function() { throw Error('Forbidden storage clear') }
       indexedDB.open = function() { throw Error('Forbidden IndexedDB access') }
@@ -32,6 +33,9 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1920, height: 108
     await page.goto(app)
     await expect(page.getByRole('heading', { name: 'More conversations understood. Less manual scoring.' })).toBeVisible()
     const before = await snapshot(page)
+    expect(before.local).toEqual({ 'fictional-existing-draft': 'unchanged', 'genesys-aqm-welcome-seen-v1': '1' })
+    expect(before.session).toEqual({ 'fictional-existing-credential': 'do-not-read' })
+    expect(before.databases).toEqual([])
     await expect(page.getByText('$16.80/month', { exact: true })).toBeVisible()
     await page.getByText('Advanced assumptions', { exact: true }).click()
     await page.getByLabel('Average AI requests per form', { exact: true }).fill('2')
@@ -130,7 +134,7 @@ test('demo entered with an established real-session-shaped OAuth fixture never t
   await page.getByRole('button', { name: 'Exit demo', exact: true }).click()
   expect(await snapshot(page)).toEqual(before)
   expect(denied.requests).toEqual([]); expect(denied.errors).toEqual([])
-  writeFileSync('docs/showcase-human-pass-evidence/isolation.json', JSON.stringify({ forbiddenRequests: denied.requests, unchangedStorage: true, indexedDBUnchanged: true, sessionFixture: 'OAuth fixture established before demo; not live-provider authentication proof', pageErrors: denied.errors }, null, 2))
+  writeFileSync(`${process.env.AQM_SHOWCASE_EVIDENCE ?? 'docs/showcase-human-pass-evidence'}/isolation.json`, JSON.stringify({ forbiddenRequests: denied.requests, unchangedStorage: true, indexedDBUnchanged: true, sessionFixture: 'OAuth fixture established before demo; not live-provider authentication proof', pageErrors: denied.errors }, null, 2))
 })
 test('failed lazy demo load stays closed instead of mounting live services', async ({ page }) => {
   const forbidden: string[] = []
@@ -182,5 +186,5 @@ test('semantic theme contrast, focus and no obscured tour controls', async ({ pa
     const box = await control.boundingBox()
     if (box && rail) expect(box.x >= rail.x + rail.width - 1 || box.y >= rail.y + rail.height - 1).toBe(true)
   }
-  writeFileSync('docs/showcase-human-pass-evidence/contrast.json', JSON.stringify(ratios, null, 2))
+  writeFileSync(`${process.env.AQM_SHOWCASE_EVIDENCE ?? 'docs/showcase-human-pass-evidence'}/contrast.json`, JSON.stringify(ratios, null, 2))
 })

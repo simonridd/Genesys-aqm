@@ -1,5 +1,6 @@
 import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react'
 import { entryRoute } from './routing'
+import { hasSeenWelcome } from './welcomePreference'
 import { useReviewDrafts } from '../useReviewDrafts'
 const Welcome = lazy(() => import('./Welcome'))
 const Demo = lazy(() => import('./Demo'))
@@ -22,9 +23,9 @@ export function Root() {
     return()=>window.removeEventListener('beforeunload',warn)
   },[reviewDrafts.dirty])
   const [connected, setConnected] = useState(false)
-  const [entry, setEntry] = useState(() => entryRoute(new URLSearchParams(location.search)))
+  const [entry, setEntry] = useState(() => entryRoute(new URLSearchParams(location.search), false, hasSeenWelcome()))
   useEffect(() => {
-    const navigate = () => setEntry(entryRoute(new URLSearchParams(location.search), connected))
+    const navigate = () => setEntry(entryRoute(new URLSearchParams(location.search), connected, hasSeenWelcome()))
     window.addEventListener('popstate', navigate)
     return () => window.removeEventListener('popstate', navigate)
   }, [connected])
@@ -33,7 +34,7 @@ export function Root() {
     url.search = new URLSearchParams({ page, ...(showcaseEntry ? { entry: 'showcase' } : {}), ...(page === 'settings' ? { settingsSection: 'connection' } : {}), ...(page === 'demo' ? { tour: 'quality', step: String(step ?? 1) } : {}) }).toString()
     url.hash = ''
     window.history.pushState(null, '', url)
-    setEntry(entryRoute(url.searchParams, connected))
+    setEntry(entryRoute(url.searchParams, connected, hasSeenWelcome()))
     window.scrollTo(0, 0)
   }
   return <Suspense fallback={<main className="page-content" role="status">Loading IPI AQM…</main>}>

@@ -114,3 +114,7 @@ Qualified: both disconnected Explore actions carry a temporary contextual bridge
 ## V0.21B — Investigation result focus
 
 Qualified: successful exact Analytics/Calibration investigations arrive at Matching evaluations, with human scope context and a local Jump to first evaluation shortcut. Two deliberate keyboard actions reach the existing first opener; measured main baseline was Analytics 58 Tabs / Calibration 56. One-shot focus preserves filters, retry, pagination, detail/evidence return, reviewer tasks and exact history/query/record order, adding zero requests. Frontend only; V0.20 tag and backend unchanged. See [qualification and evidence](v021b-investigation-result-focus.md). Next: ChatGPT review/merge.
+
+## V0.21.1 — Returning visitor default
+
+Welcome is presented once per browser using `genesys-aqm-welcome-seen-v1=1`. Returning bare entries use Overview for a connected session and ordinary synthetic Conversations when disconnected. Explicit Welcome/home and About / product tour remain available; deep links, OAuth destinations and V0.21A/B behavior stay authoritative. Qualified at desktop/mobile with the exact single-preference showcase storage exception; no backend or provider changes.

@@ -1,0 +1,18 @@
+
+Running 11 tests using 1 worker
+
+(node:65264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 1440 (3.2s)
+  ✓   2 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 390 (3.2s)
+  ✓   3 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B calibration result focus smoke 1440 (2.9s)
+  ✓   4 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B calibration result focus smoke 390 (2.8s)
+  ✓   5 tests/returning-visitor.spec.ts:23:117 › first, returning, explicit, About and history 1440x900 (6.0s)
+  ✓   6 tests/returning-visitor.spec.ts:23:117 › first, returning, explicit, About and history 390x844 (5.9s)
+  ✓   7 tests/returning-visitor.spec.ts:23:117 › first, returning, explicit, About and history 1920x1080 (6.4s)
+  ✓   8 tests/returning-visitor.spec.ts:23:117 › first, returning, explicit, About and history 1440x720 (6.0s)
+  ✓   9 tests/returning-visitor.spec.ts:51:1 › clearing preference restores Welcome; unavailable read/write stays safe (2.9s)
+  ✓  10 tests/returning-visitor.spec.ts:58:31 › connected bare SPA destination and OAuth destination 1440 (2.0s)
+  ✓  11 tests/returning-visitor.spec.ts:58:31 › connected bare SPA destination and OAuth destination 390 (1.5s)
+
+  11 passed (43.7s)

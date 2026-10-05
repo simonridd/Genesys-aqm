@@ -1,0 +1,16 @@
+
+> genesys-aqm@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.2 /private/tmp/aqm-v0211-returning-visitor-default
+
+
+ Test Files  73 passed (73)
+      Tests  723 passed (723)
+   Start at  08:14:39
+   Duration  2.38s (import 43%, tests 34%, transform 21%, worker 1%)
+
+    Isolate  73 workers spawned · ~95ms startup each (spawn + environment, per file)
+             at least ~601ms faster with isolate: false — reuses workers across files instead of one per file
+

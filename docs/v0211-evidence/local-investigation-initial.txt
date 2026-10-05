@@ -1,0 +1,61 @@
+
+Running 4 tests using 1 worker
+
+(node:64860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 1440 (1.4s)
+(node:64866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 390 (1.3s)
+(node:64873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B calibration result focus smoke 1440 (2.9s)
+  ✓  4 tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B calibration result focus smoke 390 (2.9s)
+
+
+  1) tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 1440 
+
+    Error: locator.focus: Error: strict mode violation: locator('.quality-analytics tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' }) resolved to 2 elements:
+        1) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(4)
+        2) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(5)
+
+    Call log:
+      - waiting for locator('.quality-analytics tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      16 |   const action=origin==='analytics'?page.locator('.quality-analytics tbody tr').filter({hasText:'Clear next step'}).getByRole('button',{name:'Inspect evaluations →'}):page.getByRole('region',{name:'Question calibration drill-down'}).getByRole('button',{name:'Open disagreements',exact:true})
+      17 |   const source=page.url(),historyLength=await page.evaluate(()=>history.length)
+    > 18 |   await action.focus();await page.keyboard.press('Enter')
+         |                ^
+      19 |   const heading=page.getByRole('heading',{name:'Matching evaluations',exact:true}),jump=page.getByRole('button',{name:'Jump to first evaluation',exact:true}),rows=page.locator('.evaluation-queue button[data-evaluation-id]')
+      20 |   await expect(heading).toBeFocused();await expect(rows.first()).toBeVisible();await expect(jump).toBeInViewport()
+      21 |   const url=page.url(),ids=await rows.evaluateAll(ns=>ns.map(n=>n.getAttribute('data-evaluation-id'))),requestCount=requests.length
+        at /private/tmp/aqm-v0211-returning-visitor-default/tests/returning-visitor-investigation-smoke.spec.ts:18:16
+
+    Error Context: test-results/returning-visitor-investig-05c96-ics-result-focus-smoke-1440/error-context.md
+
+  2) tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 390 
+
+    Error: locator.focus: Error: strict mode violation: locator('.quality-analytics tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' }) resolved to 2 elements:
+        1) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(4)
+        2) <button class="text-link">Inspect evaluations →</button> aka getByRole('button', { name: 'Inspect evaluations →' }).nth(5)
+
+    Call log:
+      - waiting for locator('.quality-analytics tbody tr').filter({ hasText: 'Clear next step' }).getByRole('button', { name: 'Inspect evaluations →' })
+
+
+      16 |   const action=origin==='analytics'?page.locator('.quality-analytics tbody tr').filter({hasText:'Clear next step'}).getByRole('button',{name:'Inspect evaluations →'}):page.getByRole('region',{name:'Question calibration drill-down'}).getByRole('button',{name:'Open disagreements',exact:true})
+      17 |   const source=page.url(),historyLength=await page.evaluate(()=>history.length)
+    > 18 |   await action.focus();await page.keyboard.press('Enter')
+         |                ^
+      19 |   const heading=page.getByRole('heading',{name:'Matching evaluations',exact:true}),jump=page.getByRole('button',{name:'Jump to first evaluation',exact:true}),rows=page.locator('.evaluation-queue button[data-evaluation-id]')
+      20 |   await expect(heading).toBeFocused();await expect(rows.first()).toBeVisible();await expect(jump).toBeInViewport()
+      21 |   const url=page.url(),ids=await rows.evaluateAll(ns=>ns.map(n=>n.getAttribute('data-evaluation-id'))),requestCount=requests.length
+        at /private/tmp/aqm-v0211-returning-visitor-default/tests/returning-visitor-investigation-smoke.spec.ts:18:16
+
+    Error Context: test-results/returning-visitor-investig-2da71-tics-result-focus-smoke-390/error-context.md
+
+  2 failed
+    tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 1440 
+    tests/returning-visitor-investigation-smoke.spec.ts:8:79 › V0.21B analytics result focus smoke 390 
+  2 passed (10.5s)

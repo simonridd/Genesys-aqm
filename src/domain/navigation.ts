@@ -8,7 +8,7 @@ export function landingPage(query:URLSearchParams,connected:boolean):Page {
  if(pages.includes(requested as Page))return requested as Page
  if(query.has('policyId'))return 'policies'
  if(query.has('runId'))return 'automation'
- return connected?'automation':'evaluate'
+ return connected?'automation':'conversations'
 }
 export const evaluationFilterKeys=['form','question','reviewQuestion','comparison','reviewStatus','evaluationId','evaluationSource','source','agent','queue','channel','cohort','from','to','assignment','due','dueState','reviewQueue','policy','mode','critical','outcome','evaluations.q']
 export const analyticsCohortKeys=['from','to','source','policy','form','agent','queue','channel','mode'] as const

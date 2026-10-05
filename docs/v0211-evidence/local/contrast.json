@@ -1,0 +1,37 @@
+[
+  {
+    "foreground": "ink",
+    "background": "background",
+    "ratio": 9.547669025860491
+  },
+  {
+    "foreground": "muted",
+    "background": "surface",
+    "ratio": 5.501145697176608
+  },
+  {
+    "foreground": "on-dark",
+    "background": "primary",
+    "ratio": 9.805375514331464
+  },
+  {
+    "foreground": "on-dark-muted",
+    "background": "navigation",
+    "ratio": 7.644467817597547
+  },
+  {
+    "foreground": "secondary",
+    "background": "surface",
+    "ratio": 10.686885052886833
+  },
+  {
+    "foreground": "warning",
+    "background": "warning-surface",
+    "ratio": 6.3853219216845325
+  },
+  {
+    "foreground": "danger",
+    "background": "danger-surface",
+    "ratio": 5.998065421065685
+  }
+]
